@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    <link rel="stylesheet" href="../dsa.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../dsa.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+
+            <main class="col-md-7 content">
+                <h1>🔍 Binary Search – Efficient Searching Algorithm</h1>
+            
+                <p>
+                    **Binary Search** is a **divide-and-conquer algorithm** used to find an element  
+                    in a **sorted array** efficiently. It **reduces the search space by half**  
+                    at each step, making it significantly faster than **linear search**.
+                </p>
+            
+                <h2>📌 Key Properties of Binary Search</h2>
+                <ul>
+                    <li>✅ Works on **sorted data only**.</li>
+                    <li>✅ Reduces search space **by half** each time (**O(log n) complexity**).</li>
+                    <li>✅ Can be implemented **iteratively** or **recursively**.</li>
+                    <li>❌ Cannot be used for **unsorted arrays**.</li>
+                </ul>
+            
+                <h1>⚙️ How Does Binary Search Work?</h1>
+            
+                <h2>🔢 **Step-by-Step Explanation**</h2>
+                <ol>
+                    <li>✅ **Find the middle element** of the array.</li>
+                    <li>🔎 **Compare** the middle element with the target value:</li>
+                    <ul>
+                        <li>🎯 If **equal**, return the index.</li>
+                        <li>⬅️ If **smaller**, search in the **left half**.</li>
+                        <li>➡️ If **greater**, search in the **right half**.</li>
+                    </ul>
+                    <li>🔄 Repeat the process **until the element is found** or search space is **empty**.</li>
+                </ol>
+            
+                <h3>📌 Example – Searching for 7 in a Sorted Array</h3>
+                <p>**Array:** [1, 3, 5, 7, 9, 11, 15]</p>
+                <table border="1">
+                    <tr>
+                        <th>Step</th>
+                        <th>Search Space</th>
+                        <th>Middle Element</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>[1, 3, 5, 7, 9, 11, 15]</td>
+                        <td>7</td>
+                        <td>🎯 Found! Return index 3.</td>
+                    </tr>
+                </table>
+            
+                <h1>🛠️ Binary Search Implementation</h1>
+            
+                <h2>🔄 Iterative Binary Search (C++)</h2>
+                <pre><code>
+                int binarySearch(int arr[], int left, int right, int target) {
+                    while (left <= right) {
+                        int mid = left + (right - left) / 2;
+                        if (arr[mid] == target) return mid;
+                        else if (arr[mid] < target) left = mid + 1;
+                        else right = mid - 1;
+                    }
+                    return -1; // Not found
+                }
+                </code></pre>
+            
+                <h2>🔁 Recursive Binary Search (C++)</h2>
+                <pre><code>
+                int recursiveBinarySearch(int arr[], int left, int right, int target) {
+                    if (left > right) return -1; // Not found
+                    int mid = left + (right - left) / 2;
+                    if (arr[mid] == target) return mid;
+                    else if (arr[mid] < target) return recursiveBinarySearch(arr, mid + 1, right, target);
+                    else return recursiveBinarySearch(arr, left, mid - 1, target);
+                }
+                </code></pre>
+            
+                <h1>⚖️ Binary Search vs Linear Search</h1>
+                <table border="1">
+                    <tr>
+                        <th>Feature</th>
+                        <th>Binary Search</th>
+                        <th>Linear Search</th>
+                    </tr>
+                    <tr>
+                        <td>Time Complexity</td>
+                        <td>O(log n)</td>
+                        <td>O(n)</td>
+                    </tr>
+                    <tr>
+                        <td>Best Case</td>
+                        <td>O(1) (Middle element found)</td>
+                        <td>O(1) (First element is target)</td>
+                    </tr>
+                    <tr>
+                        <td>Worst Case</td>
+                        <td>O(log n)</td>
+                        <td>O(n)</td>
+                    </tr>
+                    <tr>
+                        <td>Use Case</td>
+                        <td>Sorted Arrays</td>
+                        <td>Unsorted & Small Arrays</td>
+                    </tr>
+                </table>
+            
+                <h1>⏳ Time Complexity Analysis</h1>
+                <ul>
+                    <li>✅ **Best Case:** O(1) → Found at the middle.</li>
+                    <li>⚡ **Average Case:** O(log n) → Divides the array into halves.</li>
+                    <li>❌ **Worst Case:** O(log n) → Element not found after **log n** steps.</li>
+                </ul>
+            
+                <h1>📌 Variations of Binary Search</h1>
+            
+                <h2>🔄 **1. Lower Bound Binary Search**</h2>
+                <p>Finds the **smallest index** where the value is **greater than or equal** to the target.</p>
+                <pre><code>
+                int lowerBound(int arr[], int n, int target) {
+                    int left = 0, right = n;
+                    while (left < right) {
+                        int mid = left + (right - left) / 2;
+                        if (arr[mid] >= target) right = mid;
+                        else left = mid + 1;
+                    }
+                    return left;
+                }
+                </code></pre>
+            
+                <h2>🔼 **2. Upper Bound Binary Search**</h2>
+                <p>Finds the **smallest index** where the value is **strictly greater** than the target.</p>
+                <pre><code>
+                int upperBound(int arr[], int n, int target) {
+                    int left = 0, right = n;
+                    while (left < right) {
+                        int mid = left + (right - left) / 2;
+                        if (arr[mid] > target) right = mid;
+                        else left = mid + 1;
+                    }
+                    return left;
+                }
+                </code></pre>
+            
+                <h1>🌍 Real-World Applications of Binary Search</h1>
+                <ul>
+                    <li>🔎 **Search Engines** – Fast document retrieval.</li>
+                    <li>📂 **Databases & Indexing** – Binary search trees & B-Trees.</li>
+                    <li>🛒 **E-commerce** – Price filtering & range-based searches.</li>
+                    <li>📡 **Network Routing** – Optimized IP lookup in network tables.</li>
+                    <li>📉 **Stock Market Analysis** – Predicting stock values.</li>
+                </ul>
+            
+                <h2>🔗 Next Topics</h2>
+                <ul class="nexttopics-container">
+                    <li><a href="searching.html">🔎 Searching Algorithms</a></li>
+                    <li><a href="sorting.html">📊 Sorting Algorithms</a></li>
+                    <li><a href="hashing.html">🔢 Hashing Techniques</a></li>
+                </ul>
+            </main>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../dsa.json" : "dsa.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.DSA;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    

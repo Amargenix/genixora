@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer Network</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/allsubject.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Computer Networks</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <h1>IP Addressing in Computer Networks</h1>
+                  
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">Introduction to IP Addressing</h2>
+                        
+                        <div style="display: flex; margin-top: 20px;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h3 style="color: #3498db;">What is an IP Address?</h3>
+                                <p>An Internet Protocol address (IP address) is a numerical label assigned to each device connected to a computer network that uses the Internet Protocol for communication.</p>
+                                <p style="background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db;">
+                                    <strong>Key Functions:</strong><br>
+                                    • Host or network interface identification<br>
+                                    • Location addressing<br>
+                                    • Routing of datagrams across network boundaries
+                                </p>
+                            </div>
+                            
+                            <div style="flex: 1;">
+                                <h3 style="color: #3498db;">IP Address Characteristics</h3>
+                                <ul style="line-height: 1.6;">
+                                    <li>Logical address (not physical/MAC address)</li>
+                                    <li>Assigned by software (not hardware)</li>
+                                    <li>Hierarchical structure (network + host portions)</li>
+                                    <li>Version 4 (32-bit) and Version 6 (128-bit)</li>
+                                    <li>Can be static or dynamically assigned</li>
+                                </ul>
+                                <div style="background-color: #e8f4fc; padding: 10px; border-radius: 5px; margin-top: 10px;">
+                                    <strong>Example IPv4:</strong> 192.168.1.10<br>
+                                    <strong>Example IPv6:</strong> 2001:0db8:85a3:0000:0000:8a2e:0370:7334
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">IPv4 Addressing</h2>
+                        
+                        <div style="display: flex; margin-top: 20px;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h3 style="color: #3498db;">IPv4 Address Structure</h3>
+                                <p>32-bit address written as four octets (8-bit numbers) in dotted-decimal notation:</p>
+                                <div style="text-align: center; background-color: #f0f0f0; padding: 15px; border-radius: 5px;">
+                                    <code>11000000.10101000.00000001.00001010</code><br>
+                                    ↓<br>
+                                    <code>192.168.1.10</code>
+                                </div>
+                                
+                                <h3 style="color: #3498db; margin-top: 20px;">IPv4 Address Classes</h3>
+                                <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+                                    <tr style="background-color: #2c3e50; color: white;">
+                                        <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Class</th>
+                                        <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Range</th>
+                                        <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Network/Host</th>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">A</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">1.0.0.0 - 126.255.255.255</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">N.H.H.H</td>
+                                    </tr>
+                                    <tr style="background-color: #f9f9f9;">
+                                        <td style="padding: 8px; border: 1px solid #ddd;">B</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">128.0.0.0 - 191.255.255.255</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">N.N.H.H</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">C</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">192.0.0.0 - 223.255.255.255</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">N.N.N.H</td>
+                                    </tr>
+                                    <tr style="background-color: #f9f9f9;">
+                                        <td style="padding: 8px; border: 1px solid #ddd;">D (Multicast)</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">224.0.0.0 - 239.255.255.255</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">-</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">E (Reserved)</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">240.0.0.0 - 255.255.255.255</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">-</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            
+                            <div style="flex: 1;">
+                                <h3 style="color: #3498db;">Special IPv4 Addresses</h3>
+                                <ul style="line-height: 1.6;">
+                                    <li><strong>0.0.0.0</strong> - Default route/"this network"</li>
+                                    <li><strong>127.0.0.1</strong> - Loopback address</li>
+                                    <li><strong>169.254.0.0/16</strong> - APIPA (Automatic Private IP Addressing)</li>
+                                    <li><strong>192.168.0.0/16</strong>, <strong>172.16.0.0/12</strong>, <strong>10.0.0.0/8</strong> - Private networks (RFC 1918)</li>
+                                    <li><strong>255.255.255.255</strong> - Limited broadcast</li>
+                                </ul>
+                                
+                                <h3 style="color: #3498db; margin-top: 20px;">Subnetting</h3>
+                                <p>Dividing a network into smaller subnetworks using a subnet mask:</p>
+                                <div style="background-color: #f0f8ff; padding: 10px; border-radius: 5px;">
+                                    <strong>Example:</strong> 192.168.1.0/24 (subnet mask 255.255.255.0)<br>
+                                    • Network portion: 192.168.1<br>
+                                    • Host portion: 0-255<br>
+                                    • Usable hosts: 192.168.1.1 to 192.168.1.254
+                                </div>
+                                
+                                <h3 style="color: #3498db; margin-top: 20px;">CIDR Notation</h3>
+                                <p>Classless Inter-Domain Routing (CIDR) represents the subnet mask with a slash followed by the number of network bits:</p>
+                                <div style="background-color: #fff0f0; padding: 10px; border-radius: 5px;">
+                                    <strong>Example:</strong> 192.168.1.0/26<br>
+                                    • Subnet mask: 255.255.255.192<br>
+                                    • Network bits: 26<br>
+                                    • Host bits: 6 (allowing 2^6 - 2 = 62 hosts)
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">IPv6 Addressing</h2>
+                        
+                        <div style="display: flex; margin-top: 20px;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h3 style="color: #3498db;">IPv6 Address Structure</h3>
+                                <p>128-bit address written as eight groups of four hexadecimal digits:</p>
+                                <div style="text-align: center; background-color: #f0f0f0; padding: 15px; border-radius: 5px;">
+                                    <code>2001:0db8:85a3:0000:0000:8a2e:0370:7334</code><br>
+                                    Can be shortened: <code>2001:db8:85a3::8a2e:370:7334</code>
+                                </div>
+                                
+                                <h3 style="color: #3498db; margin-top: 20px;">IPv6 Address Types</h3>
+                                <ul style="line-height: 1.6;">
+                                    <li><strong>Unicast:</strong> Identifies a single interface</li>
+                                    <li><strong>Multicast:</strong> Identifies a group of interfaces</li>
+                                    <li><strong>Anycast:</strong> Identifies a set of interfaces (delivered to nearest)</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="flex: 1;">
+                                <h3 style="color: #3498db;">Special IPv6 Addresses</h3>
+                                <ul style="line-height: 1.6;">
+                                    <li><strong>::1</strong> - Loopback address</li>
+                                    <li><strong>::</strong> - Unspecified address</li>
+                                    <li><strong>2000::/3</strong> - Global unicast</li>
+                                    <li><strong>fe80::/10</strong> - Link-local addresses</li>
+                                    <li><strong>fc00::/7</strong> - Unique local addresses (private)</li>
+                                    <li><strong>ff00::/8</strong> - Multicast addresses</li>
+                                </ul>
+                                
+                                <h3 style="color: #3498db; margin-top: 20px;">IPv6 Benefits</h3>
+                                <ul style="line-height: 1.6;">
+                                    <li>Larger address space (3.4×10³⁸ addresses)</li>
+                                    <li>Simplified header format</li>
+                                    <li>Built-in security (IPsec)</li>
+                                    <li>Better multicast and anycast support</li>
+                                    <li>Stateless address autoconfiguration (SLAAC)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">IP Address Assignment</h2>
+                        
+                        <div style="display: flex; margin-top: 20px;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h3 style="color: #3498db;">Static vs. Dynamic</h3>
+                                <p><strong>Static IP Addressing:</strong></p>
+                                <ul>
+                                    <li>Manually configured on each device</li>
+                                    <li>Never changes unless reconfigured</li>
+                                    <li>Used for servers, network devices</li>
+                                </ul>
+                                
+                                <p><strong>Dynamic IP Addressing:</strong></p>
+                                <ul>
+                                    <li>Automatically assigned by DHCP server</li>
+                                    <li>Can change over time (lease duration)</li>
+                                    <li>Common for client devices</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="flex: 1;">
+                                <h3 style="color: #3498db;">DHCP Process (DORA)</h3>
+                                <ol style="line-height: 1.6;">
+                                    <li><strong>Discover:</strong> Client broadcasts DHCPDISCOVER</li>
+                                    <li><strong>Offer:</strong> Server responds with DHCPOFFER</li>
+                                    <li><strong>Request:</strong> Client requests offered address (DHCPREQUEST)</li>
+                                    <li><strong>Acknowledge:</strong> Server confirms with DHCPACK</li>
+                                </ol>
+                                
+                                <h3 style="color: #3498db; margin-top: 20px;">APIPA</h3>
+                                <p>Automatic Private IP Addressing (169.254.0.0/16) is assigned when DHCP fails, allowing local network communication.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">NAT and Public vs. Private IPs</h2>
+                        
+                        <div style="display: flex; margin-top: 20px;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h3 style="color: #3498db;">Private IP Addresses</h3>
+                                <p>Defined in RFC 1918 for use in private networks:</p>
+                                <ul>
+                                    <li>10.0.0.0/8 (16,777,216 hosts)</li>
+                                    <li>172.16.0.0/12 (1,048,576 hosts)</li>
+                                    <li>192.168.0.0/16 (65,536 hosts)</li>
+                                </ul>
+                                
+                                <h3 style="color: #3498db; margin-top: 20px;">Public IP Addresses</h3>
+                                <p>Globally routable addresses assigned by IANA and regional registries (ARIN, RIPE, etc.). Required for Internet communication.</p>
+                            </div>
+                            
+                            <div style="flex: 1;">
+                                <h3 style="color: #3498db;">Network Address Translation (NAT)</h3>
+                                <p>Allows multiple devices on a private network to share a single public IP address:</p>
+                                <ul style="line-height: 1.6;">
+                                    <li><strong>Static NAT:</strong> One-to-one mapping</li>
+                                    <li><strong>Dynamic NAT:</strong> Pool of public addresses</li>
+                                    <li><strong>PAT (NAT Overload):</strong> Many-to-one using ports</li>
+                                </ul>
+                                <div style="background-color: #f8f9fa; padding: 10px; border-radius: 5px; margin-top: 10px;">
+                                    <strong>Example:</strong> Home router translates:<br>
+                                    192.168.1.10:3456 → 203.0.113.5:54321<br>
+                                    192.168.1.11:4567 → 203.0.113.5:54322
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+               
+            </main>  
+            
+            
+
+             <!-- Floating button to open chatbot -->
+    <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+    </div>
+    
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-container");
+            let button = document.getElementById("open-chatbot");
+    
+            if (!chatbot.classList.contains("active")) {
+                chatbot.classList.add("active");
+                button.style.display = "none"; // Hide button when chatbot is open
+            } else {
+                chatbot.classList.remove("active");
+                setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+            }
+        }
+    
+        // Load chatbot HTML dynamically
+        fetch("/chatbot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("chatbot-container").innerHTML += html;
+    
+            // Execute chatbot script after inserting HTML
+            let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+            for (let script of scripts) {
+                let newScript = document.createElement("script");
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript);
+            }
+        })
+        .catch(error => console.error("Error loading chatbot:", error));
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../computernetwork.json" : "computernetwork.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.Computer_Networks;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+        
+       
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

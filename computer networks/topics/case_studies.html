@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer Network</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/allsubject.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Computer Networks</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                
+                        <h1>Case Studies in Computer Networks</h1>
+                        
+
+                >
+                        <section id="introduction" style="margin-bottom: 40px;">
+                            <h2 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 5px;">Introduction</h2>
+                            <p>This document presents detailed case studies of computer network implementations across various industries and scenarios. Each case study examines the network requirements, design decisions, implementation challenges, and outcomes.</p>
+                        </section>
+                
+                        <section id="case-study-1" style="margin-bottom: 40px; page-break-after: always;">
+                            <h2 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 5px;">Case Study 1: Google's Global Network Infrastructure</h2>
+                            <h3 style="color: #2980b9;">Background</h3>
+                            <p>Google operates one of the largest and most sophisticated computer networks in the world, connecting data centers across continents with high-speed fiber optic cables.</p>
+                            
+                            <h3 style="color: #2980b9;">Network Architecture</h3>
+                            <ul style="padding-left: 20px;">
+                                <li>Software-defined networking (SDN) approach</li>
+                                <li>Private fiber network spanning continents</li>
+                                <li>Edge caching servers worldwide</li>
+                                <li>Load balancing across multiple data centers</li>
+                            </ul>
+                            
+                            <h3 style="color: #2980b9;">Key Challenges</h3>
+                            <ul style="padding-left: 20px;">
+                                <li>Maintaining low latency for global services</li>
+                                <li>Handling massive traffic spikes</li>
+                                <li>Network security at scale</li>
+                                <li>Cost-effective bandwidth utilization</li>
+                            </ul>
+                            
+                            <h3 style="color: #2980b9;">Solutions Implemented</h3>
+                            <p>Google developed the B4 SDN network for inter-data center connectivity, achieving higher utilization rates than traditional networks. They implemented:</p>
+                            <ul style="padding-left: 20px;">
+                                <li>Centralized traffic engineering</li>
+                                <li>Dynamic bandwidth allocation</li>
+                                <li>Advanced congestion control algorithms</li>
+                            </ul>
+                            
+                            <h3 style="color: #2980b9;">Results</h3>
+                            <ul style="padding-left: 20px;">
+                                <li>Average link utilization increased from 30-40% to 70-80%</li>
+                                <li>Significant cost savings in bandwidth</li>
+                                <li>Improved reliability through automated failover</li>
+                            </ul>
+                        </section>
+                
+                        <section id="case-study-2" style="margin-bottom: 40px; page-break-after: always;">
+                            <h2 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 5px;">Case Study 2: NYSE Network Infrastructure</h2>
+                            <h3 style="color: #2980b9;">Background</h3>
+                            <p>The New York Stock Exchange requires ultra-low latency, high reliability networking to support electronic trading.</p>
+                            
+                            <h3 style="color: #2980b9;">Network Requirements</h3>
+                            <ul style="padding-left: 20px;">
+                                <li>Sub-millisecond latency for trading systems</li>
+                                <li>99.999% availability</li>
+                                <li>Secure transmission of financial data</li>
+                                <li>Support for massive message volumes</li>
+                            </ul>
+                            
+                            <h3 style="color: #2980b9;">Architecture</h3>
+                            <ul style="padding-left: 20px;">
+                                <li>Dedicated fiber optic network</li>
+                                <li>Co-location facilities for trading firms</li>
+                                <li>Redundant network paths with automatic failover</li>
+                                <li>Multicast distribution for market data</li>
+                            </ul>
+                            
+                            <h3 style="color: #2980b9;">Results</h3>
+                            <ul style="padding-left: 20px;">
+                                <li>Average latency of 50 microseconds</li>
+                                <li>Zero unscheduled outages in past 5 years</li>
+                                <li>Handles peak loads of 5 million messages/second</li>
+                            </ul>
+                        </section>
+                
+                        <!-- Additional case studies would follow the same pattern -->
+                        <section id="case-study-3" style="margin-bottom: 40px; page-break-after: always;">
+                            <h2 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 5px;">Case Study 3: Telemedicine Network for Rural Healthcare</h2>
+                            <!-- Content would go here -->
+                        </section>
+                
+                        <section id="case-study-4" style="margin-bottom: 40px; page-break-after: always;">
+                            <h2 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 5px;">Case Study 4: University Campus Network Upgrade</h2>
+                            <!-- Content would go here -->
+                        </section>
+                
+                       
+                
+                        <section id="conclusions" style="margin-top: 50px;">
+                            <h2 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 5px;">Key Lessons Learned</h2>
+                            <ul style="padding-left: 20px;">
+                                <li>Scalability must be designed into networks from the beginning</li>
+                                <li>Redundancy is critical for mission-critical applications</li>
+                                <li>Monitoring and analytics are essential for performance optimization</li>
+                                <li>Security must be multi-layered and continuously updated</li>
+                            </ul>
+                        </section>
+                    </main>
+                
+                   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </main>  
+            
+            
+
+             <!-- Floating button to open chatbot -->
+    <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+    </div>
+    
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-container");
+            let button = document.getElementById("open-chatbot");
+    
+            if (!chatbot.classList.contains("active")) {
+                chatbot.classList.add("active");
+                button.style.display = "none"; // Hide button when chatbot is open
+            } else {
+                chatbot.classList.remove("active");
+                setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+            }
+        }
+    
+        // Load chatbot HTML dynamically
+        fetch("/chatbot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("chatbot-container").innerHTML += html;
+    
+            // Execute chatbot script after inserting HTML
+            let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+            for (let script of scripts) {
+                let newScript = document.createElement("script");
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript);
+            }
+        })
+        .catch(error => console.error("Error loading chatbot:", error));
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../computernetwork.json" : "computernetwork.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.Computer_Networks;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+        
+       
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

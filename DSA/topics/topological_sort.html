@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    <link rel="stylesheet" href="../dsa.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../dsa.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+
+            <main class="col-md-7 content">
+                <h1>☍ Topological Sorting – Complete In-Depth Explanation</h1>
+              
+                <p>
+                  Topological sorting is a linear ordering of vertices in a directed acyclic graph (DAG) such that for every directed edge (u, v), vertex u comes before vertex v in the ordering.  It's like determining the order in which tasks must be performed given their dependencies.
+                </p>
+              
+                <h2>📌 Why is Topological Sorting Important?</h2>
+                <ul>
+                  <li>💡 Task Scheduling:  Determining the order of tasks based on dependencies.</li>
+                  <li>⚙️ Dependency Resolution:  Resolving dependencies in software projects.</li>
+                  <li>🚀 Course Scheduling:  Ordering courses based on prerequisites.</li>
+                </ul>
+              
+                <h1>📌 Understanding Topological Sorting with an Example</h1>
+                <p>
+                  Consider the following DAG representing course prerequisites:
+                </p>
+                <pre><code>
+                      A --> B
+                      |    ^
+                      v    |
+                      C --> D
+                      |    ^
+                      v    |
+                      E --> F
+                </code></pre>
+              
+                <p>
+                  A topological sort of this graph would give a valid order in which the courses can be taken, respecting the prerequisites.  One possible topological order is:  A, C, E, B, D, F.  (There can be multiple valid topological orderings.)
+                </p>
+              
+                <h3>🔹 Key Points</h3>
+                <ul>
+                  <li>Only applicable to directed acyclic graphs (DAGs).</li>
+                  <li>Multiple topological orderings may exist.</li>
+                  <li>Represents a valid sequence of tasks respecting dependencies.</li>
+                </ul>
+              
+                <h1>🛠 Solution Approaches</h1>
+              
+                <p>
+                  There are two main approaches to topological sorting:
+                </p>
+              
+                <h2>📌 1. Depth-First Search (DFS)</h2>
+                <ol>
+                  <li>Perform DFS on the graph.</li>
+                  <li>During the backtracking phase of DFS (after visiting all descendants of a vertex), push the vertex onto a stack.</li>
+                  <li>Reverse the stack to get the topological order.</li>
+                </ol>
+              
+                <h2>📌 2. Kahn's Algorithm (using indegree)</h2>
+                <ol>
+                  <li>Calculate the indegree (number of incoming edges) of each vertex.</li>
+                  <li>Add vertices with indegree 0 to a queue.</li>
+                  <li>While the queue is not empty:</li>
+                  <ul>
+                    <li>Dequeue a vertex u.</li>
+                    <li>For each neighbor v of u:</li>
+                    <ul>
+                      <li>Decrement indegree of v.</li>
+                      <li>If indegree of v becomes 0, enqueue v.</li>
+                    </ul>
+                  </ul>
+                </ol>
+              
+                <pre><code>
+                  #include <iostream>
+                  #include <vector>
+                  #include <stack>
+                  #include <queue>
+              
+                  using namespace std;
+              
+                  // DFS-based topological sort
+                  void dfs(int v, vector<vector<int>>& adj, vector<bool>& visited, stack<int>& st) {
+                      visited[v] = true;
+                      for (int u : adj[v]) {
+                          if (!visited[u]) {
+                              dfs(u, adj, visited, st);
+                          }
+                      }
+                      st.push(v);
+                  }
+              
+                  vector<int> topologicalSortDFS(int n, vector<vector<int>>& adj) {
+                      vector<bool> visited(n, false);
+                      stack<int> st;
+                      for (int v = 0; v < n; v++) {
+                          if (!visited[v]) {
+                              dfs(v, adj, visited, st);
+                          }
+                      }
+                      vector<int> result;
+                      while (!st.empty()) {
+                          result.push_back(st.top());
+                          st.pop();
+                      }
+                      return result;
+                  }
+              
+                  // Kahn's algorithm
+                  vector<int> topologicalSortKahn(int n, vector<vector<int>>& adj) {
+                      vector<int> indegree(n, 0);
+                      for (int v = 0; v < n; v++) {
+                          for (int u : adj[v]) {
+                              indegree[u]++;
+                          }
+                      }
+              
+                      queue<int> q;
+                      for (int v = 0; v < n; v++) {
+                          if (indegree[v] == 0) {
+                              q.push(v);
+                          }
+                      }
+              
+                      vector<int> result;
+                      while (!q.empty()) {
+                          int u = q.front();
+                          q.pop();
+                          result.push_back(u);
+                          for (int v : adj[u]) {
+                              indegree[v]--;
+                              if (indegree[v] == 0) {
+                                  q.push(v);
+                              }
+                          }
+                      }
+                      return result;
+                  }
+              
+              
+              
+                  int main() {
+                      int n = 6; // Number of vertices
+                      vector<vector<int>> adj(n);
+              
+                      // Example graph (replace with your graph)
+                      adj[0].push_back(1);
+                      adj[0].push_back(2);
+                      adj[2].push_back(3);
+                      adj[1].push_back(3);
+                      adj[2].push_back(4);
+                      adj[4].push_back(5);
+              
+              
+                      cout << "Topological Sort (DFS): ";
+                      vector<int> sortedDFS = topologicalSortDFS(n, adj);
+                      for (int v : sortedDFS) cout << v << " ";
+                      cout << endl;
+              
+                      cout << "Topological Sort (Kahn's): ";
+                      vector<int> sortedKahn = topologicalSortKahn(n, adj);
+                      for (int v : sortedKahn) cout << v << " ";
+                      cout << endl;
+              
+                      return 0;
+                  }
+                </code></pre>
+              
+                <h1>⏳ Time Complexity Analysis</h1>
+                <p>
+                  Both DFS-based and Kahn's algorithm have a time complexity of O(V + E), where V is the number of vertices and E is the number of edges.
+                </p>
+              
+                <h1>🌍 Real-World Applications of Topological Sorting</h1>
+                <ul>
+                  <li>🏗️ Project management (task scheduling).</li>
+                  <li>💻 Compilers (dependency resolution).</li>
+                  <li>📚 Course scheduling.</li>
+                </ul>
+              
+                <h2>🔗 Next Topics</h2>
+                <ul class="nexttopics-container">
+                  <li><a href="graphs.html"> graph</a></li>
+                  <li><a href="graph_algorithms.html">Graph Algorithms</a></li>
+                </ul>
+              </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../dsa.json" : "dsa.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.DSA;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    

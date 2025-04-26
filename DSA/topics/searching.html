@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    <link rel="stylesheet" href="../dsa.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../dsa.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+
+
+
+
+
+<main class="col-md-7 content">
+    <h1>🔍 Searching Algorithms in Data Structures</h1>
+
+    <p>
+        **Searching** is the process of **finding a particular value** in a given set of data.  
+        It is one of the **fundamental operations** in computer science and is used in  
+        **databases, search engines, AI, and system applications**.
+    </p>
+
+    <h2>⚡ Why is Searching Important?</h2>
+    <ul>
+        <li>🚀 **Fast Data Retrieval** - Required for large datasets.</li>
+        <li>📂 **Efficient Data Management** - Used in databases & file systems.</li>
+        <li>🔄 **Optimized Searching** - Reduces execution time.</li>
+        <li>💡 **Essential for AI & Machine Learning** - Used in pattern recognition.</li>
+    </ul>
+
+    <h1>📌 1. Types of Searching Algorithms</h1>
+    <p>Searching algorithms are mainly classified into **two categories**:</p>
+
+    <h2>🔎 **1.1 Linear Search (Sequential Search) - O(n)**</h2>
+    <p>
+        Linear search checks **each element one by one** until the desired element is found.  
+        It is **simple but inefficient** for large datasets.
+    </p>
+
+    <h3>🛠️ Implementation (C++)</h3>
+    <pre><code>
+    int linearSearch(int arr[], int n, int key) {
+        for (int i = 0; i < n; i++) {
+            if (arr[i] == key) return i;
+        }
+        return -1; // Element not found
+    }
+    </code></pre>
+
+    <h3>✅ Advantages & ❌ Disadvantages</h3>
+    <ul>
+        <li>✅ Works on **unsorted arrays**.</li>
+        <li>✅ Simple to implement.</li>
+        <li>❌ **Slow for large datasets** (O(n) time complexity).</li>
+    </ul>
+
+    <h2>⚡ **1.2 Binary Search (Efficient Search) - O(log n)**</h2>
+    <p>
+        Binary search works on a **sorted array** and divides the search space in **half**  
+        at each step, making it **much faster** than linear search.
+    </p>
+
+    <h3>🛠️ Implementation (C++)</h3>
+    <pre><code>
+    int binarySearch(int arr[], int left, int right, int key) {
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (arr[mid] == key) return mid;
+            if (arr[mid] < key) left = mid + 1;
+            else right = mid - 1;
+        }
+        return -1; // Element not found
+    }
+    </code></pre>
+
+    <h3>✅ Advantages & ❌ Disadvantages</h3>
+    <ul>
+        <li>✅ **Much faster** than linear search (O(log n)).</li>
+        <li>✅ Ideal for **large datasets**.</li>
+        <li>❌ Works **only on sorted arrays**.</li>
+    </ul>
+
+    <h1>📌 2. Advanced Searching Algorithms</h1>
+
+    <h2>🔄 **2.1 Jump Search (O(√n))**</h2>
+    <p>
+        Jump search divides the array into **blocks** and checks elements at  
+        fixed intervals (**√n steps**). If the desired element is found within a block,  
+        it performs **linear search** within that block.
+    </p>
+
+    <h3>🛠️ Implementation (C++)</h3>
+    <pre><code>
+    int jumpSearch(int arr[], int n, int key) {
+        int step = sqrt(n);
+        int prev = 0;
+        while (arr[min(step, n) - 1] < key) {
+            prev = step;
+            step += sqrt(n);
+            if (prev >= n) return -1;
+        }
+        while (arr[prev] < key) {
+            prev++;
+            if (prev == min(step, n)) return -1;
+        }
+        return (arr[prev] == key) ? prev : -1;
+    }
+    </code></pre>
+
+    <h3>✅ Advantages & ❌ Disadvantages</h3>
+    <ul>
+        <li>✅ **Faster than linear search**, but slightly slower than binary search.</li>
+        <li>✅ Works on **sorted arrays**.</li>
+        <li>❌ Requires **additional calculations** for block sizes.</li>
+    </ul>
+
+    <h2>🔍 **2.2 Interpolation Search (O(log log n))**</h2>
+    <p>
+        Works like binary search but **improves efficiency** when the  
+        data is **uniformly distributed** (e.g., employee IDs, sorted names).
+    </p>
+
+    <h3>🛠️ Implementation (C++)</h3>
+    <pre><code>
+    int interpolationSearch(int arr[], int n, int key) {
+        int low = 0, high = n - 1;
+        while (low <= high && key >= arr[low] && key <= arr[high]) {
+            int pos = low + ((key - arr[low]) * (high - low)) / (arr[high] - arr[low]);
+            if (arr[pos] == key) return pos;
+            if (arr[pos] < key) low = pos + 1;
+            else high = pos - 1;
+        }
+        return -1;
+    }
+    </code></pre>
+
+    <h3>✅ Advantages & ❌ Disadvantages</h3>
+    <ul>
+        <li>✅ **Faster than binary search** for uniform data.</li>
+        <li>❌ Performs **poorly on unevenly distributed data**.</li>
+    </ul>
+
+    <h1>📊 Time Complexity Analysis</h1>
+    <table border="1">
+        <tr>
+            <th>Algorithm</th>
+            <th>Best Case</th>
+            <th>Worst Case</th>
+        </tr>
+        <tr>
+            <td>Linear Search</td>
+            <td>O(1)</td>
+            <td>O(n)</td>
+        </tr>
+        <tr>
+            <td>Binary Search</td>
+            <td>O(1)</td>
+            <td>O(log n)</td>
+        </tr>
+        <tr>
+            <td>Jump Search</td>
+            <td>O(1)</td>
+            <td>O(√n)</td>
+        </tr>
+        <tr>
+            <td>Interpolation Search</td>
+            <td>O(1)</td>
+            <td>O(log log n)</td>
+        </tr>
+    </table>
+
+    <h2>🌍 Real-World Applications</h2>
+    <ul>
+        <li>🔎 **Google Search Engine** - Optimized search algorithms.</li>
+        <li>📂 **Databases & File Systems** - Fast lookups in B-Trees.</li>
+        <li>💾 **Operating Systems** - Process scheduling.</li>
+        <li>📡 **AI & Machine Learning** - Pattern recognition.</li>
+    </ul>
+
+    <h2>🔗 Next Topics</h2>
+    <ul class="nexttopics-container">
+        <li><a href="sorting.html">📊 Sorting Algorithms</a></li>
+        <li><a href="hashing.html">🔢 Hashing Techniques</a></li>
+    </ul>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../dsa.json" : "dsa.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.DSA;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    

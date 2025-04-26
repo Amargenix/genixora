@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    <link rel="stylesheet" href="../dsa.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../dsa.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+
+            <main class="col-md-7 content">
+                <h1>🎯 Dynamic Programming (DP) – Comprehensive Study Guide</h1>
+            
+                <p>
+                    **Dynamic Programming (DP)** is an **optimization technique** used to solve problems  
+                    by breaking them down into **overlapping subproblems** and storing results to avoid redundant calculations.
+                </p>
+            
+                <h2>⚡ Why Use Dynamic Programming?</h2>
+                <ul>
+                    <li>✅ **Reduces time complexity** compared to recursion.</li>
+                    <li>🚀 **Optimizes solutions for combinatorial problems**.</li>
+                    <li>🔄 **Efficiently solves overlapping subproblems**.</li>
+                    <li>📊 **Used in AI, machine learning, and optimization algorithms**.</li>
+                </ul>
+            
+                <h1>📌 Key Differences: Recursion vs Dynamic Programming</h1>
+                <table border="1">
+                    <tr>
+                        <th>Feature</th>
+                        <th>Recursion</th>
+                        <th>Dynamic Programming</th>
+                    </tr>
+                    <tr>
+                        <td>Approach</td>
+                        <td>Solves problem by **dividing** into smaller problems</td>
+                        <td>Solves problem **by storing results** of subproblems</td>
+                    </tr>
+                    <tr>
+                        <td>Time Complexity</td>
+                        <td>O(2ⁿ) (Exponential in some cases)</td>
+                        <td>O(n) or O(n²) (Optimized)</td>
+                    </tr>
+                    <tr>
+                        <td>Redundant Calculations</td>
+                        <td>Yes (Overlapping subproblems)</td>
+                        <td>No (Uses memoization or tabulation)</td>
+                    </tr>
+                    <tr>
+                        <td>Memory Usage</td>
+                        <td>High (Recursive stack calls)</td>
+                        <td>Optimized (Stores only necessary values)</td>
+                    </tr>
+                </table>
+            
+                <h1>🛠️ Types of Dynamic Programming Approaches</h1>
+            
+                <h2>📥 1️⃣ **Top-Down Approach (Memoization)**</h2>
+                <p>Uses **recursion + caching** to store previously computed results.</p>
+                <pre><code>
+                int dp[100] = { -1 };
+            
+                int fibonacciMemo(int n) {
+                    if (n <= 1) return n;
+                    if (dp[n] != -1) return dp[n];  // Use stored result
+                    return dp[n] = fibonacciMemo(n - 1) + fibonacciMemo(n - 2);
+                }
+                </code></pre>
+            
+                <h2>📤 2️⃣ **Bottom-Up Approach (Tabulation)**</h2>
+                <p>Solves subproblems **iteratively** and builds solutions step by step.</p>
+                <pre><code>
+                int fibonacciTabulation(int n) {
+                    int dp[n + 1];
+                    dp[0] = 0, dp[1] = 1;
+                    for (int i = 2; i <= n; i++)
+                        dp[i] = dp[i - 1] + dp[i - 2];
+                    return dp[n];
+                }
+                </code></pre>
+            
+                <h3>✅ **Memoization vs Tabulation**</h3>
+                <ul>
+                    <li>📥 **Memoization** – Uses recursion + caching, needs more stack space.</li>
+                    <li>📤 **Tabulation** – Uses iteration, avoids recursion overhead.</li>
+                </ul>
+            
+                <h1>🔥 Common DP Problems & Their Solutions</h1>
+            
+                <h2>📌 **1. Fibonacci Sequence (O(n))**</h2>
+                <p>Uses **dynamic programming** to optimize recursion.</p>
+            
+                <h2>📌 **2. 0/1 Knapsack Problem (O(nW))**</h2>
+                <p>Finds the **maximum value** we can carry in a **bag of weight W**.</p>
+                <pre><code>
+                int knapsack(int W, vector<int> wt, vector<int> val, int n) {
+                    int dp[n+1][W+1];
+            
+                    for (int i = 0; i <= n; i++) {
+                        for (int w = 0; w <= W; w++) {
+                            if (i == 0 || w == 0)
+                                dp[i][w] = 0;
+                            else if (wt[i - 1] <= w)
+                                dp[i][w] = max(val[i - 1] + dp[i - 1][w - wt[i - 1]], dp[i - 1][w]);
+                            else
+                                dp[i][w] = dp[i - 1][w];
+                        }
+                    }
+                    return dp[n][W];
+                }
+                </code></pre>
+            
+                <h2>📌 **3. Longest Common Subsequence (LCS) (O(n²))**</h2>
+                <p>Finds the **longest matching subsequence** between two strings.</p>
+                <pre><code>
+                int lcs(string X, string Y, int m, int n) {
+                    int dp[m + 1][n + 1];
+                    for (int i = 0; i <= m; i++) {
+                        for (int j = 0; j <= n; j++) {
+                            if (i == 0 || j == 0)
+                                dp[i][j] = 0;
+                            else if (X[i - 1] == Y[j - 1])
+                                dp[i][j] = 1 + dp[i - 1][j - 1];
+                            else
+                                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]);
+                        }
+                    }
+                    return dp[m][n];
+                }
+                </code></pre>
+            
+                <h2>📌 **4. Longest Increasing Subsequence (O(n²))**</h2>
+                <p>Finds the **longest increasing sequence** in an array.</p>
+            
+                <h1>⏳ Time Complexity Analysis</h1>
+                <table border="1">
+                    <tr>
+                        <th>Problem</th>
+                        <th>Time Complexity</th>
+                        <th>Space Complexity</th>
+                    </tr>
+                    <tr>
+                        <td>Fibonacci (DP)</td>
+                        <td>O(n)</td>
+                        <td>O(n) or O(1)</td>
+                    </tr>
+                    <tr>
+                        <td>0/1 Knapsack</td>
+                        <td>O(nW)</td>
+                        <td>O(nW)</td>
+                    </tr>
+                    <tr>
+                        <td>LCS</td>
+                        <td>O(n²)</td>
+                        <td>O(n²)</td>
+                    </tr>
+                    <tr>
+                        <td>LIS</td>
+                        <td>O(n²)</td>
+                        <td>O(n)</td>
+                    </tr>
+                </table>
+            
+                <h1>🌍 Real-World Applications of DP</h1>
+                <ul>
+                    <li>📡 **AI & Machine Learning** – Predictive analytics.</li>
+                    <li>🔍 **Data Compression** – Image & video encoding (JPEG, MP3).</li>
+                    <li>📊 **Stock Market Prediction** – Forecasting trends.</li>
+                    <li>🎮 **Game Development** – AI-based decision-making.</li>
+                </ul>
+            
+                <h2>🔗 Next Topics</h2>
+                <ul class="nexttopics-container">
+                    <li><a href="dp_fibonacci.html">🔢 Fibonacci Using DP</a></li>
+                    <li><a href="knapsack.html">📦 0/1 Knapsack Problem</a></li>
+                </ul>
+            </main>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../dsa.json" : "dsa.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.DSA;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    

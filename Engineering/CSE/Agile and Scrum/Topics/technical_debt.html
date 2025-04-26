@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agile Anti-Patterns</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Agile and Scrum</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+               <h1>Technical Debt</h1>
+                    
+                    <div style="background-color: #fff3cd; padding: 20px; border-radius: 8px; border-left: 5px solid #ffc107; margin-bottom: 30px;">
+                        <h2 style="color: #856404; margin-top: 0;">Definition</h2>
+                        <p style="font-size: 1.1em; font-weight: 500;">Technical debt refers to the implied cost of additional rework caused by choosing an easy (limited) solution now instead of using a better approach that would take longer. It's a metaphor reflecting the extra development work that arises when code that is easy to implement in the short run is used instead of applying the best overall solution.</p>
+                    </div>
+                    
+                    <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 30px;">
+                        <div style="flex: 1; min-width: 300px; background-color: #e2e3e5; padding: 20px; border-radius: 8px;">
+                            <h3 style="color: #383d41; border-bottom: 2px solid #383d41; padding-bottom: 8px;">Types of Technical Debt</h3>
+                            <ul style="padding-left: 20px;">
+                                <li style="margin-bottom: 10px;"><strong>Deliberate Debt:</strong> Conscious decision to take shortcuts</li>
+                                <li style="margin-bottom: 10px;"><strong>Accidental Debt:</strong> Emerges from lack of knowledge or understanding</li>
+                                <li style="margin-bottom: 10px;"><strong>Bit Rot:</strong> Accumulates when systems aren't maintained</li>
+                                <li style="margin-bottom: 10px;"><strong>Outdated Design:</strong> Architecture becomes obsolete over time</li>
+                                <li style="margin-bottom: 10px;"><strong>Testing Debt:</strong> Inadequate test coverage or automation</li>
+                                <li style="margin-bottom: 10px;"><strong>Documentation Debt:</strong> Missing or outdated documentation</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="flex: 1; min-width: 300px; background-color: #d4edda; padding: 20px; border-radius: 8px;">
+                            <h3 style="color: #155724; border-bottom: 2px solid #155724; padding-bottom: 8px;">Common Causes</h3>
+                            <ul style="padding-left: 20px;">
+                                <li style="margin-bottom: 10px;">Business pressure to deliver features quickly</li>
+                                <li style="margin-bottom: 10px;">Lack of understanding of long-term impact</li>
+                                <li style="margin-bottom: 10px;">Insufficient upfront design or architecture</li>
+                                <li style="margin-bottom: 10px;">Poor coding standards or lack of code reviews</li>
+                                <li style="margin-bottom: 10px;">Frequent context switching between tasks</li>
+                                <li style="margin-bottom: 10px;">Lack of automated testing or CI/CD</li>
+                                <li style="margin-bottom: 10px;">High team turnover or knowledge silos</li>
+                            </ul>
+                        </div>
+                    </div>
+                
+                    <h2 style="color: #dc3545; border-left: 5px solid #dc3545; padding-left: 15px; margin-top: 30px;">Impact of Technical Debt</h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px;">
+                        <div style="background-color: #f8d7da; padding: 15px; border-radius: 6px; border-left: 4px solid #dc3545;">
+                            <h3 style="color: #721c24; margin-top: 0;">On Development</h3>
+                            <ul style="padding-left: 20px;">
+                                <li>Slower feature development</li>
+                                <li>More bugs and regression issues</li>
+                                <li>Increased complexity</li>
+                                <li>Harder to onboard new team members</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background-color: #fff3cd; padding: 15px; border-radius: 6px; border-left: 4px solid #ffc107;">
+                            <h3 style="color: #856404; margin-top: 0;">On Business</h3>
+                            <ul style="padding-left: 20px;">
+                                <li>Missed market opportunities</li>
+                                <li>Higher maintenance costs</li>
+                                <li>Poor customer experience</li>
+                                <li>Difficulty scaling the product</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background-color: #d1ecf1; padding: 15px; border-radius: 6px; border-left: 4px solid #0c5460;">
+                            <h3 style="color: #0c5460; margin-top: 0;">On Team</h3>
+                            <ul style="padding-left: 20px;">
+                                <li>Lower morale and frustration</li>
+                                <li>Burnout from firefighting</li>
+                                <li>Reduced productivity</li>
+                                <li>Higher turnover rates</li>
+                            </ul>
+                        </div>
+                    </div>
+                
+                    <h2 style="color: #dc3545; border-left: 5px solid #dc3545; padding-left: 15px;">Managing Technical Debt in Scrum</h2>
+                    <div style="background-color: white; padding: 20px; border-radius: 8px; margin-bottom: 30px; border: 1px solid #ddd;">
+                        <h3 style="color: #17a2b8;">Prevention Strategies</h3>
+                        <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">
+                            <div style="flex: 1; min-width: 200px; background-color: #e2f3f8; padding: 15px; border-radius: 5px;">
+                                <h4 style="margin-top: 0; color: #0c5460;">Definition of Done</h4>
+                                <p>Establish and enforce strict quality criteria</p>
+                            </div>
+                            <div style="flex: 1; min-width: 200px; background-color: #e2f3f8; padding: 15px; border-radius: 5px;">
+                                <h4 style="margin-top: 0; color: #0c5460;">Refactoring</h4>
+                                <p>Continuous improvement of code structure</p>
+                            </div>
+                            <div style="flex: 1; min-width: 200px; background-color: #e2f3f8; padding: 15px; border-radius: 5px;">
+                                <h4 style="margin-top: 0; color: #0c5460;">Automated Testing</h4>
+                                <p>Comprehensive test coverage</p>
+                            </div>
+                        </div>
+                        
+                        <h3 style="color: #17a2b8;">Repayment Strategies</h3>
+                        <div style="display: flex; flex-wrap: wrap; gap: 15px;">
+                            <div style="flex: 1; min-width: 200px; background-color: #d4edda; padding: 15px; border-radius: 5px;">
+                                <h4 style="margin-top: 0; color: #155724;">Dedicated Sprint</h4>
+                                <p>Occasional sprints focused on debt reduction</p>
+                            </div>
+                            <div style="flex: 1; min-width: 200px; background-color: #d4edda; padding: 15px; border-radius: 5px;">
+                                <h4 style="margin-top: 0; color: #155724;">Capacity Allocation</h4>
+                                <p>20% of each sprint for maintenance</p>
+                            </div>
+                            <div style="flex: 1; min-width: 200px; background-color: #d4edda; padding: 15px; border-radius: 5px;">
+                                <h4 style="margin-top: 0; color: #155724;">Boy Scout Rule</h4>
+                                <p>Always leave code better than you found it</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <h2 style="color: #dc3545; border-left: 5px solid #dc3545; padding-left: 15px;">Measuring Technical Debt</h2>
+                    <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 30px; border: 1px solid #ddd;">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="background-color: #dc3545; color: white;">
+                                    <th style="padding: 12px; text-align: left;">Metric</th>
+                                    <th style="padding: 12px; text-align: left;">Description</th>
+                                    <th style="padding: 12px; text-align: left;">Tools</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 10px;"><strong>Code Coverage</strong></td>
+                                    <td style="padding: 10px;">Percentage of code covered by tests</td>
+                                    <td style="padding: 10px;">JaCoCo, Cobertura</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 10px;"><strong>Code Smells</strong></td>
+                                    <td style="padding: 10px;">Indicators of potential problems</td>
+                                    <td style="padding: 10px;">SonarQube, ESLint</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 10px;"><strong>Cyclomatic Complexity</strong></td>
+                                    <td style="padding: 10px;">Measure of code complexity</td>
+                                    <td style="padding: 10px;">PMD, Checkstyle</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 10px;"><strong>Bug Rate</strong></td>
+                                    <td style="padding: 10px;">Frequency of production defects</td>
+                                    <td style="padding: 10px;">JIRA, Bugzilla</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px;"><strong>Lead Time</strong></td>
+                                    <td style="padding: 10px;">Time from idea to production</td>
+                                    <td style="padding: 10px;">Value Stream Mapping</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                    <div style="background-color: #d1e7dd; padding: 20px; border-radius: 8px; margin-top: 30px; border-left: 5px solid #0f5132;">
+                        <h3 style="color: #0f5132; margin-top: 0;">Best Practices for Managing Technical Debt</h3>
+                        <ol style="padding-left: 25px;">
+                            <li style="margin-bottom: 10px;"><strong>Make it visible:</strong> Track debt items in product backlog</li>
+                            <li style="margin-bottom: 10px;"><strong>Prioritize strategically:</strong> Balance new features with debt repayment</li>
+                            <li style="margin-bottom: 10px;"><strong>Educate stakeholders:</strong> Explain long-term costs of ignoring debt</li>
+                            <li style="margin-bottom: 10px;"><strong>Incorporate into Definition of Done:</strong> Prevent new debt accumulation</li>
+                            <li style="margin-bottom: 10px;"><strong>Measure regularly:</strong> Use metrics to track debt levels</li>
+                            <li style="margin-bottom: 10px;"><strong>Continuous refactoring:</strong> Small, frequent improvements</li>
+                            <li><strong>Technical Spike:</strong> Dedicate time to research complex solutions</li>
+                        </ol>
+                    </div>
+                </div>
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics/") ? "../Agile_and_Scrum.json" : "../Agile_and_Scrum.json";
+            
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch DSA Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.Agile_and_Scrum;
+                        displayTopics(allTopics);
+                    })
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+           
+            
+            
+            
+            
+            
+            
+            </body>
+            </html>     

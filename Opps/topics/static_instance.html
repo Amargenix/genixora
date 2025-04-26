@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../opp.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+            <main class="col-md-7 content">
+                <h2>🔹 Static and Instance Members in Programming</h2>
+            
+                <p>
+                    In object-oriented programming, classes can have both **static** and **instance** members.  
+                    Understanding the distinction between these two types of members is crucial for effective software design and implementation.
+                </p>
+            
+                <h3>📌 Overview of Static and Instance Members</h3>
+                <p>
+                    - **Static Members**: Static members belong to the class itself rather than to any specific instance.  
+                    They are shared among all instances of the class and can be accessed without creating an object of the class.
+                    <br>
+                    - **Instance Members**: Instance members belong to a specific instance of a class.  
+                    Each object has its own copy of instance members, allowing them to maintain unique state information.
+                </p>
+            
+                <h3>📌 Characteristics of Static Members</h3>
+                <ul>
+                    <li>✅ **Shared Across All Instances**: All instances of a class share the same static members.</li>
+                    <li>✅ **Accessed via Class Name**: Static members can be accessed using the class name without creating an instance.</li>
+                    <li>✅ **Lifetime**: The lifetime of static members lasts for the duration of the program, as they are allocated when the class is loaded.</li>
+                </ul>
+            
+                <h3>📌 Characteristics of Instance Members</h3>
+                <ul>
+                    <li>✅ **Unique to Each Instance**: Each object has its own copy of instance members, allowing for unique states.</li>
+                    <li>✅ **Accessed via Instance**: Instance members are accessed through object references.</li>
+                    <li>✅ **Lifetime**: The lifetime of instance members is tied to the lifetime of the object they belong to.</li>
+                </ul>
+            
+                <h3>🖥️ Example in Java</h3>
+                <p>Here is an example demonstrating the use of static and instance members in Java:</p>
+                <pre><code>
+            class Counter {
+                private static int count = 0; // Static member
+            
+                public Counter() {
+                    count++; // Increment the static count
+                }
+            
+                public static int getCount() { // Static method
+                    return count;
+                }
+            
+                public void displayCount() { // Instance method
+                    System.out.println("Current count: " + count);
+                }
+            }
+            
+            public class Main {
+                public static void main(String[] args) {
+                    Counter counter1 = new Counter();
+                    Counter counter2 = new Counter();
+            
+                    System.out.println("Total count: " + Counter.getCount()); // Access static method
+                    counter1.displayCount(); // Access instance method
+                }
+            }
+                </code></pre>
+            
+                <h3>🖥️ Example in Python</h3>
+                <p>Here is an example demonstrating the use of static and instance members in Python:</p>
+                <pre><code>
+            class Counter:
+                count = 0  # Static member
+            
+                def __init__(self):
+                    Counter.count += 1  # Increment static count
+            
+                @classmethod
+                def get_count(cls):  # Static method
+                    return cls.count
+            
+                def display_count(self):  # Instance method
+                    print("Current count:", Counter.count)
+            
+            counter1 = Counter()
+            counter2 = Counter()
+            
+            print("Total count:", Counter.get_count())  # Access static method
+            counter1.display_count()  # Access instance method
+                </code></pre>
+            
+                <h3>📌 Best Practices for Using Static and Instance Members</h3>
+                <ul>
+                    <li>✅ **Use Static Members for Shared Data**: Use static members when data needs to be shared across all instances.</li>
+                    <li>✅ **Use Instance Members for Object State**: Use instance members to store data unique to each object.</li>
+                    <li>✅ **Avoid Excessive Use of Static Members**: Overusing static members can lead to tight coupling and difficulties in testing.</li>
+                    <li>✅ **Clear Documentation**: Document the intended use of static and instance members to avoid confusion for future developers.</li>
+                </ul>
+            
+                <h3>🎯 Summary</h3>
+                <p>
+                    Understanding the differences between static and instance members is essential in object-oriented programming.  
+                    Static members provide shared data across all instances, while instance members maintain unique state information for each object.  
+                    Proper use of these concepts leads to more organized and maintainable code.
+                </p>
+            
+                <h2>🔗 Next Topics</h2>
+                <ul class="nexttopics-container">
+                    <li><a href="encapsulation.html">👉 Encapsulation in OOP</a></li>
+                    <li><a href="inheritance.html">👉 Inheritance in OOP</a></li>
+                    <li><a href="polymorphism.html">👉 Polymorphism in OOP</a></li>
+                </ul>
+            </main>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+     
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../opp.json" : "opp.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.OOP;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

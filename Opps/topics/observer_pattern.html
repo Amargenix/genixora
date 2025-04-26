@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../opp.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+
+
+            <main class="col-md-7 content">
+                <h2>🔹 Observer Pattern in Software Design</h2>
+            
+                <p>
+                    The **Observer Pattern** is a behavioral design pattern that defines a one-to-many dependency between objects. In this pattern, an object, known as the subject, maintains a list of its dependents, called observers, and notifies them of any state changes, typically by calling one of their methods. This pattern is particularly useful in situations where changes to one object need to be reflected in multiple other objects.
+                </p>
+            
+                <h3>📌 Why Use the Observer Pattern?</h3>
+                <p>The Observer Pattern offers several advantages:</p>
+                <ul>
+                    <li>✅ **Loose Coupling**: The observer pattern promotes loose coupling between the subject and its observers, allowing them to be developed and maintained independently.</li>
+                    <li>✅ **Dynamic Relationships**: It allows for dynamic registration and deregistration of observers, enabling flexible relationships between objects.</li>
+                    <li>✅ **Automatic Notifications**: Observers are automatically notified of changes in the subject, ensuring that they remain up-to-date without manual intervention.</li>
+                    <li>✅ **Support for Multiple Observers**: The pattern allows multiple observers to listen to the same subject, making it easy to extend the system with new behaviors or functionalities.</li>
+                </ul>
+            
+                <h3>📌 How the Observer Pattern Works</h3>
+                <p>The observer pattern typically involves the following components:</p>
+                <ul>
+                    <li>**Subject**: The object that maintains a list of observers and notifies them of state changes.</li>
+                    <li>**Observer**: The interface or abstract class that defines the method(s) for receiving updates from the subject.</li>
+                    <li>**Concrete Subject**: A class that implements the subject interface and stores the state that observers are interested in.</li>
+                    <li>**Concrete Observer**: A class that implements the observer interface and defines the action to be taken when notified by the subject.</li>
+                </ul>
+            
+                <h3>🖥️ Observer Pattern in Java</h3>
+                <p>Here is an example of the observer pattern implemented in Java:</p>
+                <pre><code>
+            import java.util.ArrayList;
+            import java.util.List;
+            
+            // Observer interface
+            interface Observer {
+                void update(String message);
+            }
+            
+            // Subject class
+            class Subject {
+                private List<Observer> observers = new ArrayList<>();
+            
+                public void attach(Observer observer) {
+                    observers.add(observer);
+                }
+            
+                public void detach(Observer observer) {
+                    observers.remove(observer);
+                }
+            
+                public void notifyObservers(String message) {
+                    for (Observer observer : observers) {
+                        observer.update(message);
+                    }
+                }
+            }
+            
+            // Concrete Subject class
+            class ConcreteSubject extends Subject {
+                private String state;
+            
+                public void setState(String state) {
+                    this.state = state;
+                    notifyObservers("State changed to: " + state);
+                }
+            }
+            
+            // Concrete Observer class
+            class ConcreteObserver implements Observer {
+                private String name;
+            
+                public ConcreteObserver(String name) {
+                    this.name = name;
+                }
+            
+                @Override
+                public void update(String message) {
+                    System.out.println(name + " received update: " + message);
+                }
+            }
+            
+            public class Main {
+                public static void main(String[] args) {
+                    ConcreteSubject subject = new ConcreteSubject();
+            
+                    ConcreteObserver observer1 = new ConcreteObserver("Observer 1");
+                    ConcreteObserver observer2 = new ConcreteObserver("Observer 2");
+            
+                    subject.attach(observer1);
+                    subject.attach(observer2);
+            
+                    subject.setState("Active");
+                    subject.setState("Inactive");
+                }
+            }
+                </code></pre>
+            
+                <h3>🖥️ Observer Pattern in Python</h3>
+                <p>In Python, the observer pattern can be implemented using classes. Here is an example:</p>
+                <pre><code>
+            class Observer:
+                def update(self, message):
+                    pass
+            
+            class Subject:
+                def __init__(self):
+                    self.observers = []
+            
+                def attach(self, observer):
+                    self.observers.append(observer)
+            
+                def detach(self, observer):
+                    self.observers.remove(observer)
+            
+                def notify_observers(self, message):
+                    for observer in self.observers:
+                        observer.update(message)
+            
+            class ConcreteSubject(Subject):
+                def __init__(self):
+                    super().__init__()
+                    self.state = None
+            
+                def set_state(self, state):
+                    self.state = state
+                    self.notify_observers(f"State changed to: {state}")
+            
+            class ConcreteObserver(Observer):
+                def __init__(self, name):
+                    self.name = name
+            
+                def update(self, message):
+                    print(f"{self.name} received update: {message}")
+            
+            # Usage
+            subject = ConcreteSubject()
+            
+            observer1 = ConcreteObserver("Observer 1")
+            observer2 = ConcreteObserver("Observer 2")
+            
+            subject.attach(observer1)
+            subject.attach(observer2)
+            
+            subject.set_state("Active")
+            subject.set_state("Inactive")
+                </code></pre>
+            
+                <h3>📌 Best Practices for Implementing the Observer Pattern</h3>
+                <ul>
+                    <li>✅ **Use Interfaces or Abstract Classes**: Define observer and subject interfaces to allow for flexible implementations.</li>
+                    <li>✅ **Avoid Memory Leaks**: Ensure that observers can be detached when they are no longer needed to prevent memory leaks.</li>
+                    <li>✅ **Keep Update Methods Lightweight**: The update methods in observers should perform minimal work to avoid performance bottlenecks during notifications.</li>
+                    <li>✅ **Use Thread Safety**: If the subject may be modified by multiple threads, consider implementing thread safety mechanisms for managing observers.</li>
+                </ul>
+            
+                <h3>🎯 Summary</h3>
+                <p>
+                    The observer pattern is a powerful design pattern that facilitates communication between objects while maintaining loose coupling.  
+                    It is widely used in event-driven systems and frameworks to manage state changes and notifications effectively.
+                </p>
+            
+                <h2>🔗 Next Topics</h2>
+                <ul class="nexttopics-container">
+                    <li><a href="strategy_pattern.html">👉 Strategy Pattern</a></li>
+                    <li><a href="singleton_pattern.html">👉 Singleton Pattern</a></li>
+                    <li><a href="decorator_pattern.html">👉 Decorator Pattern</a></li>
+                </ul>
+            </main>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+     
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../opp.json" : "opp.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.OOP;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

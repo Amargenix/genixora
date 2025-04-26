@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../opp.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+
+
+
+
+
+            <main class="col-md-7 content">
+                <h2>🔹 Method Overriding in Programming</h2>
+            
+                <p>
+                    **Method Overriding** is a feature in programming that allows a subclass or derived class to provide a specific implementation of a method that is already defined in its superclass or base class.  
+                    This enables the subclass to modify or extend the behavior of the inherited method, providing a way to achieve polymorphism.
+                </p>
+            
+                <h3>📌 Why Use Method Overriding?</h3>
+                <p>Method overriding provides several advantages in programming.</p>
+                <ul>
+                    <li>✅ **Polymorphism** – Allows a method to behave differently based on the object calling it, enhancing code flexibility.</li>
+                    <li>✅ **Code Reusability** – Enables subclasses to inherit methods from superclasses while allowing modifications as needed.</li>
+                    <li>✅ **Improved Maintainability** – Makes it easier to manage and update code, as changes to the base class method are reflected in the subclass.</li>
+                    <li>✅ **Enhanced Clarity** – Clearly expresses the intent of the subclass to override the behavior of the inherited method.</li>
+                </ul>
+            
+                <h3>📌 How Method Overriding Works</h3>
+                <p>Method overriding occurs when a subclass defines a method with the same name, return type, and parameters as a method in its superclass. The overriding method in the subclass will be invoked instead of the method in the superclass when called on an instance of the subclass.</p>
+                <ul>
+                    <li>**Same Method Signature**: The overriding method must have the same name, return type, and parameter list as the method being overridden.</li>
+                    <li>**Access Modifiers**: The access level of the overriding method must be the same or more accessible than the overridden method.</li>
+                    <li>**Use of the Super Keyword**: The superclass method can be invoked within the overriding method using the super keyword, if needed.</li>
+                </ul>
+            
+                <h3>🖥️ Method Overriding in Java</h3>
+                <p>In Java, method overriding is achieved by defining a method in the subclass that has the same name and parameter list as the method in the superclass. Here is an example:</p>
+                <pre><code>
+            class Animal {
+                void sound() {
+                    System.out.println("Animal makes a sound");
+                }
+            }
+            
+            class Dog extends Animal {
+                @Override
+                void sound() {
+                    System.out.println("Dog barks");
+                }
+            }
+            
+            public class Main {
+                public static void main(String[] args) {
+                    Animal myAnimal = new Animal();
+                    Animal myDog = new Dog();
+            
+                    myAnimal.sound(); // Output: Animal makes a sound
+                    myDog.sound();    // Output: Dog barks
+                }
+            }
+                </code></pre>
+            
+                <h3>🖥️ Method Overriding in Python</h3>
+                <p>In Python, method overriding is also straightforward, as it allows subclasses to define methods that replace the implementation in the superclass. Here is an example:</p>
+                <pre><code>
+            class Animal:
+                def sound(self):
+                    print("Animal makes a sound")
+            
+            class Dog(Animal):
+                def sound(self):
+                    print("Dog barks")
+            
+            my_animal = Animal()
+            my_dog = Dog()
+            
+            my_animal.sound()  # Output: Animal makes a sound
+            my_dog.sound()     # Output: Dog barks
+                </code></pre>
+            
+                <h3>📌 Best Practices for Method Overriding</h3>
+                <ul>
+                    <li>✅ Clearly indicate overridden methods by using annotations such as @Override in Java.</li>
+                    <li>✅ Ensure that the overriding method maintains the behavior expected from the superclass method.</li>
+                    <li>✅ Document overridden methods to clarify their behavior and purpose.</li>
+                    <li>✅ Avoid changing the method signature when overriding, as it can lead to confusion and errors.</li>
+                </ul>
+            
+                <h3>🎯 Summary</h3>
+                <p>
+                    Method overriding allows a subclass to provide a specific implementation of a method that is already defined in its superclass, enabling polymorphism and improving code reusability.  
+                    It is a fundamental concept in programming that enhances the flexibility and maintainability of code.
+                </p>
+            
+                <h2>🔗 Next Topics</h2>
+                <ul class="nexttopics-container">
+                    <li><a href="method_overloading.html">👉 Method Overloading</a></li>
+                    <li><a href="polymorphism.html">👉 Polymorphism</a></li>
+                    <li><a href="interfaces.html">👉 Interfaces in Programming</a></li>
+                </ul>
+            </main>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+     
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../opp.json" : "opp.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.OOP;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

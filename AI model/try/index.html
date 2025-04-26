@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Study Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .chat-container {
+            width: 90%;
+            max-width: 400px;
+            margin: 20px auto;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .messages {
+            height: 300px;
+            overflow-y: auto;
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+        }
+        .message {
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+        .user-message {
+            background-color: #007bff;
+            color: white;
+            text-align: right;
+        }
+        .bot-message {
+            background-color: #f1f1f1;
+            text-align: left;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            width: 15%;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>AI Study Chatbot 🤖</h2>
+
+    <div class="chat-container">
+        <div class="messages" id="chat-box"></div>
+        <input type="text" id="user-input" placeholder="Ask a question..." />
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        const API_URL = "https://api-inference.huggingface.co/models/tiiuae/falcon-7b-instruct";
+        const API_KEY = "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";  // Replace with your new key
+
+        async function sendMessage() {
+            const userInput = document.getElementById("user-input").value;
+            if (!userInput.trim()) return;
+
+            addMessage(userInput, "user-message");
+            document.getElementById("user-input").value = "";
+
+            const botResponse = await fetchAIResponse(userInput);
+            addMessage(botResponse, "bot-message");
+        }
+
+        function addMessage(text, className) {
+            const chatBox = document.getElementById("chat-box");
+            const messageDiv = document.createElement("div");
+            messageDiv.classList.add("message", className);
+            messageDiv.innerText = text;
+            chatBox.appendChild(messageDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        async function fetchAIResponse(question) {
+            try {
+                const response = await fetch(API_URL, {
+                    method: "POST",
+                    headers: {
+                        "Authorization": `Bearer ${API_KEY}`,
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ inputs: question })
+                });
+
+                const data = await response.json();
+                return data[0]?.generated_text || "Sorry, I couldn't understand that.";
+            } catch (error) {
+                console.error("API Error:", error);
+                return "Error fetching response. Please try again.";
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+    <!-- <script>
+        async function askDeepSeek(question) {
+    const API_URL = "https://api-inference.huggingface.co/models/deepseek-ai/DeepSeek-V3-0324";
+    const API_KEY = "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"; // Replace with your real API key
+
+    const response = await fetch(API_URL, {
+        method: "POST",
+        headers: {
+            "Authorization": `Bearer ${API_KEY}`,
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ inputs: question })
+    });
+
+    const data = await response.json();
+    return data[0]?.generated_text || "Error: Unable to generate response.";
+}
+
+// Example usage
+askDeepSeek("What is AI?").then(response => console.log("Chatbot Response:", response));
+
+    </script> -->
+
+

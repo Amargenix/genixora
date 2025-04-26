@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer Network</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/allsubject.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Computer Networks</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <h1>Network Configuration</h1>
+                   
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                        <h2 style="color: #1e3c72; border-bottom: 2px solid #2a5298; padding-bottom: 10px; margin-top: 0;">Introduction to Network Configuration</h2>
+                        
+                        <div style="display: flex; gap: 25px; flex-wrap: wrap; margin-bottom: 20px;">
+                            <div style="flex: 1; min-width: 300px;">
+                                <p>Network configuration refers to the process of setting up a network's controls, flow, and operation to support the network communication of an organization or network owner. It includes both hardware and software configuration.</p>
+                                <p>Proper network configuration is essential for network security, performance, reliability, and manageability.</p>
+                            </div>
+                            <div style="flex: 1; min-width: 300px; background-color: #e6eef7; padding: 20px; border-radius: 5px; border-left: 4px solid #1e3c72;">
+                                <h3 style="color: #1e3c72; margin-top: 0;">Key Aspects</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Device Configuration:</strong> Routers, switches, firewalls</li>
+                                    <li><strong>Protocol Configuration:</strong> IP, TCP, routing protocols</li>
+                                    <li><strong>Service Configuration:</strong> DHCP, DNS, VPN</li>
+                                    <li><strong>Security Configuration:</strong> ACLs, encryption, authentication</li>
+                                    <li><strong>Performance Configuration:</strong> QoS, traffic shaping</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                        <h2 style="color: #1e3c72; border-bottom: 2px solid #2a5298; padding-bottom: 10px; margin-top: 0;">IP Addressing Configuration</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 25px;">
+                            <div style="background-color: #f0f5ff; padding: 20px; border-radius: 5px; border-top: 3px solid #1e3c72;">
+                                <h3 style="color: #1e3c72; margin-top: 0;">IPv4 Configuration</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>32-bit address (e.g., 192.168.1.1)</li>
+                                    <li>Subnet mask (e.g., 255.255.255.0)</li>
+                                    <li>Default gateway configuration</li>
+                                    <li>DNS server settings</li>
+                                    <li>DHCP vs static assignment</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f0f5ff; padding: 20px; border-radius: 5px; border-top: 3px solid #2a5298;">
+                                <h3 style="color: #1e3c72; margin-top: 0;">IPv6 Configuration</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>128-bit address (e.g., 2001:0db8:85a3::8a2e:0370:7334)</li>
+                                    <li>Prefix length (e.g., /64)</li>
+                                    <li>Stateless address autoconfiguration (SLAAC)</li>
+                                    <li>DHCPv6 configuration</li>
+                                    <li>Dual-stack implementation</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f0f5ff; padding: 20px; border-radius: 5px; border-top: 3px solid #4b6cb7;">
+                                <h3 style="color: #1e3c72; margin-top: 0;">Subnetting</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Network and host portions</li>
+                                    <li>CIDR notation (e.g., 192.168.1.0/24)</li>
+                                    <li>VLSM (Variable Length Subnet Masking)</li>
+                                    <li>Supernetting/route aggregation</li>
+                                    <li>Private vs public address ranges</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="background-color: #e6eef7; padding: 20px; border-radius: 5px;">
+                            <h3 style="color: #1e3c72; margin-top: 0;">IP Configuration Commands</h3>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
+                                <div>
+                                    <h4 style="margin-bottom: 5px;">Windows</h4>
+                                    <pre style="background-color: #f8f9fa; padding: 10px; border-radius: 5px; overflow-x: auto;">
+                ipconfig /all
+                netsh interface ipv4 show config
+                netsh interface ipv6 show address</pre>
+                                </div>
+                                <div>
+                                    <h4 style="margin-bottom: 5px;">Linux</h4>
+                                    <pre style="background-color: #f8f9fa; padding: 10px; border-radius: 5px; overflow-x: auto;">
+                ifconfig
+                ip addr show
+                nmcli device show</pre>
+                                </div>
+                                <div>
+                                    <h4 style="margin-bottom: 5px;">Cisco IOS</h4>
+                                    <pre style="background-color: #f8f9fa; padding: 10px; border-radius: 5px; overflow-x: auto;">
+                show ip interface brief
+                show running-config
+                show interface</pre>
+                                </div>
+                                <div>
+                                    <h4 style="margin-bottom: 5px;">Configuration</h4>
+                                    <pre style="background-color: #f8f9fa; padding: 10px; border-radius: 5px; overflow-x: auto;">
+                interface GigabitEthernet0/0
+                 ip address 192.168.1.1 255.255.255.0
+                 no shutdown</pre>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                        <h2 style="color: #1e3c72; border-bottom: 2px solid #2a5298; padding-bottom: 10px; margin-top: 0;">Device Configuration</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 25px;">
+                            <div style="background-color: #f0f5ff; padding: 20px; border-radius: 5px; border-left: 4px solid #1e3c72;">
+                                <h3 style="color: #1e3c72; margin-top: 0;">Router Configuration</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Interface configuration (IP, description)</li>
+                                    <li>Routing protocols (OSPF, EIGRP, BGP)</li>
+                                    <li>Access Control Lists (ACLs)</li>
+                                    <li>NAT/PAT configuration</li>
+                                    <li>Remote management (SSH, Telnet)</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f0f5ff; padding: 20px; border-radius: 5px; border-left: 4px solid #2a5298;">
+                                <h3 style="color: #1e3c72; margin-top: 0;">Switch Configuration</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>VLAN configuration</li>
+                                    <li>Trunk ports (802.1Q)</li>
+                                    <li>STP (Spanning Tree Protocol)</li>
+                                    <li>Port security</li>
+                                    <li>EtherChannel/LACP</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f0f5ff; padding: 20px; border-radius: 5px; border-left: 4px solid #4b6cb7;">
+                                <h3 style="color: #1e3c72; margin-top: 0;">Firewall Configuration</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Security zones</li>
+                                    <li>Access policies/rules</li>
+                                    <li>NAT rules</li>
+                                    <li>VPN configuration</li>
+                                    <li>Logging and monitoring</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="background-color: #e6eef7; padding: 20px; border-radius: 5px;">
+                            <h3 style="color: #1e3c72; margin-top: 0;">Common Configuration Methods</h3>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
+                                <div>
+                                    <h4 style="margin-bottom: 5px;">CLI</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Console access</li>
+                                        <li>SSH/Telnet</li>
+                                        <li>Device-specific syntax</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 style="margin-bottom: 5px;">GUI</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Web interface</li>
+                                        <li>Proprietary management software</li>
+                                        <li>Graphical configuration tools</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 style="margin-bottom: 5px;">API</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>REST APIs</li>
+                                        <li>NETCONF/YANG</li>
+                                        <li>gRPC/gNMI</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 style="margin-bottom: 5px;">Automation</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Ansible/Puppet/Chef</li>
+                                        <li>Python scripts</li>
+                                        <li>Terraform</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                        <h2 style="color: #1e3c72; border-bottom: 2px solid #2a5298; padding-bottom: 10px; margin-top: 0;">Network Service Configuration</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 25px;">
+                            <div style="background-color: #f0f5ff; padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #1e3c72; margin-top: 0;">DHCP Configuration</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Scope creation (IP range)</li>
+                                    <li>Lease duration settings</li>
+                                    <li>Reservations (static mappings)</li>
+                                    <li>Options (DNS, gateway)</li>
+                                    <li>Relay agent configuration</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f0f5ff; padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #1e3c72; margin-top: 0;">DNS Configuration</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Forward and reverse zones</li>
+                                    <li>Resource records (A, AAAA, MX, CNAME)</li>
+                                    <li>Forwarders and root hints</li>
+                                    <li>DNSSEC configuration</li>
+                                    <li>Caching and recursion</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f0f5ff; padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #1e3c72; margin-top: 0;">VPN Configuration</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Site-to-site VPN (IPsec)</li>
+                                    <li>Remote access VPN (SSL, L2TP)</li>
+                                    <li>Authentication methods</li>
+                                    <li>Encryption algorithms</li>
+                                    <li>Split tunneling</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f0f5ff; padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #1e3c72; margin-top: 0;">NTP Configuration</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Time server hierarchy</li>
+                                    <li>Stratum levels</li>
+                                    <li>Authentication for time sources</li>
+                                    <li>Client configuration</li>
+                                    <li>Logging and monitoring</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f0f5ff; padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #1e3c72; margin-top: 0;">QoS Configuration</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Classification and marking</li>
+                                    <li>Queuing strategies</li>
+                                    <li>Traffic shaping/policing</li>
+                                    <li>Congestion avoidance</li>
+                                    <li>Policy maps</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f0f5ff; padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #1e3c72; margin-top: 0;">Monitoring Configuration</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>SNMP communities and traps</li>
+                                    <li>Syslog server setup</li>
+                                    <li>NetFlow/sFlow configuration</li>
+                                    <li>Alert thresholds</li>
+                                    <li>Dashboard configuration</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                        <h2 style="color: #1e3c72; border-bottom: 2px solid #2a5298; padding-bottom: 10px; margin-top: 0;">Network Security Configuration</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 25px;">
+                            <div style="background-color: #f8f0f5; padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #1e3c72; margin-top: 0;">Access Control</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>User account management</li>
+                                    <li>Privilege levels</li>
+                                    <li>Role-Based Access Control (RBAC)</li>
+                                    <li>TACACS+/RADIUS</li>
+                                    <li>Multi-factor authentication</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f8f0f5; padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #1e3c72; margin-top: 0;">Firewall Rules</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Stateful inspection</li>
+                                    <li>Application-layer filtering</li>
+                                    <li>Zone-based policies</li>
+                                    <li>Default deny policies</li>
+                                    <li>Rule optimization</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f8f0f5; padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #1e3c72; margin-top: 0;">Encryption</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>IPsec configuration</li>
+                                    <li>SSL/TLS settings</li>
+                                    <li>Wireless encryption (WPA3)</li>
+                                    <li>Certificate management</li>
+                                    <li>Key exchange protocols</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="background-color: #e6eef7; padding: 20px; border-radius: 5px;">
+                            <h3 style="color: #1e3c72; margin-top: 0;">Security Configuration Best Practices</h3>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
+                                <div>
+                                    <h4 style="margin-bottom: 5px;">Device Hardening</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Disable unused services</li>
+                                        <li>Change default credentials</li>
+                                        <li>Enable secure protocols</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 style="margin-bottom: 5px;">Network Segmentation</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>VLAN implementation</li>
+                                        <li>DMZ configuration</li>
+                                        <li>Micro-segmentation</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 style="margin-bottom: 5px;">Monitoring</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Logging configuration</li>
+                                        <li>SIEM integration</li>
+                                        <li>Anomaly detection</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 style="margin-bottom: 5px;">Compliance</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>PCI-DSS requirements</li>
+                                        <li>HIPAA configurations</li>
+                                        <li>GDPR considerations</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: #edeff4; color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px;">
+                        <h2 style="margin-top: 0; border-bottom: 2px solid #181a1e; padding-bottom: 10px;">Network Configuration Management</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #163da1; margin-top: 0;">Version Control</h3>
+                                <p>Using Git or specialized tools to track configuration changes over time.</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #13368f; margin-top: 0;">Change Management</h3>
+                                <p>Processes for approving, implementing, and documenting changes.</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #1f3c84; margin-top: 0;">Backup Strategies</h3>
+                                <p>Automated configuration backups and restoration procedures.</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #214398; margin-top: 0;">Compliance Checking</h3>
+                                <p>Automated verification against security baselines.</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #274591; margin-top: 0;">Documentation</h3>
+                                <p>Maintaining up-to-date network diagrams and configuration records.</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #2a4485; margin-top: 0;">Automation</h3>
+                                <p>Using tools like Ansible to standardize configurations.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                        <h2 style="color: #1e3c72; border-bottom: 2px solid #2a5298; padding-bottom: 10px; margin-top: 0;">Troubleshooting Configuration Issues</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
+                            <div style="background-color: #f0f5ff; padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #1e3c72; margin-top: 0;">Connectivity Issues</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>IP configuration verification</li>
+                                    <li>Routing table checks</li>
+                                    <li>ACL verification</li>
+                                    <li>Interface status</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f0f5ff; padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #1e3c72; margin-top: 0;">Performance Problems</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>QoS configuration review</li>
+                                    <li>Bandwidth utilization</li>
+                                    <li>MTU settings</li>
+                                    <li>Buffer tuning</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f0f5ff; padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #1e3c72; margin-top: 0;">Security Problems</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Authentication failures</li>
+                                    <li>Encryption mismatches</li>
+                                    <li>Firewall rule conflicts</li>
+                                    <li>Certificate issues</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f0f5ff; padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #1e3c72; margin-top: 0;">Service Failures</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>DHCP scope exhaustion</li>
+                                    <li>DNS resolution problems</li>
+                                    <li>NTP synchronization</li>
+                                    <li>VPN tunnel establishment</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+               
+            </main>  
+            
+            
+
+             <!-- Floating button to open chatbot -->
+    <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+    </div>
+    
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-container");
+            let button = document.getElementById("open-chatbot");
+    
+            if (!chatbot.classList.contains("active")) {
+                chatbot.classList.add("active");
+                button.style.display = "none"; // Hide button when chatbot is open
+            } else {
+                chatbot.classList.remove("active");
+                setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+            }
+        }
+    
+        // Load chatbot HTML dynamically
+        fetch("/chatbot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("chatbot-container").innerHTML += html;
+    
+            // Execute chatbot script after inserting HTML
+            let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+            for (let script of scripts) {
+                let newScript = document.createElement("script");
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript);
+            }
+        })
+        .catch(error => console.error("Error loading chatbot:", error));
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../computernetwork.json" : "computernetwork.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.Computer_Networks;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+        
+       
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

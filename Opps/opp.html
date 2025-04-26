@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    <link rel="stylesheet" href="dsa.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="opp.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+
+
+
+
+
+
+
+
+
+            <main class="col-md-7 content">
+                <h1 class="mb-3">📖 Object-Oriented Programming (OOP) Study Guide</h1>
+            
+                <section id="introduction">
+                    <h3>1️⃣ What is OOP?</h3>
+                    <p>
+                        Object-Oriented Programming (OOP) is a way of designing and structuring code by grouping related data (attributes) and functions (methods) inside objects.
+                        It makes code easier to manage, reuse, and scale.
+                    </p>
+                    <p>✅ **Real-life Example:** Think of a **Car** as an object. It has:</p>
+                    <ul>
+                        <li><b>Attributes (Data)</b>: Color, Model, Speed.</li>
+                        <li><b>Methods (Functions)</b>: Start(), Stop(), Accelerate().</li>
+                    </ul>
+                    <p>In OOP, we create objects based on **blueprints (Classes)**.</p>
+                </section>
+            
+                <section id="principles">
+                    <h3>2️⃣ Core Principles of OOP</h3>
+                    <p>OOP is based on 4 main principles:</p>
+            
+                    <h4>🔹 1. Encapsulation (Data Protection)</h4>
+                    <p>Encapsulation means **hiding internal details** and allowing controlled access to data using methods.</p>
+                    <p>✅ **Example:** A **Bank Account** hides the balance, but you can access it using a method.</p>
+                    <pre><code>
+            class BankAccount {
+                private double balance; // Hidden from direct access
+                
+                public void deposit(double amount) {
+                    balance += amount;
+                }
+                
+                public double getBalance() {
+                    return balance; // Controlled access
+                }
+            }
+                    </code></pre>
+            
+                    <h4>🔹 2. Abstraction (Hiding Complexity)</h4>
+                    <p>Abstraction means **hiding unnecessary details** and showing only essential features.</p>
+                    <p>✅ **Example:** When you drive a **car**, you just press the accelerator— you don't need to know how the engine works internally.</p>
+                    <pre><code>
+            abstract class Animal {
+                abstract void makeSound(); // Hides internal details
+            }
+            
+            class Dog extends Animal {
+                void makeSound() {
+                    System.out.println("Bark!"); // Implementation shown to the user
+                }
+            }
+                    </code></pre>
+            
+                    <h4>🔹 3. Inheritance (Code Reusability)</h4>
+                    <p>Inheritance allows a new class (**child class**) to use properties and methods of an existing class (**parent class**).</p>
+                    <p>✅ **Example:** A **Car** inherits features from **Vehicle**.</p>
+                    <pre><code>
+            class Vehicle {
+                String brand = "Toyota";
+            }
+            
+            class Car extends Vehicle {
+                String model = "Corolla";
+            }
+                    </code></pre>
+            
+                    <h4>🔹 4. Polymorphism (One Name, Many Forms)</h4>
+                    <p>Polymorphism allows the same function to perform different tasks.</p>
+                    <p>✅ **Example:** A **remote control** has one button, but it can operate a **TV, AC, or Fan**.</p>
+                    <pre><code>
+            // Method Overriding (Different behavior for same method)
+            class Animal {
+                void makeSound() {
+                    System.out.println("Some sound...");
+                }
+            }
+            
+            class Cat extends Animal {
+                void makeSound() {
+                    System.out.println("Meow!");
+                }
+            }
+                    </code></pre>
+                </section>
+            
+                <section id="oop-concepts">
+                    <h3>3️⃣ More OOP Concepts</h3>
+            
+                    <h4>🔹 Method Overloading (Multiple Functions with the Same Name)</h4>
+                    <p>Allows a method to have different versions.</p>
+                    <pre><code>
+            class MathOperations {
+                int add(int a, int b) {
+                    return a + b;
+                }
+            
+                double add(double a, double b) {
+                    return a + b;
+                }
+            }
+                    </code></pre>
+            
+                    <h4>🔹 Method Overriding (Changing Behavior of a Parent Class Method)</h4>
+                    <p>The child class provides a new version of the parent class method.</p>
+                    <pre><code>
+            class Parent {
+                void show() {
+                    System.out.println("Parent class");
+                }
+            }
+            
+            class Child extends Parent {
+                void show() {
+                    System.out.println("Child class");
+                }
+            }
+                    </code></pre>
+            
+                    <h4>🔹 Interfaces and Abstract Classes</h4>
+                    <p>Interfaces define a contract for classes, and abstract classes provide partial implementations.</p>
+                    <pre><code>
+            interface Vehicle {
+                void start();
+            }
+            
+            class Bike implements Vehicle {
+                public void start() {
+                    System.out.println("Bike is starting...");
+                }
+            }
+                    </code></pre>
+                </section>
+            
+                <section id="design-patterns">
+                    <h3>4️⃣ Common OOP Design Patterns</h3>
+            
+                    <h4>🔹 Singleton Pattern (Only One Instance of a Class)</h4>
+                    <p>Ensures a class has **only one object** throughout the program.</p>
+                    <pre><code>
+            class Singleton {
+                private static Singleton instance;
+                
+                private Singleton() {}
+            
+                public static Singleton getInstance() {
+                    if (instance == null) {
+                        instance = new Singleton();
+                    }
+                    return instance;
+                }
+            }
+                    </code></pre>
+            
+                    <h4>🔹 Factory Pattern (Creating Objects without Exposing the Logic)</h4>
+                    <p>Creates objects based on input without revealing the actual class used.</p>
+                    <pre><code>
+            class ShapeFactory {
+                static Shape getShape(String type) {
+                    if (type.equals("Circle")) return new Circle();
+                    if (type.equals("Square")) return new Square();
+                    return null;
+                }
+            }
+                    </code></pre>
+                </section>
+            
+                <section id="solid-principles">
+                    <h3>5️⃣ SOLID Principles (Good OOP Practices)</h3>
+            
+                    <h4>🔹 Single Responsibility Principle (SRP)</h4>
+                    <p>A class should have **only one reason to change**.</p>
+                    <pre><code>
+            class Invoice {
+                void calculateTotal() {}
+            }
+            
+            class InvoicePrinter {
+                void printInvoice(Invoice invoice) {}
+            }
+                    </code></pre>
+            
+                    <h4>🔹 Open-Closed Principle (OCP)</h4>
+                    <p>A class should be **open for extension but closed for modification**.</p>
+                    <pre><code>
+            interface Payment {
+                void pay();
+            }
+            
+            class CreditCard implements Payment {
+                public void pay() {
+                    System.out.println("Paid with Credit Card");
+                }
+            }
+                    </code></pre>
+                </section>
+            
+                <section id="conclusion">
+                    <h3>6️⃣ Conclusion</h3>
+                    <p>OOP makes programming **easier to understand, maintain, and reuse**. Mastering OOP principles helps build scalable and efficient applications.</p>
+                </section>
+
+                <h2>🔗 Next Topics</h2>
+<ul class="nexttopics-container">
+    <li><a href="topics/solid_principles.html">👉 SOLID Principles</a></li>
+    <li><a href="topics/design_patterns.html">👉 Design Patterns</a></li>
+    <li><a href="topics/mvc_architecture.html">👉 MVC Architecture</a></li>
+    <li><a href="topics/dependency_injection.html">👉 Dependency Injection</a></li>
+    <li><a href="topics/memory_management.html">👉 Memory Management in OOP</a></li>
+</ul>
+
+            </main>
+            
+
+             <!-- Floating button to open chatbot -->
+    <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+    </div>
+    
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-container");
+            let button = document.getElementById("open-chatbot");
+    
+            if (!chatbot.classList.contains("active")) {
+                chatbot.classList.add("active");
+                button.style.display = "none"; // Hide button when chatbot is open
+            } else {
+                chatbot.classList.remove("active");
+                setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+            }
+        }
+    
+        // Load chatbot HTML dynamically
+        fetch("/chatbot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("chatbot-container").innerHTML += html;
+    
+            // Execute chatbot script after inserting HTML
+            let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+            for (let script of scripts) {
+                let newScript = document.createElement("script");
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript);
+            }
+        })
+        .catch(error => console.error("Error loading chatbot:", error));
+    </script>
+    
+    
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+           
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../opp.json" : "opp.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.OOP;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                 // Ensure the link always starts with "topics/"
+                    let topicLink = topic.link.startsWith("topics/") ? topic.link : `topics/${topic.link}`;
+
+                    // 🖥️ Desktop List View
+                    let li = document.createElement("li");
+                    li.className = "list-group-item list-group-item-action";
+                    li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                    sidebarList.appendChild(li);
+
+                    // 📱 Mobile Grid View (3 in a row)
+                    let div = document.createElement("div");
+                    div.className = "col-4"; // Bootstrap grid (3 in a row)
+                    div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                    sidebarGrid.appendChild(div);
+                });
+
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

@@ -1,0 +1,11 @@
+{
+    "topics": [
+        {"name": "Data Structures", "link": "topics/dsa.html"},
+        {"name": "OOP Concepts", "link": "topics/oop.html"},
+        {"name": "Competitive Programming", "link": "topics/cp.html"},
+        {"name": "Structural Engineering", "link": "topics/structural.html"},
+        {"name": "Digital Electronics", "link": "topics/digital.html"},
+        {"name": "GATE Preparation", "link": "topics/gate.html"}
+        
+    ]
+}

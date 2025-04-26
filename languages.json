@@ -1,0 +1,11 @@
+{
+    "Languages": [
+        { "name": "Python", "link": "topics/python.html" },
+        { "name": "Java", "link": "topics/java.html" },
+        { "name": "C++", "link": "topics/cpp.html" },
+        { "name": "PHP", "link": "topics/php.html" },
+        { "name": "GoLang", "link": "topics/golang.html" },
+        { "name": "SQL", "link": "topics/sql.html" },
+        { "name": "R Language", "link": "topics/r_language.html" }
+    ]
+}

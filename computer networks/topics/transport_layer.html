@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer Network</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/allsubject.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Computer Networks</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <h1>Transport Layer</h1>
+                        <p style="margin-top: 15px; font-size: 1.1em; opacity: 0.9;">Layer 4 of the OSI Model - End-to-End Communication Services</p>
+                
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                        <h2 style="color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 8px; margin-top: 0;">Introduction to Transport Layer</h2>
+                        <p>The Transport Layer (Layer 4) provides <strong>end-to-end communication services</strong> for applications running on different hosts. It's a critical layer that ensures data is delivered reliably and efficiently across networks.</p>
+                        
+                        <div style="display: flex; justify-content: space-between; margin: 25px 0; flex-wrap: wrap;">
+                            <div style="width: 48%; background-color: #e3f2fd; padding: 20px; border-radius: 6px; border-left: 5px solid #1976d2; margin-bottom: 15px;">
+                                <h3 style="color: #0d47a1; margin-top: 0;">Key Responsibilities</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>End-to-end message delivery</li>
+                                    <li>Error control and flow control</li>
+                                    <li>Congestion control</li>
+                                    <li>Multiplexing and demultiplexing</li>
+                                    <li>Connection establishment and termination</li>
+                                </ul>
+                            </div>
+                            <div style="width: 48%; background-color: #e8f5e9; padding: 20px; border-radius: 6px; border-left: 5px solid #388e3c; margin-bottom: 15px;">
+                                <h3 style="color: #1b5e20; margin-top: 0;">Position in Network Stack</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>OSI Model: Layer 4</li>
+                                    <li>TCP/IP Model: Transport Layer</li>
+                                    <li>Sits above Network Layer (IP)</li>
+                                    <li>Below Session/Application Layers</li>
+                                    <li>Bridges network and application layers</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                        <h2 style="color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 8px; margin-top: 0;">Transport Layer Protocols</h2>
+                        
+                        <div style="display: flex; justify-content: space-between; margin: 20px 0; flex-wrap: wrap;">
+                            <div style="width: 48%; background-color: #e3f2fd; padding: 20px; border-radius: 6px; margin-bottom: 20px; border-left: 5px solid #1976d2;">
+                                <h3 style="color: #0d47a1; margin-top: 0;">TCP (Transmission Control Protocol)</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Connection-oriented</strong> protocol</li>
+                                    <li>Provides <strong>reliable</strong>, ordered delivery</li>
+                                    <li>Implements flow and congestion control</li>
+                                    <li>Uses acknowledgments and retransmissions</li>
+                                    <li>Three-way handshake for connection establishment</li>
+                                    <li>Header size: 20-60 bytes</li>
+                                </ul>
+                            </div>
+                            <div style="width: 48%; background-color: #e8f5e9; padding: 20px; border-radius: 6px; margin-bottom: 20px; border-left: 5px solid #388e3c;">
+                                <h3 style="color: #1b5e20; margin-top: 0;">UDP (User Datagram Protocol)</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Connectionless</strong> protocol</li>
+                                    <li><strong>Unreliable</strong> but faster delivery</li>
+                                    <li>No flow or congestion control</li>
+                                    <li>No connection establishment</li>
+                                    <li>Minimal overhead (8-byte header)</li>
+                                    <li>Used for real-time applications</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="background-color: #fff3e0; padding: 20px; border-radius: 6px; border-left: 5px solid #fb8c00;">
+                            <h3 style="color: #e65100; margin-top: 0;">Other Transport Protocols</h3>
+                            <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+                                <div style="width: 30%; margin-bottom: 15px;">
+                                    <h4 style="color: #d84315; margin-bottom: 5px;">SCTP</h4>
+                                    <p>Stream Control Transmission Protocol - combines features of TCP and UDP with multi-homing support</p>
+                                </div>
+                                <div style="width: 30%; margin-bottom: 15px;">
+                                    <h4 style="color: #d84315; margin-bottom: 5px;">DCCP</h4>
+                                    <p>Datagram Congestion Control Protocol - provides congestion control for unreliable flows</p>
+                                </div>
+                                <div style="width: 30%; margin-bottom: 15px;">
+                                    <h4 style="color: #d84315; margin-bottom: 5px;">QUIC</h4>
+                                    <p>Quick UDP Internet Connections - Google's protocol combining UDP with reliability features</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                        <h2 style="color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 8px; margin-top: 0;">Key Functions of Transport Layer</h2>
+                        
+                        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; margin: 20px 0;">
+                            <div style="width: 48%; background-color: #f5f5f5; padding: 15px; border-radius: 6px; margin-bottom: 20px;">
+                                <h3 style="color: #2c3e50; margin-top: 0;">1. Multiplexing and Demultiplexing</h3>
+                                <p>Allows multiple applications to use network services simultaneously using port numbers.</p>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Port numbers</strong> identify applications (HTTP=80, FTP=21, etc.)</li>
+                                    <li>Well-known ports: 0-1023</li>
+                                    <li>Registered ports: 1024-49151</li>
+                                    <li>Dynamic/private ports: 49152-65535</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="width: 48%; background-color: #f5f5f5; padding: 15px; border-radius: 6px; margin-bottom: 20px;">
+                                <h3 style="color: #2c3e50; margin-top: 0;">2. Connection Management</h3>
+                                <p>TCP establishes, maintains, and terminates connections between hosts.</p>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Three-way handshake:</strong> SYN → SYN-ACK → ACK</li>
+                                    <li><strong>Connection termination:</strong> FIN → ACK → FIN → ACK</li>
+                                    <li>Sequence numbers track data segments</li>
+                                    <li>Sliding window protocol manages flow</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="width: 48%; background-color: #f5f5f5; padding: 15px; border-radius: 6px; margin-bottom: 20px;">
+                                <h3 style="color: #2c3e50; margin-top: 0;">3. Reliable Data Transfer</h3>
+                                <p>Ensures data arrives correctly and in order (TCP only).</p>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Sequence numbers</strong> for ordering</li>
+                                    <li><strong>Acknowledgments</strong> for received data</li>
+                                    <li><strong>Retransmission</strong> of lost packets</li>
+                                    <li><strong>Checksums</strong> for error detection</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="width: 48%; background-color: #f5f5f5; padding: 15px; border-radius: 6px; margin-bottom: 20px;">
+                                <h3 style="color: #2c3e50; margin-top: 0;">4. Flow and Congestion Control</h3>
+                                <p>Manages data flow to prevent overwhelming receivers or networks.</p>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Flow control:</strong> Prevents receiver overflow</li>
+                                    <li><strong>Congestion control:</strong> Prevents network congestion</li>
+                                    <li>TCP uses window-based mechanisms</li>
+                                    <li>Algorithms: Slow Start, AIMD, Fast Retransmit</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                        <h2 style="color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 8px; margin-top: 0;">TCP vs UDP Comparison</h2>
+                        
+                        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                            <thead>
+                                <tr style="background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%); color: white;">
+                                    <th style="padding: 12px; text-align: left; border: 1px solid #2c3e50;">Feature</th>
+                                    <th style="padding: 12px; text-align: left; border: 1px solid #2c3e50;">TCP</th>
+                                    <th style="padding: 12px; text-align: left; border: 1px solid #2c3e50;">UDP</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Connection</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd; background-color: #e3f2fd;">Connection-oriented</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd; background-color: #e8f5e9;">Connectionless</td>
+                                </tr>
+                                <tr style="background-color: #f9f9f9;">
+                                    <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Reliability</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd; background-color: #e3f2fd;">Reliable (acknowledgments)</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd; background-color: #e8f5e9;">Unreliable</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Ordering</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd; background-color: #e3f2fd;">Sequenced delivery</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd; background-color: #e8f5e9;">No sequencing</td>
+                                </tr>
+                                <tr style="background-color: #f9f9f9;">
+                                    <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Speed</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd; background-color: #e3f2fd;">Slower (more overhead)</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd; background-color: #e8f5e9;">Faster (less overhead)</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Flow Control</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd; background-color: #e3f2fd;">Yes (sliding window)</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd; background-color: #e8f5e9;">No flow control</td>
+                                </tr>
+                                <tr style="background-color: #f9f9f9;">
+                                    <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Congestion Control</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd; background-color: #e3f2fd;">Yes (multiple algorithms)</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd; background-color: #e8f5e9;">No congestion control</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Header Size</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd; background-color: #e3f2fd;">20-60 bytes</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd; background-color: #e8f5e9;">8 bytes (fixed)</td>
+                                </tr>
+                                <tr style="background-color: #f9f9f9;">
+                                    <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Use Cases</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd; background-color: #e3f2fd;">Web, email, file transfer</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd; background-color: #e8f5e9;">Video streaming, VoIP, DNS</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                        <h2 style="color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 8px; margin-top: 0;">Transport Layer in Action</h2>
+                        
+                        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; margin: 20px 0;">
+                            <div style="width: 48%; background-color: #f0f4c3; padding: 20px; border-radius: 6px; margin-bottom: 20px; border-left: 5px solid #afb42b;">
+                                <h3 style="color: #827717; margin-top: 0;">TCP Three-Way Handshake</h3>
+                                <div style="text-align: center; background-color: white; padding: 15px; border-radius: 4px; margin: 10px 0;">
+                                    <div style="margin: 8px 0;">Client → <strong>SYN</strong> → Server</div>
+                                    <div style="margin: 8px 0;">Client ← <strong>SYN-ACK</strong> ← Server</div>
+                                    <div style="margin: 8px 0;">Client → <strong>ACK</strong> → Server</div>
+                                </div>
+                                <p>Establishes connection parameters (sequence numbers, window size) before data transfer begins.</p>
+                            </div>
+                            
+                            <div style="width: 48%; background-color: #d7ccc8; padding: 20px; border-radius: 6px; margin-bottom: 20px; border-left: 5px solid #5d4037;">
+                                <h3 style="color: #3e2723; margin-top: 0;">TCP Segment Structure</h3>
+                                <div style="font-family: monospace; background-color: #f5f5f5; padding: 10px; border-radius: 4px;">
+                                    <div>Source Port (16) | Destination Port (16)</div>
+                                    <div>Sequence Number (32)</div>
+                                    <div>Acknowledgment Number (32)</div>
+                                    <div>Data Offset (4) | Reserved (6) | Flags (6) | Window (16)</div>
+                                    <div>Checksum (16) | Urgent Pointer (16)</div>
+                                    <div>Options (if any) | Data</div>
+                                </div>
+                                <p style="font-size: 0.9em; text-align: center;">Numbers in parentheses indicate bit length</p>
+                            </div>
+                            
+                            <div style="width: 100%; background-color: #d1c4e9; padding: 20px; border-radius: 6px; margin-bottom: 20px; border-left: 5px solid #4527a0;">
+                                <h3 style="color: #311b92; margin-top: 0;">Port Number Examples</h3>
+                                <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+                                    <div style="width: 30%; margin-bottom: 10px;">
+                                        <strong>20/21:</strong> FTP (File Transfer Protocol)
+                                    </div>
+                                    <div style="width: 30%; margin-bottom: 10px;">
+                                        <strong>22:</strong> SSH (Secure Shell)
+                                    </div>
+                                    <div style="width: 30%; margin-bottom: 10px;">
+                                        <strong>25:</strong> SMTP (Email)
+                                    </div>
+                                    <div style="width: 30%; margin-bottom: 10px;">
+                                        <strong>53:</strong> DNS (Domain Name System)
+                                    </div>
+                                    <div style="width: 30%; margin-bottom: 10px;">
+                                        <strong>80:</strong> HTTP (Web)
+                                    </div>
+                                    <div style="width: 30%; margin-bottom: 10px;">
+                                        <strong>443:</strong> HTTPS (Secure Web)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+
+                </main>  
+            
+            
+
+             <!-- Floating button to open chatbot -->
+    <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+    </div>
+    
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-container");
+            let button = document.getElementById("open-chatbot");
+    
+            if (!chatbot.classList.contains("active")) {
+                chatbot.classList.add("active");
+                button.style.display = "none"; // Hide button when chatbot is open
+            } else {
+                chatbot.classList.remove("active");
+                setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+            }
+        }
+    
+        // Load chatbot HTML dynamically
+        fetch("/chatbot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("chatbot-container").innerHTML += html;
+    
+            // Execute chatbot script after inserting HTML
+            let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+            for (let script of scripts) {
+                let newScript = document.createElement("script");
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript);
+            }
+        })
+        .catch(error => console.error("Error loading chatbot:", error));
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../computernetwork.json" : "computernetwork.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.Computer_Networks;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+        
+       
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

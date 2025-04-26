@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer Network</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/allsubject.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Computer Networks</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+              
+                
+                    <h1>Classless Inter-Domain Routing (CIDR)</h1>
+                
+                    <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; margin-top: 30px; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db;">Introduction to CIDR</h2>
+                        <p>CIDR (Classless Inter-Domain Routing) was introduced in 1993 to replace the classful network addressing architecture and provide more efficient IP address allocation. It allows for:</p>
+                        <ul>
+                            <li>More flexible allocation of IP addresses</li>
+                            <li>Reduced routing table sizes</li>
+                            <li>Slowing the exhaustion of IPv4 addresses</li>
+                            <li>Elimination of class boundaries (A, B, C networks)</li>
+                        </ul>
+                    </div>
+                
+                    <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; margin-top: 30px; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db;">CIDR Notation</h2>
+                        <div style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                            <p>CIDR notation represents an IP address and its associated routing prefix in the format:</p>
+                            <p style="font-family: 'Courier New', Courier, monospace; font-weight: bold;">192.168.1.0/24</p>
+                            <p>Where:</p>
+                            <ul>
+                                <li><strong>192.168.1.0</strong> is the network address</li>
+                                <li><strong>/24</strong> indicates the first 24 bits are the network portion</li>
+                            </ul>
+                        </div>
+                
+                        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                            <tr>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">CIDR Notation</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Subnet Mask</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Number of Addresses</th>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">/24</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">255.255.255.0</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">256</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">/25</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">255.255.255.128</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">128</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">/26</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">255.255.255.192</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">64</td>
+                            </tr>
+                        </table>
+                    </div>
+                
+                    <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; margin-top: 30px; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db;">Benefits of CIDR</h2>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+                            <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                                <h3>Efficient Address Space Utilization</h3>
+                                <p>CIDR allows for allocation of IP addresses in blocks that closely match actual needs, reducing waste.</p>
+                            </div>
+                            <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                                <h3>Route Aggregation</h3>
+                                <p>Multiple IP networks can be represented as a single routing table entry, reducing the size of routing tables.</p>
+                            </div>
+                            <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                                <h3>Flexible Network Sizes</h3>
+                                <p>Networks can be any size (power of two) rather than being constrained to class A, B, or C sizes.</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; margin-top: 30px; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db;">CIDR Calculation Examples</h2>
+                        <div style="background-color: #f4f4f4; padding: 10px; border-left: 3px solid #3498db; overflow-x: auto; font-family: 'Courier New', Courier, monospace;">
+                            <p>Example 1: 192.168.1.0/24</p>
+                            <p>- Network address: 192.168.1.0</p>
+                            <p>- Broadcast address: 192.168.1.255</p>
+                            <p>- Usable hosts: 192.168.1.1 to 192.168.1.254</p>
+                        </div>
+                        
+                        <div style="background-color: #f4f4f4; padding: 10px; border-left: 3px solid #3498db; overflow-x: auto; font-family: 'Courier New', Courier, monospace; margin-top: 15px;">
+                            <p>Example 2: 10.0.0.0/16</p>
+                            <p>- Network address: 10.0.0.0</p>
+                            <p>- Broadcast address: 10.0.255.255</p>
+                            <p>- Usable hosts: 10.0.0.1 to 10.0.255.254</p>
+                        </div>
+                    </div>
+                
+                    <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; margin-top: 30px; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db;">CIDR and Subnetting</h2>
+                        <p>CIDR enables hierarchical subnetting, allowing networks to be divided into smaller subnets:</p>
+                        
+                        <div style="text-align: center; background-color: #f4f4f4; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                            <p><strong>Network: 192.168.0.0/16</strong></p>
+                            <p>↓ Subnetted into → 192.168.1.0/24, 192.168.2.0/24, etc.</p>
+                        </div>
+                        
+                        <div style="background-color: #ffebee; padding: 15px; border-left: 4px solid #f44336;">
+                            <p><strong>Important:</strong> When subnetting, remember that each subnet requires its own network and broadcast addresses, reducing the number of available host addresses by 2 per subnet.</p>
+                        </div>
+                    </div>
+                
+                    <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; margin-top: 30px; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db;">CIDR in IPv6</h2>
+                        <p>While CIDR was developed for IPv4, the concepts are fundamental to IPv6 addressing:</p>
+                        <ul>
+                            <li>IPv6 uses 128-bit addresses</li>
+                            <li>Standard IPv6 subnet size is /64</li>
+                            <li>CIDR notation is used similarly (e.g., 2001:db8::/32)</li>
+                            <li>Provides even more efficient address aggregation</li>
+                        </ul>
+                    </div>
+                
+                    <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; margin-top: 30px; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db;">Practical Applications</h2>
+                        <p>CIDR is used in:</p>
+                        <ul>
+                            <li>Internet Service Provider (ISP) allocations</li>
+                            <li>Cloud computing environments</li>
+                            <li>Virtual Private Networks (VPNs)</li>
+                            <li>Software Defined Networking (SDN)</li>
+                            <li>Network security policies and ACLs</li>
+                        </ul>
+                    </div>
+            </main>  
+            
+            
+
+             <!-- Floating button to open chatbot -->
+    <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+    </div>
+    
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-container");
+            let button = document.getElementById("open-chatbot");
+    
+            if (!chatbot.classList.contains("active")) {
+                chatbot.classList.add("active");
+                button.style.display = "none"; // Hide button when chatbot is open
+            } else {
+                chatbot.classList.remove("active");
+                setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+            }
+        }
+    
+        // Load chatbot HTML dynamically
+        fetch("/chatbot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("chatbot-container").innerHTML += html;
+    
+            // Execute chatbot script after inserting HTML
+            let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+            for (let script of scripts) {
+                let newScript = document.createElement("script");
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript);
+            }
+        })
+        .catch(error => console.error("Error loading chatbot:", error));
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../computernetwork.json" : "computernetwork.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.Computer_Networks;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+        
+       
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

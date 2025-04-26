@@ -1,0 +1,35 @@
+{ "Agile_and_Scrum":[
+  { "name": "Introduction to Agile", "id": "agile_intro", "link": "agile_intro.html" },
+  { "name": "Agile Manifesto and Principles", "id": "agile_manifesto", "link": "agile_manifesto.html" },
+  { "name": "What is Scrum?", "id": "what_is_scrum", "link": "what_is_scrum.html" },
+  { "name": "Scrum Roles", "id": "scrum_roles", "link": "scrum_roles.html" },
+  { "name": "Scrum Artifacts", "id": "scrum_artifacts", "link": "scrum_artifacts.html" },
+  { "name": "Scrum Events", "id": "scrum_events", "link": "scrum_events.html" },
+  { "name": "User Stories & Acceptance Criteria", "id": "user_stories", "link": "user_stories.html" },
+  { "name": "Definition of Done (DoD)", "id": "definition_of_done", "link": "definition_of_done.html" },
+  { "name": "Agile vs Waterfall", "id": "agile_vs_waterfall", "link": "agile_vs_waterfall.html" },
+  { "name": "Agile Terminology", "id": "agile_terminology", "link": "agile_terminology.html" },
+
+  { "name": "Agile Estimation (Story Points, Planning Poker)", "id": "agile_estimation", "link": "agile_estimation.html" },
+  { "name": "Velocity and Burndown Chart", "id": "velocity_burndown", "link": "velocity_burndown.html" },
+  { "name": "Sprint Goal & Backlog Grooming", "id": "sprint_goal_grooming", "link": "sprint_goal_grooming.html" },
+  { "name": "Product Backlog Refinement", "id": "backlog_refinement", "link": "backlog_refinement.html" },
+  { "name": "Scrum Ceremonies in Detail", "id": "scrum_ceremonies", "link": "scrum_ceremonies.html" },
+  { "name": "Kanban vs Scrum", "id": "kanban_vs_scrum", "link": "kanban_vs_scrum.html" },
+  { "name": "Agile Tools", "id": "agile_tools", "link": "agile_tools.html" },
+  { "name": "Scrum of Scrums", "id": "scrum_of_scrums", "link": "scrum_of_scrums.html" },
+  { "name": "Agile Testing", "id": "agile_testing", "link": "agile_testing.html" },
+  { "name": "Servant Leadership in Agile", "id": "servant_leadership", "link": "servant_leadership.html" },
+
+  { "name": "SAFe (Scaled Agile Framework)", "id": "safe_framework", "link": "safe_framework.html" },
+  { "name": "LeSS (Large-Scale Scrum)", "id": "less_framework", "link": "less_framework.html" },
+  { "name": "Agile Metrics", "id": "agile_metrics", "link": "agile_metrics.html" },
+  { "name": "DevOps and Agile Integration", "id": "devops_agile", "link": "devops_agile.html" },
+  { "name": "Continuous Integration / Continuous Delivery (CI/CD)", "id": "ci_cd", "link": "ci_cd.html" },
+  { "name": "Agile Anti-Patterns", "id": "agile_antipatterns", "link": "agile_antipatterns.html" },
+  { "name": "Technical Debt and Refactoring", "id": "technical_debt", "link": "technical_debt.html" },
+  { "name": "Scaling Agile for Enterprise", "id": "scaling_agile", "link": "scaling_agile.html" },
+  { "name": "Agile Maturity Models", "id": "agile_maturity", "link": "agile_maturity.html" },
+  { "name": "Agile Contracting and Budgeting", "id": "agile_contracting", "link": "agile_contracting.html" }
+  ]
+} 

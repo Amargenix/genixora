@@ -1,0 +1,14 @@
+{
+  "Major_Project": [
+    { "name": "Project Selection Guidelines", "id": "proj_select", "link": "proj_select.html" },
+    { "name": "Literature Survey", "id": "lit_survey", "link": "lit_survey.html" },
+    { "name": "Project Proposal Writing", "id": "proposal", "link": "proposal.html" },
+    { "name": "Hardware Implementation", "id": "hardware", "link": "hardware.html" },
+    { "name": "Software Development", "id": "software", "link": "software.html" },
+    { "name": "Testing Methodology", "id": "testing", "link": "testing.html" },
+    { "name": "Documentation Standards", "id": "docs", "link": "docs.html" },
+    { "name": "Presentation Preparation", "id": "presentation", "link": "presentation.html" },
+    { "name": "Project Evaluation Criteria", "id": "eval", "link": "eval.html" },
+    { "name": "Case Studies", "id": "case_studies", "link": "case_studies.html" }
+  ]
+}

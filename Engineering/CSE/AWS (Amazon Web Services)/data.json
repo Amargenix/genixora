@@ -1,0 +1,43 @@
+[
+    { "name": "Introduction to Cloud Computing", "id": "intro_cloud", "link": "intro_cloud.html" },
+    { "name": "What is AWS?", "id": "what_is_aws", "link": "what_is_aws.html" },
+    { "name": "Benefits of AWS", "id": "benefits_aws", "link": "benefits_aws.html" },
+    { "name": "AWS Global Infrastructure", "id": "aws_infrastructure", "link": "aws_infrastructure.html" },
+    { "name": "Setting Up an AWS Free Tier Account", "id": "aws_free_tier", "link": "aws_free_tier.html" },
+    { "name": "Understanding the AWS Console", "id": "aws_console", "link": "aws_console.html" },
+    
+    { "name": "Amazon EC2 (Elastic Compute Cloud)", "id": "ec2", "link": "ec2.html" },
+    { "name": "Amazon S3 (Simple Storage Service)", "id": "s3", "link": "s3.html" },
+    { "name": "IAM (Identity and Access Management)", "id": "iam", "link": "iam.html" },
+    { "name": "VPC (Virtual Private Cloud)", "id": "vpc", "link": "vpc.html" },
+    { "name": "Amazon RDS (Relational Database Service)", "id": "rds", "link": "rds.html" },
+    { "name": "AWS Lambda (Serverless Computing)", "id": "lambda", "link": "lambda.html" },
+    { "name": "Amazon CloudFront (CDN)", "id": "cloudfront", "link": "cloudfront.html" },
+    { "name": "Amazon Route 53 (DNS)", "id": "route53", "link": "route53.html" },
+    { "name": "Amazon DynamoDB", "id": "dynamodb", "link": "dynamodb.html" },
+    { "name": "Elastic Load Balancer (ELB)", "id": "elb", "link": "elb.html" },
+    { "name": "Amazon EBS & EFS (Storage)", "id": "ebs_efs", "link": "ebs_efs.html" },
+  
+    { "name": "Monitoring with CloudWatch", "id": "cloudwatch", "link": "cloudwatch.html" },
+    { "name": "AWS Auto Scaling", "id": "auto_scaling", "link": "auto_scaling.html" },
+    { "name": "CloudFormation - Infrastructure as Code", "id": "cloudformation", "link": "cloudformation.html" },
+    { "name": "AWS CLI and SDKs", "id": "aws_cli_sdk", "link": "aws_cli_sdk.html" },
+    { "name": "AWS Security Best Practices", "id": "aws_security", "link": "aws_security.html" },
+    { "name": "Amazon SNS & SQS (Messaging Services)", "id": "sns_sqs", "link": "sns_sqs.html" },
+    { "name": "Elastic Beanstalk - App Deployment", "id": "elastic_beanstalk", "link": "elastic_beanstalk.html" },
+    { "name": "AWS Cognito (User Authentication)", "id": "aws_cognito", "link": "aws_cognito.html" },
+    { "name": "AWS CodePipeline and DevOps Tools", "id": "codepipeline_devops", "link": "codepipeline_devops.html" },
+    { "name": "AWS Step Functions", "id": "step_functions", "link": "step_functions.html" },
+  
+    { "name": "AWS for Web Hosting", "id": "aws_web_hosting", "link": "aws_web_hosting.html" },
+    { "name": "AWS for Mobile Apps", "id": "aws_mobile_apps", "link": "aws_mobile_apps.html" },
+    { "name": "AWS for Machine Learning (SageMaker)", "id": "aws_ml_sagemaker", "link": "aws_ml_sagemaker.html" },
+    { "name": "AWS for Big Data (EMR, Redshift)", "id": "aws_big_data", "link": "aws_big_data.html" },
+    { "name": "Real-time Streaming with AWS Kinesis", "id": "aws_kinesis", "link": "aws_kinesis.html" },
+    { "name": "AWS Cost Management & Billing", "id": "aws_billing", "link": "aws_billing.html" },
+    { "name": "AWS Certification Paths (Cloud Practitioner, Architect, etc.)", "id": "aws_certifications", "link": "aws_certifications.html" },
+  
+    { "name": "Capstone Project: Deploying a Full-Stack App on AWS", "id": "project_fullstack_aws", "link": "project_fullstack_aws.html" },
+    { "name": "Capstone Project: Serverless API with Lambda + DynamoDB", "id": "project_serverless_api", "link": "project_serverless_api.html" }
+  ]
+  

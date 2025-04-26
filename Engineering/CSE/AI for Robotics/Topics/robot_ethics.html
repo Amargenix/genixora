@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Robotics</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>AI for Robotics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+               <h1>Robot Ethics in AI for Robotics</h1>
+                   
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 3px 6px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 10px; font-size: 1.8em;">Introduction to Robot Ethics</h2>
+                        
+                        <div style="display: flex; gap: 25px; margin-top: 20px;">
+                            
+                            <div style="flex: 2;">
+                                <p style="font-size: 1.1em;">Robot ethics is a branch of applied ethics that examines the moral implications of robotic technology, artificial intelligence, and autonomous systems. As robots become more intelligent and autonomous, ethical considerations become increasingly critical in their design, deployment, and interaction with humans.</p>
+                                
+                                <div style="background-color: #eaf2f8; padding: 15px; border-radius: 6px; margin-top: 15px;">
+                                    <h3 style="color: #2980b9; margin-top: 0;">Why Robot Ethics Matters</h3>
+                                    <ul style="columns: 2; column-gap: 20px;">
+                                        <li>Preventing harm to humans</li>
+                                        <li>Ensuring accountability</li>
+                                        <li>Protecting privacy</li>
+                                        <li>Maintaining human dignity</li>
+                                        <li>Addressing job displacement</li>
+                                        <li>Preventing autonomous weapons misuse</li>
+                                        <li>Ensuring transparent decision-making</li>
+                                        <li>Promoting beneficial AI development</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 3px 6px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; border-bottom: 3px solid #e74c3c; padding-bottom: 10px; font-size: 1.8em;">Core Ethical Frameworks</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 25px;">
+                            <div style="background-color: #fdedec; padding: 20px; border-radius: 6px; border-left: 4px solid #e74c3c;">
+                                <h3 style="color: #c0392b; margin-top: 0;">1. Deontological Ethics</h3>
+                                <p>Focuses on rules and duties. Robots should follow absolute moral rules (e.g., "never harm humans").</p>
+                                <p><strong>Example:</strong> Asimov's Three Laws of Robotics</p>
+                                <div style="background-color: #f9e0df; padding: 10px; border-radius: 4px; margin-top: 10px;">
+                                    <strong>Strengths:</strong> Clear rules, predictable behavior<br>
+                                    <strong>Weaknesses:</strong> Rigid, can't handle complex moral dilemmas
+                                </div>
+                            </div>
+                            
+                            <div style="background-color: #e8f8f5; padding: 20px; border-radius: 6px; border-left: 4px solid #1abc9c;">
+                                <h3 style="color: #16a085; margin-top: 0;">2. Utilitarianism</h3>
+                                <p>Maximizes overall happiness. Robots should choose actions that create the greatest good for the greatest number.</p>
+                                <p><strong>Example:</strong> Self-driving car dilemma scenarios</p>
+                                <div style="background-color: #d1f0e5; padding: 10px; border-radius: 4px; margin-top: 10px;">
+                                    <strong>Strengths:</strong> Flexible, outcome-focused<br>
+                                    <strong>Weaknesses:</strong> Difficult to quantify outcomes
+                                </div>
+                            </div>
+                            
+                            <div style="background-color: #f4ecf7; padding: 20px; border-radius: 6px; border-left: 4px solid #9b59b6;">
+                                <h3 style="color: #8e44ad; margin-top: 0;">3. Virtue Ethics</h3>
+                                <p>Focuses on moral character. Robots should emulate virtuous human behavior.</p>
+                                <p><strong>Example:</strong> Care robots showing compassion</p>
+                                <div style="background-color: #e8daf0; padding: 10px; border-radius: 4px; margin-top: 10px;">
+                                    <strong>Strengths:</strong> Human-like, contextual<br>
+                                    <strong>Weaknesses:</strong> Subjective, hard to program
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 3px 6px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; border-bottom: 3px solid #f39c12; padding-bottom: 10px; font-size: 1.8em;">Key Ethical Principles</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin-top: 25px;">
+                            <div style="background-color: #fef5e7; padding: 20px; border-radius: 6px; text-align: center;">
+                                <div style="width: 60px; height: 60px; background-color: #f39c12; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5em;">🛡️</div>
+                                <h3 style="color: #d35400; margin-top: 0;">Beneficence</h3>
+                                <p>Robots should be designed to benefit humans and promote well-being</p>
+                            </div>
+                            
+                            <div style="background-color: #eaf2f8; padding: 20px; border-radius: 6px; text-align: center;">
+                                <div style="width: 60px; height: 60px; background-color: #3498db; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5em;">🚫</div>
+                                <h3 style="color: #2980b9; margin-top: 0;">Non-Maleficence</h3>
+                                <p>Robots should not harm humans or, by inaction, allow harm to occur</p>
+                            </div>
+                            
+                            <div style="background-color: #e8f8f5; padding: 20px; border-radius: 6px; text-align: center;">
+                                <div style="width: 60px; height: 60px; background-color: #1abc9c; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5em;">🧑⚖️</div>
+                                <h3 style="color: #16a085; margin-top: 0;">Autonomy</h3>
+                                <p>Humans should retain control over robotic systems</p>
+                            </div>
+                            
+                            <div style="background-color: #f4ecf7; padding: 20px; border-radius: 6px; text-align: center;">
+                                <div style="width: 60px; height: 60px; background-color: #9b59b6; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5em;">⚖️</div>
+                                <h3 style="color: #8e44ad; margin-top: 0;">Justice</h3>
+                                <p>Robotic benefits and risks should be distributed fairly</p>
+                            </div>
+                            
+                            <div style="background-color: #f9e9e9; padding: 20px; border-radius: 6px; text-align: center;">
+                                <div style="width: 60px; height: 60px; background-color: #e74c3c; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5em;">🔍</div>
+                                <h3 style="color: #c0392b; margin-top: 0;">Transparency</h3>
+                                <p>Robotic decision-making processes should be explainable</p>
+                            </div>
+                            
+                            <div style="background-color: #e8f7f8; padding: 20px; border-radius: 6px; text-align: center;">
+                                <div style="width: 60px; height: 60px; background-color: #3498db; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5em;">🤝</div>
+                                <h3 style="color: #2980b9; margin-top: 0;">Accountability</h3>
+                                <p>Clear responsibility for robotic actions must be established</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 3px 6px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; border-bottom: 3px solid #8e44ad; padding-bottom: 10px; font-size: 1.8em;">Critical Ethical Issues</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 25px; margin-top: 25px;">
+                            <div style="background-color: #f4ecf7; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #8e44ad; margin-top: 0;">1. Autonomous Weapons</h3>
+                                <p>The development of lethal autonomous weapons systems (LAWS) raises profound moral questions about delegating life-and-death decisions to machines.</p>
+                                <ul>
+                                    <li>Risk of malfunction or hacking</li>
+                                    <li>Difficulty assigning responsibility</li>
+                                    <li>Potential arms race in AI weapons</li>
+                                    <li>Violation of international humanitarian law</li>
+                                </ul>
+                                <div style="background-color: #e8daf0; padding: 10px; border-radius: 4px; margin-top: 10px;">
+                                    <strong>Current Status:</strong> Ongoing UN discussions about potential ban
+                                </div>
+                            </div>
+                            
+                            <div style="background-color: #e8f8f8; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #16a085; margin-top: 0;">2. Privacy Concerns</h3>
+                                <p>Robots with advanced sensors and AI capabilities can collect vast amounts of personal data, creating significant privacy risks.</p>
+                                <ul>
+                                    <li>Surveillance capabilities</li>
+                                    <li>Data security vulnerabilities</li>
+                                    <li>Informed consent for data collection</li>
+                                    <li>Secondary use of collected data</li>
+                                </ul>
+                                <div style="background-color: #d1f0ed; padding: 10px; border-radius: 4px; margin-top: 10px;">
+                                    <strong>Solution:</strong> Privacy by design principles
+                                </div>
+                            </div>
+                            
+                            <div style="background-color: #fef5e7; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #e67e22; margin-top: 0;">3. Job Displacement</h3>
+                                <p>The automation of tasks by robots could lead to significant workforce disruptions and economic inequality.</p>
+                                <ul>
+                                    <li>Projected job losses in various sectors</li>
+                                    <li>Need for retraining programs</li>
+                                    <li>Potential for universal basic income</li>
+                                    <li>Changing nature of work</li>
+                                </ul>
+                                <div style="background-color: #f9ebd0; padding: 10px; border-radius: 4px; margin-top: 10px;">
+                                    <strong>Stat:</strong> Up to 30% of jobs could be automated by 2030
+                                </div>
+                            </div>
+                            
+                            <div style="background-color: #eaf2f8; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #2980b9; margin-top: 0;">4. Bias and Discrimination</h3>
+                                <p>AI systems can perpetuate or amplify existing societal biases if not carefully designed.</p>
+                                <ul>
+                                    <li>Training data biases</li>
+                                    <li>Algorithmic fairness</li>
+                                    <li>Representation in development teams</li>
+                                    <li>Access to robotic technologies</li>
+                                </ul>
+                                <div style="background-color: #d4e6f7; padding: 10px; border-radius: 4px; margin-top: 10px;">
+                                    <strong>Example:</strong> Facial recognition biases
+                                </div>
+                            </div>
+                            
+                            <div style="background-color: #f9e9e9; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #c0392b; margin-top: 0;">5. Human-Robot Relationships</h3>
+                                <p>The development of social robots raises questions about appropriate human-machine interactions.</p>
+                                <ul>
+                                    <li>Attachment to care robots</li>
+                                    <li>Robot companions for children/elderly</li>
+                                    <li>Sex robots and intimacy</li>
+                                    <li>Potential for social isolation</li>
+                                </ul>
+                                <div style="background-color: #f0d6d6; padding: 10px; border-radius: 4px; margin-top: 10px;">
+                                    <strong>Concern:</strong> Emotional manipulation risks
+                                </div>
+                            </div>
+                            
+                            <div style="background-color: #e8f8f5; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #16a085; margin-top: 0;">6. Moral Responsibility</h3>
+                                <p>Determining who is accountable for robotic actions becomes complex with autonomous systems.</p>
+                                <ul>
+                                    <li>Manufacturer liability</li>
+                                    <li>Operator responsibility</li>
+                                    <li>Software developer accountability</li>
+                                    <li>Machine moral agency debates</li>
+                                </ul>
+                                <div style="background-color: #d1f0e5; padding: 10px; border-radius: 4px; margin-top: 10px;">
+                                    <strong>Challenge:</strong> Distributed responsibility in complex systems
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 3px 6px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; border-bottom: 3px solid #27ae60; padding-bottom: 10px; font-size: 1.8em;">Ethical Guidelines & Frameworks</h2>
+                        
+                        <div style="margin-top: 25px;">
+                            <h3 style="color: #27ae60;">1. Asimov's Three Laws of Robotics</h3>
+                            <div style="background-color: #e8f8f0; padding: 20px; border-radius: 6px; margin-top: 15px;">
+                                <ol>
+                                    <li><strong>First Law:</strong> A robot may not injure a human being or, through inaction, allow a human being to come to harm.</li>
+                                    <li><strong>Second Law:</strong> A robot must obey the orders given it by human beings except where such orders would conflict with the First Law.</li>
+                                    <li><strong>Third Law:</strong> A robot must protect its own existence as long as such protection does not conflict with the First or Second Law.</li>
+                                </ol>
+                                <div style="background-color: #d1f0d9; padding: 10px; border-radius: 4px; margin-top: 15px;">
+                                    <strong>Later Addition:</strong> Zeroth Law - A robot may not harm humanity, or, by inaction, allow humanity to come to harm.
+                                </div>
+                            </div>
+                            
+                            <h3 style="color: #27ae60; margin-top: 30px;">2. IEEE Global Initiative on Ethics of Autonomous Systems</h3>
+                            <div style="background-color: #e8f8f0; padding: 20px; border-radius: 6px; margin-top: 15px;">
+                                <ul>
+                                    <li>Emphasis on human well-being as primary metric</li>
+                                    <li>Data agency and access rights</li>
+                                    <li>Algorithmic bias considerations</li>
+                                    <li>Transparency in robotic decision-making</li>
+                                    <li>Accountability norms for autonomous systems</li>
+                                </ul>
+                            </div>
+                            
+                            <h3 style="color: #27ae60; margin-top: 30px;">3. EU Ethics Guidelines for Trustworthy AI</h3>
+                            <div style="background-color: #e8f8f0; padding: 20px; border-radius: 6px; margin-top: 15px;">
+                                <ul>
+                                    <li><strong>Human agency and oversight:</strong> Maintain human autonomy</li>
+                                    <li><strong>Technical robustness and safety:</strong> Resilience to attacks</li>
+                                    <li><strong>Privacy and data governance:</strong> Full data control</li>
+                                    <li><strong>Transparency:</strong> Traceability and explainability</li>
+                                    <li><strong>Diversity, non-discrimination and fairness:</strong> Avoid bias</li>
+                                    <li><strong>Societal and environmental well-being:</strong> Sustainable AI</li>
+                                    <li><strong>Accountability:</strong> Auditability and responsibility</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: #f3f7fb; padding: 30px; border-radius: 8px; margin-bottom: 30px; color: white;">
+                        <h2 style="border-bottom: 3px solid #3498db; padding-bottom: 10px; font-size: 1.8em;">Implementation Strategies</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 25px;">
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #3498db; margin-top: 0;">Ethics by Design</h3>
+                                <p>Integrate ethical considerations throughout the entire development lifecycle</p>
+                                <ul>
+                                    <li>Ethical risk assessments</li>
+                                    <li>Value-sensitive design</li>
+                                    <li>Ethical impact statements</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #3498db; margin-top: 0;">Ethical Oversight Boards</h3>
+                                <p>Establish multidisciplinary ethics review committees</p>
+                                <ul>
+                                    <li>Include ethicists, lawyers, community reps</li>
+                                    <li>Regular ethical audits</li>
+                                    <li>Whistleblower protections</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #3498db; margin-top: 0;">Transparency Measures</h3>
+                                <p>Ensure robotic systems are understandable and accountable</p>
+                                <ul>
+                                    <li>Explainable AI techniques</li>
+                                    <li>Clear labeling of autonomous systems</li>
+                                    <li>Public disclosure standards</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #3498db; margin-top: 0;">Legal Frameworks</h3>
+                                <p>Develop appropriate regulations and liability structures</p>
+                                <ul>
+                                    <li>Robot-specific legislation</li>
+                                    <li>Insurance requirements</li>
+                                    <li>International cooperation</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #3498db; margin-top: 0;">Public Engagement</h3>
+                                <p>Involve diverse stakeholders in ethical discussions</p>
+                                <ul>
+                                    <li>Citizen assemblies on robotics</li>
+                                    <li>Ethics education programs</li>
+                                    <li>Participatory design approaches</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #3498db; margin-top: 0;">Ethical Certification</h3>
+                                <p>Develop standards and certification processes</p>
+                                <ul>
+                                    <li>Independent ethical audits</li>
+                                    <li>Ethical labeling systems</li>
+                                    <li>Compliance monitoring</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                  
+
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [ ];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics") ? "../AI for Robotics.json" : "../AI for Robotics.json";
+
+                                              
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch AI for Robotics Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.AI_for_Robotics;
+                        displayTopics(allTopics);
+                    }
+                    )
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+           
+            
+            
+            
+            
+            
+            
+            </body>
+            </html>        

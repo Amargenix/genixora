@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    <link rel="stylesheet" href="dsa.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../opp.css">
+    
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+
+
+
+
+
+
+
+
+
+            <main class="col-md-7 content">
+                <h2>🔹 Access Modifiers in Object-Oriented Programming (OOP)</h2>
+            
+                <p>Access modifiers are **keywords** in OOP that control the **visibility and accessibility** of **classes, methods, and variables**. They help enforce **data security, encapsulation, and proper code structure**.</p>
+            
+                <h3>📌 Why Are Access Modifiers Important?</h3>
+                <p>Access modifiers define **who can access a class or its members** (variables and methods). They help:</p>
+                <ul>
+                    <li>✅ **Protect sensitive data** from unauthorized access.</li>
+                    <li>✅ **Ensure encapsulation** by limiting access to class internals.</li>
+                    <li>✅ **Prevent accidental modifications** of critical variables.</li>
+                    <li>✅ **Improve code maintainability** by enforcing clear access rules.</li>
+                </ul>
+            
+                <h3>📌 Types of Access Modifiers</h3>
+            
+                <h4>🔹 1. Private (Most Restricted)</h4>
+                <p>The **private** modifier means that the variable or method **can only be accessed within the same class**. It is not visible to subclasses or other classes.</p>
+                <p>✅ **Use Case:** Hiding sensitive data, like passwords or bank balances.</p>
+                <pre><code>
+            class BankAccount {
+                private double balance; // Private: Only accessible within this class
+                
+                public void deposit(double amount) {
+                    balance += amount;
+                }
+                
+                public double getBalance() { // Public method to access private data
+                    return balance;
+                }
+            }
+            
+            public class Main {
+                public static void main(String[] args) {
+                    BankAccount account = new BankAccount();
+                    account.deposit(500);
+                    System.out.println(account.getBalance()); // ✅ Allowed
+                    // System.out.println(account.balance); ❌ ERROR (Cannot access private variable)
+                }
+            }
+                </code></pre>
+            
+                <h4>🔹 2. Default (Package-Private)</h4>
+                <p>If no access modifier is specified, the default modifier is applied. A **default member is accessible only within the same package**.</p>
+                <p>✅ **Use Case:** When different classes within the same package need access to shared functionality.</p>
+                <pre><code>
+            // Default modifier (No 'public', 'private', or 'protected' specified)
+            class PackageExample {
+                void showMessage() {
+                    System.out.println("Accessible only within the same package");
+                }
+            }
+                </code></pre>
+            
+                <h4>🔹 3. Protected (Accessible to Subclasses)</h4>
+                <p>The **protected** modifier allows access within the **same package and by subclasses (even in different packages).**</p>
+                <p>✅ **Use Case:** When a subclass should inherit but not modify a method.</p>
+                <pre><code>
+            class Animal {
+                protected void makeSound() {
+                    System.out.println("Animal makes a sound");
+                }
+            }
+            
+            class Dog extends Animal {
+                public void bark() {
+                    makeSound(); // ✅ Allowed because of protected access
+                    System.out.println("Dog barks");
+                }
+            }
+                </code></pre>
+            
+                <h4>🔹 4. Public (No Restrictions)</h4>
+                <p>The **public** modifier allows unrestricted access from anywhere in the program.</p>
+                <p>✅ **Use Case:** When a method should be accessible to all classes.</p>
+                <pre><code>
+            class Car {
+                public void start() {
+                    System.out.println("Car Started");
+                }
+            }
+            
+            public class Main {
+                public static void main(String[] args) {
+                    Car myCar = new Car();
+                    myCar.start(); // ✅ Allowed from anywhere
+                }
+            }
+                </code></pre>
+            
+                <h3>📝 Summary of Access Modifiers</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Access Modifier</th>
+                            <th>Within Class</th>
+                            <th>Within Package</th>
+                            <th>Subclasses</th>
+                            <th>Outside Package</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>Private</b></td>
+                            <td>✅ Yes</td>
+                            <td>❌ No</td>
+                            <td>❌ No</td>
+                            <td>❌ No</td>
+                        </tr>
+                        <tr>
+                            <td><b>Default</b></td>
+                            <td>✅ Yes</td>
+                            <td>✅ Yes</td>
+                            <td>❌ No</td>
+                            <td>❌ No</td>
+                        </tr>
+                        <tr>
+                            <td><b>Protected</b></td>
+                            <td>✅ Yes</td>
+                            <td>✅ Yes</td>
+                            <td>✅ Yes</td>
+                            <td>❌ No</td>
+                        </tr>
+                        <tr>
+                            <td><b>Public</b></td>
+                            <td>✅ Yes</td>
+                            <td>✅ Yes</td>
+                            <td>✅ Yes</td>
+                            <td>✅ Yes</td>
+                        </tr>
+                    </tbody>
+                </table>
+            
+                <h2>🔗 Next Topics</h2>
+                <ul class="nexttopics-container">
+                    <li><a href="encapsulation.html">👉 Encapsulation</a></li>
+                    <li><a href="inheritance.html">👉 Inheritance</a></li>
+                    <li><a href="polymorphism.html">👉 Polymorphism</a></li>
+                    <li><a href="interfaces.html">👉 Interfaces</a></li>
+                </ul>
+            </main>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+     
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../opp.json" : "opp.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.OOP;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    <link rel="stylesheet" href="../dsa.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../dsa.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <main class="col-md-7 content">
+                <h1> Arrays in Data Structures</h1>
+            
+                <p>
+                    An **Array** is a **linear data structure** that stores a **fixed-size** sequence of elements  
+                    of the **same data type**. Arrays allow **efficient access** to elements using an index.
+                </p>
+            
+                <h2>🚀 Why Use Arrays?</h2>
+                <ul>
+                    <li>💡 **Efficient Element Access** - Access elements in **O(1) time** using indexing.</li>
+                    <li>⚡ **Fixed Size** - Memory is **preallocated**, avoiding dynamic memory issues.</li>
+                    <li>📊 **Easier Data Organization** - Suitable for **matrices, tables, and graphs**.</li>
+                    <li>🔍 **Used in Searching & Sorting Algorithms** - Binary Search, Merge Sort, Quick Sort, etc.</li>
+                </ul>
+            
+                <h2>📖 Types of Arrays</h2>
+            
+                <h3>📌 1. One-Dimensional Arrays</h3>
+                <p>A **1D array** stores elements **linearly** in a single row.</p>
+                <pre><code>
+                int arr[5] = {1, 2, 3, 4, 5};
+                </code></pre>
+            
+                <h3>📌 2. Multi-Dimensional Arrays (2D & 3D)</h3>
+                <p>Multi-dimensional arrays allow storing **tabular data** (like matrices).</p>
+                <pre><code>
+                int matrix[3][3] = {{1,2,3}, {4,5,6}, {7,8,9}};
+                </code></pre>
+            
+                <h3>📌 3. Dynamic Arrays</h3>
+                <p>Unlike static arrays, **dynamic arrays** can grow or shrink in size.</p>
+                <pre><code>
+                vector<int> arr;  // C++ Dynamic Array (STL)
+                arr.push_back(10);
+                </code></pre>
+            
+                <h2>🔄 Common Array Operations</h2>
+            
+                <h3>📌 1. Traversal (Accessing Elements)</h3>
+                <p>Iterating through an array using a loop:</p>
+                <pre><code>
+                for(int i = 0; i < 5; i++) {
+                    cout << arr[i] << " ";
+                }
+                </code></pre>
+            
+                <h3>📌 2. Insertion</h3>
+                <p>Adding an element requires shifting elements (O(n) time complexity).</p>
+                <pre><code>
+                int arr[6] = {1, 2, 3, 4, 5}; 
+                int pos = 2, value = 10;
+                for (int i = 5; i >= pos; i--) {
+                    arr[i] = arr[i - 1];
+                }
+                arr[pos] = value;
+                </code></pre>
+            
+                <h3>📌 3. Deletion</h3>
+                <p>Removing an element also requires shifting (O(n) time complexity).</p>
+                <pre><code>
+                int pos = 2;
+                for (int i = pos; i < 4; i++) {
+                    arr[i] = arr[i + 1];
+                }
+                </code></pre>
+            
+                <h3>📌 4. Searching (Linear Search & Binary Search)</h3>
+                <p>Finding an element in an array.</p>
+                
+                <h4>🔍 Linear Search (O(n))</h4>
+                <pre><code>
+                int search(int arr[], int n, int key) {
+                    for(int i = 0; i < n; i++) {
+                        if(arr[i] == key) return i;
+                    }
+                    return -1;
+                }
+                </code></pre>
+            
+                <h4>⚡ Binary Search (O(log n))</h4>
+                <pre><code>
+                int binarySearch(int arr[], int left, int right, int key) {
+                    while (left <= right) {
+                        int mid = left + (right - left) / 2;
+                        if (arr[mid] == key) return mid;
+                        if (arr[mid] < key) left = mid + 1;
+                        else right = mid - 1;
+                    }
+                    return -1;
+                }
+                </code></pre>
+            
+                <h3>📌 5. Sorting (Bubble Sort & Quick Sort)</h3>
+            
+                <h4>📊 Bubble Sort (O(n²))</h4>
+                <pre><code>
+                void bubbleSort(int arr[], int n) {
+                    for(int i = 0; i < n-1; i++) {
+                        for(int j = 0; j < n-i-1; j++) {
+                            if(arr[j] > arr[j+1]) swap(arr[j], arr[j+1]);
+                        }
+                    }
+                }
+                </code></pre>
+            
+                <h4>⚡ Quick Sort (O(n log n))</h4>
+                <pre><code>
+                int partition(int arr[], int low, int high) {
+                    int pivot = arr[high];
+                    int i = low - 1;
+                    for (int j = low; j < high; j++) {
+                        if (arr[j] < pivot) swap(arr[++i], arr[j]);
+                    }
+                    swap(arr[i + 1], arr[high]);
+                    return i + 1;
+                }
+            
+                void quickSort(int arr[], int low, int high) {
+                    if (low < high) {
+                        int pi = partition(arr, low, high);
+                        quickSort(arr, low, pi - 1);
+                        quickSort(arr, pi + 1, high);
+                    }
+                }
+                </code></pre>
+            
+                <h2>📊 Time Complexity Analysis of Array Operations</h2>
+                <table border="1">
+                    <tr>
+                        <th>Operation</th>
+                        <th>Best Case</th>
+                        <th>Worst Case</th>
+                    </tr>
+                    <tr>
+                        <td>Access</td>
+                        <td>O(1)</td>
+                        <td>O(1)</td>
+                    </tr>
+                    <tr>
+                        <td>Search (Linear)</td>
+                        <td>O(1)</td>
+                        <td>O(n)</td>
+                    </tr>
+                    <tr>
+                        <td>Search (Binary)</td>
+                        <td>O(1)</td>
+                        <td>O(log n)</td>
+                    </tr>
+                    <tr>
+                        <td>Insertion</td>
+                        <td>O(1)</td>
+                        <td>O(n)</td>
+                    </tr>
+                    <tr>
+                        <td>Deletion</td>
+                        <td>O(1)</td>
+                        <td>O(n)</td>
+                    </tr>
+                </table>
+            
+                <h2>🌍 Real-World Applications of Arrays</h2>
+                <ul>
+                    <li>🛒 **E-commerce websites** (e.g., Amazon) use arrays for product catalogs.</li>
+                    <li>📅 **Calendars and scheduling apps** use arrays for storing dates & events.</li>
+                    <li>🎮 **Game development** (e.g., 2D/3D graphics use arrays for pixel data).</li>
+                    <li>🚗 **Navigation systems** use arrays for GPS tracking and route optimization.</li>
+                </ul>
+            
+                <h2>🔗 Next Topics</h2>
+                <ul class="nexttopics-container">
+                    <li><a href="linked_lists.html">👉 Linked Lists</a></li>
+                    <li><a href="stacks_queues.html">👉 Stacks & Queues</a></li>
+                    <li><a href="recursion.html">👉 Recursion</a></li>
+                </ul>
+            </main>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../dsa.json" : "dsa.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.DSA;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+</body>
+</html>   
+    
+    

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer Network</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/allsubject.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Computer Networks</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <h1>Network Address Translation (NAT)</h1>
+                
+                <div style="background-color: #e8f4f8; border-left: 4px solid #3498db; padding: 15px; margin: 20px 0; border-radius: 0 5px 5px 0;">
+                    <p><strong>Definition:</strong> Network Address Translation (NAT) is a method of remapping one IP address space into another by modifying network address information in the IP header of packets while they are in transit across a traffic routing device.</p>
+                </div>
+                
+                <h2 style="color: #2980b9; margin-top: 30px; border-left: 4px solid #3498db; padding-left: 10px;">Why NAT is Needed</h2>
+                <ul>
+                    <li>IPv4 address exhaustion - NAT helps conserve global IP addresses</li>
+                    <li>Security - Hides internal network structure from external networks</li>
+                    <li>Flexibility - Allows changes in internal IP addressing without affecting external connectivity</li>
+                    <li>Cost reduction - Reduces the need for multiple public IP addresses</li>
+                </ul>
+                
+                <h2 style="color: #2980b9; margin-top: 30px; border-left: 4px solid #3498db; padding-left: 10px;">Types of NAT</h2>
+                
+                <div style="background-color: #eaf7ea; border: 1px solid #2ecc71; padding: 15px; margin: 15px 0; border-radius: 5px;">
+                    <h3 style="color: #16a085;">1. Static NAT</h3>
+                    <p>One-to-one mapping between local and global addresses.</p>
+                    <p><strong>Example:</strong> Mapping a public IP to a web server's private IP.</p>
+                </div>
+                
+                <div style="background-color: #eaf7ea; border: 1px solid #2ecc71; padding: 15px; margin: 15px 0; border-radius: 5px;">
+                    <h3 style="color: #16a085;">2. Dynamic NAT</h3>
+                    <p>Maps private IP addresses to public addresses from a pool.</p>
+                    <p><strong>Example:</strong> A company with 100 private IPs and 50 public IPs in a pool.</p>
+                </div>
+                
+                <div style="background-color: #eaf7ea; border: 1px solid #2ecc71; padding: 15px; margin: 15px 0; border-radius: 5px;">
+                    <h3 style="color: #16a085;">3. PAT (Port Address Translation) or NAT Overload</h3>
+                    <p>Maps multiple private IPs to a single public IP using different ports.</p>
+                    <p><strong>Example:</strong> Home router allowing multiple devices to share one public IP.</p>
+                </div>
+                
+                <h2 style="color: #2980b9; margin-top: 30px; border-left: 4px solid #3498db; padding-left: 10px;">How NAT Works</h2>
+                <p>The basic NAT process involves:</p>
+                <ol>
+                    <li>Internal host sends packet to external destination</li>
+                    <li>NAT device replaces source IP with public IP</li>
+                    <li>NAT device maintains translation table</li>
+                    <li>Response comes back to public IP</li>
+                    <li>NAT device forwards response to correct internal host</li>
+                </ol>
+                
+                <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                    <tr>
+                        <th style="background-color: #3498db; color: white; border: 1px solid #ddd; padding: 12px; text-align: left;">NAT Type</th>
+                        <th style="background-color: #3498db; color: white; border: 1px solid #ddd; padding: 12px; text-align: left;">IP Mapping</th>
+                        <th style="background-color: #3498db; color: white; border: 1px solid #ddd; padding: 12px; text-align: left;">Ports Used</th>
+                        <th style="background-color: #3498db; color: white; border: 1px solid #ddd; padding: 12px; text-align: left;">Common Use</th>
+                    </tr>
+                    <tr style="background-color: #f2f2f2;">
+                        <td style="border: 1px solid #ddd; padding: 12px;">Static NAT</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">1-to-1 fixed</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Same</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Servers</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Dynamic NAT</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">1-to-1 from pool</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Same</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Medium networks</td>
+                    </tr>
+                    <tr style="background-color: #f2f2f2;">
+                        <td style="border: 1px solid #ddd; padding: 12px;">PAT/NAT Overload</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Many-to-1</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Different</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Home/Small office</td>
+                    </tr>
+                </table>
+                
+                <h2 style="color: #2980b9; margin-top: 30px; border-left: 4px solid #3498db; padding-left: 10px;">Advantages and Disadvantages</h2>
+                
+                <h3 style="color: #16a085;">Advantages</h3>
+                <ul>
+                    <li><span style="color: #27ae60; font-weight: bold;">Address conservation:</span> Saves IPv4 addresses</li>
+                    <li><span style="color: #27ae60; font-weight: bold;">Security:</span> Hides internal network structure</li>
+                    <li><span style="color: #27ae60; font-weight: bold;">Flexibility:</span> Easy to change internal addressing</li>
+                    <li><span style="color: #27ae60; font-weight: bold;">Cost-effective:</span> Reduces need for public IPs</li>
+                </ul>
+                
+                <h3 style="color: #16a085;">Disadvantages</h3>
+                <ul>
+                    <li><span style="color: #e74c3c; font-weight: bold;">Performance impact:</span> Adds processing overhead</li>
+                    <li><span style="color: #e74c3c; font-weight: bold;">Complexity:</span> Can cause issues with some applications</li>
+                    <li><span style="color: #e74c3c; font-weight: bold;">End-to-end connectivity:</span> Breaks true end-to-end connectivity</li>
+                    <li><span style="color: #e74c3c; font-weight: bold;">Troubleshooting:</span> Makes network debugging harder</li>
+                </ul>
+                
+                <h2 style="color: #2980b9; margin-top: 30px; border-left: 4px solid #3498db; padding-left: 10px;">NAT Terminology</h2>
+                <ul>
+                    <li><strong>Inside Local:</strong> Private IP address assigned to host on internal network</li>
+                    <li><strong>Inside Global:</strong> Public IP address representing inside host to outside world</li>
+                    <li><strong>Outside Local:</strong> IP address of external host as it appears to internal network</li>
+                    <li><strong>Outside Global:</strong> Public IP address assigned to host in external network</li>
+                </ul>
+                
+                <h2 style="color: #2980b9; margin-top: 30px; border-left: 4px solid #3498db; padding-left: 10px;">NAT Configuration Examples</h2>
+                
+                <h3 style="color: #16a085;">Cisco Router NAT Configuration</h3>
+                <pre style="background-color: #f0f0f0; padding: 15px; border-radius: 5px; overflow-x: auto;">
+                <code>interface GigabitEthernet0/0
+                 ip address 192.168.1.1 255.255.255.0
+                 ip nat inside
+                !
+                interface GigabitEthernet0/1
+                 ip address 203.0.113.2 255.255.255.0
+                 ip nat outside
+                !
+                ip nat inside source list 1 interface GigabitEthernet0/1 overload
+                !
+                access-list 1 permit 192.168.1.0 0.0.0.255</code></pre>
+                
+                <h2 style="color: #2980b9; margin-top: 30px; border-left: 4px solid #3498db; padding-left: 10px;">NAT and IPv6</h2>
+                <p>With IPv6's large address space, NAT is generally not needed for address conservation. However, some forms of NAT are still used in IPv6 for:</p>
+                <ul>
+                    <li>Privacy extensions</li>
+                    <li>Network merging</li>
+                    <li>Transition mechanisms between IPv4 and IPv6</li>
+                </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </main>  
+            
+            
+
+             <!-- Floating button to open chatbot -->
+    <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+    </div>
+    
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-container");
+            let button = document.getElementById("open-chatbot");
+    
+            if (!chatbot.classList.contains("active")) {
+                chatbot.classList.add("active");
+                button.style.display = "none"; // Hide button when chatbot is open
+            } else {
+                chatbot.classList.remove("active");
+                setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+            }
+        }
+    
+        // Load chatbot HTML dynamically
+        fetch("/chatbot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("chatbot-container").innerHTML += html;
+    
+            // Execute chatbot script after inserting HTML
+            let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+            for (let script of scripts) {
+                let newScript = document.createElement("script");
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript);
+            }
+        })
+        .catch(error => console.error("Error loading chatbot:", error));
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../computernetwork.json" : "computernetwork.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.Computer_Networks;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+        
+       
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

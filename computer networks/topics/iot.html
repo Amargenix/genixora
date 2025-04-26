@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer Network</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/allsubject.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Computer Networks</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <h1>Internet of Things (IoT) in Computer Networks</h1>
+                    
+                    <section style="background-color: white; padding: 20px; border-radius: 5px; margin-bottom: 25px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                        <h2 style="color: #2980b9; border-bottom: 2px solid #3498db; padding-bottom: 8px; margin-top: 0;">What is IoT?</h2>
+                        <p>IoT refers to the network of physical objects ("things") embedded with sensors, software, and other technologies that enable them to connect and exchange data with other devices and systems over the Internet or other communication networks.</p>
+                        
+                        <div style="display: flex; flex-wrap: wrap; gap: 15px; margin: 20px 0;">
+                            <div style="flex: 1; min-width: 200px; background-color: #e8f4fc; padding: 15px; border-radius: 5px;">
+                                <h3 style="color: #2c3e50; margin-top: 0;">Key Characteristics</h3>
+                                <ul style="padding-left: 20px; margin-bottom: 0;">
+                                    <li>Connectivity</li>
+                                    <li>Sensing and actuation</li>
+                                    <li>Intelligence</li>
+                                    <li>Dynamic nature</li>
+                                    <li>Enormous scale</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 200px; background-color: #e8f4fc; padding: 15px; border-radius: 5px;">
+                                <h3 style="color: #2c3e50; margin-top: 0;">Basic Components</h3>
+                                <ul style="padding-left: 20px; margin-bottom: 0;">
+                                    <li>Sensors/Devices</li>
+                                    <li>Connectivity</li>
+                                    <li>Data Processing</li>
+                                    <li>User Interface</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 20px; border-radius: 5px; margin-bottom: 25px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                        <h2 style="color: #2980b9; border-bottom: 2px solid #3498db; padding-bottom: 8px; margin-top: 0;">IoT Architecture</h2>
+                        
+                        <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+                            <h3 style="margin-top: 0; color: #2c3e50;">4-Layer IoT Architecture</h3>
+                            <ol style="padding-left: 20px;">
+                                <li style="margin-bottom: 10px;">
+                                    <strong>Perception Layer:</strong> Sensors and actuators that interact with the physical environment
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <strong>Network Layer:</strong> Communication infrastructure (WiFi, Bluetooth, LPWAN, etc.)
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <strong>Processing Layer:</strong> Data processing, storage, and analytics (cloud/edge computing)
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <strong>Application Layer:</strong> User interfaces and domain-specific applications
+                                </li>
+                            </ol>
+                        </div>
+                        
+                        <div style="overflow-x: auto;">
+                            <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                                <tr style="background-color: #3498db; color: white;">
+                                    <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Layer</th>
+                                    <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Protocols/Technologies</th>
+                                    <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Function</th>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Perception</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">BLE, RFID, Zigbee</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Data collection</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Network</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">WiFi, LoRaWAN, 5G, MQTT</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Data transmission</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Processing</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Cloud platforms, Edge computing</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Data processing</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Application</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">REST APIs, Web/Mobile apps</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">User interaction</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 20px; border-radius: 5px; margin-bottom: 25px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                        <h2 style="color: #2980b9; border-bottom: 2px solid #3498db; padding-bottom: 8px; margin-top: 0;">IoT Communication Protocols</h2>
+                        
+                        <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">
+                            <div style="flex: 1; min-width: 300px; background-color: #fff8e1; padding: 15px; border-radius: 5px; border-left: 4px solid #ffa000;">
+                                <h3 style="color: #2c3e50; margin-top: 0;">Short-Range Protocols</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Bluetooth/BLE:</strong> Low energy, personal area networks</li>
+                                    <li><strong>Zigbee:</strong> Mesh networking, low power</li>
+                                    <li><strong>Z-Wave:</strong> Home automation focused</li>
+                                    <li><strong>NFC:</strong> Very short range communication</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 300px; background-color: #e8f5e9; padding: 15px; border-radius: 5px; border-left: 4px solid #4caf50;">
+                                <h3 style="color: #2c3e50; margin-top: 0;">Medium-Range Protocols</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>WiFi:</strong> High bandwidth, common in homes</li>
+                                    <li><strong>Thread:</strong> IPv6-based for smart homes</li>
+                                    <li><strong>6LoWPAN:</strong> IPv6 over Low power WPAN</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 300px; background-color: #e3f2fd; padding: 15px; border-radius: 5px; border-left: 4px solid #1976d2;">
+                                <h3 style="color: #2c3e50; margin-top: 0;">Long-Range Protocols</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>LoRaWAN:</strong> Long range, low power</li>
+                                    <li><strong>NB-IoT:</strong> Cellular-based, licensed spectrum</li>
+                                    <li><strong>Sigfox:</strong> Ultra-narrowband, low data rate</li>
+                                    <li><strong>5G:</strong> High-speed, low latency</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px;">
+                            <h3 style="margin-top: 0; color: #2c3e50;">Application Layer Protocols</h3>
+                            <ul style="padding-left: 20px; columns: 2; column-gap: 30px;">
+                                <li><strong>MQTT:</strong> Publish-subscribe messaging</li>
+                                <li><strong>CoAP:</strong> Constrained Application Protocol</li>
+                                <li><strong>AMQP:</strong> Advanced Message Queuing Protocol</li>
+                                <li><strong>HTTP/HTTPS:</strong> Traditional web protocols</li>
+                                <li><strong>DDS:</strong> Data Distribution Service</li>
+                                <li><strong>LwM2M:</strong> Lightweight M2M protocol</li>
+                            </ul>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 20px; border-radius: 5px; margin-bottom: 25px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                        <h2 style="color: #2980b9; border-bottom: 2px solid #3498db; padding-bottom: 8px; margin-top: 0;">IoT Applications</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 20px;">
+                            <div style="background-color: #f0f7fa; padding: 15px; border-radius: 5px; border-top: 3px solid #5dade2;">
+                                <h3 style="margin-top: 0; color: #154360;">Smart Home</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Lighting control</li>
+                                    <li>Thermostats</li>
+                                    <li>Security systems</li>
+                                    <li>Smart appliances</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f0faf5; padding: 15px; border-radius: 5px; border-top: 3px solid #58d68d;">
+                                <h3 style="margin-top: 0; color: #1e8449;">Healthcare</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Wearable devices</li>
+                                    <li>Remote patient monitoring</li>
+                                    <li>Smart pills</li>
+                                    <li>Hospital equipment tracking</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #fdf2f9; padding: 15px; border-radius: 5px; border-top: 3px solid #ec7063;">
+                                <h3 style="margin-top: 0; color: #922b21;">Industrial IoT (IIoT)</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Predictive maintenance</li>
+                                    <li>Asset tracking</li>
+                                    <li>Supply chain optimization</li>
+                                    <li>Quality control</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f5eef8; padding: 15px; border-radius: 5px; border-top: 3px solid #af7ac5;">
+                                <h3 style="margin-top: 0; color: #6c3483;">Smart Cities</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Traffic management</li>
+                                    <li>Waste management</li>
+                                    <li>Smart lighting</li>
+                                    <li>Environmental monitoring</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #eaf2f8; padding: 15px; border-radius: 5px; border-top: 3px solid #3498db;">
+                                <h3 style="margin-top: 0; color: #1f618d;">Agriculture</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Precision farming</li>
+                                    <li>Livestock monitoring</li>
+                                    <li>Smart irrigation</li>
+                                    <li>Greenhouse automation</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #fef9e7; padding: 15px; border-radius: 5px; border-top: 3px solid #f4d03f;">
+                                <h3 style="margin-top: 0; color: #7d6608;">Retail</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Inventory management</li>
+                                    <li>Smart shelves</li>
+                                    <li>Beacon technology</li>
+                                    <li>Customer behavior analysis</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 20px; border-radius: 5px; margin-bottom: 25px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                        <h2 style="color: #2980b9; border-bottom: 2px solid #3498db; padding-bottom: 8px; margin-top: 0;">IoT Security Challenges</h2>
+                        
+                        <div style="background-color: #fdedec; padding: 15px; border-radius: 5px; border-left: 4px solid #e74c3c; margin-bottom: 20px;">
+                            <h3 style="margin-top: 0; color: #c0392b;">Major Security Concerns</h3>
+                            <ul style="padding-left: 20px; columns: 2; column-gap: 30px;">
+                                <li>Weak authentication mechanisms</li>
+                                <li>Insecure network services</li>
+                                <li>Lack of encryption</li>
+                                <li>Insecure firmware/software</li>
+                                <li>Poor physical security</li>
+                                <li>Insufficient privacy protection</li>
+                                <li>Vulnerability to DDoS attacks</li>
+                                <li>Lack of secure update mechanisms</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="display: flex; flex-wrap: wrap; gap: 15px;">
+                            <div style="flex: 1; min-width: 300px; background-color: #f9f9f9; padding: 15px; border-radius: 5px;">
+                                <h3 style="margin-top: 0; color: #2c3e50;">Notable IoT Attacks</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Mirai Botnet (2016):</strong> DDoS attack using compromised IoT devices</li>
+                                    <li><strong>Stuxnet:</strong> Targeted industrial control systems</li>
+                                    <li><strong>Camera hacks:</strong> Compromised security cameras</li>
+                                    <li><strong>Smart home intrusions:</strong> Vulnerable home devices</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 300px; background-color: #f0f8ff; padding: 15px; border-radius: 5px;">
+                                <h3 style="margin-top: 0; color: #2c3e50;">Security Best Practices</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Implement strong authentication</li>
+                                    <li>Use end-to-end encryption</li>
+                                    <li>Regular firmware updates</li>
+                                    <li>Network segmentation</li>
+                                    <li>Secure boot mechanisms</li>
+                                    <li>Continuous monitoring</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 20px; border-radius: 5px; margin-bottom: 25px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                        <h2 style="color: #2980b9; border-bottom: 2px solid #3498db; padding-bottom: 8px; margin-top: 0;">IoT Standards and Frameworks</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; margin-bottom: 20px;">
+                            <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px;">
+                                <h3 style="margin-top: 0; color: #2c3e50;">Industrial Standards</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Industrial Internet Consortium (IIC)</li>
+                                    <li>Industry 4.0</li>
+                                    <li>OPC UA</li>
+                                    <li>ISA-95</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px;">
+                                <h3 style="margin-top: 0; color: #2c3e50;">Connectivity Standards</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>IEEE P2413</li>
+                                    <li>OneM2M</li>
+                                    <li>OCF (Open Connectivity Foundation)</li>
+                                    <li>AllSeen Alliance</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px;">
+                                <h3 style="margin-top: 0; color: #2c3e50;">Platforms</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Amazon Web Services (AWS) IoT</li>
+                                    <li>Microsoft Azure IoT</li>
+                                    <li>Google Cloud IoT</li>
+                                    <li>IBM Watson IoT</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: #eef2f7; color: white; padding: 25px; border-radius: 5px; margin-bottom: 25px;">
+                        <h2 style="margin-top: 0; border-bottom: 2px solid #3498db; padding-bottom: 8px;">Future Trends in IoT</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 15px; border-radius: 5px;">
+                                <h3 style="margin-top: 0; color: #3498db;">Edge Computing</h3>
+                                <p>Moving processing closer to data sources to reduce latency and bandwidth usage.</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 15px; border-radius: 5px;">
+                                <h3 style="margin-top: 0; color: #3498db;">AI/ML Integration</h3>
+                                <p>Smart analytics and decision-making at the edge with artificial intelligence.</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 15px; border-radius: 5px;">
+                                <h3 style="margin-top: 0; color: #3498db;">5G Expansion</h3>
+                                <p>Enabling massive IoT deployments with high-speed, low-latency networks.</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 15px; border-radius: 5px;">
+                                <h3 style="margin-top: 0; color: #3498db;">Digital Twins</h3>
+                                <p>Virtual representations of physical systems for simulation and analysis.</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 15px; border-radius: 5px;">
+                                <h3 style="margin-top: 0; color: #3498db;">Blockchain for IoT</h3>
+                                <p>Decentralized security and transaction management for IoT networks.</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 15px; border-radius: 5px;">
+                                <h3 style="margin-top: 0; color: #3498db;">Sustainable IoT</h3>
+                                <p>Energy-efficient devices and solutions for environmental monitoring.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+            </main>  
+            
+            
+
+             <!-- Floating button to open chatbot -->
+    <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+    </div>
+    
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-container");
+            let button = document.getElementById("open-chatbot");
+    
+            if (!chatbot.classList.contains("active")) {
+                chatbot.classList.add("active");
+                button.style.display = "none"; // Hide button when chatbot is open
+            } else {
+                chatbot.classList.remove("active");
+                setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+            }
+        }
+    
+        // Load chatbot HTML dynamically
+        fetch("/chatbot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("chatbot-container").innerHTML += html;
+    
+            // Execute chatbot script after inserting HTML
+            let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+            for (let script of scripts) {
+                let newScript = document.createElement("script");
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript);
+            }
+        })
+        .catch(error => console.error("Error loading chatbot:", error));
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../computernetwork.json" : "computernetwork.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.Computer_Networks;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+        
+       
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

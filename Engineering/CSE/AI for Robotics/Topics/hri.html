@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Robotics</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>AI for Robotics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <h1>Human-Robot Interaction (HRI)</h1>
+                   
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                        <h2 style="color: #6a11cb; border-bottom: 3px solid #2575fc; padding-bottom: 10px; font-size: 1.8em;">Fundamentals of HRI</h2>
+                        
+                        <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 25px;">
+                            <div style="flex: 1; min-width: 300px; background-color: #f0f4ff; padding: 20px; border-radius: 6px; border-left: 5px solid #6a11cb;">
+                                <h3 style="color: #6a11cb; margin-top: 0;">Key Concepts</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Natural Interaction:</strong> Intuitive human-like communication</li>
+                                    <li><strong>Shared Autonomy:</strong> Human-robot control balance</li>
+                                    <li><strong>Situational Awareness:</strong> Context understanding</li>
+                                    <li><strong>Adaptive Behavior:</strong> Personalized responses</li>
+                                </ul>
+                            </div>
+                            <div style="flex: 1; min-width: 300px; background-color: #e6f7ff; padding: 20px; border-radius: 6px; border-left: 5px solid #1890ff;">
+                                <h3 style="color: #1890ff; margin-top: 0;">Interaction Modalities</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Verbal:</strong> Speech recognition/synthesis</li>
+                                    <li><strong>Gestural:</strong> Body/hand motion interpretation</li>
+                                    <li><strong>Haptic:</strong> Touch-based feedback</li>
+                                    <li><strong>Visual:</strong> Facial expressions, gaze tracking</li>
+                                </ul>
+                            </div>
+                            <div style="flex: 1; min-width: 300px; background-color: #f6ffed; padding: 20px; border-radius: 6px; border-left: 5px solid #52c41a;">
+                                <h3 style="color: #52c41a; margin-top: 0;">Design Principles</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Transparency:</strong> Clear robot intentions</li>
+                                    <li><strong>Predictability:</strong> Understandable actions</li>
+                                    <li><strong>Trust:</strong> Appropriate reliability</li>
+                                    <li><strong>Safety:</strong> Physical/psychological well-being</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 30px; background-color: #fff2f0; padding: 20px; border-radius: 6px;">
+                            <h3 style="color: #f5222d; margin-top: 0;">HRI Challenges</h3>
+                            <div style="display: flex; gap: 20px; margin-top: 15px;">
+                                <div style="flex: 1;">
+                                    <h4 style="color: #cf1322; margin-bottom: 10px;">Technical</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Real-time processing of multimodal inputs</li>
+                                        <li>Ambiguity resolution in natural language</li>
+                                        <li>Adapting to individual user differences</li>
+                                        <li>Maintaining interaction context</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1;">
+                                    <h4 style="color: #cf1322; margin-bottom: 10px;">Human Factors</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Unpredictable human behavior</li>
+                                        <li>Varying technical literacy levels</li>
+                                        <li>Cultural differences in interaction</li>
+                                        <li>Establishing appropriate trust levels</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                        <h2 style="color: #6a11cb; border-bottom: 3px solid #2575fc; padding-bottom: 10px; font-size: 1.8em;">Core Technologies in HRI</h2>
+                        
+                        <div style="margin-bottom: 30px;">
+                            <h3 style="color: #722ed1; background-color: #f9f0ff; padding: 12px; border-radius: 5px;">1. Natural Language Processing</h3>
+                            <div style="display: flex; gap: 25px; margin-top: 20px;">
+                                <div style="flex: 1;">
+                                    <h4 style="color: #531dab; margin-bottom: 10px;">Components</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li><strong>Speech Recognition:</strong> ASR systems</li>
+                                        <li><strong>Intent Detection:</strong> Understanding user goals</li>
+                                        <li><strong>Dialog Management:</strong> Conversation flow</li>
+                                        <li><strong>Speech Synthesis:</strong> Natural voice output</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1; background-color: #f5f5f5; padding: 15px; border-radius: 6px;">
+                                    <h4 style="color: #531dab; margin-bottom: 10px;">Techniques</h4>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                        <span style="background-color: #722ed1; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Transformers</span>
+                                        <span style="background-color: #722ed1; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">NLU</span>
+                                        <span style="background-color: #722ed1; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Sentiment Analysis</span>
+                                        <span style="background-color: #722ed1; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Context Tracking</span>
+                                    </div>
+                                    <div style="margin-top: 15px; background-color: #f9f0ff; padding: 12px; border-radius: 5px;">
+                                        <strong>Example:</strong> Healthcare robot understanding patient requests and emotional state
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 30px;">
+                            <h3 style="color: #13c2c2; background-color: #e6fffb; padding: 12px; border-radius: 5px;">2. Gesture and Pose Recognition</h3>
+                            <div style="display: flex; gap: 25px; margin-top: 20px;">
+                                <div style="flex: 1;">
+                                    <h4 style="color: #08979c; margin-bottom: 10px;">Approaches</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li><strong>Model-based:</strong> Skeletal tracking</li>
+                                        <li><strong>Appearance-based:</strong> CNN classifiers</li>
+                                        <li><strong>Depth-based:</strong> 3D motion analysis</li>
+                                        <li><strong>Hybrid:</strong> Combining multiple inputs</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1; background-color: #f5f5f5; padding: 15px; border-radius: 6px;">
+                                    <h4 style="color: #08979c; margin-bottom: 10px;">Applications</h4>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                        <span style="background-color: #13c2c2; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Sign Language</span>
+                                        <span style="background-color: #13c2c2; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Control Signals</span>
+                                        <span style="background-color: #13c2c2; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Safety Monitoring</span>
+                                        <span style="background-color: #13c2c2; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Collaborative Tasks</span>
+                                    </div>
+                                    <div style="margin-top: 15px; background-color: #e6fffb; padding: 12px; border-radius: 5px;">
+                                        <strong>Example:</strong> Factory worker directing robot with hand signals in noisy environments
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="margin-top: 20px; background-color: #f5f5f5; padding: 15px; border-radius: 6px; font-family: monospace;">
+                                # MediaPipe for gesture recognition<br>
+                                import mediapipe as mp<br>
+                                mp_hands = mp.solutions.hands<br>
+                                with mp_hands.Hands(min_detection_confidence=0.7) as hands:<br>
+                                &nbsp;&nbsp;results = hands.process(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))<br>
+                                &nbsp;&nbsp;if results.multi_hand_landmarks:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;for hand_landmarks in results.multi_hand_landmarks:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Process gesture...
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 30px;">
+                            <h3 style="color: #fa8c16; background-color: #fff7e6; padding: 12px; border-radius: 5px;">3. Affective Computing</h3>
+                            <div style="display: flex; gap: 25px; margin-top: 20px;">
+                                <div style="flex: 1;">
+                                    <h4 style="color: #d46b08; margin-bottom: 10px;">Emotion Recognition</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li><strong>Facial Expression:</strong> Action units, deep learning</li>
+                                        <li><strong>Voice Analysis:</strong> Pitch, tone, speech patterns</li>
+                                        <li><strong>Physiological:</strong> Heart rate, skin conductance</li>
+                                        <li><strong>Behavioral:</strong> Interaction patterns</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1; background-color: #f5f5f5; padding: 15px; border-radius: 6px;">
+                                    <h4 style="color: #d46b08; margin-bottom: 10px;">Adaptive Responses</h4>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                        <span style="background-color: #fa8c16; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Empathic AI</span>
+                                        <span style="background-color: #fa8c16; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Personality Models</span>
+                                        <span style="background-color: #fa8c16; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Mood Adaptation</span>
+                                        <span style="background-color: #fa8c16; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Stress Detection</span>
+                                    </div>
+                                    <div style="margin-top: 15px; background-color: #fff7e6; padding: 12px; border-radius: 5px;">
+                                        <strong>Example:</strong> Educational robot adjusting teaching style based on student frustration levels
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 style="color: #eb2f96; background-color: #fff0f6; padding: 12px; border-radius: 5px;">4. Shared Control Interfaces</h3>
+                            <div style="display: flex; gap: 25px; margin-top: 20px;">
+                                <div style="flex: 1;">
+                                    <h4 style="color: #c41d7f; margin-bottom: 10px;">Control Paradigms</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li><strong>Direct Teleoperation:</strong> Full human control</li>
+                                        <li><strong>Supervised Autonomy:</strong> Human oversight</li>
+                                        <li><strong>Traded Control:</strong> Alternating control</li>
+                                        <li><strong>Adaptive Automation:</strong> Dynamic adjustment</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1; background-color: #f5f5f5; padding: 15px; border-radius: 6px;">
+                                    <h4 style="color: #c41d7f; margin-bottom: 10px;">Implementation</h4>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                        <span style="background-color: #eb2f96; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Haptic Feedback</span>
+                                        <span style="background-color: #eb2f96; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Predictive Assistance</span>
+                                        <span style="background-color: #eb2f96; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Intent Recognition</span>
+                                        <span style="background-color: #eb2f96; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Skill Transfer</span>
+                                    </div>
+                                    <div style="margin-top: 15px; background-color: #fff0f6; padding: 12px; border-radius: 5px;">
+                                        <strong>Example:</strong> Surgical robot providing force feedback while autonomously avoiding critical anatomy
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                        <h2 style="color: #6a11cb; border-bottom: 3px solid #2575fc; padding-bottom: 10px; font-size: 1.8em;">HRI Application Domains</h2>
+                        
+                        <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 25px;">
+                            <div style="flex: 1; min-width: 300px; background-color: #f0f5ff; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #1d39c4; margin-top: 0;">Healthcare Robotics</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Surgical Assistants:</strong> Collaborative control</li>
+                                    <li><strong>Rehabilitation:</strong> Adaptive therapy robots</li>
+                                    <li><strong>Elder Care:</strong> Social companion robots</li>
+                                    <li><strong>Mental Health:</strong> Therapeutic interaction</li>
+                                </ul>
+                            </div>
+                            <div style="flex: 1; min-width: 300px; background-color: #f6ffed; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #389e0d; margin-top: 0;">Service Robotics</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Retail:</strong> Customer assistance</li>
+                                    <li><strong>Hospitality:</strong> Concierge services</li>
+                                    <li><strong>Domestic:</strong> Home assistant robots</li>
+                                    <li><strong>Education:</strong> Teaching assistants</li>
+                                </ul>
+                            </div>
+                            <div style="flex: 1; min-width: 300px; background-color: #fff0f6; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #c41d7f; margin-top: 0;">Industrial Robotics</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Cobots:</strong> Human-robot teamwork</li>
+                                    <li><strong>Quality Control:</strong> Operator guidance</li>
+                                    <li><strong>Logistics:</strong> Warehouse assistants</li>
+                                    <li><strong>Training:</strong> Skill transfer systems</li>
+                                </ul>
+                            </div>
+                            <div style="flex: 1; min-width: 300px; background-color: #fff7e6; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #d46b08; margin-top: 0;">Public Space Robotics</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Security:</strong> Human-aware patrolling</li>
+                                    <li><strong>Tourism:</strong> Guide robots</li>
+                                    <li><strong>Transportation:</strong> Autonomous shuttles</li>
+                                    <li><strong>Emergency:</strong> Disaster response teams</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 30px; background-color: #f6f6f6; padding: 20px; border-radius: 6px;">
+                            <h3 style="color: #595959; margin-top: 0;">Design Considerations by Domain</h3>
+                            <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+                                <thead>
+                                    <tr style="background-color: #6a11cb; color: white;">
+                                        <th style="padding: 12px; text-align: left;">Domain</th>
+                                        <th style="padding: 12px; text-align: left;">Primary Interaction Mode</th>
+                                        <th style="padding: 12px; text-align: left;">Critical Factors</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #e8e8e8;">
+                                        <td style="padding: 12px;">Healthcare</td>
+                                        <td style="padding: 12px;">Verbal, gentle haptic</td>
+                                        <td style="padding: 12px;">Privacy, reliability, empathy</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #e8e8e8;">
+                                        <td style="padding: 12px;">Industrial</td>
+                                        <td style="padding: 12px;">Gestural, minimal verbal</td>
+                                        <td style="padding: 12px;">Safety, efficiency, clarity</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #e8e8e8;">
+                                        <td style="padding: 12px;">Public</td>
+                                        <td style="padding: 12px;">Multimodal, expressive</td>
+                                        <td style="padding: 12px;">Accessibility, cultural sensitivity</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 12px;">Domestic</td>
+                                        <td style="padding: 12px;">Natural language, simple UI</td>
+                                        <td style="padding: 12px;">Ease of use, personalization</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                        <h2 style="color: #6a11cb; border-bottom: 3px solid #2575fc; padding-bottom: 10px; font-size: 1.8em;">Evaluation Methods for HRI</h2>
+                        
+                        <div style="display: flex; gap: 20px; margin-top: 20px;">
+                            <div style="flex: 1; background-color: #f6ffed; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #389e0d; margin-top: 0;">Quantitative Metrics</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Task Performance:</strong> Completion time, success rate</li>
+                                    <li><strong>Interaction Efficiency:</strong> Commands per task</li>
+                                    <li><strong>Error Rates:</strong> Misunderstandings, corrections</li>
+                                    <li><strong>Physiological:</strong> Stress indicators, workload</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="flex: 1; background-color: #e6f7ff; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #1890ff; margin-top: 0;">Qualitative Measures</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>User Experience:</strong> Satisfaction surveys</li>
+                                    <li><strong>Trust Scales:</strong> Confidence in system</li>
+                                    <li><strong>Workload Assessment:</strong> NASA-TLX</li>
+                                    <li><strong>Behavioral Analysis:</strong> Video coding</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 20px; background-color: #fff0f6; padding: 20px; border-radius: 6px;">
+                            <h3 style="color: #eb2f96; margin-top: 0;">Evaluation Protocols</h3>
+                            <div style="display: flex; gap: 20px; margin-top: 15px;">
+                                <div style="flex: 1;">
+                                    <h4 style="color: #c41d7f; margin-bottom: 10px;">Laboratory Studies</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Controlled environment testing</li>
+                                        <li>Standardized tasks</li>
+                                        <li>High-quality data collection</li>
+                                        <li>Limited ecological validity</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1;">
+                                    <h4 style="color: #c41d7f; margin-bottom: 10px;">Field Studies</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Real-world deployment</li>
+                                        <li>Longitudinal observation</li>
+                                        <li>Authentic user behavior</li>
+                                        <li>Less control over variables</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1;">
+                                    <h4 style="color: #c41d7f; margin-bottom: 10px;">Wizard-of-Oz</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Simulated autonomy</li>
+                                        <li>Early-stage concept testing</li>
+                                        <li>Flexible interaction patterns</li>
+                                        <li>Reveals user expectations</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background: linear-gradient(135deg, #e6e0ed, #2575fc); color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                        <h2 style="border-bottom: 2px solid rgba(255,255,255,0.3); padding-bottom: 10px; font-size: 1.8em;">Emerging Trends in HRI</h2>
+                        
+                        <div style="display: flex; gap: 20px; margin-top: 20px;">
+                            <div style="flex: 1; background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #ffffff; margin-top: 0;">Technological Advances</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Multimodal Fusion:</strong> Combining speech, gaze, gesture</li>
+                                    <li><strong>Explainable AI:</strong> Understandable robot decisions</li>
+                                    <li><strong>Personalization:</strong> Long-term user adaptation</li>
+                                    <li><strong>Embodied AI:</strong> Physical presence effects</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="flex: 1; background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #ffffff; margin-top: 0;">Social Aspects</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Group Interaction:</strong> Multi-human multi-robot</li>
+                                    <li><strong>Cultural Adaptation:</strong> Localized behaviors</li>
+                                    <li><strong>Ethical Design:</strong> Privacy, autonomy, bias</li>
+                                    <li><strong>Long-term Effects:</strong> Sustained relationships</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 30px; background-color: rgba(255,255,255,0.15); padding: 20px; border-radius: 6px;">
+                            <h3 style="color: #ffffff; margin-top: 0;">Future Challenges</h3>
+                            <div style="display: flex; gap: 20px; margin-top: 15px;">
+                                <div style="flex: 1;">
+                                    <h4 style="color: #ffffff; margin-bottom: 10px;">Technical</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Handling ambiguous social cues</li>
+                                        <li>Real-time adaptive behavior</li>
+                                        <li>Seamless multimodal integration</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1;">
+                                    <h4 style="color: #ffffff; margin-bottom: 10px;">Social</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Establishing appropriate trust levels</li>
+                                        <li>Managing user expectations</li>
+                                        <li>Addressing ethical concerns</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1;">
+                                    <h4 style="color: #ffffff; margin-bottom: 10px;">Practical</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Scalable personalization</li>
+                                        <li>Cost-effective solutions</li>
+                                        <li>Maintenance and updates</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+               
+
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [ ];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics") ? "../AI for Robotics.json" : "../AI for Robotics.json";
+
+                                              
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch AI for Robotics Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.AI_for_Robotics;
+                        displayTopics(allTopics);
+                    }
+                    )
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+           
+            
+            
+            
+            
+            
+            
+            </body>
+            </html>        

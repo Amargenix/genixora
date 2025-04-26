@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agile Anti-Patterns</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Agile and Scrum</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+               <h1>Continuous Integration & Continuous Delivery</h1>
+                    </header>
+                
+                    <section style="margin-bottom: 40px; background-color: #f9f9f9; padding: 20px; border-radius: 5px; border-left: 5px solid #3498db;">
+                        <h2 style="color: #2c3e50; margin-top: 0;">Introduction to CI/CD in Agile</h2>
+                        <p>Continuous Integration (CI) and Continuous Delivery (CD) are essential practices in modern Agile and Scrum methodologies that enable teams to deliver high-quality software rapidly and reliably.</p>
+                        
+                        <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                            <div style="width: 48%; background-color: #e8f4fc; padding: 15px; border-radius: 5px;">
+                                <h3 style="color: #2980b9;">Continuous Integration (CI)</h3>
+                                <p>The practice of frequently integrating code changes into a shared repository, where automated builds and tests are run.</p>
+                            </div>
+                            <div style="width: 48%; background-color: #e8f4fc; padding: 15px; border-radius: 5px;">
+                                <h3 style="color: #2980b9;">Continuous Delivery (CD)</h3>
+                                <p>The capability to release software changes at any time through automated deployment pipelines that ensure code is always in a deployable state.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="margin-bottom: 40px;">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px;">Why CI/CD is Crucial in Agile/Scrum</h2>
+                        <ul style="list-style-type: none; padding: 0;">
+                            <li style="padding: 10px; margin-bottom: 5px; background-color: #f0f8ff; border-left: 4px solid #3498db;">
+                                <strong>Faster Feedback Cycles:</strong> Immediate feedback on code changes aligns with Agile principles
+                            </li>
+                            <li style="padding: 10px; margin-bottom: 5px; background-color: #f0f8ff; border-left: 4px solid #3498db;">
+                                <strong>Reduced Risk:</strong> Small, frequent changes are easier to test and debug
+                            </li>
+                            <li style="padding: 10px; margin-bottom: 5px; background-color: #f0f8ff; border-left: 4px solid #3498db;">
+                                <strong>Continuous Value Delivery:</strong> Enables true "Done" in Scrum by ensuring shippable increments
+                            </li>
+                            <li style="padding: 10px; margin-bottom: 5px; background-color: #f0f8ff; border-left: 4px solid #3498db;">
+                                <strong>Improved Collaboration:</strong> Breaks down silos between development, QA, and operations
+                            </li>
+                            <li style="padding: 10px; margin-bottom: 5px; background-color: #f0f8ff; border-left: 4px solid #3498db;">
+                                <strong>Technical Agility:</strong> Maintains codebase flexibility for changing requirements
+                            </li>
+                        </ul>
+                    </section>
+                
+                    <section style="margin-bottom: 40px; background-color: #fff8e1; padding: 20px; border-radius: 5px;">
+                        <h2 style="color: #2c3e50;">CI/CD Implementation in Scrum</h2>
+                        
+                        <h3 style="color: #e67e22;">Sprint Planning Considerations</h3>
+                        <ul>
+                            <li>Include CI/CD pipeline improvements in Sprint Backlog</li>
+                            <li>Account for pipeline maintenance in capacity planning</li>
+                            <li>Break down deployment tasks into small, testable increments</li>
+                        </ul>
+                        
+                        <h3 style="color: #e67e22;">Daily Standups</h3>
+                        <ul>
+                            <li>Monitor build status and test results</li>
+                            <li>Address broken builds immediately (as per Scrum's "stop the line" principle)</li>
+                            <li>Coordinate merge conflicts and integration issues</li>
+                        </ul>
+                        
+                        <h3 style="color: #e67e22;">Sprint Review</h3>
+                        <ul>
+                            <li>Demonstrate working software in production-like environments</li>
+                            <li>Showcase pipeline improvements and metrics</li>
+                            <li>Gather feedback on deployment frequency and quality</li>
+                        </ul>
+                        
+                        <h3 style="color: #e67e22;">Retrospectives</h3>
+                        <ul>
+                            <li>Review pipeline bottlenecks and improvement opportunities</li>
+                            <li>Celebrate successes in automation and deployment frequency</li>
+                            <li>Plan experiments to improve CI/CD processes</li>
+                        </ul>
+                    </section>
+                
+                    <section style="margin-bottom: 40px;">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px;">Key Components of CI/CD Pipeline</h2>
+                        
+                        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between;">
+                            <div style="flex: 1; min-width: 300px; background-color: #e8f5e9; padding: 15px; border-radius: 5px;">
+                                <h3 style="color: #27ae60;">1. Version Control</h3>
+                                <p>Single source of truth for all code (Git, SVN, etc.) with branching strategies that support Agile workflows (Git Flow, Trunk-Based Development).</p>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 300px; background-color: #e8f5e9; padding: 15px; border-radius: 5px;">
+                                <h3 style="color: #27ae60;">2. Build Automation</h3>
+                                <p>Scripted builds that compile code, resolve dependencies, and package artifacts (Maven, Gradle, MSBuild, etc.).</p>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 300px; background-color: #e8f5e9; padding: 15px; border-radius: 5px;">
+                                <h3 style="color: #27ae60;">3. Automated Testing</h3>
+                                <p>Comprehensive test suites (unit, integration, API, UI) that run on every change (JUnit, Selenium, Cypress, etc.).</p>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 300px; background-color: #e8f5e9; padding: 15px; border-radius: 5px;">
+                                <h3 style="color: #27ae60;">4. Artifact Repository</h3>
+                                <p>Storage for versioned build artifacts (Docker Hub, Nexus, Artifactory, etc.).</p>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 300px; background-color: #e8f5e9; padding: 15px; border-radius: 5px;">
+                                <h3 style="color: #27ae60;">5. Deployment Automation</h3>
+                                <p>Infrastructure as Code (IaC) and configuration management (Terraform, Ansible, Chef, etc.).</p>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 300px; background-color: #e8f5e9; padding: 15px; border-radius: 5px;">
+                                <h3 style="color: #27ae60;">6. Monitoring & Feedback</h3>
+                                <p>Production monitoring and logging to complete the feedback loop (Prometheus, ELK Stack, etc.).</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="margin-bottom: 40px; background-color: #f5e8fc; padding: 20px; border-radius: 5px;">
+                        <h2 style="color: #2c3e50;">CI/CD Best Practices for Agile Teams</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                            <div style="background-color: white; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h3 style="color: #8e44ad;">Commit Early and Often</h3>
+                                <p>Small, frequent commits reduce integration complexity and make issues easier to identify.</p>
+                            </div>
+                            
+                            <div style="background-color: white; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h3 style="color: #8e44ad;">Maintain a Single Source Repository</h3>
+                                <p>All team members work from the same codebase to prevent integration nightmares.</p>
+                            </div>
+                            
+                            <div style="background-color: white; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h3 style="color: #8e44ad;">Automate Everything</h3>
+                                <p>Builds, tests, deployments, infrastructure provisioning - manual processes create bottlenecks.</p>
+                            </div>
+                            
+                            <div style="background-color: white; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h3 style="color: #8e44ad;">Fix Broken Builds Immediately</h3>
+                                <p>A broken build should be the team's top priority to maintain continuous integration.</p>
+                            </div>
+                            
+                            <div style="background-color: white; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h3 style="color: #8e44ad;">Test in Production-like Environments</h3>
+                                <p>Minimize environment-specific issues by testing in environments that mirror production.</p>
+                            </div>
+                            
+                            <div style="background-color: white; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h3 style="color: #8e44ad;">Make Builds Fast</h3>
+                                <p>Optimize build and test times to maintain developer productivity and feedback speed.</p>
+                            </div>
+                            
+                            <div style="background-color: white; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h3 style="color: #8e44ad;">Version Everything</h3>
+                                <p>Code, dependencies, infrastructure, and configurations should all be version-controlled.</p>
+                            </div>
+                            
+                            <div style="background-color: white; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h3 style="color: #8e44ad;">Implement Feature Flags</h3>
+                                <p>Decouple deployment from release to enable continuous delivery while controlling feature visibility.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="margin-bottom: 40px;">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px;">CI/CD Tools Ecosystem</h2>
+                        
+                        <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+                            <thead>
+                                <tr style="background-color: #3498db; color: white;">
+                                    <th style="padding: 12px; text-align: left;">Category</th>
+                                    <th style="padding: 12px; text-align: left;">Popular Tools</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 12px; background-color: #f2f9fc;">Version Control</td>
+                                    <td style="padding: 12px;">Git, GitHub, GitLab, Bitbucket</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 12px; background-color: #f2f9fc;">CI/CD Servers</td>
+                                    <td style="padding: 12px;">Jenkins, CircleCI, Travis CI, GitLab CI/CD, GitHub Actions, Azure DevOps</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 12px; background-color: #f2f9fc;">Build Tools</td>
+                                    <td style="padding: 12px;">Maven, Gradle, npm, Webpack, MSBuild</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 12px; background-color: #f2f9fc;">Testing Frameworks</td>
+                                    <td style="padding: 12px;">JUnit, TestNG, Selenium, Cypress, Jest, PyTest</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 12px; background-color: #f2f9fc;">Artifact Repositories</td>
+                                    <td style="padding: 12px;">Nexus, Artifactory, Docker Hub</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 12px; background-color: #f2f9fc;">Configuration Management</td>
+                                    <td style="padding: 12px;">Ansible, Chef, Puppet, SaltStack</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 12px; background-color: #f2f9fc;">Infrastructure as Code</td>
+                                    <td style="padding: 12px;">Terraform, AWS CloudFormation, Pulumi</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 12px; background-color: #f2f9fc;">Containerization</td>
+                                    <td style="padding: 12px;">Docker, Kubernetes, OpenShift</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 12px; background-color: #f2f9fc;">Monitoring</td>
+                                    <td style="padding: 12px;">Prometheus, Grafana, ELK Stack, New Relic</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                
+                    <section style="margin-bottom: 40px; background-color: #eaf7fa; padding: 20px; border-radius: 5px;">
+                        <h2 style="color: #2c3e50;">Metrics for CI/CD in Agile Teams</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+                            <div style="background-color: white; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h3 style="color: #16a085; margin-top: 0;">Deployment Frequency</h3>
+                                <p>How often code is deployed to production. Agile teams aim for higher frequencies.</p>
+                            </div>
+                            
+                            <div style="background-color: white; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h3 style="color: #16a085; margin-top: 0;">Lead Time for Changes</h3>
+                                <p>Time from code commit to production deployment. Measures pipeline efficiency.</p>
+                            </div>
+                            
+                            <div style="background-color: white; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h3 style="color: #16a085; margin-top: 0;">Mean Time to Recovery (MTTR)</h3>
+                                <p>How quickly the team can recover from failures in production.</p>
+                            </div>
+                            
+                            <div style="background-color: white; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h3 style="color: #16a085; margin-top: 0;">Change Failure Rate</h3>
+                                <p>Percentage of deployments causing failures in production.</p>
+                            </div>
+                            
+                            <div style="background-color: white; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h3 style="color: #16a085; margin-top: 0;">Test Coverage</h3>
+                                <p>Percentage of code covered by automated tests.</p>
+                            </div>
+                            
+                            <div style="background-color: white; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h3 style="color: #16a085; margin-top: 0;">Build Success Rate</h3>
+                                <p>Percentage of builds that complete successfully without errors.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="margin-bottom: 40px; border: 1px solid #e0e0e0; padding: 20px; border-radius: 5px;">
+                        <h2 style="color: #2c3e50;">Challenges and Solutions</h2>
+                        
+                        <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                            <div style="flex: 1; min-width: 300px;">
+                                <h3 style="color: #c0392b;">Common Challenges</h3>
+                                <ul>
+                                    <li>Resistance to cultural change</li>
+                                    <li>Legacy systems and technical debt</li>
+                                    <li>Test automation gaps</li>
+                                    <li>Environment inconsistencies</li>
+                                    <li>Security and compliance requirements</li>
+                                    <li>Toolchain complexity</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 300px;">
+                                <h3 style="color: #27ae60;">Solutions</h3>
+                                <ul>
+                                    <li>Start small and iterate (Agile approach to CI/CD itself)</li>
+                                    <li>Invest in test automation incrementally</li>
+                                    <li>Implement Infrastructure as Code</li>
+                                    <li>Adopt containerization for environment consistency</li>
+                                    <li>Integrate security early (Shift Left Security)</li>
+                                    <li>Standardize tooling across teams</li>
+                                    <li>Continuous learning and improvement</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                   
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics/") ? "../Agile_and_Scrum.json" : "../Agile_and_Scrum.json";
+            
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch DSA Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.Agile_and_Scrum;
+                        displayTopics(allTopics);
+                    })
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+           
+            
+            
+            
+            
+            
+            
+            </body>
+            </html>     

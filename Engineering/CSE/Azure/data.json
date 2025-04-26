@@ -1,0 +1,46 @@
+[
+    { "name": "Introduction to Cloud Computing", "id": "intro_cloud", "link": "intro_cloud.html" },
+    { "name": "What is Microsoft Azure?", "id": "what_is_azure", "link": "what_is_azure.html" },
+    { "name": "Azure Global Infrastructure", "id": "azure_infrastructure", "link": "azure_infrastructure.html" },
+    { "name": "Setting Up an Azure Free Account", "id": "azure_free_account", "link": "azure_free_account.html" },
+    { "name": "Navigating the Azure Portal", "id": "azure_portal", "link": "azure_portal.html" },
+  
+    { "name": "Azure Resource Manager (ARM)", "id": "azure_arm", "link": "azure_arm.html" },
+    { "name": "Azure Virtual Machines (VM)", "id": "azure_vm", "link": "azure_vm.html" },
+    { "name": "Azure App Services", "id": "azure_app_services", "link": "azure_app_services.html" },
+    { "name": "Azure Blob Storage", "id": "azure_blob_storage", "link": "azure_blob_storage.html" },
+    { "name": "Azure SQL Database", "id": "azure_sql", "link": "azure_sql.html" },
+    { "name": "Azure Functions (Serverless)", "id": "azure_functions", "link": "azure_functions.html" },
+    { "name": "Azure Virtual Network (VNet)", "id": "azure_vnet", "link": "azure_vnet.html" },
+    { "name": "Azure DNS and Traffic Manager", "id": "azure_dns_traffic", "link": "azure_dns_traffic.html" },
+    { "name": "Azure Active Directory (AD)", "id": "azure_ad", "link": "azure_ad.html" },
+    { "name": "Azure Monitor & Application Insights", "id": "azure_monitor", "link": "azure_monitor.html" },
+    { "name": "Azure Key Vault", "id": "azure_key_vault", "link": "azure_key_vault.html" },
+  
+    { "name": "Deploying Web Apps on Azure", "id": "deploy_web_azure", "link": "deploy_web_azure.html" },
+    { "name": "Scaling and Load Balancing in Azure", "id": "azure_scaling_lb", "link": "azure_scaling_lb.html" },
+    { "name": "Azure DevOps (Pipelines, Repos, Boards)", "id": "azure_devops", "link": "azure_devops.html" },
+    { "name": "Infrastructure as Code with ARM Templates", "id": "arm_templates", "link": "arm_templates.html" },
+    { "name": "Azure CLI and PowerShell", "id": "azure_cli_powershell", "link": "azure_cli_powershell.html" },
+    { "name": "Azure Cost Management and Budgets", "id": "azure_cost_management", "link": "azure_cost_management.html" },
+  
+    { "name": "Azure Kubernetes Service (AKS)", "id": "azure_aks", "link": "azure_aks.html" },
+    { "name": "Azure Logic Apps", "id": "azure_logic_apps", "link": "azure_logic_apps.html" },
+    { "name": "Azure Cognitive Services", "id": "azure_cognitive", "link": "azure_cognitive.html" },
+    { "name": "Azure Synapse Analytics", "id": "azure_synapse", "link": "azure_synapse.html" },
+    { "name": "Azure Data Factory", "id": "azure_data_factory", "link": "azure_data_factory.html" },
+    { "name": "Azure Cosmos DB", "id": "azure_cosmos", "link": "azure_cosmos.html" },
+    { "name": "Azure Service Bus and Event Grid", "id": "azure_servicebus_eventgrid", "link": "azure_servicebus_eventgrid.html" },
+  
+    { "name": "Azure AI and Machine Learning Studio", "id": "azure_ml_studio", "link": "azure_ml_studio.html" },
+    { "name": "Azure for Web Hosting and APIs", "id": "azure_web_api", "link": "azure_web_api.html" },
+    { "name": "Azure for Mobile App Backend", "id": "azure_mobile_backend", "link": "azure_mobile_backend.html" },
+    { "name": "Azure for IoT Solutions", "id": "azure_iot", "link": "azure_iot.html" },
+    { "name": "Azure Security Center", "id": "azure_security_center", "link": "azure_security_center.html" },
+    { "name": "Azure Compliance and Governance", "id": "azure_compliance", "link": "azure_compliance.html" },
+  
+    { "name": "Capstone Project: Host a Web App with Azure SQL and Blob Storage", "id": "project_web_sql_blob", "link": "project_web_sql_blob.html" },
+    { "name": "Capstone Project: Build Serverless App with Azure Functions and Cosmos DB", "id": "project_serverless_cosmos", "link": "project_serverless_cosmos.html" },
+    { "name": "Azure Certification Paths (Fundamentals to Expert)", "id": "azure_certifications", "link": "azure_certifications.html" }
+  ]
+  

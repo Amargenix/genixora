@@ -1,0 +1,85 @@
+{
+    "Computer_Networks": [
+        { "name": "Intro", "id": "cn_intro", "link": "cn_intro.html" },
+        { "name": "History", "id": "history", "link": "history.html" },
+        { "name": "Types", "id": "network_types", "link": "network_types.html" },
+        { "name": "Topologies", "id": "network_topologies", "link": "network_topologies.html" },
+
+        { "name": "OSI Model", "id": "osi_model", "link": "osi_model.html" },
+        { "name": "TCP/IP Model", "id": "tcp_ip_model", "link": "tcp_ip_model.html" },
+
+        { "name": "Physical", "id": "physical_layer", "link": "physical_layer.html" },
+        { "name": "Data Link", "id": "data_link_layer", "link": "data_link_layer.html" },
+        { "name": "MAC", "id": "mac_sub_layer", "link": "mac_sub_layer.html" },
+        { "name": "Switching", "id": "switching_techniques", "link": "switching_techniques.html" },
+
+        { "name": "Network", "id": "network_layer", "link": "network_layer.html" },
+        { "name": "IP", "id": "ip_addressing", "link": "ip_addressing.html" },
+        { "name": "Subnetting", "id": "subnetting", "link": "subnetting.html" },
+        { "name": "VLSM", "id": "vlsm", "link": "vlsm.html" },
+        { "name": "CIDR", "id": "cidr", "link": "cidr.html" },
+        { "name": "Routing", "id": "routing", "link": "routing.html" },
+        { "name": "NAT", "id": "nat", "link": "nat.html" },
+        { "name": "ARP", "id": "arp", "link": "arp.html" },
+        { "name": "ICMP", "id": "icmp", "link": "icmp.html" },
+
+        { "name": "Transport", "id": "transport_layer", "link": "transport_layer.html" },
+        { "name": "TCP vs UDP", "id": "tcp_udp", "link": "tcp_udp.html" },
+        { "name": "Flow Ctrl", "id": "flow_control", "link": "flow_control.html" },
+        { "name": "Cong Ctrl", "id": "congestion_control", "link": "congestion_control.html" },
+
+        { "name": "Application", "id": "application_layer", "link": "application_layer.html" },
+        { "name": "DNS", "id": "dns", "link": "dns.html" },
+        { "name": "HTTP", "id": "http_https", "link": "http_https.html" },
+        { "name": "FTP & SMTP", "id": "ftp_smtp", "link": "ftp_smtp.html" },
+
+        { "name": "Network Devices", "id": "network_devices", "link": "network_devices.html" },
+        { "name": "LAN", "id": "lan", "link": "lan.html" },
+        { "name": "WAN", "id": "wan", "link": "wan.html" },
+        { "name": "MAN", "id": "man", "link": "man.html" },
+        { "name": "VPN", "id": "vpn", "link": "vpn.html" },
+        { "name": "MPLS", "id": "mpls", "link": "mpls.html" },
+
+        { "name": "Wireless", "id": "wireless", "link": "wireless.html" },
+        { "name": "WiFi", "id": "wifi", "link": "wifi.html" },
+        { "name": "Bluetooth", "id": "bluetooth", "link": "bluetooth.html" },
+        { "name": "5G", "id": "5g_networks", "link": "5g_networks.html" },
+        { "name": "Satellite", "id": "satellite_networks", "link": "satellite_networks.html" },
+
+        { "name": "Security", "id": "security", "link": "security.html" },
+        { "name": "Cryptography", "id": "cryptography", "link": "cryptography.html" },
+        { "name": "Firewalls", "id": "firewalls", "link": "firewalls.html" },
+        { "name": "DDoS", "id": "ddos_attacks", "link": "ddos_attacks.html" },
+        { "name": "VPN Security", "id": "vpn_security", "link": "vpn_security.html" },
+        { "name": "Cyber Attacks", "id": "cyber_attacks", "link": "cyber_attacks.html" },
+        { "name": "Ethical Hacking", "id": "ethical_hacking", "link": "ethical_hacking.html" },
+
+        { "name": "Cloud", "id": "cloud_networking", "link": "cloud_networking.html" },
+        { "name": "IoT", "id": "iot", "link": "iot.html" },
+        { "name": "SDN", "id": "sdn", "link": "sdn.html" },
+
+        { "name": "Numericals", "id": "numericals", "link": "numericals.html" },
+        { "name": "Subnet Calc", "id": "subnet_calc", "link": "subnet_calc.html" },
+        { "name": "IP Calc", "id": "ip_calc", "link": "ip_calc.html" },
+        { "name": "Perf Calc", "id": "perf_calc", "link": "perf_calc.html" },
+
+        { "name": "Examples", "id": "examples", "link": "examples.html" },
+        { "name": "Real-World Apps", "id": "real_world_apps", "link": "real_world_apps.html" },
+        { "name": "Network Configs", "id": "network_configurations", "link": "network_configurations.html" },
+        { "name": "Routing Tables", "id": "routing_tables", "link": "routing_tables.html" },
+        { "name": "ACLs", "id": "acls", "link": "acls.html" },
+        { "name": "Firewall Rules", "id": "firewall_rules", "link": "firewall_rules.html" },
+
+        { "name": "Case Studies", "id": "case_studies", "link": "case_studies.html" },
+        { "name": "Corporate Network", "id": "corporate_network", "link": "corporate_network.html" },
+        { "name": "Cloud Infra", "id": "cloud_infra", "link": "cloud_infra.html" },
+        { "name": "Banking", "id": "banking_networks", "link": "banking_networks.html" },
+        { "name": "E-Commerce", "id": "ecommerce_networks", "link": "ecommerce_networks.html" },
+
+        { "name": "Advanced Topics", "id": "advanced_topics", "link": "advanced_topics.html" },
+        { "name": "Edge Computing", "id": "edge_computing", "link": "edge_computing.html" },
+        { "name": "Quantum Networks", "id": "quantum_networks", "link": "quantum_networks.html" },
+        { "name": "AI in Networks", "id": "ai_in_networks", "link": "ai_in_networks.html" },
+        { "name": "Network Automation", "id": "network_automation", "link": "network_automation.html" }
+    ]
+}

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer Network</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/allsubject.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Computer Networks</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <h1>Physical Layer</h1>
+                    
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                        <h2 style="color: #1a2a6c; border-bottom: 2px solid #b21f1f; padding-bottom: 10px; margin-top: 0;">Introduction to Physical Layer</h2>
+                        
+                        <div style="display: flex; gap: 25px; flex-wrap: wrap; margin-bottom: 20px;">
+                            <div style="flex: 1; min-width: 300px;">
+                                <p>The Physical Layer is the first and lowest layer in the OSI model of computer networking. It deals with the physical connection between devices and the transmission and reception of raw bit streams over a physical medium.</p>
+                                <p>This layer defines the electrical, mechanical, procedural, and functional specifications for activating, maintaining, and deactivating the physical link between network devices.</p>
+                            </div>
+                            <div style="flex: 1; min-width: 300px; background-color: #f0f0f7; padding: 20px; border-radius: 5px; border-left: 4px solid #1a2a6c;">
+                                <h3 style="color: #1a2a6c; margin-top: 0;">Key Responsibilities</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Bit representation and synchronization</li>
+                                    <li>Physical topology definition</li>
+                                    <li>Transmission mode determination</li>
+                                    <li>Physical medium characteristics</li>
+                                    <li>Data rate control</li>
+                                    <li>Line configuration</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                        <h2 style="color: #1a2a6c; border-bottom: 2px solid #b21f1f; padding-bottom: 10px; margin-top: 0;">Physical Layer Functions</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 25px;">
+                            <div style="background-color: #f5f5ff; padding: 20px; border-radius: 5px; border-top: 3px solid #1a2a6c;">
+                                <h3 style="color: #1a2a6c; margin-top: 0;">Bit Representation</h3>
+                                <p>Defines how bits are converted to signals (electrical, optical, or radio waves).</p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Encoding schemes (NRZ, Manchester, 4B/5B)</li>
+                                    <li>Modulation techniques (ASK, FSK, PSK)</li>
+                                    <li>Signal voltage levels</li>
+                                    <li>Bit synchronization</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f5f5ff; padding: 20px; border-radius: 5px; border-top: 3px solid #b21f1f;">
+                                <h3 style="color: #1a2a6c; margin-top: 0;">Data Rate</h3>
+                                <p>Determines the transmission rate (number of bits sent per second).</p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Bandwidth limitations</li>
+                                    <li>Nyquist Theorem</li>
+                                    <li>Shannon's Capacity</li>
+                                    <li>Baud rate vs bit rate</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f5f5ff; padding: 20px; border-radius: 5px; border-top: 3px solid #fdbb2d;">
+                                <h3 style="color: #1a2a6c; margin-top: 0;">Physical Topology</h3>
+                                <p>Defines how devices are physically connected.</p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Bus, Star, Ring, Mesh</li>
+                                    <li>Point-to-point vs multipoint</li>
+                                    <li>Physical vs logical topology</li>
+                                    <li>Network layout considerations</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f5f5ff; padding: 20px; border-radius: 5px; border-top: 3px solid #1a2a6c;">
+                                <h3 style="color: #1a2a6c; margin-top: 0;">Transmission Mode</h3>
+                                <p>Determines the direction of data flow.</p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Simplex (one direction)</li>
+                                    <li>Half-duplex (both directions, not simultaneously)</li>
+                                    <li>Full-duplex (both directions simultaneously)</li>
+                                    <li>Parallel vs serial transmission</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f5f5ff; padding: 20px; border-radius: 5px; border-top: 3px solid #b21f1f;">
+                                <h3 style="color: #1a2a6c; margin-top: 0;">Line Configuration</h3>
+                                <p>Defines the connection type between devices.</p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Point-to-point (direct connection)</li>
+                                    <li>Multipoint (shared connection)</li>
+                                    <li>Master-slave relationships</li>
+                                    <li>Peer-to-peer connections</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f5f5ff; padding: 20px; border-radius: 5px; border-top: 3px solid #fdbb2d;">
+                                <h3 style="color: #1a2a6c; margin-top: 0;">Physical Medium</h3>
+                                <p>Specifies the characteristics of the transmission medium.</p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Guided (wired) vs unguided (wireless)</li>
+                                    <li>Attenuation and distortion</li>
+                                    <li>Noise and interference</li>
+                                    <li>Propagation characteristics</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                        <h2 style="color: #1a2a6c; border-bottom: 2px solid #b21f1f; padding-bottom: 10px; margin-top: 0;">Transmission Media</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 25px;">
+                            <div style="background-color: #f0f0f7; padding: 20px; border-radius: 5px; border-left: 4px solid #1a2a6c;">
+                                <h3 style="color: #1a2a6c; margin-top: 0;">Twisted Pair Cable</h3>
+                                <p>Two insulated copper wires twisted together to reduce interference.</p>
+                                <p><strong>Types:</strong></p>
+                                <ul style="padding-left: 20px;">
+                                    <li>UTP (Unshielded Twisted Pair)</li>
+                                    <li>STP (Shielded Twisted Pair)</li>
+                                </ul>
+                                <p><strong>Categories:</strong> Cat5, Cat5e, Cat6, Cat6a, Cat7, Cat8</p>
+                                <p><strong>Applications:</strong> Ethernet networks, telephone lines</p>
+                            </div>
+                            
+                            <div style="background-color: #f0f0f7; padding: 20px; border-radius: 5px; border-left: 4px solid #b21f1f;">
+                                <h3 style="color: #1a2a6c; margin-top: 0;">Coaxial Cable</h3>
+                                <p>Central conductor surrounded by insulation, shield, and outer jacket.</p>
+                                <p><strong>Types:</strong></p>
+                                <ul style="padding-left: 20px;">
+                                    <li>RG-6 (for cable TV)</li>
+                                    <li>RG-58 (for thin Ethernet)</li>
+                                    <li>RG-59 (for CCTV)</li>
+                                </ul>
+                                <p><strong>Applications:</strong> Cable TV, broadband internet, CCTV</p>
+                            </div>
+                            
+                            <div style="background-color: #f0f0f7; padding: 20px; border-radius: 5px; border-left: 4px solid #fdbb2d;">
+                                <h3 style="color: #1a2a6c; margin-top: 0;">Fiber Optic Cable</h3>
+                                <p>Glass or plastic fibers carrying light signals.</p>
+                                <p><strong>Types:</strong></p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Single-mode fiber (long distance)</li>
+                                    <li>Multi-mode fiber (short distance)</li>
+                                </ul>
+                                <p><strong>Applications:</strong> Backbone networks, FTTx, data centers</p>
+                            </div>
+                            
+                            <div style="background-color: #f0f0f7; padding: 20px; border-radius: 5px; border-left: 4px solid #1a2a6c;">
+                                <h3 style="color: #1a2a6c; margin-top: 0;">Wireless Media</h3>
+                                <p>Uses electromagnetic waves for transmission.</p>
+                                <p><strong>Types:</strong></p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Radio waves (WiFi, Bluetooth)</li>
+                                    <li>Microwave (point-to-point links)</li>
+                                    <li>Infrared (short-range communication)</li>
+                                    <li>Satellite (global coverage)</li>
+                                </ul>
+                                <p><strong>Applications:</strong> Mobile networks, WiFi, satellite comms</p>
+                            </div>
+                        </div>
+                        
+                        <div style="background-color: #e6e6f2; padding: 20px; border-radius: 5px;">
+                            <h3 style="color: #1a2a6c; margin-top: 0;">Transmission Media Comparison</h3>
+                            <div style="overflow-x: auto;">
+                                <table style="width: 100%; border-collapse: collapse;">
+                                    <tr style="background-color: #1a2a6c; color: white;">
+                                        <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Medium</th>
+                                        <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Bandwidth</th>
+                                        <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Distance</th>
+                                        <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Cost</th>
+                                        <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Security</th>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">UTP</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Up to 40 Gbps</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">100m</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Low</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Medium</td>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Coaxial</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Up to 10 Gbps</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">500m</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Medium</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Medium</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Fiber Optic</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Up to 100+ Tbps</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">40+ km</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">High</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">High</td>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Wireless</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Up to 10 Gbps</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Varies</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Low-Medium</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Low</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                        <h2 style="color: #1a2a6c; border-bottom: 2px solid #b21f1f; padding-bottom: 10px; margin-top: 0;">Physical Layer Protocols and Standards</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 25px;">
+                            <div style="background-color: #f5f5ff; padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #1a2a6c; margin-top: 0;">Ethernet Standards</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>10BASE-T (10 Mbps over UTP)</li>
+                                    <li>100BASE-TX (Fast Ethernet)</li>
+                                    <li>1000BASE-T (Gigabit Ethernet)</li>
+                                    <li>10GBASE-T (10 Gigabit Ethernet)</li>
+                                    <li>40GBASE-T and 100GBASE-T</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f5f5ff; padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #1a2a6c; margin-top: 0;">Wireless Standards</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>IEEE 802.11 (WiFi)</li>
+                                    <li>Bluetooth (IEEE 802.15.1)</li>
+                                    <li>Zigbee (IEEE 802.15.4)</li>
+                                    <li>LTE/5G cellular</li>
+                                    <li>NFC (Near Field Communication)</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f5f5ff; padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #1a2a6c; margin-top: 0;">Optical Standards</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>SONET/SDH</li>
+                                    <li>Fiber Channel</li>
+                                    <li>DWDM (Dense Wavelength Division Multiplexing)</li>
+                                    <li>FTTx (Fiber to the x)</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f5f5ff; padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #1a2a6c; margin-top: 0;">Other Standards</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>RS-232 (serial communication)</li>
+                                    <li>USB (Universal Serial Bus)</li>
+                                    <li>HDMI (High-Definition Multimedia Interface)</li>
+                                    <li>Powerline Communication</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                        <h2 style="color: #1a2a6c; border-bottom: 2px solid #b21f1f; padding-bottom: 10px; margin-top: 0;">Physical Layer Devices</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin-bottom: 25px;">
+                            <div style="background-color: #f0f0f7; padding: 20px; border-radius: 5px; text-align: center;">
+                                <div style="background-color: #1a2a6c; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.8em;">🔌</div>
+                                <h3 style="color: #1a2a6c; margin-top: 0;">Network Interface Card (NIC)</h3>
+                                <p>Connects a device to the network medium</p>
+                            </div>
+                            
+                            <div style="background-color: #f0f0f7; padding: 20px; border-radius: 5px; text-align: center;">
+                                <div style="background-color: #b21f1f; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.8em;">🔁</div>
+                                <h3 style="color: #1a2a6c; margin-top: 0;">Repeater</h3>
+                                <p>Regenerates signals to extend network distance</p>
+                            </div>
+                            
+                            <div style="background-color: #f0f0f7; padding: 20px; border-radius: 5px; text-align: center;">
+                                <div style="background-color: #fdbb2d; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.8em;">🎛️</div>
+                                <h3 style="color: #1a2a6c; margin-top: 0;">Hub</h3>
+                                <p>Multi-port repeater that connects multiple devices</p>
+                            </div>
+                            
+                            <div style="background-color: #f0f0f7; padding: 20px; border-radius: 5px; text-align: center;">
+                                <div style="background-color: #1a2a6c; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.8em;">📶</div>
+                                <h3 style="color: #1a2a6c; margin-top: 0;">Modem</h3>
+                                <p>Modulates/demodulates signals for transmission</p>
+                            </div>
+                            
+                            <div style="background-color: #f0f0f7; padding: 20px; border-radius: 5px; text-align: center;">
+                                <div style="background-color: #e0f7f5; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.8em;">📡</div>
+                                <h3 style="color: #dbdeec; margin-top: 0;">Access Point</h3>
+                                <p>Wireless base station for network access</p>
+                            </div>
+                            
+                            <div style="background-color: #f0f0f7; padding: 20px; border-radius: 5px; text-align: center;">
+                                <div style="background-color: #fdbb2d; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.8em;">🔀</div>
+                                <h3 style="color: #bbc3e2; margin-top: 0;">Media Converter</h3>
+                                <p>Converts between different media types</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: #e5e7f1; color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px;">
+                        <h2 style="margin-top: 0; border-bottom: 2px solid #b21f1f; padding-bottom: 10px;">Emerging Physical Layer Technologies</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #fdbb2d; margin-top: 0;">5G Networks</h3>
+                                <p>High-speed wireless with mmWave frequencies and massive MIMO</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #fdbb2d; margin-top: 0;">Li-Fi</h3>
+                                <p>Visible light communication for high-speed data transmission</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #fdbb2d; margin-top: 0;">Quantum Networking</h3>
+                                <p>Quantum key distribution for ultra-secure communication</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #fdbb2d; margin-top: 0;">Terahertz Wireless</h3>
+                                <p>Extremely high-frequency wireless communication</p>
+                            </div>
+                        </div>
+                    </section>
+          
+            </main>  
+            
+            
+
+             <!-- Floating button to open chatbot -->
+    <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+    </div>
+    
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-container");
+            let button = document.getElementById("open-chatbot");
+    
+            if (!chatbot.classList.contains("active")) {
+                chatbot.classList.add("active");
+                button.style.display = "none"; // Hide button when chatbot is open
+            } else {
+                chatbot.classList.remove("active");
+                setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+            }
+        }
+    
+        // Load chatbot HTML dynamically
+        fetch("/chatbot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("chatbot-container").innerHTML += html;
+    
+            // Execute chatbot script after inserting HTML
+            let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+            for (let script of scripts) {
+                let newScript = document.createElement("script");
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript);
+            }
+        })
+        .catch(error => console.error("Error loading chatbot:", error));
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../computernetwork.json" : "computernetwork.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.Computer_Networks;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+        
+       
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

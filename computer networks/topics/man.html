@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer Network</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/allsubject.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Computer Networks</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <h1>Metropolitan Area Network (MAN)</h1>
+                   
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                        <h2 style="color: #1a2980; border-bottom: 2px solid #26d0ce; padding-bottom: 10px; margin-top: 0;">Introduction to MAN</h2>
+                        
+                        <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 20px;">
+                            <div style="flex: 1; min-width: 300px;">
+                                <p>A Metropolitan Area Network (MAN) is a computer network that spans a metropolitan area or city, typically covering a range between 5 to 50 kilometers. It's larger than a Local Area Network (LAN) but smaller than a Wide Area Network (WAN).</p>
+                                <p>MANs are designed to provide high-speed connectivity across a geographic area the size of a city, often connecting multiple LANs within this region.</p>
+                            </div>
+                            <div style="flex: 1; min-width: 300px; background-color: #e6f7ff; padding: 15px; border-radius: 5px; border-left: 4px solid #1a2980;">
+                                <h3 style="color: #1a2980; margin-top: 0;">Key Characteristics</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Covers a larger geographical area than LAN but smaller than WAN</li>
+                                    <li>Data rates ranging from 10 Mbps to 10 Gbps</li>
+                                    <li>Often owned and operated by a single organization or consortium</li>
+                                    <li>May serve as an ISP for local businesses and residents</li>
+                                    <li>Typically uses fiber optic or wireless backbone</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                        <h2 style="color: #1a2980; border-bottom: 2px solid #26d0ce; padding-bottom: 10px; margin-top: 0;">MAN Technologies</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 20px;">
+                            <div style="background-color: #f0f7ff; padding: 15px; border-radius: 5px; border-top: 3px solid #1a2980;">
+                                <h3 style="color: #1a2980; margin-top: 0;">Fiber Optic MAN</h3>
+                                <p>Uses fiber optic cables as the primary transmission medium, providing high bandwidth and low latency.</p>
+                                <p><strong>Technologies:</strong> SONET/SDH, DWDM, Ethernet over Fiber</p>
+                                <p><strong>Advantages:</strong> High capacity, security, reliability</p>
+                                <p><strong>Disadvantages:</strong> High installation cost</p>
+                            </div>
+                            
+                            <div style="background-color: #f0f7ff; padding: 15px; border-radius: 5px; border-top: 3px solid #26d0ce;">
+                                <h3 style="color: #1a2980; margin-top: 0;">Wireless MAN</h3>
+                                <p>Uses wireless technologies to connect locations across a metropolitan area.</p>
+                                <p><strong>Technologies:</strong> WiMAX (802.16), LTE, Microwave, mmWave</p>
+                                <p><strong>Advantages:</strong> Lower deployment cost, faster setup</p>
+                                <p><strong>Disadvantages:</strong> Subject to interference, weather effects</p>
+                            </div>
+                            
+                            <div style="background-color: #f0f7ff; padding: 15px; border-radius: 5px; border-top: 3px solid #2980b9;">
+                                <h3 style="color: #1a2980; margin-top: 0;">Hybrid MAN</h3>
+                                <p>Combination of fiber optic and wireless technologies for optimal coverage.</p>
+                                <p><strong>Technologies:</strong> Fiber backbone with wireless last-mile</p>
+                                <p><strong>Advantages:</strong> Balances cost and performance</p>
+                                <p><strong>Disadvantages:</strong> More complex management</p>
+                            </div>
+                        </div>
+                        
+                        <div style="background-color: #e6f7ff; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+                            <h3 style="color: #1a2980; margin-top: 0;">Comparison of MAN Technologies</h3>
+                            <div style="overflow-x: auto;">
+                                <table style="width: 100%; border-collapse: collapse;">
+                                    <tr style="background-color: #1a2980; color: white;">
+                                        <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Technology</th>
+                                        <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Standard</th>
+                                        <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Speed</th>
+                                        <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Range</th>
+                                        <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Best Use</th>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">SONET/SDH</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">ANSI/ITU</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">51.8Mbps-40Gbps</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">City-wide</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Carrier backbone</td>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td style="padding: 8px; border: 1px solid #ddd;">WiMAX</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">IEEE 802.16</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Up to 1Gbps</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">5-50 km</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Wireless broadband</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Metro Ethernet</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">IEEE 802.3</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">10Mbps-100Gbps</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">City-wide</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Business services</td>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td style="padding: 8px; border: 1px solid #ddd;">LTE/5G</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">3GPP</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">100Mbps-10Gbps</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">1-10 km</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Mobile broadband</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                        <h2 style="color: #1a2980; border-bottom: 2px solid #26d0ce; padding-bottom: 10px; margin-top: 0;">MAN Architecture</h2>
+                        
+                        <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 20px;">
+                            <div style="flex: 1; min-width: 300px; background-color: #f5f9ff; padding: 15px; border-radius: 5px;">
+                                <h3 style="color: #1a2980; margin-top: 0;">Core Components</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Access Points:</strong> Connect end-users to the MAN</li>
+                                    <li><strong>Aggregation Nodes:</strong> Combine traffic from multiple access points</li>
+                                    <li><strong>Core Network:</strong> High-speed backbone connecting aggregation nodes</li>
+                                    <li><strong>Gateways:</strong> Connect to other networks (WAN, Internet)</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 300px; background-color: #f5f9ff; padding: 15px; border-radius: 5px;">
+                                <h3 style="color: #1a2980; margin-top: 0;">Common Architectures</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Ring Topology:</strong> Common in SONET/SDH networks</li>
+                                    <li><strong>Star Topology:</strong> Central hub with radiating connections</li>
+                                    <li><strong>Mesh Topology:</strong> Multiple interconnections for redundancy</li>
+                                    <li><strong>Point-to-Multipoint:</strong> Common in wireless MANs</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="background-color: #e6f7ff; padding: 15px; border-radius: 5px;">
+                            <h3 style="color: #1a2980; margin-top: 0;">Protocol Stack</h3>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
+                                <div>
+                                    <h4 style="margin-bottom: 5px;">Physical Layer</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>SONET/SDH</li>
+                                        <li>DWDM</li>
+                                        <li>802.16 (WiMAX PHY)</li>
+                                        <li>Ethernet (10/40/100G)</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 style="margin-bottom: 5px;">Data Link Layer</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>ATM</li>
+                                        <li>Ethernet (MAC)</li>
+                                        <li>MPLS</li>
+                                        <li>802.16 (WiMAX MAC)</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 style="margin-bottom: 5px;">Network Layer</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>IP</li>
+                                        <li>MPLS</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 style="margin-bottom: 5px;">Management</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>SNMP</li>
+                                        <li>NetConf</li>
+                                        <li>YANG</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                        <h2 style="color: #1a2980; border-bottom: 2px solid #26d0ce; padding-bottom: 10px; margin-top: 0;">MAN Services and Applications</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin-bottom: 20px;">
+                            <div style="background-color: #f0f7ff; padding: 15px; border-radius: 5px; text-align: center;">
+                                <div style="background-color: #1a2980; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.8em;">🏢</div>
+                                <h3 style="color: #1a2980; margin-top: 0;">Business Connectivity</h3>
+                                <p>Connecting multiple office locations within a city</p>
+                            </div>
+                            
+                            <div style="background-color: #f0f7ff; padding: 15px; border-radius: 5px; text-align: center;">
+                                <div style="background-color: #26d0ce; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.8em;">🏫</div>
+                                <h3 style="color: #1a2980; margin-top: 0;">Education Networks</h3>
+                                <p>Connecting schools and universities in a region</p>
+                            </div>
+                            
+                            <div style="background-color: #f0f7ff; padding: 15px; border-radius: 5px; text-align: center;">
+                                <div style="background-color: #2980b9; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.8em;">🏥</div>
+                                <h3 style="color: #1a2980; margin-top: 0;">Healthcare Networks</h3>
+                                <p>Connecting hospitals and clinics for telemedicine</p>
+                            </div>
+                            
+                            <div style="background-color: #f0f7ff; padding: 15px; border-radius: 5px; text-align: center;">
+                                <div style="background-color: #3498db; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.8em;">🏙️</div>
+                                <h3 style="color: #1a2980; margin-top: 0;">Smart City Infrastructure</h3>
+                                <p>Connecting municipal services and IoT devices</p>
+                            </div>
+                            
+                            <div style="background-color: #f0f7ff; padding: 15px; border-radius: 5px; text-align: center;">
+                                <div style="background-color: #5dade2; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.8em;">📡</div>
+                                <h3 style="color: #1a2980; margin-top: 0;">Wireless Broadband</h3>
+                                <p>Providing internet access to urban areas</p>
+                            </div>
+                            
+                            <div style="background-color: #f0f7ff; padding: 15px; border-radius: 5px; text-align: center;">
+                                <div style="background-color: #85c1e9; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.8em;">💽</div>
+                                <h3 style="color: #1a2980; margin-top: 0;">Data Center Interconnect</h3>
+                                <p>Connecting data centers within a metro area</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                        <h2 style="color: #1a2980; border-bottom: 2px solid #26d0ce; padding-bottom: 10px; margin-top: 0;">MAN Implementation Considerations</h2>
+                        
+                        <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 20px;">
+                            <div style="flex: 1; min-width: 300px; background-color: #e6f7ff; padding: 15px; border-radius: 5px;">
+                                <h3 style="color: #1a2980; margin-top: 0;">Technical Factors</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Bandwidth requirements</li>
+                                    <li>Latency sensitivity</li>
+                                    <li>Quality of Service (QoS) needs</li>
+                                    <li>Redundancy and failover</li>
+                                    <li>Security requirements</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 300px; background-color: #e6f7ff; padding: 15px; border-radius: 5px;">
+                                <h3 style="color: #1a2980; margin-top: 0;">Economic Factors</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Capital expenditure (CAPEX)</li>
+                                    <li>Operational expenditure (OPEX)</li>
+                                    <li>Return on investment (ROI)</li>
+                                    <li>Service pricing models</li>
+                                    <li>Regulatory costs</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 300px; background-color: #e6f7ff; padding: 15px; border-radius: 5px;">
+                                <h3 style="color: #1a2980; margin-top: 0;">Regulatory Factors</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Right-of-way permissions</li>
+                                    <li>Spectrum licensing (wireless)</li>
+                                    <li>Data protection laws</li>
+                                    <li>Municipal regulations</li>
+                                    <li>Peering agreements</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="background-color: #f5f9ff; padding: 15px; border-radius: 5px;">
+                            <h3 style="color: #1a2980; margin-top: 0;">Deployment Challenges</h3>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
+                                <div>
+                                    <h4 style="margin-bottom: 5px;">Physical Challenges</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Fiber trenching</li>
+                                        <li>Tower placement</li>
+                                        <li>Urban obstacles</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 style="margin-bottom: 5px;">Technical Challenges</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Interference</li>
+                                        <li>Signal attenuation</li>
+                                        <li>Network synchronization</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 style="margin-bottom: 5px;">Operational Challenges</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Network management</li>
+                                        <li>Service provisioning</li>
+                                        <li>Fault isolation</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 style="margin-bottom: 5px;">Business Challenges</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Competition</li>
+                                        <li>Customer acquisition</li>
+                                        <li>Service differentiation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: #b6bbdb; color: rgb(17, 16, 16); padding: 25px; border-radius: 8px; margin-bottom: 30px;">
+                        <h2 style="margin-top: 0; border-bottom: 2px solid #7042cb; padding-bottom: 10px;">Future Trends in MAN</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 15px; border-radius: 5px;">
+                                <h3 style="margin-top: 0; color: #6426d0;">5G and Beyond</h3>
+                                <p>Next-generation wireless technologies enabling higher speeds and lower latency for metropolitan connectivity.</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 15px; border-radius: 5px;">
+                                <h3 style="margin-top: 0; color: #4e24d7;">Edge Computing</h3>
+                                <p>Distributing computing resources across the MAN to reduce latency and bandwidth usage.</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 15px; border-radius: 5px;">
+                                <h3 style="margin-top: 0; color: #7026d0;">Network Slicing</h3>
+                                <p>Creating virtual networks tailored to specific applications or customers over shared infrastructure.</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 15px; border-radius: 5px;">
+                                <h3 style="margin-top: 0; color: #7526d0;">Smart City Integration</h3>
+                                <p>MANs serving as the backbone for interconnected urban services and IoT deployments.</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 15px; border-radius: 5px;">
+                                <h3 style="margin-top: 0; color: #2634d0;">AI-Driven Optimization</h3>
+                                <p>Using machine learning to dynamically manage network resources and predict failures.</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 15px; border-radius: 5px;">
+                                <h3 style="margin-top: 0; color: #2c26d0;">Quantum Networking</h3>
+                                <p>Future potential for quantum-secured metropolitan communications.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+            </main>  
+            
+            
+
+             <!-- Floating button to open chatbot -->
+    <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+    </div>
+    
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-container");
+            let button = document.getElementById("open-chatbot");
+    
+            if (!chatbot.classList.contains("active")) {
+                chatbot.classList.add("active");
+                button.style.display = "none"; // Hide button when chatbot is open
+            } else {
+                chatbot.classList.remove("active");
+                setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+            }
+        }
+    
+        // Load chatbot HTML dynamically
+        fetch("/chatbot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("chatbot-container").innerHTML += html;
+    
+            // Execute chatbot script after inserting HTML
+            let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+            for (let script of scripts) {
+                let newScript = document.createElement("script");
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript);
+            }
+        })
+        .catch(error => console.error("Error loading chatbot:", error));
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../computernetwork.json" : "computernetwork.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.Computer_Networks;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+        
+       
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

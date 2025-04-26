@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer Network</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/allsubject.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Computer Networks</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <h1>Wide Area Network (WAN)</h1>
+                
+                    <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+                        <p style="margin: 0;">A Wide Area Network (WAN) is a telecommunications network that extends over a large geographical area for the primary purpose of computer networking.</p>
+                    </div>
+                
+                    <h2 style="color: #2980b9; margin-top: 30px;">Key Characteristics of WAN</h2>
+                    <ul style="padding-left: 20px;">
+                        <li style="margin-bottom: 8px;"><strong>Geographical Coverage:</strong> Spans large distances (countries, continents, or worldwide)</li>
+                        <li style="margin-bottom: 8px;"><strong>Infrastructure:</strong> Uses leased telecommunication lines or satellite links</li>
+                        <li style="margin-bottom: 8px;"><strong>Speed:</strong> Generally slower than LANs due to longer distances</li>
+                        <li style="margin-bottom: 8px;"><strong>Ownership:</strong> Typically owned by service providers, not end users</li>
+                        <li style="margin-bottom: 8px;"><strong>Cost:</strong> Higher setup and maintenance costs compared to LANs</li>
+                    </ul>
+                
+                    <h2 style="color: #2980b9; margin-top: 30px;">WAN Technologies</h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 15px;">
+                        <div style="background-color: #e8f4fc; padding: 15px; border-radius: 5px; border-left: 4px solid #3498db;">
+                            <h3 style="margin-top: 0; color: #2c3e50;">Circuit Switching</h3>
+                            <p>Establishes a dedicated communication path before transmission begins.</p>
+                            <p><strong>Examples:</strong> PSTN (Public Switched Telephone Network), ISDN</p>
+                        </div>
+                        
+                        <div style="background-color: #e8f4fc; padding: 15px; border-radius: 5px; border-left: 4px solid #3498db;">
+                            <h3 style="margin-top: 0; color: #2c3e50;">Packet Switching</h3>
+                            <p>Data is broken into packets and sent independently over the network.</p>
+                            <p><strong>Examples:</strong> X.25, Frame Relay, ATM (Asynchronous Transfer Mode)</p>
+                        </div>
+                        
+                        <div style="background-color: #e8f4fc; padding: 15px; border-radius: 5px; border-left: 4px solid #3498db;">
+                            <h3 style="margin-top: 0; color: #2c3e50;">Internet-based WAN</h3>
+                            <p>Uses internet protocols and infrastructure for WAN connectivity.</p>
+                            <p><strong>Examples:</strong> MPLS, VPN, SD-WAN</p>
+                        </div>
+                    </div>
+                
+                    <h2 style="color: #2980b9; margin-top: 30px;">Common WAN Connection Types</h2>
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+                        <thead>
+                            <tr style="background-color: #3498db; color: white;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Technology</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Speed</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border: 1px solid #ddd;">
+                                <td style="padding: 10px; border: 1px solid #ddd;">Leased Lines</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">56 Kbps - 10 Gbps</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Dedicated point-to-point connection</td>
+                            </tr>
+                            <tr style="border: 1px solid #ddd; background-color: #f8f9fa;">
+                                <td style="padding: 10px; border: 1px solid #ddd;">DSL</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">256 Kbps - 100 Mbps</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Digital Subscriber Line over telephone lines</td>
+                            </tr>
+                            <tr style="border: 1px solid #ddd;">
+                                <td style="padding: 10px; border: 1px solid #ddd;">Cable Modem</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">10 Mbps - 1 Gbps</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Uses cable television infrastructure</td>
+                            </tr>
+                            <tr style="border: 1px solid #ddd; background-color: #f8f9fa;">
+                                <td style="padding: 10px; border: 1px solid #ddd;">Fiber Optic</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">100 Mbps - 100 Gbps</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">High-speed using light pulses through glass fibers</td>
+                            </tr>
+                            <tr style="border: 1px solid #ddd;">
+                                <td style="padding: 10px; border: 1px solid #ddd;">Satellite</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">1 Mbps - 100 Mbps</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Wireless connection via communication satellites</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                
+                    <h2 style="color: #2980b9; margin-top: 30px;">WAN Protocols</h2>
+                    <div style="background-color: #f1f8e9; padding: 15px; border-radius: 5px; border-left: 4px solid #7cb342;">
+                        <h3 style="margin-top: 0; color: #2c3e50;">PPP (Point-to-Point Protocol)</h3>
+                        <p>A data link protocol used to establish a direct connection between two nodes. It provides authentication, encryption, and compression.</p>
+                    </div>
+                    
+                    <div style="background-color: #f1f8e9; padding: 15px; border-radius: 5px; border-left: 4px solid #7cb342; margin-top: 15px;">
+                        <h3 style="margin-top: 0; color: #2c3e50;">HDLC (High-Level Data Link Control)</h3>
+                        <p>A bit-oriented synchronous data link layer protocol developed by ISO. It's the default encapsulation type on most Cisco routers.</p>
+                    </div>
+                    
+                    <div style="background-color: #f1f8e9; padding: 15px; border-radius: 5px; border-left: 4px solid #7cb342; margin-top: 15px;">
+                        <h3 style="margin-top: 0; color: #2c3e50;">Frame Relay</h3>
+                        <p>A packet-switching protocol for connecting devices on a WAN. It operates at the data link layer and is more efficient than X.25.</p>
+                    </div>
+                
+                    <h2 style="color: #2980b9; margin-top: 30px;">WAN Devices</h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
+                        <div style="text-align: center; padding: 15px; background-color: #e3f2fd; border-radius: 5px;">
+                            <div style="font-size: 40px; margin-bottom: 10px;">🖥️</div>
+                            <h3 style="margin: 0 0 10px 0;">Router</h3>
+                            <p style="margin: 0;">Connects different networks and routes packets between them</p>
+                        </div>
+                        
+                        <div style="text-align: center; padding: 15px; background-color: #e3f2fd; border-radius: 5px;">
+                            <div style="font-size: 40px; margin-bottom: 10px;">📡</div>
+                            <h3 style="margin: 0 0 10px 0;">Modem</h3>
+                            <p style="margin: 0;">Modulates and demodulates signals for transmission over telephone lines</p>
+                        </div>
+                        
+                        <div style="text-align: center; padding: 15px; background-color: #e3f2fd; border-radius: 5px;">
+                            <div style="font-size: 40px; margin-bottom: 10px;">🔌</div>
+                            <h3 style="margin: 0 0 10px 0;">CSU/DSU</h3>
+                            <p style="margin: 0;">Channel Service Unit/Data Service Unit - connects to digital leased lines</p>
+                        </div>
+                        
+                        <div style="text-align: center; padding: 15px; background-color: #e3f2fd; border-radius: 5px;">
+                            <div style="font-size: 40px; margin-bottom: 10px;">🔄</div>
+                            <h3 style="margin: 0 0 10px 0;">WAN Switch</h3>
+                            <p style="margin: 0;">A multi-port networking device used in carrier networks</p>
+                        </div>
+                    </div>
+                
+                    <h2 style="color: #2980b9; margin-top: 30px;">WAN vs LAN Comparison</h2>
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+                        <thead>
+                            <tr style="background-color: #3498db; color: white;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Feature</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">WAN</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">LAN</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border: 1px solid #ddd;">
+                                <td style="padding: 10px; border: 1px solid #ddd;">Coverage Area</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Large geographical area</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Small local area</td>
+                            </tr>
+                            <tr style="border: 1px solid #ddd; background-color: #f8f9fa;">
+                                <td style="padding: 10px; border: 1px solid #ddd;">Speed</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Slower (Mbps-Gbps)</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Faster (Gbps-Tbps)</td>
+                            </tr>
+                            <tr style="border: 1px solid #ddd;">
+                                <td style="padding: 10px; border: 1px solid #ddd;">Cost</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Higher</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Lower</td>
+                            </tr>
+                            <tr style="border: 1px solid #ddd; background-color: #f8f9fa;">
+                                <td style="padding: 10px; border: 1px solid #ddd;">Ownership</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Service providers</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Individual organizations</td>
+                            </tr>
+                            <tr style="border: 1px solid #ddd;">
+                                <td style="padding: 10px; border: 1px solid #ddd;">Technologies</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">MPLS, Frame Relay, ATM</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Ethernet, Wi-Fi</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                
+                    <h2 style="color: #2980b9; margin-top: 30px;">Emerging WAN Technologies</h2>
+                    <div style="background-color: #fff8e1; padding: 20px; border-radius: 5px; margin-top: 15px;">
+                        <h3 style="margin-top: 0; color: #2c3e50;">SD-WAN (Software-Defined WAN)</h3>
+                        <p>Uses software to control the connectivity, management, and services between data centers and remote branches. Benefits include:</p>
+                        <ul style="padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">Improved application performance</li>
+                            <li style="margin-bottom: 8px;">Reduced costs by using multiple connection types</li>
+                            <li style="margin-bottom: 8px;">Simplified management through centralized control</li>
+                            <li style="margin-bottom: 8px;">Increased agility and flexibility</li>
+                        </ul>
+                        
+                        <h3 style="color: #2c3e50; margin-top: 20px;">5G WAN</h3>
+                        <p>The integration of 5G cellular technology into WAN architectures offers:</p>
+                        <ul style="padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">High-speed wireless connectivity (up to 10 Gbps)</li>
+                            <li style="margin-bottom: 8px;">Low latency (1ms or less)</li>
+                            <li style="margin-bottom: 8px;">Massive device connectivity</li>
+                        </ul>
+                    </div>
+                
+                    <div style="margin-top: 40px; background-color: #e8f5e9; padding: 15px; border-radius: 5px; border-left: 4px solid #43a047;">
+                        <h2 style="color: #2c3e50; margin-top: 0;">WAN Security Considerations</h2>
+                        <p>Due to their public nature, WANs require special security measures:</p>
+                        <ul style="padding-left: 20px;">
+                            <li style="margin-bottom: 8px;"><strong>Encryption:</strong> VPNs, IPsec, SSL/TLS to protect data in transit</li>
+                            <li style="margin-bottom: 8px;"><strong>Firewalls:</strong> To filter incoming and outgoing traffic</li>
+                            <li style="margin-bottom: 8px;"><strong>Authentication:</strong> Strong user and device authentication</li>
+                            <li style="margin-bottom: 8px;"><strong>Intrusion Detection/Prevention:</strong> Monitoring for malicious activity</li>
+                            <li style="margin-bottom: 8px;"><strong>Access Control:</strong> Strict policies on who can access network resources</li>
+                        </ul>
+                    </div>
+                
+                </main>  
+            
+            
+
+             <!-- Floating button to open chatbot -->
+    <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+    </div>
+    
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-container");
+            let button = document.getElementById("open-chatbot");
+    
+            if (!chatbot.classList.contains("active")) {
+                chatbot.classList.add("active");
+                button.style.display = "none"; // Hide button when chatbot is open
+            } else {
+                chatbot.classList.remove("active");
+                setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+            }
+        }
+    
+        // Load chatbot HTML dynamically
+        fetch("/chatbot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("chatbot-container").innerHTML += html;
+    
+            // Execute chatbot script after inserting HTML
+            let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+            for (let script of scripts) {
+                let newScript = document.createElement("script");
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript);
+            }
+        })
+        .catch(error => console.error("Error loading chatbot:", error));
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../computernetwork.json" : "computernetwork.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.Computer_Networks;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+        
+       
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

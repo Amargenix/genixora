@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer Network</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/allsubject.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Computer Networks</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+               <h1>Switching Techniques in Computer Networks</h1>
+                   
+                    <div style="max-width: 1200px; margin: 2rem auto; padding: 0 1rem;">
+                
+                        <!-- Introduction Section -->
+                        <section style="background-color: white; border-radius: 8px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                            <h2 style="color: #3a7bd5; border-bottom: 2px solid #00d2ff; padding-bottom: 0.5rem; margin-top: 0;">Introduction to Switching</h2>
+                            <p>Switching is the process of forwarding data packets from one network segment to another through intermediate network nodes called switches. Switching techniques determine how data is routed through a network.</p>
+                            
+                            <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin: 1.5rem 0;">
+                                <div style="flex: 1; min-width: 250px; background-color: #e3f2fd; padding: 1rem; border-radius: 6px; border-left: 4px solid #3a7bd5;">
+                                    <h3 style="margin-top: 0; color: #1565c0;">Purpose of Switching</h3>
+                                    <ul style="padding-left: 1.2rem; margin-bottom: 0;">
+                                        <li>Efficient data transmission</li>
+                                        <li>Optimal path selection</li>
+                                        <li>Traffic management</li>
+                                        <li>Network resource utilization</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1; min-width: 250px; background-color: #e0f7fa; padding: 1rem; border-radius: 6px; border-left: 4px solid #00d2ff;">
+                                    <h3 style="margin-top: 0; color: #00838f;">Key Components</h3>
+                                    <ul style="padding-left: 1.2rem; margin-bottom: 0;">
+                                        <li>Switches (Layer 2/Layer 3)</li>
+                                        <li>Routing tables</li>
+                                        <li>Forwarding mechanisms</li>
+                                        <li>Network interfaces</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                
+                        <!-- Switching Techniques Overview -->
+                        <section style="background-color: white; border-radius: 8px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                            <h2 style="color: #3a7bd5; border-bottom: 2px solid #00d2ff; padding-bottom: 0.5rem; margin-top: 0;">Types of Switching Techniques</h2>
+                            
+                            <div style="overflow-x: auto; margin: 1.5rem 0;">
+                                <table style="width: 100%; border-collapse: collapse; min-width: 600px;">
+                                    <thead>
+                                        <tr style="background: linear-gradient(135deg, #3a7bd5, #00d2ff); color: white;">
+                                            <th style="padding: 1rem; text-align: left; border-radius: 6px 0 0 0;">Technique</th>
+                                            <th style="padding: 1rem; text-align: left;">Layer</th>
+                                            <th style="padding: 1rem; text-align: left;">Description</th>
+                                            <th style="padding: 1rem; text-align: left; border-radius: 0 6px 0 0;">Use Cases</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="border-bottom: 1px solid #eee;">
+                                            <td style="padding: 1rem;"><strong>Circuit Switching</strong></td>
+                                            <td style="padding: 1rem;">Physical</td>
+                                            <td style="padding: 1rem;">Dedicated path established for entire communication</td>
+                                            <td style="padding: 1rem;">Traditional telephone networks</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #eee; background-color: #f9f9f9;">
+                                            <td style="padding: 1rem;"><strong>Packet Switching</strong></td>
+                                            <td style="padding: 1rem;">Network</td>
+                                            <td style="padding: 1rem;">Data divided into packets that travel independently</td>
+                                            <td style="padding: 1rem;">Internet, modern networks</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #eee;">
+                                            <td style="padding: 1rem;"><strong>Message Switching</strong></td>
+                                            <td style="padding: 1rem;">Application</td>
+                                            <td style="padding: 1rem;">Entire message is treated as a single unit</td>
+                                            <td style="padding: 1rem;">Email systems (historical)</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #eee; background-color: #f9f9f9;">
+                                            <td style="padding: 1rem;"><strong>Virtual Circuit</strong></td>
+                                            <td style="padding: 1rem;">Network</td>
+                                            <td style="padding: 1rem;">Pre-established path for packet sequence</td>
+                                            <td style="padding: 1rem;">ATM, Frame Relay</td>
+                                        </tr>
+                                        <tr style="background-color: #f9f9f9;">
+                                            <td style="padding: 1rem;"><strong>Datagram</strong></td>
+                                            <td style="padding: 1rem;">Network</td>
+                                            <td style="padding: 1rem;">Each packet routed independently</td>
+                                            <td style="padding: 1rem;">IP networks</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+                
+                        <!-- Circuit Switching -->
+                        <section style="background-color: white; border-radius: 8px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                            <h2 style="color: #3a7bd5; border-bottom: 2px solid #00d2ff; padding-bottom: 0.5rem; margin-top: 0;">1. Circuit Switching</h2>
+                            
+                            <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin: 1.5rem 0;">
+                                <div style="flex: 1; min-width: 300px;">
+                                    <h3 style="color: #3a7bd5; margin-top: 0;">How It Works</h3>
+                                    <ol style="padding-left: 1.5rem;">
+                                        <li style="margin-bottom: 0.8rem;"><strong>Establishment:</strong> Dedicated path created before communication</li>
+                                        <li style="margin-bottom: 0.8rem;"><strong>Data Transfer:</strong> Continuous communication along the path</li>
+                                        <li style="margin-bottom: 0.8rem;"><strong>Teardown:</strong> Connection terminated after completion</li>
+                                    </ol>
+                                    
+                                    <h3 style="color: #3a7bd5; margin-top: 1.5rem;">Characteristics</h3>
+                                    <ul style="padding-left: 1.2rem;">
+                                        <li>Fixed bandwidth allocation</li>
+                                        <li>No sharing during connection</li>
+                                        <li>Predictable performance</li>
+                                        <li>Inefficient for bursty traffic</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1; min-width: 300px;">
+                                    <div style="background-color: #e3f2fd; padding: 1rem; border-radius: 6px;">
+                                        <h3 style="margin-top: 0; color: #1565c0;">Advantages</h3>
+                                        <ul style="padding-left: 1.2rem;">
+                                            <li>Guaranteed bandwidth</li>
+                                            <li>Low and constant latency</li>
+                                            <li>Simple management</li>
+                                            <li>No packet reordering needed</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div style="background-color: #ffebee; padding: 1rem; border-radius: 6px; margin-top: 1rem;">
+                                        <h3 style="margin-top: 0; color: #c62828;">Disadvantages</h3>
+                                        <ul style="padding-left: 1.2rem;">
+                                            <li>Inefficient resource utilization</li>
+                                            <li>High setup time</li>
+                                            <li>No fault tolerance</li>
+                                            <li>Costly for long-distance</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="background-color: #e8f5e9; padding: 1.5rem; border-radius: 6px; margin-top: 1.5rem;">
+                                <h3 style="margin-top: 0; color: #2e7d32;">Applications</h3>
+                                <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                                    <div style="flex: 1; min-width: 200px; text-align: center;">
+                                        <div style="background-color: #c8e6c9; padding: 1rem; border-radius: 6px;">
+                                            <h4 style="margin: 0; color: #1b5e20;">PSTN</h4>
+                                            <p style="margin: 0.5rem 0 0;">Public Switched Telephone Network</p>
+                                        </div>
+                                    </div>
+                                    <div style="flex: 1; min-width: 200px; text-align: center;">
+                                        <div style="background-color: #a5d6a7; padding: 1rem; border-radius: 6px;">
+                                            <h4 style="margin: 0; color: #1b5e20;">ISDN</h4>
+                                            <p style="margin: 0.5rem 0 0;">Integrated Services Digital Network</p>
+                                        </div>
+                                    </div>
+                                    <div style="flex: 1; min-width: 200px; text-align: center;">
+                                        <div style="background-color: #81c784; padding: 1rem; border-radius: 6px;">
+                                            <h4 style="margin: 0; color: #1b5e20;">Leased Lines</h4>
+                                            <p style="margin: 0.5rem 0 0;">Dedicated communication channels</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                
+                        <!-- Packet Switching -->
+                        <section style="background-color: white; border-radius: 8px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                            <h2 style="color: #3a7bd5; border-bottom: 2px solid #00d2ff; padding-bottom: 0.5rem; margin-top: 0;">2. Packet Switching</h2>
+                            
+                            <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin: 1.5rem 0;">
+                                <div style="flex: 1; min-width: 300px;">
+                                    <h3 style="color: #3a7bd5; margin-top: 0;">How It Works</h3>
+                                    <ol style="padding-left: 1.5rem;">
+                                        <li style="margin-bottom: 0.8rem;"><strong>Packetization:</strong> Data divided into small packets</li>
+                                        <li style="margin-bottom: 0.8rem;"><strong>Routing:</strong> Each packet routed independently</li>
+                                        <li style="margin-bottom: 0.8rem;"><strong>Reassembly:</strong> Packets reassembled at destination</li>
+                                    </ol>
+                                    
+                                    <h3 style="color: #3a7bd5; margin-top: 1.5rem;">Characteristics</h3>
+                                    <ul style="padding-left: 1.2rem;">
+                                        <li>Efficient bandwidth utilization</li>
+                                        <li>Store-and-forward mechanism</li>
+                                        <li>Variable latency</li>
+                                        <li>Supports multiple traffic types</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1; min-width: 300px;">
+                                    <div style="background-color: #e3f2fd; padding: 1rem; border-radius: 6px;">
+                                        <h3 style="margin-top: 0; color: #1565c0;">Advantages</h3>
+                                        <ul style="padding-left: 1.2rem;">
+                                            <li>Efficient resource sharing</li>
+                                            <li>Robust to failures</li>
+                                            <li>Supports variable data rates</li>
+                                            <li>Cost-effective</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div style="background-color: #ffebee; padding: 1rem; border-radius: 6px; margin-top: 1rem;">
+                                        <h3 style="margin-top: 0; color: #c62828;">Disadvantages</h3>
+                                        <ul style="padding-left: 1.2rem;">
+                                            <li>Variable latency (jitter)</li>
+                                            <li>Packet reordering possible</li>
+                                            <li>Overhead from headers</li>
+                                            <li>Congestion management needed</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1.5rem;">
+                                <div style="flex: 1; min-width: 300px; background-color: #f5f5f5; padding: 1.5rem; border-radius: 6px;">
+                                    <h3 style="margin-top: 0; color: #3a7bd5;">Datagram Approach</h3>
+                                    <ul style="padding-left: 1.2rem;">
+                                        <li>Each packet treated independently</li>
+                                        <li>No connection setup required</li>
+                                        <li>Packets may take different paths</li>
+                                        <li>Used in IP networks</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1; min-width: 300px; background-color: #f5f5f5; padding: 1.5rem; border-radius: 6px;">
+                                    <h3 style="margin-top: 0; color: #3a7bd5;">Virtual Circuit Approach</h3>
+                                    <ul style="padding-left: 1.2rem;">
+                                        <li>Pre-established path for all packets</li>
+                                        <li>Connection-oriented</li>
+                                        <li>Packets follow same path</li>
+                                        <li>Used in ATM, Frame Relay</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div style="background-color: #e8f5e9; padding: 1.5rem; border-radius: 6px; margin-top: 1.5rem;">
+                                <h3 style="margin-top: 0; color: #2e7d32;">Applications</h3>
+                                <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                                    <div style="flex: 1; min-width: 200px; text-align: center;">
+                                        <div style="background-color: #c8e6c9; padding: 1rem; border-radius: 6px;">
+                                            <h4 style="margin: 0; color: #1b5e20;">Internet</h4>
+                                            <p style="margin: 0.5rem 0 0;">IP-based communication</p>
+                                        </div>
+                                    </div>
+                                    <div style="flex: 1; min-width: 200px; text-align: center;">
+                                        <div style="background-color: #a5d6a7; padding: 1rem; border-radius: 6px;">
+                                            <h4 style="margin: 0; color: #1b5e20;">LANs</h4>
+                                            <p style="margin: 0.5rem 0 0;">Ethernet networks</p>
+                                        </div>
+                                    </div>
+                                    <div style="flex: 1; min-width: 200px; text-align: center;">
+                                        <div style="background-color: #81c784; padding: 1rem; border-radius: 6px;">
+                                            <h4 style="margin: 0; color: #1b5e20;">VPNs</h4>
+                                            <p style="margin: 0.5rem 0 0;">Virtual Private Networks</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                
+                        <!-- Message Switching -->
+                        <section style="background-color: white; border-radius: 8px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                            <h2 style="color: #3a7bd5; border-bottom: 2px solid #00d2ff; padding-bottom: 0.5rem; margin-top: 0;">3. Message Switching</h2>
+                            
+                            <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin: 1.5rem 0;">
+                                <div style="flex: 1; min-width: 300px;">
+                                    <h3 style="color: #3a7bd5; margin-top: 0;">How It Works</h3>
+                                    <ol style="padding-left: 1.5rem;">
+                                        <li style="margin-bottom: 0.8rem;"><strong>Storage:</strong> Entire message stored at each node</li>
+                                        <li style="margin-bottom: 0.8rem;"><strong>Forwarding:</strong> Message forwarded when next node available</li>
+                                        <li style="margin-bottom: 0.8rem;"><strong>Delivery:</strong> Message delivered to destination</li>
+                                    </ol>
+                                    
+                                    <h3 style="color: #3a7bd5; margin-top: 1.5rem;">Characteristics</h3>
+                                    <ul style="padding-left: 1.2rem;">
+                                        <li>Store-and-forward mechanism</li>
+                                        <li>No dedicated path</li>
+                                        <li>Variable delay</li>
+                                        <li>Supports large messages</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1; min-width: 300px;">
+                                    <div style="background-color: #e3f2fd; padding: 1rem; border-radius: 6px;">
+                                        <h3 style="margin-top: 0; color: #1565c0;">Advantages</h3>
+                                        <ul style="padding-left: 1.2rem;">
+                                            <li>Efficient use of network</li>
+                                            <li>Supports priority handling</li>
+                                            <li>No congestion during transfer</li>
+                                            <li>Error checking at each node</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div style="background-color: #ffebee; padding: 1rem; border-radius: 6px; margin-top: 1rem;">
+                                        <h3 style="margin-top: 0; color: #c62828;">Disadvantages</h3>
+                                        <ul style="padding-left: 1.2rem;">
+                                            <li>High latency</li>
+                                            <li>Requires large storage</li>
+                                            <li>Not suitable for real-time</li>
+                                            <li>Largely obsolete</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="background-color: #fff3e0; padding: 1.5rem; border-radius: 6px; margin-top: 1.5rem;">
+                                <h3 style="margin-top: 0; color: #e65100;">Historical Applications</h3>
+                                <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                                    <div style="flex: 1; min-width: 200px; text-align: center;">
+                                        <div style="background-color: #ffe0b2; padding: 1rem; border-radius: 6px;">
+                                            <h4 style="margin: 0; color: #e65100;">Telex</h4>
+                                            <p style="margin: 0.5rem 0 0;">Early teleprinter networks</p>
+                                        </div>
+                                    </div>
+                                    <div style="flex: 1; min-width: 200px; text-align: center;">
+                                        <div style="background-color: #ffcc80; padding: 1rem; border-radius: 6px;">
+                                            <h4 style="margin: 0; color: #e65100;">Email</h4>
+                                            <p style="margin: 0.5rem 0 0;">Early store-and-forward systems</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                
+                        <!-- Comparison Section -->
+                        <section style="background-color: white; border-radius: 8px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                            <h2 style="color: #3a7bd5; border-bottom: 2px solid #00d2ff; padding-bottom: 0.5rem; margin-top: 0;">Comparison of Switching Techniques</h2>
+                            
+                            <div style="overflow-x: auto; margin: 1.5rem 0;">
+                                <table style="width: 100%; border-collapse: collapse; min-width: 800px;">
+                                    <thead>
+                                        <tr style="background: linear-gradient(135deg, #3a7bd5, #00d2ff); color: white;">
+                                            <th style="padding: 1rem; text-align: left; border-radius: 6px 0 0 0;">Feature</th>
+                                            <th style="padding: 1rem; text-align: left;">Circuit Switching</th>
+                                            <th style="padding: 1rem; text-align: left;">Packet Switching</th>
+                                            <th style="padding: 1rem; text-align: left; border-radius: 0 6px 0 0;">Message Switching</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="border-bottom: 1px solid #eee;">
+                                            <td style="padding: 1rem;"><strong>Path Establishment</strong></td>
+                                            <td style="padding: 1rem;">Required before communication</td>
+                                            <td style="padding: 1rem;">Not required (datagram) or required (virtual circuit)</td>
+                                            <td style="padding: 1rem;">Not required</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #eee; background-color: #f9f9f9;">
+                                            <td style="padding: 1rem;"><strong>Bandwidth Usage</strong></td>
+                                            <td style="padding: 1rem;">Dedicated, fixed</td>
+                                            <td style="padding: 1rem;">Shared, dynamic</td>
+                                            <td style="padding: 1rem;">Shared, dynamic</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #eee;">
+                                            <td style="padding: 1rem;"><strong>Delay Characteristics</strong></td>
+                                            <td style="padding: 1rem;">Low, constant</td>
+                                            <td style="padding: 1rem;">Variable (depends on traffic)</td>
+                                            <td style="padding: 1rem;">High, variable</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #eee; background-color: #f9f9f9;">
+                                            <td style="padding: 1rem;"><strong>Data Unit</strong></td>
+                                            <td style="padding: 1rem;">Continuous stream</td>
+                                            <td style="padding: 1rem;">Packets</td>
+                                            <td style="padding: 1rem;">Complete messages</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #eee;">
+                                            <td style="padding: 1rem;"><strong>Fault Tolerance</strong></td>
+                                            <td style="padding: 1rem;">Low (connection breaks)</td>
+                                            <td style="padding: 1rem;">High (rerouting possible)</td>
+                                            <td style="padding: 1rem;">Moderate</td>
+                                        </tr>
+                                        <tr style="background-color: #f9f9f9;">
+                                            <td style="padding: 1rem;"><strong>Modern Usage</strong></td>
+                                            <td style="padding: 1rem;">Telephone networks</td>
+                                            <td style="padding: 1rem;">Internet, LANs</td>
+                                            <td style="padding: 1rem;">Mostly obsolete</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+                
+                    </div>
+            </main>  
+            
+            
+
+             <!-- Floating button to open chatbot -->
+    <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+    </div>
+    
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-container");
+            let button = document.getElementById("open-chatbot");
+    
+            if (!chatbot.classList.contains("active")) {
+                chatbot.classList.add("active");
+                button.style.display = "none"; // Hide button when chatbot is open
+            } else {
+                chatbot.classList.remove("active");
+                setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+            }
+        }
+    
+        // Load chatbot HTML dynamically
+        fetch("/chatbot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("chatbot-container").innerHTML += html;
+    
+            // Execute chatbot script after inserting HTML
+            let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+            for (let script of scripts) {
+                let newScript = document.createElement("script");
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript);
+            }
+        })
+        .catch(error => console.error("Error loading chatbot:", error));
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../computernetwork.json" : "computernetwork.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.Computer_Networks;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+        
+       
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

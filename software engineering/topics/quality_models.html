@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../software engineering.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Software Engineering</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+            
+            <main class="col-md-7 content">
+                
+                    <h1>Software Quality Models (ISO, CMMI) in Software Engineering</h1>
+                    
+                    <section id="introduction" style="background-color: #fff; border-radius: 5px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">1. Introduction to Software Quality Models</h2>
+                        <p>Software quality models provide frameworks for defining, measuring, and improving the quality of software products and processes. These models help organizations establish benchmarks and best practices for delivering high-quality software.</p>
+                        
+                        <div style="display: flex; gap: 20px; margin: 20px 0;">
+                            <div style="flex: 1; padding: 15px; border-radius: 5px; background-color: #e8f8f0; border-left: 4px solid #2ecc71;">
+                                <h3 style="color: #2980b9; margin-top: 20px;">Why Quality Models Matter</h3>
+                                <ul>
+                                    <li>Provide standardized quality benchmarks</li>
+                                    <li>Enable objective quality measurement</li>
+                                    <li>Facilitate process improvement</li>
+                                    <li>Support compliance with regulations</li>
+                                    <li>Enhance customer satisfaction</li>
+                                </ul>
+                            </div>
+                            <div style="flex: 1; padding: 15px; border-radius: 5px; background-color: #fde8e8; border-left: 4px solid #e74c3c;">
+                                <h3 style="color: #2980b9; margin-top: 20px;">Implementation Challenges</h3>
+                                <ul>
+                                    <li>Requires organizational commitment</li>
+                                    <li>Can be resource-intensive</li>
+                                    <li>May introduce process overhead</li>
+                                    <li>Cultural resistance to change</li>
+                                    <li>Difficult to maintain over time</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section id="iso-25010" style="background-color: #fff; border-radius: 5px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-top: 3px solid #3498db;">
+                        <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                            <div style="background: #3498db; color: white; width: 40px; height: 40px; border-radius: 50%; text-align: center; line-height: 40px; margin-right: 15px; flex-shrink: 0; font-weight: bold;">ISO</div>
+                            <div>
+                                <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">2. ISO/IEC 25010: Systems and Software Quality Model</h2>
+                                <p>The international standard that defines quality characteristics for software products</p>
+                            </div>
+                        </div>
+                        
+                        <h3 style="color: #2980b9; margin-top: 20px;">Product Quality Model (8 Characteristics)</h3>
+                        
+                        <div style="margin: 10px 0; padding: 10px; background-color: #e8f4fc; border-radius: 5px;">
+                            <h4 style="color: #2980b9; margin-top: 20px;">Functional Suitability</h4>
+                            <p>The degree to which the product provides functions that meet stated and implied needs.</p>
+                            <ul>
+                                <li><strong>Functional completeness:</strong> All required functions are implemented</li>
+                                <li><strong>Functional correctness:</strong> Functions produce correct results</li>
+                                <li><strong>Functional appropriateness:</strong> Functions meet user needs</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="margin: 10px 0; padding: 10px; background-color: #e8f4fc; border-radius: 5px;">
+                            <h4 style="color: #2980b9; margin-top: 20px;">Performance Efficiency</h4>
+                            <p>Performance relative to the amount of resources used under stated conditions.</p>
+                            <ul>
+                                <li><strong>Time behavior:</strong> Response and processing times</li>
+                                <li><strong>Resource utilization:</strong> CPU, memory, network usage</li>
+                                <li><strong>Capacity:</strong> Maximum limits of system parameters</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="margin: 10px 0; padding: 10px; background-color: #e8f4fc; border-radius: 5px;">
+                            <h4 style="color: #2980b9; margin-top: 20px;">Compatibility</h4>
+                            <p>The degree to which a product can exchange information with other systems.</p>
+                            <ul>
+                                <li><strong>Co-existence:</strong> Operates with other systems in same environment</li>
+                                <li><strong>Interoperability:</strong> Exchanges information with other systems</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="margin: 10px 0; padding: 10px; background-color: #e8f4fc; border-radius: 5px;">
+                            <h4 style="color: #2980b9; margin-top: 20px;">Usability</h4>
+                            <p>The degree to which the product can be used effectively and efficiently.</p>
+                            <ul>
+                                <li><strong>Appropriateness recognizability:</strong> Users can recognize suitability</li>
+                                <li><strong>Learnability:</strong> Easy to learn how to use</li>
+                                <li><strong>Operability:</strong> Easy to operate and control</li>
+                                <li><strong>User error protection:</strong> Protects against user mistakes</li>
+                                <li><strong>User interface aesthetics:</strong> UI is pleasing to use</li>
+                                <li><strong>Accessibility:</strong> Usable by people with disabilities</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="margin: 10px 0; padding: 10px; background-color: #e8f4fc; border-radius: 5px;">
+                            <h4 style="color: #2980b9; margin-top: 20px;">Reliability</h4>
+                            <p>The degree to which the system performs specified functions under specified conditions.</p>
+                            <ul>
+                                <li><strong>Maturity:</strong> Frequency of failure due to faults</li>
+                                <li><strong>Availability:</strong> Operational when needed</li>
+                                <li><strong>Fault tolerance:</strong> Operates despite hardware/software faults</li>
+                                <li><strong>Recoverability:</strong> Restores data after failure</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="margin: 10px 0; padding: 10px; background-color: #e8f4fc; border-radius: 5px;">
+                            <h4 style="color: #2980b9; margin-top: 20px;">Security</h4>
+                            <p>The degree to which the product protects information and data.</p>
+                            <ul>
+                                <li><strong>Confidentiality:</strong> Prevents unauthorized access</li>
+                                <li><strong>Integrity:</strong> Prevents unauthorized modification</li>
+                                <li><strong>Non-repudiation:</strong> Actions can be proven to have happened</li>
+                                <li><strong>Accountability:</strong> Actions can be traced to entities</li>
+                                <li><strong>Authenticity:</strong> Identity can be proved</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="margin: 10px 0; padding: 10px; background-color: #e8f4fc; border-radius: 5px;">
+                            <h4 style="color: #2980b9; margin-top: 20px;">Maintainability</h4>
+                            <p>The effectiveness and efficiency with which the product can be modified.</p>
+                            <ul>
+                                <li><strong>Modularity:</strong> Components can be changed independently</li>
+                                <li><strong>Reusability:</strong> Components can be used in other systems</li>
+                                <li><strong>Analyzability:</strong> Easy to diagnose deficiencies</li>
+                                <li><strong>Modifiability:</strong> Easy to implement changes</li>
+                                <li><strong>Testability:</strong> Easy to validate changes</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="margin: 10px 0; padding: 10px; background-color: #e8f4fc; border-radius: 5px;">
+                            <h4 style="color: #2980b9; margin-top: 20px;">Portability</h4>
+                            <p>The effectiveness and efficiency with which the system can be transferred.</p>
+                            <ul>
+                                <li><strong>Adaptability:</strong> Can be adapted to different environments</li>
+                                <li><strong>Installability:</strong> Easy to install in new environment</li>
+                                <li><strong>Replaceability:</strong> Can replace another system</li>
+                            </ul>
+                        </div>
+                        
+                        <h3 style="color: #2980b9; margin-top: 20px;">Quality in Use Model (5 Characteristics)</h3>
+                        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                            <tr>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Characteristic</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Description</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Example Metrics</th>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Effectiveness</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Accuracy and completeness in achieving goals</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Task completion rate, error rate</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Efficiency</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Resources expended in relation to results</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Time to complete tasks</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Satisfaction</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">User satisfaction with the system</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Survey scores, net promoter score</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Freedom from risk</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Reduction of risks to people/business</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Security incidents, data loss events</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Context coverage</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Range of contexts where system works</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Supported environments, locales</td>
+                            </tr>
+                        </table>
+                        
+                        <div style="background-color: #e8f4fc; padding: 20px; border-radius: 5px; margin: 20px 0;">
+                            <h3 style="color: #2980b9; margin-top: 20px;">Implementing ISO 25010</h3>
+                            <ol>
+                                <li>Identify relevant quality characteristics for your product</li>
+                                <li>Define measurable quality requirements</li>
+                                <li>Establish quality measurement procedures</li>
+                                <li>Incorporate quality criteria in development processes</li>
+                                <li>Continuously monitor and improve quality</li>
+                            </ol>
+                        </div>
+                        
+                        <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                            <h3 style="color: #2980b9; margin-top: 20px;">Case Study: Medical Device Software</h3>
+                            <p>A medical device manufacturer used ISO 25010 to define quality requirements for their patient monitoring system:</p>
+                            <ul>
+                                <li><strong>Functional suitability:</strong> 100% correct vital sign measurements</li>
+                                <li><strong>Reliability:</strong> 99.99% uptime requirement</li>
+                                <li><strong>Security:</strong> HIPAA-compliant data protection</li>
+                                <li><strong>Usability:</strong> Nurses must complete tasks with ≤ 1 error</li>
+                            </ul>
+                            <p>This approach helped them achieve FDA approval and high customer satisfaction.</p>
+                        </div>
+                    </section>
+                
+                    <section id="iso-9001" style="background-color: #fff; border-radius: 5px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-top: 3px solid #3498db;">
+                        <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                            <div style="background: #3498db; color: white; width: 40px; height: 40px; border-radius: 50%; text-align: center; line-height: 40px; margin-right: 15px; flex-shrink: 0; font-weight: bold;">ISO</div>
+                            <div>
+                                <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">3. ISO 9001: Quality Management Systems</h2>
+                                <p>International standard for quality management systems applicable to any organization</p>
+                            </div>
+                        </div>
+                        
+                        <h3 style="color: #2980b9; margin-top: 20px;">Key Principles of ISO 9001</h3>
+                        <div style="display: flex; margin: 15px 0; align-items: flex-start;">
+                            <div style="background: #3498db; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 15px; flex-shrink: 0;">1</div>
+                            <div style="flex: 1;">
+                                <h4 style="color: #2980b9; margin-top: 20px;">Customer Focus</h4>
+                                <p>Understand and meet customer requirements and strive to exceed expectations</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; margin: 15px 0; align-items: flex-start;">
+                            <div style="background: #3498db; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 15px; flex-shrink: 0;">2</div>
+                            <div style="flex: 1;">
+                                <h4 style="color: #2980b9; margin-top: 20px;">Leadership</h4>
+                                <p>Establish unity of purpose and direction at all levels</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; margin: 15px 0; align-items: flex-start;">
+                            <div style="background: #3498db; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 15px; flex-shrink: 0;">3</div>
+                            <div style="flex: 1;">
+                                <h4 style="color: #2980b9; margin-top: 20px;">Engagement of People</h4>
+                                <p>Competent, empowered and engaged people at all levels</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; margin: 15px 0; align-items: flex-start;">
+                            <div style="background: #3498db; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 15px; flex-shrink: 0;">4</div>
+                            <div style="flex: 1;">
+                                <h4 style="color: #2980b9; margin-top: 20px;">Process Approach</h4>
+                                <p>Manage activities as interrelated processes</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; margin: 15px 0; align-items: flex-start;">
+                            <div style="background: #3498db; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 15px; flex-shrink: 0;">5</div>
+                            <div style="flex: 1;">
+                                <h4 style="color: #2980b9; margin-top: 20px;">Improvement</h4>
+                                <p>Continual improvement of performance</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; margin: 15px 0; align-items: flex-start;">
+                            <div style="background: #3498db; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 15px; flex-shrink: 0;">6</div>
+                            <div style="flex: 1;">
+                                <h4 style="color: #2980b9; margin-top: 20px;">Evidence-based Decision Making</h4>
+                                <p>Decisions based on analysis of data and information</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; margin: 15px 0; align-items: flex-start;">
+                            <div style="background: #3498db; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 15px; flex-shrink: 0;">7</div>
+                            <div style="flex: 1;">
+                                <h4 style="color: #2980b9; margin-top: 20px;">Relationship Management</h4>
+                                <p>Manage relationships with interested parties</p>
+                            </div>
+                        </div>
+                        
+                        <h3 style="color: #2980b9; margin-top: 20px;">PDCA Cycle (Plan-Do-Check-Act)</h3>
+                        <div style="text-align: center; margin: 20px 0; background: white; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <div style="background: #eee; padding: 40px; text-align: center; border-radius: 5px; margin: 10px 0;">
+                                [Circular diagram showing Plan → Do → Check → Act]
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 20px; margin: 20px 0;">
+                            <div style="flex: 1; padding: 15px; border-radius: 5px; background-color: #e8f8f0; border-left: 4px solid #2ecc71;">
+                                <h3 style="color: #2980b9; margin-top: 20px;">Benefits for Software Organizations</h3>
+                                <ul>
+                                    <li>Improved process consistency</li>
+                                    <li>Enhanced customer satisfaction</li>
+                                    <li>Better documentation practices</li>
+                                    <li>Competitive advantage in bidding</li>
+                                    <li>Foundation for other standards</li>
+                                </ul>
+                            </div>
+                            <div style="flex: 1; padding: 15px; border-radius: 5px; background-color: #fde8e8; border-left: 4px solid #e74c3c;">
+                                <h3 style="color: #2980b9; margin-top: 20px;">Implementation Challenges</h3>
+                                <ul>
+                                    <li>Documentation overhead</li>
+                                    <li>Initial certification costs</li>
+                                    <li>Potential bureaucracy</li>
+                                    <li>Need for cultural change</li>
+                                    <li>Ongoing maintenance effort</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="background: #e8f4fc; padding: 15px; border-radius: 5px; margin: 20px 0; border-left: 4px solid #3498db;">
+                            <h3 style="color: #2c3e50; margin-top: 0;">Quick Quiz</h3>
+                            <p><strong>Q:</strong> What is the main difference between ISO 25010 and ISO 9001?</p>
+                            <p><strong>A:</strong> ISO 25010 focuses on software product quality characteristics, while ISO 9001 provides requirements for an organization's quality management system regardless of industry.</p>
+                        </div>
+                    </section>
+                
+                    <section id="cmmi" style="background-color: #fff; border-radius: 5px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-top: 3px solid #3498db;">
+                        <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                            <div style="background: #3498db; color: white; width: 40px; height: 40px; border-radius: 50%; text-align: center; line-height: 40px; margin-right: 15px; flex-shrink: 0; font-weight: bold;">CMMI</div>
+                            <div>
+                                <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">4. CMMI (Capability Maturity Model Integration)</h2>
+                                <p>Process improvement framework that helps organizations improve performance</p>
+                            </div>
+                        </div>
+                        
+                        <h3 style="color: #2980b9; margin-top: 20px;">CMMI Maturity Levels</h3>
+                        
+                        <div style="display: flex; margin: 15px 0; align-items: flex-start;">
+                            <div style="background: #3498db; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 15px; flex-shrink: 0;">1</div>
+                            <div style="flex: 1;">
+                                <h4 style="color: #2980b9; margin-top: 20px;">Initial (Ad-hoc)</h4>
+                                <p>Processes are unpredictable, poorly controlled, and reactive</p>
+                                <div style="background-color: #fde8e8; padding: 15px; border-radius: 5px; margin: 15px 0; border-left: 4px solid #e74c3c;">
+                                    <p><strong>Typical issues:</strong> Heroics required to complete projects, frequent crises</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; margin: 15px 0; align-items: flex-start;">
+                            <div style="background: #3498db; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 15px; flex-shrink: 0;">2</div>
+                            <div style="flex: 1;">
+                                <h4 style="color: #2980b9; margin-top: 20px;">Managed (Repeatable)</h4>
+                                <p>Projects have basic project management processes</p>
+                                <div style="background-color: #e8f8f0; padding: 15px; border-radius: 5px; margin: 15px 0; border-left: 4px solid #2ecc71;">
+                                    <p><strong>Key achievements:</strong> Requirements management, project planning, monitoring</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; margin: 15px 0; align-items: flex-start;">
+                            <div style="background: #3498db; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 15px; flex-shrink: 0;">3</div>
+                            <div style="flex: 1;">
+                                <h4 style="color: #2980b9; margin-top: 20px;">Defined</h4>
+                                <p>Processes are characterized, understood, and standardized</p>
+                                <div style="background-color: #e8f8f0; padding: 15px; border-radius: 5px; margin: 15px 0; border-left: 4px solid #2ecc71;">
+                                    <p><strong>Key achievements:</strong> Organizational process focus, training programs, peer reviews</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; margin: 15px 0; align-items: flex-start;">
+                            <div style="background: #3498db; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 15px; flex-shrink: 0;">4</div>
+                            <div style="flex: 1;">
+                                <h4 style="color: #2980b9; margin-top: 20px;">Quantitatively Managed</h4>
+                                <p>Processes are measured and controlled using statistical techniques</p>
+                                <div style="background-color: #e8f8f0; padding: 15px; border-radius: 5px; margin: 15px 0; border-left: 4px solid #2ecc71;">
+                                    <p><strong>Key achievements:</strong> Quantitative process management, quality control</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; margin: 15px 0; align-items: flex-start;">
+                            <div style="background: #3498db; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 15px; flex-shrink: 0;">5</div>
+                            <div style="flex: 1;">
+                                <h4 style="color: #2980b9; margin-top: 20px;">Optimizing</h4>
+                                <p>Continuous process improvement through incremental and innovative changes</p>
+                                <div style="background-color: #e8f8f0; padding: 15px; border-radius: 5px; margin: 15px 0; border-left: 4px solid #2ecc71;">
+                                    <p><strong>Key achievements:</strong> Process innovation, defect prevention</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3 style="color: #2980b9; margin-top: 20px;">CMMI Process Areas (V2.0)</h3>
+                        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                            <tr>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Category</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Process Areas</th>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Performance Management</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Governance, Implementation Infrastructure</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Process Management</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Process Asset Development, Process Management</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Project Management</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Planning, Monitoring, Risk Management, Supplier Management</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Support</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Decision Analysis, Configuration Management, Process Quality</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Engineering</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Requirements Development, Technical Solution, Verification, Validation</td>
+                            </tr>
+                        </table>
+                        
+                        <div style="margin: 15px 0; padding: 15px; background-color: #f8f9fa; border-radius: 5px;">
+                            <h4 style="color: #2980b9; margin-top: 20px;">Example Process Area: Requirements Management (Level 2)</h4>
+                            <p><strong>Purpose:</strong> Manage requirements of the project's products and product components and ensure alignment between requirements, plans, and work products.</p>
+                            <p><strong>Specific Goals:</strong></p>
+                            <ol>
+                                <li>Develop understanding with requirements providers</li>
+                                <li>Obtain commitment to requirements</li>
+                                <li>Manage requirements changes</li>
+                                <li>Maintain bidirectional traceability</li>
+                                <li>Ensure alignment between work products and requirements</li>
+                            </ol>
+                        </div>
+                        
+                        <div style="text-align: center; margin: 20px 0; background: white; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3 style="color: #2980b9; margin-top: 20px;">CMMI Maturity Level Progression</h3>
+                            <div style="background: #eee; padding: 40px; text-align: center; border-radius: 5px; margin: 10px 0;">
+                                [Stair-step diagram showing progression from Level 1 to Level 5 with key characteristics at each level]
+                            </div>
+                        </div>
+                        
+                        <div style="background-color: #e8f4fc; padding: 20px; border-radius: 5px; margin: 20px 0;">
+                            <h3 style="color: #2980b9; margin-top: 20px;">CMMI Implementation Roadmap</h3>
+                            <ol>
+                                <li><strong>Commit:</strong> Secure leadership commitment and form improvement team</li>
+                                <li><strong>Diagnose:</strong> Conduct gap analysis against target level</li>
+                                <li><strong>Plan:</strong> Develop improvement plan with priorities</li>
+                                <li><strong>Act:</strong> Implement improvements in pilot projects</li>
+                                <li><strong>Learn:</strong> Evaluate results and refine approach</li>
+                                <li><strong>Deploy:</strong> Roll out improvements organization-wide</li>
+                                <li><strong>Sustain:</strong> Institutionalize improvements</li>
+                            </ol>
+                        </div>
+                        
+                        <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                            <h3 style="color: #2980b9; margin-top: 20px;">Case Study: Aerospace Contractor</h3>
+                            <p>A major aerospace contractor achieved CMMI Level 5 over 5 years:</p>
+                            <ul>
+                                <li><strong>Results:</strong> 35% reduction in defects, 25% faster delivery</li>
+                                <li><strong>Key practices:</strong> Statistical process control, root cause analysis</li>
+                                <li><strong>Challenges overcome:</strong> Cultural resistance, measurement system development</li>
+                                <li><strong>ROI:</strong> 4:1 return on improvement investment</li>
+                            </ul>
+                        </div>
+                    </section>
+                
+                    <section id="cmmi-vs-iso" style="background-color: #fff; border-radius: 5px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">5. CMMI vs ISO Comparison</h2>
+                        
+                        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                            <tr>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Factor</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">CMMI</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">ISO 9001</th>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Focus</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Process capability and maturity</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Quality management system</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Structure</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Maturity levels (1-5)</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Plan-Do-Check-Act cycle</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Approach</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Progressive improvement roadmap</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Conformance to requirements</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Certification</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Appraisal results (staged/continuous)</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Yes/No certification</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Best for</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Organizations wanting to improve processes</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Organizations needing quality system certification</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Implementation</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Typically 12-36 months</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Typically 6-12 months</td>
+                            </tr>
+                        </table>
+                        
+                        <div style="background-color: #e8f8f0; padding: 15px; border-radius: 5px; margin: 15px 0; border-left: 4px solid #2ecc71;">
+                            <h3 style="color: #2980b9; margin-top: 20px;">Synergistic Implementation</h3>
+                            <p>Many organizations implement both CMMI and ISO 9001:</p>
+                            <ul>
+                                <li>Use ISO 9001 as foundation for quality system</li>
+                                <li>Apply CMMI for deeper process improvement</li>
+                                <li>Align documentation requirements</li>
+                                <li>Coordinate audit/appraisal schedules</li>
+                                <li>Leverage common process areas</li>
+                            </ul>
+                        </div>
+                    </section>
+                
+                    <section id="other-models" style="background-color: #fff; border-radius: 5px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">6. Other Quality Models</h2>
+                        
+                        <div style="background-color: #fff; border-radius: 5px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-top: 3px solid #3498db;">
+                            <h3 style="color: #2980b9; margin-top: 20px;">TQM (Total Quality Management)</h3>
+                            <p>Organization-wide approach to long-term success through customer satisfaction.</p>
+                            <ul>
+                                <li><strong>Key principles:</strong> Customer focus, continuous improvement, employee empowerment</li>
+                                <li><strong>Tools:</strong> PDCA, Six Sigma, quality circles</li>
+                                <li><strong>Software application:</strong> Company-wide quality culture</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background-color: #fff; border-radius: 5px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-top: 3px solid #3498db;">
+                            <h3 style="color: #2980b9; margin-top: 20px;">Six Sigma</h3>
+                            <p>Data-driven approach to eliminate defects and reduce variability.</p>
+                            <ul>
+                                <li><strong>DMAIC method:</strong> Define, Measure, Analyze, Improve, Control</li>
+                                <li><strong>Software application:</strong> Defect reduction, process optimization</li>
+                                <li><strong>Certification levels:</strong> Green Belt, Black Belt, Master Black Belt</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background-color: #fff; border-radius: 5px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-top: 3px solid #3498db;">
+                            <h3 style="color: #2980b9; margin-top: 20px;">SPICE (ISO/IEC 15504)</h3>
+                            <p>Framework for software process assessment and improvement.</p>
+                            <ul>
+                                <li><strong>Process capability levels:</strong> 0-Incomplete to 5-Optimizing</li>
+                                <li><strong>Assessment model:</strong> Process dimension and capability dimension</li>
+                                <li><strong>Relationship to CMMI:</strong> Similar concepts, different structure</li>
+                            </ul>
+                        </div>
+                    </section>
+                
+                    <section id="implementation" style="background-color: #fff; border-radius: 5px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">7. Implementing Quality Models</h2>
+                        
+                        <div style="background-color: #e8f4fc; padding: 20px; border-radius: 5px; margin: 20px 0;">
+                            <h3 style="color: #2980b9; margin-top: 20px;">10-Step Implementation Guide</h3>
+                            <ol>
+                                <li><strong>Assess current state:</strong> Conduct gap analysis</li>
+                                <li><strong>Secure leadership commitment:</strong> Obtain executive sponsorship</li>
+                                <li><strong>Define objectives:</strong> Align with business goals</li>
+                                <li><strong>Select model/framework:</strong> Choose based on needs</li>
+                                <li><strong>Form improvement team:</strong> Include cross-functional members</li>
+                                <li><strong>Develop implementation plan:</strong> With milestones and metrics</li>
+                                <li><strong>Train organization:</strong> At all levels</li>
+                                <li><strong>Pilot improvements:</strong> Start with high-impact areas</li>
+                                <li><strong>Evaluate and refine:</strong> Based on pilot results</li>
+                                <li><strong>Scale and institutionalize:</strong> Roll out organization-wide</li>
+                            </ol>
+                        </div>
+                        
+                        <div style="display: flex; gap: 20px; margin: 20px 0;">
+                            <div style="flex: 1; padding: 15px; border-radius: 5px; background-color: #e8f8f0; border-left: 4px solid #2ecc71;">
+                                <h3 style="color: #2980b9; margin-top: 20px;">Success Factors</h3>
+                                <ul>
+                                    <li>Strong executive sponsorship</li>
+                                    <li>Alignment with business objectives</li>
+                                    <li>Employee involvement and training</li>
+                                    <li>Pragmatic, phased approach</li>
+                                    <li>Measurement and feedback</li>
+                                </ul>
+                            </div>
+                            <div style="flex: 1; padding: 15px; border-radius: 5px; background-color: #fde8e8; border-left: 4px solid #e74c3c;">
+                                <h3 style="color: #2980b9; margin-top: 20px;">Common Pitfalls</h3>
+                                <ul>
+                                    <li>Treating as documentation exercise</li>
+                                    <li>Lack of leadership support</li>
+                                    <li>Overly ambitious scope</li>
+                                    <li>Ignoring cultural aspects</li>
+                                    <li>Inadequate measurement</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="background: #e8f4fc; padding: 15px; border-radius: 5px; margin: 20px 0; border-left: 4px solid #3498db;">
+                            <h3 style="color: #2c3e50; margin-top: 0;">Quick Quiz</h3>
+                            <p><strong>Q:</strong> What is the first maturity level in CMMI where processes are quantitatively managed?</p>
+                            <p><strong>A:</strong> Level 4 (Quantitatively Managed) is where processes are measured and controlled using statistical techniques.</p>
+                        </div>
+                    </section>
+                
+                    <section id="metrics" style="background-color: #fff; border-radius: 5px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">8. Quality Metrics and Measurement</h2>
+                        
+                        <h3 style="color: #2980b9; margin-top: 20px;">Key Software Quality Metrics</h3>
+                        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                            <tr>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Category</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Metrics</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Targets</th>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Defects</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Defect density, escape rate</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">&lt; 1 defect/KLOC</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Reliability</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">MTBF, availability</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">99.9% uptime</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Performance</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Response time, throughput</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">&lt; 2 sec response</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Maintainability</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Cyclomatic complexity, tech debt</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">&lt; 10 complexity</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Security</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Vulnerabilities, patching time</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">0 critical vulnerabilities</td>
+                            </tr>
+                        </table>
+                        
+                        <div style="background-color: #e8f8f0; padding: 15px; border-radius: 5px; margin: 15px 0; border-left: 4px solid #2ecc71;">
+                            <h3 style="color: #2980b9; margin-top: 20px;">Effective Measurement Program</h3>
+                            <ul>
+                                <li>Align metrics with business objectives</li>
+                                <li>Measure both product and process quality</li>
+                                <li>Use balanced set of leading and lagging indicators</li>
+                                <li>Establish baselines and improvement targets</li>
+                                <li>Review metrics regularly with stakeholders</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                            <h3 style="color: #2980b9; margin-top: 20px;">Case Study: Financial Services</h3>
+                            <p>A bank implemented a comprehensive quality measurement system:</p>
+                            <ul>
+                                <li><strong>Process metrics:</strong> Requirements volatility, test coverage</li>
+                                <li><strong>Product metrics:</strong> Defect density, performance benchmarks</li>
+                                <li><strong>Results:</strong> 40% reduction in production defects, 30% faster releases</li>
+                                <li><strong>Key success factor:</strong> Automated metric collection and dashboards</li>
+                            </ul>
+                        </div>
+                    </section>
+                
+                    <section id="tools" style="background-color: #fff; border-radius: 5px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">9. Quality Management Tools</h2>
+                        
+                        <h3 style="color: #2980b9; margin-top: 20px;">Software Quality Tools</h3>
+                        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                            <tr>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Tool Type</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Example Tools</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Purpose</th>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Static Analysis</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">SonarQube, Coverity</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Code quality measurement</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Testing</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Selenium, JUnit</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Automated verification</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Requirements</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Jama, DOORS</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Requirements management</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Process</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Jira, VersionOne</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Process tracking</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Metrics</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Kibana, Tableau</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Quality dashboards</td>
+                            </tr>
+                        </table>
+                        
+                        <div style="background-color: #e8f8f0; padding: 15px; border-radius: 5px; margin: 15px 0; border-left: 4px solid #2ecc71;">
+                            <h3 style="color: #2980b9; margin-top: 20px;">Tool Implementation Checklist</h3>
+                            <ul style="padding-left: 20px;">
+                                <li style="margin-bottom: 8px; position: relative; padding-left: 25px;">Assess organizational needs first</li>
+                                <li style="margin-bottom: 8px; position: relative; padding-left: 25px;">Evaluate integration with existing tools</li>
+                                <li style="margin-bottom: 8px; position: relative; padding-left: 25px;">Consider vendor support and community</li>
+                                <li style="margin-bottom: 8px; position: relative; padding-left: 25px;">Plan for training and adoption</li>
+                                <li style="margin-bottom: 8px; position: relative; padding-left: 25px;">Start small and scale</li>
+                            </ul>
+                        </div>
+                    </section>
+                
+                    <section id="future" style="background-color: #fff; border-radius: 5px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">10. Future Trends in Software Quality</h2>
+                        
+                        <h3 style="color: #2980b9; margin-top: 20px;">Emerging Quality Considerations</h3>
+                        <div style="display: flex; margin: 15px 0; align-items: flex-start;">
+                            <div style="background: #3498db; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 15px; flex-shrink: 0;">1</div>
+                            <div style="flex: 1;">
+                                <h4 style="color: #2980b9; margin-top: 20px;">AI Quality</h4>
+                                <p>Quality metrics for machine learning systems (model accuracy, bias, drift)</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; margin: 15px 0; align-items: flex-start;">
+                            <div style="background: #3498db; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 15px; flex-shrink: 0;">2</div>
+                            <div style="flex: 1;">
+                                <h4 style="color: #2980b9; margin-top: 20px;">Quantum Software Quality</h4>
+                                <p>New quality paradigms for quantum computing applications</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; margin: 15px 0; align-items: flex-start;">
+                            <div style="background: #3498db; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 15px; flex-shrink: 0;">3</div>
+                            <div style="flex: 1;">
+                                <h4 style="color: #2980b9; margin-top: 20px;">Ethical Quality</h4>
+                                <p>Measuring and ensuring ethical aspects of software</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; margin: 15px 0; align-items: flex-start;">
+                            <div style="background: #3498db; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 15px; flex-shrink: 0;">4</div>
+                            <div style="flex: 1;">
+                                <h4 style="color: #2980b9; margin-top: 20px;">Sustainability</h4>
+                                <p>Energy efficiency and environmental impact metrics</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; margin: 15px 0; align-items: flex-start;">
+                            <div style="background: #3498db; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 15px; flex-shrink: 0;">5</div>
+                            <div style="flex: 1;">
+                                <h4 style="color: #2980b9; margin-top: 20px;">DevSecOps</h4>
+                                <p>Integrated security in quality processes</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section id="conclusion" style="background-color: #fff; border-radius: 5px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">11. Conclusion</h2>
+                        <p>Software quality models provide essential frameworks for building and maintaining high-quality software systems. ISO standards offer product-focused quality characteristics, while CMMI provides a roadmap for process improvement maturity.</p>
+                        
+                        <div style="background-color: #e8f8f0; padding: 15px; border-radius: 5px; margin: 15px 0; border-left: 4px solid #2ecc71;">
+                            <h3 style="color: #2980b9; margin-top: 20px;">Key Recommendations</h3>
+                            <ol>
+                                <li>Select models that align with your organizational needs</li>
+                                <li>Implement quality practices pragmatically</li>
+                                <li>Measure both product quality and process capability</li>
+                                <li>Focus on continuous improvement</li>
+                                <li>Adapt models to your specific context</li>
+                            </ol>
+                        </div>
+                    </section>
+                </main>
+            
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+    const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+    const searchBox = document.getElementById("searchBox");
+
+    if (!sidebarList || !sidebarGrid) {
+        console.error("Sidebar elements not found!");
+        return;
+    }
+
+    let allTopics = [];
+
+    // Adjust JSON path based on file location
+    let jsonPath = window.location.pathname.includes("/topics/") ? "../softwarengineering.json" : "softwarengineering.json";
+
+    console.log("Fetching JSON from:", jsonPath); // Debugging
+
+    // Fetch Software Engineering Topics from JSON
+    fetch(jsonPath)
+        .then(response => {
+            console.log("Fetch Response:", response);
+            if (!response.ok) {
+                throw new Error("Failed to load JSON: " + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Fetched Data:", data);
+            if (!data.Software_Engineering) {
+                throw new Error("JSON does not contain 'Software_Engineering' key!");
+            }
+            allTopics = data.Software_Engineering;
+            displayTopics(allTopics);
+        })
+        .catch(error => console.error("Error loading topics:", error));
+
+    // Function to Display Topics in Sidebar
+    function displayTopics(topics) {
+        if (!Array.isArray(topics)) {
+            console.error("Invalid topics data:", topics);
+            return;
+        }
+
+        sidebarList.innerHTML = ""; // Clear list
+        sidebarGrid.innerHTML = ""; // Clear grid
+
+        topics.forEach(topic => {
+            let topicLink = topic.link; // Keep the original link
+
+            // 🖥️ Desktop List View
+            let li = document.createElement("li");
+            li.className = "list-group-item list-group-item-action";
+            li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+            sidebarList.appendChild(li);
+
+            // 📱 Mobile Grid View (3 in a row)
+            let div = document.createElement("div");
+            div.className = "col-4"; // Bootstrap grid (3 in a row)
+            div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+            sidebarGrid.appendChild(div);
+        });
+    }
+
+    // Search Topics
+    if (searchBox) {
+        searchBox.addEventListener("input", function () {
+            const searchText = this.value.toLowerCase();
+            const filteredTopics = allTopics.filter(topic =>
+                topic.name.toLowerCase().includes(searchText)
+            );
+            displayTopics(filteredTopics);
+        });
+    }
+});
+
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

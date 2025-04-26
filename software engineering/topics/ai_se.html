@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../software engineering.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Software Engineering</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+                <main class="col-md-7 content">
+                    <h1>AI in Software Engineering</h1>
+                
+                    <section id="fundamentals" style="margin-bottom: 40px;">
+                        <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">1. AI Fundamentals for Software Engineering</h2>
+                        
+                        <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                            <h3 style="color: #2c3e50;">1.1 What is AI in Software Engineering?</h3>
+                            <p style="line-height: 1.6;"><strong>AI in Software Engineering</strong> involves applying machine learning, natural language processing, and other AI techniques to improve various aspects of software development.</p>
+                            
+                            <div style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                                <h4 style="color: #2c3e50;">Key AI Technologies</h4>
+                                <ul style="line-height: 1.6;">
+                                    <li><strong>Machine Learning:</strong> Algorithms that learn from data</li>
+                                    <li><strong>Natural Language Processing (NLP):</strong> Understanding human language</li>
+                                    <li><strong>Computer Vision:</strong> Interpreting visual information</li>
+                                    <li><strong>Knowledge Representation:</strong> Structuring information for reasoning</li>
+                                    <li><strong>Robotic Process Automation (RPA):</strong> Automating repetitive tasks</li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                            <h3 style="color: #2c3e50;">1.2 AI vs Traditional Software</h3>
+                            <div style="background-color: #fff8e1; padding: 15px; border-left: 4px solid #ffc107;">
+                                <table style="width: 100%; border-collapse: collapse; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                    <tr>
+                                        <th style="background-color: #3498db; color: white; border: 1px solid #ddd; padding: 12px; text-align: left;">Characteristic</th>
+                                        <th style="background-color: #3498db; color: white; border: 1px solid #ddd; padding: 12px; text-align: left;">Traditional Software</th>
+                                        <th style="background-color: #3498db; color: white; border: 1px solid #ddd; padding: 12px; text-align: left;">AI Systems</th>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Programming</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Explicit rules and logic</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Learns from data/experience</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Behavior</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Deterministic</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Probabilistic</td>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Adaptability</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Static unless updated</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Dynamic, can improve over time</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Input Handling</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Structured inputs</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Handles unstructured data</td>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Decision Making</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Rule-based</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Pattern-based</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section id="applications" style="margin-bottom: 40px;">
+                        <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">2. AI Applications in Software Engineering</h2>
+                        
+                        <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                            <h3 style="color: #2c3e50;">2.1 Requirements Engineering</h3>
+                            <div style="background-color: #eafaf1; padding: 15px; border-left: 4px solid #2ecc71;">
+                                <h4 style="color: #2c3e50;">AI Applications</h4>
+                                <ul style="line-height: 1.6;">
+                                    <li><strong>Automated requirements analysis:</strong> NLP to extract requirements from documents</li>
+                                    <li><strong>Requirements prioritization:</strong> ML models to predict feature importance</li>
+                                    <li><strong>Ambiguity detection:</strong> Identify unclear or conflicting requirements</li>
+                                    <li><strong>Traceability:</strong> Automatically link requirements to design elements</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #fef9e7; padding: 15px; margin: 20px 0; border-left: 4px solid #f39c12; font-family: monospace;">
+                                <h4 style="color: #2c3e50;">Example: NLP for Requirements Extraction</h4>
+                                <pre style="margin: 0; white-space: pre-wrap;">
+                # Using spaCy for requirement extraction
+                import spacy
+                
+                nlp = spacy.load("en_core_web_sm")
+                doc = nlp("The system shall allow users to reset passwords via email")
+                
+                # Extract requirement components
+                for token in doc:
+                    if token.dep_ == "nsubj" and token.head.text == "allow":
+                        subject = token.text
+                    if token.dep_ == "dobj":
+                        action = token.text
+                        
+                print(f"Requirement: {subject} can {action}")
+                # Output: Requirement: users can reset
+                                </pre>
+                            </div>
+                        </div>
+                
+                        <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                            <h3 style="color: #2c3e50;">2.2 Design and Architecture</h3>
+                            <div style="background-color: #eafaf1; padding: 15px; border-left: 4px solid #2ecc71;">
+                                <h4 style="color: #2c3e50;">AI Applications</h4>
+                                <ul style="line-height: 1.6;">
+                                    <li><strong>Architecture recommendation:</strong> Suggest patterns based on requirements</li>
+                                    <li><strong>Code generation from design:</strong> Convert UML to skeleton code</li>
+                                    <li><strong>Design pattern detection:</strong> Identify patterns in existing code</li>
+                                    <li><strong>Performance prediction:</strong> Forecast system behavior</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f0f8ff; padding: 15px; border-left: 4px solid #1e90ff;">
+                                <h4 style="color: #2c3e50;">Case Study: AI for API Design</h4>
+                                <p style="line-height: 1.6;">Google's API design assistant uses ML to:</p>
+                                <ol style="line-height: 1.6;">
+                                    <li>Analyze thousands of successful API designs</li>
+                                    <li>Suggest naming conventions and patterns</li>
+                                    <li>Detect potential design anti-patterns</li>
+                                    <li>Recommend versioning strategies</li>
+                                </ol>
+                            </div>
+                        </div>
+                
+                        <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                            <h3 style="color: #2c3e50;">2.3 Development</h3>
+                            <div style="background-color: #eafaf1; padding: 15px; border-left: 4px solid #2ecc71;">
+                                <h4 style="color: #2c3e50;">AI-Powered Development Tools</h4>
+                                <ul style="line-height: 1.6;">
+                                    <li><strong>Code completion:</strong> GitHub Copilot, TabNine</li>
+                                    <li><strong>Bug detection:</strong> DeepCode, Amazon CodeGuru</li>
+                                    <li><strong>Code translation:</strong> Convert between languages</li>
+                                    <li><strong>Documentation generation:</strong> Auto-create docs from code</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #fef9e7; padding: 15px; margin: 20px 0; border-left: 4px solid #f39c12; font-family: monospace;">
+                                <h4 style="color: #2c3e50;">Example: AI Code Completion</h4>
+                                <pre style="margin: 0; white-space: pre-wrap;">
+                # Developer starts typing:
+                def calculate_discount(customer):
+                
+                # AI suggests completion:
+                def calculate_discount(customer):
+                    """Calculate discount based on customer loyalty"""
+                    if customer['status'] == 'gold':
+                        return 0.2
+                    elif customer['status'] == 'silver':
+                        return 0.1
+                    else:
+                        return 0.05
+                                </pre>
+                            </div>
+                        </div>
+                
+                        <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                            <h3 style="color: #2c3e50;">2.4 Testing</h3>
+                            <div style="background-color: #eafaf1; padding: 15px; border-left: 4px solid #2ecc71;">
+                                <h4 style="color: #2c3e50;">AI in Software Testing</h4>
+                                <ul style="line-height: 1.6;">
+                                    <li><strong>Test case generation:</strong> Create tests from requirements</li>
+                                    <li><strong>Test prioritization:</strong> Optimize test execution order</li>
+                                    <li><strong>Visual testing:</strong> Computer vision for UI verification</li>
+                                    <li><strong>Anomaly detection:</strong> Identify unusual system behavior</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #ebf5fb; padding: 15px; border-left: 4px solid #2980b9;">
+                                <h4 style="color: #2c3e50;">AI-Based Test Automation Process</h4>
+                                <ol style="line-height: 1.6;">
+                                    <li>Collect historical test data</li>
+                                    <li>Train ML model on test outcomes</li>
+                                    <li>Predict high-risk areas needing testing</li>
+                                    <li>Generate test cases automatically</li>
+                                    <li>Adapt test suite based on results</li>
+                                </ol>
+                            </div>
+                        </div>
+                
+                        <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                            <h3 style="color: #2c3e50;">2.5 Maintenance</h3>
+                            <div style="background-color: #eafaf1; padding: 15px; border-left: 4px solid #2ecc71;">
+                                <h4 style="color: #2c3e50;">AI for Software Maintenance</h4>
+                                <ul style="line-height: 1.6;">
+                                    <li><strong>Bug prediction:</strong> Identify files likely to contain bugs</li>
+                                    <li><strong>Automated patching:</strong> Suggest fixes for vulnerabilities</li>
+                                    <li><strong>Log analysis:</strong> Detect patterns in system logs</li>
+                                    <li><strong>Technical debt assessment:</strong> Quantify maintenance needs</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f0f8ff; padding: 15px; border-left: 4px solid #1e90ff;">
+                                <h4 style="color: #2c3e50;">Case Study: Microsoft's Bug Prediction</h4>
+                                <p style="line-height: 1.6;">Microsoft uses machine learning to:</p>
+                                <ol style="line-height: 1.6;">
+                                    <li>Analyze code changes and bug history</li>
+                                    <li>Predict which files are most likely to contain bugs</li>
+                                    <li>Prioritize code reviews and testing efforts</li>
+                                    <li>Reduce bug-finding time by 30%</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section id="techniques" style="margin-bottom: 40px;">
+                        <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">3. AI Techniques for Software Engineering</h2>
+                        
+                        <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                            <h3 style="color: #2c3e50;">3.1 Machine Learning Approaches</h3>
+                            <div style="background-color: #f5eef8; padding: 15px; border-left: 4px solid #9b59b6;">
+                                <h4 style="color: #2c3e50;">Supervised Learning</h4>
+                                <ul style="line-height: 1.6;">
+                                    <li><strong>Classification:</strong> Bug prediction, requirement categorization</li>
+                                    <li><strong>Regression:</strong> Effort estimation, performance prediction</li>
+                                    <li><strong>Algorithms:</strong> Random Forest, SVM, Neural Networks</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f5eef8; padding: 15px; border-left: 4px solid #9b59b6;">
+                                <h4 style="color: #2c3e50;">Unsupervised Learning</h4>
+                                <ul style="line-height: 1.6;">
+                                    <li><strong>Clustering:</strong> Group similar code fragments</li>
+                                    <li><strong>Anomaly detection:</strong> Identify unusual code patterns</li>
+                                    <li><strong>Algorithms:</strong> K-means, DBSCAN, Autoencoders</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f5eef8; padding: 15px; border-left: 4px solid #9b59b6;">
+                                <h4 style="color: #2c3e50;">Reinforcement Learning</h4>
+                                <ul style="line-height: 1.6;">
+                                    <li><strong>Application:</strong> Automated test case generation</li>
+                                    <li><strong>Example:</strong> Learning optimal test sequences</li>
+                                    <li><strong>Algorithms:</strong> Q-learning, Deep Q Networks</li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                            <h3 style="color: #2c3e50;">3.2 Natural Language Processing</h3>
+                            <div style="background-color: #eafaf1; padding: 15px; border-left: 4px solid #2ecc71;">
+                                <h4 style="color: #2c3e50;">NLP Applications</h4>
+                                <ul style="line-height: 1.6;">
+                                    <li><strong>Requirements parsing:</strong> Extract entities and relationships</li>
+                                    <li><strong>Documentation analysis:</strong> Link docs to code elements</li>
+                                    <li><strong>Code comments generation:</strong> Create explanations</li>
+                                    <li><strong>Sentiment analysis:</strong> Gauge developer satisfaction</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #fef9e7; padding: 15px; margin: 20px 0; border-left: 4px solid #f39c12; font-family: monospace;">
+                                <h4 style="color: #2c3e50;">Example: Transformers for Code Understanding</h4>
+                                <pre style="margin: 0; white-space: pre-wrap;">
+                from transformers import pipeline
+                
+                code_analyzer = pipeline("text-generation", 
+                                        model="Salesforce/codegen-350M-mono")
+                
+                code = """
+                def calculate(a, b):
+                    # Add two numbers
+                    return a + b
+                """
+                
+                # Generate documentation
+                docs = code_analyzer(f"Generate docstring for:\n{code}")
+                print(docs[0]['generated_text'])
+                                </pre>
+                            </div>
+                        </div>
+                
+                        <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                            <h3 style="color: #2c3e50;">3.3 Graph-Based Techniques</h3>
+                            <div style="background-color: #eafaf1; padding: 15px; border-left: 4px solid #2ecc71;">
+                                <h4 style="color: #2c3e50;">Code as Graphs</h4>
+                                <ul style="line-height: 1.6;">
+                                    <li><strong>Abstract Syntax Trees (AST):</strong> Represent code structure</li>
+                                    <li><strong>Control Flow Graphs:</strong> Model program execution paths</li>
+                                    <li><strong>Graph Neural Networks:</strong> Learn from code structure</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section id="tools" style="margin-bottom: 40px;">
+                        <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">4. AI Tools for Software Engineering</h2>
+                        
+                        <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                            <h3 style="color: #2c3e50;">4.1 Commercial AI Development Tools</h3>
+                            <div style="background-color: #fff8e1; padding: 15px; border-left: 4px solid #ffc107;">
+                                <table style="width: 100%; border-collapse: collapse; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                    <tr>
+                                        <th style="background-color: #3498db; color: white; border: 1px solid #ddd; padding: 12px; text-align: left;">Tool</th>
+                                        <th style="background-color: #3498db; color: white; border: 1px solid #ddd; padding: 12px; text-align: left;">Vendor</th>
+                                        <th style="background-color: #3498db; color: white; border: 1px solid #ddd; padding: 12px; text-align: left;">Capabilities</th>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">GitHub Copilot</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">GitHub/Microsoft</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">AI pair programming, code suggestions</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Amazon CodeGuru</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Amazon</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Code reviews, performance recommendations</td>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">TabNine</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">TabNine</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">AI-powered code completion</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">DeepCode</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Snyk</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">AI-based code review</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                
+                        <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                            <h3 style="color: #2c3e50;">4.2 Open Source AI Tools</h3>
+                            <div style="background-color: #fff8e1; padding: 15px; border-left: 4px solid #ffc107;">
+                                <table style="width: 100%; border-collapse: collapse; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                    <tr>
+                                        <th style="background-color: #3498db; color: white; border: 1px solid #ddd; padding: 12px; text-align: left;">Tool</th>
+                                        <th style="background-color: #3498db; color: white; border: 1px solid #ddd; padding: 12px; text-align: left;">Description</th>
+                                        <th style="background-color: #3498db; color: white; border: 1px solid #ddd; padding: 12px; text-align: left;">Language</th>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">CodeT5</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Code-aware transformer model</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Python</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Infer</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Static analysis tool by Facebook</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Multiple</td>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Kite</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">AI-powered coding assistant</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Multiple</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">SonarQube</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Static analysis with ML</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Multiple</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section id="ethics" style="margin-bottom: 40px;">
+                        <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">5. Ethical Considerations</h2>
+                        
+                        <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                            <h3 style="color: #2c3e50;">5.1 Responsible AI in Software Engineering</h3>
+                            <div style="background-color: #fff0f5; padding: 15px; border-left: 4px solid #ff69b4;">
+                                <h4 style="color: #2c3e50;">Key Concerns</h4>
+                                <ul style="line-height: 1.6;">
+                                    <li><strong>Bias in training data:</strong> May perpetuate existing biases</li>
+                                    <li><strong>Code ownership:</strong> Who owns AI-generated code?</li>
+                                    <li><strong>Security risks:</strong> AI systems can be exploited</li>
+                                    <li><strong>Job impact:</strong> Changing developer roles</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #eafaf1; padding: 15px; border-left: 4px solid #2ecc71;">
+                                <h4 style="color: #2c3e50;">Best Practices</h4>
+                                <ul style="line-height: 1.6;">
+                                    <li>Audit training data for representativeness</li>
+                                    <li>Maintain human oversight of AI suggestions</li>
+                                    <li>Document AI-generated code contributions</li>
+                                    <li>Continuously monitor for unintended behavior</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section id="future" style="margin-bottom: 40px;">
+                        <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">6. Future of AI in Software Engineering</h2>
+                        
+                        <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                            <h3 style="color: #2c3e50;">6.1 Emerging Trends</h3>
+                            <div style="background-color: #eafaf1; padding: 15px; border-left: 4px solid #2ecc71;">
+                                <h4 style="color: #2c3e50;">Future Directions</h4>
+                                <ul style="line-height: 1.6;">
+                                    <li><strong>Self-healing systems:</strong> Automatic bug detection and repair</li>
+                                    <li><strong>AI-augmented design:</strong> Real-time architecture suggestions</li>
+                                    <li><strong>Personalized IDEs:</strong> Adapting to individual developer styles</li>
+                                    <li><strong>Automated DevOps:</strong> AI-driven CI/CD pipelines</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f0f8ff; padding: 15px; border-left: 4px solid #1e90ff;">
+                                <h4 style="color: #2c3e50;">Research: AI for Full-Cycle Development</h4>
+                                <p style="line-height: 1.6;">Current research explores:</p>
+                                <ol style="line-height: 1.6;">
+                                    <li>End-to-end AI systems that can develop software from requirements</li>
+                                    <li>Neural architectures for program synthesis</li>
+                                    <li>Multi-agent systems for collaborative coding</li>
+                                    <li>Explainable AI for software engineering decisions</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </section>
+            </main>
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+    const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+    const searchBox = document.getElementById("searchBox");
+
+    if (!sidebarList || !sidebarGrid) {
+        console.error("Sidebar elements not found!");
+        return;
+    }
+
+    let allTopics = [];
+
+    // Adjust JSON path based on file location
+    let jsonPath = window.location.pathname.includes("/topics/") ? "../softwarengineering.json" : "softwarengineering.json";
+
+    console.log("Fetching JSON from:", jsonPath); // Debugging
+
+    // Fetch Software Engineering Topics from JSON
+    fetch(jsonPath)
+        .then(response => {
+            console.log("Fetch Response:", response);
+            if (!response.ok) {
+                throw new Error("Failed to load JSON: " + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Fetched Data:", data);
+            if (!data.Software_Engineering) {
+                throw new Error("JSON does not contain 'Software_Engineering' key!");
+            }
+            allTopics = data.Software_Engineering;
+            displayTopics(allTopics);
+        })
+        .catch(error => console.error("Error loading topics:", error));
+
+    // Function to Display Topics in Sidebar
+    function displayTopics(topics) {
+        if (!Array.isArray(topics)) {
+            console.error("Invalid topics data:", topics);
+            return;
+        }
+
+        sidebarList.innerHTML = ""; // Clear list
+        sidebarGrid.innerHTML = ""; // Clear grid
+
+        topics.forEach(topic => {
+            let topicLink = topic.link; // Keep the original link
+
+            // 🖥️ Desktop List View
+            let li = document.createElement("li");
+            li.className = "list-group-item list-group-item-action";
+            li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+            sidebarList.appendChild(li);
+
+            // 📱 Mobile Grid View (3 in a row)
+            let div = document.createElement("div");
+            div.className = "col-4"; // Bootstrap grid (3 in a row)
+            div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+            sidebarGrid.appendChild(div);
+        });
+    }
+
+    // Search Topics
+    if (searchBox) {
+        searchBox.addEventListener("input", function () {
+            const searchText = this.value.toLowerCase();
+            const filteredTopics = allTopics.filter(topic =>
+                topic.name.toLowerCase().includes(searchText)
+            );
+            displayTopics(filteredTopics);
+        });
+    }
+});
+
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

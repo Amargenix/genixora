@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../opp.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+
+
+
+
+
+
+
+            <main class="col-md-7 content">
+                <h2>🔹 Constructors and Destructors</h2>
+            
+                <p>
+                    **Constructors and Destructors** are special methods in Object-Oriented Programming (OOP) that manage object initialization and cleanup.
+                    A **constructor** is automatically called when an object is created, while a **destructor** is called when an object is destroyed.
+                </p>
+            
+                <h3>📌 Why Use Constructors and Destructors?</h3>
+                <p>They ensure proper **initialization and cleanup** of objects without requiring manual intervention.</p>
+                <ul>
+                    <li>✅ **Automatic Execution** – Constructors run automatically upon object creation.</li>
+                    <li>✅ **Code Efficiency** – Reduces redundant initialization code.</li>
+                    <li>✅ **Prevents Resource Leaks** – Destructors help in releasing resources like memory or file handles.</li>
+                </ul>
+            
+                <h3>💡 Real-Life Example</h3>
+                <p>Consider a **Database Connection**. A constructor can **open the connection** when an object is created, and a destructor can **close it** when it's no longer needed.</p>
+            
+                <h3>🖥️ Constructors and Destructors in Java</h3>
+                <p>Java has constructors but does not have explicit destructors; instead, it relies on **Garbage Collection (GC)**.</p>
+                <pre><code>
+            class Car {
+                String brand;
+                
+                // Constructor
+                Car(String brand) {
+                    this.brand = brand;
+                    System.out.println(brand + " is created.");
+                }
+                
+                protected void finalize() {
+                    System.out.println(brand + " is destroyed.");
+                }
+            }
+            
+            public class Main {
+                public static void main(String[] args) {
+                    Car myCar = new Car("Tesla");
+                }
+            }
+                </code></pre>
+            
+                <h3>🖥️ Constructors and Destructors in Python</h3>
+                <p>Python uses `__init__` as a constructor and `__del__` as a destructor.</p>
+                <pre><code>
+            class Car:
+                def __init__(self, brand):
+                    self.brand = brand
+                    print(f"{self.brand} is created.")
+                
+                def __del__(self):
+                    print(f"{self.brand} is destroyed.")
+            
+            my_car = Car("Tesla")
+                </code></pre>
+            
+                <h3>🎯 Summary</h3>
+                <p>
+                    **Constructors and Destructors** ensure smooth object lifecycle management. 
+                    While constructors handle **initialization**, destructors handle **cleanup**, making programs more efficient and reducing resource leaks.
+                </p>
+            
+                <h2>🔗 Next Topics</h2>
+                <ul class="nexttopics-container">
+                    <li><a href="encapsulation.html">👉 Encapsulation</a></li>
+                    <li><a href="inheritance.html">👉 Inheritance</a></li>
+                    <li><a href="polymorphism.html">👉 Polymorphism</a></li>
+                </ul>
+            </main>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+     
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../opp.json" : "opp.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.OOP;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

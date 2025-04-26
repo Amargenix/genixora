@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Robotics</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>AI for Robotics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <h1>Edge AI in Robotics</h1>
+                
+                
+                        <!-- Definition Section -->
+                        <div style="background:white;border-radius:12px;padding:40px;margin-bottom:40px;box-shadow:0 5px 15px rgba(0,0,0,0.05);border:1px solid #e2e8f0;">
+                            <h2 style="color:#2563eb;border-bottom:2px solid #2563eb;padding-bottom:12px;margin-top:0;font-size:1.8rem;">What is Edge AI Robotics?</h2>
+                            <p style="font-size:1.1rem;">Edge AI in robotics refers to deploying artificial intelligence algorithms directly on robotic systems at the "edge" of the network, enabling real-time processing without relying on cloud connectivity. This approach reduces latency, enhances privacy, and allows operation in disconnected environments.</p>
+                            
+                            <div style="display:flex;justify-content:space-between;margin-top:30px;flex-wrap:wrap;gap:20px;">
+                                <div style="flex:1;min-width:250px;background:#eff6ff;padding:20px;border-radius:8px;border-left:4px solid #2563eb;">
+                                    <h3 style="margin-top:0;color:#2563eb;">🔋 Key Advantage: Efficiency</h3>
+                                    <p>Process data locally with specialized hardware like NPUs, consuming less power than cloud alternatives.</p>
+                                </div>
+                                <div style="flex:1;min-width:250px;background:#eff6ff;padding:20px;border-radius:8px;border-left:4px solid #2563eb;">
+                                    <h3 style="margin-top:0;color:#2563eb;">⚡ Key Advantage: Speed</h3>
+                                    <p>Eliminate network latency for mission-critical robotic applications requiring sub-100ms responses.</p>
+                                </div>
+                                <div style="flex:1;min-width:250px;background:#eff6ff;padding:20px;border-radius:8px;border-left:4px solid #2563eb;">
+                                    <h3 style="margin-top:0;color:#2563eb;">🛡️ Key Advantage: Security</h3>
+                                    <p>Keep sensitive data on-device rather than transmitting to cloud servers.</p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Hardware Section -->
+                        <div style="background:white;border-radius:12px;padding:40px;margin-bottom:40px;box-shadow:0 5px 15px rgba(0,0,0,0.05);border:1px solid #e2e8f0;">
+                            <h2 style="color:#2563eb;border-bottom:2px solid #2563eb;padding-bottom:12px;margin-top:0;font-size:1.8rem;">Edge AI Hardware for Robotics</h2>
+                            
+                            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;margin-top:30px;">
+                                <!-- Jetson Card -->
+                                <div style="border:1px solid #e2e8f0;border-radius:10px;padding:25px;transition:all 0.3s ease;background:#ffffff;">
+                                    <div style="background:#2563eb;color:white;width:70px;height:70px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:2rem;">🖥️</div>
+                                    <h3 style="text-align:center;color:#2563eb;margin:0 0 15px;font-size:1.3rem;">NVIDIA Jetson</h3>
+                                    <ul style="padding-left:20px;margin:0;">
+                                        <li style="margin-bottom:10px;">Jetson AGX Orin (275 TOPS AI performance)</li>
+                                        <li style="margin-bottom:10px;">Jetson Xavier NX (21 TOPS)</li>
+                                        <li style="margin-bottom:10px;">CUDA-accelerated inference</li>
+                                        <li>Full ROS support</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Coral Card -->
+                                <div style="border:1px solid #e2e8f0;border-radius:10px;padding:25px;transition:all 0.3s ease;background:#ffffff;">
+                                    <div style="background:#10b981;color:white;width:70px;height:70px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:2rem;">🧠</div>
+                                    <h3 style="text-align:center;color:#10b981;margin:0 0 15px;font-size:1.3rem;">Google Coral</h3>
+                                    <ul style="padding-left:20px;margin:0;">
+                                        <li style="margin-bottom:10px;">Edge TPU coprocessor (4 TOPS, 2W)</li>
+                                        <li style="margin-bottom:10px;">TensorFlow Lite optimized</li>
+                                        <li style="margin-bottom:10px;">USB and PCIe versions</li>
+                                        <li>Supports 100+ pre-trained models</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Other Hardware Card -->
+                                <div style="border:1px solid #e2e8f0;border-radius:10px;padding:25px;transition:all 0.3s ease;background:#ffffff;">
+                                    <div style="background:#7c3aed;color:white;width:70px;height:70px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:2rem;">🔌</div>
+                                    <h3 style="text-align:center;color:#7c3aed;margin:0 0 15px;font-size:1.3rem;">Other Platforms</h3>
+                                    <ul style="padding-left:20px;margin:0;">
+                                        <li style="margin-bottom:10px;">Intel Neural Compute Stick</li>
+                                        <li style="margin-bottom:10px;">Qualcomm Robotics RB5</li>
+                                        <li style="margin-bottom:10px;">Raspberry Pi + AI accelerators</li>
+                                        <li>Xilinx Versal ACAP</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Software Section -->
+                        <div style="background:white;border-radius:12px;padding:40px;margin-bottom:40px;box-shadow:0 5px 15px rgba(0,0,0,0.05);border:1px solid #e2e8f0;">
+                            <h2 style="color:#2563eb;border-bottom:2px solid #2563eb;padding-bottom:12px;margin-top:0;font-size:1.8rem;">Edge AI Software Stack</h2>
+                            
+                            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;margin-top:30px;">
+                                <!-- Framework Card -->
+                                <div style="background:#f8fafc;border-radius:10px;padding:25px;border:1px solid #e2e8f0;">
+                                    <h3 style="color:#2563eb;margin-top:0;">🛠️ Frameworks</h3>
+                                    <ul style="padding-left:20px;margin:0;">
+                                        <li style="margin-bottom:8px;"><strong>TensorFlow Lite</strong>: Quantization-aware training</li>
+                                        <li style="margin-bottom:8px;"><strong>PyTorch Mobile</strong>: Edge-optimized models</li>
+                                        <li style="margin-bottom:8px;"><strong>ONNX Runtime</strong>: Cross-platform deployment</li>
+                                        <li><strong>TVM</strong>: Hardware-agnostic compilation</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Optimization Card -->
+                                <div style="background:#f8fafc;border-radius:10px;padding:25px;border:1px solid #e2e8f0;">
+                                    <h3 style="color:#2563eb;margin-top:0;">⚡ Optimization Techniques</h3>
+                                    <ul style="padding-left:20px;margin:0;">
+                                        <li style="margin-bottom:8px;"><strong>Quantization</strong>: FP32 → INT8 (4x smaller, 3x faster)</li>
+                                        <li style="margin-bottom:8px;"><strong>Pruning</strong>: Remove insignificant neurons</li>
+                                        <li style="margin-bottom:8px;"><strong>Knowledge Distillation</strong>: Small model learns from large</li>
+                                        <li><strong>Neural Architecture Search</strong>: Automate model design</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Deployment Card -->
+                                <div style="background:#f8fafc;border-radius:10px;padding:25px;border:1px solid #e2e8f0;">
+                                    <h3 style="color:#2563eb;margin-top:0;">🚀 Deployment Tools</h3>
+                                    <ul style="padding-left:20px;margin:0;">
+                                        <li style="margin-bottom:8px;"><strong>ROS 2</strong>: Robotic middleware integration</li>
+                                        <li style="margin-bottom:8px;"><strong>Docker</strong>: Containerized AI workloads</li>
+                                        <li style="margin-bottom:8px;"><strong>Kubernetes</strong>: Edge cluster management</li>
+                                        <li><strong>TF Serving</strong>: On-device model serving</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Applications Section -->
+                        <div style="background:white;border-radius:12px;padding:40px;margin-bottom:40px;box-shadow:0 5px 15px rgba(0,0,0,0.05);border:1px solid #e2e8f0;">
+                            <h2 style="color:#2563eb;border-bottom:2px solid #2563eb;padding-bottom:12px;margin-top:0;font-size:1.8rem;">Robotic Applications</h2>
+                            
+                            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;margin-top:30px;">
+                                <!-- Industrial Card -->
+                                <div style="position:relative;border-radius:10px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.1);height:280px;background:linear-gradient(rgba(238, 226, 226, 0.3),rgba(0,0,0,0.7)),url('https://example.com/industrial-robotics.jpg');background-size:cover;color:white;padding:25px;display:flex;flex-direction:column;justify-content:flex-end;">
+                                    <h3 style="margin:0 0 15px;font-size:1.5rem;">🏭 Industrial Robotics</h3>
+                                    <p style="margin:0;">Real-time defect detection on production lines with <2ms latency using edge-optimized YOLOv5 models on Jetson devices.</p>
+                                </div>
+                                
+                                <!-- Agricultural Card -->
+                                <div style="position:relative;border-radius:10px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.1);height:280px;background:linear-gradient(rgba(243, 235, 235, 0.3),rgba(0,0,0,0.7)),url('https://example.com/agri-robots.jpg');background-size:cover;color:white;padding:25px;display:flex;flex-direction:column;justify-content:flex-end;">
+                                    <h3 style="margin:0 0 15px;font-size:1.5rem;">🌱 Agricultural Robots</h3>
+                                    <p style="margin:0;">Autonomous weed detection and precision spraying with Coral Edge TPU in offline field conditions.</p>
+                                </div>
+                                
+                                <!-- Medical Card -->
+                                <div style="position:relative;border-radius:10px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.1);height:280px;background:linear-gradient(rgba(233, 228, 228, 0.3),rgba(0,0,0,0.7)),url('https://example.com/medical-robotics.jpg');background-size:cover;color:white;padding:25px;display:flex;flex-direction:column;justify-content:flex-end;">
+                                    <h3 style="margin:0 0 15px;font-size:1.5rem;">🏥 Medical Robotics</h3>
+                                    <p style="margin:0;">On-device AI for surgical robots processing 4K video at 60fps with sub-millimeter precision.</p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Challenges Section -->
+                        <div style="background:white;border-radius:12px;padding:40px;margin-bottom:40px;box-shadow:0 5px 15px rgba(0,0,0,0.05);border:1px solid #e2e8f0;">
+                            <h2 style="color:#2563eb;border-bottom:2px solid #2563eb;padding-bottom:12px;margin-top:0;font-size:1.8rem;">Technical Challenges</h2>
+                            
+                            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:30px;">
+                                <div style="background:#fff1f2;padding:20px;border-radius:8px;border-left:4px solid #f43f5e;">
+                                    <h3 style="margin-top:0;color:#f43f5e;">🔄 Model Compression</h3>
+                                    <p>Maintaining accuracy while reducing model size for edge deployment (e.g., 95% smaller with <1% accuracy drop).</p>
+                                </div>
+                                
+                                <div style="background:#fff7ed;padding:20px;border-radius:8px;border-left:4px solid #f97316;">
+                                    <h3 style="margin-top:0;color:#f97316;">⚡ Power Constraints</h3>
+                                    <p>Balancing performance with thermal/power limits (e.g., <10W for mobile robots).</p>
+                                </div>
+                                
+                                <div style="background:#f0fdf4;padding:20px;border-radius:8px;border-left:4px solid #22c55e;">
+                                    <h3 style="margin-top:0;color:#22c55e;">🔄 Online Learning</h3>
+                                    <p>Continuous adaptation to new environments without catastrophic forgetting.</p>
+                                </div>
+                                
+                                <div style="background:#eff6ff;padding:20px;border-radius:8px;border-left:4px solid #3b82f6;">
+                                    <h3 style="margin-top:0;color:#3b82f6;">🤖 Multi-Model Orchestration</h3>
+                                    <p>Managing multiple concurrent models (perception, planning, control) on limited hardware.</p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Future Section -->
+                        <div style="background:linear-gradient(135deg,#f1f2f6,#2563eb);color:white;border-radius:12px;padding:50px 40px;margin-bottom:40px;box-shadow:0 10px 25px rgba(37,99,235,0.3);">
+                            <h2 style="margin-top:0;border-bottom:2px solid rgba(255,255,255,0.3);padding-bottom:12px;font-size:1.8rem;">Future of Edge AI Robotics</h2>
+                            
+                            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;margin-top:30px;">
+                                <div style="background:rgba(255,255,255,0.1);padding:25px;border-radius:10px;backdrop-filter:blur(5px);">
+                                    <h3 style="margin-top:0;">🧠 Neuromorphic Chips</h3>
+                                    <p>Event-based processing with chips like Intel Loihi 2 enabling ultra-low-power robotic cognition.</p>
+                                </div>
+                                
+                                <div style="background:rgba(255,255,255,0.1);padding:25px;border-radius:10px;backdrop-filter:blur(5px);">
+                                    <h3 style="margin-top:0;">🌐 Federated Learning</h3>
+                                    <p>Robots collaboratively improve shared models while keeping data local.</p>
+                                </div>
+                                
+                                <div style="background:rgba(255,255,255,0.1);padding:25px;border-radius:10px;backdrop-filter:blur(5px);">
+                                    <h3 style="margin-top:0;">🤖 TinyML Advancements</h3>
+                                    <p>Sub-milliwatt AI models enabling year-long battery operation for micro-robots.</p>
+                                </div>
+                                
+                                <div style="background:rgba(255,255,255,0.1);padding:25px;border-radius:10px;backdrop-filter:blur(5px);">
+                                    <h3 style="margin-top:0;">🔄 Edge-Cloud Hybrid</h3>
+                                    <p>Intelligent workload distribution between edge devices and cloud infrastructure.</p>
+                                </div>
+                            </div>
+                        </div>
+                
+                     
+
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [ ];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics") ? "../AI for Robotics.json" : "../AI for Robotics.json";
+
+                                              
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch AI for Robotics Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.AI_for_Robotics;
+                        displayTopics(allTopics);
+                    }
+                    )
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+           
+            
+            
+            
+            
+            
+            
+            </body>
+            </html>        

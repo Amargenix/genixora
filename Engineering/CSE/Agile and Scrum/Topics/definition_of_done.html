@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agile Anti-Patterns</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Agile and Scrum</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+               <h1>Definition of Done in Agile and Scrum</h1>
+                    
+                
+                    <section style="margin-bottom: 40px; background-color: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <h2 style="color: #2c3e50; margin-top: 0; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px;">What is the Definition of Done?</h2>
+                        
+                        <div style="display: flex; gap: 20px; margin-top: 20px; flex-wrap: wrap;">
+                            <div style="flex: 1; min-width: 300px; background-color: #eaf2f8; padding: 20px; border-radius: 6px; border-left: 4px solid #3498db;">
+                                <h3 style="color: #2c3e50; margin-top: 0;">Official Scrum Definition</h3>
+                                <p>According to the Scrum Guide: "The Definition of Done is a formal description of the state of the Increment when it meets the quality measures required for the product."</p>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 300px; background-color: #eaf2f8; padding: 20px; border-radius: 6px; border-left: 4px solid #3498db;">
+                                <h3 style="color: #2c3e50; margin-top: 0;">Practical Meaning</h3>
+                                <p>A shared understanding between the Scrum Team and stakeholders of what it means for work to be complete, ensuring transparency and quality standards are met.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 25px; background-color: #e8f8f5; padding: 20px; border-radius: 6px; border-left: 4px solid #1abc9c;">
+                            <h3 style="color: #16a085; margin-top: 0;">Key Characteristics</h3>
+                            <ul style="columns: 2; column-gap: 30px; list-style-type: none; padding: 0;">
+                                <li style="padding: 8px 0 8px 25px; position: relative; break-inside: avoid;">
+                                    <span style="position: absolute; left: 0; color: #1abc9c;">✓</span> <strong>Team Agreement:</strong> Created and owned by the Scrum Team
+                                </li>
+                                <li style="padding: 8px 0 8px 25px; position: relative; break-inside: avoid;">
+                                    <span style="position: absolute; left: 0; color: #1abc9c;">✓</span> <strong>Non-negotiable:</strong> Applies to all Product Backlog items
+                                </li>
+                                <li style="padding: 8px 0 8px 25px; position: relative; break-inside: avoid;">
+                                    <span style="position: absolute; left: 0; color: #1abc9c;">✓</span> <strong>Evolving:</strong> Improves over time as team matures
+                                </li>
+                                <li style="padding: 8px 0 8px 25px; position: relative; break-inside: avoid;">
+                                    <span style="position: absolute; left: 0; color: #1abc9c;">✓</span> <strong>Transparent:</strong> Visible to all stakeholders
+                                </li>
+                                <li style="padding: 8px 0 8px 25px; position: relative; break-inside: avoid;">
+                                    <span style="position: absolute; left: 0; color: #1abc9c;">✓</span> <strong>Measurable:</strong> Clear criteria that can be verified
+                                </li>
+                                <li style="padding: 8px 0 8px 25px; position: relative; break-inside: avoid;">
+                                    <span style="position: absolute; left: 0; color: #1abc9c;">✓</span> <strong>Comprehensive:</strong> Covers all aspects of completion
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                
+                    <section style="margin-bottom: 40px; background-color: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <h2 style="color: #2c3e50; margin-top: 0; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px;">Why is Definition of Done Important?</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div style="background-color: #fef9e7; padding: 20px; border-radius: 6px; border-left: 4px solid #f1c40f;">
+                                <h3 style="color: #d35400; margin-top: 0;">Quality Assurance</h3>
+                                <p>Ensures consistent quality standards are applied to all work items, preventing technical debt accumulation.</p>
+                            </div>
+                            
+                            <div style="background-color: #fef9e7; padding: 20px; border-radius: 6px; border-left: 4px solid #f1c40f;">
+                                <h3 style="color: #d35400; margin-top: 0;">Shared Understanding</h3>
+                                <p>Creates alignment between developers, testers, product owners, and stakeholders about completion criteria.</p>
+                            </div>
+                            
+                            <div style="background-color: #fef9e7; padding: 20px; border-radius: 6px; border-left: 4px solid #f1c40f;">
+                                <h3 style="color: #d35400; margin-top: 0;">Sprint Planning</h3>
+                                <p>Helps teams accurately assess what they can commit to during Sprint Planning.</p>
+                            </div>
+                            
+                            <div style="background-color: #fef9e7; padding: 20px; border-radius: 6px; border-left: 4px solid #f1c40f;">
+                                <h3 style="color: #d35400; margin-top: 0;">Transparency</h3>
+                                <p>Provides clear visibility into the real progress of work during Sprint Reviews.</p>
+                            </div>
+                            
+                            <div style="background-color: #fef9e7; padding: 20px; border-radius: 6px; border-left: 4px solid #f1c40f;">
+                                <h3 style="color: #d35400; margin-top: 0;">Reduced Rework</h3>
+                                <p>Minimizes surprises and last-minute changes by establishing clear expectations upfront.</p>
+                            </div>
+                            
+                            <div style="background-color: #fef9e7; padding: 20px; border-radius: 6px; border-left: 4px solid #f1c40f;">
+                                <h3 style="color: #d35400; margin-top: 0;">Continuous Improvement</h3>
+                                <p>Serves as a baseline for inspecting and adapting quality practices during Retrospectives.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="margin-bottom: 40px; background-color: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <h2 style="color: #2c3e50; margin-top: 0; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px;">Components of a Strong Definition of Done</h2>
+                        
+                        <div style="margin-top: 20px; background-color: #f5eef8; padding: 20px; border-radius: 6px;">
+                            <h3 style="color: #8e44ad; margin-top: 0;">Typical Elements Included:</h3>
+                            
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin-top: 15px;">
+                                <div style="background-color: white; padding: 15px; border-radius: 5px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                                    <h4 style="color: #9b59b6; margin-top: 0;">Code Quality</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Code reviewed by at least one other developer</li>
+                                        <li>Static code analysis passed</li>
+                                        <li>Coding standards followed</li>
+                                    </ul>
+                                </div>
+                                
+                                <div style="background-color: white; padding: 15px; border-radius: 5px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                                    <h4 style="color: #9b59b6; margin-top: 0;">Testing</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Unit tests written and passing</li>
+                                        <li>Integration tests passing</li>
+                                        <li>UI tests (if applicable) passing</li>
+                                        <li>Test coverage meets minimum threshold</li>
+                                    </ul>
+                                </div>
+                                
+                                <div style="background-color: white; padding: 15px; border-radius: 5px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                                    <h4 style="color: #9b59b6; margin-top: 0;">Documentation</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Code comments updated</li>
+                                        <li>Technical documentation updated</li>
+                                        <li>User documentation updated (if needed)</li>
+                                    </ul>
+                                </div>
+                                
+                                <div style="background-color: white; padding: 15px; border-radius: 5px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                                    <h4 style="color: #9b59b6; margin-top: 0;">Build & Deployment</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Successfully builds on CI server</li>
+                                        <li>Deployed to test environment</li>
+                                        <li>Packaging requirements met</li>
+                                    </ul>
+                                </div>
+                                
+                                <div style="background-color: white; padding: 15px; border-radius: 5px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                                    <h4 style="color: #9b59b6; margin-top: 0;">Product Owner Verification</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Acceptance criteria met</li>
+                                        <li>Product Owner acceptance</li>
+                                        <li>Demoable functionality</li>
+                                    </ul>
+                                </div>
+                                
+                                <div style="background-color: white; padding: 15px; border-radius: 5px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                                    <h4 style="color: #9b59b6; margin-top: 0;">Non-Functional Requirements</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Performance requirements met</li>
+                                        <li>Security requirements met</li>
+                                        <li>Accessibility standards met</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 25px; background-color: #ebf5fb; padding: 20px; border-radius: 6px; border-left: 4px solid #5dade2;">
+                            <h3 style="color: #2874a6; margin-top: 0;">Example Definition of Done</h3>
+                            <div style="background-color: white; padding: 20px; border-radius: 5px; border: 1px solid #ddd;">
+                                <ol style="padding-left: 25px;">
+                                    <li style="margin-bottom: 10px;">Code has been peer-reviewed and approved</li>
+                                    <li style="margin-bottom: 10px;">All unit tests pass with ≥80% code coverage</li>
+                                    <li style="margin-bottom: 10px;">Integration tests pass in CI environment</li>
+                                    <li style="margin-bottom: 10px;">Static code analysis shows no critical issues</li>
+                                    <li style="margin-bottom: 10px;">Documentation is updated (code comments, technical docs)</li>
+                                    <li style="margin-bottom: 10px;">Feature has been demoed to Product Owner</li>
+                                    <li style="margin-bottom: 10px;">All acceptance criteria are met and verified</li>
+                                    <li style="margin-bottom: 10px;">Performance tested (if applicable)</li>
+                                    <li style="margin-bottom: 10px;">Deployed to staging environment</li>
+                                    <li>Product Owner has accepted the user story</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="margin-bottom: 40px; background-color: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <h2 style="color: #2c3e50; margin-top: 0; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px;">Definition of Done vs Acceptance Criteria</h2>
+                        
+                        <div style="overflow-x: auto; margin-top: 20px;">
+                            <table style="width: 100%; border-collapse: collapse;">
+                                <thead>
+                                    <tr style="background-color: #2c3e50; color: white;">
+                                        <th style="padding: 12px 15px; text-align: left;">Aspect</th>
+                                        <th style="padding: 12px 15px; text-align: left;">Definition of Done</th>
+                                        <th style="padding: 12px 15px; text-align: left;">Acceptance Criteria</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #ddd;">
+                                        <td style="padding: 12px 15px; font-weight: bold; background-color: #f8f9f9;">Scope</td>
+                                        <td style="padding: 12px 15px;">Applies to all Product Backlog items</td>
+                                        <td style="padding: 12px 15px;">Specific to a single user story</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #ddd;">
+                                        <td style="padding: 12px 15px; font-weight: bold; background-color: #f8f9f9;">Ownership</td>
+                                        <td style="padding: 12px 15px;">Created by the Scrum Team</td>
+                                        <td style="padding: 12px 15px;">Created by Product Owner with team input</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #ddd;">
+                                        <td style="padding: 12px 15px; font-weight: bold; background-color: #f8f9f9;">Focus</td>
+                                        <td style="padding: 12px 15px;">Technical and quality standards</td>
+                                        <td style="padding: 12px 15px;">Business functionality and behavior</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #ddd;">
+                                        <td style="padding: 12px 15px; font-weight: bold; background-color: #f8f9f9;">Stability</td>
+                                        <td style="padding: 12px 15px;">Relatively stable, changes infrequently</td>
+                                        <td style="padding: 12px 15px;">Changes with each user story</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 12px 15px; font-weight: bold; background-color: #f8f9f9;">Verification</td>
+                                        <td style="padding: 12px 15px;">Checked by development team</td>
+                                        <td style="padding: 12px 15px;">Verified by Product Owner</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div style="margin-top: 25px; background-color: #e8f8f8; padding: 20px; border-radius: 6px;">
+                            <h3 style="color: #1abc9c; margin-top: 0;">How They Work Together</h3>
+                            <p>For a user story to be considered "Done Done", it must satisfy both its specific Acceptance Criteria <strong>and</strong> the team's Definition of Done. The Acceptance Criteria define what needs to be built, while the Definition of Done defines how it needs to be built.</p>
+                        </div>
+                    </section>
+                
+                    <section style="margin-bottom: 40px; background-color: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <h2 style="color: #2c3e50; margin-top: 0; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px;">Implementing Definition of Done</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div style="background-color: #eafaf1; padding: 20px; border-radius: 6px; border-left: 4px solid #2ecc71;">
+                                <h3 style="color: #27ae60; margin-top: 0;">1. Team Collaboration</h3>
+                                <p>Involve all Scrum Team members in creating the Definition of Done. Developers, testers, and the Product Owner should all contribute their perspectives.</p>
+                            </div>
+                            
+                            <div style="background-color: #eafaf1; padding: 20px; border-radius: 6px; border-left: 4px solid #2ecc71;">
+                                <h3 style="color: #27ae60; margin-top: 0;">2. Start Small</h3>
+                                <p>Begin with a basic Definition of Done and expand it over time as the team's capabilities mature. It's better to have a simple but consistently applied DoD than an ambitious one that's rarely met.</p>
+                            </div>
+                            
+                            <div style="background-color: #eafaf1; padding: 20px; border-radius: 6px; border-left: 4px solid #2ecc71;">
+                                <h3 style="color: #27ae60; margin-top: 0;">3. Make It Visible</h3>
+                                <p>Display the Definition of Done prominently in the team's workspace (physical or virtual) to keep it top of mind during all Scrum events.</p>
+                            </div>
+                            
+                            <div style="background-color: #eafaf1; padding: 20px; border-radius: 6px; border-left: 4px solid #2ecc71;">
+                                <h3 style="color: #27ae60; margin-top: 0;">4. Use as a Checklist</h3>
+                                <p>During Sprint Review and when considering stories "done", systematically verify each item in the Definition of Done.</p>
+                            </div>
+                            
+                            <div style="background-color: #eafaf1; padding: 20px; border-radius: 6px; border-left: 4px solid #2ecc71;">
+                                <h3 style="color: #27ae60; margin-top: 0;">5. Regularly Review</h3>
+                                <p>Discuss the Definition of Done during Retrospectives. Identify pain points and opportunities to improve or expand the criteria.</p>
+                            </div>
+                            
+                            <div style="background-color: #eafaf1; padding: 20px; border-radius: 6px; border-left: 4px solid #2ecc71;">
+                                <h3 style="color: #27ae60; margin-top: 0;">6. Align with Organization</h3>
+                                <p>If multiple teams work on the same product, ensure alignment on a common Definition of Done to maintain consistency.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="margin-bottom: 40px; background-color: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <h2 style="color: #2c3e50; margin-top: 0; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px;">Common Challenges & Solutions</h2>
+                        
+                        <div style="margin-top: 20px;">
+                            <div style="background-color: #fdedec; padding: 15px; border-radius: 5px; margin-bottom: 15px; border-left: 4px solid #e74c3c;">
+                                <h3 style="color: #c0392b; margin-top: 0;">Challenge: Definition is Too Vague</h3>
+                                <p><strong>Solution:</strong> Make criteria specific and measurable. Instead of "code is tested," specify "unit test coverage ≥80% and all tests pass."</p>
+                            </div>
+                            
+                            <div style="background-color: #fdedec; padding: 15px; border-radius: 5px; margin-bottom: 15px; border-left: 4px solid #e74c3c;">
+                                <h3 style="color: #c0392b; margin-top: 0;">Challenge: Team Doesn't Follow DoD</h3>
+                                <p><strong>Solution:</strong> Reinforce during Sprint Planning and Review. Consider making it part of the team's working agreement with accountability measures.</p>
+                            </div>
+                            
+                            <div style="background-color: #fdedec; padding: 15px; border-radius: 5px; margin-bottom: 15px; border-left: 4px solid #e74c3c;">
+                                <h3 style="color: #c0392b; margin-top: 0;">Challenge: DoD is Too Ambitious</h3>
+                                <p><strong>Solution:</strong> Scale back to essential items the team can realistically achieve, then gradually expand as capabilities improve.</p>
+                            </div>
+                            
+                            <div style="background-color: #fdedec; padding: 15px; border-radius: 5px; margin-bottom: 15px; border-left: 4px solid #e74c3c;">
+                                <h3 style="color: #c0392b; margin-top: 0;">Challenge: Inconsistent Application</h3>
+                                <p><strong>Solution:</strong> Use checklists or automation to verify criteria. Peer reviews can help ensure consistent application.</p>
+                            </div>
+                            
+                            <div style="background-color: #fdedec; padding: 15px; border-radius: 5px; border-left: 4px solid #e74c3c;">
+                                <h3 style="color: #c0392b; margin-top: 0;">Challenge: Stakeholders Don't Understand</h3>
+                                <p><strong>Solution:</strong> Educate stakeholders about the purpose and value of DoD. Demonstrate how it leads to higher quality deliverables.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                  
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics/") ? "../Agile_and_Scrum.json" : "../Agile_and_Scrum.json";
+            
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch DSA Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.Agile_and_Scrum;
+                        displayTopics(allTopics);
+                    })
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+           
+            
+            
+            
+            
+            
+            
+            </body>
+            </html>     

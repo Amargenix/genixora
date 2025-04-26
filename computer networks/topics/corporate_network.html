@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer Network</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/allsubject.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Computer Networks</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+              <h1>Corporate Networks</h1>
+                   
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 35px;">
+                        <h2 style="color: #2980b9; margin-top: 0; font-size: 1.8em;">What is a Corporate Network?</h2>
+                        <p style="font-size: 1.1em;">A corporate network (or enterprise network) is a privately maintained telecommunications network that connects various company locations, departments, and employees to facilitate business operations, communication, and data sharing.</p>
+                        
+                        <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 25px;">
+                            <div style="flex: 1; min-width: 250px; background-color: #e8f4fc; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #2c3e50; margin-top: 0;">Key Characteristics</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Private infrastructure owned/leased by the organization</li>
+                                    <li>High reliability and availability requirements</li>
+                                    <li>Advanced security measures</li>
+                                    <li>Scalable architecture</li>
+                                    <li>Quality of Service (QoS) guarantees</li>
+                                </ul>
+                            </div>
+                            <div style="flex: 1; min-width: 250px; background-color: #eaf7ed; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #2c3e50; margin-top: 0;">Business Benefits</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Secure internal communication</li>
+                                    <li>Centralized resource sharing</li>
+                                    <li>Improved collaboration</li>
+                                    <li>Business continuity</li>
+                                    <li>Regulatory compliance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 35px;">
+                        <h2 style="color: #2980b9; margin-top: 0; font-size: 1.8em;">Corporate Network Architecture</h2>
+                        
+                        <div style="text-align: center; margin: 25px 0;">
+                            <div style="display: inline-block; background-color: #f0f8ff; padding: 15px; border-radius: 8px; border: 2px dashed #3498db;">
+                                <h3 style="margin: 0; color: #2c3e50;">Typical Three-Tier Architecture</h3>
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+                            <div style="background-color: #f5f5f5; padding: 20px; border-radius: 6px; border-left: 4px solid #e74c3c;">
+                                <h3 style="color: #2c3e50; margin-top: 0;">1. Core Layer</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>High-speed backbone of the network</li>
+                                    <li>Provides fast transport between distribution layers</li>
+                                    <li>High-redundancy design</li>
+                                    <li>Typically uses high-end routers and switches</li>
+                                    <li>Focus on throughput and availability</li>
+                                </ul>
+                            </div>
+                            <div style="background-color: #f5f5f5; padding: 20px; border-radius: 6px; border-left: 4px solid #f39c12;">
+                                <h3 style="color: #2c3e50; margin-top: 0;">2. Distribution Layer</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Aggregates access layer connections</li>
+                                    <li>Implements policies (QoS, security, routing)</li>
+                                    <li>Provides boundary between access and core</li>
+                                    <li>Often includes firewalls and load balancers</li>
+                                    <li>Medium-range switches and routers</li>
+                                </ul>
+                            </div>
+                            <div style="background-color: #f5f5f5; padding: 20px; border-radius: 6px; border-left: 4px solid #2ecc71;">
+                                <h3 style="color: #2c3e50; margin-top: 0;">3. Access Layer</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Endpoint connection point for users/devices</li>
+                                    <li>Includes switches, wireless APs, VPN concentrators</li>
+                                    <li>Implements port security and VLANs</li>
+                                    <li>Low-cost, high-port-density switches</li>
+                                    <li>May include edge security devices</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 30px; background-color: #fff8e1; padding: 20px; border-radius: 6px; border-left: 4px solid #f1c40f;">
+                            <h3 style="color: #2c3e50; margin-top: 0;">Emerging Trends: Spine-Leaf Architecture</h3>
+                            <p>Modern data centers are adopting two-tier spine-leaf designs for better scalability and performance:</p>
+                            <ul style="padding-left: 20px;">
+                                <li><strong>Spine switches:</strong> Core interconnectivity (every leaf connects to every spine)</li>
+                                <li><strong>Leaf switches:</strong> Connect to endpoints (servers, storage)</li>
+                                <li>Eliminates legacy three-tier bottlenecks</li>
+                                <li>Better suited for east-west traffic patterns</li>
+                                <li>Common in software-defined networking (SDN) environments</li>
+                            </ul>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 35px;">
+                        <h2 style="color: #2980b9; margin-top: 0; font-size: 1.8em;">Corporate Network Components</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div style="background-color: #e8f8f5; padding: 15px; border-radius: 6px;">
+                                <h3 style="color: #2c3e50; margin-top: 0;">Network Hardware</h3>
+                                <ul style="padding-left: 18px;">
+                                    <li>Routers and switches</li>
+                                    <li>Firewalls and security appliances</li>
+                                    <li>Load balancers</li>
+                                    <li>Wireless controllers and APs</li>
+                                    <li>VPN concentrators</li>
+                                    <li>Uninterruptible Power Supplies (UPS)</li>
+                                </ul>
+                            </div>
+                            <div style="background-color: #f4ecf7; padding: 15px; border-radius: 6px;">
+                                <h3 style="color: #2c3e50; margin-top: 0;">Network Services</h3>
+                                <ul style="padding-left: 18px;">
+                                    <li>DHCP and DNS servers</li>
+                                    <li>Directory services (Active Directory, LDAP)</li>
+                                    <li>Email and collaboration servers</li>
+                                    <li>File and print servers</li>
+                                    <li>Backup and storage systems</li>
+                                    <li>VoIP and video conferencing</li>
+                                </ul>
+                            </div>
+                            <div style="background-color: #fef9e7; padding: 15px; border-radius: 6px;">
+                                <h3 style="color: #2c3e50; margin-top: 0;">Connectivity Options</h3>
+                                <ul style="padding-left: 18px;">
+                                    <li>MPLS networks</li>
+                                    <li>Leased lines (T1/E1, T3/E3)</li>
+                                    <li>Ethernet WAN</li>
+                                    <li>Broadband Internet</li>
+                                    <li>VPN tunnels</li>
+                                    <li>SD-WAN solutions</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 35px;">
+                        <h2 style="color: #2980b9; margin-top: 0; font-size: 1.8em;">Corporate Network Security</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 20px;">
+                            <div style="background-color: #fdedec; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #2c3e50; margin-top: 0;">Perimeter Security</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Next-generation firewalls (NGFW)</li>
+                                    <li>Intrusion Prevention Systems (IPS)</li>
+                                    <li>Web Application Firewalls (WAF)</li>
+                                    <li>Email gateways with spam filtering</li>
+                                    <li>DDoS protection</li>
+                                </ul>
+                            </div>
+                            <div style="background-color: #e8f8f5; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #2c3e50; margin-top: 0;">Internal Security</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Network segmentation (VLANs, zones)</li>
+                                    <li>Endpoint protection</li>
+                                    <li>Privileged access management</li>
+                                    <li>Data Loss Prevention (DLP)</li>
+                                    <li>SIEM (Security Information and Event Management)</li>
+                                </ul>
+                            </div>
+                            <div style="background-color: #ebf5fb; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #2c3e50; margin-top: 0;">Access Control</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>802.1X authentication</li>
+                                    <li>Multi-factor authentication (MFA)</li>
+                                    <li>Role-based access control (RBAC)</li>
+                                    <li>VPN with strict authentication</li>
+                                    <li>Zero Trust Network Access (ZTNA)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 30px; background-color: #f9f9f9; padding: 20px; border-radius: 6px; border-left: 4px solid #3498db;">
+                            <h3 style="color: #2c3e50; margin-top: 0;">Security Best Practices</h3>
+                            <ul style="padding-left: 20px; columns: 2; column-gap: 30px;">
+                                <li>Regular security audits and penetration testing</li>
+                                <li>Patch management program</li>
+                                <li>Employee security awareness training</li>
+                                <li>Incident response plan</li>
+                                <li>Encryption for data at rest and in transit</li>
+                                <li>Network monitoring and logging</li>
+                                <li>Disaster recovery and business continuity planning</li>
+                                <li>Vendor security assessments</li>
+                            </ul>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 35px;">
+                        <h2 style="color: #2980b9; margin-top: 0; font-size: 1.8em;">Network Management in Corporate Environments</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div style="background-color: #f5eef8; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #2c3e50; margin-top: 0;">Monitoring Tools</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>SNMP-based monitoring (SolarWinds, PRTG)</li>
+                                    <li>Flow analysis (NetFlow, sFlow, IPFIX)</li>
+                                    <li>Packet capture and analysis (Wireshark, tcpdump)</li>
+                                    <li>Application performance monitoring</li>
+                                    <li>Cloud-based monitoring solutions</li>
+                                </ul>
+                            </div>
+                            <div style="background-color: #eaf2f8; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #2c3e50; margin-top: 0;">Configuration Management</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Network automation tools (Ansible, Puppet)</li>
+                                    <li>Version control for network configurations</li>
+                                    <li>Change management processes</li>
+                                    <li>Template-based configuration</li>
+                                    <li>Backup and restore procedures</li>
+                                </ul>
+                            </div>
+                            <div style="background-color: #e8f8f5; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #2c3e50; margin-top: 0;">Performance Optimization</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Quality of Service (QoS) policies</li>
+                                    <li>Traffic shaping and policing</li>
+                                    <li>WAN optimization</li>
+                                    <li>Load balancing</li>
+                                    <li>Caching and content delivery</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: #e8f4fc; padding: 30px; border-radius: 8px; border-left: 5px solid #3498db; margin-bottom: 35px;">
+                        <h2 style="color: #2c3e50; margin-top: 0; font-size: 1.8em;">Emerging Trends in Corporate Networking</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div style="background-color: white; padding: 15px; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h3 style="color: #2c3e50; margin-top: 0;">Software-Defined Networking (SDN)</h3>
+                                <p>Decoupling control plane from data plane for centralized network management and programmability.</p>
+                            </div>
+                            <div style="background-color: white; padding: 15px; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h3 style="color: #2c3e50; margin-top: 0;">Intent-Based Networking (IBN)</h3>
+                                <p>Systems that translate business intent into network configuration and automatically implement it.</p>
+                            </div>
+                            <div style="background-color: white; padding: 15px; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h3 style="color: #2c3e50; margin-top: 0;">Zero Trust Architecture</h3>
+                                <p>"Never trust, always verify" approach replacing traditional perimeter-based security.</p>
+                            </div>
+                            <div style="background-color: white; padding: 15px; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h3 style="color: #2c3e50; margin-top: 0;">AI-Driven Networking</h3>
+                                <p>Machine learning for predictive analytics, anomaly detection, and automated troubleshooting.</p>
+                            </div>
+                            <div style="background-color: white; padding: 15px; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h3 style="color: #2c3e50; margin-top: 0;">Wi-Fi 6 and 5G Integration</h3>
+                                <p>Next-gen wireless technologies for corporate connectivity.</p>
+                            </div>
+                            <div style="background-color: white; padding: 15px; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h3 style="color: #2c3e50; margin-top: 0;">Edge Computing</h3>
+                                <p>Distributing computing resources closer to data sources and users.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </main>  
+            
+            
+
+             <!-- Floating button to open chatbot -->
+    <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+    </div>
+    
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-container");
+            let button = document.getElementById("open-chatbot");
+    
+            if (!chatbot.classList.contains("active")) {
+                chatbot.classList.add("active");
+                button.style.display = "none"; // Hide button when chatbot is open
+            } else {
+                chatbot.classList.remove("active");
+                setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+            }
+        }
+    
+        // Load chatbot HTML dynamically
+        fetch("/chatbot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("chatbot-container").innerHTML += html;
+    
+            // Execute chatbot script after inserting HTML
+            let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+            for (let script of scripts) {
+                let newScript = document.createElement("script");
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript);
+            }
+        })
+        .catch(error => console.error("Error loading chatbot:", error));
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../computernetwork.json" : "computernetwork.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.Computer_Networks;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+        
+       
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

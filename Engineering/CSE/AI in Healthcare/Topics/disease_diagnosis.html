@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Robotics</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>AI in Healthcare</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <h1>AI in Disease Diagnosis</h1>
+ 
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 10px; margin-bottom: 40px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                        <h2 style="color: #1a2980; border-bottom: 2px solid #1a2980; padding-bottom: 12px; font-size: 1.8em;">The AI Diagnostic Revolution</h2>
+                        <p style="font-size: 1.1em;">Artificial Intelligence is fundamentally changing how diseases are detected and diagnosed across all medical specialties. By analyzing complex medical data with unprecedented speed and accuracy, AI systems are assisting clinicians in making more precise diagnoses earlier in the disease progression.</p>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 30px;">
+                            <div style="background-color: #f0f7ff; padding: 20px; border-radius: 8px; border-left: 4px solid #1a2980;">
+                                <h3 style="margin-top: 0; color: #1a2980;">Enhanced Accuracy</h3>
+                                <p>AI algorithms can detect subtle patterns in medical images and data that may be missed by human observers, reducing diagnostic errors.</p>
+                            </div>
+                            <div style="background-color: #fff0f6; padding: 20px; border-radius: 8px; border-left: 4px solid #c2185b;">
+                                <h3 style="margin-top: 0; color: #c2185b;">Early Detection</h3>
+                                <p>Machine learning models can identify disease markers at earlier stages than conventional methods, enabling timely intervention.</p>
+                            </div>
+                            <div style="background-color: #f0fff4; padding: 20px; border-radius: 8px; border-left: 4px solid #2e7d32;">
+                                <h3 style="margin-top: 0; color: #2e7d32;">Personalized Medicine</h3>
+                                <p>AI systems analyze individual patient data to provide tailored diagnostic assessments and treatment recommendations.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 10px; margin-bottom: 40px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                        <h2 style="color: #1a2980; border-bottom: 2px solid #1a2980; padding-bottom: 12px; font-size: 1.8em;">Key Applications in Medical Specialties</h2>
+                        
+                        <div style="margin-top: 25px;">
+                            <h3 style="color: #d32f2f; margin-bottom: 15px;">Radiology and Medical Imaging</h3>
+                            <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 30px;">
+                                <div style="flex: 1; min-width: 300px; background-color: #fff8e1; padding: 15px; border-radius: 6px;">
+                                    <h4 style="margin-top: 0; color: #e65100;">CT/MRI Analysis</h4>
+                                    <p>AI detects tumors, hemorrhages, and other abnormalities in brain scans with >95% accuracy in some studies.</p>
+                                </div>
+                                <div style="flex: 1; min-width: 300px; background-color: #e8f5e9; padding: 15px; border-radius: 6px;">
+                                    <h4 style="margin-top: 0; color: #2e7d32;">Mammography</h4>
+                                    <p>Deep learning systems like Google's LYNA can identify breast cancer metastases in lymph nodes with 99% accuracy.</p>
+                                </div>
+                                <div style="flex: 1; min-width: 300px; background-color: #f3e5f5; padding: 15px; border-radius: 6px;">
+                                    <h4 style="margin-top: 0; color: #7b1fa2;">Chest X-rays</h4>
+                                    <p>AI models diagnose pneumonia, tuberculosis, and lung cancer from chest radiographs with expert-level performance.</p>
+                                </div>
+                            </div>
+                            
+                            <h3 style="color: #d32f2f; margin-bottom: 15px;">Pathology</h3>
+                            <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 30px;">
+                                <div style="flex: 1; min-width: 300px; background-color: #e1f5fe; padding: 15px; border-radius: 6px;">
+                                    <h4 style="margin-top: 0; color: #0277bd;">Digital Pathology</h4>
+                                    <p>AI analyzes whole-slide images to detect cancer cells, grade tumors, and identify biomarkers with high precision.</p>
+                                </div>
+                                <div style="flex: 1; min-width: 300px; background-color: #fffde7; padding: 15px; border-radius: 6px;">
+                                    <h4 style="margin-top: 0; color: #f57f17;">Cytology</h4>
+                                    <p>Machine learning assists in Pap smear analysis and other cytological examinations for early cancer detection.</p>
+                                </div>
+                            </div>
+                            
+                            <h3 style="color: #d32f2f; margin-bottom: 15px;">Cardiology</h3>
+                            <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 30px;">
+                                <div style="flex: 1; min-width: 300px; background-color: #ffebee; padding: 15px; border-radius: 6px;">
+                                    <h4 style="margin-top: 0; color: #c62828;">ECG Analysis</h4>
+                                    <p>AI detects arrhythmias, heart attacks, and other cardiac conditions from electrocardiograms with cardiologist-level accuracy.</p>
+                                </div>
+                                <div style="flex: 1; min-width: 300px; background-color: #f1f8e9; padding: 15px; border-radius: 6px;">
+                                    <h4 style="margin-top: 0; color: #558b2f;">Echocardiography</h4>
+                                    <p>Deep learning automates measurements and identifies structural heart disease in ultrasound images.</p>
+                                </div>
+                            </div>
+                            
+                            <h3 style="color: #d32f2f; margin-bottom: 15px;">Neurology</h3>
+                            <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                                <div style="flex: 1; min-width: 300px; background-color: #e0f7fa; padding: 15px; border-radius: 6px;">
+                                    <h4 style="margin-top: 0; color: #00838f;">Alzheimer's Detection</h4>
+                                    <p>AI analyzes MRI scans and cognitive tests to predict Alzheimer's years before clinical symptoms appear.</p>
+                                </div>
+                                <div style="flex: 1; min-width: 300px; background-color: #ede7f6; padding: 15px; border-radius: 6px;">
+                                    <h4 style="margin-top: 0; color: #4527a0;">Stroke Diagnosis</h4>
+                                    <p>Machine learning rapidly identifies ischemic strokes in CT scans, reducing time-to-treatment.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 10px; margin-bottom: 40px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                        <h2 style="color: #1a2980; border-bottom: 2px solid #1a2980; padding-bottom: 12px; font-size: 1.8em;">Diagnostic AI Technologies</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 25px;">
+                            <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; border-top: 4px solid #1a2980;">
+                                <h3 style="margin-top: 0; color: #1a2980;">Deep Learning</h3>
+                                <p>Convolutional neural networks (CNNs) analyze medical images by learning hierarchical features directly from pixel data without manual feature engineering.</p>
+                            </div>
+                            
+                            <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; border-top: 4px solid #c2185b;">
+                                <h3 style="margin-top: 0; color: #c2185b;">Natural Language Processing</h3>
+                                <p>NLP extracts clinical insights from unstructured physician notes, research literature, and patient records to support diagnosis.</p>
+                            </div>
+                            
+                            <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; border-top: 4px solid #2e7d32;">
+                                <h3 style="margin-top: 0; color: #2e7d32;">Predictive Analytics</h3>
+                                <p>Machine learning models forecast disease progression and treatment responses based on patient data patterns.</p>
+                            </div>
+                            
+                            <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; border-top: 4px solid #ff8f00;">
+                                <h3 style="margin-top: 0; color: #ff8f00;">Computer Vision</h3>
+                                <p>Advanced image recognition algorithms detect subtle abnormalities in medical scans that may be imperceptible to humans.</p>
+                            </div>
+                            
+                            <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; border-top: 4px solid #6a1b9a;">
+                                <h3 style="margin-top: 0; color: #6a1b9a;">Federated Learning</h3>
+                                <p>Enables collaborative model training across institutions while keeping patient data localized for privacy.</p>
+                            </div>
+                            
+                            <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; border-top: 4px solid #00838f;">
+                                <h3 style="margin-top: 0; color: #00838f;">Explainable AI</h3>
+                                <p>New techniques make AI diagnostic decisions interpretable to clinicians, increasing trust and adoption.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 10px; margin-bottom: 40px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                        <h2 style="color: #1a2980; border-bottom: 2px solid #1a2980; padding-bottom: 12px; font-size: 1.8em;">Implementation Challenges</h2>
+                        
+                        <div style="margin-top: 25px;">
+                            <div style="display: flex; align-items: flex-start; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px dashed #ddd;">
+                                <div style="background-color: #1a2980; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">1</div>
+                                <div>
+                                    <h3 style="margin-top: 0; color: #1a2980;">Regulatory Approval</h3>
+                                    <p>AI diagnostic tools must undergo rigorous FDA clearance (510(k), De Novo, or PMA pathways) requiring extensive clinical validation studies.</p>
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; align-items: flex-start; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px dashed #ddd;">
+                                <div style="background-color: #c2185b; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">2</div>
+                                <div>
+                                    <h3 style="margin-top: 0; color: #c2185b;">Data Quality & Bias</h3>
+                                    <p>Models trained on limited or biased datasets may underperform for underrepresented populations, requiring diverse training data.</p>
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; align-items: flex-start; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px dashed #ddd;">
+                                <div style="background-color: #2e7d32; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">3</div>
+                                <div>
+                                    <h3 style="margin-top: 0; color: #2e7d32;">Clinical Integration</h3>
+                                    <p>Workflow integration challenges include EHR interoperability, physician acceptance, and maintaining appropriate human oversight.</p>
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; align-items: flex-start; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px dashed #ddd;">
+                                <div style="background-color: #ff8f00; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">4</div>
+                                <div>
+                                    <h3 style="margin-top: 0; color: #ff8f00;">Liability Issues</h3>
+                                    <p>Unclear legal frameworks for assigning responsibility when AI systems make diagnostic errors pose implementation barriers.</p>
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; align-items: flex-start;">
+                                <div style="background-color: #6a1b9a; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">5</div>
+                                <div>
+                                    <h3 style="margin-top: 0; color: #6a1b9a;">Model Drift</h3>
+                                    <p>Diagnostic performance may degrade over time as disease patterns evolve, requiring continuous monitoring and retraining.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 10px; margin-bottom: 40px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                        <h2 style="color: #1a2980; border-bottom: 2px solid #1a2980; padding-bottom: 12px; font-size: 1.8em;">Future Directions</h2>
+                        
+                        <div style="margin-top: 25px;">
+                            <div style="background: linear-gradient(to right, #f5f5f5, white); padding: 20px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid #1a2980;">
+                                <h3 style="margin-top: 0; color: #1a2980;">Multimodal Diagnosis</h3>
+                                <p>Integration of imaging, genomic, lab, and clinical data for comprehensive diagnostic assessments.</p>
+                            </div>
+                            
+                            <div style="background: linear-gradient(to right, #f5f5f5, white); padding: 20px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid #c2185b;">
+                                <h3 style="margin-top: 0; color: #c2185b;">Point-of-Care AI</h3>
+                                <p>Miniaturized AI models running on portable devices for diagnostics in resource-limited settings.</p>
+                            </div>
+                            
+                            <div style="background: linear-gradient(to right, #f5f5f5, white); padding: 20px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid #2e7d32;">
+                                <h3 style="margin-top: 0; color: #2e7d32;">Longitudinal Risk Mapping</h3>
+                                <p>Continuous monitoring and analysis of patient data streams to predict disease onset before symptoms appear.</p>
+                            </div>
+                            
+                            <div style="background: linear-gradient(to right, #f5f5f5, white); padding: 20px; border-radius: 8px; border-left: 4px solid #ff8f00;">
+                                <h3 style="margin-top: 0; color: #ff8f00;">Augmented Reality Integration</h3>
+                                <p>AR interfaces that overlay AI diagnostic insights directly onto physician's view during examinations.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: #e3f2fd; padding: 30px; border-radius: 10px; margin-bottom: 40px; border-left: 5px solid #1a2980;">
+                        <h2 style="margin-top: 0; color: #1a2980;">Ethical Considerations</h2>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                            <div>
+                                <h3 style="color: #d32f2f;">Transparency</h3>
+                                <p>Patients and clinicians should understand when and how AI contributes to diagnostic decisions.</p>
+                            </div>
+                            <div>
+                                <h3 style="color: #d32f2f;">Bias Mitigation</h3>
+                                <p>Proactive measures needed to ensure diagnostic algorithms perform equally well across all demographic groups.</p>
+                            </div>
+                            <div>
+                                <h3 style="color: #d32f2f;">Human Oversight</h3>
+                                <p>Maintaining appropriate physician review of AI diagnoses to catch errors and provide clinical context.</p>
+                            </div>
+                            <div>
+                                <h3 style="color: #d32f2f;">Data Privacy</h3>
+                                <p>Protecting sensitive health information used to train and operate diagnostic AI systems.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [ ];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics") ? "../AI in Healthcare.json" : "../AI in Healthcare.json";
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch AI for Robotics Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.AI_in_Healthcare;
+                        displayTopics(allTopics);
+                    }
+                    )
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+            </body>
+            </html>        

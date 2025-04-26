@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer Network</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/allsubject.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Computer Networks</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <h1>History of Computer Networks</h1>
+
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">Early Concepts (Pre-1960s)</h2>
+                        
+                        <div style="display: flex; margin-top: 20px;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h3 style="color: #3498db;">Telegraph Networks</h3>
+                                <p>The first electrical communication networks were telegraph systems (1830s-1840s). Samuel Morse developed Morse code in 1838, enabling long-distance communication.</p>
+                                
+                                <h3 style="color: #3498db; margin-top: 20px;">Telephone Networks</h3>
+                                <p>Alexander Graham Bell patented the telephone in 1876. By the 1890s, telephone networks with manual switchboards were established in major cities.</p>
+                            </div>
+                            
+                            <div style="flex: 1;">
+                                <h3 style="color: #3498db;">Early Computing</h3>
+                                <p>In the 1940s-1950s, computers were large, isolated machines. The concept of time-sharing (multiple users accessing a single computer) emerged in the late 1950s.</p>
+                                
+                                <h3 style="color: #3498db; margin-top: 20px;">SAGE System</h3>
+                                <p>The Semi-Automatic Ground Environment (SAGE) air defense system (1958) was one of the first large-scale computer networks, connecting radar sites to command centers.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">The Birth of Packet Switching (1960s)</h2>
+                        
+                        <div style="display: flex; margin-top: 20px;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h3 style="color: #3498db;">Paul Baran's Work</h3>
+                                <p>At RAND Corporation (1960-1964), Paul Baran developed the concept of distributed, packet-switched networks for military communications that could survive nuclear attacks.</p>
+                                
+                                <h3 style="color: #3498db; margin-top: 20px;">ARPANET</h3>
+                                <p>The Advanced Research Projects Agency Network (ARPANET), funded by the U.S. Department of Defense, was the first operational packet-switching network (1969). The first nodes were at UCLA, SRI, UCSB, and University of Utah.</p>
+                            </div>
+                            
+                            <div style="flex: 1;">
+                                <h3 style="color: #3498db;">NPL Network</h3>
+                                <p>Donald Davies at the UK's National Physical Laboratory independently developed packet-switching concepts and built a local area network (1965-1967).</p>
+                                
+                                <h3 style="color: #3498db; margin-top: 20px;">Interface Message Processors</h3>
+                                <p>ARPANET used dedicated minicomputers called IMPs (Interface Message Processors) as network routers, with the first IMP installed at UCLA in 1969.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">Network Protocols and Expansion (1970s)</h2>
+                        
+                        <div style="display: flex; margin-top: 20px;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h3 style="color: #3498db;">TCP/IP Development</h3>
+                                <p>Vinton Cerf and Robert Kahn developed the Transmission Control Protocol (TCP) in 1974, which later split into TCP and IP (Internet Protocol).</p>
+                                
+                                <h3 style="color: #3498db; margin-top: 20px;">Ethernet</h3>
+                                <p>Robert Metcalfe at Xerox PARC developed Ethernet in 1973, which became the standard for local area networks (LANs).</p>
+                            </div>
+                            
+                            <div style="flex: 1;">
+                                <h3 style="color: #3498db;">Email</h3>
+                                <p>Ray Tomlinson implemented the first email system on ARPANET in 1971, using the @ symbol to separate user and host names.</p>
+                                
+                                <h3 style="color: #3498db; margin-top: 20px;">International Connections</h3>
+                                <p>The first international connections to ARPANET were established in 1973 with nodes in Norway and the UK.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">The Internet Emerges (1980s)</h2>
+                        
+                        <div style="display: flex; margin-top: 20px;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h3 style="color: #3498db;">TCP/IP Adoption</h3>
+                                <p>In 1983, ARPANET switched from NCP to TCP/IP as its standard protocol, marking the birth of the Internet.</p>
+                                
+                                <h3 style="color: #3498db; margin-top: 20px;">DNS Introduction</h3>
+                                <p>The Domain Name System (DNS) was introduced in 1984, replacing numerical addresses with human-readable names.</p>
+                            </div>
+                            
+                            <div style="flex: 1;">
+                                <h3 style="color: #3498db;">NSFNET</h3>
+                                <p>The National Science Foundation Network (NSFNET) was created in 1985, connecting supercomputing centers and becoming the backbone of the Internet.</p>
+                                
+                                <h3 style="color: #3498db; margin-top: 20px;">Commercialization Begins</h3>
+                                <p>The first commercial Internet service providers (ISPs) emerged in the late 1980s as restrictions on commercial use were lifted.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">World Wide Web and Explosive Growth (1990s)</h2>
+                        
+                        <div style="display: flex; margin-top: 20px;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h3 style="color: #3498db;">Tim Berners-Lee's Invention</h3>
+                                <p>At CERN in 1989-1990, Tim Berners-Lee developed the World Wide Web, creating HTTP, HTML, and the first web browser/editor.</p>
+                                
+                                <h3 style="color: #3498db; margin-top: 20px;">Mosaic Browser</h3>
+                                <p>The Mosaic web browser (1993) was the first to display images inline with text, making the web more accessible to non-technical users.</p>
+                            </div>
+                            
+                            <div style="flex: 1;">
+                                <h3 style="color: #3498db;">Commercial Boom</h3>
+                                <p>The mid-1990s saw explosive growth of commercial websites, online services (AOL, CompuServe), and e-commerce (Amazon 1994, eBay 1995).</p>
+                                
+                                <h3 style="color: #3498db; margin-top: 20px;">Broadband Emerges</h3>
+                                <p>Cable modems and DSL began replacing dial-up connections in the late 1990s, enabling faster Internet access.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">Modern Era (2000s-Present)</h2>
+                        
+                        <div style="display: flex; margin-top: 20px;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h3 style="color: #3498db;">Web 2.0</h3>
+                                <p>The 2000s saw the rise of user-generated content (Wikipedia 2001, YouTube 2005), social media (Facebook 2004, Twitter 2006), and cloud computing.</p>
+                                
+                                <h3 style="color: #3498db; margin-top: 20px;">Mobile Revolution</h3>
+                                <p>The introduction of smartphones (iPhone 2007) and mobile apps transformed how people access networks, with mobile traffic surpassing desktop by 2016.</p>
+                            </div>
+                            
+                            <div style="flex: 1;">
+                                <h3 style="color: #3498db;">High-Speed Networks</h3>
+                                <p>Fiber-optic networks, 4G/LTE (2010s), and now 5G (2020s) provide increasingly faster wireless connectivity.</p>
+                                
+                                <h3 style="color: #3498db; margin-top: 20px;">IoT and Future Trends</h3>
+                                <p>The Internet of Things (IoT) connects billions of devices. Emerging technologies include edge computing, AI-driven networks, and quantum networking research.</p>
+                            </div>
+                        </div>
+                    </section>
+          
+
+            </main>  
+            
+            
+
+             <!-- Floating button to open chatbot -->
+    <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+    </div>
+    
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-container");
+            let button = document.getElementById("open-chatbot");
+    
+            if (!chatbot.classList.contains("active")) {
+                chatbot.classList.add("active");
+                button.style.display = "none"; // Hide button when chatbot is open
+            } else {
+                chatbot.classList.remove("active");
+                setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+            }
+        }
+    
+        // Load chatbot HTML dynamically
+        fetch("/chatbot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("chatbot-container").innerHTML += html;
+    
+            // Execute chatbot script after inserting HTML
+            let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+            for (let script of scripts) {
+                let newScript = document.createElement("script");
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript);
+            }
+        })
+        .catch(error => console.error("Error loading chatbot:", error));
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../computernetwork.json" : "computernetwork.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.Computer_Networks;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+        
+       
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

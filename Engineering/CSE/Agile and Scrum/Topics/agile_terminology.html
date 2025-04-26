@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agile Anti-Patterns</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Agile and Scrum</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+               <h1>Agile and Scrum Terminology</h1>
+                  
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; margin-bottom: 40px; box-shadow: 0 3px 6px rgba(0,0,0,0.08);">
+                        <h2 style="color: #6e48aa; border-bottom: 2px solid #f0e6ff; padding-bottom: 12px; font-size: 1.8em;">Core Agile Concepts</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 25px; margin-top: 25px;">
+                            <div style="background-color: #f9f5ff; padding: 20px; border-radius: 6px; border-left: 4px solid #6e48aa;">
+                                <h3 style="color: #6e48aa; margin-top: 0;">Agile Manifesto</h3>
+                                <p>The foundational document for Agile software development with 4 values and 12 principles emphasizing individuals, working software, customer collaboration, and responding to change.</p>
+                            </div>
+                            
+                            <div style="background-color: #f9f5ff; padding: 20px; border-radius: 6px; border-left: 4px solid #6e48aa;">
+                                <h3 style="color: #6e48aa; margin-top: 0;">Iterative Development</h3>
+                                <p>Breaking down projects into small increments with minimal planning, allowing for frequent reassessment and adaptation of plans.</p>
+                            </div>
+                            
+                            <div style="background-color: #f9f5ff; padding: 20px; border-radius: 6px; border-left: 4px solid #6e48aa;">
+                                <h3 style="color: #6e48aa; margin-top: 0;">Incremental Delivery</h3>
+                                <p>Delivering work in small, usable segments rather than complete products in one large release.</p>
+                            </div>
+                            
+                            <div style="background-color: #f9f5ff; padding: 20px; border-radius: 6px; border-left: 4px solid #6e48aa;">
+                                <h3 style="color: #6e48aa; margin-top: 0;">Timeboxing</h3>
+                                <p>Allocating a fixed time period (timebox) to an activity and completing as much as possible within that time.</p>
+                            </div>
+                            
+                            <div style="background-color: #f9f5ff; padding: 20px; border-radius: 6px; border-left: 4px solid #6e48aa;">
+                                <h3 style="color: #6e48aa; margin-top: 0;">Empirical Process Control</h3>
+                                <p>Process based on observation and experimentation (transparency, inspection, adaptation) rather than predefined processes.</p>
+                            </div>
+                            
+                            <div style="background-color: #f9f5ff; padding: 20px; border-radius: 6px; border-left: 4px solid #6e48aa;">
+                                <h3 style="color: #6e48aa; margin-top: 0;">MVP (Minimum Viable Product)</h3>
+                                <p>The version of a product with just enough features to satisfy early customers and provide feedback for future development.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; margin-bottom: 40px; box-shadow: 0 3px 6px rgba(0,0,0,0.08);">
+                        <h2 style="color: #6e48aa; border-bottom: 2px solid #f0e6ff; padding-bottom: 12px; font-size: 1.8em;">Scrum Framework Terms</h2>
+                        
+                        <div style="margin-top: 25px;">
+                            <h3 style="color: #5d3d99; background-color: #f0e6ff; padding: 10px 15px; border-radius: 4px;">Roles</h3>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 15px;">
+                                <div style="background-color: #f5f0ff; padding: 15px; border-radius: 5px;">
+                                    <h4 style="margin-top: 0; color: #6e48aa;">Product Owner</h4>
+                                    <p>Responsible for maximizing product value by managing and prioritizing the Product Backlog.</p>
+                                </div>
+                                <div style="background-color: #f5f0ff; padding: 15px; border-radius: 5px;">
+                                    <h4 style="margin-top: 0; color: #6e48aa;">Scrum Master</h4>
+                                    <p>Servant-leader who ensures Scrum is understood and enacted, removing impediments to progress.</p>
+                                </div>
+                                <div style="background-color: #f5f0ff; padding: 15px; border-radius: 5px;">
+                                    <h4 style="margin-top: 0; color: #6e48aa;">Development Team</h4>
+                                    <p>Cross-functional group that delivers potentially releasable increments each Sprint.</p>
+                                </div>
+                            </div>
+                            
+                            <h3 style="color: #5d3d99; background-color: #f0e6ff; padding: 10px 15px; border-radius: 4px; margin-top: 30px;">Artifacts</h3>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 15px;">
+                                <div style="background-color: #f5f0ff; padding: 15px; border-radius: 5px;">
+                                    <h4 style="margin-top: 0; color: #6e48aa;">Product Backlog</h4>
+                                    <p>Ordered list of everything needed in the product, maintained by the Product Owner.</p>
+                                </div>
+                                <div style="background-color: #f5f0ff; padding: 15px; border-radius: 5px;">
+                                    <h4 style="margin-top: 0; color: #6e48aa;">Sprint Backlog</h4>
+                                    <p>Set of Product Backlog items selected for the Sprint plus a plan for delivering them.</p>
+                                </div>
+                                <div style="background-color: #f5f0ff; padding: 15px; border-radius: 5px;">
+                                    <h4 style="margin-top: 0; color: #6e48aa;">Increment</h4>
+                                    <p>Sum of all Product Backlog items completed during a Sprint plus all previous Sprints.</p>
+                                </div>
+                            </div>
+                            
+                            <h3 style="color: #5d3d99; background-color: #f0e6ff; padding: 10px 15px; border-radius: 4px; margin-top: 30px;">Events</h3>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 15px;">
+                                <div style="background-color: #f5f0ff; padding: 15px; border-radius: 5px;">
+                                    <h4 style="margin-top: 0; color: #6e48aa;">Sprint</h4>
+                                    <p>Time-boxed iteration (typically 1-4 weeks) where work is completed to create a done increment.</p>
+                                </div>
+                                <div style="background-color: #f5f0ff; padding: 15px; border-radius: 5px;">
+                                    <h4 style="margin-top: 0; color: #6e48aa;">Sprint Planning</h4>
+                                    <p>Meeting to determine what can be delivered in the upcoming Sprint and how to achieve it.</p>
+                                </div>
+                                <div style="background-color: #f5f0ff; padding: 15px; border-radius: 5px;">
+                                    <h4 style="margin-top: 0; color: #6e48aa;">Daily Scrum</h4>
+                                    <p>15-minute time-boxed event for the Development Team to synchronize activities.</p>
+                                </div>
+                                <div style="background-color: #f5f0ff; padding: 15px; border-radius: 5px;">
+                                    <h4 style="margin-top: 0; color: #6e48aa;">Sprint Review</h4>
+                                    <p>Informal meeting to inspect the increment and adapt the Product Backlog if needed.</p>
+                                </div>
+                                <div style="background-color: #f5f0ff; padding: 15px; border-radius: 5px;">
+                                    <h4 style="margin-top: 0; color: #6e48aa;">Sprint Retrospective</h4>
+                                    <p>Opportunity for the Scrum Team to inspect itself and create a plan for improvements.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; margin-bottom: 40px; box-shadow: 0 3px 6px rgba(0,0,0,0.08);">
+                        <h2 style="color: #6e48aa; border-bottom: 2px solid #f0e6ff; padding-bottom: 12px; font-size: 1.8em;">Common Agile Practices</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; margin-top: 25px;">
+                            <div style="background-color: #f5f0ff; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #6e48aa; margin-top: 0;">User Stories</h3>
+                                <p>Short, simple description of a feature told from the perspective of the user: "As a [role], I want [feature] so that [benefit]."</p>
+                                <p style="background-color: #e9dffd; padding: 10px; border-radius: 4px; font-style: italic;">Example: "As a customer, I want to save items to a wishlist so I can purchase them later."</p>
+                            </div>
+                            
+                            <div style="background-color: #f5f0ff; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #6e48aa; margin-top: 0;">Definition of Done (DoD)</h3>
+                                <p>A shared understanding of what it means for work to be complete, often including coding standards, testing requirements, documentation, etc.</p>
+                            </div>
+                            
+                            <div style="background-color: #f5f0ff; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #6e48aa; margin-top: 0;">Burndown Chart</h3>
+                                <p>Graphical representation of work left to do versus time, showing progress toward completing Sprint or release goals.</p>
+                            </div>
+                            
+                            <div style="background-color: #f5f0ff; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #6e48aa; margin-top: 0;">Velocity</h3>
+                                <p>A measure of the amount of work a team can complete in a Sprint, used for forecasting future Sprints.</p>
+                            </div>
+                            
+                            <div style="background-color: #f5f0ff; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #6e48aa; margin-top: 0;">Backlog Refinement</h3>
+                                <p>Ongoing process of reviewing, updating, and estimating Product Backlog items to prepare for future Sprints.</p>
+                            </div>
+                            
+                            <div style="background-color: #f5f0ff; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #6e48aa; margin-top: 0;">Spike</h3>
+                                <p>A time-boxed research activity to gain knowledge needed to reduce uncertainty in estimates or approach.</p>
+                            </div>
+                            
+                            <div style="background-color: #f5f0ff; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #6e48aa; margin-top: 0;">Impediment</h3>
+                                <p>Anything that prevents a team member from performing work as efficiently as possible.</p>
+                            </div>
+                            
+                            <div style="background-color: #f5f0ff; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #6e48aa; margin-top: 0;">Technical Debt</h3>
+                                <p>Implied cost of additional rework caused by choosing an easy solution now instead of a better approach that would take longer.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; margin-bottom: 40px; box-shadow: 0 3px 6px rgba(0,0,0,0.08);">
+                        <h2 style="color: #6e48aa; border-bottom: 2px solid #f0e6ff; padding-bottom: 12px; font-size: 1.8em;">Scaling Agile Terms</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 25px; margin-top: 25px;">
+                            <div style="background-color: #f0e6ff; padding: 20px; border-radius: 6px; border: 1px solid #d9c7ff;">
+                                <h3 style="color: #5d3d99; margin-top: 0;">SAFe (Scaled Agile Framework)</h3>
+                                <p>Framework for scaling Agile across large organizations with alignment, collaboration, and delivery across multiple Agile teams.</p>
+                            </div>
+                            
+                            <div style="background-color: #f0e6ff; padding: 20px; border-radius: 6px; border: 1px solid #d9c7ff;">
+                                <h3 style="color: #5d3d99; margin-top: 0;">LeSS (Large Scale Scrum)</h3>
+                                <p>Framework for scaling Scrum to multiple teams with minimal additional roles and artifacts beyond standard Scrum.</p>
+                            </div>
+                            
+                            <div style="background-color: #f0e6ff; padding: 20px; border-radius: 6px; border: 1px solid #d9c7ff;">
+                                <h3 style="color: #5d3d99; margin-top: 0;">Nexus</h3>
+                                <p>Scrum.org's framework for scaling Scrum to 3-9 teams working on a single Product Backlog.</p>
+                            </div>
+                            
+                            <div style="background-color: #f0e6ff; padding: 20px; border-radius: 6px; border: 1px solid #d9c7ff;">
+                                <h3 style="color: #5d3d99; margin-top: 0;">Scrum of Scrums</h3>
+                                <p>Technique to coordinate multiple Scrum teams, typically through representatives meeting regularly.</p>
+                            </div>
+                            
+                            <div style="background-color: #f0e6ff; padding: 20px; border-radius: 6px; border: 1px solid #d9c7ff;">
+                                <h3 style="color: #5d3d99; margin-top: 0;">Feature Team</h3>
+                                <p>Cross-functional team that can deliver complete customer features rather than working on components.</p>
+                            </div>
+                            
+                            <div style="background-color: #f0e6ff; padding: 20px; border-radius: 6px; border: 1px solid #d9c7ff;">
+                                <h3 style="color: #5d3d99; margin-top: 0;">PI (Program Increment)</h3>
+                                <p>In SAFe, a timebox (typically 8-12 weeks) during which an Agile Release Train delivers incremental value.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: #ece6f5; color: white; padding: 30px; border-radius: 8px; margin-bottom: 40px;">
+                        <h2 style="margin-top: 0; border-bottom: 2px solid rgba(255,255,255,0.3); padding-bottom: 12px; font-size: 1.8em;">Agile Estimation Techniques</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; margin-top: 25px;">
+                            <div style="background-color: rgba(255,255,255,0.15); padding: 20px; border-radius: 6px;">
+                                <h3 style="margin-top: 0;">Story Points</h3>
+                                <p>Relative measure of effort considering complexity, risk, and uncertainty, often using Fibonacci sequence (1, 2, 3, 5, 8, 13).</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.15); padding: 20px; border-radius: 6px;">
+                                <h3 style="margin-top: 0;">Planning Poker</h3>
+                                <p>Consensus-based estimation technique where team members use numbered cards to estimate effort.</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.15); padding: 20px; border-radius: 6px;">
+                                <h3 style="margin-top: 0;">T-Shirt Sizing</h3>
+                                <p>Relative estimation using sizes (XS, S, M, L, XL) for quick, high-level estimation.</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.15); padding: 20px; border-radius: 6px;">
+                                <h3 style="margin-top: 0;">Affinity Estimating</h3>
+                                <p>Grouping similar-sized items together to quickly estimate many items relative to each other.</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.15); padding: 20px; border-radius: 6px;">
+                                <h3 style="margin-top: 0;">Ideal Days</h3>
+                                <p>Estimating work in perfect, uninterrupted work days (not calendar days).</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.15); padding: 20px; border-radius: 6px;">
+                                <h3 style="margin-top: 0;">Bucket System</h3>
+                                <p>Quick estimation method using predefined buckets (ranges) to categorize items.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                
+                  
+                  
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics/") ? "../Agile_and_Scrum.json" : "../Agile_and_Scrum.json";
+            
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch DSA Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.Agile_and_Scrum;
+                        displayTopics(allTopics);
+                    })
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+           
+            
+            
+            
+            
+            
+            
+            </body>
+            </html>     

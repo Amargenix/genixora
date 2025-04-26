@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer Network</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/allsubject.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Computer Networks</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <h1>Domain Name System (DNS)</h1>
+                       
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                        <h2 style="color: #2980b9; border-bottom: 2px solid #2980b9; padding-bottom: 8px;">What is DNS?</h2>
+                        <p>DNS (Domain Name System) is a hierarchical and decentralized naming system used to translate human-readable domain names (like www.example.com) into machine-readable IP addresses (like 192.0.2.1).</p>
+                        <p>Key characteristics:</p>
+                        <ul style="padding-left: 25px;">
+                            <li>Acts as the internet's phonebook</li>
+                            <li>Uses a distributed database architecture</li>
+                            <li>Operates on UDP port 53 (TCP for larger responses)</li>
+                            <li>Essential for internet functionality</li>
+                        </ul>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                        <h2 style="color: #2980b9; border-bottom: 2px solid #2980b9; padding-bottom: 8px;">How DNS Works</h2>
+                        <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                            <div style="flex: 1;">
+                                <p>The DNS resolution process involves several steps:</p>
+                                <ol style="padding-left: 25px;">
+                                    <li>User enters a URL in the browser</li>
+                                    <li>Browser checks its cache</li>
+                                    <li>OS checks its hosts file and cache</li>
+                                    <li>Query sent to recursive DNS resolver</li>
+                                    <li>Resolver queries root nameservers</li>
+                                    <li>Root directs to TLD nameservers</li>
+                                    <li>TLD directs to authoritative nameservers</li>
+                                    <li>Authoritative server provides IP address</li>
+                                    <li>Resolver returns IP to browser</li>
+                                </ol>
+                            </div>
+                            <div style="flex: 1; text-align: center;">
+                                <div style="background-color: #e8f4fc; padding: 15px; border-radius: 8px; display: inline-block;">
+                                    <p style="font-weight: bold; margin: 0;">Example Resolution:</p>
+                                    <p style="margin: 5px 0;">www.example.com →</p>
+                                    <p style="margin: 5px 0;">1. Root: "."</p>
+                                    <p style="margin: 5px 0;">2. TLD: ".com"</p>
+                                    <p style="margin: 5px 0;">3. Authoritative: "example.com"</p>
+                                    <p style="margin: 5px 0;">→ Returns 93.184.216.34</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                        <h2 style="color: #2980b9; border-bottom: 2px solid #2980b9; padding-bottom: 8px;">DNS Components</h2>
+                        <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                            <div style="flex: 1; min-width: 250px; background-color: #f8f9fa; padding: 15px; border-radius: 6px; border-left: 4px solid #3498db;">
+                                <h3 style="margin-top: 0; color: #3498db;">DNS Resolver</h3>
+                                <p>Also called recursive resolver. Typically operated by ISPs or public services like Google DNS (8.8.8.8) or Cloudflare (1.1.1.1).</p>
+                            </div>
+                            <div style="flex: 1; min-width: 250px; background-color: #f8f9fa; padding: 15px; border-radius: 6px; border-left: 4px solid #e74c3c;">
+                                <h3 style="margin-top: 0; color: #e74c3c;">Root Nameservers</h3>
+                                <p>13 logical root servers (with hundreds of physical instances worldwide) that know where to direct queries for TLDs.</p>
+                            </div>
+                            <div style="flex: 1; min-width: 250px; background-color: #f8f9fa; padding: 15px; border-radius: 6px; border-left: 4px solid #2ecc71;">
+                                <h3 style="margin-top: 0; color: #2ecc71;">TLD Nameservers</h3>
+                                <p>Servers for top-level domains like .com, .org, .net, and country codes like .uk, .jp.</p>
+                            </div>
+                            <div style="flex: 1; min-width: 250px; background-color: #f8f9fa; padding: 15px; border-radius: 6px; border-left: 4px solid #f39c12;">
+                                <h3 style="margin-top: 0; color: #f39c12;">Authoritative Nameservers</h3>
+                                <p>Servers that contain actual DNS records for domains. Managed by domain owners or their DNS providers.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                        <h2 style="color: #2980b9; border-bottom: 2px solid #2980b9; padding-bottom: 8px;">DNS Record Types</h2>
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="background-color: #2c3e50; color: white;">
+                                    <th style="padding: 12px; text-align: left;">Record Type</th>
+                                    <th style="padding: 12px; text-align: left;">Purpose</th>
+                                    <th style="padding: 12px; text-align: left;">Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 10px; font-weight: bold;">A</td>
+                                    <td style="padding: 10px;">IPv4 address record</td>
+                                    <td style="padding: 10px; font-family: monospace;">example.com A 93.184.216.34</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ddd; background-color: #f8f9fa;">
+                                    <td style="padding: 10px; font-weight: bold;">AAAA</td>
+                                    <td style="padding: 10px;">IPv6 address record</td>
+                                    <td style="padding: 10px; font-family: monospace;">example.com AAAA 2606:2800:220:1:248:1893:25c8:1946</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 10px; font-weight: bold;">CNAME</td>
+                                    <td style="padding: 10px;">Canonical name (alias)</td>
+                                    <td style="padding: 10px; font-family: monospace;">www.example.com CNAME example.com</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ddd; background-color: #f8f9fa;">
+                                    <td style="padding: 10px; font-weight: bold;">MX</td>
+                                    <td style="padding: 10px;">Mail exchange record</td>
+                                    <td style="padding: 10px; font-family: monospace;">example.com MX 10 mail.example.com</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 10px; font-weight: bold;">TXT</td>
+                                    <td style="padding: 10px;">Text record (verification, SPF, etc.)</td>
+                                    <td style="padding: 10px; font-family: monospace;">example.com TXT "v=spf1 include:_spf.example.com ~all"</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ddd; background-color: #f8f9fa;">
+                                    <td style="padding: 10px; font-weight: bold;">NS</td>
+                                    <td style="padding: 10px;">Nameserver record</td>
+                                    <td style="padding: 10px; font-family: monospace;">example.com NS ns1.example-dns.com</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; font-weight: bold;">SOA</td>
+                                    <td style="padding: 10px;">Start of Authority</td>
+                                    <td style="padding: 10px; font-family: monospace;">example.com SOA ns1.example.com admin.example.com 2023041701 7200 3600 1209600 3600</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                        <h2 style="color: #2980b9; border-bottom: 2px solid #2980b9; padding-bottom: 8px;">DNS Caching</h2>
+                        <p>DNS uses caching extensively to improve performance and reduce load:</p>
+                        <ul style="padding-left: 25px;">
+                            <li><strong>Browser Cache:</strong> Modern browsers cache DNS records</li>
+                            <li><strong>OS Cache:</strong> Operating systems maintain DNS caches</li>
+                            <li><strong>Resolver Cache:</strong> Recursive resolvers cache responses based on TTL (Time To Live)</li>
+                        </ul>
+                        <p style="background-color: #fff8e1; padding: 15px; border-left: 4px solid #ffc107;">
+                            <strong>TTL (Time To Live):</strong> Specified in seconds, determines how long a record can be cached. Example: "example.com A 3600" means the record can be cached for 1 hour (3600 seconds).
+                        </p>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                        <h2 style="color: #2980b9; border-bottom: 2px solid #2980b9; padding-bottom: 8px;">DNS Security</h2>
+                        <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                            <div style="flex: 1; min-width: 300px; background-color: #fef2f2; padding: 15px; border-radius: 6px; border-left: 4px solid #ef4444;">
+                                <h3 style="margin-top: 0; color: #ef4444;">DNS Spoofing/Cache Poisoning</h3>
+                                <p>Attackers corrupt DNS cache with false information, redirecting users to malicious sites.</p>
+                            </div>
+                            <div style="flex: 1; min-width: 300px; background-color: #f0fdf4; padding: 15px; border-radius: 6px; border-left: 4px solid #10b981;">
+                                <h3 style="margin-top: 0; color: #10b981;">DNSSEC (DNS Security Extensions)</h3>
+                                <p>Adds cryptographic signatures to DNS records to verify their authenticity.</p>
+                            </div>
+                            <div style="flex: 1; min-width: 300px; background-color: #eff6ff; padding: 15px; border-radius: 6px; border-left: 4px solid #3b82f6;">
+                                <h3 style="margin-top: 0; color: #3b82f6;">DNS over HTTPS (DoH) / DNS over TLS (DoT)</h3>
+                                <p>Encrypts DNS queries to prevent eavesdropping and manipulation.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                        <h2 style="color: #2980b9; border-bottom: 2px solid #2980b9; padding-bottom: 8px;">DNS Tools and Commands</h2>
+                        <div style="display: flex; flex-wrap: wrap; gap: 15px;">
+                            <div style="flex: 1; min-width: 200px;">
+                                <h3 style="margin-top: 0; color: #7e22ce;">Command Line Tools</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><code style="background-color: #f3f4f6; padding: 2px 4px; border-radius: 4px;">nslookup</code> - Query DNS servers</li>
+                                    <li><code style="background-color: #f3f4f6; padding: 2px 4px; border-radius: 4px;">dig</code> - Advanced DNS lookup tool</li>
+                                    <li><code style="background-color: #f3f4f6; padding: 2px 4px; border-radius: 4px;">host</code> - Simple DNS lookup utility</li>
+                                </ul>
+                            </div>
+                            <div style="flex: 1; min-width: 200px;">
+                                <h3 style="margin-top: 0; color: #7e22ce;">Online Tools</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>DNS lookup tools (e.g., MXToolbox)</li>
+                                    <li>DNS propagation checkers</li>
+                                    <li>DNSSEC validators</li>
+                                </ul>
+                            </div>
+                            <div style="flex: 1; min-width: 200px;">
+                                <h3 style="margin-top: 0; color: #7e22ce;">Example Commands</h3>
+                                <div style="background-color: #1e293b; color: #f8fafc; padding: 10px; border-radius: 6px; font-family: monospace; font-size: 0.9em;">
+                                    <p style="margin: 5px 0;">$ dig example.com</p>
+                                    <p style="margin: 5px 0;">$ nslookup example.com</p>
+                                    <p style="margin: 5px 0;">$ host -t mx example.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </main>  
+            
+            
+
+             <!-- Floating button to open chatbot -->
+    <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+    </div>
+    
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-container");
+            let button = document.getElementById("open-chatbot");
+    
+            if (!chatbot.classList.contains("active")) {
+                chatbot.classList.add("active");
+                button.style.display = "none"; // Hide button when chatbot is open
+            } else {
+                chatbot.classList.remove("active");
+                setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+            }
+        }
+    
+        // Load chatbot HTML dynamically
+        fetch("/chatbot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("chatbot-container").innerHTML += html;
+    
+            // Execute chatbot script after inserting HTML
+            let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+            for (let script of scripts) {
+                let newScript = document.createElement("script");
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript);
+            }
+        })
+        .catch(error => console.error("Error loading chatbot:", error));
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../computernetwork.json" : "computernetwork.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.Computer_Networks;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+        
+       
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

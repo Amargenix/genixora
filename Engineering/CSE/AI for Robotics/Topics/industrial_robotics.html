@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Robotics</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>AI for Robotics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <h1>Industrial Robotics Revolution</h1>
+                       
+                
+                        <!-- Overview Section -->
+                        <div style="background:white;border-radius:10px;padding:40px;margin-bottom:40px;box-shadow:0 5px 15px rgba(0,0,0,0.05);">
+                            <h2 style="color:#dc3545;border-bottom:2px solid #dc3545;padding-bottom:10px;margin-top:0;">Industrial Robotics Overview</h2>
+                            
+                            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-top:30px;">
+                                <div style="background:#f8f9fa;padding:25px;border-radius:8px;border-left:4px solid #dc3545;">
+                                    <h3 style="margin-top:0;color:#dc3545;">🏭 What Are Industrial Robots?</h3>
+                                    <p>Programmable mechanical devices designed to automate manufacturing tasks with precision, speed, and reliability. Modern systems integrate AI for adaptive decision-making.</p>
+                                </div>
+                                
+                                <div style="background:#f8f9fa;padding:25px;border-radius:8px;border-left:4px solid #fd7e14;">
+                                    <h3 style="margin-top:0;color:#fd7e14;">📈 Market Growth</h3>
+                                    <p>Global market projected to reach $81.4B by 2028 (CAGR 12.3%). Over 3 million industrial robots operational worldwide, with 500,000+ installed annually.</p>
+                                </div>
+                                
+                                <div style="background:#f8f9fa;padding:25px;border-radius:8px;border-left:4px solid #20c997;">
+                                    <h3 style="margin-top:0;color:#20c997;">🤖 AI Integration</h3>
+                                    <p>60% of new industrial robots now incorporate some form of AI for vision, quality control, and predictive maintenance.</p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Robot Types Section -->
+                        <div style="background:white;border-radius:10px;padding:40px;margin-bottom:40px;box-shadow:0 5px 15px rgba(0,0,0,0.05);">
+                            <h2 style="color:#dc3545;border-bottom:2px solid #dc3545;padding-bottom:10px;margin-top:0;">Types of Industrial Robots</h2>
+                            
+                            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;margin-top:30px;">
+                                <!-- Articulated -->
+                                <div style="border:1px solid #dee2e6;border-radius:8px;padding:25px;transition:transform 0.3s ease;background:#fff;">
+                                    <div style="background:#dc3545;color:white;width:70px;height:70px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:1.8rem;">🦾</div>
+                                    <h3 style="text-align:center;color:#dc3545;margin:0 0 15px;">Articulated Robots</h3>
+                                    <ul style="padding-left:20px;margin:0;">
+                                        <li style="margin-bottom:8px;">6-axis freedom of movement</li>
+                                        <li style="margin-bottom:8px;">Payloads: 3-500kg</li>
+                                        <li style="margin-bottom:8px;">±0.02mm repeatability</li>
+                                        <li>Welding, material handling</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- SCARA -->
+                                <div style="border:1px solid #dee2e6;border-radius:8px;padding:25px;transition:transform 0.3s ease;background:#fff;">
+                                    <div style="background:#fd7e14;color:white;width:70px;height:70px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:1.8rem;">📐</div>
+                                    <h3 style="text-align:center;color:#fd7e14;margin:0 0 15px;">SCARA Robots</h3>
+                                    <ul style="padding-left:20px;margin:0;">
+                                        <li style="margin-bottom:8px;">High-speed assembly</li>
+                                        <li style="margin-bottom:8px;">±0.01mm precision</li>
+                                        <li style="margin-bottom:8px;">Compact workspace</li>
+                                        <li>Electronics manufacturing</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Delta -->
+                                <div style="border:1px solid #dee2e6;border-radius:8px;padding:25px;transition:transform 0.3s ease;background:#fff;">
+                                    <div style="background:#20c997;color:white;width:70px;height:70px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:1.8rem;">🚀</div>
+                                    <h3 style="text-align:center;color:#20c997;margin:0 0 15px;">Delta Robots</h3>
+                                    <ul style="padding-left:20px;margin:0;">
+                                        <li style="margin-bottom:8px;">200+ picks per minute</li>
+                                        <li style="margin-bottom:8px;">Light payloads (<5kg)</li>
+                                        <li style="margin-bottom:8px;">Overhead mounting</li>
+                                        <li>Packaging, food processing</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Collaborative -->
+                                <div style="border:1px solid #dee2e6;border-radius:8px;padding:25px;transition:transform 0.3s ease;background:#fff;">
+                                    <div style="background:#0dcaf0;color:white;width:70px;height:70px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:1.8rem;">🤝</div>
+                                    <h3 style="text-align:center;color:#0dcaf0;margin:0 0 15px;">Cobots (Collaborative)</h3>
+                                    <ul style="padding-left:20px;margin:0;">
+                                        <li style="margin-bottom:8px;">Force-limited operation</li>
+                                        <li style="margin-bottom:8px;">No safety cages needed</li>
+                                        <li style="margin-bottom:8px;">Easy programming</li>
+                                        <li>Small batch production</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- AI Applications Section -->
+                        <div style="background:white;border-radius:10px;padding:40px;margin-bottom:40px;box-shadow:0 5px 15px rgba(0,0,0,0.05);">
+                            <h2 style="color:#dc3545;border-bottom:2px solid #dc3545;padding-bottom:10px;margin-top:0;">AI Applications in Industrial Robotics</h2>
+                            
+                            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;margin-top:30px;">
+                                <!-- Vision Systems -->
+                                <div style="background:#fff5f5;padding:25px;border-radius:8px;border-left:4px solid #dc3545;">
+                                    <h3 style="margin-top:0;color:#dc3545;">👁️ Computer Vision</h3>
+                                    <ul style="padding-left:20px;margin:0;">
+                                        <li style="margin-bottom:8px;">Defect detection (99.9% accuracy)</li>
+                                        <li style="margin-bottom:8px;">3D bin picking with point clouds</li>
+                                        <li style="margin-bottom:8px;">OCR for part identification</li>
+                                        <li>Pose estimation for assembly</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Predictive Maintenance -->
+                                <div style="background:#fff8e6;padding:25px;border-radius:8px;border-left:4px solid #fd7e14;">
+                                    <h3 style="margin-top:0;color:#fd7e14;">🔧 Predictive Maintenance</h3>
+                                    <ul style="padding-left:20px;margin:0;">
+                                        <li style="margin-bottom:8px;">Vibration analysis with ML</li>
+                                        <li style="margin-bottom:8px;">Thermal anomaly detection</li>
+                                        <li style="margin-bottom:8px;">Remaining useful life prediction</li>
+                                        <li>30-50% reduction in downtime</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Process Optimization -->
+                                <div style="background:#e6fcf5;padding:25px;border-radius:8px;border-left:4px solid #20c997;">
+                                    <h3 style="margin-top:0;color:#20c997;">📊 Process Optimization</h3>
+                                    <ul style="padding-left:20px;margin:0;">
+                                        <li style="margin-bottom:8px;">Reinforcement learning for path planning</li>
+                                        <li style="margin-bottom:8px;">Energy consumption optimization</li>
+                                        <li style="margin-bottom:8px;">Cycle time reduction</li>
+                                        <li>Digital twin simulations</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Quality Control -->
+                                <div style="background:#e7f5ff;padding:25px;border-radius:8px;border-left:4px solid #0dcaf0;">
+                                    <h3 style="margin-top:0;color:#0dcaf0;">🔍 Quality Control</h3>
+                                    <ul style="padding-left:20px;margin:0;">
+                                        <li style="margin-bottom:8px;">Automated optical inspection</li>
+                                        <li style="margin-bottom:8px;">Statistical process control</li>
+                                        <li style="margin-bottom:8px;">Anomaly detection</li>
+                                        <li>Root cause analysis</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Case Studies Section -->
+                        <div style="background:white;border-radius:10px;padding:40px;margin-bottom:40px;box-shadow:0 5px 15px rgba(0,0,0,0.05);">
+                            <h2 style="color:#dc3545;border-bottom:2px solid #dc3545;padding-bottom:10px;margin-top:0;">Industry Case Studies</h2>
+                            
+                            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;margin-top:30px;">
+                                <!-- Automotive -->
+                                <div style="position:relative;border-radius:8px;overflow:hidden;box-shadow:0 5px 15px rgba(215, 231, 236, 0.1);height:300px;background:linear-gradient(rgba(210, 227, 227, 0.3),rgba(196, 219, 215, 0.7)),url('https://example.com/auto-manufacturing.jpg');background-size:cover;color:white;padding:25px;display:flex;flex-direction:column;justify-content:flex-end;">
+                                    <h3 style="margin:0 0 15px;font-size:1.5rem;">🚗 Automotive Manufacturing</h3>
+                                    <p style="margin:0;">Tesla's "Alien Dreadnought" factory uses 1,000+ robots with AI vision achieving 95% automation in Model Y production.</p>
+                                </div>
+                                
+                                <!-- Electronics -->
+                                <div style="position:relative;border-radius:8px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.1);height:300px;background:linear-gradient(rgba(194, 219, 222, 0.3),rgba(182, 211, 221, 0.7)),url('https://example.com/electronics-assembly.jpg');background-size:cover;color:white;padding:25px;display:flex;flex-direction:column;justify-content:flex-end;">
+                                    <h3 style="margin:0 0 15px;font-size:1.5rem;">📱 Electronics Assembly</h3>
+                                    <p style="margin:0;">Foxconn deploys 100,000 cobots with AI quality inspection reducing defects by 30% in iPhone production.</p>
+                                </div>
+                                
+                                <!-- Pharmaceuticals -->
+                                <div style="position:relative;border-radius:8px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.1);height:300px;background:linear-gradient(rgba(175, 199, 202, 0.3),rgba(133, 191, 207, 0.7)),url('https://example.com/pharma-robotics.jpg');background-size:cover;color:white;padding:25px;display:flex;flex-direction:column;justify-content:flex-end;">
+                                    <h3 style="margin:0 0 15px;font-size:1.5rem;">💊 Pharmaceutical Packaging</h3>
+                                    <p style="margin:0;">Pfizer's sterile filling lines use AI robots with 99.999% accuracy at 400 vials/minute.</p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Future Trends Section -->
+                        <div style="background:linear-gradient(135deg,#f1f6f5,#d3f4f6);color:white;border-radius:10px;padding:50px 40px;margin-bottom:40px;box-shadow:0 10px 20px rgba(220,53,69,0.3);">
+                            <h2 style="margin-top:0;border-bottom:2px solid rgba(255,255,255,0.3);padding-bottom:12px;">Future Trends in Industrial Robotics</h2>
+                            
+                            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;margin-top:30px;">
+                                <div style="background:rgba(255,255,255,0.1);padding:25px;border-radius:8px;backdrop-filter:blur(5px);">
+                                    <h3 style="margin-top:0;">🧠 Edge AI Integration</h3>
+                                    <p>On-device machine learning reducing latency to <5ms for real-time control decisions.</p>
+                                </div>
+                                
+                                <div style="background:rgba(255,255,255,0.1);padding:25px;border-radius:8px;backdrop-filter:blur(5px);">
+                                    <h3 style="margin-top:0;">🔄 Self-Learning Systems</h3>
+                                    <p>Robots that continuously improve through reinforcement learning without reprogramming.</p>
+                                </div>
+                                
+                                <div style="background:rgba(255,255,255,0.1);padding:25px;border-radius:8px;backdrop-filter:blur(5px);">
+                                    <h3 style="margin-top:0;">🌐 5G-Enabled Robotics</h3>
+                                    <p>Ultra-low latency communication enabling distributed robot swarms in smart factories.</p>
+                                </div>
+                                
+                                <div style="background:rgba(255,255,255,0.1);padding:25px;border-radius:8px;backdrop-filter:blur(5px);">
+                                    <h3 style="margin-top:0;">🤖 Human-Robot Teaming</h3>
+                                    <p>Advanced cobots with emotional AI for intuitive human collaboration.</p>
+                                </div>
+                            </div>
+                        </div>
+                
+                    
+
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [ ];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics") ? "../AI for Robotics.json" : "../AI for Robotics.json";
+
+                                              
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch AI for Robotics Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.AI_for_Robotics;
+                        displayTopics(allTopics);
+                    }
+                    )
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+           
+            
+            
+            
+            
+            
+            
+            </body>
+            </html>        

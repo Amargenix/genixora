@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Robotics</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>AI for Robotics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+               <h1>AI Concepts </h1>
+                       
+                    <section style="margin-bottom: 40px; background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">Introduction to AI in Robotics</h2>
+                        <p>Artificial Intelligence (AI) forms the cognitive foundation of modern robotics, enabling machines to perceive, reason, learn, and make decisions in complex environments. The integration of AI transforms robots from simple automated machines into intelligent agents capable of adaptive behavior.</p>
+                        
+                        <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                            <div style="width: 48%; background-color: #f8f9fa; padding: 15px; border-radius: 5px; border-left: 4px solid #3498db;">
+                                <h3 style="color: #3498db; margin-top: 0;">Traditional Robotics</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Pre-programmed behaviors</li>
+                                    <li>Deterministic operation</li>
+                                    <li>Limited environmental adaptation</li>
+                                    <li>Fixed task execution</li>
+                                </ul>
+                            </div>
+                            <div style="width: 48%; background-color: #f8f9fa; padding: 15px; border-radius: 5px; border-left: 4px solid #e74c3c;">
+                                <h3 style="color: #e74c3c; margin-top: 0;">AI-Powered Robotics</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Learning and adaptation</li>
+                                    <li>Probabilistic reasoning</li>
+                                    <li>Dynamic environment interaction</li>
+                                    <li>Autonomous decision-making</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="margin-bottom: 40px; background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">Core AI Concepts in Robotics</h2>
+                        
+                        <div style="margin-bottom: 25px;">
+                            <h3 style="color: #2980b9; background-color: #ebf5fb; padding: 10px; border-radius: 3px;">1. Perception and Computer Vision</h3>
+                            <p>Robots use AI to interpret sensory data from cameras, LiDAR, and other sensors:</p>
+                            <ul style="padding-left: 20px;">
+                                <li><strong>Object recognition:</strong> Identifying and classifying objects in the environment</li>
+                                <li><strong>Scene understanding:</strong> Interpreting complex visual scenes</li>
+                                <li><strong>Depth perception:</strong> Estimating distances using stereo vision or depth sensors</li>
+                                <li><strong>Visual SLAM:</strong> Simultaneous Localization and Mapping using visual data</li>
+                            </ul>
+                            <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin-top: 10px; font-family: monospace;">
+                                # Example: CNN for object detection<br>
+                                model = Sequential([<br>
+                                &nbsp;&nbsp;Conv2D(32, (3,3), activation='relu', input_shape=(64,64,3)),<br>
+                                &nbsp;&nbsp;MaxPooling2D(2,2),<br>
+                                &nbsp;&nbsp;Flatten(),<br>
+                                &nbsp;&nbsp;Dense(128, activation='relu'),<br>
+                                &nbsp;&nbsp;Dense(num_classes, activation='softmax')<br>
+                                ])
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 25px;">
+                            <h3 style="color: #2980b9; background-color: #ebf5fb; padding: 10px; border-radius: 3px;">2. Machine Learning for Robotics</h3>
+                            <p>ML algorithms enable robots to learn from data and improve performance:</p>
+                            <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+                                <thead>
+                                    <tr style="background-color: #2c3e50; color: white;">
+                                        <th style="padding: 10px; text-align: left;">ML Approach</th>
+                                        <th style="padding: 10px; text-align: left;">Application in Robotics</th>
+                                        <th style="padding: 10px; text-align: left;">Example Use Case</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #ddd;">
+                                        <td style="padding: 10px;">Supervised Learning</td>
+                                        <td style="padding: 10px;">Object classification, gesture recognition</td>
+                                        <td style="padding: 10px;">Sorting objects on a conveyor belt</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #ddd;">
+                                        <td style="padding: 10px;">Unsupervised Learning</td>
+                                        <td style="padding: 10px;">Anomaly detection, clustering</td>
+                                        <td style="padding: 10px;">Identifying defective products</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #ddd;">
+                                        <td style="padding: 10px;">Reinforcement Learning</td>
+                                        <td style="padding: 10px;">Motion control, manipulation</td>
+                                        <td style="padding: 10px;">Learning to walk (humanoid robots)</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 10px;">Deep Learning</td>
+                                        <td style="padding: 10px;">Complex perception tasks</td>
+                                        <td style="padding: 10px;">Autonomous vehicle navigation</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div style="margin-bottom: 25px;">
+                            <h3 style="color: #2980b9; background-color: #ebf5fb; padding: 10px; border-radius: 3px;">3. Path Planning and Navigation</h3>
+                            <p>AI algorithms help robots determine optimal paths through environments:</p>
+                            <div style="display: flex; justify-content: space-between; margin-top: 15px;">
+                                <div style="width: 48%;">
+                                    <h4 style="color: #16a085; margin-bottom: 5px;">Classical Algorithms</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>A* Search Algorithm</li>
+                                        <li>Dijkstra's Algorithm</li>
+                                        <li>Rapidly-exploring Random Trees (RRT)</li>
+                                        <li>Probabilistic Roadmaps (PRM)</li>
+                                    </ul>
+                                </div>
+                                <div style="width: 48%;">
+                                    <h4 style="color: #16a085; margin-bottom: 5px;">AI-Based Approaches</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Deep Reinforcement Learning for navigation</li>
+                                        <li>Neural Motion Planners</li>
+                                        <li>Imitation Learning from human demonstrations</li>
+                                        <li>Multi-agent path finding</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div style="background-color: #e8f8f5; padding: 15px; border-radius: 5px; margin-top: 15px;">
+                                <strong>Challenge:</strong> The "Curse of Dimensionality" makes path planning computationally intensive in high-dimensional spaces (e.g., robotic arms with many joints). AI helps approximate solutions.
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 25px;">
+                            <h3 style="color: #2980b9; background-color: #ebf5fb; padding: 10px; border-radius: 3px;">4. Robot Manipulation and Control</h3>
+                            <p>AI enables sophisticated manipulation capabilities:</p>
+                            <ul style="padding-left: 20px;">
+                                <li><strong>Inverse Kinematics:</strong> AI models can learn to solve IK problems more efficiently than traditional methods</li>
+                                <li><strong>Grasp Planning:</strong> Deep learning predicts optimal grasp points for objects</li>
+                                <li><strong>Force Control:</strong> Adaptive control systems adjust grip strength based on learned models</li>
+                                <li><strong>Dexterous Manipulation:</strong> Reinforcement learning enables complex in-hand manipulation</li>
+                            </ul>
+                            <div style="display: flex; margin-top: 15px; align-items: center;">
+                                <div style="width: 60%; padding-right: 20px;">
+                                    <p><strong>Example:</strong> OpenAI's Dactyl system used reinforcement learning to train a robotic hand to manipulate a cube, achieving human-like dexterity through trial and error in simulation before transferring to real hardware.</p>
+                                </div>
+                                <div style="width: 40%; background-color: #f5f5f5; padding: 10px; border-radius: 5px; text-align: center;">
+                                    <div style="font-weight: bold; margin-bottom: 5px;">Manipulation Learning Pipeline</div>
+                                    <div style="font-size: 0.9em;">
+                                        Simulation Training → Domain Randomization → Real-World Transfer
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 style="color: #2980b9; background-color: #ebf5fb; padding: 10px; border-radius: 3px;">5. Human-Robot Interaction (HRI)</h3>
+                            <p>AI enables natural interaction between humans and robots:</p>
+                            <div style="display: flex; justify-content: space-between; margin-top: 15px;">
+                                <div style="width: 32%; background-color: #f0f7fd; padding: 10px; border-radius: 5px;">
+                                    <h4 style="margin-top: 0; color: #2980b9;">Natural Language Processing</h4>
+                                    <ul style="padding-left: 20px; font-size: 0.9em;">
+                                        <li>Voice command recognition</li>
+                                        <li>Conversational interfaces</li>
+                                        <li>Instruction understanding</li>
+                                    </ul>
+                                </div>
+                                <div style="width: 32%; background-color: #f0f7fd; padding: 10px; border-radius: 5px;">
+                                    <h4 style="margin-top: 0; color: #2980b9;">Gesture Recognition</h4>
+                                    <ul style="padding-left: 20px; font-size: 0.9em;">
+                                        <li>Hand gesture interpretation</li>
+                                        <li>Body language understanding</li>
+                                        <li>Collaborative task signaling</li>
+                                    </ul>
+                                </div>
+                                <div style="width: 32%; background-color: #f0f7fd; padding: 10px; border-radius: 5px;">
+                                    <h4 style="margin-top: 0; color: #2980b9;">Affective Computing</h4>
+                                    <ul style="padding-left: 20px; font-size: 0.9em;">
+                                        <li>Emotion recognition</li>
+                                        <li>Personality modeling</li>
+                                        <li>Adaptive behavior</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="margin-bottom: 40px; background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">Advanced AI Techniques in Robotics</h2>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <h3 style="color: #8e44ad;">1. Reinforcement Learning (RL) in Robotics</h3>
+                            <p>RL has become a cornerstone for training robotic agents through trial and error:</p>
+                            
+                            <div style="background-color: #f5eef8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+                                <strong>Key Components:</strong>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>State space:</strong> Representation of the robot's environment</li>
+                                    <li><strong>Action space:</strong> Possible movements/actions the robot can take</li>
+                                    <li><strong>Reward function:</strong> Feedback signal guiding learning</li>
+                                    <li><strong>Policy:</strong> Strategy mapping states to actions</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="display: flex; justify-content: space-between; margin-top: 15px;">
+                                <div style="width: 48%; background-color: #f9f9f9; padding: 15px; border-radius: 5px;">
+                                    <h4 style="margin-top: 0; color: #8e44ad;">Challenges in RL for Robotics</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Sample inefficiency (real-world trials are expensive)</li>
+                                        <li>Safety concerns during exploration</li>
+                                        <li>Sim-to-real transfer gap</li>
+                                        <li>Sparse reward problems</li>
+                                    </ul>
+                                </div>
+                                <div style="width: 48%; background-color: #f9f9f9; padding: 15px; border-radius: 5px;">
+                                    <h4 style="margin-top: 0; color: #8e44ad;">Solutions</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Simulation training with domain randomization</li>
+                                        <li>Imitation learning to bootstrap policies</li>
+                                        <li>Hierarchical RL for complex tasks</li>
+                                        <li>Curriculum learning to progressively increase difficulty</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <h3 style="color: #8e44ad;">2. Swarm Robotics and Multi-Agent Systems</h3>
+                            <p>AI coordinates behavior among multiple robots:</p>
+                            <div style="display: flex; margin-top: 15px;">
+                                <div style="width: 60%; padding-right: 20px;">
+                                    <ul style="padding-left: 20px;">
+                                        <li><strong>Emergent behavior:</strong> Complex group behavior from simple individual rules</li>
+                                        <li><strong>Distributed control:</strong> No central controller, local decision-making</li>
+                                        <li><strong>Scalability:</strong> Systems can grow by adding more agents</li>
+                                        <li><strong>Robustness:</strong> Failure of individual agents doesn't cripple the system</li>
+                                    </ul>
+                                    <div style="background-color: #eaf2f8; padding: 10px; border-radius: 5px; margin-top: 10px;">
+                                        <strong>Applications:</strong> Search and rescue, environmental monitoring, construction, agriculture
+                                    </div>
+                                </div>
+                                <div style="width: 40%; background-color: #f5f5f5; padding: 15px; border-radius: 5px;">
+                                    <div style="font-weight: bold; text-align: center; margin-bottom: 10px;">Swarm Intelligence Algorithms</div>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Ant Colony Optimization</li>
+                                        <li>Particle Swarm Optimization</li>
+                                        <li>Flocking Algorithms</li>
+                                        <li>Market-Based Approaches</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 style="color: #8e44ad;">3. Cognitive Architectures for Robotics</h3>
+                            <p>Integrated frameworks combining multiple AI capabilities:</p>
+                            
+                            <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+                                <thead>
+                                    <tr style="background-color: #2c3e50; color: white;">
+                                        <th style="padding: 10px; text-align: left;">Architecture</th>
+                                        <th style="padding: 10px; text-align: left;">Description</th>
+                                        <th style="padding: 10px; text-align: left;">Application</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #ddd;">
+                                        <td style="padding: 10px; font-weight: bold;">SOAR</td>
+                                        <td style="padding: 10px;">Rule-based system with learning capabilities</td>
+                                        <td style="padding: 10px;">Decision-making in UAVs</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #ddd;">
+                                        <td style="padding: 10px; font-weight: bold;">ACT-R</td>
+                                        <td style="padding: 10px;">Cognitive model simulating human thought</td>
+                                        <td style="padding: 10px;">Human-robot collaboration</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #ddd;">
+                                        <td style="padding: 10px; font-weight: bold;">Subsumption</td>
+                                        <td style="padding: 10px;">Layered architecture for reactive control</td>
+                                        <td style="padding: 10px;">Autonomous vehicles</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 10px; font-weight: bold;">ROS-based</td>
+                                        <td style="padding: 10px;">Modular architecture using Robot Operating System</td>
+                                        <td style="padding: 10px;">Research robotics platforms</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                
+                    <section style="margin-bottom: 40px; background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">Challenges and Future Directions</h2>
+                        
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+                            <div style="width: 48%; background-color: #fef9e7; padding: 15px; border-radius: 5px;">
+                                <h3 style="color: #d35400; margin-top: 0;">Current Challenges</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Real-time performance:</strong> AI algorithms must operate within tight time constraints</li>
+                                    <li><strong>Energy efficiency:</strong> AI computations can be power-intensive for mobile robots</li>
+                                    <li><strong>Safety and reliability:</strong> Ensuring fail-safe operation in uncertain environments</li>
+                                    <li><strong>Explainability:</strong> Understanding why AI systems make specific decisions</li>
+                                    <li><strong>Generalization:</strong> Adapting to novel situations beyond training data</li>
+                                </ul>
+                            </div>
+                            <div style="width: 48%; background-color: #e8f8f5; padding: 15px; border-radius: 5px;">
+                                <h3 style="color: #1e8449; margin-top: 0;">Emerging Trends</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Neuromorphic computing:</strong> Brain-inspired hardware for efficient AI</li>
+                                    <li><strong>Meta-learning:</strong> Learning to learn for rapid adaptation</li>
+                                    <li><strong>Multi-modal learning:</strong> Integrating vision, touch, audio, etc.</li>
+                                    <li><strong>Cloud robotics:</strong> Offloading computation to cloud resources</li>
+                                    <li><strong>Edge AI:</strong> On-device processing for low-latency response</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="background-color: #ebf5fb; padding: 15px; border-radius: 5px;">
+                            <h3 style="color: #2980b9; margin-top: 0;">Ethical Considerations</h3>
+                            <div style="display: flex; justify-content: space-between;">
+                                <div style="width: 48%;">
+                                    <h4 style="color: #2c3e50;">Technical Ethics</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Algorithmic bias in decision-making</li>
+                                        <li>Privacy concerns with surveillance capabilities</li>
+                                        <li>Security against malicious use</li>
+                                    </ul>
+                                </div>
+                                <div style="width: 48%;">
+                                    <h4 style="color: #2c3e50;">Social Impact</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Workforce displacement and job transformation</li>
+                                        <li>Human dignity in human-robot interaction</li>
+                                        <li>Accountability for autonomous decisions</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: #eef3f9; color: rgb(116, 77, 234); padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                        <h2 style="border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">Conclusion</h2>
+                        <p>The integration of AI concepts into robotics has transformed the field, enabling machines to operate with unprecedented autonomy and adaptability. From fundamental perception and control to advanced learning and cognitive capabilities, AI provides the tools robots need to navigate and interact with complex, dynamic environments.</p>
+                        <p>As the field progresses, the focus will shift toward:</p>
+                        <ul style="padding-left: 20px;">
+                            <li>More robust and generalizable learning algorithms</li>
+                            <li>Tighter integration between perception, cognition, and action</li>
+                            <li>Improved human-robot collaboration paradigms</li>
+                            <li>Ethical frameworks for autonomous decision-making</li>
+                        </ul>
+                        <div style="background-color: rgba(255,255,255,0.1); padding: 15px; border-radius: 5px; margin-top: 15px; text-align: center; font-style: italic;">
+                            "The future of robotics lies not in replacing humans, but in creating intelligent systems that can collaborate with us, augment our capabilities, and operate safely in our shared environments."
+                        </div>
+                    </section>
+                
+                    
+
+               </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [ ];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics") ? "../AI for Robotics.json" : "../AI for Robotics.json";
+
+                                              
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch AI for Robotics Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.AI_for_Robotics;
+                        displayTopics(allTopics);
+                    }
+                    )
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+           
+            
+            
+            
+            
+            
+            
+            </body>
+            </html>        

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer Network</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/allsubject.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Computer Networks</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                
+                <h1>Quantum Networks in Computer Networks</h1>
+                        
+                
+                    <!-- Introduction Section -->
+                    <div style="background-color: #3ff6e6; border-left: 5px solid #e4dcea; padding: 25px; margin-bottom: 40px; border-radius: 0 10px 10px 0;">
+                        <h2 style="color: #09181a; margin-top: 0; font-size: 1.8em;">Introduction to Quantum Networks</h2>
+                        <p>Quantum networks leverage the principles of quantum mechanics to enable fundamentally new capabilities in communication, including quantum key distribution (QKD), quantum teleportation, and distributed quantum computing. These networks operate using quantum bits (qubits) that can exist in superposition and become entangled, allowing for unprecedented security and computational power.</p>
+                    </div>
+                
+                    <!-- Key Components Section -->
+                    <h2 style="color: #6a0dad; border-left: 4px solid #6a0dad; padding-left: 15px; font-size: 1.8em; margin-top: 40px;">Key Components of Quantum Networks</h2>
+                
+                    <div style="background-color: white; border-radius: 8px; padding: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); margin-bottom: 25px;">
+                        <h3 style="color: #9370db; font-size: 1.4em; margin-top: 0;">1. Quantum Nodes</h3>
+                        <p>Quantum nodes are the endpoints in a quantum network that can generate, process, store, and measure quantum information. They typically consist of:</p>
+                        <ul style="padding-left: 20px;">
+                            <li>Quantum processors (trapped ions, superconducting circuits, etc.)</li>
+                            <li>Quantum memory units</li>
+                            <li>Classical control systems</li>
+                            <li>Interface with conventional networks</li>
+                        </ul>
+                    </div>
+                
+                    <div style="background-color: white; border-radius: 8px; padding: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); margin-bottom: 25px;">
+                        <h3 style="color: #9370db; font-size: 1.4em; margin-top: 0;">2. Quantum Channels</h3>
+                        <p>Specialized communication links that can transmit quantum states:</p>
+                        <ul style="padding-left: 20px;">
+                            <li><strong>Optical fibers:</strong> Most common medium using photons</li>
+                            <li><strong>Free-space links:</strong> For satellite-based quantum communication</li>
+                            <li><strong>Hybrid approaches:</strong> Combining different channel types</li>
+                        </ul>
+                        <div style="background-color: #f0e6ff; padding: 15px; border-radius: 5px; margin-top: 15px;">
+                            <p style="margin: 0;"><strong>Example:</strong> The Micius satellite established a 1,200km quantum channel between China and Austria, enabling intercontinental quantum-secured communication.</p>
+                        </div>
+                    </div>
+                
+                    <div style="background-color: white; border-radius: 8px; padding: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); margin-bottom: 25px;">
+                        <h3 style="color: #9370db; font-size: 1.4em; margin-top: 0;">3. Quantum Repeaters</h3>
+                        <p>Devices that extend the range of quantum communication by overcoming photon loss:</p>
+                        <ul style="padding-left: 20px;">
+                            <li>Entanglement swapping to connect shorter segments</li>
+                            <li>Quantum error correction</li>
+                            <li>Memory-based approaches for storing quantum states</li>
+                        </ul>
+                        <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; font-family: monospace; margin: 10px 0;">
+                            Entanglement Rate ∝ 1/(distance)<sup>α</sup> where α ≈ 1 for repeaters vs α ≈ 2 without
+                        </div>
+                    </div>
+                
+                    <!-- Quantum Network Protocols Section -->
+                    <h2 style="color: #6a0dad; border-left: 4px solid #6a0dad; padding-left: 15px; font-size: 1.8em; margin-top: 40px;">Quantum Network Protocols</h2>
+                
+                    <div style="background-color: white; border-radius: 8px; padding: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); margin-bottom: 25px;">
+                        <h3 style="color: #9370db; font-size: 1.4em; margin-top: 0;">1. Quantum Key Distribution (QKD)</h3>
+                        <p>QKD enables two parties to produce a shared random secret key known only to them, which can then be used to encrypt and decrypt messages:</p>
+                        <ul style="padding-left: 20px;">
+                            <li><strong>BB84 Protocol:</strong> First practical QKD protocol using photon polarization</li>
+                            <li><strong>E91 Protocol:</strong> Uses quantum entanglement</li>
+                            <li><strong>Continuous-variable QKD:</strong> Uses properties like quadrature amplitudes</li>
+                        </ul>
+                        <div style="background-color: #f0e6ff; padding: 15px; border-radius: 5px; margin-top: 15px;">
+                            <p style="margin: 0;"><strong>Security Proof:</strong> Any eavesdropping attempt on QKD necessarily disturbs the quantum states, revealing the presence of the eavesdropper.</p>
+                        </div>
+                    </div>
+                
+                    <div style="background-color: white; border-radius: 8px; padding: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); margin-bottom: 25px;">
+                        <h3 style="color: #9370db; font-size: 1.4em; margin-top: 0;">2. Quantum Teleportation Protocols</h3>
+                        <p>Techniques for transferring quantum states between distant locations:</p>
+                        <ul style="padding-left: 20px;">
+                            <li>Requires pre-shared entanglement</li>
+                            <li>Uses classical communication</li>
+                            <li>Fundamental for quantum repeaters</li>
+                        </ul>
+                        <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; font-family: monospace; margin: 10px 0;">
+                            Fidelity = |⟨ψ<sub>sent</sub>|ψ<sub>received</sub>⟩|<sup>2</sup>
+                        </div>
+                    </div>
+                
+                    <!-- Comparison Section -->
+                    <h2 style="color: #6a0dad; border-left: 4px solid #6a0dad; padding-left: 15px; font-size: 1.8em; margin-top: 40px;">Quantum vs Classical Networks</h2>
+                
+                    <div style="overflow-x: auto; margin-bottom: 40px;">
+                        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                            <tr style="background-color: #6a0dad; color: white;">
+                                <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Feature</th>
+                                <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Classical Networks</th>
+                                <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Quantum Networks</th>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="padding: 12px; border: 1px solid #ddd;">Information Unit</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">Bits (0 or 1)</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">Qubits (superposition of 0 and 1)</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px; border: 1px solid #ddd;">Security</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">Computationally secure</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">Information-theoretically secure</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="padding: 12px; border: 1px solid #ddd;">Communication</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">Signal amplification possible</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">No-cloning theorem prevents amplification</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px; border: 1px solid #ddd;">Entanglement</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">Not available</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">Fundamental resource</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="padding: 12px; border: 1px solid #ddd;">Current Speed</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">Gbps-Tbps</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">Kbps-Mbps (for QKD)</td>
+                            </tr>
+                        </table>
+                    </div>
+                
+                    <!-- Applications Section -->
+                    <h2 style="color: #6a0dad; border-left: 4px solid #6a0dad; padding-left: 15px; font-size: 1.8em; margin-top: 40px;">Applications of Quantum Networks</h2>
+                
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 25px;">
+                        <div style="background-color: white; border-radius: 8px; padding: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                            <h3 style="color: #9370db; font-size: 1.4em; margin-top: 0;">1. Ultra-Secure Communication</h3>
+                            <p>Quantum networks enable:</p>
+                            <ul style="padding-left: 20px;">
+                                <li>Unhackable communication channels</li>
+                                <li>Secure voting systems</li>
+                                <li>Military-grade encryption</li>
+                                <li>Financial transaction security</li>
+                            </ul>
+                        </div>
+                
+                        <div style="background-color: white; border-radius: 8px; padding: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                            <h3 style="color: #9370db; font-size: 1.4em; margin-top: 0;">2. Distributed Quantum Computing</h3>
+                            <p>Connecting quantum processors to:</p>
+                            <ul style="padding-left: 20px;">
+                                <li>Increase computational power</li>
+                                <li>Solve complex optimization problems</li>
+                                <li>Enable quantum cloud services</li>
+                                <li>Facilitate quantum machine learning</li>
+                            </ul>
+                        </div>
+                
+                        <div style="background-color: white; border-radius: 8px; padding: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                            <h3 style="color: #9370db; font-size: 1.4em; margin-top: 0;">3. Quantum Internet</h3>
+                            <p>The future global quantum network will provide:</p>
+                            <ul style="padding-left: 20px;">
+                                <li>Quantum-secured infrastructure</li>
+                                <li>Entanglement distribution as a service</li>
+                                <li>Clock synchronization at unprecedented precision</li>
+                                <li>Enhanced telescope networks</li>
+                            </ul>
+                        </div>
+                    </div>
+                
+                    <!-- Challenges Section -->
+                    <h2 style="color: #6a0dad; border-left: 4px solid #6a0dad; padding-left: 15px; font-size: 1.8em; margin-top: 40px;">Technical Challenges</h2>
+                
+                    <div style="background-color: white; border-radius: 8px; padding: 25px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); margin-top: 25px;">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                            <div>
+                                <h3 style="color: #9370db; font-size: 1.3em; margin-top: 0;">1. Decoherence</h3>
+                                <p>Quantum states are fragile and easily disturbed by environmental interactions, limiting:</p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Transmission distances</li>
+                                    <li>Storage times</li>
+                                    <li>Processing capabilities</li>
+                                </ul>
+                            </div>
+                
+                            <div>
+                                <h3 style="color: #9370db; font-size: 1.3em; margin-top: 0;">2. Error Rates</h3>
+                                <p>Current quantum systems have:</p>
+                                <ul style="padding-left: 20px;">
+                                    <li>High gate error rates</li>
+                                    <li>Measurement inaccuracies</li>
+                                    <li>Noise susceptibility</li>
+                                </ul>
+                            </div>
+                
+                            <div>
+                                <h3 style="color: #9370db; font-size: 1.3em; margin-top: 0;">3. Scalability</h3>
+                                <p>Challenges in building large-scale networks:</p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Quantum memory limitations</li>
+                                    <li>Integration with classical infrastructure</li>
+                                    <li>Standardization issues</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Current Implementations Section -->
+                    <h2 style="color: #6a0dad; border-left: 4px solid #6a0dad; padding-left: 15px; font-size: 1.8em; margin-top: 40px;">Current Implementations</h2>
+                
+                    <div style="background-color: white; border-radius: 8px; padding: 25px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); margin-top: 25px;">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+                            <div>
+                                <h3 style="color: #9370db; font-size: 1.3em; margin-top: 0;">1. National Quantum Networks</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>China:</strong> 4,600km Beijing-Shanghai QKD backbone</li>
+                                    <li><strong>EU:</strong> Quantum Internet Alliance developing pan-European network</li>
+                                    <li><strong>USA:</strong> DOE's 3-node quantum network testbed</li>
+                                </ul>
+                            </div>
+                
+                            <div>
+                                <h3 style="color: #9370db; font-size: 1.3em; margin-top: 0;">2. Commercial Deployments</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>ID Quantique:</strong> Commercial QKD systems</li>
+                                    <li><strong>Toshiba:</strong> Quantum key distribution for financial sector</li>
+                                    <li><strong>Quantum Xchange:</strong> US quantum network infrastructure</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Future Outlook Section -->
+                    <h2 style="color: #6a0dad; border-left: 4px solid #6a0dad; padding-left: 15px; font-size: 1.8em; margin-top: 40px;">Future Outlook</h2>
+                
+                    <div style="background-color: white; border-radius: 8px; padding: 25px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); margin-top: 25px; margin-bottom: 40px;">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+                            <div>
+                                <h3 style="color: #9370db; font-size: 1.3em; margin-top: 0;">Short-Term (2020s)</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Metropolitan-area QKD networks</li>
+                                    <li>Specialized quantum cloud services</li>
+                                    <li>Hybrid quantum-classical networks</li>
+                                </ul>
+                            </div>
+                
+                            <div>
+                                <h3 style="color: #9370db; font-size: 1.3em; margin-top: 0;">Medium-Term (2030s)</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Continental-scale entanglement distribution</li>
+                                    <li>First quantum internet prototypes</li>
+                                    <li>Widespread quantum-secured infrastructure</li>
+                                </ul>
+                            </div>
+                
+                            <div>
+                                <h3 style="color: #9370db; font-size: 1.3em; margin-top: 0;">Long-Term (2040s+)</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Global quantum internet</li>
+                                    <li>Fully distributed quantum computing</li>
+                                    <li>Quantum network applications we can't yet imagine</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                
+                   
+            </main>  
+            
+            
+
+             <!-- Floating button to open chatbot -->
+    <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+    </div>
+    
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-container");
+            let button = document.getElementById("open-chatbot");
+    
+            if (!chatbot.classList.contains("active")) {
+                chatbot.classList.add("active");
+                button.style.display = "none"; // Hide button when chatbot is open
+            } else {
+                chatbot.classList.remove("active");
+                setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+            }
+        }
+    
+        // Load chatbot HTML dynamically
+        fetch("/chatbot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("chatbot-container").innerHTML += html;
+    
+            // Execute chatbot script after inserting HTML
+            let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+            for (let script of scripts) {
+                let newScript = document.createElement("script");
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript);
+            }
+        })
+        .catch(error => console.error("Error loading chatbot:", error));
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../computernetwork.json" : "computernetwork.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.Computer_Networks;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+        
+       
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

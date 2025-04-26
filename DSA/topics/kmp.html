@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    <link rel="stylesheet" href="../dsa.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../dsa.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+
+            <main class="col-md-7 content">
+                <h1>🔍 Knuth-Morris-Pratt (KMP) Algorithm – In-Depth Explanation</h1>
+            
+                <p>
+                    The **Knuth-Morris-Pratt (KMP) Algorithm** is an **efficient string-searching algorithm**  
+                    that finds occurrences of a **pattern (substring)** within a **text (string)** in **O(N + M) time**.  
+                    It does this by **precomputing** a **Longest Prefix Suffix (LPS) array**,  
+                    which helps in avoiding redundant comparisons.
+                </p>
+            
+                <h2>📌 Why Do We Need KMP?</h2>
+                <p>
+                    The **Naïve (Brute Force) Pattern Matching Algorithm** has a worst-case complexity of **O(N × M)**  
+                    because it **restarts** comparisons every time a mismatch occurs.  
+                    The **KMP algorithm avoids unnecessary comparisons** by **preprocessing the pattern**.
+                </p>
+            
+                <h2>📌 Working of KMP Algorithm</h2>
+                <p>
+                    KMP uses **two main steps**:
+                </p>
+                <ul>
+                    <li>🛠 **Preprocess the Pattern**: Compute the **LPS (Longest Prefix Suffix) array**.</li>
+                    <li>🔍 **Search the Pattern in Text**: Use the **LPS array** to avoid redundant checks.</li>
+                </ul>
+            
+                <h1>🛠 Step 1: Understanding the LPS (Longest Prefix Suffix) Array</h1>
+                <p>
+                    The **LPS array** is a **precomputed array** that stores the length of the **longest proper prefix**  
+                    which is also a **suffix** for each prefix of the pattern.
+                </p>
+            
+                <h3>🔹 **Definition of LPS:**</h3>
+                <p>
+                    **LPS[i]** represents the **length of the longest proper prefix** of `pattern[0...i]`  
+                    which is also a **suffix** of `pattern[0...i]`.
+                </p>
+            
+                <h3>🔹 **Example of LPS Array Construction**</h3>
+                <p>Let’s take the pattern: **"ABABCABAB"**</p>
+                <table border="1">
+                    <tr>
+                        <th>Index (i)</th>
+                        <th>Pattern</th>
+                        <th>LPS[i]</th>
+                        <th>Explanation</th>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>A</td>
+                        <td>0</td>
+                        <td>No proper prefix = suffix.</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>AB</td>
+                        <td>0</td>
+                        <td>No proper prefix = suffix.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>ABA</td>
+                        <td>1</td>
+                        <td>Proper prefix = "A", suffix = "A" (length 1).</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>ABAB</td>
+                        <td>2</td>
+                        <td>Proper prefix = "AB", suffix = "AB" (length 2).</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>ABABC</td>
+                        <td>0</td>
+                        <td>No proper prefix = suffix.</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>ABABCA</td>
+                        <td>1</td>
+                        <td>Proper prefix = "A", suffix = "A" (length 1).</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>ABABCAB</td>
+                        <td>2</td>
+                        <td>Proper prefix = "AB", suffix = "AB" (length 2).</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>ABABCABA</td>
+                        <td>3</td>
+                        <td>Proper prefix = "ABA", suffix = "ABA" (length 3).</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>ABABCABAB</td>
+                        <td>4</td>
+                        <td>Proper prefix = "ABAB", suffix = "ABAB" (length 4).</td>
+                    </tr>
+                </table>
+            
+                <h2>📌 **Step 2: Compute the LPS Array (O(M) Time Complexity)**</h2>
+                <pre><code>
+                void computeLPS(string pattern, vector<int>& lps) {
+                    int M = pattern.size();
+                    int len = 0;
+                    lps[0] = 0; // First character has no prefix-suffix match
+            
+                    int i = 1;
+                    while (i < M) {
+                        if (pattern[i] == pattern[len]) {
+                            len++;
+                            lps[i] = len;
+                            i++;
+                        } else {
+                            if (len != 0) {
+                                len = lps[len - 1]; // Move to previous LPS value
+                            } else {
+                                lps[i] = 0;
+                                i++;
+                            }
+                        }
+                    }
+                }
+                </code></pre>
+            
+                <h1>🔍 Step 3: Searching Pattern in Text (O(N) Time Complexity)</h1>
+                <p>Once the LPS array is computed, we use it to efficiently search the pattern.</p>
+                <pre><code>
+                void KMPSearch(string text, string pattern) {
+                    int N = text.size(), M = pattern.size();
+                    vector<int> lps(M);
+                    computeLPS(pattern, lps);
+            
+                    int i = 0, j = 0; // i = text index, j = pattern index
+                    while (i < N) {
+                        if (text[i] == pattern[j]) {
+                            i++;
+                            j++;
+                        }
+                        if (j == M) {
+                            cout << "Pattern found at index " << i - j << endl;
+                            j = lps[j - 1]; // Move j based on LPS array
+                        } else if (i < N && text[i] != pattern[j]) {
+                            if (j != 0) {
+                                j = lps[j - 1]; // Use LPS array to skip redundant comparisons
+                            } else {
+                                i++;
+                            }
+                        }
+                    }
+                }
+                </code></pre>
+            
+                <h1>⏳ Time Complexity Analysis</h1>
+                <table border="1">
+                    <tr>
+                        <th>Step</th>
+                        <th>Time Complexity</th>
+                    </tr>
+                    <tr>
+                        <td>Computing LPS Array</td>
+                        <td>O(M)</td>
+                    </tr>
+                    <tr>
+                        <td>Searching Pattern in Text</td>
+                        <td>O(N)</td>
+                    </tr>
+                    <tr>
+                        <td>Total Complexity</td>
+                        <td>O(N + M)</td>
+                    </tr>
+                </table>
+            
+                <h1>🌍 Real-World Applications of KMP Algorithm</h1>
+                <ul>
+                    <li>📡 **Text Searching in Large Files** – Used in **search engines, text editors.**</li>
+                    <li>🧬 **DNA Sequence Matching** – Bioinformatics applications.</li>
+                    <li>🔍 **Spam Detection & Plagiarism Checking** – Comparing documents efficiently.</li>
+                    <li>🗂 **Data Compression** – Finding repeated substrings in text files.</li>
+                </ul>
+            
+                <h2>🔗 Next Topics</h2>
+                <ul class="nexttopics-container">
+                    <li><a href="z_algorithm.html">🔎 Z-Algorithm (String Matching)</a></li>
+                    <li><a href="suffix_array.html">📑 Suffix Array & LCP</a></li>
+                    <li><a href="aho_corasick.html">📜 Aho-Corasick Algorithm (Multi-Pattern Matching)</a></li>
+                </ul>
+            </main>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../dsa.json" : "dsa.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.DSA;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    

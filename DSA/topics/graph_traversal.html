@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    <link rel="stylesheet" href="../dsa.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../dsa.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+
+
+
+            <main class="col-md-7 content">
+                <h1>🌉 Graph Traversal – Comprehensive Study Guide</h1>
+            
+                <p>
+                    **Graph Traversal** refers to **systematically visiting** all the vertices  
+                    of a graph. It is an essential concept in graph algorithms used in  
+                    **networking, artificial intelligence, and shortest path problems**.
+                </p>
+            
+                <h2>⚡ Why is Graph Traversal Important?</h2>
+                <ul>
+                    <li>✅ **Used in pathfinding (AI, Robotics, GPS Navigation).**</li>
+                    <li>🚀 **Essential for cycle detection & topological sorting.**</li>
+                    <li>📡 **Used in Web Crawling & Social Networks.**</li>
+                    <li>🔄 **Forms the foundation of advanced graph algorithms.**</li>
+                </ul>
+            
+                <h1>📌 Types of Graph Traversal</h1>
+            
+                <h2>📤 **1. Breadth-First Search (BFS) – Level Order Traversal**</h2>
+                <p>Explores all neighbors before moving to deeper levels.</p>
+                <pre><code>
+                void BFS(vector<vector<int>>& adj, int start) {
+                    queue<int> q;
+                    vector<bool> visited(adj.size(), false);
+                    
+                    q.push(start);
+                    visited[start] = true;
+            
+                    while (!q.empty()) {
+                        int node = q.front();
+                        q.pop();
+                        cout << node << " ";
+            
+                        for (int neighbor : adj[node]) {
+                            if (!visited[neighbor]) {
+                                visited[neighbor] = true;
+                                q.push(neighbor);
+                            }
+                        }
+                    }
+                }
+                </code></pre>
+            
+                <h2>📥 **2. Depth-First Search (DFS) – Recursive & Iterative**</h2>
+                <p>Explores **as deep as possible** before backtracking.</p>
+            
+                <h3>🔍 **Recursive DFS**</h3>
+                <pre><code>
+                void DFS(vector<vector<int>>& adj, int node, vector<bool>& visited) {
+                    visited[node] = true;
+                    cout << node << " ";
+                    
+                    for (int neighbor : adj[node]) {
+                        if (!visited[neighbor]) {
+                            DFS(adj, neighbor, visited);
+                        }
+                    }
+                }
+                </code></pre>
+            
+                <h3>🔄 **Iterative DFS (Using Stack)**</h3>
+                <pre><code>
+                void iterativeDFS(vector<vector<int>>& adj, int start) {
+                    stack<int> s;
+                    vector<bool> visited(adj.size(), false);
+                    
+                    s.push(start);
+                    while (!s.empty()) {
+                        int node = s.top();
+                        s.pop();
+                        
+                        if (!visited[node]) {
+                            cout << node << " ";
+                            visited[node] = true;
+                            for (auto it = adj[node].rbegin(); it != adj[node].rend(); ++it) {
+                                if (!visited[*it]) s.push(*it);
+                            }
+                        }
+                    }
+                }
+                </code></pre>
+            
+                <h1>🔗 Detecting Cycles in Graphs</h1>
+            
+                <h2>📌 **Cycle Detection in Directed Graph (Using DFS)**</h2>
+                <pre><code>
+                bool detectCycleDFS(int node, vector<vector<int>>& adj, vector<bool>& visited, vector<bool>& recStack) {
+                    visited[node] = true;
+                    recStack[node] = true;
+            
+                    for (int neighbor : adj[node]) {
+                        if (!visited[neighbor] && detectCycleDFS(neighbor, adj, visited, recStack))
+                            return true;
+                        else if (recStack[neighbor])
+                            return true;
+                    }
+                    
+                    recStack[node] = false;
+                    return false;
+                }
+                </code></pre>
+            
+                <h1>📜 Topological Sorting (Ordering of Nodes)</h1>
+            
+                <h2>📌 **1. Topological Sorting Using DFS**</h2>
+                <p>Used in **task scheduling & dependency resolution**.</p>
+                <pre><code>
+                void topologicalSortDFS(int node, vector<vector<int>>& adj, vector<bool>& visited, stack<int>& s) {
+                    visited[node] = true;
+                    for (int neighbor : adj[node])
+                        if (!visited[neighbor])
+                            topologicalSortDFS(neighbor, adj, visited, s);
+                    s.push(node);
+                }
+                </code></pre>
+            
+                <h2>📌 **2. Topological Sorting Using Kahn’s Algorithm (BFS)**</h2>
+                <pre><code>
+                void kahnTopologicalSort(vector<vector<int>>& adj, int V) {
+                    vector<int> inDegree(V, 0);
+                    for (auto& edges : adj) for (int v : edges) inDegree[v]++;
+                    
+                    queue<int> q;
+                    for (int i = 0; i < V; i++) if (inDegree[i] == 0) q.push(i);
+            
+                    while (!q.empty()) {
+                        int node = q.front(); q.pop();
+                        cout << node << " ";
+                        for (int neighbor : adj[node]) if (--inDegree[neighbor] == 0) q.push(neighbor);
+                    }
+                }
+                </code></pre>
+            
+                <h1>⏳ Time Complexity Analysis</h1>
+                <table border="1">
+                    <tr>
+                        <th>Algorithm</th>
+                        <th>Time Complexity</th>
+                    </tr>
+                    <tr>
+                        <td>BFS</td>
+                        <td>O(V + E)</td>
+                    </tr>
+                    <tr>
+                        <td>DFS</td>
+                        <td>O(V + E)</td>
+                    </tr>
+                    <tr>
+                        <td>Cycle Detection</td>
+                        <td>O(V + E)</td>
+                    </tr>
+                    <tr>
+                        <td>Topological Sorting</td>
+                        <td>O(V + E)</td>
+                    </tr>
+                </table>
+            
+                <h1>🌍 Real-World Applications of Graph Traversal</h1>
+                <ul>
+                    <li>📡 **Google Maps & GPS Navigation** – Finding the shortest route.</li>
+                    <li>🕵️ **Web Crawling (Google Search Engine)** – Exploring all websites.</li>
+                    <li>🤖 **AI & Robotics** – Pathfinding in automated systems.</li>
+                    <li>🎮 **Game Development** – AI-based movement in strategy games.</li>
+                </ul>
+            
+                <h2>🔗 Next Topics</h2>
+                <ul class="nexttopics-container">
+                    <li><a href="dijkstra.html">📡 Dijkstra’s Algorithm</a></li>
+                    <li><a href="bellman_ford.html">🔍 Bellman-Ford Algorithm</a></li>
+                    <li><a href="topological_sorting.html">📜 Topological Sorting</a></li>
+                </ul>
+            </main>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../dsa.json" : "dsa.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.DSA;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    

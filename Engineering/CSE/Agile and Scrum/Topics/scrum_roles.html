@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agile Anti-Patterns</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Agile and Scrum</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <h1>Scrum Roles in Agile and Scrum</h1>
+                    
+                    <section style="background-color: #ffffff; border-radius: 8px; padding: 20px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                      <h2 style="color: #2980b9; margin-top: 0;">Introduction to Scrum Roles</h2>
+                      <p>Scrum defines three specific roles that form the core team structure. These roles work together to deliver value through iterative development cycles called Sprints.</p>
+                      <div style="display: flex; justify-content: space-around; flex-wrap: wrap; margin: 20px 0;">
+                        <div style="background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%); color: white; padding: 15px; border-radius: 8px; width: 30%; min-width: 250px; margin: 10px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                          <h3 style="margin-top: 0;">Product Owner</h3>
+                          <p style="font-size: 0.9em;">The voice of the customer and business</p>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #eb8175 0%, #e46c5f 100%); color: white; padding: 15px; border-radius: 8px; width: 30%; min-width: 250px; margin: 10px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                          <h3 style="margin-top: 0;">Scrum Master</h3>
+                          <p style="font-size: 0.9em;">The facilitator and process coach</p>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%); color: white; padding: 15px; border-radius: 8px; width: 30%; min-width: 250px; margin: 10px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                          <h3 style="margin-top: 0;">Development Team</h3>
+                          <p style="font-size: 0.9em;">The builders and creators</p>
+                        </div>
+                      </div>
+                    </section>
+                  
+                    <section style="background-color: #ffffff; border-radius: 8px; padding: 20px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                      <h2 style="color: #2980b9; margin-top: 0;">The Product Owner (PO)</h2>
+                      
+                      <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                        <div style="flex: 1; min-width: 300px;">
+                          <h3 style="color: #16a085; border-bottom: 2px solid #16a085; padding-bottom: 5px;">Key Responsibilities</h3>
+                          <ul style="padding-left: 20px;">
+                            <li>Defines and communicates product vision</li>
+                            <li>Creates and maintains the Product Backlog</li>
+                            <li>Prioritizes backlog items based on value</li>
+                            <li>Ensures backlog transparency and clarity</li>
+                            <li>Makes final decisions on release content and timing</li>
+                            <li>Represents stakeholder interests</li>
+                            <li>Accepts or rejects work results</li>
+                          </ul>
+                        </div>
+                        
+                        <div style="flex: 1; min-width: 300px;">
+                          <h3 style="color: #16a085; border-bottom: 2px solid #16a085; padding-bottom: 5px;">Characteristics</h3>
+                          <ul style="padding-left: 20px;">
+                            <li>Single person (not a committee)</li>
+                            <li>Strong decision-making authority</li>
+                            <li>Deep understanding of customer needs</li>
+                            <li>Available to the team</li>
+                            <li>Understands both business and technical aspects</li>
+                            <li>Empowered to make product decisions</li>
+                          </ul>
+                        </div>
+                      </div>
+                      
+                      <div style="background-color: #e8f4fc; padding: 15px; border-radius: 8px; margin-top: 20px;">
+                        <h3 style="color: #2980b9; margin-top: 0;">Common Anti-Patterns</h3>
+                        <div style="display: flex; flex-wrap: wrap; gap: 15px;">
+                          <div style="flex: 1; min-width: 200px; background-color: #d4e6f1; padding: 10px; border-radius: 5px;">
+                            <h4 style="color: #1a5276; margin: 5px 0;">Proxy PO</h4>
+                            <p>Someone without real decision-making authority acting as PO</p>
+                          </div>
+                          <div style="flex: 1; min-width: 200px; background-color: #d4e6f1; padding: 10px; border-radius: 5px;">
+                            <h4 style="color: #1a5276; margin: 5px 0;">Absent PO</h4>
+                            <p>PO not available to answer team questions</p>
+                          </div>
+                          <div style="flex: 1; min-width: 200px; background-color: #d4e6f1; padding: 10px; border-radius: 5px;">
+                            <h4 style="color: #1a5276; margin: 5px 0;">Backlog Neglect</h4>
+                            <p>Not maintaining or prioritizing the backlog</p>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  
+                    <section style="background-color: #ffffff; border-radius: 8px; padding: 20px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                      <h2 style="color: #2980b9; margin-top: 0;">The Scrum Master</h2>
+                      
+                      <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                        <div style="flex: 1; min-width: 300px;">
+                          <h3 style="color: #e74c3c; border-bottom: 2px solid #e74c3c; padding-bottom: 5px;">Primary Responsibilities</h3>
+                          <ul style="padding-left: 20px;">
+                            <li>Ensures Scrum is understood and enacted</li>
+                            <li>Removes impediments to team progress</li>
+                            <li>Facilitates Scrum events</li>
+                            <li>Coaches the team in self-organization</li>
+                            <li>Shields the team from external interruptions</li>
+                            <li>Promotes continuous improvement</li>
+                            <li>Works with the organization to adopt Scrum</li>
+                          </ul>
+                        </div>
+                        
+                        <div style="flex: 1; min-width: 300px;">
+                          <h3 style="color: #e74c3c; border-bottom: 2px solid #e74c3c; padding-bottom: 5px;">Servant Leadership</h3>
+                          <p>The Scrum Master serves the:</p>
+                          <ul style="padding-left: 20px;">
+                            <li><strong>Development Team:</strong> Coaching, removing blockers</li>
+                            <li><strong>Product Owner:</strong> Backlog techniques, stakeholder management</li>
+                            <li><strong>Organization:</strong> Leading Scrum adoption</li>
+                          </ul>
+                        </div>
+                      </div>
+                      
+                      <div style="background-color: #fdedec; padding: 15px; border-radius: 8px; margin-top: 20px;">
+                        <h3 style="color: #c0392b; margin-top: 0;">Common Misconceptions</h3>
+                        <div style="display: flex; flex-wrap: wrap; gap: 15px;">
+                          <div style="flex: 1; min-width: 200px; background-color: #fadbd8; padding: 10px; border-radius: 5px;">
+                            <h4 style="color: #922b21; margin: 5px 0;">Not a Project Manager</h4>
+                            <p>Doesn't manage people or assign tasks</p>
+                          </div>
+                          <div style="flex: 1; min-width: 200px; background-color: #fadbd8; padding: 10px; border-radius: 5px;">
+                            <h4 style="color: #922b21; margin: 5px 0;">Not a Secretary</h4>
+                            <p>Doesn't just take notes or schedule meetings</p>
+                          </div>
+                          <div style="flex: 1; min-width: 200px; background-color: #fadbd8; padding: 10px; border-radius: 5px;">
+                            <h4 style="color: #922b21; margin: 5px 0;">Not a Technical Lead</h4>
+                            <p>Doesn't make technical decisions for the team</p>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  
+                    <section style="background-color: #ffffff; border-radius: 8px; padding: 20px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                      <h2 style="color: #2980b9; margin-top: 0;">The Development Team</h2>
+                      
+                      <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                        <div style="flex: 1; min-width: 300px;">
+                          <h3 style="color: #27ae60; border-bottom: 2px solid #27ae60; padding-bottom: 5px;">Key Characteristics</h3>
+                          <ul style="padding-left: 20px;">
+                            <li>Self-organizing (decides how to do the work)</li>
+                            <li>Cross-functional (all skills needed to deliver)</li>
+                            <li>No titles or sub-teams within the team</li>
+                            <li>Typically 3-9 members</li>
+                            <li>Accountable for delivering increments</li>
+                            <li>Collaborative and focused</li>
+                          </ul>
+                        </div>
+                        
+                        <div style="flex: 1; min-width: 300px;">
+                          <h3 style="color: #27ae60; border-bottom: 2px solid #27ae60; padding-bottom: 5px;">Responsibilities</h3>
+                          <ul style="padding-left: 20px;">
+                            <li>Delivering potentially shippable increments</li>
+                            <li>Estimating work items</li>
+                            <li>Managing their own work</li>
+                            <li>Ensuring quality</li>
+                            <li>Adapting based on feedback</li>
+                            <li>Improving their process</li>
+                          </ul>
+                        </div>
+                      </div>
+                      
+                      <div style="background-color: #e8f8f5; padding: 15px; border-radius: 8px; margin-top: 20px;">
+                        <h3 style="color: #1e8449; margin-top: 0;">Team Composition</h3>
+                        <div style="display: flex; flex-wrap: wrap; gap: 15px;">
+                          <div style="flex: 1; min-width: 200px; background-color: #d5f5e3; padding: 10px; border-radius: 5px;">
+                            <h4 style="color: #145a32; margin: 5px 0;">Skills</h4>
+                            <p>Developers, testers, designers, analysts - whatever skills needed to deliver</p>
+                          </div>
+                          <div style="flex: 1; min-width: 200px; background-color: #d5f5e3; padding: 10px; border-radius: 5px;">
+                            <h4 style="color: #145a32; margin: 5px 0;">T-Shaped</h4>
+                            <p>Deep expertise in one area, but able to contribute in others</p>
+                          </div>
+                          <div style="flex: 1; min-width: 200px; background-color: #d5f5e3; padding: 10px; border-radius: 5px;">
+                            <h4 style="color: #145a32; margin: 5px 0;">Collaboration</h4>
+                            <p>Works together daily, shares knowledge, pairs when needed</p>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  
+                    <section style="background-color: #ffffff; border-radius: 8px; padding: 20px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                      <h2 style="color: #2980b9; margin-top: 0;">How the Roles Work Together</h2>
+                      
+                      <div style="text-align: center; margin: 20px 0;">
+                        <div style="display: inline-block; background-color: #3498db; color: white; padding: 15px; border-radius: 50%; width: 100px; height: 100px; line-height: 70px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+                          Product<br>Owner
+                        </div>
+                        <div style="display: inline-block; margin: 0 30px; font-size: 24px; vertical-align: middle;">⇄</div>
+                        <div style="display: inline-block; background-color: #e74c3c; color: white; padding: 15px; border-radius: 50%; width: 100px; height: 100px; line-height: 70px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+                          Scrum<br>Master
+                        </div>
+                        <div style="display: inline-block; margin: 0 30px; font-size: 24px; vertical-align: middle;">⇄</div>
+                        <div style="display: inline-block; background-color: #2ecc71; color: white; padding: 15px; border-radius: 50%; width: 100px; height: 100px; line-height: 70px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+                          Development<br>Team
+                        </div>
+                      </div>
+                      
+                      <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                        <div style="flex: 1; min-width: 300px;">
+                          <h3 style="color: #8e44ad; border-bottom: 2px solid #8e44ad; padding-bottom: 5px;">PO ↔ Dev Team</h3>
+                          <ul style="padding-left: 20px;">
+                            <li>PO provides clear requirements</li>
+                            <li>Team provides estimates and feedback</li>
+                            <li>Collaborative refinement sessions</li>
+                            <li>Regular demos and feedback loops</li>
+                          </ul>
+                        </div>
+                        
+                        <div style="flex: 1; min-width: 300px;">
+                          <h3 style="color: #8e44ad; border-bottom: 2px solid #8e44ad; padding-bottom: 5px;">Scrum Master ↔ All</h3>
+                          <ul style="padding-left: 20px;">
+                            <li>Coaches PO on backlog management</li>
+                            <li>Facilitates team self-organization</li>
+                            <li>Helps organization understand Scrum</li>
+                            <li>Removes impediments for all</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </section>
+                  
+                    <section style="background-color: #ffffff; border-radius: 8px; padding: 20px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                      <h2 style="color: #2980b9; margin-top: 0;">Other Stakeholders (Non-Scrum Roles)</h2>
+                      
+                      <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                        <div style="flex: 1; min-width: 300px; background-color: #f4ecf7; padding: 15px; border-radius: 8px;">
+                          <h3 style="color: #8e44ad; margin-top: 0;">Customers/Users</h3>
+                          <p>Provide feedback, use the product, define value</p>
+                        </div>
+                        <div style="flex: 1; min-width: 300px; background-color: #f4ecf7; padding: 15px; border-radius: 8px;">
+                          <h3 style="color: #8e44ad; margin-top: 0;">Managers</h3>
+                          <p>Provide resources, remove organizational impediments</p>
+                        </div>
+                        <div style="flex: 1; min-width: 300px; background-color: #f4ecf7; padding: 15px; border-radius: 8px;">
+                          <h3 style="color: #8e44ad; margin-top: 0;">Subject Matter Experts</h3>
+                          <p>Consulted as needed for specialized knowledge</p>
+                        </div>
+                      </div>
+                      
+                      <div style="margin-top: 20px; background-color: #f9ebea; padding: 15px; border-radius: 8px;">
+                        <h3 style="color: #c0392b; margin-top: 0;">Important Notes</h3>
+                        <ul style="padding-left: 20px;">
+                          <li>These stakeholders don't have direct authority over the Scrum Team</li>
+                          <li>They provide input through the Product Owner</li>
+                          <li>The Scrum Master helps manage these relationships</li>
+                        </ul>
+                      </div>
+                    </section>
+                  
+                    <section style="background-color: #ffffff; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                      <h2 style="color: #2980b9; margin-top: 0;">Role Comparison Table</h2>
+                      
+                      <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+                        <thead>
+                          <tr style="background-color: #3498db; color: white;">
+                            <th style="padding: 12px; text-align: left; border: 1px solid #2980b9;">Role</th>
+                            <th style="padding: 12px; text-align: left; border: 1px solid #2980b9;">Focus</th>
+                            <th style="padding: 12px; text-align: left; border: 1px solid #2980b9;">Accountability</th>
+                            <th style="padding: 12px; text-align: left; border: 1px solid #2980b9;">Key Metrics</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td style="padding: 10px; border: 1px solid #bdc3c7;"><strong>Product Owner</strong></td>
+                            <td style="padding: 10px; border: 1px solid #bdc3c7;">Value, ROI, Requirements</td>
+                            <td style="padding: 10px; border: 1px solid #bdc3c7;">Product Backlog, Release Success</td>
+                            <td style="padding: 10px; border: 1px solid #bdc3c7;">Business value delivered, ROI</td>
+                          </tr>
+                          <tr style="background-color: #f8f9f9;">
+                            <td style="padding: 10px; border: 1px solid #bdc3c7;"><strong>Scrum Master</strong></td>
+                            <td style="padding: 10px; border: 1px solid #bdc3c7;">Process, Improvement, Flow</td>
+                            <td style="padding: 10px; border: 1px solid #bdc3c7;">Scrum Adoption, Impediment Removal</td>
+                            <td style="padding: 10px; border: 1px solid #bdc3c7;">Velocity trends, Cycle time</td>
+                          </tr>
+                          <tr>
+                            <td style="padding: 10px; border: 1px solid #bdc3c7;"><strong>Development Team</strong></td>
+                            <td style="padding: 10px; border: 1px solid #bdc3c7;">Technical Quality, Delivery</td>
+                            <td style="padding: 10px; border: 1px solid #bdc3c7;">Increment Quality, Sprint Goals</td>
+                            <td style="padding: 10px; border: 1px solid #bdc3c7;">Velocity, Quality metrics</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </section>
+                  
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics/") ? "../Agile_and_Scrum.json" : "../Agile_and_Scrum.json";
+            
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch DSA Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.Agile_and_Scrum;
+                        displayTopics(allTopics);
+                    })
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+           
+            
+            
+            
+            
+            
+            
+            </body>
+            </html>     

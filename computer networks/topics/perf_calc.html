@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer Network</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/allsubject.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Computer Networks</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <h1>Prefix Calculation in Computer Networks</h1>
+                    
+                    <!-- Introduction Section -->
+                    <section style="background-color: #e8f4f8; border-left: 5px solid #3498db; padding: 25px; margin-bottom: 40px; border-radius: 0 10px 10px 0;">
+                        <h2>Introduction to Prefix Calculation</h2>
+                        <p>Prefix calculation is fundamental to IP addressing and subnetting in computer networks. It involves determining network portions of IP addresses, calculating subnet sizes, and optimizing address allocation using CIDR (Classless Inter-Domain Routing) notation.</p>
+                    </section>
+                
+                    <!-- CIDR Notation Basics -->
+                    <section style="margin-bottom: 40px;">
+                        <h2>1. CIDR Notation Basics</h2>
+                        
+                        <div style="background-color: white; border-radius: 8px; padding: 25px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); margin-top: 25px;">
+                            <h3 style="color: #16a085; margin-top: 0;">Understanding CIDR Format</h3>
+                            <p>CIDR notation combines an IP address with a suffix indicating the network prefix length:</p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+                                <div>
+                                    <h4 style="color: #2c3e50; margin-bottom: 10px;">IPv4 Example</h4>
+                                    <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; font-family: monospace;">
+                                        192.168.1.0<span style="color: #e74c3c; font-weight: bold;">/24</span>
+                                    </div>
+                                    <p style="margin-top: 10px;">Where <strong>/24</strong> means first 24 bits are network prefix</p>
+                                </div>
+                                <div>
+                                    <h4 style="color: #2c3e50; margin-bottom: 10px;">IPv6 Example</h4>
+                                    <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; font-family: monospace;">
+                                        2001:db8::<span style="color: #e74c3c; font-weight: bold;">/32</span>
+                                    </div>
+                                    <p style="margin-top: 10px;">Where <strong>/32</strong> means first 32 bits are network prefix</p>
+                                </div>
+                            </div>
+                            
+                            <div style="background-color: #f9f9f9; border-left: 3px solid #3498db; padding: 15px; margin-top: 20px; border-radius: 0 5px 5px 0;">
+                                <p><strong>Key Concept:</strong> The prefix length indicates how many bits of the address define the network portion, with the remaining bits used for host addressing.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <!-- Prefix Length Calculations -->
+                    <section style="margin-bottom: 40px;">
+                        <h2>2. Prefix Length Calculations</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 25px;">
+                            <!-- Determining Prefix Length -->
+                            <div style="background-color: white; border-radius: 8px; padding: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                                <h3>Determining Prefix Length</h3>
+                                <p>Calculate the minimum prefix length needed for a certain number of subnets or hosts:</p>
+                                <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; font-family: monospace; margin: 10px 0;">
+                                    For subnets: n = ⌈log₂(N)⌉<br>
+                                    Prefix = Original_Prefix + n
+                                </div>
+                                <div style="background-color: #eaf7ea; padding: 15px; border-radius: 5px; margin-top: 10px;">
+                                    <strong>Example:</strong> Need 10 subnets from 192.168.1.0/24:<br>
+                                    n = ⌈log₂(10)⌉ = 4<br>
+                                    New prefix = 24 + 4 = /28
+                                </div>
+                            </div>
+                            
+                            <!-- Hosts per Prefix -->
+                            <div style="background-color: white; border-radius: 8px; padding: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                                <h3>Hosts per Prefix</h3>
+                                <p>Calculate maximum hosts for a given prefix length:</p>
+                                <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; font-family: monospace; margin: 10px 0;">
+                                    IPv4: Hosts = 2<sup>(32 - prefix)</sup> - 2<br>
+                                    IPv6: Hosts = 2<sup>(128 - prefix)</sup>
+                                </div>
+                                <div style="background-color: #eaf7ea; padding: 15px; border-radius: 5px; margin-top: 10px;">
+                                    <strong>Example:</strong> /28 prefix in IPv4:<br>
+                                    Hosts = 2<sup>(32-28)</sup> - 2 = 16 - 2 = 14
+                                </div>
+                            </div>
+                            
+                            <!-- Prefix to Subnet Mask -->
+                            <div style="background-color: white; border-radius: 8px; padding: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                                <h3 style="color: #16a085; margin-top: 0;">Prefix to Subnet Mask</h3>
+                                <p>Convert prefix length to dotted-decimal subnet mask:</p>
+                                <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; font-family: monospace; margin: 10px 0;">
+                                    Mask = 2<sup>32</sup> - 2<sup>(32 - prefix)</sup>
+                                </div>
+                                <div style="background-color: #eaf7ea; padding: 15px; border-radius: 5px; margin-top: 10px;">
+                                    <strong>Example:</strong> /26 prefix:<br>
+                                    Mask = 2<sup>32</sup> - 2<sup>6</sup> = 255.255.255.192
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <!-- Subnetting Calculations -->
+                    <section style="margin-bottom: 40px;">
+                        <h2>3. Subnetting Calculations</h2>
+                        
+                        <div style="background-color: white; border-radius: 8px; padding: 25px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); margin-top: 25px;">
+                            <h3>Subnetting Procedure</h3>
+                            <ol style="padding-left: 20px;">
+                                <li>Determine required number of subnets/hosts</li>
+                                <li>Calculate new prefix length</li>
+                                <li>Determine subnet mask</li>
+                                <li>Calculate subnet address ranges</li>
+                                <li>Identify network/broadcast addresses</li>
+                            </ol>
+                            
+                            <div style="margin-top: 20px;">
+                                <h4>Subnetting Example</h4>
+                                <p>Given: 192.168.1.0/24, need 5 subnets with at least 20 hosts each</p>
+                                
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
+                                    <div style="background-color: #f5f5f5; padding: 10px; border-radius: 5px;">
+                                        <strong>Step 1:</strong> Subnets needed = 5<br>
+                                        n = ⌈log₂5⌉ = 3 bits
+                                    </div>
+                                    <div style="background-color: #f5f5f5; padding: 10px; border-radius: 5px;">
+                                        <strong>Step 2:</strong> New prefix = 24 + 3 = /27
+                                    </div>
+                                    <div style="background-color: #f5f5f5; padding: 10px; border-radius: 5px;">
+                                        <strong>Step 3:</strong> Hosts/subnet = 2<sup>5</sup>-2 = 30
+                                    </div>
+                                    <div style="background-color: #f5f5f5; padding: 10px; border-radius: 5px;">
+                                        <strong>Step 4:</strong> Subnet mask = 255.255.255.224
+                                    </div>
+                                </div>
+                                
+                                <div style="margin-top: 20px;">
+                                    <h4>Resulting Subnets</h4>
+                                    <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+                                        <tr style="background-color: #3498db; color: white;">
+                                            <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Subnet</th>
+                                            <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Network Address</th>
+                                            <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Usable Range</th>
+                                            <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Broadcast</th>
+                                        </tr>
+                                        <tr style="background-color: #f2f2f2;">
+                                            <td style="padding: 8px; border: 1px solid #ddd;">1</td>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">192.168.1.0</td>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">192.168.1.1-30</td>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">192.168.1.31</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">2</td>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">192.168.1.32</td>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">192.168.1.33-62</td>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">192.168.1.63</td>
+                                        </tr>
+                                        <tr style="background-color: #f2f2f2;">
+                                            <td style="padding: 8px; border: 1px solid #ddd;">3</td>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">192.168.1.64</td>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">192.168.1.65-94</td>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">192.168.1.95</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <!-- VLSM (Variable Length Subnet Masking) -->
+                    <section style="margin-bottom: 40px;">
+                        <h2>4. VLSM Calculations</h2>
+                        
+                        <div style="background-color: white; border-radius: 8px; padding: 25px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); margin-top: 25px;">
+                            <h3>Variable Length Subnet Masking</h3>
+                            <p>VLSM allows different subnet masks in the same network for efficient address space utilization.</p>
+                            
+                            <div style="margin-top: 20px;">
+                                <h4 style="color: #2c3e50;">VLSM Calculation Steps</h4>
+                                <ol style="padding-left: 20px;">
+                                    <li>Sort subnet requirements from largest to smallest</li>
+                                    <li>Allocate largest subnets first</li>
+                                    <li>Continue with progressively smaller subnets</li>
+                                    <li>Track allocated address ranges</li>
+                                </ol>
+                                
+                                <div style="margin-top: 20px;">
+                                    <h4 style="color: #2c3e50;">VLSM Example</h4>
+                                    <p>Given: 192.168.1.0/24 with requirements:<br>
+                                    - Subnet A: 60 hosts<br>
+                                    - Subnet B: 30 hosts<br>
+                                    - Subnet C: 10 hosts</p>
+                                    
+                                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 15px;">
+                                        <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px;">
+                                            <strong>Subnet A (60 hosts):</strong><br>
+                                            Need 6 host bits (2⁶-2=62)<br>
+                                            Prefix = 32-6 = /26<br>
+                                            Range: 192.168.1.0/26 (0-63)
+                                        </div>
+                                        <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px;">
+                                            <strong>Subnet B (30 hosts):</strong><br>
+                                            Need 5 host bits (2⁵-2=30)<br>
+                                            Prefix = 32-5 = /27<br>
+                                            Range: 192.168.1.64/27 (64-95)
+                                        </div>
+                                        <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px;">
+                                            <strong>Subnet C (10 hosts):</strong><br>
+                                            Need 4 host bits (2⁴-2=14)<br>
+                                            Prefix = 32-4 = /28<br>
+                                            Range: 192.168.1.96/28 (96-111)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <!-- Route Aggregation (Supernetting) -->
+                    <section style="margin-bottom: 40px;">
+                        <h2>5. Route Aggregation (Supernetting)</h2>
+                        
+                        <div style="background-color: white; border-radius: 8px; padding: 25px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); margin-top: 25px;">
+                            <h3 style="color: #16a085; margin-top: 0;">Calculating Aggregate Routes</h3>
+                            <p>Route aggregation combines multiple contiguous networks into a single summarized route.</p>
+                            
+                            <div style="margin-top: 20px;">
+                                <h4 style="color: #2c3e50;">Aggregation Steps</h4>
+                                <ol style="padding-left: 20px;">
+                                    <li>List networks in binary</li>
+                                    <li>Find longest common prefix</li>
+                                    <li>Count matching bits for new prefix</li>
+                                    <li>Verify all networks fall within aggregate</li>
+                                </ol>
+                                
+                                <div style="margin-top: 20px;">
+                                    <h4 style="color: #2c3e50;">Aggregation Example</h4>
+                                    <p>Aggregate these networks:<br>
+                                    192.168.0.0/24<br>
+                                    192.168.1.0/24<br>
+                                    192.168.2.0/24<br>
+                                    192.168.3.0/24</p>
+                                    
+                                    <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin-top: 10px;">
+                                        <strong>Solution:</strong><br>
+                                        Binary: 11000000.10101000.000000<b>00</b>.00000000<br>
+                                        11000000.10101000.000000<b>01</b>.00000000<br>
+                                        11000000.10101000.000000<b>10</b>.00000000<br>
+                                        11000000.10101000.000000<b>11</b>.00000000<br><br>
+                                        Common prefix: first 22 bits<br>
+                                        Aggregate: 192.168.0.0/22
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <!-- IPv6 Prefix Calculations -->
+                    <section style="margin-bottom: 40px;">
+                        <h2>6. IPv6 Prefix Calculations</h2>
+                        
+                        <div style="background-color: white; border-radius: 8px; padding: 25px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); margin-top: 25px;">
+                            <h3 style="color: #16a085; margin-top: 0;">IPv6 Addressing Concepts</h3>
+                            <p>IPv6 uses 128-bit addresses with different prefix calculation considerations.</p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+                                <div>
+                                    <h4 style="color: #2c3e50;">IPv6 Prefix Allocation</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Global unicast: Typically /48 per site</li>
+                                        <li>Subnets: Typically /64</li>
+                                        <li>Interface ID: Last 64 bits</li>
+                                        <li>No broadcast addresses</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 style="color: #2c3e50;">IPv6 Example</h4>
+                                    <p>Given: 2001:db8:acad::/48</p>
+                                    <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; font-family: monospace;">
+                                        Subnet 1: 2001:db8:acad:1::/64<br>
+                                        Subnet 2: 2001:db8:acad:2::/64<br>
+                                        Subnet 3: 2001:db8:acad:3::/64
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-top: 20px;">
+                                <h4>IPv6 Prefix Calculation</h4>
+                                <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; font-family: monospace; margin: 10px 0;">
+                                    Subnets = 2<sup>(subnet_bits)</sup><br>
+                                    Where subnet_bits = new_prefix - original_prefix
+                                </div>
+                                <div style="background-color: #eaf7ea; padding: 15px; border-radius: 5px; margin-top: 10px;">
+                                    <strong>Example:</strong> From 2001:db8::/32 to /48 subnets:<br>
+                                    Subnet bits = 48 - 32 = 16<br>
+                                    Possible subnets = 2<sup>16</sup> = 65,536
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <!-- Practical Tools and Cheat Sheet -->
+                    <section style="margin-bottom: 40px;">
+                        <h2>7. Practical Tools and Cheat Sheet</h2>
+                        
+                        <div style="background-color: white; border-radius: 8px; padding: 25px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); margin-top: 25px;">
+                            <h3 style="color: #16a085; margin-top: 0;">Prefix Length Reference Table</h3>
+                            
+                            <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+                                <tr style="background-color: #3498db; color: white;">
+                                    <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Prefix</th>
+                                    <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">IPv4 Mask</th>
+                                    <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">IPv4 Hosts</th>
+                                    <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">IPv6 Subnets (/64)</th>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="padding: 8px; border: 1px solid #ddd;">/24</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">255.255.255.0</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">254</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">N/A</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">/25</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">255.255.255.128</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">126</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">N/A</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="padding: 8px; border: 1px solid #ddd;">/26</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">255.255.255.192</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">62</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">N/A</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">/30</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">255.255.255.252</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">2</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">N/A</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="padding: 8px; border: 1px solid #ddd;">/48</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">N/A</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">N/A</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">65,536</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">/56</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">N/A</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">N/A</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">256</td>
+                                </tr>
+                            </table>
+                            
+                            <div style="margin-top: 25px;">
+                                <h3 style="color: #16a085;">Online Calculation Tools</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>CIDR.xyz - Interactive CIDR visualizer</li>
+                                    <li>IP Calculator - Subnet and VLSM calculator</li>
+                                    <li>IPv6 Prefix Calculator - Specialized IPv6 tools</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    
+            </main>  
+            
+            
+
+             <!-- Floating button to open chatbot -->
+    <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+    </div>
+    
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-container");
+            let button = document.getElementById("open-chatbot");
+    
+            if (!chatbot.classList.contains("active")) {
+                chatbot.classList.add("active");
+                button.style.display = "none"; // Hide button when chatbot is open
+            } else {
+                chatbot.classList.remove("active");
+                setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+            }
+        }
+    
+        // Load chatbot HTML dynamically
+        fetch("/chatbot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("chatbot-container").innerHTML += html;
+    
+            // Execute chatbot script after inserting HTML
+            let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+            for (let script of scripts) {
+                let newScript = document.createElement("script");
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript);
+            }
+        })
+        .catch(error => console.error("Error loading chatbot:", error));
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../computernetwork.json" : "computernetwork.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.Computer_Networks;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+        
+       
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

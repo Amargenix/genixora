@@ -1,0 +1,479 @@
+/* 🌍 General Styles */
+body {
+    font-family: 'Merriweather', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* 🔝 Navbar General Styling */
+.navbar {
+    background-color: #222 !important;
+    padding: 12px;
+    width: 100%;
+}
+
+/* 📱 Mobile Dropdown Styling */
+@media (max-width: 991px) {
+    .navbar .dropdown-menu {
+        display: none; /* Hide dropdowns initially */
+        position: static;
+        background-color: #343a40; /* Dark dropdown for better visibility */
+        box-shadow: none;
+        width: 100%;
+    }
+    
+    .navbar .dropdown-menu.show {
+        display: block; /* Show dropdown when clicked */
+    }
+
+    .navbar .dropdown-item {
+        color: white !important;
+        padding: 10px 15px;
+    }
+
+    .navbar .dropdown-item:hover {
+        background-color: #007bff;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 🔝 Navbar */
+.navbar {
+    background-color: #222 !important;
+    padding: 12px;
+    width: 100%;
+    z-index: 1000;
+    position: fixed;
+}
+.navbar a {
+    color: white !important;
+    padding: 10px 15px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.navbar a:hover {
+    background-color: #007bff;
+    border-radius: 5px;
+}
+
+/* 📜 Dropdown */
+.navbar .dropdown-menu {
+    background: #343333;
+    border: none;
+    box-shadow: 0px 2px 10px rgba(227, 222, 222, 0.1);
+    min-width: 200px;
+    transition: all 0.1s ease-in-out;
+}
+.navbar .dropdown-item {
+    color: #333;
+    padding: 10px;
+    transition: background 0.3s;
+}
+.navbar .dropdown-item:hover {
+    background: #007bff;
+    color: white;
+}
+
+/* 🚀 Hover Dropdown (Desktop) */
+@media (min-width: 992px) {
+    .navbar .dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
+    }
+}
+
+/* 📱 Mobile Dropdown Fix */
+@media (max-width: 991px) {
+    .navbar .dropdown-menu {
+        position: static;
+        box-shadow: none;
+    }
+}
+
+
+/* 📜 Sidebar */
+.sidebar {
+    width: 220px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 56px;
+    background: #fefefe;
+    padding: 10px;
+    padding-top: 40px;
+    border-right: 2px solid #007bff;
+    overflow-y: auto;   
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.sidebar h2 {
+    text-align: center;
+    font-size: 18px;
+    color: #020202;
+    margin-bottom: 5px;
+}
+.sidebar input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 9px;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+.sidebar li {
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+    background: #fff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
+}
+.sidebar li a {
+    text-decoration: none;
+    color: #007bff;
+    display: block;
+    font-weight: 600;
+}
+.sidebar li:hover, .sidebar li.active {
+    background-color: #cdcdcd;
+    color: #fff;
+}
+.sidebar li.active a {
+    color: #fff;
+}
+
+/* 📖 Main Content - Reading Mode */
+.content {
+    margin-left: 280px;
+    
+    padding-top: 80px;
+    background: #ffffff;
+    color: #333;
+    line-height: 1.8;
+    max-width:98%;
+}
+.content h1 {
+    font-size: 22px;
+    color: #007bff;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.content h3{
+    font-size: 18px;
+
+
+}
+.content h2 {
+    font-size: 17px;
+    color: #333;
+    margin-top: 30px;   
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+}
+.content p {
+    font-size: 16px;
+    line-height: 1.9;
+    text-align: justify;
+    color: #444;
+    margin-bottom: 20px;
+}
+.content ul {
+    padding-left: 20px;
+}
+.content ul li {
+    font-size: 15px;
+    padding: 8px 0;
+}
+
+/* 📝 Cards (for Topics & Related Content) */
+.card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 15px 0;
+    transition: 0.3s;
+}
+.card:hover {
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+.card h3 {
+    color: #007bff;
+    font-size: 15px;
+}
+
+/* 🎨 Buttons */
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+}
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+.btn-secondary {
+    background-color: #555;
+    color: white;
+}
+.btn-secondary:hover {
+    background-color: #777;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 992px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        box-shadow: none;
+    }
+    .content {
+        margin-left: 0;
+        padding: 20px;
+        max-width: 100%;
+    }
+}
+
+
+
+
+/* 📱 Sidebar Grid (Mobile View) */
+@media (max-width: 768px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+        padding-bottom: 20px;
+    }
+
+    #topics-list {
+        display: none; /* Hide normal sidebar in mobile */
+    }
+
+    #topics-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    #topics-grid .col-4 {
+        flex: 0 0 30%; /* 3 in a row */
+        max-width: 30%;
+        text-align: center;
+    }
+
+    #topics-grid a {
+        font-size: 14px;
+        padding: 10px;
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+/* 🔗 Next Topics Row */
+.nexttopics {
+    margin-top: 30px;
+    font-size: 22px;
+    color: #007bff;
+    text-align: center;
+}
+
+/* 📜 Topic List (Horizontal Layout) */
+.nexttopics-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+    list-style: none;
+}
+
+/* 🏷️ Topic Items */
+.nexttopics-container li {
+    display: inline-block;
+}
+
+.nexttopics-container li a {
+    display: block;
+    text-decoration: none;
+    padding: 2px 8px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: 0.3s ease-in-out;
+}
+
+.nexttopics-container li a:hover {
+    background-color: #222529;
+}
+
+/* 📱 Responsive for Mobile */
+@media (max-width: 768px) {
+    .nexttopics-container {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .nexttopics-container li {
+        width: fit-content;
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 🌍 Footer Styling */
+.footer {
+    background-color: #222;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 16px;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+.footer a {
+    color: #007bff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.footer a:hover {
+    color: #ffcc00;
+    text-decoration: underline;
+}
+.footer .social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 20px;
+    transition: 0.3s;
+}
+.footer .social-icons a:hover {
+    color: #007bff;
+}
+
+/* 📱 Responsive Footer */
+@media (max-width: 768px) {
+    .footer {
+        font-size: 14px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 🔝 Back to Top Button (Small Floating Button) */
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none; /* Hidden by default */
+    z-index: 1000;
+    padding: 12px 15px;
+    font-size: 16px;
+    border-radius: 50px; /* Circular shape */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out, transform 0.2s;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔄 Hover Effect */
+#backToTop:hover {
+    background-color: #0056b3;
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* 📱 Mobile Responsive */
+@media (max-width: 768px) {
+    #backToTop {
+        bottom: 15px;
+        right: 15px;
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+    .content {
+        padding-top: 60px;
+        background: #ffffff;
+        color: #333;
+        line-height: 1.8;
+        max-width:98%;
+    }
+
+}

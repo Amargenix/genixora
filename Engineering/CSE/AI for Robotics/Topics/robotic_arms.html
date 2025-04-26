@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Robotics</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>AI for Robotics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+               <h1>Robotic Arms in AI for Robotics</h1>
+             
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 3px 6px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; border-bottom: 3px solid #9b59b6; padding-bottom: 10px; font-size: 1.8em;">Introduction to Robotic Arms</h2>
+                        
+                        <div style="display: flex; gap: 25px; margin-top: 20px;">
+                           
+                            <div style="flex: 2;">
+                                <p style="font-size: 1.1em;">Robotic arms are programmable mechanical systems designed to perform tasks similar to a human arm, often with greater precision, strength, and endurance. When combined with AI, these systems gain adaptive capabilities, enabling complex manipulation in dynamic environments.</p>
+                                
+                                <div style="background-color: #f4ecf7; padding: 15px; border-radius: 6px; margin-top: 15px;">
+                                    <h3 style="color: #8e44ad; margin-top: 0;">Key Characteristics</h3>
+                                    <ul style="columns: 2; column-gap: 20px;">
+                                        <li>Multiple degrees of freedom (typically 4-7)</li>
+                                        <li>Payload capacity from grams to tons</li>
+                                        <li>Repeatability down to microns</li>
+                                        <li>Integrated sensors and actuators</li>
+                                        <li>Programmable control systems</li>
+                                        <li>AI-powered adaptive behavior</li>
+                                        <li>Human-robot collaboration features</li>
+                                        <li>Network connectivity for Industry 4.0</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 3px 6px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 10px; font-size: 1.8em;">Types of Robotic Arms</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 25px;">
+                            <div style="background-color: #eaf2f8; padding: 20px; border-radius: 6px; border-top: 4px solid #3498db;">
+                                <h3 style="color: #2980b9; margin-top: 0;">1. Articulated Arms</h3>
+                                <p>Most common type with rotary joints (3-10 axes). Resembles human arm with shoulder, elbow, and wrist joints.</p>
+                                <p><strong>Applications:</strong> Welding, material handling, assembly</p>
+                                <div style="background-color: #d4e6f7; padding: 10px; border-radius: 4px; margin-top: 10px;">
+                                    <strong>Example:</strong> Fanuc M-2000iA (payload up to 1,350 kg)
+                                </div>
+                            </div>
+                            
+                            <div style="background-color: #e8f8f5; padding: 20px; border-radius: 6px; border-top: 4px solid #1abc9c;">
+                                <h3 style="color: #16a085; margin-top: 0;">2. SCARA</h3>
+                                <p>Selective Compliance Assembly Robot Arm. Fast and precise with 4 axes (3 rotary, 1 linear).</p>
+                                <p><strong>Applications:</strong> Pick-and-place, assembly, packaging</p>
+                                <div style="background-color: #d1f0e5; padding: 10px; border-radius: 4px; margin-top: 10px;">
+                                    <strong>Example:</strong> EPSON T6 (0.3mm repeatability)
+                                </div>
+                            </div>
+                            
+                            <div style="background-color: #fef5e7; padding: 20px; border-radius: 6px; border-top: 4px solid #f39c12;">
+                                <h3 style="color: #e67e22; margin-top: 0;">3. Delta Robots</h3>
+                                <p>Parallel linkage design with 3-4 axes. Extremely fast with light payloads.</p>
+                                <p><strong>Applications:</strong> Food sorting, pharmaceutical packaging</p>
+                                <div style="background-color: #f9ebd0; padding: 10px; border-radius: 4px; margin-top: 10px;">
+                                    <strong>Example:</strong> ABB FlexPicker (150 picks per minute)
+                                </div>
+                            </div>
+                            
+                            <div style="background-color: #f9e9e9; padding: 20px; border-radius: 6px; border-top: 4px solid #e74c3c;">
+                                <h3 style="color: #c0392b; margin-top: 0;">4. Cartesian/Gantry</h3>
+                                <p>Linear movement along X, Y, Z axes. Simple control with high precision.</p>
+                                <p><strong>Applications:</strong> 3D printing, CNC machines, large workspaces</p>
+                                <div style="background-color: #f0d6d6; padding: 10px; border-radius: 4px; margin-top: 10px;">
+                                    <strong>Example:</strong> Staubli TX2-90 (nanometer precision)
+                                </div>
+                            </div>
+                            
+                            <div style="background-color: #e8f8f8; padding: 20px; border-radius: 6px; border-top: 4px solid #16a085;">
+                                <h3 style="color: #16a085; margin-top: 0;">5. Collaborative (Cobots)</h3>
+                                <p>Designed to work safely alongside humans with force limiting and collision detection.</p>
+                                <p><strong>Applications:</strong> Small batch manufacturing, labs</p>
+                                <div style="background-color: #d1f0ed; padding: 10px; border-radius: 4px; margin-top: 10px;">
+                                    <strong>Example:</strong> Universal Robots UR10e (10kg payload)
+                                </div>
+                            </div>
+                            
+                            <div style="background-color: #f4ecf7; padding: 20px; border-radius: 6px; border-top: 4px solid #9b59b6;">
+                                <h3 style="color: #8e44ad; margin-top: 0;">6. Soft Robotic Arms</h3>
+                                <p>Flexible, compliant structures made of elastomers. Safe for delicate operations.</p>
+                                <p><strong>Applications:</strong> Medical, food handling, fragile objects</p>
+                                <div style="background-color: #e8daf0; padding: 10px; border-radius: 4px; margin-top: 10px;">
+                                    <strong>Example:</strong> Festo BionicSoftArm (pneumatic actuation)
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 3px 6px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; border-bottom: 3px solid #e74c3c; padding-bottom: 10px; font-size: 1.8em;">AI Integration in Robotic Arms</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 25px; margin-top: 25px;">
+                            <div style="background-color: #fdedec; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #c0392b; margin-top: 0;">1. Computer Vision</h3>
+                                <p>Enables robotic arms to perceive and understand their environment:</p>
+                                <ul>
+                                    <li><strong>Object detection:</strong> YOLO, Faster R-CNN</li>
+                                    <li><strong>6D pose estimation:</strong> PVNet, DenseFusion</li>
+                                    <li><strong>Depth perception:</strong> Stereo vision, ToF sensors</li>
+                                    <li><strong>Visual servoing:</strong> Real-time position correction</li>
+                                </ul>
+                                <div style="background-color: #f9e0df; padding: 10px; border-radius: 4px; margin-top: 10px;">
+                                    <strong>Application:</strong> Bin picking in unstructured environments
+                                </div>
+                            </div>
+                            
+                            <div style="background-color: #eaf2f8; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #2980b9; margin-top: 0;">2. Motion Planning</h3>
+                                <p>AI algorithms for efficient and collision-free movement:</p>
+                                <ul>
+                                    <li><strong>Path planning:</strong> RRT*, PRM, A*</li>
+                                    <li><strong>Trajectory optimization:</strong> Minimum jerk planning</li>
+                                    <li><strong>Obstacle avoidance:</strong> Potential fields, DWA</li>
+                                    <li><strong>Learning from demonstration:</strong> Imitation learning</li>
+                                </ul>
+                                <div style="background-color: #d4e6f7; padding: 10px; border-radius: 4px; margin-top: 10px;">
+                                    <strong>Application:</strong> Complex assembly tasks
+                                </div>
+                            </div>
+                            
+                            <div style="background-color: #e8f8f5; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #16a085; margin-top: 0;">3. Adaptive Control</h3>
+                                <p>AI-powered controllers that adapt to changing conditions:</p>
+                                <ul>
+                                    <li><strong>Reinforcement learning:</strong> Policy optimization</li>
+                                    <li><strong>Neural PID:</strong> Adaptive gain scheduling</li>
+                                    <li><strong>Force control:</strong> Impedance/admittance control</li>
+                                    <li><strong>Fault detection:</strong> Anomaly detection</li>
+                                </ul>
+                                <div style="background-color: #d1f0e5; padding: 10px; border-radius: 4px; margin-top: 10px;">
+                                    <strong>Application:</strong> Delicate object handling
+                                </div>
+                            </div>
+                            
+                            <div style="background-color: #f4ecf7; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #8e44ad; margin-top: 0;">4. Grasp Planning</h3>
+                                <p>AI models for determining optimal grasping strategies:</p>
+                                <ul>
+                                    <li><strong>Grasp prediction:</strong> GG-CNN, GraspNet</li>
+                                    <li><strong>Multi-finger coordination:</strong> Dexterous manipulation</li>
+                                    <li><strong>Tactile feedback:</strong> Force/torque sensing</li>
+                                    <li><strong>Slip detection:</strong> Vibration analysis</li>
+                                </ul>
+                                <div style="background-color: #e8daf0; padding: 10px; border-radius: 4px; margin-top: 10px;">
+                                    <strong>Application:</strong> Warehouse order fulfillment
+                                </div>
+                            </div>
+                            
+                            <div style="background-color: #fef9e7; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #f39c12; margin-top: 0;">5. Human-Robot Interaction</h3>
+                                <p>AI for safe and intuitive collaboration:</p>
+                                <ul>
+                                    <li><strong>Intent recognition:</strong> Gesture and pose estimation</li>
+                                    <li><strong>Natural language:</strong> Voice command processing</li>
+                                    <li><strong>Safety monitoring:</strong> Real-time collision prediction</li>
+                                    <li><strong>Shared autonomy:</strong> Human-AI control blending</li>
+                                </ul>
+                                <div style="background-color: #f9ebd0; padding: 10px; border-radius: 4px; margin-top: 10px;">
+                                    <strong>Application:</strong> Collaborative assembly lines
+                                </div>
+                            </div>
+                            
+                            <div style="background-color: #e8f7f8; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #1abc9c; margin-top: 0;">6. Predictive Maintenance</h3>
+                                <p>AI for monitoring and optimizing arm performance:</p>
+                                <ul>
+                                    <li><strong>Vibration analysis:</strong> Bearing wear detection</li>
+                                    <li><strong>Thermal monitoring:</strong> Motor overheating</li>
+                                    <li><strong>Performance degradation:</strong> Accuracy trends</li>
+                                    <li><strong>Remaining useful life:</strong> Failure prediction</li>
+                                </ul>
+                                <div style="background-color: #d1f0ed; padding: 10px; border-radius: 4px; margin-top: 10px;">
+                                    <strong>Application:</strong> Industrial robotic cell maintenance
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 3px 6px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; border-bottom: 3px solid #27ae60; padding-bottom: 10px; font-size: 1.8em;">Technical Components</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin-top: 25px;">
+                            <div style="background-color: #e8f8f0; padding: 20px; border-radius: 6px; text-align: center;">
+                                <div style="width: 60px; height: 60px; background-color: #27ae60; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5em;">⚙️</div>
+                                <h3 style="color: #219653; margin-top: 0;">Actuators</h3>
+                                <p>Servo motors, steppers, pneumatics, hydraulics with encoders</p>
+                            </div>
+                            
+                            <div style="background-color: #eaf2f8; padding: 20px; border-radius: 6px; text-align: center;">
+                                <div style="width: 60px; height: 60px; background-color: #3498db; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5em;">🖥️</div>
+                                <h3 style="color: #2980b9; margin-top: 0;">Controllers</h3>
+                                <p>PLCs, industrial PCs, ROS nodes for real-time control</p>
+                            </div>
+                            
+                            <div style="background-color: #f4ecf7; padding: 20px; border-radius: 6px; text-align: center;">
+                                <div style="width: 60px; height: 60px; background-color: #9b59b6; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5em;">👁️</div>
+                                <h3 style="color: #8e44ad; margin-top: 0;">Sensors</h3>
+                                <p>Force/torque, vision, proximity, tactile, inertial</p>
+                            </div>
+                            
+                            <div style="background-color: #fef5e7; padding: 20px; border-radius: 6px; text-align: center;">
+                                <div style="width: 60px; height: 60px; background-color: #f39c12; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5em;">✋</div>
+                                <h3 style="color: #e67e22; margin-top: 0;">End Effectors</h3>
+                                <p>Grippers, tools, suction cups, specialized attachments</p>
+                            </div>
+                            
+                            <div style="background-color: #f9e9e9; padding: 20px; border-radius: 6px; text-align: center;">
+                                <div style="width: 60px; height: 60px; background-color: #e74c3c; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5em;">📊</div>
+                                <h3 style="color: #c0392b; margin-top: 0;">Software</h3>
+                                <p>Motion planning, computer vision, AI/ML frameworks</p>
+                            </div>
+                            
+                            <div style="background-color: #e8f7f8; padding: 20px; border-radius: 6px; text-align: center;">
+                                <div style="width: 60px; height: 60px; background-color: #1abc9c; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5em;">🔌</div>
+                                <h3 style="color: #16a085; margin-top: 0;">Power Systems</h3>
+                                <p>Electrical, pneumatic, or hydraulic power sources</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: #c6d6e7; padding: 30px; border-radius: 8px; margin-bottom: 30px; color: white;">
+                        <h2 style="border-bottom: 3px solid #9b59b6; padding-bottom: 10px; font-size: 1.8em;">Industrial Applications</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 25px;">
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #9b59b6; margin-top: 0;">Automotive Manufacturing</h3>
+                                <p>Welding, painting, assembly with 0.1mm precision</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #9b59b6; margin-top: 0;">Electronics Assembly</h3>
+                                <p>SMD placement, circuit board testing, micro-manipulation</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #9b59b6; margin-top: 0;">Pharmaceuticals</h3>
+                                <p>Precision handling of vials, packaging, lab automation</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #9b59b6; margin-top: 0;">Food Processing</h3>
+                                <p>Sorting, packaging, palletizing with food-grade materials</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #9b59b6; margin-top: 0;">Logistics</h3>
+                                <p>Warehouse automation, parcel sorting, loading/unloading</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #9b59b6; margin-top: 0;">Medical Robotics</h3>
+                                <p>Surgical assistance, rehabilitation, lab automation</p>
+                            </div>
+                        </div>
+                    </section>
+                
+ 
+
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [ ];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics") ? "../AI for Robotics.json" : "../AI for Robotics.json";
+
+                                              
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch AI for Robotics Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.AI_for_Robotics;
+                        displayTopics(allTopics);
+                    }
+                    )
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+           
+            
+            
+            
+            
+            
+            
+            </body>
+            </html>        

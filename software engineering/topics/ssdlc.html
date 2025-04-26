@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../software engineering.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Software Engineering</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+            
+            <main class="col-md-7 content">
+                 <h1>Secure Software Development Lifecycle (SSDLC)</h1>
+            <section id="introduction" style="margin-bottom: 40px;">
+                    <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">1. Introduction to SSDLC</h2>
+                    
+                    <div class="phase-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">1.1 What is SSDLC?</h3>
+                        <p>The <strong>Secure Software Development Lifecycle (SSDLC)</strong> is a framework that integrates security practices into each phase of the software development process. Unlike traditional approaches where security is an afterthought, SSDLC embeds security from inception through deployment and maintenance.</p>
+                        
+                        <div class="diagram" style="margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">SSDLC vs Traditional SDLC</h4>
+                            <p><strong>Traditional:</strong> Security testing at the end</p>
+                            <p><strong>SSDLC:</strong> Security integrated throughout</p>
+                        </div>
+                    </div>
+            
+                    <div class="phase-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">1.2 Benefits of SSDLC</h3>
+                        <table style="width: 100%; border-collapse: collapse; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <tr>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Benefit</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Description</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Impact</th>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Cost Reduction</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Fixing security issues early is cheaper</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">10-100x lower remediation costs</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Risk Mitigation</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Identifies vulnerabilities before deployment</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Reduces breach likelihood</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Compliance</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Meets regulatory requirements</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Avoids fines and penalties</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Reputation</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Builds trust with customers</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Competitive advantage</td>
+                            </tr>
+                        </table>
+                    </div>
+                </section>
+            
+                <section id="phases" style="margin-bottom: 40px;">
+                    <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">2. SSDLC Phases and Security Activities</h2>
+                    
+                    <div class="phase-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">2.1 Requirements Phase</h3>
+                        <div class="security-activity" style="margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">Security Requirements Gathering</h4>
+                            <ul>
+                                <li>Identify security and privacy requirements</li>
+                                <li>Define security use cases and abuse cases</li>
+                                <li>Establish compliance requirements (GDPR, HIPAA, PCI DSS)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="security-activity" style="margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">Risk Assessment</h4>
+                            <ul>
+                                <li>Conduct initial risk analysis</li>
+                                <li>Identify sensitive data elements</li>
+                                <li>Document security assumptions and constraints</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="best-practice" style="background-color: #eafaf1; padding: 15px; border-left: 4px solid #2ecc71; margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">Best Practices</h4>
+                            <ul>
+                                <li>Use OWASP Application Security Verification Standard (ASVS)</li>
+                                <li>Involve security team early</li>
+                                <li>Document security requirements as testable assertions</li>
+                            </ul>
+                        </div>
+                    </div>
+            
+                    <div class="phase-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">2.2 Design Phase</h3>
+                        <div class="security-activity" style="margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">Threat Modeling</h4>
+                            <p>Systematic approach to identifying potential threats:</p>
+                            <ol>
+                                <li>Diagram the application architecture</li>
+                                <li>Identify trust boundaries</li>
+                                <li>Document potential threats (STRIDE methodology)</li>
+                                <li>Prioritize and mitigate risks</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="security-activity" style="margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">Security Architecture Review</h4>
+                            <ul>
+                                <li>Validate authentication and authorization design</li>
+                                <li>Review cryptographic implementations</li>
+                                <li>Assess data protection mechanisms</li>
+                                <li>Verify secure communication channels</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="tool-list" style="margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">Common Tools</h4>
+                            <ul>
+                                <li>Microsoft Threat Modeling Tool</li>
+                                <li>OWASP Threat Dragon</li>
+                                <li>IriusRisk</li>
+                            </ul>
+                        </div>
+                    </div>
+            
+                    <div class="phase-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">2.3 Implementation Phase</h3>
+                        <div class="security-activity" style="margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">Secure Coding Practices</h4>
+                            <ul>
+                                <li>Follow OWASP Secure Coding Guidelines</li>
+                                <li>Implement input validation and output encoding</li>
+                                <li>Use parameterized queries to prevent SQLi</li>
+                                <li>Apply principle of least privilege</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="security-activity" style="margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">Static Application Security Testing (SAST)</h4>
+                            <p>Automated analysis of source code for vulnerabilities:</p>
+                            <table style="width: 100%; border-collapse: collapse; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <tr>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Tool</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Language</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Type</th>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">SonarQube</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Multi-language</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">SAST</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Checkmarx</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Multi-language</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">SAST</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Fortify</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Multi-language</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">SAST</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div class="best-practice" style="background-color: #eafaf1; padding: 15px; border-left: 4px solid #2ecc71; margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">Code Review Guidelines</h4>
+                            <ul>
+                                <li>Conduct peer code reviews with security checklist</li>
+                                <li>Focus on security-critical components first</li>
+                                <li>Verify all security controls are implemented</li>
+                            </ul>
+                        </div>
+                    </div>
+            
+                    <div class="phase-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">2.4 Testing Phase</h3>
+                        <div class="security-activity" style="margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">Dynamic Application Security Testing (DAST)</h4>
+                            <p>Testing running applications for vulnerabilities:</p>
+                            <ul>
+                                <li>OWASP ZAP - Open source web app scanner</li>
+                                <li>Burp Suite - Professional web app testing</li>
+                                <li>Nessus - Network vulnerability scanning</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="security-activity" style="margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">Penetration Testing</h4>
+                            <p>Simulated attacks by ethical hackers:</p>
+                            <ol>
+                                <li>Planning and reconnaissance</li>
+                                <li>Scanning and vulnerability assessment</li>
+                                <li>Exploitation and post-exploitation</li>
+                                <li>Reporting and remediation</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="checklist" style="margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">Security Testing Checklist</h4>
+                            <ul>
+                                <li>Authentication and session management tests</li>
+                                <li>Input validation and injection tests</li>
+                                <li>Cryptographic implementation tests</li>
+                                <li>Error handling and logging tests</li>
+                            </ul>
+                        </div>
+                    </div>
+            
+                    <div class="phase-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">2.5 Deployment Phase</h3>
+                        <div class="security-activity" style="margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">Secure Deployment Practices</h4>
+                            <ul>
+                                <li>Harden production environments</li>
+                                <li>Implement least privilege for service accounts</li>
+                                <li>Secure configuration management</li>
+                                <li>Disable unnecessary services and ports</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="security-activity" style="margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">Runtime Protection</h4>
+                            <ul>
+                                <li>Web Application Firewalls (WAF)</li>
+                                <li>Runtime Application Self-Protection (RASP)</li>
+                                <li>Intrusion Detection/Prevention Systems (IDS/IPS)</li>
+                            </ul>
+                        </div>
+                    </div>
+            
+                    <div class="phase-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">2.6 Maintenance Phase</h3>
+                        <div class="security-activity" style="margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">Vulnerability Management</h4>
+                            <ol>
+                                <li>Continuous monitoring for vulnerabilities</li>
+                                <li>Patch management process</li>
+                                <li>Security update testing and deployment</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="security-activity" style="margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">Incident Response</h4>
+                            <ul>
+                                <li>Establish incident response plan</li>
+                                <li>Define roles and responsibilities</li>
+                                <li>Conduct regular security audits</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            
+                <section id="methodologies" style="margin-bottom: 40px;">
+                    <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">3. SSDLC Methodologies</h2>
+                    
+                    <div class="phase-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">3.1 Microsoft Security Development Lifecycle (SDL)</h3>
+                        <p>Microsoft's prescriptive SSDLC framework with these key practices:</p>
+                        <ul>
+                            <li>Security training for developers</li>
+                            <li>Security requirements definition</li>
+                            <li>Threat modeling</li>
+                            <li>Secure coding standards</li>
+                            <li>Static analysis tools</li>
+                            <li>Dynamic analysis tools</li>
+                            <li>Penetration testing</li>
+                        </ul>
+                    </div>
+            
+                    <div class="phase-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">3.2 OWASP Software Assurance Maturity Model (SAMM)</h3>
+                        <p>OWASP's framework for measuring and improving security practices:</p>
+                        <table style="width: 100%; border-collapse: collapse; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <tr>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Business Function</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Security Practices</th>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Governance</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Strategy & metrics, Policy & compliance</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Design</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Threat assessment, Security requirements</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Implementation</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Secure build, Secure deployment</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Verification</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Architecture assessment, Security testing</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Operations</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Incident management, Environment management</td>
+                            </tr>
+                        </table>
+                    </div>
+            
+                    <div class="phase-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">3.3 NIST Secure Software Development Framework (SSDF)</h3>
+                        <p>U.S. government recommendations organized into four groups:</p>
+                        <ol>
+                            <li><strong>Prepare the Organization:</strong> Policies, training, tools</li>
+                            <li><strong>Protect the Software:</strong> Secure design, components</li>
+                            <li><strong>Produce Well-Secured Software:</strong> Implementation, verification</li>
+                            <li><strong>Respond to Vulnerabilities:</strong> Monitoring, updates</li>
+                        </ol>
+                    </div>
+                </section>
+            
+                <section id="case-studies" style="margin-bottom: 40px;">
+                    <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">4. Case Studies and Lessons Learned</h2>
+                    
+                    <div class="case-study" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">4.1 Equifax Data Breach (2017)</h3>
+                        <p><strong>Issue:</strong> Unpatched Apache Struts vulnerability (CVE-2017-5638)</p>
+                        <p><strong>SSDLC Failures:</strong></p>
+                        <ul>
+                            <li>Lack of asset inventory</li>
+                            <li>Inadequate patch management</li>
+                            <li>No vulnerability scanning</li>
+                        </ul>
+                        <p><strong>Lessons:</strong> Importance of continuous monitoring and patch management in SSDLC</p>
+                    </div>
+            
+                    <div class="case-study" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">4.2 SolarWinds Supply Chain Attack (2020)</h3>
+                        <p><strong>Issue:</strong> Compromised build system leading to trojanized updates</p>
+                        <p><strong>SSDLC Failures:</strong></p>
+                        <ul>
+                            <li>Insecure build and deployment processes</li>
+                            <li>Lack of code signing verification</li>
+                            <li>Insuherent access controls</li>
+                        </ul>
+                        <p><strong>Lessons:</strong> Need for secure build pipelines and supply chain security in SSDLC</p>
+                    </div>
+                </section>
+            
+                <section id="implementation" style="margin-bottom: 40px;">
+                    <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">5. Implementing SSDLC in Your Organization</h2>
+                    
+                    <div class="phase-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">5.1 Getting Started with SSDLC</h3>
+                        <ol>
+                            <li><strong>Assess current state:</strong> Identify security gaps in existing SDLC</li>
+                            <li><strong>Define security objectives:</strong> Align with business goals</li>
+                            <li><strong>Select framework:</strong> Choose SDL, SAMM, or SSDF</li>
+                            <li><strong>Pilot project:</strong> Implement on one project first</li>
+                            <li><strong>Scale gradually:</strong> Expand based on lessons learned</li>
+                        </ol>
+                    </div>
+            
+                    <div class="phase-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">5.2 Overcoming Common Challenges</h3>
+                        <table style="width: 100%; border-collapse: collapse; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <tr>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Challenge</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Solution</th>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Developer resistance</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Security training, integrate with existing workflows</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Lack of security expertise</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Hire or train security champions</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Perceived slowdown</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Show ROI from reduced vulnerabilities</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Tool complexity</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Start with simple tools, add complexity gradually</td>
+                            </tr>
+                        </table>
+                    </div>
+            
+                    <div class="best-practice" style="background-color: #eafaf1; padding: 15px; border-left: 4px solid #2ecc71; margin: 15px 0;">
+                        <h3 style="color: #2c3e50;">5.3 Measuring SSDLC Success</h3>
+                        <ul>
+                            <li><strong>Security metrics:</strong> Vulnerabilities found/fixed by phase</li>
+                            <li><strong>Time metrics:</strong> Time to remediate vulnerabilities</li>
+                            <li><strong>Cost metrics:</strong> Cost of fixing vulnerabilities by phase</li>
+                            <li><strong>Quality metrics:</strong> Production incidents over time</li>
+                        </ul>
+                    </div>
+                </section>
+            </main>
+
+           
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+    const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+    const searchBox = document.getElementById("searchBox");
+
+    if (!sidebarList || !sidebarGrid) {
+        console.error("Sidebar elements not found!");
+        return;
+    }
+
+    let allTopics = [];
+
+    // Adjust JSON path based on file location
+    let jsonPath = window.location.pathname.includes("/topics/") ? "../softwarengineering.json" : "softwarengineering.json";
+
+    console.log("Fetching JSON from:", jsonPath); // Debugging
+
+    // Fetch Software Engineering Topics from JSON
+    fetch(jsonPath)
+        .then(response => {
+            console.log("Fetch Response:", response);
+            if (!response.ok) {
+                throw new Error("Failed to load JSON: " + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Fetched Data:", data);
+            if (!data.Software_Engineering) {
+                throw new Error("JSON does not contain 'Software_Engineering' key!");
+            }
+            allTopics = data.Software_Engineering;
+            displayTopics(allTopics);
+        })
+        .catch(error => console.error("Error loading topics:", error));
+
+    // Function to Display Topics in Sidebar
+    function displayTopics(topics) {
+        if (!Array.isArray(topics)) {
+            console.error("Invalid topics data:", topics);
+            return;
+        }
+
+        sidebarList.innerHTML = ""; // Clear list
+        sidebarGrid.innerHTML = ""; // Clear grid
+
+        topics.forEach(topic => {
+            let topicLink = topic.link; // Keep the original link
+
+            // 🖥️ Desktop List View
+            let li = document.createElement("li");
+            li.className = "list-group-item list-group-item-action";
+            li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+            sidebarList.appendChild(li);
+
+            // 📱 Mobile Grid View (3 in a row)
+            let div = document.createElement("div");
+            div.className = "col-4"; // Bootstrap grid (3 in a row)
+            div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+            sidebarGrid.appendChild(div);
+        });
+    }
+
+    // Search Topics
+    if (searchBox) {
+        searchBox.addEventListener("input", function () {
+            const searchText = this.value.toLowerCase();
+            const filteredTopics = allTopics.filter(topic =>
+                topic.name.toLowerCase().includes(searchText)
+            );
+            displayTopics(filteredTopics);
+        });
+    }
+});
+
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

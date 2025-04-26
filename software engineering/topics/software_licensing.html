@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../software engineering.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Software Engineering</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+                <main class="col-md-7 content">
+                  <h1>Software Licensing and Intellectual Property</h1>
+                    <div>
+                        <section id="intellectual-property">
+                            <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">1. Intellectual Property Fundamentals</h2>
+                            
+                            <h3 style="color: #2c3e50;">1.1 Types of IP Protection for Software</h3>
+                            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                                <tr>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Protection Type</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Applies To</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Duration</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Key Characteristics</th>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Copyright</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Source code, documentation</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Author's life + 70 years (varies by country)</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Automatic protection, prevents copying</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Patents</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Innovative processes, algorithms</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">20 years from filing</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Requires application, protects ideas</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Trademarks</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Software names, logos</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Indefinite with renewal</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Protects brand identity</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Trade Secrets</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Proprietary algorithms, formulas</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">As long as kept secret</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">No registration, protected by NDAs</td>
+                                </tr>
+                            </table>
+                
+                            <h3 style="color: #2c3e50;">1.2 Copyright vs. Patents for Software</h3>
+                            <div style="background-color: #f8f9fa; padding: 15px; border-radius: 8px;">
+                                <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                                    <tr>
+                                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Feature</th>
+                                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Copyright</th>
+                                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Patent</th>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Protects</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Expression of ideas (code)</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Ideas and functionality</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Requirements</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Original work fixed in tangible medium</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Novel, non-obvious, useful invention</td>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Automatic</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Yes (upon creation)</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">No (requires application)</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Cost</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Free (registration optional)</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">$5,000-$15,000+</td>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Example</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Protects specific code implementation</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Protects novel compression algorithm</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </section>
+                
+                        <section id="licensing-models">
+                            <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db;">2. Software Licensing Models</h2>
+                            
+                            <h3 style="color: #2c3e50;">2.1 Proprietary Software Licenses</h3>
+                            <div style="background-color: #f0f8ff; border-radius: 8px; padding: 15px; margin: 15px 0; border-left: 4px solid #2980b9;">
+                                <h4 style="color: #2c3e50;">Commercial Proprietary</h4>
+                                <ul>
+                                    <li>Restrictive usage terms</li>
+                                    <li>No source code access</li>
+                                    <li>Examples: Microsoft Office, Adobe Photoshop</li>
+                                    <li>Typical clauses: No reverse engineering, limited installations</li>
+                                </ul>
+                            </div>
+                
+                            <div style="background-color: #f0f8ff; border-radius: 8px; padding: 15px; margin: 15px 0; border-left: 4px solid #2980b9;">
+                                <h4 style="color: #2c3e50;">Freemium</h4>
+                                <ul>
+                                    <li>Basic version free, premium features paid</li>
+                                    <li>Examples: Slack, Dropbox</li>
+                                    <li>Monetization: Upselling to paid plans</li>
+                                </ul>
+                            </div>
+                
+                            <h3 style="color: #2c3e50;">2.2 Open Source Licenses</h3>
+                            <div style="background-color: #f0f8ff; border-radius: 8px; padding: 15px; margin: 15px 0; border-left: 4px solid #2980b9;">
+                                <h4 style="color: #2c3e50;">Permissive Licenses</h4>
+                                <ul>
+                                    <li>MIT License: Minimal restrictions, requires attribution</li>
+                                    <li>Apache 2.0: Includes patent grant</li>
+                                    <li>BSD: Similar to MIT with additional clauses</li>
+                                    <li>Examples: React (MIT), Android (Apache)</li>
+                                </ul>
+                            </div>
+                
+                            <div style="background-color: #f0f8ff; border-radius: 8px; padding: 15px; margin: 15px 0; border-left: 4px solid #2980b9;">
+                                <h4 style="color: #2c3e50;">Copyleft Licenses</h4>
+                                <ul>
+                                    <li>GPL: Requires derivative works to be open source</li>
+                                    <li>LGPL: Less restrictive for libraries</li>
+                                    <li>AGPL: Extends GPL to network use</li>
+                                    <li>Examples: Linux (GPL), WordPress (GPL)</li>
+                                </ul>
+                            </div>
+                
+                            <h3 style="color: #2c3e50;">2.3 Comparison of Common Open Source Licenses</h3>
+                            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                                <tr>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">License</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Modification</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Redistribution</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Patent Use</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Commercial Use</th>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">MIT</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Allowed</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Allowed with notice</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Implied</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Allowed</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Apache 2.0</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Allowed</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Allowed with notice</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Explicit grant</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Allowed</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">GPL v3</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Allowed (must share changes)</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Allowed (must share source)</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Explicit grant</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Allowed (with source)</td>
+                                </tr>
+                            </table>
+                        </section>
+                
+                        <section id="legal-considerations">
+                            <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db;">3. Legal Considerations</h2>
+                            
+                            <h3 style="color: #2c3e50;">3.1 Key License Compliance Issues</h3>
+                            <ul>
+                                <li><strong>Copyleft Contamination:</strong> Mixing GPL with proprietary code</li>
+                                <li><strong>Attribution Requirements:</strong> Proper license notices</li>
+                                <li><strong>Patent Risks:</strong> Apache/MIT vs GPL patent clauses</li>
+                                <li><strong>Export Controls:</strong> Encryption software restrictions</li>
+                            </ul>
+                
+                            <div style="background-color: #f9f9f9; border-left: 4px solid #e74c3c; padding: 15px; margin: 20px 0;">
+                                <h3 style="color: #2c3e50;">Case Study: Oracle vs. Google (API Copyright)</h3>
+                                <p><strong>Issue:</strong> Whether APIs are copyrightable</p>
+                                <p><strong>Outcome:</strong> Supreme Court ruled Google's use of Java APIs was fair use</p>
+                                <p><strong>Impact:</strong> Clarified boundaries of software copyright protection</p>
+                            </div>
+                
+                            <h3 style="color: #2c3e50;">3.2 Software Audits and Compliance</h3>
+                            <ol>
+                                <li>Maintain a software bill of materials (SBOM)</li>
+                                <li>Track all open source components and their licenses</li>
+                                <li>Implement approval processes for new dependencies</li>
+                                <li>Conduct regular license compliance audits</li>
+                                <li>Train developers on license implications</li>
+                            </ol>
+                        </section>
+                
+                        <section id="emerging-trends">
+                            <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db;">4. Emerging Trends in Software IP</h2>
+                            
+                            <h3 style="color: #2c3e50;">4.1 Modern Licensing Challenges</h3>
+                            <ul>
+                                <li>SaaS and the "conveyance" question under GPL</li>
+                                <li>Blockchain and smart contract licensing</li>
+                                <li>AI-generated code copyright status</li>
+                                <li>Open core business models</li>
+                            </ul>
+                
+                            <h3 style="color: #2c3e50;">4.2 Best Practices for Developers</h3>
+                            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                                <tr>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Situation</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Recommendation</th>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Starting a new project</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Choose license early and document clearly</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Using open source</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Check compatibility with your license</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Distributing software</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Include all required notices</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Modifying OSS</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Understand your obligations under its license</td>
+                                </tr>
+                            </table>
+                        </section>
+                    </div>
+                </main>
+        
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+    const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+    const searchBox = document.getElementById("searchBox");
+
+    if (!sidebarList || !sidebarGrid) {
+        console.error("Sidebar elements not found!");
+        return;
+    }
+
+    let allTopics = [];
+
+    // Adjust JSON path based on file location
+    let jsonPath = window.location.pathname.includes("/topics/") ? "../softwarengineering.json" : "softwarengineering.json";
+
+    console.log("Fetching JSON from:", jsonPath); // Debugging
+
+    // Fetch Software Engineering Topics from JSON
+    fetch(jsonPath)
+        .then(response => {
+            console.log("Fetch Response:", response);
+            if (!response.ok) {
+                throw new Error("Failed to load JSON: " + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Fetched Data:", data);
+            if (!data.Software_Engineering) {
+                throw new Error("JSON does not contain 'Software_Engineering' key!");
+            }
+            allTopics = data.Software_Engineering;
+            displayTopics(allTopics);
+        })
+        .catch(error => console.error("Error loading topics:", error));
+
+    // Function to Display Topics in Sidebar
+    function displayTopics(topics) {
+        if (!Array.isArray(topics)) {
+            console.error("Invalid topics data:", topics);
+            return;
+        }
+
+        sidebarList.innerHTML = ""; // Clear list
+        sidebarGrid.innerHTML = ""; // Clear grid
+
+        topics.forEach(topic => {
+            let topicLink = topic.link; // Keep the original link
+
+            // 🖥️ Desktop List View
+            let li = document.createElement("li");
+            li.className = "list-group-item list-group-item-action";
+            li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+            sidebarList.appendChild(li);
+
+            // 📱 Mobile Grid View (3 in a row)
+            let div = document.createElement("div");
+            div.className = "col-4"; // Bootstrap grid (3 in a row)
+            div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+            sidebarGrid.appendChild(div);
+        });
+    }
+
+    // Search Topics
+    if (searchBox) {
+        searchBox.addEventListener("input", function () {
+            const searchText = this.value.toLowerCase();
+            const filteredTopics = allTopics.filter(topic =>
+                topic.name.toLowerCase().includes(searchText)
+            );
+            displayTopics(filteredTopics);
+        });
+    }
+});
+
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

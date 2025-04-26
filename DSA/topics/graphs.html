@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    <link rel="stylesheet" href="../dsa.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../dsa.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+
+
+            <main class="col-md-7 content">
+                <h1>🌉 Graphs – Comprehensive Study Guide</h1>
+            
+                <p>
+                    A **Graph** is a **collection of nodes (vertices) and edges** that connect them.  
+                    Graphs are widely used in **networking, AI, and real-world applications**.
+                </p>
+            
+                <h2>⚡ Why are Graphs Important?</h2>
+                <ul>
+                    <li>✅ **Used in shortest path finding (Google Maps, GPS, AI).**</li>
+                    <li>📡 **Essential for social networks & web crawling.**</li>
+                    <li>🚀 **Applied in networking, game development & robotics.**</li>
+                    <li>🔍 **Forms the foundation of AI-based recommendation systems.**</li>
+                </ul>
+            
+                <h1>📌 Types of Graphs</h1>
+            
+                <h2>📥 **1. Directed vs Undirected Graphs**</h2>
+                <ul>
+                    <li>📌 **Directed Graph (Digraph)** – Edges have a direction (e.g., social media followers).</li>
+                    <li>📌 **Undirected Graph** – Edges are bidirectional (e.g., Facebook friends).</li>
+                </ul>
+            
+                <h2>📤 **2. Weighted vs Unweighted Graphs**</h2>
+                <ul>
+                    <li>📌 **Weighted Graph** – Edges have weights (e.g., distance in Google Maps).</li>
+                    <li>📌 **Unweighted Graph** – Edges have no weight (e.g., friendships in social networks).</li>
+                </ul>
+            
+                <h1>🛠️ Graph Representation</h1>
+            
+                <h2>📌 **1. Adjacency Matrix (O(V²) Space Complexity)**</h2>
+                <pre><code>
+                int graph[V][V]; // If graph[i][j] = 1, there is an edge from i to j
+                </code></pre>
+            
+                <h2>📌 **2. Adjacency List (O(V + E) Space Complexity, More Efficient)**</h2>
+                <pre><code>
+                vector<int> adj[V]; // Stores neighbors for each vertex
+                </code></pre>
+            
+                <h1>🔍 Graph Traversal Techniques</h1>
+            
+                <h2>📌 **1. Breadth-First Search (BFS) (O(V + E))**</h2>
+                <p>Explores neighbors before moving deeper into the graph.</p>
+                <pre><code>
+                void BFS(vector<vector<int>>& adj, int start) {
+                    queue<int> q;
+                    vector<bool> visited(adj.size(), false);
+                    
+                    q.push(start);
+                    visited[start] = true;
+            
+                    while (!q.empty()) {
+                        int node = q.front();
+                        q.pop();
+                        cout << node << " ";
+            
+                        for (int neighbor : adj[node]) {
+                            if (!visited[neighbor]) {
+                                visited[neighbor] = true;
+                                q.push(neighbor);
+                            }
+                        }
+                    }
+                }
+                </code></pre>
+            
+                <h2>📌 **2. Depth-First Search (DFS) (O(V + E))**</h2>
+                <p>Explores as deep as possible before backtracking.</p>
+                <pre><code>
+                void DFS(vector<vector<int>>& adj, int node, vector<bool>& visited) {
+                    visited[node] = true;
+                    cout << node << " ";
+                    
+                    for (int neighbor : adj[node]) {
+                        if (!visited[neighbor]) {
+                            DFS(adj, neighbor, visited);
+                        }
+                    }
+                }
+                </code></pre>
+            
+                <h1>📏 Shortest Path Algorithms</h1>
+            
+                <h2>📌 **1. Dijkstra’s Algorithm (O(V + E log V))**</h2>
+                <pre><code>
+                void dijkstra(vector<vector<pair<int, int>>>& graph, int src) {
+                    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+                    vector<int> dist(graph.size(), INT_MAX);
+            
+                    pq.push({0, src});
+                    dist[src] = 0;
+            
+                    while (!pq.empty()) {
+                        int u = pq.top().second;
+                        pq.pop();
+                        for (auto edge : graph[u]) {
+                            int v = edge.first, weight = edge.second;
+                            if (dist[u] + weight < dist[v]) {
+                                dist[v] = dist[u] + weight;
+                                pq.push({dist[v], v});
+                            }
+                        }
+                    }
+                }
+                </code></pre>
+            
+                <h2>📌 **2. Bellman-Ford Algorithm (O(VE))**</h2>
+                <pre><code>
+                void bellmanFord(vector<vector<int>>& edges, int V, int src) {
+                    vector<int> dist(V, INT_MAX);
+                    dist[src] = 0;
+            
+                    for (int i = 1; i < V; i++) {
+                        for (auto edge : edges) {
+                            int u = edge[0], v = edge[1], weight = edge[2];
+                            if (dist[u] != INT_MAX && dist[u] + weight < dist[v]) {
+                                dist[v] = dist[u] + weight;
+                            }
+                        }
+                    }
+                }
+                </code></pre>
+            
+                <h2>📌 **3. Floyd-Warshall Algorithm (O(V³))**</h2>
+                <pre><code>
+                void floydWarshall(vector<vector<int>>& dist, int V) {
+                    for (int k = 0; k < V; k++) {
+                        for (int i = 0; i < V; i++) {
+                            for (int j = 0; j < V; j++) {
+                                dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]);
+                            }
+                        }
+                    }
+                }
+                </code></pre>
+            
+                <h1>⏳ Time Complexity Analysis</h1>
+                <table border="1">
+                    <tr>
+                        <th>Algorithm</th>
+                        <th>Time Complexity</th>
+                    </tr>
+                    <tr>
+                        <td>BFS</td>
+                        <td>O(V + E)</td>
+                    </tr>
+                    <tr>
+                        <td>DFS</td>
+                        <td>O(V + E)</td>
+                    </tr>
+                    <tr>
+                        <td>Dijkstra</td>
+                        <td>O(V + E log V)</td>
+                    </tr>
+                    <tr>
+                        <td>Bellman-Ford</td>
+                        <td>O(VE)</td>
+                    </tr>
+                    <tr>
+                        <td>Floyd-Warshall</td>
+                        <td>O(V³)</td>
+                    </tr>
+                </table>
+            
+                <h1>🌍 Real-World Applications of Graphs</h1>
+                <ul>
+                    <li>📡 **Google Maps & GPS Navigation** – Shortest route finding.</li>
+                    <li>🔗 **Social Networks** – Analyzing connections between users.</li>
+                    <li>🤖 **AI & Robotics** – Pathfinding in automated systems.</li>
+                    <li>🎮 **Game Development** – AI-based movement & level design.</li>
+                </ul>
+            
+                <h2>🔗 Next Topics</h2>
+                <ul class="nexttopics-container">
+                    <li><a href="graph_traversal.html">🌉 Graph Traversal (BFS & DFS)</a></li>
+                    <li><a href="dijkstra.html">📡 Dijkstra’s Algorithm</a></li>
+                    <li><a href="mst.html">🌲 Minimum Spanning Tree (MST)</a></li>
+                </ul>
+            </main>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../dsa.json" : "dsa.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.DSA;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    

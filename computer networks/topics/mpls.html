@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer Network</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/allsubject.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Computer Networks</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                  <h1>MPLS in Computer Networks</h1>
+                   
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">Introduction to MPLS</h2>
+                        
+                        <div style="display: flex; margin-top: 20px;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h3 style="color: #3498db;">What is MPLS?</h3>
+                                <p>MPLS (Multiprotocol Label Switching) is a packet-forwarding technology that uses labels to make data forwarding decisions. It operates between Layer 2 (Data Link) and Layer 3 (Network) in the OSI model, often called "Layer 2.5".</p>
+                                
+                                <div style="background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 15px;">
+                                    <strong>Key Characteristics:</strong>
+                                    <ul style="line-height: 1.6;">
+                                        <li>Uses label switching instead of IP routing</li>
+                                        <li>Creates virtual paths (Label Switched Paths - LSPs)</li>
+                                        <li>Supports multiple protocols (IPv4, IPv6, Ethernet, ATM, Frame Relay)</li>
+                                        <li>Enables Traffic Engineering (TE)</li>
+                                        <li>Provides Quality of Service (QoS) capabilities</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div style="flex: 1;">
+                                <h3 style="color: #3498db;">MPLS vs Traditional IP Routing</h3>
+                                <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+                                    <tr style="background-color: #2c3e50; color: white;">
+                                        <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Feature</th>
+                                        <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">MPLS</th>
+                                        <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">IP Routing</th>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Forwarding</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Label-based</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Destination-based</td>
+                                    </tr>
+                                    <tr style="background-color: #f9f9f9;">
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Path Control</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Explicit paths</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Shortest path</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">QoS</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Built-in</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Limited</td>
+                                    </tr>
+                                    <tr style="background-color: #f9f9f9;">
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Convergence</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Fast reroute</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Routing protocol dependent</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Overhead</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Small label header</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">None</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">MPLS Architecture</h2>
+                        
+                        <div style="display: flex; margin-top: 20px;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h3 style="color: #3498db;">MPLS Network Components</h3>
+                                <ul style="line-height: 1.6;">
+                                    <li><strong>Label Edge Router (LER):</strong> Ingress/Egress routers that add/remove labels</li>
+                                    <li><strong>Label Switching Router (LSR):</strong> Core routers that switch packets based on labels</li>
+                                    <li><strong>Label Switched Path (LSP):</strong> The predetermined path through the MPLS network</li>
+                                    <li><strong>Forwarding Equivalence Class (FEC):</strong> Group of packets treated the same way</li>
+                                </ul>
+                                
+                                <h3 style="color: #3498db; margin-top: 20px;">MPLS Label Stack</h3>
+                                <p>MPLS uses a 32-bit label header inserted between Layer 2 and Layer 3 headers:</p>
+                                <div style="background-color: #e8f4fc; padding: 10px; border-radius: 5px;">
+                                    <table style="width: 100%; border-collapse: collapse;">
+                                        <tr>
+                                            <td style="padding: 5px; border: 1px solid #ddd; text-align: center;"><strong>20 bits</strong><br>Label</td>
+                                            <td style="padding: 5px; border: 1px solid #ddd; text-align: center;"><strong>3 bits</strong><br>Traffic Class (QoS)</td>
+                                            <td style="padding: 5px; border: 1px solid #ddd; text-align: center;"><strong>1 bit</strong><br>Bottom of Stack</td>
+                                            <td style="padding: 5px; border: 1px solid #ddd; text-align: center;"><strong>8 bits</strong><br>TTL</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <p style="margin-top: 10px;">Multiple labels can be stacked (used in MPLS VPNs and traffic engineering).</p>
+                            </div>
+                            
+                            <div style="flex: 1;">
+                                <h3 style="color: #3498db;">MPLS Operation</h3>
+                                <ol style="line-height: 1.6;">
+                                    <li><strong>Label Assignment:</strong> LER assigns labels to incoming packets based on FEC</li>
+                                    <li><strong>Label Distribution:</strong> LSRs exchange label information using LDP, RSVP-TE, or BGP</li>
+                                    <li><strong>Label Switching:</strong> LSRs forward packets based on label lookups</li>
+                                    <li><strong>Label Removal:</strong> Egress LER removes the label and forwards natively</li>
+                                </ol>
+                                
+                                <div style="background-color: #fff0f0; padding: 10px; border-radius: 5px; margin-top: 15px;">
+                                    <strong>Label Operations:</strong>
+                                    <ul>
+                                        <li><strong>Push:</strong> Add a new label (at ingress)</li>
+                                        <li><strong>Swap:</strong> Replace label with new one (core LSRs)</li>
+                                        <li><strong>Pop:</strong> Remove label (penultimate hop or egress)</li>
+                                    </ul>
+                                </div>
+                                
+                                <h3 style="color: #3498db; margin-top: 20px;">Penultimate Hop Popping (PHP)</h3>
+                                <p>The next-to-last LSR removes the label to reduce processing on the egress LER. The egress LER signals this using an implicit-null label (value 3).</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">MPLS Protocols</h2>
+                        
+                        <div style="display: flex; margin-top: 20px;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h3 style="color: #3498db;">Label Distribution Protocols</h3>
+                                
+                                <h4 style="color: #2c3e50; margin-top: 15px;">LDP (Label Distribution Protocol)</h4>
+                                <p>Standard protocol for basic MPLS label distribution (RFC 5036). Uses TCP port 646.</p>
+                                <ul style="line-height: 1.6;">
+                                    <li>Distributes labels based on existing IP routing</li>
+                                    <li>Uses Hello messages (UDP port 646) for neighbor discovery</li>
+                                    <li>Four message types: Discovery, Session, Advertisement, Notification</li>
+                                </ul>
+                                
+                                <h4 style="color: #2c3e50; margin-top: 15px;">RSVP-TE (Resource Reservation Protocol - Traffic Engineering)</h4>
+                                <p>Used for traffic engineering and establishing explicit paths (RFC 3209).</p>
+                                <ul>
+                                    <li>Supports bandwidth reservations</li>
+                                    <li>Enables constraint-based routing</li>
+                                    <li>Provides fast reroute capabilities</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="flex: 1;">
+                                <h3 style="color: #3498db;">MP-BGP (Multiprotocol BGP)</h3>
+                                <p>Extended version of BGP used for MPLS VPNs (RFC 4760).</p>
+                                <ul style="line-height: 1.6;">
+                                    <li>Carries VPN routing information between PE routers</li>
+                                    <li>Uses Route Distinguishers (RD) and Route Targets (RT)</li>
+                                    <li>Supports IPv4, IPv6, and other address families</li>
+                                </ul>
+                                
+                                <h3 style="color: #3498db; margin-top: 20px;">MPLS Protocol Stack</h3>
+                                <div style="background-color: #f8f9fa; padding: 10px; border-radius: 5px;">
+                                    <table style="width: 100%; border-collapse: collapse;">
+                                        <tr>
+                                            <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Application</td>
+                                        </tr>
+                                        <tr style="background-color: #f9f9f9;">
+                                            <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Transport (TCP/UDP)</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Network (IP)</td>
+                                        </tr>
+                                        <tr style="background-color: #f9f9f9;">
+                                            <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">MPLS (Labels)</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Data Link (Ethernet, PPP, etc.)</td>
+                                        </tr>
+                                        <tr style="background-color: #f9f9f9;">
+                                            <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">Physical</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">MPLS Applications</h2>
+                        
+                        <div style="display: flex; margin-top: 20px;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h3 style="color: #3498db;">MPLS VPNs</h3>
+                                <p>MPLS enables Layer 3 VPN services where customer routes are kept separate using VRFs (Virtual Routing and Forwarding).</p>
+                                
+                                <h4 style="color: #2c3e50; margin-top: 15px;">Components:</h4>
+                                <ul style="line-height: 1.6;">
+                                    <li><strong>CE (Customer Edge):</strong> Customer router connecting to provider</li>
+                                    <li><strong>PE (Provider Edge):</strong> Provider router maintaining VRFs</li>
+                                    <li><strong>P (Provider):</strong> Core MPLS routers</li>
+                                </ul>
+                                
+                                <h4 style="color: #2c3e50; margin-top: 15px;">How it Works:</h4>
+                                <ol>
+                                    <li>PE routers maintain separate VRFs for each customer</li>
+                                    <li>Customer routes are exchanged via MP-BGP</li>
+                                    <li>Two labels are used: outer label (transport) and inner label (VPN)</li>
+                                </ol>
+                            </div>
+                            
+                            <div style="flex: 1;">
+                                <h3 style="color: #3498db;">MPLS Traffic Engineering</h3>
+                                <p>Allows network operators to control the path traffic takes through the network.</p>
+                                <ul style="line-height: 1.6;">
+                                    <li>Override shortest-path routing</li>
+                                    <li>Balance network utilization</li>
+                                    <li>Meet QoS requirements</li>
+                                    <li>Provide fast reroute capabilities</li>
+                                </ul>
+                                
+                                <h3 style="color: #3498db; margin-top: 20px;">Other MPLS Applications</h3>
+                                <ul>
+                                    <li><strong>MPLS-TP:</strong> Transport profile for carrier networks</li>
+                                    <li><strong>MPLS QoS:</strong> Class of Service (CoS) markings</li>
+                                    <li><strong>MPLS Multicast:</strong> Multicast VPN (mVPN)</li>
+                                    <li><strong>Ethernet over MPLS:</strong> EoMPLS (Pseudowires)</li>
+                                    <li><strong>Segment Routing:</strong> Modern evolution of MPLS</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">MPLS Benefits and Challenges</h2>
+                        
+                        <div style="display: flex; margin-top: 20px;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h3 style="color: #3498db;">Advantages of MPLS</h3>
+                                <ul style="line-height: 1.6;">
+                                    <li><strong>Faster forwarding:</strong> Label lookups are simpler than IP routing</li>
+                                    <li><strong>Traffic engineering:</strong> Control over network paths</li>
+                                    <li><strong>QoS support:</strong> Built-in traffic prioritization</li>
+                                    <li><strong>VPN services:</strong> Scalable Layer 3 VPNs</li>
+                                    <li><strong>Convergence:</strong> Fast reroute capabilities</li>
+                                    <li><strong>Any transport:</strong> Works over various Layer 2 technologies</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="flex: 1;">
+                                <h3 style="color: #3498db;">Challenges and Considerations</h3>
+                                <ul style="line-height: 1.6;">
+                                    <li><strong>Complexity:</strong> Requires additional protocols and configuration</li>
+                                    <li><strong>Cost:</strong> MPLS-capable equipment is expensive</li>
+                                    <li><strong>Scalability:</strong> Label space management in large networks</li>
+                                    <li><strong>Visibility:</strong> Harder to troubleshoot than IP networks</li>
+                                    <li><strong>Competition:</strong> SD-WAN and other technologies emerging</li>
+                                </ul>
+                                
+                                <div style="background-color: #e8f4fc; padding: 10px; border-radius: 5px; margin-top: 15px;">
+                                    <strong>Future of MPLS:</strong> Evolving with Segment Routing (SR-MPLS) which simplifies operation by removing LDP and RSVP-TE dependencies.
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+            
+            </main>  
+            
+            
+
+             <!-- Floating button to open chatbot -->
+    <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+    </div>
+    
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-container");
+            let button = document.getElementById("open-chatbot");
+    
+            if (!chatbot.classList.contains("active")) {
+                chatbot.classList.add("active");
+                button.style.display = "none"; // Hide button when chatbot is open
+            } else {
+                chatbot.classList.remove("active");
+                setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+            }
+        }
+    
+        // Load chatbot HTML dynamically
+        fetch("/chatbot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("chatbot-container").innerHTML += html;
+    
+            // Execute chatbot script after inserting HTML
+            let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+            for (let script of scripts) {
+                let newScript = document.createElement("script");
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript);
+            }
+        })
+        .catch(error => console.error("Error loading chatbot:", error));
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../computernetwork.json" : "computernetwork.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.Computer_Networks;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+        
+       
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

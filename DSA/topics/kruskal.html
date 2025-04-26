@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    <link rel="stylesheet" href="../dsa.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../dsa.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <h1>🌉 Kruskal’s Algorithm – Complete In-Depth Explanation</h1>
+            
+                <p>
+                    **Kruskal’s Algorithm** is a **greedy algorithm** used to find the **Minimum Spanning Tree (MST)**  
+                    of a weighted, **connected, and undirected graph**. The **MST** is a subset of the graph’s edges  
+                    that connects all vertices with the **minimum total edge weight** and contains **no cycles**.
+                </p>
+            
+                <h2>📌 Why Use Kruskal’s Algorithm?</h2>
+                <ul>
+                    <li>✅ **Greedy approach ensures global optimization.**</li>
+                    <li>📡 **Works well with sparse graphs (O(E log E) time complexity).**</li>
+                    <li>🔍 **Finds the Minimum Spanning Tree efficiently.**</li>
+                    <li>🌍 **Used in network design, clustering, and image segmentation.**</li>
+                </ul>
+            
+                <h1>📌 Understanding the Minimum Spanning Tree (MST)</h1>
+                <p>
+                    A **Minimum Spanning Tree (MST)** is a **subset of a graph’s edges**  
+                    that connects all vertices together with the **minimum total edge weight**  
+                    and **without forming cycles**.
+                </p>
+            
+                <h3>🔹 **Properties of an MST**</h3>
+                <ul>
+                    <li>✅ The MST has **V - 1 edges** (where V is the number of vertices).</li>
+                    <li>📉 The MST has the **minimum total edge weight**.</li>
+                    <li>🔄 The MST contains **no cycles**.</li>
+                    <li>🌐 The MST **may not be unique** (multiple MSTs may exist).</li>
+                </ul>
+            
+                <h1>🛠 Steps in Kruskal’s Algorithm</h1>
+            
+                <h2>📌 **Step 1: Sort All Edges by Weight**</h2>
+                <p>Sort all edges in **ascending order** based on their weight.</p>
+            
+                <h2>📌 **Step 2: Initialize the MST**</h2>
+                <p>Start with an empty set of edges in the MST.</p>
+            
+                <h2>📌 **Step 3: Add the Minimum Edge Without Forming a Cycle**</h2>
+                <p>Use the **Disjoint Set Union (DSU)** (Union-Find) data structure to check for cycles.</p>
+            
+                <h2>📌 **Step 4: Stop When MST Has (V - 1) Edges**</h2>
+                <p>Once the MST has **V - 1 edges**, the algorithm stops.</p>
+            
+                <h1>📜 Example Graph</h1>
+                <pre><code>
+                    Graph:
+                       2
+                    A-----B
+                    |     |
+                  1 |     | 3
+                    |     |
+                    C-----D
+                       4
+            
+                    Sorted Edges by Weight: 
+                    (C-A, 1), (A-B, 2), (B-D, 3), (C-D, 4)
+            
+                    MST Output:
+                       2
+                    A-----B
+                    |      
+                  1 |      
+                    |      
+                    C      
+                </code></pre>
+            
+                <h1>📌 Implementation of Kruskal’s Algorithm (O(E log E))</h1>
+                <pre><code>
+                struct Edge {
+                    int src, dest, weight;
+                };
+            
+                struct Graph {
+                    int V, E;
+                    vector<Edge> edges;
+                };
+            
+                struct DisjointSet {
+                    vector<int> parent, rank;
+            
+                    DisjointSet(int n) {
+                        parent.resize(n);
+                        rank.resize(n, 0);
+                        for (int i = 0; i < n; i++) parent[i] = i;
+                    }
+            
+                    int find(int x) {
+                        if (parent[x] != x) parent[x] = find(parent[x]);
+                        return parent[x];
+                    }
+            
+                    void unite(int x, int y) {
+                        int rootX = find(x), rootY = find(y);
+                        if (rootX != rootY) {
+                            if (rank[rootX] > rank[rootY]) parent[rootY] = rootX;
+                            else if (rank[rootX] < rank[rootY]) parent[rootX] = rootY;
+                            else {
+                                parent[rootY] = rootX;
+                                rank[rootX]++;
+                            }
+                        }
+                    }
+                };
+            
+                void kruskal(Graph &graph) {
+                    sort(graph.edges.begin(), graph.edges.end(), [](Edge a, Edge b) {
+                        return a.weight < b.weight;
+                    });
+            
+                    DisjointSet ds(graph.V);
+                    vector<Edge> mst;
+                    int mstCost = 0;
+            
+                    for (Edge e : graph.edges) {
+                        if (ds.find(e.src) != ds.find(e.dest)) {
+                            ds.unite(e.src, e.dest);
+                            mst.push_back(e);
+                            mstCost += e.weight;
+                        }
+                    }
+            
+                    cout << "Minimum Spanning Tree Cost: " << mstCost << endl;
+                    for (Edge e : mst) {
+                        cout << e.src << " -- " << e.dest << " == " << e.weight << endl;
+                    }
+                }
+                </code></pre>
+            
+                <h1>⏳ Time Complexity Analysis</h1>
+                <table border="1">
+                    <tr>
+                        <th>Step</th>
+                        <th>Time Complexity</th>
+                    </tr>
+                    <tr>
+                        <td>Sorting Edges</td>
+                        <td>O(E log E)</td>
+                    </tr>
+                    <tr>
+                        <td>Union-Find (DSU) Operations</td>
+                        <td>O(E log V)</td>
+                    </tr>
+                    <tr>
+                        <td>Total Complexity</td>
+                        <td>O(E log E)</td>
+                    </tr>
+                </table>
+            
+                <h1>🌍 Real-World Applications of Kruskal’s Algorithm</h1>
+                <ul>
+                    <li>📡 **Network Design** – Laying down **minimum-cost communication cables.**</li>
+                    <li>🚗 **Road Systems** – Designing **minimum-cost road networks.**</li>
+                    <li>🔗 **Computer Clustering** – Connecting **servers with minimal latency.**</li>
+                    <li>🛰 **Electric Grid Design** – Optimizing **power transmission networks.**</li>
+                </ul>
+            
+                <h2>🔗 Next Topics</h2>
+                <ul class="nexttopics-container">
+                    <li><a href="prim.html">🌲 Prim’s Algorithm (MST)</a></li>
+                    <li><a href="graph_algorithms.html">📡 Graph Algorithms</a></li>
+                    <li><a href="dsu.html">🔗 Disjoint Set Union (DSU)</a></li>
+                </ul>
+            </main>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../dsa.json" : "dsa.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.DSA;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    

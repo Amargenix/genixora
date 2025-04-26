@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    <link rel="stylesheet" href="../dsa.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../dsa.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+            <main class="col-md-7 content">
+                <h1>🎒 Knapsack Problem – Complete In-Depth Explanation</h1>
+            
+                <p>
+                    The **Knapsack Problem** is a fundamental **optimization problem** in **computer science**  
+                    and **mathematics**. It involves selecting items to place in a **knapsack (bag)**  
+                    to maximize the **total value**, while ensuring that the total weight does not exceed a given limit.
+                </p>
+            
+                <h2>📌 Types of Knapsack Problems</h2>
+                <p>The Knapsack problem can be categorized into **three main types**:</p>
+                <ul>
+                    <li>📦 **0/1 Knapsack Problem** – Items cannot be divided; you either take the entire item or leave it.</li>
+                    <li>📉 **Fractional Knapsack Problem** – Items can be divided; you can take fractions of an item.</li>
+                    <li>🔄 **Unbounded Knapsack Problem** – An unlimited supply of each item is available.</li>
+                </ul>
+            
+                <h1>📌 Understanding the 0/1 Knapsack Problem</h1>
+                <p>
+                    Given a set of **N items**, each with a **weight** and **value**,  
+                    and a knapsack that can carry a maximum **weight W**,  
+                    determine the **maximum value** that can be obtained by selecting a subset of the items.
+                </p>
+            
+                <h3>🔹 **Mathematical Formulation**</h3>
+                <p>
+                    Let:
+                </p>
+                <ul>
+                    <li>📦 **N** = Total number of items.</li>
+                    <li>⚖️ **W** = Maximum weight the knapsack can hold.</li>
+                    <li>📊 **w[i]** = Weight of the i-th item.</li>
+                    <li>💰 **v[i]** = Value of the i-th item.</li>
+                    <li>📝 **x[i]** = 1 if item is included, 0 otherwise.</li>
+                </ul>
+            
+                <p>We need to maximize:</p>
+                <pre><code>
+                Maximize: Σ (x[i] * v[i])  for  i = 1 to N
+                Subject to: Σ (x[i] * w[i]) ≤ W  for  i = 1 to N
+                </code></pre>
+            
+                <h1>🛠 Solution Methods for 0/1 Knapsack</h1>
+            
+                <h2>📌 **1. Recursion (Brute Force) – O(2^N) Complexity**</h2>
+                <p>
+                    A **recursive solution** that checks both possibilities:  
+                    **including** or **excluding** an item.
+                </p>
+                <pre><code>
+                int knapsack(int W, vector<int>& weight, vector<int>& value, int n) {
+                    if (n == 0 || W == 0) return 0;
+            
+                    if (weight[n - 1] > W)
+                        return knapsack(W, weight, value, n - 1);
+            
+                    return max(value[n - 1] + knapsack(W - weight[n - 1], weight, value, n - 1),
+                               knapsack(W, weight, value, n - 1));
+                }
+                </code></pre>
+                <p>🔴 **Disadvantage:** Exponential complexity **O(2^N)** is inefficient for large N.</p>
+            
+                <h2>📌 **2. Dynamic Programming (O(N × W) Complexity)**</h2>
+                <p>
+                    Instead of **recomputing solutions**, we **store** results in a **table (memoization)**  
+                    and use them to avoid redundant calculations.
+                </p>
+            
+                <h3>🔹 **Bottom-Up Approach (Tabulation Method)**</h3>
+                <pre><code>
+                int knapsackDP(int W, vector<int>& weight, vector<int>& value, int N) {
+                    vector<vector<int>> dp(N + 1, vector<int>(W + 1, 0));
+            
+                    for (int i = 1; i <= N; i++) {
+                        for (int w = 0; w <= W; w++) {
+                            if (weight[i - 1] <= w) {
+                                dp[i][w] = max(value[i - 1] + dp[i - 1][w - weight[i - 1]], dp[i - 1][w]);
+                            } else {
+                                dp[i][w] = dp[i - 1][w];
+                            }
+                        }
+                    }
+                    return dp[N][W];
+                }
+                </code></pre>
+            
+                <h2>📌 **3. Space Optimized DP (O(W) Complexity)**</h2>
+                <p>
+                    Instead of a **2D table**, we use a **1D array**, updating it from **right to left**.
+                </p>
+                <pre><code>
+                int knapsackOptimized(int W, vector<int>& weight, vector<int>& value, int N) {
+                    vector<int> dp(W + 1, 0);
+            
+                    for (int i = 0; i < N; i++) {
+                        for (int w = W; w >= weight[i]; w--) {
+                            dp[w] = max(dp[w], value[i] + dp[w - weight[i]]);
+                        }
+                    }
+                    return dp[W];
+                }
+                </code></pre>
+            
+                <h1>📌 Fractional Knapsack (O(N log N))</h1>
+                <p>
+                    Unlike **0/1 Knapsack**, here we can take **fractions** of items.
+                </p>
+                <h3>🔹 **Greedy Strategy:**</h3>
+                <ul>
+                    <li>✅ Sort items by **value/weight ratio**.</li>
+                    <li>🔄 Take **whole items** first.</li>
+                    <li>📉 If the knapsack is full, take **a fraction** of the next item.</li>
+                </ul>
+            
+                <pre><code>
+                struct Item {
+                    int weight, value;
+                };
+            
+                bool cmp(Item a, Item b) {
+                    return (double)a.value / a.weight > (double)b.value / b.weight;
+                }
+            
+                double fractionalKnapsack(int W, vector<Item>& items) {
+                    sort(items.begin(), items.end(), cmp);
+                    double maxValue = 0.0;
+            
+                    for (auto item : items) {
+                        if (W >= item.weight) {
+                            maxValue += item.value;
+                            W -= item.weight;
+                        } else {
+                            maxValue += item.value * ((double)W / item.weight);
+                            break;
+                        }
+                    }
+                    return maxValue;
+                }
+                </code></pre>
+            
+                <h1>⏳ Time Complexity Analysis</h1>
+                <table border="1">
+                    <tr>
+                        <th>Algorithm</th>
+                        <th>Time Complexity</th>
+                    </tr>
+                    <tr>
+                        <td>Recursive (Brute Force)</td>
+                        <td>O(2^N)</td>
+                    </tr>
+                    <tr>
+                        <td>Dynamic Programming (2D DP)</td>
+                        <td>O(N × W)</td>
+                    </tr>
+                    <tr>
+                        <td>Space Optimized DP (1D DP)</td>
+                        <td>O(N × W)</td>
+                    </tr>
+                    <tr>
+                        <td>Fractional Knapsack (Greedy)</td>
+                        <td>O(N log N)</td>
+                    </tr>
+                </table>
+            
+                <h1>🌍 Real-World Applications of Knapsack Problem</h1>
+                <ul>
+                    <li>📡 **Resource Allocation** – Distributing resources efficiently.</li>
+                    <li>🎮 **Game Inventory Management** – Selecting the best combination of items.</li>
+                    <li>🛒 **Budget Optimization** – Choosing the best products within a budget.</li>
+                    <li>📈 **Stock Market Analysis** – Portfolio selection for maximum returns.</li>
+                </ul>
+            
+                <h2>🔗 Next Topics</h2>
+                <ul class="nexttopics-container">
+                    <li><a href="dynamic_programming.html">📜 Dynamic Programming</a></li>
+                    <li><a href="greedy.html">💰 Greedy Algorithms</a></li>
+                    <li><a href="subset_sum.html">🧩 Subset Sum Problem</a></li>
+                </ul>
+            </main>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../dsa.json" : "dsa.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.DSA;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    

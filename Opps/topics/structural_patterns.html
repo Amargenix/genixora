@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../opp.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+            <main class="col-md-7 content">
+                <h2>🔹 Structural Patterns in Software Design</h2>
+            
+                <p>
+                    **Structural design patterns** are concerned with how classes and objects are composed to form larger structures.  
+                    These patterns help ensure that if one part of a system changes, the entire system does not need to do the same, promoting flexibility and reusability.
+                </p>
+            
+                <h3>📌 Overview of Structural Patterns</h3>
+                <p>Structural patterns focus on creating relationships between objects and classes to form larger structures.  
+                    They help manage complexities by allowing the composition of objects in a more manageable way.</p>
+            
+                <h3>📌 Common Structural Patterns</h3>
+                <ul>
+                    <li>✅ **Adapter Pattern**</li>
+                    <li>✅ **Bridge Pattern**</li>
+                    <li>✅ **Composite Pattern**</li>
+                    <li>✅ **Decorator Pattern**</li>
+                    <li>✅ **Facade Pattern**</li>
+                    <li>✅ **Flyweight Pattern**</li>
+                    <li>✅ **Proxy Pattern**</li>
+                </ul>
+            
+                <h3>🖥️ Adapter Pattern</h3>
+                <p>The Adapter Pattern allows incompatible interfaces to work together. It acts as a bridge between two incompatible interfaces, enabling collaboration.</p>
+                <pre><code>
+            class OldSystem {
+                public void oldMethod() {
+                    System.out.println("Old method implementation.");
+                }
+            }
+            
+            interface NewSystem {
+                void newMethod();
+            }
+            
+            class Adapter implements NewSystem {
+                private OldSystem oldSystem;
+            
+                public Adapter(OldSystem oldSystem) {
+                    this.oldSystem = oldSystem;
+                }
+            
+                public void newMethod() {
+                    oldSystem.oldMethod(); // Adapts the old method to the new method
+                }
+            }
+                </code></pre>
+            
+                <h3>🖥️ Bridge Pattern</h3>
+                <p>The Bridge Pattern separates an abstraction from its implementation, allowing them to vary independently. This promotes flexibility and extensibility.</p>
+                <pre><code>
+            interface Shape {
+                void draw();
+            }
+            
+            class Circle implements Shape {
+                public void draw() {
+                    System.out.println("Drawing a circle.");
+                }
+            }
+            
+            class Square implements Shape {
+                public void draw() {
+                    System.out.println("Drawing a square.");
+                }
+            }
+            
+            abstract class Color {
+                protected Shape shape;
+            
+                public Color(Shape shape) {
+                    this.shape = shape;
+                }
+            
+                abstract void fill();
+            }
+            
+            class Red extends Color {
+                public Red(Shape shape) {
+                    super(shape);
+                }
+            
+                public void fill() {
+                    System.out.print("Filling with red color. ");
+                    shape.draw();
+                }
+            }
+                </code></pre>
+            
+                <h3>🖥️ Composite Pattern</h3>
+                <p>The Composite Pattern allows you to compose objects into tree structures to represent part-whole hierarchies. It enables clients to treat individual objects and compositions uniformly.</p>
+                <pre><code>
+            interface Component {
+                void operation();
+            }
+            
+            class Leaf implements Component {
+                public void operation() {
+                    System.out.println("Leaf operation.");
+                }
+            }
+            
+            class Composite implements Component {
+                private List<Component> children = new ArrayList<>();
+            
+                public void add(Component component) {
+                    children.add(component);
+                }
+            
+                public void operation() {
+                    for (Component child : children) {
+                        child.operation();
+                    }
+                }
+            }
+                </code></pre>
+            
+                <h3>🖥️ Decorator Pattern</h3>
+                <p>The Decorator Pattern allows behavior to be added to individual objects dynamically. This pattern is often used to extend the functionality of classes in a flexible and reusable way.</p>
+                <pre><code>
+            interface Coffee {
+                String getDescription();
+                double cost();
+            }
+            
+            class SimpleCoffee implements Coffee {
+                public String getDescription() {
+                    return "Simple coffee";
+                }
+            
+                public double cost() {
+                    return 2.00;
+                }
+            }
+            
+            class MilkDecorator implements Coffee {
+                private Coffee coffee;
+            
+                public MilkDecorator(Coffee coffee) {
+                    this.coffee = coffee;
+                }
+            
+                public String getDescription() {
+                    return coffee.getDescription() + ", milk";
+                }
+            
+                public double cost() {
+                    return coffee.cost() + 0.50;
+                }
+            }
+                </code></pre>
+            
+                <h3>🖥️ Facade Pattern</h3>
+                <p>The Facade Pattern provides a simplified interface to a complex subsystem, making it easier to use. This pattern promotes ease of use and reduces dependencies between clients and subsystems.</p>
+                <pre><code>
+            class SubsystemA {
+                public void operationA() {
+                    System.out.println("Operation A");
+                }
+            }
+            
+            class SubsystemB {
+                public void operationB() {
+                    System.out.println("Operation B");
+                }
+            }
+            
+            class Facade {
+                private SubsystemA subsystemA;
+                private SubsystemB subsystemB;
+            
+                public Facade() {
+                    subsystemA = new SubsystemA();
+                    subsystemB = new SubsystemB();
+                }
+            
+                public void operation() {
+                    subsystemA.operationA();
+                    subsystemB.operationB();
+                }
+            }
+                </code></pre>
+            
+                <h3>🖥️ Flyweight Pattern</h3>
+                <p>The Flyweight Pattern is used to minimize memory usage by sharing common parts of state between multiple objects. This pattern is especially useful for large numbers of similar objects.</p>
+                <pre><code>
+            class Character {
+                private char symbol;
+            
+                public Character(char symbol) {
+                    this.symbol = symbol;
+                }
+            
+                public char getSymbol() {
+                    return symbol;
+                }
+            }
+            
+            class CharacterFactory {
+                private Map<Character, Character> characters = new HashMap<>();
+            
+                public Character getCharacter(char symbol) {
+                    if (!characters.containsKey(symbol)) {
+                        characters.put(symbol, new Character(symbol));
+                    }
+                    return characters.get(symbol);
+                }
+            }
+                </code></pre>
+            
+                <h3>🖥️ Proxy Pattern</h3>
+                <p>The Proxy Pattern provides a surrogate or placeholder for another object to control access to it. This pattern is often used for lazy initialization, access control, and logging.</p>
+                <pre><code>
+            interface Image {
+                void display();
+            }
+            
+            class RealImage implements Image {
+                private String filename;
+            
+                public RealImage(String filename) {
+                    this.filename = filename;
+                    loadImageFromDisk();
+                }
+            
+                private void loadImageFromDisk() {
+                    System.out.println("Loading " + filename);
+                }
+            
+                public void display() {
+                    System.out.println("Displaying " + filename);
+                }
+            }
+            
+            class ProxyImage implements Image {
+                private RealImage realImage;
+                private String filename;
+            
+                public ProxyImage(String filename) {
+                    this.filename = filename;
+                }
+            
+                public void display() {
+                    if (realImage == null) {
+                        realImage = new RealImage(filename);
+                    }
+                    realImage.display();
+                }
+            }
+                </code></pre>
+            
+                <h3>🎯 Summary</h3>
+                <p>
+                    Structural design patterns play a crucial role in software design by defining ways to compose objects and classes to form larger structures.  
+                    By applying these patterns, developers can achieve greater flexibility and reusability in their code.  
+                    Common structural patterns such as Adapter, Bridge, Composite, Decorator, Facade, Flyweight, and Proxy offer various solutions to manage complex relationships in software design.
+                </p>
+            
+                <h2>🔗 Next Topics</h2>
+                <ul class="nexttopics-container">
+                    <li><a href="behavioral_patterns.html">👉 Behavioral Patterns</a></li>
+                    <li><a href="design_patterns.html">👉 Design Patterns Overview</a></li>
+                    <li><a href="refactoring.html">👉 Refactoring Techniques</a></li>
+                </ul>
+            </main>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+     
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../opp.json" : "opp.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.OOP;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../opp.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+
+
+
+            <main class="col-md-7 content">
+                <h2>🔹 Object-Relational Mapping (ORM) in Software Development</h2>
+            
+                <p>
+                    **Object-Relational Mapping (ORM)** is a programming technique that allows developers to interact with a relational database using an object-oriented paradigm. It serves as a bridge between the object-oriented programming model and the relational database model, enabling developers to work with database records as if they were regular objects in their programming language.
+                </p>
+            
+                <h3>📌 Why Use ORM?</h3>
+                <p>Using ORM provides several benefits:</p>
+                <ul>
+                    <li>✅ **Increased Productivity**: ORM simplifies database interactions, allowing developers to focus on business logic rather than database query syntax.</li>
+                    <li>✅ **Improved Code Maintainability**: By abstracting database interactions, ORM promotes cleaner code and makes it easier to manage and maintain over time.</li>
+                    <li>✅ **Database Independence**: ORM frameworks often provide support for multiple database systems, making it easier to switch databases without significant code changes.</li>
+                    <li>✅ **Automatic Query Generation**: ORM can automatically generate SQL queries based on the object model, reducing the chances of errors and enhancing efficiency.</li>
+                </ul>
+            
+                <h3>📌 How ORM Works</h3>
+                <p>ORM works by mapping database tables to classes and records to objects. The main components of ORM include:</p>
+                <ul>
+                    <li>**Entities**: Classes that represent database tables, where each instance corresponds to a row in the table.</li>
+                    <li>**Attributes**: Class properties that map to table columns, representing the data stored in the database.</li>
+                    <li>**Session**: The interface for performing operations such as creating, reading, updating, and deleting records in the database.</li>
+                    <li>**Queries**: ORM frameworks provide methods for building queries using an object-oriented syntax rather than raw SQL.</li>
+                </ul>
+            
+                <h3>🖥️ ORM Example in Python using SQLAlchemy</h3>
+                <p>Here is an example of using the SQLAlchemy ORM framework in Python:</p>
+                <pre><code>
+            from sqlalchemy import create_engine, Column, Integer, String
+            from sqlalchemy.ext.declarative import declarative_base
+            from sqlalchemy.orm import sessionmaker
+            
+            # Create a new database engine
+            engine = create_engine('sqlite:///example.db')
+            
+            # Define a base class for declarative models
+            Base = declarative_base()
+            
+            # Define a class that maps to a database table
+            class User(Base):
+                __tablename__ = 'users'
+            
+                id = Column(Integer, primary_key=True)
+                name = Column(String)
+                age = Column(Integer)
+            
+                def __repr__(self):
+                    return f"User(id={self.id}, name='{self.name}', age={self.age})"
+            
+            # Create the table in the database
+            Base.metadata.create_all(engine)
+            
+            # Create a session
+            Session = sessionmaker(bind=engine)
+            session = Session()
+            
+            # Create a new user
+            new_user = User(name='Alice', age=30)
+            session.add(new_user)
+            session.commit()
+            
+            # Query the database
+            users = session.query(User).all()
+            for user in users:
+                print(user)
+                </code></pre>
+            
+                <h3>🖥️ ORM Example in Java using Hibernate</h3>
+                <p>Here is an example of using the Hibernate ORM framework in Java:</p>
+                <pre><code>
+            // User.java
+            import javax.persistence.Entity;
+            import javax.persistence.GeneratedValue;
+            import javax.persistence.GenerationType;
+            import javax.persistence.Id;
+            
+            @Entity
+            public class User {
+                @Id
+                @GeneratedValue(strategy = GenerationType.IDENTITY)
+                private Long id;
+                private String name;
+                private Integer age;
+            
+                // Getters and Setters
+                public Long getId() {
+                    return id;
+                }
+            
+                public void setId(Long id) {
+                    this.id = id;
+                }
+            
+                public String getName() {
+                    return name;
+                }
+            
+                public void setName(String name) {
+                    this.name = name;
+                }
+            
+                public Integer getAge() {
+                    return age;
+                }
+            
+                public void setAge(Integer age) {
+                    this.age = age;
+                }
+            }
+            
+            // Main.java
+            import org.hibernate.Session;
+            import org.hibernate.SessionFactory;
+            import org.hibernate.cfg.Configuration;
+            
+            public class Main {
+                public static void main(String[] args) {
+                    // Create a SessionFactory
+                    SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+                    Session session = sessionFactory.openSession();
+            
+                    // Start a transaction
+                    session.beginTransaction();
+            
+                    // Create a new user
+                    User newUser = new User();
+                    newUser.setName("Alice");
+                    newUser.setAge(30);
+                    session.save(newUser);
+            
+                    // Commit the transaction
+                    session.getTransaction().commit();
+            
+                    // Query the database
+                    List<User> users = session.createQuery("FROM User", User.class).list();
+                    for (User user : users) {
+                        System.out.println(user.getName() + " is " + user.getAge() + " years old.");
+                    }
+            
+                    // Close the session
+                    session.close();
+                    sessionFactory.close();
+                }
+            }
+                </code></pre>
+            
+                <h3>📌 Best Practices for Using ORM</h3>
+                <ul>
+                    <li>✅ **Understand the Underlying Database**: Familiarize yourself with the database structure and SQL queries to write efficient ORM code.</li>
+                    <li>✅ **Use Lazy Loading**: Implement lazy loading to optimize performance by loading related entities only when necessary.</li>
+                    <li>✅ **Manage Transactions Carefully**: Ensure proper transaction management to maintain data integrity and avoid issues such as deadlocks.</li>
+                    <li>✅ **Profile and Optimize Queries**: Monitor and optimize the generated queries to ensure that they perform well in production environments.</li>
+                </ul>
+            
+                <h3>🎯 Summary</h3>
+                <p>
+                    Object-Relational Mapping (ORM) simplifies database interactions by allowing developers to use an object-oriented approach for data management.  
+                    ORM frameworks like SQLAlchemy and Hibernate provide powerful tools for creating, querying, and managing database records while improving code maintainability and productivity.
+                </p>
+            
+                <h2>🔗 Next Topics</h2>
+                <ul class="nexttopics-container">
+                    <li><a href="database_design.html">👉 Database Design</a></li>
+                    <li><a href="sql_queries.html">👉 SQL Queries</a></li>
+                    <li><a href="database_migration.html">👉 Database Migration</a></li>
+                </ul>
+            </main>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+     
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../opp.json" : "opp.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.OOP;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

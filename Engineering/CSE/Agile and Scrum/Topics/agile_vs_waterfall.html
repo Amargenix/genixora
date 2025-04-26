@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agile Anti-Patterns</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Agile and Scrum</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <h1>Agile vs Waterfall</h1>
+                     
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; margin-bottom: 40px; box-shadow: 0 3px 6px rgba(0,0,0,0.08);">
+                        <h2 style="color: #ff7e5f; border-bottom: 2px solid #ffe8e0; padding-bottom: 12px; font-size: 1.8em;">Fundamental Differences</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 25px; margin-top: 25px;">
+                            <div style="background-color: #fff0e8; padding: 20px; border-radius: 6px; border-left: 4px solid #ff7e5f;">
+                                <h3 style="color: #ff7e5f; margin-top: 0;">Development Approach</h3>
+                                <p><strong>Waterfall:</strong> Linear, sequential phases where each phase must be completed before the next begins.</p>
+                                <p><strong>Agile:</strong> Iterative and incremental approach with work divided into small, manageable units (sprints).</p>
+                            </div>
+                            
+                            <div style="background-color: #fff0e8; padding: 20px; border-radius: 6px; border-left: 4px solid #ff7e5f;">
+                                <h3 style="color: #ff7e5f; margin-top: 0;">Requirements Handling</h3>
+                                <p><strong>Waterfall:</strong> Requirements gathered upfront and frozen early in the project.</p>
+                                <p><strong>Agile:</strong> Requirements expected to evolve and change throughout the project.</p>
+                            </div>
+                            
+                            <div style="background-color: #fff0e8; padding: 20px; border-radius: 6px; border-left: 4px solid #ff7e5f;">
+                                <h3 style="color: #ff7e5f; margin-top: 0;">Customer Involvement</h3>
+                                <p><strong>Waterfall:</strong> Customer involved primarily at beginning and end.</p>
+                                <p><strong>Agile:</strong> Continuous customer collaboration throughout the project.</p>
+                            </div>
+                            
+                            <div style="background-color: #fff0e8; padding: 20px; border-radius: 6px; border-left: 4px solid #ff7e5f;">
+                                <h3 style="color: #ff7e5f; margin-top: 0;">Delivery Timing</h3>
+                                <p><strong>Waterfall:</strong> Working product delivered at the end of the project.</p>
+                                <p><strong>Agile:</strong> Working increments delivered at regular intervals (1-4 weeks).</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; margin-bottom: 40px; box-shadow: 0 3px 6px rgba(0,0,0,0.08);">
+                        <h2 style="color: #ff7e5f; border-bottom: 2px solid #ffe8e0; padding-bottom: 12px; font-size: 1.8em;">Methodology Comparison Table</h2>
+                        
+                        <table style="width: 100%; border-collapse: collapse; margin-top: 25px;">
+                            <thead>
+                                <tr style="background-color: #ff7e5f; color: white;">
+                                    <th style="padding: 15px; text-align: left; width: 20%;">Aspect</th>
+                                    <th style="padding: 15px; text-align: left; width: 40%;">Waterfall</th>
+                                    <th style="padding: 15px; text-align: left; width: 40%;">Agile</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 12px; font-weight: bold;">Project Structure</td>
+                                    <td style="padding: 12px;">Sequential phases (Requirements, Design, Implementation, Verification, Maintenance)</td>
+                                    <td style="padding: 12px;">Iterative cycles (Sprints) with all phases in each iteration</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                                    <td style="padding: 12px; font-weight: bold;">Change Management</td>
+                                    <td style="padding: 12px;">Changes difficult and expensive after requirements phase</td>
+                                    <td style="padding: 12px;">Changes expected and welcomed even late in development</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 12px; font-weight: bold;">Documentation</td>
+                                    <td style="padding: 12px;">Extensive documentation required upfront</td>
+                                    <td style="padding: 12px;">Working software valued over comprehensive documentation</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                                    <td style="padding: 12px; font-weight: bold;">Risk Management</td>
+                                    <td style="padding: 12px;">Risks addressed during planning phase</td>
+                                    <td style="padding: 12px;">Continuous risk management throughout project</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 12px; font-weight: bold;">Team Structure</td>
+                                    <td style="padding: 12px;">Hierarchical with specialized roles</td>
+                                    <td style="padding: 12px;">Self-organizing, cross-functional teams</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                                    <td style="padding: 12px; font-weight: bold;">Progress Measurement</td>
+                                    <td style="padding: 12px;">Against plan and documents</td>
+                                    <td style="padding: 12px;">Working software and customer satisfaction</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px; font-weight: bold;">Best For</td>
+                                    <td style="padding: 12px;">Projects with clear, fixed requirements (construction, manufacturing)</td>
+                                    <td style="padding: 12px;">Projects with uncertain or evolving requirements (software, creative)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; margin-bottom: 40px; box-shadow: 0 3px 6px rgba(0,0,0,0.08);">
+                        <h2 style="color: #ff7e5f; border-bottom: 2px solid #ffe8e0; padding-bottom: 12px; font-size: 1.8em;">Visual Comparison</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); gap: 30px; margin-top: 25px;">
+                            <div style="background-color: #fff0e8; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #ff7e5f; margin-top: 0; text-align: center;">Waterfall Model</h3>
+                                <div style="background-color: white; padding: 15px; border-radius: 4px; margin-top: 15px;">
+                                    <div style="display: flex; flex-direction: column; gap: 5px;">
+                                        <div style="background-color: #ff7e5f; color: white; padding: 12px; text-align: center; border-radius: 4px;">Requirements</div>
+                                        <div style="text-align: center;">▼</div>
+                                        <div style="background-color: #ff7e5f; color: white; padding: 12px; text-align: center; border-radius: 4px;">System Design</div>
+                                        <div style="text-align: center;">▼</div>
+                                        <div style="background-color: #ff7e5f; color: white; padding: 12px; text-align: center; border-radius: 4px;">Implementation</div>
+                                        <div style="text-align: center;">▼</div>
+                                        <div style="background-color: #ff7e5f; color: white; padding: 12px; text-align: center; border-radius: 4px;">Testing</div>
+                                        <div style="text-align: center;">▼</div>
+                                        <div style="background-color: #ff7e5f; color: white; padding: 12px; text-align: center; border-radius: 4px;">Deployment</div>
+                                        <div style="text-align: center;">▼</div>
+                                        <div style="background-color: #ff7e5f; color: white; padding: 12px; text-align: center; border-radius: 4px;">Maintenance</div>
+                                    </div>
+                                </div>
+                                <p style="text-align: center; font-style: italic; margin-top: 15px;">Linear, sequential approach with distinct phases</p>
+                            </div>
+                            
+                            <div style="background-color: #fff0e8; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #ff7e5f; margin-top: 0; text-align: center;">Agile Model</h3>
+                                <div style="background-color: white; padding: 15px; border-radius: 4px; margin-top: 15px; text-align: center;">
+                                    <div style="display: inline-block; text-align: center;">
+                                        <div style="display: flex; gap: 20px; margin-bottom: 20px;">
+                                            <div style="background-color: #ff7e5f; color: white; padding: 12px; border-radius: 50%; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                                                <div>Sprint 1</div>
+                                            </div>
+                                            <div style="background-color: #ff7e5f; color: white; padding: 12px; border-radius: 50%; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                                                <div>Sprint 2</div>
+                                            </div>
+                                            <div style="background-color: #ff7e5f; color: white; padding: 12px; border-radius: 50%; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                                                <div>Sprint 3</div>
+                                            </div>
+                                        </div>
+                                        <div style="font-weight: bold;">...</div>
+                                        <div style="margin-top: 20px; display: flex; justify-content: center; gap: 5px;">
+                                            <div style="width: 15px; height: 15px; background-color: #ff7e5f; border-radius: 50%;"></div>
+                                            <div style="width: 15px; height: 15px; background-color: #ff7e5f; border-radius: 50%;"></div>
+                                            <div style="width: 15px; height: 15px; background-color: #ff7e5f; border-radius: 50%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p style="text-align: center; font-style: italic; margin-top: 15px;">Iterative cycles with all phases in each sprint</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; margin-bottom: 40px; box-shadow: 0 3px 6px rgba(0,0,0,0.08);">
+                        <h2 style="color: #ff7e5f; border-bottom: 2px solid #ffe8e0; padding-bottom: 12px; font-size: 1.8em;">Advantages and Disadvantages</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 30px; margin-top: 25px;">
+                            <div style="background-color: #fff0e8; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #ff7e5f; margin-top: 0; text-align: center;">Waterfall Advantages</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li style="margin-bottom: 8px;">Clear structure with well-defined milestones</li>
+                                    <li style="margin-bottom: 8px;">Easy to manage due to rigidity</li>
+                                    <li style="margin-bottom: 8px;">Good for projects with fixed requirements</li>
+                                    <li style="margin-bottom: 8px;">Documentation is thorough and maintained</li>
+                                    <li style="margin-bottom: 8px;">Easy to measure progress against plan</li>
+                                    <li>Works well for small projects with clear objectives</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #fff0e8; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #ff7e5f; margin-top: 0; text-align: center;">Waterfall Disadvantages</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li style="margin-bottom: 8px;">Inflexible to changes after requirements phase</li>
+                                    <li style="margin-bottom: 8px;">Working product not available until late</li>
+                                    <li style="margin-bottom: 8px;">High risk and uncertainty</li>
+                                    <li style="margin-bottom: 8px;">Poor model for complex, object-oriented projects</li>
+                                    <li style="margin-bottom: 8px;">Difficult to estimate time and cost accurately</li>
+                                    <li>Integration done at the end (big bang approach)</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #fff0e8; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #ff7e5f; margin-top: 0; text-align: center;">Agile Advantages</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li style="margin-bottom: 8px;">Flexible to changing requirements</li>
+                                    <li style="margin-bottom: 8px;">Working software delivered frequently</li>
+                                    <li style="margin-bottom: 8px;">Continuous customer involvement</li>
+                                    <li style="margin-bottom: 8px;">Early and predictable delivery</li>
+                                    <li style="margin-bottom: 8px;">Continuous improvement via retrospectives</li>
+                                    <li>Focus on business value and user needs</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #fff0e8; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #ff7e5f; margin-top: 0; text-align: center;">Agile Disadvantages</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li style="margin-bottom: 8px;">Difficult to predict final product</li>
+                                    <li style="margin-bottom: 8px;">Requires significant customer involvement</li>
+                                    <li style="margin-bottom: 8px;">Not suitable for all organizations/cultures</li>
+                                    <li style="margin-bottom: 8px;">Documentation may be neglected</li>
+                                    <li style="margin-bottom: 8px;">Requires experienced team members</li>
+                                    <li>Final cost may exceed traditional approach</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: #ff7e5f; color: white; padding: 30px; border-radius: 8px; margin-bottom: 40px;">
+                        <h2 style="margin-top: 0; border-bottom: 2px solid rgba(255,255,255,0.3); padding-bottom: 12px; font-size: 1.8em;">When to Use Each Methodology</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 25px; margin-top: 25px;">
+                            <div style="background-color: rgba(255,255,255,0.15); padding: 20px; border-radius: 6px;">
+                                <h3 style="margin-top: 0;">Use Waterfall When:</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li style="margin-bottom: 8px;">Requirements are very well documented, clear, and fixed</li>
+                                    <li style="margin-bottom: 8px;">Product definition is stable</li>
+                                    <li style="margin-bottom: 8px;">Technology is understood and not dynamic</li>
+                                    <li style="margin-bottom: 8px;">There are no ambiguous requirements</li>
+                                    <li style="margin-bottom: 8px;">The project is short and simple</li>
+                                    <li>Regulatory requirements demand extensive documentation</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.15); padding: 20px; border-radius: 6px;">
+                                <h3 style="margin-top: 0;">Use Agile When:</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li style="margin-bottom: 8px;">Requirements are not well understood or expected to change</li>
+                                    <li style="margin-bottom: 8px;">You need to deliver value quickly</li>
+                                    <li style="margin-bottom: 8px;">Customers are available and willing to collaborate</li>
+                                    <li style="margin-bottom: 8px;">The project is complex with many unknowns</li>
+                                    <li style="margin-bottom: 8px;">You need frequent feedback and course correction</li>
+                                    <li>The team is experienced with Agile practices</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; margin-bottom: 40px; box-shadow: 0 3px 6px rgba(0,0,0,0.08);">
+                        <h2 style="color: #ff7e5f; border-bottom: 2px solid #ffe8e0; padding-bottom: 12px; font-size: 1.8em;">Hybrid Approaches</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 25px; margin-top: 25px;">
+                            <div style="background-color: #fff0e8; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #ff7e5f; margin-top: 0;">Water-Scrum-Fall</h3>
+                                <p>Combines Waterfall planning and requirements with Agile development sprints, followed by Waterfall-like testing and deployment phases.</p>
+                                <div style="background-color: white; padding: 15px; border-radius: 4px; margin-top: 15px;">
+                                    <p style="margin: 0; font-weight: bold;">Best for:</p>
+                                    <p>Organizations transitioning to Agile but with regulatory or compliance requirements.</p>
+                                </div>
+                            </div>
+                            
+                            <div style="background-color: #fff0e8; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #ff7e5f; margin-top: 0;">Agile-Stage-Gate</h3>
+                                <p>Combines Agile's iterative development with Stage-Gate's phase review process for go/no-go decisions.</p>
+                                <div style="background-color: white; padding: 15px; border-radius: 4px; margin-top: 15px;">
+                                    <p style="margin: 0; font-weight: bold;">Best for:</p>
+                                    <p>Product development where investment decisions need formal review points.</p>
+                                </div>
+                            </div>
+                            
+                            <div style="background-color: #fff0e8; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #ff7e5f; margin-top: 0;">Lean Startup + Agile</h3>
+                                <p>Combines Agile development with Lean Startup's build-measure-learn feedback loop for innovation.</p>
+                                <div style="background-color: white; padding: 15px; border-radius: 4px; margin-top: 15px;">
+                                    <p style="margin: 0; font-weight: bold;">Best for:</p>
+                                    <p>Startups and new product development with high uncertainty.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                   
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics/") ? "../Agile_and_Scrum.json" : "../Agile_and_Scrum.json";
+            
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch DSA Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.Agile_and_Scrum;
+                        displayTopics(allTopics);
+                    })
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+           
+            
+            
+            
+            
+            
+            
+            </body>
+            </html>     

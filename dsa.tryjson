@@ -1,0 +1,10 @@
+{
+    "DSA": [
+        { "name": "DSA in JAVA/C++", "link": "topics/dsa_java_cpp.html" },
+        { "name": "Master System Design", "link": "topics/system_design.html" },
+        { "name": "Master CP", "link": "topics/competitive_programming.html" },
+        { "name": "Basic DSA Problems", "link": "topics/basic_dsa_problems.html" },
+        { "name": "DSA Roadmap", "link": "topics/dsa_roadmap.html" },
+        { "name": "DSA Interview Questions", "link": "topics/dsa_interview_questions.html" }
+    ]
+}

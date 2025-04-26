@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer Network</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/allsubject.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Computer Networks</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <h1>Introduction to Computer Networks</h1>
+                
+                    <div style="background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px;">
+                        <h2 style="color: #2980b9;">What is a Computer Network?</h2>
+                        <p>A computer network is a system that connects multiple computers and other devices (like printers, servers, etc.) to allow communication and resource sharing between them. Networks enable users to share files, access remote resources, and communicate efficiently.</p>
+                    </div>
+                
+                    <div style="background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px;">
+                        <h2 style="color: #2980b9;">Key Components of a Network</h2>
+                        <ul style="padding-left: 20px;">
+                            <li style="margin-bottom: 8px;"><strong>Nodes:</strong> Devices connected to the network (computers, printers, servers)</li>
+                            <li style="margin-bottom: 8px;"><strong>Links:</strong> The physical or wireless connections between nodes</li>
+                            <li style="margin-bottom: 8px;"><strong>Protocols:</strong> Rules governing data communication (TCP/IP, HTTP, FTP)</li>
+                            <li style="margin-bottom: 8px;"><strong>Network Interface Card (NIC):</strong> Hardware that connects a device to a network</li>
+                            <li style="margin-bottom: 8px;"><strong>Switches and Routers:</strong> Devices that manage data traffic</li>
+                        </ul>
+                    </div>
+                
+                    <div style="background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px;">
+                        <h2 style="color: #2980b9;">Types of Networks</h2>
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <tr style="background-color: #3498db; color: white;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Type</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Description</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Coverage</th>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ddd;"><strong>PAN</strong> (Personal Area Network)</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Connects devices around an individual</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">10 meters</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="padding: 10px; border: 1px solid #ddd;"><strong>LAN</strong> (Local Area Network)</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Connects devices in a small geographical area</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Building or campus</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ddd;"><strong>MAN</strong> (Metropolitan Area Network)</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Covers a city or large campus</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">5-50 km</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="padding: 10px; border: 1px solid #ddd;"><strong>WAN</strong> (Wide Area Network)</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Spans large geographical areas (countries, continents)</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Worldwide</td>
+                            </tr>
+                        </table>
+                    </div>
+                
+                    <div style="background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px;">
+                        <h2 style="color: #2980b9;">Network Topologies</h2>
+                        <p>Network topology refers to the arrangement of different elements in a computer network:</p>
+                        <ul style="padding-left: 20px;">
+                            <li style="margin-bottom: 8px;"><strong>Bus:</strong> All devices connected to a single cable</li>
+                            <li style="margin-bottom: 8px;"><strong>Star:</strong> All devices connected to a central hub/switch</li>
+                            <li style="margin-bottom: 8px;"><strong>Ring:</strong> Devices connected in a circular fashion</li>
+                            <li style="margin-bottom: 8px;"><strong>Mesh:</strong> Devices interconnected with multiple paths</li>
+                            <li style="margin-bottom: 8px;"><strong>Tree:</strong> Hierarchical combination of star and bus topologies</li>
+                            <li style="margin-bottom: 8px;"><strong>Hybrid:</strong> Combination of two or more topologies</li>
+                        </ul>
+                    </div>
+                
+                    <div style="background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px;">
+                        <h2 style="color: #2980b9;">Network Protocols</h2>
+                        <p>Protocols are sets of rules that govern how devices communicate on a network:</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 15px;">
+                            <div style="flex: 1; min-width: 200px; background-color: #e8f4fc; padding: 15px; border-radius: 5px;">
+                                <h3 style="color: #2c3e50; margin-top: 0;">TCP/IP</h3>
+                                <p>Transmission Control Protocol/Internet Protocol - the fundamental protocol suite for the Internet</p>
+                            </div>
+                            <div style="flex: 1; min-width: 200px; background-color: #e8f4fc; padding: 15px; border-radius: 5px;">
+                                <h3 style="color: #2c3e50; margin-top: 0;">HTTP/HTTPS</h3>
+                                <p>Hypertext Transfer Protocol (Secure) - for web browsing</p>
+                            </div>
+                            <div style="flex: 1; min-width: 200px; background-color: #e8f4fc; padding: 15px; border-radius: 5px;">
+                                <h3 style="color: #2c3e50; margin-top: 0;">FTP</h3>
+                                <p>File Transfer Protocol - for file transfers</p>
+                            </div>
+                            <div style="flex: 1; min-width: 200px; background-color: #e8f4fc; padding: 15px; border-radius: 5px;">
+                                <h3 style="color: #2c3e50; margin-top: 0;">SMTP/POP/IMAP</h3>
+                                <p>Protocols for email communication</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div style="background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px;">
+                        <h2 style="color: #2980b9;">OSI Model</h2>
+                        <p>The Open Systems Interconnection (OSI) model describes seven layers of network communication:</p>
+                        <ol style="padding-left: 20px;">
+                            <li style="margin-bottom: 8px;"><strong>Physical Layer:</strong> Transmits raw bit stream over physical medium</li>
+                            <li style="margin-bottom: 8px;"><strong>Data Link Layer:</strong> Provides node-to-node data transfer</li>
+                            <li style="margin-bottom: 8px;"><strong>Network Layer:</strong> Handles routing and forwarding</li>
+                            <li style="margin-bottom: 8px;"><strong>Transport Layer:</strong> Ensures end-to-end communication</li>
+                            <li style="margin-bottom: 8px;"><strong>Session Layer:</strong> Manages connections between applications</li>
+                            <li style="margin-bottom: 8px;"><strong>Presentation Layer:</strong> Handles data translation and encryption</li>
+                            <li style="margin-bottom: 8px;"><strong>Application Layer:</strong> Interface for user applications</li>
+                        </ol>
+                    </div>
+                
+                    <div style="background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px;">
+                        <h2 style="color: #2980b9;">Importance of Computer Networks</h2>
+                        <ul style="padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">Resource sharing (files, printers, applications)</li>
+                            <li style="margin-bottom: 8px;">Improved communication (email, instant messaging, video conferencing)</li>
+                            <li style="margin-bottom: 8px;">Data centralization and backup</li>
+                            <li style="margin-bottom: 8px;">Cost efficiency through shared resources</li>
+                            <li style="margin-bottom: 8px;">Remote access to information</li>
+                            <li style="margin-bottom: 8px;">Collaboration between users</li>
+                            <li style="margin-bottom: 8px;">Business process automation</li>
+                        </ul>
+                    </div>
+                
+                    <div style="background-color: #e8f4fc; padding: 20px; border-radius: 8px; border-left: 5px solid #3498db;">
+                        <h3 style="color: #2c3e50; margin-top: 0;">Future Trends in Networking</h3>
+                        <p>Emerging technologies shaping the future of computer networks include:</p>
+                        <ul style="padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">5G networks for faster wireless communication</li>
+                            <li style="margin-bottom: 8px;">Software-Defined Networking (SDN)</li>
+                            <li style="margin-bottom: 8px;">Network Function Virtualization (NFV)</li>
+                            <li style="margin-bottom: 8px;">Internet of Things (IoT) networks</li>
+                            <li style="margin-bottom: 8px;">Edge computing and fog networking</li>
+                            <li style="margin-bottom: 8px;">Artificial Intelligence in network management</li>
+                            <li style="margin-bottom: 8px;">Quantum networking</li>
+                        </ul>
+                    </div>
+                
+                
+            </main>
+            
+                
+            
+            
+            
+
+             <!-- Floating button to open chatbot -->
+    <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+    </div>
+    
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-container");
+            let button = document.getElementById("open-chatbot");
+    
+            if (!chatbot.classList.contains("active")) {
+                chatbot.classList.add("active");
+                button.style.display = "none"; // Hide button when chatbot is open
+            } else {
+                chatbot.classList.remove("active");
+                setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+            }
+        }
+    
+        // Load chatbot HTML dynamically
+        fetch("/chatbot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("chatbot-container").innerHTML += html;
+    
+            // Execute chatbot script after inserting HTML
+            let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+            for (let script of scripts) {
+                let newScript = document.createElement("script");
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript);
+            }
+        })
+        .catch(error => console.error("Error loading chatbot:", error));
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../computernetwork.json" : "computernetwork.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.Computer_Networks;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+        
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

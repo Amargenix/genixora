@@ -1,0 +1,14 @@
+{
+  "Analog_Communication": [
+    { "name": "Introduction to Communication Systems", "id": "comm_intro", "link": "comm_intro.html" },
+    { "name": "Amplitude Modulation (AM)", "id": "am_modulation", "link": "am_modulation.html" },
+    { "name": "Frequency Modulation (FM)", "id": "fm_modulation", "link": "fm_modulation.html" },
+    { "name": "Phase Modulation (PM)", "id": "pm_modulation", "link": "pm_modulation.html" },
+    { "name": "Noise in Communication Systems", "id": "comm_noise", "link": "comm_noise.html" },
+    { "name": "Superheterodyne Receivers", "id": "superhet", "link": "superhet.html" },
+    { "name": "SSB and VSB Techniques", "id": "ssb_vsb", "link": "ssb_vsb.html" },
+    { "name": "Radio Transmitters", "id": "tx_design", "link": "tx_design.html" },
+    { "name": "Advanced Modulation Techniques", "id": "adv_mod", "link": "adv_mod.html" },
+    { "name": "Satellite Communication", "id": "sat_comm", "link": "sat_comm.html" }
+  ]
+}

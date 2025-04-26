@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    <link rel="stylesheet" href="../dsa.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../dsa.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <main class="col-md-7 content">
+                <h1>📚 Introduction to Data Structures and Algorithms (DSA)</h1>
+            
+                <p>
+                    **Data Structures and Algorithms (DSA)** are the **building blocks** of programming.  
+                    Every efficient software, database, or system relies on strong **DSA concepts**  
+                    for **optimized performance and problem-solving**.
+                </p>
+            
+                <h2>⚡ Why Should You Learn DSA?</h2>
+                <ul>
+                    <li>🚀 **Essential for Problem-Solving** – Improves logical thinking and efficiency.</li>
+                    <li>💡 **Crack Technical Interviews** – Used in **Google, Amazon, Microsoft, Facebook, etc.**</li>
+                    <li>📊 **Build Efficient Software** – Helps in **performance tuning** and scalability.</li>
+                    <li>🌍 **Used in Real-World Applications** – AI, Blockchain, Cryptography, Search Engines.</li>
+                </ul>
+            
+                <h1>🔍 What are Data Structures?</h1>
+                <p>
+                    A **Data Structure** is a **way of organizing and storing data**  
+                    so that it can be accessed and modified **efficiently**.
+                </p>
+            
+                <h2>📝 Types of Data Structures</h2>
+            
+                <h3>🟢 1. Linear Data Structures</h3>
+                <ul>
+                    <li>📌 **Arrays** – Contiguous memory storage.</li>
+                    <li>🔗 **Linked Lists** – Dynamic memory allocation.</li>
+                    <li>📚 **Stacks & Queues** – LIFO & FIFO operations.</li>
+                    <li>📄 **Hashing** – Key-value storage with **O(1) lookup**.</li>
+                </ul>
+            
+                <h3>🔵 2. Non-Linear Data Structures</h3>
+                <ul>
+                    <li>🌳 **Trees** – Hierarchical structure (BST, AVL, Red-Black Trees).</li>
+                    <li>📡 **Graphs** – Networks of nodes & edges (DFS, BFS, Shortest Path).</li>
+                    <li>🔢 **Heap** – Priority-based element storage (Min-Heap, Max-Heap).</li>
+                    <li>🔠 **Tries** – Efficient string search data structure.</li>
+                </ul>
+            
+                <h1>⚡ What are Algorithms?</h1>
+                <p>
+                    An **Algorithm** is a step-by-step process to solve a problem **efficiently**.  
+                    The efficiency of an algorithm is measured using **Time & Space Complexity**.
+                </p>
+            
+                <h2>🛠️ Types of Algorithms</h2>
+            
+                <h3>📊 **1. Sorting Algorithms**</h3>
+                <ul>
+                    <li>🔄 **Bubble Sort** – Simple but slow sorting.</li>
+                    <li>⚡ **Merge Sort** – Efficient divide & conquer sorting.</li>
+                    <li>🔥 **Quick Sort** – Faster than merge sort in many cases.</li>
+                </ul>
+            
+                <h3>🔍 **2. Searching Algorithms**</h3>
+                <ul>
+                    <li>🔎 **Linear Search** – Simple, checks elements one by one.</li>
+                    <li>⚡ **Binary Search** – Fast search on sorted data.</li>
+                    <li>🔄 **Jump Search** – Efficient for large datasets.</li>
+                </ul>
+            
+                <h3>📡 **3. Graph Algorithms**</h3>
+                <ul>
+                    <li>🌉 **DFS & BFS** – Used in **pathfinding & AI**.</li>
+                    <li>🚀 **Dijkstra’s Algorithm** – Shortest path in weighted graphs.</li>
+                    <li>🔗 **Kruskal’s & Prim’s Algorithm** – Minimum Spanning Tree.</li>
+                </ul>
+            
+                <h3>🧩 **4. Dynamic Programming & Backtracking**</h3>
+                <ul>
+                    <li>🎯 **Knapsack Problem** – Optimization problem.</li>
+                    <li>🔄 **Longest Common Subsequence (LCS)** – Used in DNA sequencing.</li>
+                    <li>🧩 **Backtracking** – Solving problems like Sudoku, N-Queens.</li>
+                </ul>
+            
+                <h1>⏳ Time Complexity Analysis</h1>
+                <p>Algorithms are analyzed using **Big-O Notation** to measure performance.</p>
+                <table border="1">
+                    <tr>
+                        <th>Algorithm</th>
+                        <th>Best Case</th>
+                        <th>Worst Case</th>
+                    </tr>
+                    <tr>
+                        <td>Linear Search</td>
+                        <td>O(1)</td>
+                        <td>O(n)</td>
+                    </tr>
+                    <tr>
+                        <td>Binary Search</td>
+                        <td>O(1)</td>
+                        <td>O(log n)</td>
+                    </tr>
+                    <tr>
+                        <td>Bubble Sort</td>
+                        <td>O(n)</td>
+                        <td>O(n²)</td>
+                    </tr>
+                    <tr>
+                        <td>Merge Sort</td>
+                        <td>O(n log n)</td>
+                        <td>O(n log n)</td>
+                    </tr>
+                    <tr>
+                        <td>Dijkstra’s Algorithm</td>
+                        <td>O(V log V)</td>
+                        <td>O(V²)</td>
+                    </tr>
+                </table>
+            
+                <h1>🌍 Real-World Applications of DSA</h1>
+                <ul>
+                    <li>🔎 **Google Search Engine** - Uses efficient indexing & searching.</li>
+                    <li>📂 **Databases & File Systems** - Uses Trees, Graphs, Hashing.</li>
+                    <li>🛒 **E-commerce Platforms** - Uses sorting & searching for recommendations.</li>
+                    <li>🚗 **Navigation Systems** - Uses Graph Algorithms (Dijkstra’s, A*).</li>
+                    <li>🎮 **Game Development** - Uses Backtracking, Graphs.</li>
+                </ul>
+            
+                <h1>📖 How to Learn DSA Efficiently?</h1>
+                <ul>
+                    <li>📌 **Start with Basics** – Learn Arrays, Strings, Linked Lists.</li>
+                    <li>📊 **Understand Sorting & Searching** – Master efficient data processing.</li>
+                    <li>🌳 **Move to Trees & Graphs** – Essential for **real-world applications**.</li>
+                    <li>🎯 **Learn Dynamic Programming** – For solving **complex optimization problems**.</li>
+                    <li>🔄 **Practice Competitive Coding** – On LeetCode, CodeForces, GeeksForGeeks.</li>
+                </ul>
+            
+                <h2>🔗 Next Steps</h2>
+                <ul class="nexttopics-container">
+                    <li><a href="arrays.html">🔢 Arrays</a></li>
+                    <li><a href="linked_lists.html">🔗 Linked Lists</a></li>
+                    <li><a href="stacks_queues.html">📚 Stacks & Queues</a></li>
+                </ul>
+            </main>
+            
+
+
+
+
+
+
+
+
+
+                       
+
+
+
+
+               
+
+     
+    <!-- Footer Placeholder -->
+<div id="footer-placeholder"></div>
+<div>
+    <!-- 🔝 Back to Top Button -->
+    <button id="backToTop" class="btn btn-primary">
+        ⬆ Top
+    </button>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Load Navbar, Sidebar, and Footer -->
+    <script>
+        fetch("/navbar.html").then(response => response.text()).then(data => {
+            document.getElementById("navbar-placeholder").innerHTML = data;
+        });
+
+        
+
+        fetch("/footer.html").then(response => response.text()).then(data => {
+            document.getElementById("footer-placeholder").innerHTML = data;
+        });
+    </script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+    const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+    const searchBox = document.getElementById("searchBox");
+
+    if (!sidebarList || !sidebarGrid) {
+        console.error("Sidebar elements not found!");
+        return;
+    }
+
+    let allTopics = [];
+
+    // Adjust JSON path based on file location
+    let jsonPath = window.location.pathname.includes("/topics/") ? "../dsa.json" : "dsa.json";
+
+    console.log("Fetching JSON from:", jsonPath); // Debugging
+
+    // Fetch DSA Topics from JSON
+    fetch(jsonPath)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Failed to load JSON");
+            }
+            return response.json();
+        })
+        .then(data => {
+            allTopics = data.DSA;
+            displayTopics(allTopics);
+        })
+        .catch(error => console.error("Error loading topics:", error));
+
+    // Function to Display Topics in Sidebar
+    function displayTopics(topics) {
+        sidebarList.innerHTML = ""; // Clear list
+        sidebarGrid.innerHTML = ""; // Clear grid
+
+        topics.forEach(topic => {
+            let topicLink = topic.link; // Keep the original link
+            // 🖥️ Desktop List View
+            let li = document.createElement("li");
+            li.className = "list-group-item list-group-item-action";
+            li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+            sidebarList.appendChild(li);
+
+            // 📱 Mobile Grid View (3 in a row)
+            let div = document.createElement("div");
+            div.className = "col-4"; // Bootstrap grid (3 in a row)
+            div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+            sidebarGrid.appendChild(div);
+        });
+    }
+
+    // Search Topics
+    if (searchBox) {
+        searchBox.addEventListener("input", function () {
+            const searchText = this.value.toLowerCase();
+            const filteredTopics = allTopics.filter(topic => 
+                topic.name.toLowerCase().includes(searchText)
+            );
+            displayTopics(filteredTopics);
+        });
+    }
+});
+
+
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const backToTop = document.getElementById("backToTop");
+
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 300) {
+                backToTop.style.display = "block"; // Show button after scrolling 300px
+            } else {
+                backToTop.style.display = "none"; // Hide button when at the top
+            }
+        });
+
+        backToTop.addEventListener("click", function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth" // Smooth scroll effect
+            });
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>

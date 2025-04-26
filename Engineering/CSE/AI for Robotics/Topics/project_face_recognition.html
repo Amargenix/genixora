@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Robotics</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>AI for Robotics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+               <h1>Face Recognition in Robotics</h1>
+                       
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                        <h2 style="color: #FF416C; border-bottom: 3px solid #FF4B2B; padding-bottom: 10px; font-size: 1.8em;">Project Overview</h2>
+                        
+                        <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 25px;">
+                            <div style="flex: 1; min-width: 300px; background-color: #ffebee; padding: 20px; border-radius: 6px; border-left: 5px solid #FF416C;">
+                                <h3 style="color: #FF416C; margin-top: 0;">Project Goals</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Implement real-time face detection</li>
+                                    <li>Develop accurate face recognition</li>
+                                    <li>Enable personalized robot interactions</li>
+                                    <li>Integrate with robotic control systems</li>
+                                </ul>
+                            </div>
+                            <div style="flex: 1; min-width: 300px; background-color: #e3f2fd; padding: 20px; border-radius: 6px; border-left: 5px solid #2196F3;">
+                                <h3 style="color: #2196F3; margin-top: 0;">Key Components</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Face detection module</li>
+                                    <li>Feature extraction pipeline</li>
+                                    <li>Face matching algorithm</li>
+                                    <li>Robotic response system</li>
+                                </ul>
+                            </div>
+                            <div style="flex: 1; min-width: 300px; background-color: #e8f5e9; padding: 20px; border-radius: 6px; border-left: 5px solid #4CAF50;">
+                                <h3 style="color: #4CAF50; margin-top: 0;">Applications</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Personal assistant robots</li>
+                                    <li>Security and surveillance</li>
+                                    <li>Healthcare companions</li>
+                                    <li>Retail customer service</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 30px; background-color: #fff3e0; padding: 20px; border-radius: 6px;">
+                            <h3 style="color: #FF9800; margin-top: 0;">Project Pipeline</h3>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px; overflow-x: auto;">
+                                <div style="text-align: center; padding: 10px; min-width: 120px;">
+                                    <div style="background-color: #FF416C; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; font-weight: bold;">1</div>
+                                    <p style="margin-top: 8px; font-weight: bold;">Face Detection</p>
+                                </div>
+                                <div style="text-align: center; padding: 10px; min-width: 120px;">
+                                    <div style="background-color: #FF4B2B; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; font-weight: bold;">2</div>
+                                    <p style="margin-top: 8px; font-weight: bold;">Alignment</p>
+                                </div>
+                                <div style="text-align: center; padding: 10px; min-width: 120px;">
+                                    <div style="background-color: #2196F3; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; font-weight: bold;">3</div>
+                                    <p style="margin-top: 8px; font-weight: bold;">Feature Extraction</p>
+                                </div>
+                                <div style="text-align: center; padding: 10px; min-width: 120px;">
+                                    <div style="background-color: #4CAF50; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; font-weight: bold;">4</div>
+                                    <p style="margin-top: 8px; font-weight: bold;">Matching</p>
+                                </div>
+                                <div style="text-align: center; padding: 10px; min-width: 120px;">
+                                    <div style="background-color: #FF9800; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; font-weight: bold;">5</div>
+                                    <p style="margin-top: 8px; font-weight: bold;">Robotic Action</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                        <h2 style="color: #FF416C; border-bottom: 3px solid #FF4B2B; padding-bottom: 10px; font-size: 1.8em;">Technical Implementation</h2>
+                        
+                        <div style="margin-bottom: 30px;">
+                            <h3 style="color: #E91E63; background-color: #fce4ec; padding: 12px; border-radius: 5px;">1. Face Detection</h3>
+                            <div style="display: flex; gap: 25px; margin-top: 20px;">
+                                <div style="flex: 1;">
+                                    <h4 style="color: #C2185B; margin-bottom: 10px;">Methods</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li><strong>Haar Cascades:</strong> Traditional approach</li>
+                                        <li><strong>HOG + SVM:</strong> Histogram of Oriented Gradients</li>
+                                        <li><strong>DNN-based:</strong> MTCNN, YuNet</li>
+                                        <li><strong>YOLO variants:</strong> Real-time detection</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1; background-color: #f5f5f5; padding: 15px; border-radius: 6px;">
+                                    <h4 style="color: #C2185B; margin-bottom: 10px;">Performance Comparison</h4>
+                                    <table style="width: 100%; border-collapse: collapse;">
+                                        <thead>
+                                            <tr style="background-color: #E91E63; color: white;">
+                                                <th style="padding: 8px; text-align: left;">Method</th>
+                                                <th style="padding: 8px; text-align: left;">Accuracy</th>
+                                                <th style="padding: 8px; text-align: left;">FPS</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr style="border-bottom: 1px solid #e0e0e0;">
+                                                <td style="padding: 8px;">Haar Cascade</td>
+                                                <td style="padding: 8px;">78%</td>
+                                                <td style="padding: 8px;">25</td>
+                                            </tr>
+                                            <tr style="border-bottom: 1px solid #e0e0e0;">
+                                                <td style="padding: 8px;">MTCNN</td>
+                                                <td style="padding: 8px;">95%</td>
+                                                <td style="padding: 8px;">12</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px;">YuNet</td>
+                                                <td style="padding: 8px;">93%</td>
+                                                <td style="padding: 8px;">60</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div style="margin-top: 15px; background-color: #fce4ec; padding: 12px; border-radius: 5px;">
+                                        <strong>Recommendation:</strong> YuNet offers best balance for robotics applications
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="margin-top: 20px; background-color: #f5f5f5; padding: 15px; border-radius: 6px; font-family: monospace;">
+                                # Face detection with OpenCV's YuNet<br>
+                                import cv2<br>
+                                <br>
+                                detector = cv2.FaceDetectorYN.create(<br>
+                                &nbsp;&nbsp;"face_detection_yunet_2022mar.onnx",<br>
+                                &nbsp;&nbsp;"", (320, 320), 0.9, 0.3, 5000)<br>
+                                <br>
+                                # Detect faces<br>
+                                faces = detector.detect(frame)<br>
+                                for face in faces[1]:<br>
+                                &nbsp;&nbsp;x, y, w, h = map(int, face[:4])<br>
+                                &nbsp;&nbsp;cv2.rectangle(frame, (x, y), (x+w, y+h), (0,255,0), 2)
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 30px;">
+                            <h3 style="color: #3F51B5; background-color: #e8eaf6; padding: 12px; border-radius: 5px;">2. Feature Extraction</h3>
+                            <div style="display: flex; gap: 25px; margin-top: 20px;">
+                                <div style="flex: 1;">
+                                    <h4 style="color: #303F9F; margin-bottom: 10px;">Models</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li><strong>FaceNet:</strong> 128-d embeddings</li>
+                                        <li><strong>ArcFace:</strong> Angular margin loss</li>
+                                        <li><strong>DeepFace:</strong> Multiple backbones</li>
+                                        <li><strong>MobileFaceNet:</strong> Lightweight</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1; background-color: #f5f5f5; padding: 15px; border-radius: 6px;">
+                                    <h4 style="color: #303F9F; margin-bottom: 10px;">Embedding Comparison</h4>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                        <span style="background-color: #3F51B5; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">FaceNet (99.63%)</span>
+                                        <span style="background-color: #3F51B5; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">ArcFace (99.82%)</span>
+                                        <span style="background-color: #3F51B5; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">MobileFaceNet (99.55%)</span>
+                                    </div>
+                                    <div style="margin-top: 15px; background-color: #e8eaf6; padding: 12px; border-radius: 5px;">
+                                        <strong>Tip:</strong> For robotics, balance accuracy with computational efficiency
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="margin-top: 20px; background-color: #f5f5f5; padding: 15px; border-radius: 6px; font-family: monospace;">
+                                # Feature extraction with FaceNet<br>
+                                from facenet_pytorch import InceptionResnetV1<br>
+                                <br>
+                                model = InceptionResnetV1(pretrained='vggface2').eval()<br>
+                                <br>
+                                # Get embedding<br>
+                                face_tensor = preprocess(face_image)<br>
+                                embedding = model(face_tensor.unsqueeze(0))
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 30px;">
+                            <h3 style="color: #009688; background-color: #e0f2f1; padding: 12px; border-radius: 5px;">3. Face Matching</h3>
+                            <div style="display: flex; gap: 25px; margin-top: 20px;">
+                                <div style="flex: 1;">
+                                    <h4 style="color: #00796B; margin-bottom: 10px;">Techniques</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li><strong>Cosine Similarity:</strong> Most common</li>
+                                        <li><strong>Euclidean Distance:</strong> Simple metric</li>
+                                        <li><strong>k-NN Classifier:</strong> For multiple faces</li>
+                                        <li><strong>Siamese Networks:</strong> Direct comparison</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1; background-color: #f5f5f5; padding: 15px; border-radius: 6px;">
+                                    <h4 style="color: #00796B; margin-bottom: 10px;">Thresholds</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li><strong>Same person:</strong> >0.6 cosine</li>
+                                        <li><strong>Different people:</strong> <0.4 cosine</li>
+                                        <li><strong>Uncertain:</strong> 0.4-0.6 range</li>
+                                    </ul>
+                                    <div style="margin-top: 15px; background-color: #e0f2f1; padding: 12px; border-radius: 5px;">
+                                        <strong>Note:</strong> Thresholds vary by model and application
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 style="color: #FF9800; background-color: #fff3e0; padding: 12px; border-radius: 5px;">4. Robotic Integration</h3>
+                            <div style="display: flex; gap: 25px; margin-top: 20px;">
+                                <div style="flex: 1;">
+                                    <h4 style="color: #F57C00; margin-bottom: 10px;">Components</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li><strong>ROS Node:</strong> Face recognition service</li>
+                                        <li><strong>Database:</strong> Stored face embeddings</li>
+                                        <li><strong>Action Server:</strong> Personalized responses</li>
+                                        <li><strong>UI Feedback:</strong> Visual confirmation</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1; background-color: #f5f5f5; padding: 15px; border-radius: 6px;">
+                                    <h4 style="color: #F57C00; margin-bottom: 10px;">Implementation Tips</h4>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                        <span style="background-color: #FF9800; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Async Processing</span>
+                                        <span style="background-color: #FF9800; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Fallback Mechanisms</span>
+                                        <span style="background-color: #FF9800; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Privacy Controls</span>
+                                        <span style="background-color: #FF9800; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Continuous Learning</span>
+                                    </div>
+                                    <div style="margin-top: 15px; background-color: #fff3e0; padding: 12px; border-radius: 5px;">
+                                        <strong>Example:</strong> Robot greeting recognized users by name and recalling preferences
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                        <h2 style="color: #FF416C; border-bottom: 3px solid #FF4B2B; padding-bottom: 10px; font-size: 1.8em;">Project Development Guide</h2>
+                        
+                        <div style="display: flex; gap: 20px; margin-top: 20px;">
+                            <div style="flex: 1; background-color: #f3e5f5; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #8E24AA; margin-top: 0;">Hardware Setup</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Camera:</strong> RGB or RGB-D (Intel RealSense)</li>
+                                    <li><strong>Compute:</strong> NVIDIA Jetson or x86 with GPU</li>
+                                    <li><strong>Robotic Platform:</strong> TurtleBot, Pepper, etc.</li>
+                                    <li><strong>Lighting:</strong> Adjustable for consistency</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="flex: 1; background-color: #e8eaf6; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #3949AB; margin-top: 0;">Software Stack</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Core:</strong> Python, OpenCV, PyTorch</li>
+                                    <li><strong>Frameworks:</strong> ROS, OpenFace, DeepFace</li>
+                                    <li><strong>Tools:</strong> Docker for deployment</li>
+                                    <li><strong>Database:</strong> SQLite or Redis for embeddings</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 20px; background-color: #e0f2f1; padding: 20px; border-radius: 6px;">
+                            <h3 style="color: #00897B; margin-top: 0;">Development Steps</h3>
+                            <div style="display: flex; gap: 20px; margin-top: 15px;">
+                                <div style="flex: 1;">
+                                    <h4 style="color: #00695C; margin-bottom: 10px;">Phase 1: Prototyping</h4>
+                                    <ol style="padding-left: 20px;">
+                                        <li>Set up face detection</li>
+                                        <li>Implement feature extraction</li>
+                                        <li>Test matching accuracy</li>
+                                        <li>Optimize for real-time</li>
+                                    </ol>
+                                </div>
+                                <div style="flex: 1;">
+                                    <h4 style="color: #00695C; margin-bottom: 10px;">Phase 2: Integration</h4>
+                                    <ol style="padding-left: 20px;">
+                                        <li>Connect to robotic platform</li>
+                                        <li>Implement ROS interface</li>
+                                        <li>Design user feedback</li>
+                                        <li>Add database support</li>
+                                    </ol>
+                                </div>
+                                <div style="flex: 1;">
+                                    <h4 style="color: #00695C; margin-bottom: 10px;">Phase 3: Refinement</h4>
+                                    <ol style="padding-left: 20px;">
+                                        <li>Improve lighting robustness</li>
+                                        <li>Handle occlusion cases</li>
+                                        <li>Add admin interface</li>
+                                        <li>Optimize performance</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 20px; background-color: #fff3e0; padding: 20px; border-radius: 6px;">
+                            <h3 style="color: #FF9800; margin-top: 0;">Evaluation Metrics</h3>
+                            <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+                                <thead>
+                                    <tr style="background-color: #FF9800; color: white;">
+                                        <th style="padding: 10px; text-align: left;">Metric</th>
+                                        <th style="padding: 10px; text-align: left;">Description</th>
+                                        <th style="padding: 10px; text-align: left;">Target</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #e0e0e0;">
+                                        <td style="padding: 10px;">True Acceptance Rate</td>
+                                        <td style="padding: 10px;">Correct recognitions</td>
+                                        <td style="padding: 10px;">>95%</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #e0e0e0;">
+                                        <td style="padding: 10px;">False Acceptance Rate</td>
+                                        <td style="padding: 10px;">Incorrect matches</td>
+                                        <td style="padding: 10px;"><1%</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #e0e0e0;">
+                                        <td style="padding: 10px;">Processing Time</td>
+                                        <td style="padding: 10px;">Per face recognition</td>
+                                        <td style="padding: 10px;"><200ms</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 10px;">User Satisfaction</td>
+                                        <td style="padding: 10px;">Subjective rating</td>
+                                        <td style="padding: 10px;">>4/5</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                
+                    <section style="background: linear-gradient(135deg, #e7859c, #de998d); color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                        <h2 style="border-bottom: 2px solid rgba(255,255,255,0.3); padding-bottom: 10px; font-size: 1.8em;">Ethical Considerations</h2>
+                        
+                        <div style="display: flex; gap: 20px; margin-top: 20px;">
+                            <div style="flex: 1; background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #ffffff; margin-top: 0;">Privacy</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Data collection consent</li>
+                                    <li>Secure storage of biometrics</li>
+                                    <li>Right to be forgotten</li>
+                                    <li>Anonymization options</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="flex: 1; background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #ffffff; margin-top: 0;">Bias Mitigation</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Diverse training datasets</li>
+                                    <li>Regular fairness testing</li>
+                                    <li>Demographic parity checks</li>
+                                    <li>Transparent reporting</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="flex: 1; background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #ffffff; margin-top: 0;">Security</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Encryption of face data</li>
+                                    <li>Anti-spoofing measures</li>
+                                    <li>Access controls</li>
+                                    <li>Tamper detection</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 30px; background-color: rgba(255,255,255,0.15); padding: 20px; border-radius: 6px; text-align: center; font-style: italic;">
+                            "Responsible face recognition in robotics requires balancing technological capabilities with respect for individual rights and societal values."
+                        </div>
+                    </section>
+                
+                  
+
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [ ];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics") ? "../AI for Robotics.json" : "../AI for Robotics.json";
+
+                                              
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch AI for Robotics Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.AI_for_Robotics;
+                        displayTopics(allTopics);
+                    }
+                    )
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+           
+            
+            
+            
+            
+            
+            
+            </body>
+            </html>        

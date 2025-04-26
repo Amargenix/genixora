@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../software engineering.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Software Engineering</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+            <main class="col-md-7 content">
+                
+                    <h1>Software Testing and Quality Assurance</h1>
+                
+            
+                <section id="fundamentals" style="margin-bottom: 40px;">
+                    <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">1. Testing Fundamentals</h2>
+                    
+                    <div class="concept-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">1.1 What is Software Testing?</h3>
+                        <p>Software testing is the process of evaluating a software application to:</p>
+                        <ul>
+                            <li>Identify defects and verify requirements are met</li>
+                            <li>Ensure the software is fit for its intended purpose</li>
+                            <li>Improve quality by finding bugs before release</li>
+                            <li>Reduce risk of failures in production</li>
+                        </ul>
+                        
+                        <div class="best-practice" style="background-color: #eafaf1; padding: 15px; border-left: 4px solid #2ecc71; margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">Key Testing Principles</h4>
+                            <ul>
+                                <li><strong>Testing shows presence of defects:</strong> Can't prove absence</li>
+                                <li><strong>Exhaustive testing is impossible:</strong> Need smart test cases</li>
+                                <li><strong>Early testing:</strong> Start testing requirements</li>
+                                <li><strong>Defect clustering:</strong> Small modules often have most defects</li>
+                                <li><strong>Pesticide paradox:</strong> Tests need regular review</li>
+                            </ul>
+                        </div>
+                    </div>
+            
+                    <div class="concept-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">1.2 Quality Assurance vs Quality Control</h3>
+                        <div class="comparison" style="background-color: #fff8e1; padding: 15px; border-left: 4px solid #ffc107;">
+                            <table style="width: 100%; border-collapse: collapse; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <tr>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Aspect</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Quality Assurance (QA)</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Quality Control (QC)</th>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Focus</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Process-oriented (prevent defects)</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Product-oriented (identify defects)</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">When</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Throughout development lifecycle</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">During/after development</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Activities</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Process definition, audits, training</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Testing, inspection, review</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Goal</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Improve processes to prevent issues</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Find defects in the product</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            
+                <section id="testing-types" style="margin-bottom: 40px;">
+                    <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">2. Types of Software Testing</h2>
+                    
+                    <div class="concept-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">2.1 Functional Testing</h3>
+                        <div class="testing-type" style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                            <h4 style="color: #2c3e50;">Unit Testing</h4>
+                            <ul>
+                                <li>Tests individual components/modules</li>
+                                <li>Performed by developers</li>
+                                <li>Tools: JUnit, NUnit, pytest</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="testing-type" style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                            <h4 style="color: #2c3e50;">Integration Testing</h4>
+                            <ul>
+                                <li>Tests interaction between components</li>
+                                <li>Approaches: Big Bang, Top-Down, Bottom-Up</li>
+                                <li>Tools: TestNG, Postman (for APIs)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="testing-type" style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                            <h4 style="color: #2c3e50;">System Testing</h4>
+                            <ul>
+                                <li>End-to-end testing of complete system</li>
+                                <li>Validates against requirements</li>
+                                <li>Includes functional and non-functional tests</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="testing-type" style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                            <h4 style="color: #2c3e50;">User Acceptance Testing (UAT)</h4>
+                            <ul>
+                                <li>Final validation by business/users</li>
+                                <li>Types: Alpha, Beta, Contract Acceptance</li>
+                                <li>Focuses on business workflows</li>
+                            </ul>
+                        </div>
+                    </div>
+            
+                    <div class="concept-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">2.2 Non-Functional Testing</h3>
+                        <div class="testing-type" style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                            <h4 style="color: #2c3e50;">Performance Testing</h4>
+                            <ul>
+                                <li><strong>Load Testing:</strong> System behavior under expected load</li>
+                                <li><strong>Stress Testing:</strong> Beyond normal operational capacity</li>
+                                <li><strong>Endurance Testing:</strong> Long duration under expected load</li>
+                                <li>Tools: JMeter, LoadRunner, Gatling</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="testing-type" style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                            <h4 style="color: #2c3e50;">Security Testing</h4>
+                            <ul>
+                                <li>Identifies vulnerabilities and threats</li>
+                                <li>Types: Penetration testing, SAST, DAST</li>
+                                <li>Tools: OWASP ZAP, Burp Suite, Nessus</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="testing-type" style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                            <h4 style="color: #2c3e50;">Usability Testing</h4>
+                            <ul>
+                                <li>Evaluates user-friendliness</li>
+                                <li>Measures learnability, efficiency, satisfaction</li>
+                                <li>Methods: Heuristic evaluation, user sessions</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="testing-type" style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                            <h4 style="color: #2c3e50;">Compatibility Testing</h4>
+                            <ul>
+                                <li>Tests across browsers, devices, OS versions</li>
+                                <li>Tools: BrowserStack, Sauce Labs</li>
+                            </ul>
+                        </div>
+                    </div>
+            
+                    <div class="concept-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">2.3 Testing Techniques</h3>
+                        <div class="testing-type" style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                            <h4 style="color: #2c3e50;">Black Box Testing</h4>
+                            <ul>
+                                <li>Tests functionality without code knowledge</li>
+                                <li>Techniques: Equivalence Partitioning, Boundary Value Analysis</li>
+                                <li>Performed by testers</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="testing-type" style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                            <h4 style="color: #2c3e50;">White Box Testing</h4>
+                            <ul>
+                                <li>Tests internal structures/code</li>
+                                <li>Techniques: Statement Coverage, Branch Coverage</li>
+                                <li>Performed by developers</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="testing-type" style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                            <h4 style="color: #2c3e50;">Grey Box Testing</h4>
+                            <ul>
+                                <li>Combination of black and white box</li>
+                                <li>Partial knowledge of internal workings</li>
+                                <li>Used for integration testing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            
+                <section id="testing-process" style="margin-bottom: 40px;">
+                    <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">3. Testing Process and Methodologies</h2>
+                    
+                    <div class="concept-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">3.1 Test Planning</h3>
+                        <div class="process-flow" style="background-color: #ebf5fb; padding: 15px; border-left: 4px solid #2980b9;">
+                            <h4 style="color: #2c3e50;">Test Plan Components</h4>
+                            <ol>
+                                <li><strong>Objectives:</strong> What needs to be tested</li>
+                                <li><strong>Scope:</strong> Features to be tested/not tested</li>
+                                <li><strong>Approach:</strong> Testing techniques and types</li>
+                                <li><strong>Schedule:</strong> Timeline and milestones</li>
+                                <li><strong>Resources:</strong> People, tools, environments</li>
+                                <li><strong>Deliverables:</strong> Test cases, reports, metrics</li>
+                            </ol>
+                        </div>
+                    </div>
+            
+                    <div class="concept-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">3.2 Test Case Development</h3>
+                        <div class="best-practice" style="background-color: #eafaf1; padding: 15px; border-left: 4px solid #2ecc71; margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">Characteristics of Good Test Cases</h4>
+                            <ul>
+                                <li><strong>Atomic:</strong> Tests one specific thing</li>
+                                <li><strong>Repeatable:</strong> Same results every time</li>
+                                <li><strong>Traceable:</strong> Linked to requirements</li>
+                                <li><strong>Self-verifying:</strong> Clear pass/fail criteria</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="example-box" style="background-color: #f9f9f9; padding: 15px; border-left: 4px solid #95a5a6; margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">Sample Test Case Format</h4>
+                            <p><strong>Test Case ID:</strong> TC_LOGIN_001<br>
+                            <strong>Description:</strong> Verify successful login with valid credentials<br>
+                            <strong>Preconditions:</strong> User account exists<br>
+                            <strong>Test Steps:</strong><br>
+                            1. Navigate to login page<br>
+                            2. Enter valid username<br>
+                            3. Enter valid password<br>
+                            4. Click Login button<br>
+                            <strong>Expected Result:</strong> User is redirected to dashboard</p>
+                        </div>
+                    </div>
+            
+                    <div class="concept-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">3.3 Defect Lifecycle</h3>
+                        <div class="process-flow" style="background-color: #ebf5fb; padding: 15px; border-left: 4px solid #2980b9;">
+                            <h4 style="color: #2c3e50;">Stages of a Defect</h4>
+                            <ol>
+                                <li><strong>New:</strong> Initial logging of defect</li>
+                                <li><strong>Assigned:</strong> Given to developer</li>
+                                <li><strong>Open:</strong> Developer working on fix</li>
+                                <li><strong>Fixed:</strong> Developer completes fix</li>
+                                <li><strong>Retest:</strong> Tester verifies fix</li>
+                                <li><strong>Verified:</strong> Fix confirmed</li>
+                                <li><strong>Closed:</strong> Defect resolved</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="best-practice" style="background-color: #eafaf1; padding: 15px; border-left: 4px solid #2ecc71; margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">Effective Bug Reporting</h4>
+                            <ul>
+                                <li>Clear, concise title</li>
+                                <li>Detailed reproduction steps</li>
+                                <li>Expected vs actual results</li>
+                                <li>Environment details</li>
+                                <li>Screenshots/logs when applicable</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            
+                <section id="automation" style="margin-bottom: 40px;">
+                    <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">4. Test Automation</h2>
+                    
+                    <div class="concept-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">4.1 Test Automation Strategy</h3>
+                        <div class="best-practice" style="background-color: #eafaf1; padding: 15px; border-left: 4px solid #2ecc71; margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">What to Automate?</h4>
+                            <ul>
+                                <li>Repetitive test cases</li>
+                                <li>Data-driven tests</li>
+                                <li>Regression test suites</li>
+                                <li>Performance/load tests</li>
+                                <li>Complex calculations</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="comparison" style="background-color: #fff8e1; padding: 15px; border-left: 4px solid #ffc107;">
+                            <h4 style="color: #2c3e50;">Automation vs Manual Testing</h4>
+                            <table style="width: 100%; border-collapse: collapse; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <tr>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Factor</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Automation</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Manual</th>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Execution Speed</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Fast</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Slow</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Initial Investment</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">High</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Low</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Human Judgment</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Limited</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Excellent</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Maintenance</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Required</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Minimal</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+            
+                    <div class="concept-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">4.2 Test Automation Frameworks</h3>
+                        <div class="tool-list" style="background-color: #f5eef8; padding: 15px; border-left: 4px solid #9b59b6;">
+                            <h4 style="color: #2c3e50;">Popular Automation Tools</h4>
+                            <ul>
+                                <li><strong>Web:</strong> Selenium, Cypress, Playwright</li>
+                                <li><strong>API:</strong> Postman, RestAssured, SoapUI</li>
+                                <li><strong>Mobile:</strong> Appium, Espresso, XCUITest</li>
+                                <li><strong>Performance:</strong> JMeter, LoadRunner</li>
+                                <li><strong>Unit Testing:</strong> JUnit, TestNG, pytest</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="testing-type" style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                            <h4 style="color: #2c3e50;">Framework Types</h4>
+                            <ul>
+                                <li><strong>Linear:</strong> Simple record and playback</li>
+                                <li><strong>Modular:</strong> Test scripts divided by functionality</li>
+                                <li><strong>Data-Driven:</strong> Tests run with multiple data sets</li>
+                                <li><strong>Keyword-Driven:</strong> Tests described with keywords</li>
+                                <li><strong>Hybrid:</strong> Combines multiple approaches</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            
+                <section id="metrics" style="margin-bottom: 40px;">
+                    <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">5. Quality Metrics and Reporting</h2>
+                    
+                    <div class="concept-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">5.1 Key Testing Metrics</h3>
+                        <table style="width: 100%; border-collapse: collapse; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <tr>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Metric</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Purpose</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Formula</th>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Test Coverage</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Requirements/test cases covered</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">(Tested Requirements/Total Requirements) × 100</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Defect Density</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Quality of software modules</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Defects Found/Size (KLOC or FP)</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Defect Removal Efficiency</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Effectiveness of testing</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">(Defects Found During Testing/Total Defects) × 100</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Test Case Effectiveness</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Quality of test cases</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">(Defects Found by Test Case/Total Test Cases) × 100</td>
+                            </tr>
+                        </table>
+                    </div>
+            
+                    <div class="concept-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">5.2 Test Reporting</h3>
+                        <div class="best-practice" style="background-color: #eafaf1; padding: 15px; border-left: 4px solid #2ecc71; margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">Essential Test Reports</h4>
+                            <ul>
+                                <li><strong>Test Summary Report:</strong> Overall testing results</li>
+                                <li><strong>Defect Report:</strong> Analysis of found defects</li>
+                                <li><strong>Traceability Matrix:</strong> Requirements vs test cases</li>
+                                <li><strong>Test Progress Report:</strong> Current status vs plan</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            
+                <section id="trends" style="margin-bottom: 40px;">
+                    <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">6. Emerging Trends in Testing</h2>
+                    
+                    <div class="concept-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">6.1 Modern Testing Approaches</h3>
+                        <ul>
+                            <li><strong>AI in Testing:</strong> Self-healing tests, visual validation</li>
+                            <li><strong>Shift-Left Testing:</strong> Early testing in SDLC</li>
+                            <li><strong>Shift-Right Testing:</strong> Production monitoring</li>
+                            <li><strong>Continuous Testing:</strong> CI/CD pipeline integration</li>
+                            <li><strong>Service Virtualization:</strong> Simulate unavailable systems</li>
+                        </ul>
+                    </div>
+            
+                    <div class="concept-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">6.2 Future of QA</h3>
+                        <ul>
+                            <li>Increased test automation coverage</li>
+                            <li>More focus on security and performance</li>
+                            <li>QA as quality coaches rather than gatekeepers</li>
+                            <li>Greater emphasis on user experience testing</li>
+                            <li>Integration of testing with DevOps (TestOps)</li>
+                        </ul>
+                    </div>
+                </section>
+            </main>
+
+            
+                
+             
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+    const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+    const searchBox = document.getElementById("searchBox");
+
+    if (!sidebarList || !sidebarGrid) {
+        console.error("Sidebar elements not found!");
+        return;
+    }
+
+    let allTopics = [];
+
+    // Adjust JSON path based on file location
+    let jsonPath = window.location.pathname.includes("/topics/") ? "../softwarengineering.json" : "softwarengineering.json";
+
+    console.log("Fetching JSON from:", jsonPath); // Debugging
+
+    // Fetch Software Engineering Topics from JSON
+    fetch(jsonPath)
+        .then(response => {
+            console.log("Fetch Response:", response);
+            if (!response.ok) {
+                throw new Error("Failed to load JSON: " + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Fetched Data:", data);
+            if (!data.Software_Engineering) {
+                throw new Error("JSON does not contain 'Software_Engineering' key!");
+            }
+            allTopics = data.Software_Engineering;
+            displayTopics(allTopics);
+        })
+        .catch(error => console.error("Error loading topics:", error));
+
+    // Function to Display Topics in Sidebar
+    function displayTopics(topics) {
+        if (!Array.isArray(topics)) {
+            console.error("Invalid topics data:", topics);
+            return;
+        }
+
+        sidebarList.innerHTML = ""; // Clear list
+        sidebarGrid.innerHTML = ""; // Clear grid
+
+        topics.forEach(topic => {
+            let topicLink = topic.link; // Keep the original link
+
+            // 🖥️ Desktop List View
+            let li = document.createElement("li");
+            li.className = "list-group-item list-group-item-action";
+            li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+            sidebarList.appendChild(li);
+
+            // 📱 Mobile Grid View (3 in a row)
+            let div = document.createElement("div");
+            div.className = "col-4"; // Bootstrap grid (3 in a row)
+            div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+            sidebarGrid.appendChild(div);
+        });
+    }
+
+    // Search Topics
+    if (searchBox) {
+        searchBox.addEventListener("input", function () {
+            const searchText = this.value.toLowerCase();
+            const filteredTopics = allTopics.filter(topic =>
+                topic.name.toLowerCase().includes(searchText)
+            );
+            displayTopics(filteredTopics);
+        });
+    }
+});
+
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

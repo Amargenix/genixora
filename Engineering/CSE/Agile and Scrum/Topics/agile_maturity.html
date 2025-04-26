@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agile Anti-Patterns</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Agile and Scrum</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <h1>Agile Maturity in Agile and Scrum</h1>
+                   
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; margin-bottom: 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                        <h2 style="color: #4b6cb7; border-bottom: 2px solid #eee; padding-bottom: 10px;">What is Agile Maturity?</h2>
+                        <p style="font-size: 1.1em;">Agile maturity refers to the level of proficiency, effectiveness, and sophistication that an organization or team has achieved in implementing Agile principles and practices. It measures how well Agile values are understood, embraced, and consistently applied across all levels of the organization.</p>
+                        
+                        <div style="background-color: #f0f7ff; padding: 15px; border-left: 4px solid #4b6cb7; margin: 20px 0;">
+                            <p style="font-style: italic; margin: 0;">"Agile maturity isn't about doing more Agile practices, but about being more Agile in mindset and culture."</p>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; margin-bottom: 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                        <h2 style="color: #4b6cb7; border-bottom: 2px solid #eee; padding-bottom: 10px;">Agile Maturity Models</h2>
+                        
+                        <h3 style="color: #3a5a9d; margin-top: 20px;">1. The Agile Fluency Model</h3>
+                        <p>Developed by Diana Larsen and James Shore, this model describes four zones of fluency:</p>
+                        <ul style="padding-left: 20px;">
+                            <li style="margin-bottom: 8px;"><strong>One-Star (Focusing):</strong> Delivering value, basic Agile practices</li>
+                            <li style="margin-bottom: 8px;"><strong>Two-Star (Delivering):</strong> Reliable, frequent delivery with technical excellence</li>
+                            <li style="margin-bottom: 8px;"><strong>Three-Star (Optimizing):</strong> Optimizing value stream, business collaboration</li>
+                            <li style="margin-bottom: 8px;"><strong>Four-Star (Strengthening):</strong> Organizational agility, market adaptability</li>
+                        </ul>
+                        
+                        <h3 style="color: #3a5a9d; margin-top: 20px;">2. Scrum Alliance Maturity Model</h3>
+                        <p>Five levels of Scrum maturity:</p>
+                        <ol style="padding-left: 20px;">
+                            <li style="margin-bottom: 8px;"><strong>Pre-Scrum:</strong> Waterfall or undefined processes</li>
+                            <li style="margin-bottom: 8px;"><strong>Starting Scrum:</strong> Basic Scrum events and roles</li>
+                            <li style="margin-bottom: 8px;"><strong>Scaling Scrum:</strong> Multiple teams, scaling frameworks</li>
+                            <li style="margin-bottom: 8px;"><strong>Optimizing Scrum:</strong> Continuous improvement, metrics</li>
+                            <li style="margin-bottom: 8px;"><strong>Mastering Scrum:</strong> Business agility, organizational transformation</li>
+                        </ol>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; margin-bottom: 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                        <h2 style="color: #4b6cb7; border-bottom: 2px solid #eee; padding-bottom: 10px;">Key Dimensions of Agile Maturity</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div style="background-color: #f5f8ff; padding: 15px; border-radius: 5px; border-top: 3px solid #4b6cb7;">
+                                <h3 style="color: #3a5a9d; margin-top: 0;">Process Maturity</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Consistency in ceremonies</li>
+                                    <li>Definition of Done adherence</li>
+                                    <li>Backlog refinement quality</li>
+                                    <li>Velocity stability</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f5f8ff; padding: 15px; border-radius: 5px; border-top: 3px solid #4b6cb7;">
+                                <h3 style="color: #3a5a9d; margin-top: 0;">Technical Maturity</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Test automation coverage</li>
+                                    <li>CI/CD implementation</li>
+                                    <li>Technical debt management</li>
+                                    <li>Pair programming/mobbing</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f5f8ff; padding: 15px; border-radius: 5px; border-top: 3px solid #4b6cb7;">
+                                <h3 style="color: #3a5a9d; margin-top: 0;">Cultural Maturity</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Psychological safety</li>
+                                    <li>Collaboration across functions</li>
+                                    <li>Leadership support</li>
+                                    <li>Failure tolerance</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f5f8ff; padding: 15px; border-radius: 5px; border-top: 3px solid #4b6cb7;">
+                                <h3 style="color: #3a5a9d; margin-top: 0;">Business Maturity</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Product owner engagement</li>
+                                    <li>Value-based prioritization</li>
+                                    <li>Stakeholder collaboration</li>
+                                    <li>Outcome over output focus</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; margin-bottom: 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                        <h2 style="color: #4b6cb7; border-bottom: 2px solid #eee; padding-bottom: 10px;">Assessing Agile Maturity</h2>
+                        
+                        <h3 style="color: #3a5a9d;">Common Assessment Methods</h3>
+                        <ul style="padding-left: 20px;">
+                            <li style="margin-bottom: 8px;"><strong>Surveys and Questionnaires:</strong> Agile maturity assessments (e.g., Comparative Agility, Scrum.org assessments)</li>
+                            <li style="margin-bottom: 8px;"><strong>Interviews and Workshops:</strong> With team members, stakeholders, and leadership</li>
+                            <li style="margin-bottom: 8px;"><strong>Observation:</strong> Of ceremonies and daily work</li>
+                            <li style="margin-bottom: 8px;"><strong>Metrics Analysis:</strong> Cycle time, lead time, velocity trends, defect rates</li>
+                        </ul>
+                        
+                        <h3 style="color: #3a5a9d; margin-top: 20px;">Key Indicators of Maturity</h3>
+                        <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+                            <thead>
+                                <tr style="background-color: #4b6cb7; color: white;">
+                                    <th style="padding: 12px; text-align: left;">Area</th>
+                                    <th style="padding: 12px; text-align: left;">Immature</th>
+                                    <th style="padding: 12px; text-align: left;">Maturing</th>
+                                    <th style="padding: 12px; text-align: left;">Mature</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 10px;">Planning</td>
+                                    <td style="padding: 10px;">Ad-hoc, unpredictable</td>
+                                    <td style="padding: 10px;">Regular sprints, some variability</td>
+                                    <td style="padding: 10px;">Reliable forecasts, adaptive</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                                    <td style="padding: 10px;">Delivery</td>
+                                    <td style="padding: 10px;">Frequent delays, quality issues</td>
+                                    <td style="padding: 10px;">Most sprints deliver value</td>
+                                    <td style="padding: 10px;">Continuous delivery, high quality</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 10px;">Retrospectives</td>
+                                    <td style="padding: 10px;">Irregular, superficial</td>
+                                    <td style="padding: 10px;">Regular, some improvements</td>
+                                    <td style="padding: 10px;">Actionable insights, measurable change</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                                    <td style="padding: 10px;">Culture</td>
+                                    <td style="padding: 10px;">Command-and-control</td>
+                                    <td style="padding: 10px;">Emerging trust, some autonomy</td>
+                                    <td style="padding: 10px;">High trust, empowered teams</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; margin-bottom: 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                        <h2 style="color: #4b6cb7; border-bottom: 2px solid #eee; padding-bottom: 10px;">Improving Agile Maturity</h2>
+                        
+                        <h3 style="color: #3a5a9d;">Strategies for Advancement</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; margin-top: 20px;">
+                            <div style="background-color: #eef4ff; padding: 15px; border-radius: 5px;">
+                                <h4 style="margin-top: 0; color: #3a5a9d;">1. Focus on Fundamentals</h4>
+                                <p>Master basic Agile practices before advanced techniques. Ensure consistent execution of Scrum events.</p>
+                            </div>
+                            
+                            <div style="background-color: #eef4ff; padding: 15px; border-radius: 5px;">
+                                <h4 style="margin-top: 0; color: #3a5a9d;">2. Invest in Training</h4>
+                                <p>Continuous learning for all roles. Consider certifications (CSM, PSM, CSPO) and advanced workshops.</p>
+                            </div>
+                            
+                            <div style="background-color: #eef4ff; padding: 15px; border-radius: 5px;">
+                                <h4 style="margin-top: 0; color: #3a5a9d;">3. Improve Technical Practices</h4>
+                                <p>Implement test automation, CI/CD, and good engineering practices to enable sustainable pace.</p>
+                            </div>
+                            
+                            <div style="background-color: #eef4ff; padding: 15px; border-radius: 5px;">
+                                <h4 style="margin-top: 0; color: #3a5a9d;">4. Enhance Product Ownership</h4>
+                                <p>Strengthen backlog management, stakeholder engagement, and value-based prioritization.</p>
+                            </div>
+                            
+                            <div style="background-color: #eef4ff; padding: 15px; border-radius: 5px;">
+                                <h4 style="margin-top: 0; color: #3a5a9d;">5. Cultivate Leadership Support</h4>
+                                <p>Educate leaders on Agile principles and their role in enabling agility.</p>
+                            </div>
+                            
+                            <div style="background-color: #eef4ff; padding: 15px; border-radius: 5px;">
+                                <h4 style="margin-top: 0; color: #3a5a9d;">6. Measure and Adapt</h4>
+                                <p>Establish meaningful metrics, regularly assess progress, and adjust approaches.</p>
+                            </div>
+                        </div>
+                        
+                        <h3 style="color: #3a5a9d; margin-top: 30px;">Common Pitfalls in Agile Maturity Journey</h3>
+                        <ul style="padding-left: 20px;">
+                            <li style="margin-bottom: 8px;"><strong>Cargo Cult Agile:</strong> Implementing practices without understanding principles</li>
+                            <li style="margin-bottom: 8px;"><strong>Overemphasis on Velocity:</strong> Focusing on speed rather than value delivery</li>
+                            <li style="margin-bottom: 8px;"><strong>Neglecting Technical Excellence:</strong> Sacrificing quality for short-term gains</li>
+                            <li style="margin-bottom: 8px;"><strong>Lack of Leadership Alignment:</strong> Inconsistent support from management</li>
+                            <li style="margin-bottom: 8px;"><strong>Ignoring Organizational Culture:</strong> Not addressing cultural barriers to agility</li>
+                        </ul>
+                    </section>
+                
+                    <section style="background-color: #4b6cb7; color: white; padding: 25px; border-radius: 5px; margin-bottom: 30px;">
+                        <h2 style="margin-top: 0; border-bottom: 2px solid rgba(255,255,255,0.2); padding-bottom: 10px;">Benefits of Higher Agile Maturity</h2>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px;">
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 15px; border-radius: 5px;">
+                                <h3 style="margin-top: 0;">Improved Predictability</h3>
+                                <p>More reliable delivery forecasts and planning</p>
+                            </div>
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 15px; border-radius: 5px;">
+                                <h3 style="margin-top: 0;">Higher Quality</h3>
+                                <p>Reduced defects and technical debt</p>
+                            </div>
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 15px; border-radius: 5px;">
+                                <h3 style="margin-top: 0;">Faster Time-to-Market</h3>
+                                <p>Shorter cycle times and more frequent releases</p>
+                            </div>
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 15px; border-radius: 5px;">
+                                <h3 style="margin-top: 0;">Better Stakeholder Satisfaction</h3>
+                                <p>Improved collaboration and value delivery</p>
+                            </div>
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 15px; border-radius: 5px;">
+                                <h3 style="margin-top: 0;">Higher Team Morale</h3>
+                                <p>More engaged, empowered, and motivated teams</p>
+                            </div>
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 15px; border-radius: 5px;">
+                                <h3 style="margin-top: 0;">Business Agility</h3>
+                                <p>Enhanced ability to respond to market changes</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                   
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics/") ? "../Agile_and_Scrum.json" : "../Agile_and_Scrum.json";
+            
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch DSA Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.Agile_and_Scrum;
+                        displayTopics(allTopics);
+                    })
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+           
+            
+            
+            
+            
+            
+            
+            </body>
+            </html>     

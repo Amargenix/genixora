@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Robotics</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>AI for Robotics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+               <h1>IoT-Enabled Robotics</h1>
+              
+                
+                        <!-- Definition Section -->
+                        <div style="background:white;border-radius:12px;padding:40px;margin-bottom:40px;box-shadow:0 5px 15px rgba(0,0,0,0.05);border:1px solid #e2e8f0;">
+                            <h2 style="color:#4f46e5;border-bottom:2px solid #4f46e5;padding-bottom:12px;margin-top:0;font-size:1.8rem;">What is IoT Robotics?</h2>
+                            <p style="font-size:1.1rem;">IoT Robotics combines robotic systems with Internet of Things technology, enabling:</p>
+                            
+                            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;margin-top:30px;">
+                                <div style="background:#eef2ff;padding:20px;border-radius:8px;border-left:4px solid #4f46e5;">
+                                    <h3 style="margin-top:0;color:#4f46e5;">🌐 Real-time Connectivity</h3>
+                                    <p>Robots connected via 5G/WiFi/Bluetooth to share data with other devices and cloud platforms</p>
+                                </div>
+                                <div style="background:#eef2ff;padding:20px;border-radius:8px;border-left:4px solid #4f46e5;">
+                                    <h3 style="margin-top:0;color:#4f46e5;">📊 Data Collection</h3>
+                                    <p>Sensors continuously monitor performance, environment, and operational status</p>
+                                </div>
+                                <div style="background:#eef2ff;padding:20px;border-radius:8px;border-left:4px solid #4f46e5;">
+                                    <h3 style="margin-top:0;color:#4f46e5;">🤖 Remote Control</h3>
+                                    <p>Operators can monitor and adjust robots from anywhere via web/mobile interfaces</p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Architecture Section -->
+                        <div style="background:white;border-radius:12px;padding:40px;margin-bottom:40px;box-shadow:0 5px 15px rgba(0,0,0,0.05);border:1px solid #e2e8f0;">
+                            <h2 style="color:#4f46e5;border-bottom:2px solid #4f46e5;padding-bottom:12px;margin-top:0;font-size:1.8rem;">IoT Robotics Architecture</h2>
+                            
+                            <div style="display:flex;justify-content:center;margin:30px 0;">
+                                <div style="background:#f1f5f9;padding:20px;border-radius:10px;max-width:800px;width:100%;">
+                                    
+                                
+                                    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;text-align:center;">
+                                        <div style="background:#e0e7ff;padding:10px;border-radius:6px;">Perception Layer</div>
+                                        <div style="background:#c7d2fe;padding:10px;border-radius:6px;">Network Layer</div>
+                                        <div style="background:#a5b4fc;padding:10px;border-radius:6px;">Edge Layer</div>
+                                        <div style="background:#818cf8;padding:10px;border-radius:6px;color:white;">Cloud Layer</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;margin-top:30px;">
+                                <div>
+                                    <h3 style="color:#4f46e5;margin-top:0;">Perception Layer</h3>
+                                    <ul style="padding-left:20px;">
+                                        <li style="margin-bottom:8px;">LiDAR, cameras, IMUs</li>
+                                        <li style="margin-bottom:8px;">Temperature/pressure sensors</li>
+                                        <li style="margin-bottom:8px;">RFID/NFC readers</li>
+                                        <li>Vibration/acoustic sensors</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3 style="color:#4f46e5;margin-top:0;">Network Protocols</h3>
+                                    <ul style="padding-left:20px;">
+                                        <li style="margin-bottom:8px;">MQTT (lightweight messaging)</li>
+                                        <li style="margin-bottom:8px;">OPC UA (industrial standard)</li>
+                                        <li style="margin-bottom:8px;">ROS 2 (DDS middleware)</li>
+                                        <li>5G URLLC (ultra-reliable low latency)</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3 style="color:#4f46e5;margin-top:0;">Cloud Integration</h3>
+                                    <ul style="padding-left:20px;">
+                                        <li style="margin-bottom:8px;">AWS IoT RoboRunner</li>
+                                        <li style="margin-bottom:8px;">Azure IoT Edge</li>
+                                        <li style="margin-bottom:8px;">Google Cloud Robotics</li>
+                                        <li>NVIDIA Omniverse</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- AI Applications Section -->
+                        <div style="background:white;border-radius:12px;padding:40px;margin-bottom:40px;box-shadow:0 5px 15px rgba(0,0,0,0.05);border:1px solid #e2e8f0;">
+                            <h2 style="color:#4f46e5;border-bottom:2px solid #4f46e5;padding-bottom:12px;margin-top:0;font-size:1.8rem;">AI Applications in IoT Robotics</h2>
+                            
+                            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;margin-top:30px;">
+                                <!-- Predictive Maintenance -->
+                                <div style="border:1px solid #e2e8f0;border-radius:10px;padding:25px;transition:all 0.3s ease;background:#ffffff;">
+                                    <div style="background:#4f46e5;color:white;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:1.8rem;">🔧</div>
+                                    <h3 style="text-align:center;color:#4f46e5;margin:0 0 15px;">Predictive Maintenance</h3>
+                                    <p>ML models analyze vibration, thermal, and power data to predict failures 30+ days in advance, reducing downtime by 45%.</p>
+                                </div>
+                                
+                                <!-- Swarm Intelligence -->
+                                <div style="border:1px solid #e2e8f0;border-radius:10px;padding:25px;transition:all 0.3s ease;background:#ffffff;">
+                                    <div style="background:#7c3aed;color:white;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:1.8rem;">🐝</div>
+                                    <h3 style="text-align:center;color:#7c3aed;margin:0 0 15px;">Swarm Intelligence</h3>
+                                    <p>Decentralized control algorithms enable 100+ robots to coordinate via IoT mesh networks with <50ms latency.</p>
+                                </div>
+                                
+                                <!-- Digital Twins -->
+                                <div style="border:1px solid #e2e8f0;border-radius:10px;padding:25px;transition:all 0.3s ease;background:#ffffff;">
+                                    <div style="background:#a78bfa;color:white;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:1.8rem;">👥</div>
+                                    <h3 style="text-align:center;color:#a78bfa;margin:0 0 15px;">Digital Twins</h3>
+                                    <p>Virtual replicas synchronized via IoT data streams enable simulation and optimization before physical deployment.</p>
+                                </div>
+                                
+                                <!-- Edge AI -->
+                                <div style="border:1px solid #e2e8f0;border-radius:10px;padding:25px;transition:all 0.3s ease;background:#ffffff;">
+                                    <div style="background:#c4b5fd;color:white;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:1.8rem;">🧠</div>
+                                    <h3 style="text-align:center;color:#c4b5fd;margin:0 0 15px;">Edge AI Processing</h3>
+                                    <p>TinyML models on microcontrollers enable real-time decision making with <10ms latency and <1W power consumption.</p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Case Studies Section -->
+                        <div style="background:white;border-radius:12px;padding:40px;margin-bottom:40px;box-shadow:0 5px 15px rgba(0,0,0,0.05);border:1px solid #e2e8f0;">
+                            <h2 style="color:#4f46e5;border-bottom:2px solid #4f46e5;padding-bottom:12px;margin-top:0;font-size:1.8rem;">Industry Case Studies</h2>
+                            
+                            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;margin-top:30px;">
+                                <!-- Smart Warehouse -->
+                                <div style="position:relative;border-radius:10px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.1);height:300px;background:linear-gradient(rgba(26, 197, 209, 0.3),rgba(88, 193, 222, 0.7)),url('https://example.com/smart-warehouse.jpg');background-size:cover;color:white;padding:25px;display:flex;flex-direction:column;justify-content:flex-end;">
+                                    <div style="background:#4f46e5;color:white;display:inline-block;padding:5px 10px;border-radius:20px;margin-bottom:15px;font-size:0.8rem;align-self:flex-start;">Logistics</div>
+                                    <h3 style="margin:0 0 15px;font-size:1.5rem;">Amazon Robotics Warehouse</h3>
+                                    <p style="margin:0;">200,000+ IoT-connected robots processing 1M+ items/day with 99.99% system uptime.</p>
+                                </div>
+                                
+                                <!-- Precision Farming -->
+                                <div style="position:relative;border-radius:10px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.1);height:300px;background:linear-gradient(rgba(199, 222, 228, 0.3),rgba(99, 179, 208, 0.7)),url('https://example.com/farming-robots.jpg');background-size:cover;color:white;padding:25px;display:flex;flex-direction:column;justify-content:flex-end;">
+                                    <div style="background:#10b981;color:white;display:inline-block;padding:5px 10px;border-radius:20px;margin-bottom:15px;font-size:0.8rem;align-self:flex-start;">Agriculture</div>
+                                    <h3 style="margin:0 0 15px;font-size:1.5rem;">John Deere Smart Sprayer</h3>
+                                    <p style="margin:0;">IoT robots reduce herbicide use by 90% using real-time plant identification and precision spraying.</p>
+                                </div>
+                                
+                                <!-- Smart Factory -->
+                                <div style="position:relative;border-radius:10px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.1);height:300px;background:linear-gradient(rgba(192, 213, 223, 0.3),rgba(81, 184, 205, 0.7)),url('https://example.com/smart-factory.jpg');background-size:cover;color:white;padding:25px;display:flex;flex-direction:column;justify-content:flex-end;">
+                                    <div style="background:#f59e0b;color:white;display:inline-block;padding:5px 10px;border-radius:20px;margin-bottom:15px;font-size:0.8rem;align-self:flex-start;">Manufacturing</div>
+                                    <h3 style="margin:0 0 15px;font-size:1.5rem;">Siemens Digital Factory</h3>
+                                    <p style="margin:0;">500+ IoT-connected robots achieving 30% productivity gain through real-time production optimization.</p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Challenges Section -->
+                        <div style="background:white;border-radius:12px;padding:40px;margin-bottom:40px;box-shadow:0 5px 15px rgba(0,0,0,0.05);border:1px solid #e2e8f0;">
+                            <h2 style="color:#4f46e5;border-bottom:2px solid #4f46e5;padding-bottom:12px;margin-top:0;font-size:1.8rem;">Technical Challenges</h2>
+                            
+                            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:30px;">
+                                <div style="background:#f1f5f9;padding:20px;border-radius:8px;border-left:4px solid #4f46e5;">
+                                    <h3 style="margin-top:0;color:#4f46e5;">🔒 Security Risks</h3>
+                                    <p>Each IoT endpoint represents a potential vulnerability - requires hardware-level encryption and zero-trust architectures.</p>
+                                </div>
+                                
+                                <div style="background:#f1f5f9;padding:20px;border-radius:8px;border-left:4px solid #4f46e5;">
+                                    <h3 style="margin-top:0;color:#4f46e5;">📶 Network Reliability</h3>
+                                    <p>Industrial environments often have interference requiring robust protocols like TSN (Time-Sensitive Networking).</p>
+                                </div>
+                                
+                                <div style="background:#f1f5f9;padding:20px;border-radius:8px;border-left:4px solid #4f46e5;">
+                                    <h3 style="margin-top:0;color:#4f46e5;">🔋 Power Constraints</h3>
+                                    <p>Edge devices need ultra-low-power designs (<1W) for battery-operated field robots.</p>
+                                </div>
+                                
+                                <div style="background:#f1f5f9;padding:20px;border-radius:8px;border-left:4px solid #4f46e5;">
+                                    <h3 style="margin-top:0;color:#4f46e5;">🔄 Data Overload</h3>
+                                    <p>Single robot can generate 1TB/day - requires smart filtering and edge preprocessing.</p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Future Trends Section -->
+                        <div style="background:linear-gradient(135deg,#edecf5,#4f46e5);color:white;border-radius:12px;padding:50px 40px;margin-bottom:40px;box-shadow:0 10px 25px rgba(67,56,202,0.3);">
+                            <h2 style="margin-top:0;border-bottom:2px solid rgba(255,255,255,0.3);padding-bottom:12px;">Future Trends</h2>
+                            
+                            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;margin-top:30px;">
+                                <div style="background:rgba(255,255,255,0.1);padding:25px;border-radius:8px;backdrop-filter:blur(5px);">
+                                    <h3 style="margin-top:0;">6G Robotics</h3>
+                                    <p>Sub-1ms latency enabling tactile internet applications with haptic feedback.</p>
+                                </div>
+                                
+                                <div style="background:rgba(255,255,255,0.1);padding:25px;border-radius:8px;backdrop-filter:blur(5px);">
+                                    <h3 style="margin-top:0;">AIoT Convergence</h3>
+                                    <p>Seamless integration of AI chips in all IoT endpoints for distributed intelligence.</p>
+                                </div>
+                                
+                                <div style="background:rgba(255,255,255,0.1);padding:25px;border-radius:8px;backdrop-filter:blur(5px);">
+                                    <h3 style="margin-top:0;">Self-Healing Networks</h3>
+                                    <p>Autonomous reconfiguration of robot swarms after node failures.</p>
+                                </div>
+                                
+                                <div style="background:rgba(255,255,255,0.1);padding:25px;border-radius:8px;backdrop-filter:blur(5px);">
+                                    <h3 style="margin-top:0;">Quantum IoT Security</h3>
+                                    <p>Post-quantum cryptography for unhackable robot communications.</p>
+                                </div>
+                            </div>
+                        </div>
+                
+                      
+
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [ ];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics") ? "../AI for Robotics.json" : "../AI for Robotics.json";
+
+                                              
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch AI for Robotics Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.AI_for_Robotics;
+                        displayTopics(allTopics);
+                    }
+                    )
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+           
+            
+            
+            
+            
+            
+            
+            </body>
+            </html>        

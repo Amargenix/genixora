@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Robotics</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>AI for Robotics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+              <h1>History of Robotics in AI</h1>
+                   
+                
+                    <section style="background-color: #fff; padding: 35px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-bottom: 40px; border-left: 6px solid #8e0e00;">
+                        <h2 style="color: #8e0e00; border-bottom: 2px solid #d4a76a; padding-bottom: 12px; font-size: 2em; margin-top: 0;">Ancient Foundations (Pre-20th Century)</h2>
+                        
+                        <div style="display: flex; gap: 30px; margin-top: 25px;">
+                            <div style="flex: 1; background-color: #f9f2e9; padding: 25px; border-radius: 8px; position: relative;">
+                                <div style="position: absolute; top: -15px; left: -15px; background-color: #d4a76a; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2em;">~300BC</div>
+                                <h3 style="color: #8e0e00; margin-top: 10px;">Early Automata</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Archytas of Tarentum:</strong> Mechanical bird powered by steam (~350 BCE)</li>
+                                    <li><strong>Hero of Alexandria:</strong> Automated temple doors, mechanical theater (1st century CE)</li>
+                                    <li><strong>Al-Jazari:</strong> Programmable humanoid automata (1206)</li>
+                                    <li><strong>Leonardo da Vinci:</strong> Mechanical knight design (1495)</li>
+                                </ul>
+                            </div>
+                            <div style="flex: 1; background-color: #f9f2e9; padding: 25px; border-radius: 8px; position: relative;">
+                                <div style="position: absolute; top: -15px; left: -15px; background-color: #d4a76a; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2em;">18-19th</div>
+                                <h3 style="color: #8e0e00; margin-top: 10px;">Industrial Revolution</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Jacques de Vaucanson:</strong> Mechanical duck (1739), automated loom</li>
+                                    <li><strong>Joseph Jacquard:</strong> Programmable loom using punch cards (1804)</li>
+                                    <li><strong>Charles Babbage:</strong> Analytical Engine (1837) - precursor to computers</li>
+                                    <li><strong>Nikola Tesla:</strong> Radio-controlled boat (1898)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: #fff; padding: 35px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-bottom: 40px; border-left: 6px solid #1f1c18;">
+                        <h2 style="color: #1f1c18; border-bottom: 2px solid #8e0e00; padding-bottom: 12px; font-size: 2em; margin-top: 0;">The Birth of Modern Robotics (1920-1969)</h2>
+                        
+                        <div style="margin-top: 25px; position: relative; padding-left: 60px;">
+                            <div style="position: absolute; left: 0; top: 0; width: 4px; height: 100%; background: linear-gradient(to bottom, #8e0e00, #1f1c18); border-radius: 2px;"></div>
+                            
+                            <div style="position: relative; margin-bottom: 40px;">
+                                <div style="position: absolute; left: -68px; top: 0; background-color: #8e0e00; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.1em;">1921</div>
+                                <div style="background-color: #f0e6dd; padding: 20px; border-radius: 8px; box-shadow: 3px 3px 5px rgba(0,0,0,0.1);">
+                                    <h3 style="color: #1f1c18; margin-top: 0;">Term "Robot" Coined</h3>
+                                    <p>Czech playwright Karel Čapek introduces the term "robot" in his play <em>R.U.R.</em> (Rossum's Universal Robots), derived from the Czech word "robota" meaning forced labor.</p>
+                                </div>
+                            </div>
+                            
+                            <div style="position: relative; margin-bottom: 40px;">
+                                <div style="position: absolute; left: -68px; top: 0; background-color: #8e0e00; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.1em;">1942</div>
+                                <div style="background-color: #f0e6dd; padding: 20px; border-radius: 8px; box-shadow: 3px 3px 5px rgba(0,0,0,0.1);">
+                                    <h3 style="color: #1f1c18; margin-top: 0;">Asimov's Three Laws</h3>
+                                    <p>Isaac Asimov publishes "Runaround," introducing the Three Laws of Robotics that would influence robotics ethics for decades:</p>
+                                    <ol style="padding-left: 20px;">
+                                        <li>A robot may not injure a human or allow harm through inaction</li>
+                                        <li>A robot must obey human orders (unless conflict with 1st Law)</li>
+                                        <li>A robot must protect its own existence (unless conflict with 1st/2nd Laws)</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            
+                            <div style="position: relative; margin-bottom: 40px;">
+                                <div style="position: absolute; left: -68px; top: 0; background-color: #8e0e00; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.1em;">1956</div>
+                                <div style="background-color: #f0e6dd; padding: 20px; border-radius: 8px; box-shadow: 3px 3px 5px rgba(0,0,0,0.1);">
+                                    <h3 style="color: #1f1c18; margin-top: 0;">Birth of AI</h3>
+                                    <p>The Dartmouth Summer Research Project on Artificial Intelligence marks the official birth of AI as a field, with participants including John McCarthy, Marvin Minsky, Claude Shannon, and Nathaniel Rochester.</p>
+                                </div>
+                            </div>
+                            
+                            <div style="position: relative;">
+                                <div style="position: absolute; left: -68px; top: 0; background-color: #8e0e00; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.1em;">1961</div>
+                                <div style="background-color: #f0e6dd; padding: 20px; border-radius: 8px; box-shadow: 3px 3px 5px rgba(0,0,0,0.1);">
+                                    <h3 style="color: #1f1c18; margin-top: 0;">First Industrial Robot</h3>
+                                    <p>Unimate, the first digitally operated and programmable robot, is installed at a General Motors plant in New Jersey to handle hot metal parts. This marks the beginning of industrial robotics.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: #fff; padding: 35px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-bottom: 40px; border-left: 6px solid #5e2c04;">
+                        <h2 style="color: #5e2c04; border-bottom: 2px solid #8e0e00; padding-bottom: 12px; font-size: 2em; margin-top: 0;">AI Robotics Revolution (1970-1999)</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; margin-top: 30px;">
+                            <div style="background-color: #f5ebe0; padding: 20px; border-radius: 8px; border-top: 4px solid #5e2c04;">
+                                <h3 style="color: #5e2c04; margin-top: 0;">1972: WABOT-1</h3>
+                                <p>The first full-scale anthropomorphic robot built at Waseda University in Japan. It could walk, grip objects, and communicate in Japanese.</p>
+                            </div>
+                            <div style="background-color: #f5ebe0; padding: 20px; border-radius: 8px; border-top: 4px solid #5e2c04;">
+                                <h3 style="color: #5e2c04; margin-top: 0;">1979: Stanford Cart</h3>
+                                <p>One of the first autonomous vehicles, navigating a chair-filled room without human intervention over 5 hours.</p>
+                            </div>
+                            <div style="background-color: #f5ebe0; padding: 20px; border-radius: 8px; border-top: 4px solid #5e2c04;">
+                                <h3 style="color: #5e2c04; margin-top: 0;">1986: LEGO Mindstorms</h3>
+                                <p>The first programmable robotics kit for education, making robotics accessible to students and hobbyists.</p>
+                            </div>
+                            <div style="background-color: #f5ebe0; padding: 20px; border-radius: 8px; border-top: 4px solid #5e2c04;">
+                                <h3 style="color: #5e2c04; margin-top: 0;">1997: Deep Blue vs. Kasparov</h3>
+                                <p>IBM's chess-playing computer defeats world champion Garry Kasparov, demonstrating AI's strategic capabilities.</p>
+                            </div>
+                            <div style="background-color: #f5ebe0; padding: 20px; border-radius: 8px; border-top: 4px solid #5e2c04;">
+                                <h3 style="color: #5e2c04; margin-top: 0;">1997: Sojourner on Mars</h3>
+                                <p>The first successful Mars rover, demonstrating autonomous navigation on another planet.</p>
+                            </div>
+                            <div style="background-color: #f5ebe0; padding: 20px; border-radius: 8px; border-top: 4px solid #5e2c04;">
+                                <h3 style="color: #5e2c04; margin-top: 0;">1999: Sony AIBO</h3>
+                                <p>The first consumer entertainment robot with learning capabilities, paving the way for social robotics.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: #fff; padding: 35px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-bottom: 40px; border-left: 6px solid #3a5a78;">
+                        <h2 style="color: #3a5a78; border-bottom: 2px solid #8e0e00; padding-bottom: 12px; font-size: 2em; margin-top: 0;">Modern Era (2000-Present)</h2>
+                        
+                        <div style="margin-top: 30px;">
+                            <div style="display: flex; gap: 30px; margin-bottom: 30px;">
+                                <div style="flex: 1; background-color: #e8edf3; padding: 25px; border-radius: 8px;">
+                                    <h3 style="color: #3a5a78; margin-top: 0;">Robotics Breakthroughs</h3>
+                                    <ul style="padding-left: 20px;">
+                                        <li><strong>2000:</strong> ASIMO by Honda - advanced humanoid walking</li>
+                                        <li><strong>2004:</strong> DARPA Grand Challenge sparks autonomous vehicle research</li>
+                                        <li><strong>2011:</strong> Watson wins Jeopardy! showcasing NLP</li>
+                                        <li><strong>2012:</strong> First robotic exoskeleton approved by FDA</li>
+                                        <li><strong>2015:</strong> OpenAI founded to ensure safe AI development</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1; background-color: #e8edf3; padding: 25px; border-radius: 8px;">
+                                    <h3 style="color: #3a5a78; margin-top: 0;">AI Advancements</h3>
+                                    <ul style="padding-left: 20px;">
+                                        <li><strong>2012:</strong> AlexNet revolutionizes deep learning</li>
+                                        <li><strong>2014:</strong> GANs (Generative Adversarial Networks) introduced</li>
+                                        <li><strong>2015:</strong> TensorFlow released by Google</li>
+                                        <li><strong>2017:</strong> Transformer architecture enables modern NLP</li>
+                                        <li><strong>2020:</strong> GPT-3 demonstrates few-shot learning</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div style="background-color: #d6e4f0; padding: 25px; border-radius: 8px;">
+                                <h3 style="color: #3a5a78; margin-top: 0;">Current Trends</h3>
+                                <div style="display: flex; gap: 20px; margin-top: 15px;">
+                                    <div style="flex: 1; background-color: white; padding: 15px; border-radius: 6px;">
+                                        <h4 style="color: #3a5a78; margin-top: 0;">Collaborative Robots (Cobots)</h4>
+                                        <p>Robots designed to work safely alongside humans in shared workspaces.</p>
+                                    </div>
+                                    <div style="flex: 1; background-color: white; padding: 15px; border-radius: 6px;">
+                                        <h4 style="color: #3a5a78; margin-top: 0;">Embodied AI</h4>
+                                        <p>AI systems with physical bodies that learn through environmental interaction.</p>
+                                    </div>
+                                    <div style="flex: 1; background-color: white; padding: 15px; border-radius: 6px;">
+                                        <h4 style="color: #3a5a78; margin-top: 0;">Soft Robotics</h4>
+                                        <p>Flexible, adaptable robots inspired by biological systems.</p>
+                                    </div>
+                                </div>
+                                <div style="display: flex; gap: 20px; margin-top: 15px;">
+                                    <div style="flex: 1; background-color: white; padding: 15px; border-radius: 6px;">
+                                        <h4 style="color: #3a5a78; margin-top: 0;">Multi-Agent Systems</h4>
+                                        <p>Coordinated teams of robots working together on complex tasks.</p>
+                                    </div>
+                                    <div style="flex: 1; background-color: white; padding: 15px; border-radius: 6px;">
+                                        <h4 style="color: #3a5a78; margin-top: 0;">Neuromorphic Engineering</h4>
+                                        <p>Hardware designed to mimic biological neural systems.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: #fff; padding: 35px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <h2 style="color: #8e0e00; border-bottom: 2px solid #d4a76a; padding-bottom: 12px; font-size: 2em; margin-top: 0;">Future Directions</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 25px; margin-top: 30px;">
+                            <div style="background-color: #f0e6dd; padding: 20px; border-radius: 8px; text-align: center;">
+                                <div style="width: 80px; height: 80px; background-color: #8e0e00; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 2em;">→</div>
+                                <h3 style="color: #8e0e00;">General-Purpose Robots</h3>
+                                <p>Versatile machines capable of performing multiple tasks in unstructured environments.</p>
+                            </div>
+                            <div style="background-color: #f0e6dd; padding: 20px; border-radius: 8px; text-align: center;">
+                                <div style="width: 80px; height: 80px; background-color: #8e0e00; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 2em;">→</div>
+                                <h3 style="color: #8e0e00;">Artificial Consciousness</h3>
+                                <p>Robots with self-awareness and subjective experiences (controversial but active research).</p>
+                            </div>
+                            <div style="background-color: #f0e6dd; padding: 20px; border-radius: 8px; text-align: center;">
+                                <div style="width: 80px; height: 80px; background-color: #8e0e00; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 2em;">→</div>
+                                <h3 style="color: #8e0e00;">Molecular Robotics</h3>
+                                <p>Nanoscale robots for medical applications and material science.</p>
+                            </div>
+                            <div style="background-color: #f0e6dd; padding: 20px; border-radius: 8px; text-align: center;">
+                                <div style="width: 80px; height: 80px; background-color: #8e0e00; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 2em;">→</div>
+                                <h3 style="color: #8e0e00;">Bio-Hybrid Systems</h3>
+                                <p>Combining living tissues with artificial components for enhanced capabilities.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    
+
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [ ];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics") ? "../AI for Robotics.json" : "../AI for Robotics.json";
+
+                                              
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch AI for Robotics Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.AI_for_Robotics;
+                        displayTopics(allTopics);
+                    }
+                    )
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+           
+            
+            
+            
+            
+            
+            
+            </body>
+            </html>        

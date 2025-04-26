@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../software engineering.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Software Engineering</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+            <main class="col-md-7 content">
+        
+                    <h1>Unit Testing and Integration Testing</h1>
+                    
+            
+                <section id="unit-testing" style="margin-bottom: 40px;">
+                    <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">1. Unit Testing</h2>
+                    
+                    <div class="testing-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">1.1 Fundamentals of Unit Testing</h3>
+                        <p><strong>Unit testing</strong> involves testing individual components (units) of software in isolation to verify they function as intended.</p>
+                        
+                        <div class="concept-box" style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                            <h4 style="color: #2c3e50;">Key Characteristics</h4>
+                            <ul>
+                                <li><strong>Isolated:</strong> Tests one unit at a time</li>
+                                <li><strong>Fast:</strong> Executes in milliseconds</li>
+                                <li><strong>Repeatable:</strong> Same results every time</li>
+                                <li><strong>Automated:</strong> Runs without manual intervention</li>
+                                <li><strong>Thorough:</strong> Covers all code paths</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="best-practice" style="background-color: #eafaf1; padding: 15px; border-left: 4px solid #2ecc71; margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">Unit Testing Principles (FIRST)</h4>
+                            <ul>
+                                <li><strong>Fast:</strong> Tests should run quickly</li>
+                                <li><strong>Isolated:</strong> No dependencies between tests</li>
+                                <li><strong>Repeatable:</strong> Consistent results in any environment</li>
+                                <li><strong>Self-validating:</strong> Clear pass/fail outcome</li>
+                                <li><strong>Timely:</strong> Written just before production code (TDD)</li>
+                            </ul>
+                        </div>
+                    </div>
+            
+                    <div class="testing-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">1.2 Unit Testing Techniques</h3>
+                        
+                        <div class="pattern" style="background-color: #ebf5fb; padding: 15px; border-left: 4px solid #2980b9;">
+                            <h4 style="color: #2c3e50;">Test Doubles</h4>
+                            <table style="width: 100%; border-collapse: collapse; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <tr>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Type</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Purpose</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">When to Use</th>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Dummy</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Placeholder for unused parameters</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Required by signature but not used</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Stub</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Provides canned responses</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Testing simple indirect inputs</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Mock</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Pre-programmed expectations</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Behavior verification</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Fake</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Working lightweight implementation</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Replacing slow/difficult dependencies</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div class="example" style="background-color: #fef9e7; border-left: 4px solid #f39c12; padding: 15px; margin: 20px 0; font-family: monospace;">
+                            <h4 style="color: #2c3e50;">Example: Mocking in Python (unittest.mock)</h4>
+                            <pre style="margin: 0;">
+            from unittest.mock import Mock
+            
+            # Create mock object
+            payment_processor = Mock()
+            
+            # Set return value
+            payment_processor.charge.return_value = True
+            
+            # Test function using mock
+            def test_payment():
+                result = process_payment(payment_processor, 100)
+                assert result is True
+                payment_processor.charge.assert_called_with(100)
+                            </pre>
+                        </div>
+                    </div>
+            
+                    <div class="testing-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">1.3 Unit Testing Frameworks</h3>
+                        <div class="tool-list" style="background-color: #f5eef8; padding: 15px; border-left: 4px solid #9b59b6;">
+                            <h4 style="color: #2c3e50;">Popular Unit Testing Tools</h4>
+                            <table style="width: 100%; border-collapse: collapse; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <tr>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Language</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Framework</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Key Features</th>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Java</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">JUnit 5, TestNG</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Annotations, parameterized tests</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">JavaScript</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Jest, Mocha</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Snapshot testing, coverage</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Python</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">pytest, unittest</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Fixtures, plugins</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">C#</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">NUnit, xUnit</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Data-driven tests</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div class="test-case" style="background-color: #f0f8ff; padding: 15px; border-left: 4px solid #1e90ff;">
+                            <h4 style="color: #2c3e50;">Sample Unit Test Structure (JUnit 5)</h4>
+                            <pre style="margin: 0;">
+            import org.junit.jupiter.api.*;
+            import static org.junit.jupiter.api.Assertions.*;
+            
+            class CalculatorTest {
+                
+                Calculator calculator;
+                
+                @BeforeEach
+                void setUp() {
+                    calculator = new Calculator();
+                }
+                
+                @Test
+                @DisplayName("Test addition")
+                void testAdd() {
+                    assertEquals(5, calculator.add(2, 3));
+                }
+                
+                @Test
+                @DisplayName("Test division by zero")
+                void testDivideByZero() {
+                    assertThrows(ArithmeticException.class, () -> {
+                        calculator.divide(10, 0);
+                    });
+                }
+            }
+                            </pre>
+                        </div>
+                    </div>
+            
+                    <div class="testing-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">1.4 Advanced Unit Testing</h3>
+                        
+                        <div class="best-practice" style="background-color: #eafaf1; padding: 15px; border-left: 4px solid #2ecc71; margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">Test-Driven Development (TDD)</h4>
+                            <ol>
+                                <li><strong>Red:</strong> Write failing test for new functionality</li>
+                                <li><strong>Green:</strong> Write minimal code to pass test</li>
+                                <li><strong>Refactor:</strong> Improve code while keeping tests passing</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="pattern" style="background-color: #ebf5fb; padding: 15px; border-left: 4px solid #2980b9;">
+                            <h4 style="color: #2c3e50;">Parameterized Testing</h4>
+                            <p>Run same test with different inputs:</p>
+                            <pre style="margin: 0;">
+            // JUnit 5 example
+            @ParameterizedTest
+            @ValueSource(ints = {1, 3, 5, -3, 15})
+            void testIsOdd(int number) {
+                assertTrue(Calculator.isOdd(number));
+            }
+                            </pre>
+                        </div>
+                        
+                        <div class="pattern" style="background-color: #ebf5fb; padding: 15px; border-left: 4px solid #2980b9;">
+                            <h4 style="color: #2c3e50;">Mutation Testing</h4>
+                            <p>Assesses test quality by introducing small bugs (mutations):</p>
+                            <ul>
+                                <li>Tools: PITest (Java), Stryker (JavaScript)</li>
+                                <li>Measures how many mutations are caught by tests</li>
+                                <li>Identifies weak spots in test suite</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            
+                <section id="integration-testing" style="margin-bottom: 40px;">
+                    <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">2. Integration Testing</h2>
+                    
+                    <div class="testing-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">2.1 Fundamentals of Integration Testing</h3>
+                        <p><strong>Integration testing</strong> verifies that different modules or services work together as expected.</p>
+                        
+                        <div class="comparison" style="background-color: #fff8e1; padding: 15px; border-left: 4px solid #ffc107;">
+                            <h4 style="color: #2c3e50;">Unit vs Integration Testing</h4>
+                            <table style="width: 100%; border-collapse: collapse; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <tr>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Aspect</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Unit Testing</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Integration Testing</th>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Scope</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Single component</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Interacting components</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Speed</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Milliseconds</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Seconds/minutes</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Dependencies</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Mocked/stubbed</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Real or test doubles</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Purpose</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Verify logic</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Verify interactions</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div class="concept-box" style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                            <h4 style="color: #2c3e50;">Integration Testing Challenges</h4>
+                            <ul>
+                                <li>Test environment setup complexity</li>
+                                <li>External dependencies (databases, APIs)</li>
+                                <li>Test data management</li>
+                                <li>Test execution time</li>
+                                <li>Debugging failures</li>
+                            </ul>
+                        </div>
+                    </div>
+            
+                    <div class="testing-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">2.2 Integration Testing Strategies</h3>
+                        
+                        <div class="pattern" style="background-color: #ebf5fb; padding: 15px; border-left: 4px solid #2980b9;">
+                            <h4 style="color: #2c3e50;">Approaches to Integration Testing</h4>
+                            <table style="width: 100%; border-collapse: collapse; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <tr>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Strategy</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Description</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Pros/Cons</th>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Big Bang</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Integrate all components at once</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Simple but hard to debug</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Top-Down</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Start with top-level, mock lower layers</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Early validation but incomplete</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Bottom-Up</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Start with low-level components</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Early bug detection but late UI testing</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Sandwich</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Combine top-down and bottom-up</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Balanced but complex</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div class="example" style="background-color: #fef9e7; border-left: 4px solid #f39c12; padding: 15px; margin: 20px 0; font-family: monospace;">
+                            <h4 style="color: #2c3e50;">Example: Microservices Integration</h4>
+                            <p><strong>Components:</strong> Order Service, Payment Service, Inventory Service<br>
+                            <strong>Test Scenario:</strong><br>
+                            1. Order Service creates order<br>
+                            2. Payment Service processes payment<br>
+                            3. Inventory Service updates stock<br>
+                            4. Verify all systems reflect consistent state</p>
+                        </div>
+                    </div>
+            
+                    <div class="testing-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">2.3 Integration Testing Techniques</h3>
+                        
+                        <div class="pattern" style="background-color: #ebf5fb; padding: 15px; border-left: 4px solid #2980b9;">
+                            <h4 style="color: #2c3e50;">Test Environment Management</h4>
+                            <ul>
+                                <li><strong>Containerized dependencies:</strong> Docker for databases, message brokers</li>
+                                <li><strong>Service virtualization:</strong> Tools like WireMock, Mountebank</li>
+                                <li><strong>Test doubles:</strong> Fake services for external APIs</li>
+                                <li><strong>Test data management:</strong> Seed databases with known state</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="pattern" style="background-color: #ebf5fb; padding: 15px; border-left: 4px solid #2980b9;">
+                            <h4 style="color: #2c3e50;">Contract Testing</h4>
+                            <p>Verifies interactions between services meet agreed contracts:</p>
+                            <ul>
+                                <li><strong>Tools:</strong> Pact, Spring Cloud Contract</li>
+                                <li><strong>Process:</strong><br>
+                                    1. Consumer defines expected request/response<br>
+                                    2. Provider verifies it meets contract<br>
+                                    3. Tests run against real implementations</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="example" style="background-color: #fef9e7; border-left: 4px solid #f39c12; padding: 15px; margin: 20px 0; font-family: monospace;">
+                            <h4 style="color: #2c3e50;">Example: API Integration Test (Postman)</h4>
+                            <pre style="margin: 0;">
+            // Test for User API
+            pm.test("Create user returns 201", function() {
+                pm.response.to.have.status(201);
+            });
+            
+            pm.test("Response has user ID", function() {
+                var jsonData = pm.response.json();
+                pm.expect(jsonData.id).to.be.a('string');
+            });
+            
+            pm.test("User exists in database", function() {
+                pm.sendRequest({
+                    url: pm.environment.get("db_service") + "/users/" + jsonData.id,
+                    method: 'GET'
+                }, function(err, response) {
+                    pm.expect(response.code).to.equal(200);
+                });
+            });
+                            </pre>
+                        </div>
+                    </div>
+            
+                    <div class="testing-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">2.4 Integration Testing Tools</h3>
+                        <div class="tool-list" style="background-color: #f5eef8; padding: 15px; border-left: 4px solid #9b59b6;">
+                            <h4 style="color: #2c3e50;">Popular Integration Testing Tools</h4>
+                            <table style="width: 100%; border-collapse: collapse; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <tr>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Type</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Tools</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Use Case</th>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">API Testing</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Postman, RestAssured, SoapUI</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Web service integration</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Database</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">DBUnit, TestContainers</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Database integration</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">UI Integration</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Selenium, Cypress</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Frontend-backend integration</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Microservices</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Pact, Mountebank</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Service-to-service testing</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            
+                <section id="best-practices" style="margin-bottom: 40px;">
+                    <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">3. Testing Best Practices</h2>
+                    
+                    <div class="testing-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">3.1 Effective Test Design</h3>
+                        
+                        <div class="best-practice" style="background-color: #eafaf1; padding: 15px; border-left: 4px solid #2ecc71; margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">Test Naming Conventions</h4>
+                            <ul>
+                                <li><strong>Unit tests:</strong> MethodName_StateUnderTest_ExpectedBehavior</li>
+                                <li><strong>Integration tests:</strong> ComponentA_WithComponentB_ExpectedOutcome</li>
+                                <li>Examples:<br>
+                                    - calculateTax_WithNegativeIncome_ThrowsException<br>
+                                    - OrderService_WithPaymentService_ProcessesCompleteOrder</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="best-practice" style="background-color: #eafaf1; padding: 15px; border-left: 4px solid #2ecc71; margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">Test Structure (Arrange-Act-Assert)</h4>
+                            <pre style="margin: 0;">
+            // Arrange - setup test conditions
+            Calculator calc = new Calculator();
+            int a = 5;
+            int b = 3;
+            
+            // Act - execute the operation
+            int result = calc.add(a, b);
+            
+            // Assert - verify outcomes
+            assertEquals(8, result);
+                            </pre>
+                        </div>
+                    </div>
+            
+                    <div class="testing-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">3.2 Test Automation Strategy</h3>
+                        
+                        <div class="pattern" style="background-color: #ebf5fb; padding: 15px; border-left: 4px solid #2980b9;">
+                            <h4 style="color: #2c3e50;">Testing Pyramid</h4>
+                            <ul>
+                                <li><strong>Base (70%):</strong> Unit tests (fast, isolated)</li>
+                                <li><strong>Middle (20%):</strong> Integration tests (service interactions)</li>
+                                <li><strong>Top (10%):</strong> UI/E2E tests (whole system)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="best-practice" style="background-color: #eafaf1; padding: 15px; border-left: 4px solid #2ecc71; margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">CI/CD Integration</h4>
+                            <ul>
+                                <li>Run unit tests on every commit</li>
+                                <li>Run integration tests on merge/pull request</li>
+                                <li>Run extensive test suites nightly</li>
+                                <li>Fail builds on test failures</li>
+                                <li>Track test coverage metrics</li>
+                            </ul>
+                        </div>
+                    </div>
+            
+                    <div class="testing-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">3.3 Managing Test Data</h3>
+                        
+                        <div class="pattern" style="background-color: #ebf5fb; padding: 15px; border-left: 4px solid #2980b9;">
+                            <h4 style="color: #2c3e50;">Test Data Strategies</h4>
+                            <ul>
+                                <li><strong>In-memory databases:</strong> H2, SQLite for fast tests</li>
+                                <li><strong>Test containers:</strong> Dockerized real databases</li>
+                                <li><strong>Data factories:</strong> Generate test objects</li>
+                                <li><strong>Golden datasets:</strong> Known good data snapshots</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="best-practice" style="background-color: #eafaf1; padding: 15px; border-left: 4px solid #2ecc71; margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">Test Isolation Principles</h4>
+                            <ul>
+                                <li>Each test should setup its own data</li>
+                                <li>Tests shouldn't depend on execution order</li>
+                                <li>Clean up after tests (use teardown methods)</li>
+                                <li>Consider transaction rollback for database tests</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            
+                <section id="advanced-topics" style="margin-bottom: 40px;">
+                    <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">4. Advanced Testing Topics</h2>
+                    
+                    <div class="testing-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">4.1 Property-Based Testing</h3>
+                        <p>Generate random inputs to test general properties rather than specific examples:</p>
+                        
+                        <div class="example" style="background-color: #fef9e7; border-left: 4px solid #f39c12; padding: 15px; margin: 20px 0; font-family: monospace;">
+                            <h4 style="color: #2c3e50;">Example: Hypothesis (Python)</h4>
+                            <pre style="margin: 0;">
+            from hypothesis import given
+            import hypothesis.strategies as st
+            
+            @given(st.integers(), st.integers())
+            def test_add_commutative(a, b):
+                assert add(a, b) == add(b, a)
+            
+            @given(st.lists(st.integers()))
+            def test_reverse_twice_is_original(xs):
+                assert reverse(reverse(xs)) == xs
+                            </pre>
+                        </div>
+                    </div>
+            
+                    <div class="testing-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">4.2 Mutation Testing</h3>
+                        <p>Assess test quality by automatically introducing small bugs:</p>
+                        
+                        <div class="example" style="background-color: #fef9e7; border-left: 4px solid #f39c12; padding: 15px; margin: 20px 0; font-family: monospace;">
+                            <h4 style="color: #2c3e50;">PITest (Java) Example</h4>
+                            <pre style="margin: 0;">
+            // Original code
+            public boolean isPositive(int number) {
+                return number > 0;
+            }
+            
+            // Mutant generated (changed > to >=)
+            public boolean isPositive(int number) {
+                return number >= 0;
+            }
+            
+            // Good test catches this mutation
+            @Test
+            void testIsPositive() {
+                assertFalse(calculator.isPositive(0)); // kills mutant
+            }
+                            </pre>
+                        </div>
+                    </div>
+            
+                    <div class="testing-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">4.3 Testing Legacy Code</h3>
+                        
+                        <div class="best-practice" style="background-color: #eafaf1; padding: 15px; border-left: 4px solid #2ecc71; margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">Strategies for Untested Code</h4>
+                            <ul>
+                                <li>Start with characterization tests</li>
+                                <li>Use golden master technique</li>
+                                <li>Extract methods to isolate testable units</li>
+                                <li>Introduce seams for testability</li>
+                                <li>Refactor incrementally with test coverage</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+
+           
+                
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+    const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+    const searchBox = document.getElementById("searchBox");
+
+    if (!sidebarList || !sidebarGrid) {
+        console.error("Sidebar elements not found!");
+        return;
+    }
+
+    let allTopics = [];
+
+    // Adjust JSON path based on file location
+    let jsonPath = window.location.pathname.includes("/topics/") ? "../softwarengineering.json" : "softwarengineering.json";
+
+    console.log("Fetching JSON from:", jsonPath); // Debugging
+
+    // Fetch Software Engineering Topics from JSON
+    fetch(jsonPath)
+        .then(response => {
+            console.log("Fetch Response:", response);
+            if (!response.ok) {
+                throw new Error("Failed to load JSON: " + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Fetched Data:", data);
+            if (!data.Software_Engineering) {
+                throw new Error("JSON does not contain 'Software_Engineering' key!");
+            }
+            allTopics = data.Software_Engineering;
+            displayTopics(allTopics);
+        })
+        .catch(error => console.error("Error loading topics:", error));
+
+    // Function to Display Topics in Sidebar
+    function displayTopics(topics) {
+        if (!Array.isArray(topics)) {
+            console.error("Invalid topics data:", topics);
+            return;
+        }
+
+        sidebarList.innerHTML = ""; // Clear list
+        sidebarGrid.innerHTML = ""; // Clear grid
+
+        topics.forEach(topic => {
+            let topicLink = topic.link; // Keep the original link
+
+            // 🖥️ Desktop List View
+            let li = document.createElement("li");
+            li.className = "list-group-item list-group-item-action";
+            li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+            sidebarList.appendChild(li);
+
+            // 📱 Mobile Grid View (3 in a row)
+            let div = document.createElement("div");
+            div.className = "col-4"; // Bootstrap grid (3 in a row)
+            div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+            sidebarGrid.appendChild(div);
+        });
+    }
+
+    // Search Topics
+    if (searchBox) {
+        searchBox.addEventListener("input", function () {
+            const searchText = this.value.toLowerCase();
+            const filteredTopics = allTopics.filter(topic =>
+                topic.name.toLowerCase().includes(searchText)
+            );
+            displayTopics(filteredTopics);
+        });
+    }
+});
+
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

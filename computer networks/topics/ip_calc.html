@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer Network</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/allsubject.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Computer Networks</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <h1>IP Calculator Guide</h1>
+    
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">Subnetting Calculations</h2>
+                        
+                        <div style="display: flex; margin-top: 20px;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h3 style="color: #3498db;">Basic Subnetting Formulas</h3>
+                                <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px;">
+                                    <p><strong>Number of subnets:</strong> 2<sup>n</sup> (where n = borrowed bits)</p>
+                                    <p><strong>Hosts per subnet:</strong> 2<sup>h</sup> - 2 (where h = host bits)</p>
+                                    <p><strong>Block size:</strong> 256 - subnet mask octet value</p>
+                                    <p><strong>Subnet mask:</strong> /n (CIDR) or dotted decimal (e.g., 255.255.255.0)</p>
+                                </div>
+                                
+                                <h3 style="color: #3498db; margin-top: 20px;">Subnet Calculation Example</h3>
+                                <div style="background-color: #e8f4fc; padding: 15px; border-radius: 5px;">
+                                    <p><strong>Given:</strong> 192.168.1.0/24, need 5 subnets</p>
+                                    <p><strong>Steps:</strong></p>
+                                    <ol>
+                                        <li>Determine needed bits: 2³ = 8 ≥ 5 → 3 bits</li>
+                                        <li>New prefix: /24 + 3 = /27</li>
+                                        <li>Subnet mask: 255.255.255.224</li>
+                                        <li>Block size: 256 - 224 = 32</li>
+                                        <li>Subnets: 192.168.1.0, 192.168.1.32, 192.168.1.64, etc.</li>
+                                        <li>Hosts per subnet: 2⁵ - 2 = 30</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            
+                            <div style="flex: 1;">
+                                <h3 style="color: #3498db;">Subnet Cheat Sheet</h3>
+                                <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+                                    <tr style="background-color: #2c3e50; color: white;">
+                                        <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">CIDR</th>
+                                        <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Mask</th>
+                                        <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Hosts</th>
+                                        <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Block</th>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">/24</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">255.255.255.0</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">254</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">256</td>
+                                    </tr>
+                                    <tr style="background-color: #f9f9f9;">
+                                        <td style="padding: 8px; border: 1px solid #ddd;">/25</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">255.255.255.128</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">126</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">128</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">/26</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">255.255.255.192</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">62</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">64</td>
+                                    </tr>
+                                    <tr style="background-color: #f9f9f9;">
+                                        <td style="padding: 8px; border: 1px solid #ddd;">/27</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">255.255.255.224</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">30</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">32</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">/28</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">255.255.255.240</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">14</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">16</td>
+                                    </tr>
+                                    <tr style="background-color: #f9f9f9;">
+                                        <td style="padding: 8px; border: 1px solid #ddd;">/29</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">255.255.255.248</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">6</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">8</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">/30</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">255.255.255.252</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">2</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">4</td>
+                                    </tr>
+                                </table>
+                                
+                                <h3 style="color: #3498db; margin-top: 20px;">Wildcard Masks</h3>
+                                <p>Inverse of subnet masks, used in ACLs and OSPF:</p>
+                                <div style="background-color: #fff0f0; padding: 10px; border-radius: 5px;">
+                                    <p><strong>Example:</strong> Subnet mask 255.255.255.0 → Wildcard 0.0.0.255</p>
+                                    <p>Calculated by subtracting each octet from 255</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">VLSM (Variable Length Subnet Masking)</h2>
+                        
+                        <div style="display: flex; margin-top: 20px;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h3 style="color: #3498db;">VLSM Concepts</h3>
+                                <ul style="line-height: 1.6;">
+                                    <li>Allows different subnet masks in the same network</li>
+                                    <li>More efficient use of address space</li>
+                                    <li>Requires careful planning to avoid overlaps</li>
+                                    <li>Common in real-world networks with varying subnet sizes</li>
+                                </ul>
+                                
+                                <h3 style="color: #3498db; margin-top: 20px;">VLSM Calculation Steps</h3>
+                                <ol style="line-height: 1.6;">
+                                    <li>List all needed subnets with host requirements</li>
+                                    <li>Sort subnets from largest to smallest</li>
+                                    <li>Allocate largest subnets first from the main block</li>
+                                    <li>Continue allocating smaller subnets from remaining space</li>
+                                    <li>Document all allocations carefully</li>
+                                </ol>
+                            </div>
+                            
+                            <div style="flex: 1;">
+                                <h3 style="color: #3498db;">VLSM Example</h3>
+                                <div style="background-color: #f0f8ff; padding: 15px; border-radius: 5px;">
+                                    <p><strong>Given:</strong> 192.168.1.0/24 network with requirements:</p>
+                                    <ul>
+                                        <li>Subnet A: 60 hosts</li>
+                                        <li>Subnet B: 30 hosts</li>
+                                        <li>Subnet C: 12 hosts</li>
+                                        <li>Subnet D: 5 hosts</li>
+                                    </ul>
+                                    <p><strong>Solution:</strong></p>
+                                    <ol>
+                                        <li>Subnet A: 192.168.1.0/26 (62 hosts)</li>
+                                        <li>Subnet B: 192.168.1.64/27 (30 hosts)</li>
+                                        <li>Subnet C: 192.168.1.96/28 (14 hosts)</li>
+                                        <li>Subnet D: 192.168.1.112/29 (6 hosts)</li>
+                                    </ol>
+                                    <p>Remaining: 192.168.1.120/29 to 192.168.1.255</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">IPv6 Calculations</h2>
+                        
+                        <div style="display: flex; margin-top: 20px;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h3 style="color: #3498db;">IPv6 Subnetting</h3>
+                                <p>IPv6 uses a fixed /64 for most subnets, providing 18 quintillion hosts per subnet.</p>
+                                <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px;">
+                                    <p><strong>Global Routing Prefix:</strong> Typically /48 (assigned by ISP)</p>
+                                    <p><strong>Subnet ID:</strong> 16 bits (allowing 65,536 /64 subnets)</p>
+                                    <p><strong>Interface ID:</strong> 64 bits (EUI-64 or random)</p>
+                                </div>
+                                
+                                <h3 style="color: #3498db; margin-top: 20px;">IPv6 Address Planning</h3>
+                                <div style="background-color: #e8f4fc; padding: 15px; border-radius: 5px;">
+                                    <p><strong>Example Allocation:</strong></p>
+                                    <p>2001:db8:acad::/48</p>
+                                    <ul>
+                                        <li>Branch 1: 2001:db8:acad:1::/64</li>
+                                        <li>Branch 2: 2001:db8:acad:2::/64</li>
+                                        <li>WAN Links: 2001:db8:acad:ff00::/56</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div style="flex: 1;">
+                                <h3 style="color: #3498db;">IPv6 Address Shortening</h3>
+                                <p>Rules for compressing IPv6 addresses:</p>
+                                <ol style="line-height: 1.6;">
+                                    <li>Leading zeros in each hextet can be omitted</li>
+                                    <li>One sequence of consecutive all-zero hextets can be replaced with ::</li>
+                                    <li>Double colon can only be used once in an address</li>
+                                </ol>
+                                <div style="background-color: #fff0f0; padding: 10px; border-radius: 5px; margin-top: 10px;">
+                                    <p><strong>Example:</strong></p>
+                                    <p>Full: 2001:0db8:0000:0000:0000:ff00:0042:8329</p>
+                                    <p>Compressed: 2001:db8::ff00:42:8329</p>
+                                </div>
+                                
+                                <h3 style="color: #3498db; margin-top: 20px;">IPv6 EUI-64 Calculation</h3>
+                                <p>How to derive an IPv6 interface ID from a MAC address:</p>
+                                <div style="background-color: #f0f8ff; padding: 10px; border-radius: 5px;">
+                                    <p><strong>MAC:</strong> 00:1A:2B:3C:4D:5E</p>
+                                    <ol>
+                                        <li>Split MAC: 00-1A-2B and 3C-4D-5E</li>
+                                        <li>Insert FF-FE in middle: 00-1A-2B-FF-FE-3C-4D-5E</li>
+                                        <li>Flip 7th bit: 02-1A-2B-FF-FE-3C-4D-5E</li>
+                                        <li>Resulting Interface ID: 021a:2bff:fe3c:4d5e</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">Network Range Calculations</h2>
+                        
+                        <div style="display: flex; margin-top: 20px;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h3 style="color: #3498db;">Finding Network Boundaries</h3>
+                                <p>To calculate network address and broadcast address:</p>
+                                <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px;">
+                                    <p><strong>Given:</strong> 172.16.35.123/20</p>
+                                    <ol>
+                                        <li>Mask in binary: 255.255.240.0</li>
+                                        <li>Block size: 256 - 240 = 16</li>
+                                        <li>Find multiple: floor(35/16) × 16 = 32</li>
+                                        <li>Network: 172.16.32.0</li>
+                                        <li>Broadcast: 172.16.47.255</li>
+                                        <li>Range: 172.16.32.1 - 172.16.47.254</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            
+                            <div style="flex: 1;">
+                                <h3 style="color: #3498db;">Supernetting (Route Summarization)</h3>
+                                <p>Combining multiple networks into a single summarized route:</p>
+                                <div style="background-color: #e8f4fc; padding: 15px; border-radius: 5px;">
+                                    <p><strong>Given networks:</strong></p>
+                                    <ul>
+                                        <li>192.168.0.0/24</li>
+                                        <li>192.168.1.0/24</li>
+                                        <li>192.168.2.0/24</li>
+                                        <li>192.168.3.0/24</li>
+                                    </ul>
+                                    <p><strong>Steps:</strong></p>
+                                    <ol>
+                                        <li>Convert to binary: 11000000.10101000.00000000.00000000</li>
+                                        <li>Find common prefix: 22 bits</li>
+                                        <li>Summary route: 192.168.0.0/22</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">Binary/Decimal Conversion</h2>
+                        
+                        <div style="display: flex; margin-top: 20px;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h3 style="color: #3498db;">Binary to Decimal</h3>
+                                <p>Sum of powers of 2 for each '1' bit:</p>
+                                <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px;">
+                                    <p><strong>Example:</strong> 11010101</p>
+                                    <p>1×(2⁷) + 1×(2⁶) + 0×(2⁵) + 1×(2⁴) + 0×(2³) + 1×(2²) + 0×(2¹) + 1×(2⁰)</p>
+                                    <p>= 128 + 64 + 0 + 16 + 0 + 4 + 0 + 1 = 213</p>
+                                </div>
+                                
+                                <h3 style="color: #3498db; margin-top: 20px;">Binary Subnet Mask</h3>
+                                <p>CIDR to binary conversion:</p>
+                                <div style="background-color: #e8f4fc; padding: 10px; border-radius: 5px;">
+                                    <p><strong>/27:</strong> 11111111.11111111.11111111.11100000</p>
+                                    <p>= 255.255.255.224</p>
+                                </div>
+                            </div>
+                            
+                            <div style="flex: 1;">
+                                <h3 style="color: #3498db;">Decimal to Binary</h3>
+                                <p>Division by 2 with remainder:</p>
+                                <div style="background-color: #fff0f0; padding: 15px; border-radius: 5px;">
+                                    <p><strong>Example:</strong> Convert 192 to binary</p>
+                                    <ol>
+                                        <li>192 ÷ 2 = 96 R0</li>
+                                        <li>96 ÷ 2 = 48 R0</li>
+                                        <li>48 ÷ 2 = 24 R0</li>
+                                        <li>24 ÷ 2 = 12 R0</li>
+                                        <li>12 ÷ 2 = 6 R0</li>
+                                        <li>6 ÷ 2 = 3 R0</li>
+                                        <li>3 ÷ 2 = 1 R1</li>
+                                        <li>1 ÷ 2 = 0 R1</li>
+                                    </ol>
+                                    <p>Read remainders bottom-up: 11000000</p>
+                                </div>
+                                
+                                <h3 style="color: #3498db; margin-top: 20px;">Quick Reference</h3>
+                                <table style="width: 100%; border-collapse: collapse;">
+                                    <tr style="background-color: #2c3e50; color: white;">
+                                        <th style="padding: 8px; text-align: center; border: 1px solid #ddd;">Bit</th>
+                                        <th style="padding: 8px; text-align: center; border: 1px solid #ddd;">Value</th>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">8</td>
+                                        <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">128</td>
+                                    </tr>
+                                    <tr style="background-color: #f9f9f9;">
+                                        <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">7</td>
+                                        <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">64</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">6</td>
+                                        <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">32</td>
+                                    </tr>
+                                    <tr style="background-color: #f9f9f9;">
+                                        <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">5</td>
+                                        <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">16</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">4</td>
+                                        <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">8</td>
+                                    </tr>
+                                    <tr style="background-color: #f9f9f9;">
+                                        <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">3</td>
+                                        <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">4</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">2</td>
+                                        <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">2</td>
+                                    </tr>
+                                    <tr style="background-color: #f9f9f9;">
+                                        <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">1</td>
+                                        <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">1</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                
+
+            </main>  
+            
+            
+
+             <!-- Floating button to open chatbot -->
+    <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+    </div>
+    
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-container");
+            let button = document.getElementById("open-chatbot");
+    
+            if (!chatbot.classList.contains("active")) {
+                chatbot.classList.add("active");
+                button.style.display = "none"; // Hide button when chatbot is open
+            } else {
+                chatbot.classList.remove("active");
+                setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+            }
+        }
+    
+        // Load chatbot HTML dynamically
+        fetch("/chatbot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("chatbot-container").innerHTML += html;
+    
+            // Execute chatbot script after inserting HTML
+            let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+            for (let script of scripts) {
+                let newScript = document.createElement("script");
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript);
+            }
+        })
+        .catch(error => console.error("Error loading chatbot:", error));
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../computernetwork.json" : "computernetwork.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.Computer_Networks;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+        
+       
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

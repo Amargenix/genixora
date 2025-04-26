@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../software engineering.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Software Engineering</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+                <main class="col-md-7 content" >
+                    <h1>Software Development Life Cycle (SDLC)</h1>
+                         <div style="background-color: white; border-radius: 8px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">
+                                <i class="fas fa-info-circle" style="margin-right: 10px;"></i>Overview of SDLC
+                            </h2>
+                            <p>The <span style="font-weight: bold; color: #2980b9;">Software Development Life Cycle (SDLC)</span> is a structured process used by software engineers to design, develop, test, and deploy high-quality software. It provides a framework for building software efficiently while minimizing risks and costs.</p>
+                            
+                            <h3 style="color: #2c3e50; margin-top: 25px;">Why is SDLC Important?</h3>
+                            <ul style="padding-left: 20px;">
+                                <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: #27ae60; margin-right: 8px;"></i><strong>Systematic Development:</strong> Provides a clear roadmap for the entire development process</li>
+                                <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: #27ae60; margin-right: 8px;"></i><strong>Risk Reduction:</strong> Identifies potential issues early in the process</li>
+                                <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: #27ae60; margin-right: 8px;"></i><strong>Quality Assurance:</strong> Ensures the final product meets requirements and standards</li>
+                                <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: #27ae60; margin-right: 8px;"></i><strong>Cost Efficiency:</strong> Helps in proper resource allocation and budget management</li>
+                                <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: #27ae60; margin-right: 8px;"></i><strong>Client Satisfaction:</strong> Regular deliverables and feedback loops keep clients engaged</li>
+                            </ul>
+                            
+                            <h3 style="color: #2c3e50; margin-top: 25px;">SDLC in Modern Development</h3>
+                            <p>In today's fast-paced development environment, SDLC has evolved to accommodate:</p>
+                            <ul style="padding-left: 20px;">
+                                <li style="margin-bottom: 8px;">Agile and DevOps practices</li>
+                                <li style="margin-bottom: 8px;">Continuous Integration/Continuous Deployment (CI/CD)</li>
+                                <li style="margin-bottom: 8px;">Microservices architecture</li>
+                                <li style="margin-bottom: 8px;">Cloud-native development</li>
+                                <li style="margin-bottom: 8px;">Automated testing and deployment</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background-color: white; border-radius: 8px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">
+                                <i class="fas fa-project-diagram" style="margin-right: 10px;"></i>SDLC Phases
+                            </h2>
+                            <p>The SDLC consists of <strong>7 key phases</strong> that guide the software from conception to retirement:</p>
+                            
+                            <table style="width: 100%; border-collapse: collapse; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <thead>
+                                    <tr>
+                                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Phase</th>
+                                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Description</th>
+                                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Key Activities</th>
+                                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Output/Deliverables</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;"><strong>1. Planning</strong></td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Defines project scope, goals, and feasibility</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">
+                                            <ul style="padding-left: 20px; margin: 0;">
+                                                <li>Requirement gathering</li>
+                                                <li>Feasibility study</li>
+                                                <li>Resource planning</li>
+                                            </ul>
+                                        </td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Project Plan, Feasibility Report</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;"><strong>2. Requirement Analysis</strong></td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Gathers detailed software requirements</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">
+                                            <ul style="padding-left: 20px; margin: 0;">
+                                                <li>Stakeholder interviews</li>
+                                                <li>Use case analysis</li>
+                                                <li>Requirement documentation</li>
+                                            </ul>
+                                        </td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">SRS Document, Use Case Diagrams</td>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;"><strong>3. Design</strong></td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Creates software architecture & system design</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">
+                                            <ul style="padding-left: 20px; margin: 0;">
+                                                <li>High-Level Design (HLD)</li>
+                                                <li>Low-Level Design (LLD)</li>
+                                                <li>Prototyping</li>
+                                                <li>Database design</li>
+                                            </ul>
+                                        </td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Design Documents, ER Diagrams, Prototypes</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;"><strong>4. Development</strong></td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Actual coding of the software</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">
+                                            <ul style="padding-left: 20px; margin: 0;">
+                                                <li>Writing code</li>
+                                                <li>Version control</li>
+                                                <li>Unit testing</li>
+                                                <li>Code reviews</li>
+                                            </ul>
+                                        </td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Source Code, Unit Test Cases</td>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;"><strong>5. Testing</strong></td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Ensures software is bug-free and meets requirements</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">
+                                            <ul style="padding-left: 20px; margin: 0;">
+                                                <li>Unit testing</li>
+                                                <li>Integration testing</li>
+                                                <li>System testing</li>
+                                                <li>User Acceptance Testing (UAT)</li>
+                                            </ul>
+                                        </td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Test Cases, Bug Reports, Test Summary</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;"><strong>6. Deployment</strong></td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Releases software to users</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">
+                                            <ul style="padding-left: 20px; margin: 0;">
+                                                <li>Environment setup</li>
+                                                <li>Data migration</li>
+                                                <li>User training</li>
+                                                <li>Production deployment</li>
+                                            </ul>
+                                        </td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Deployed Application, User Manuals</td>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;"><strong>7. Maintenance</strong></td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Fixes bugs & updates software</td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">
+                                            <ul style="padding-left: 20px; margin: 0;">
+                                                <li>Bug fixing</li>
+                                                <li>Performance optimization</li>
+                                                <li>Feature enhancements</li>
+                                                <li>Security updates</li>
+                                            </ul>
+                                        </td>
+                                        <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Patches, Version Updates</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h3 style="color: #2c3e50; margin-top: 25px;">Phase Interdependencies</h3>
+                            <p>While the phases appear sequential, in practice there is often overlap and iteration between phases:</p>
+                            <ul style="padding-left: 20px;">
+                                <li style="margin-bottom: 8px;">Design may need revisiting based on development challenges</li>
+                                <li style="margin-bottom: 8px;">Testing often reveals issues requiring code changes</li>
+                                <li style="margin-bottom: 8px;">User feedback during deployment may lead to new requirements</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background-color: white; border-radius: 8px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">
+                                <i class="fas fa-chart-line" style="margin-right: 10px;"></i>SDLC Models (Methodologies)
+                            </h2>
+                            <p>Different projects use different SDLC models based on requirements, team size, and project complexity:</p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr; gap: 20px; margin: 20px 0;">
+                                <div style="background-color: #f8f9fa; padding: 15px; border-left: 4px solid #27ae60; border-radius: 4px;">
+                                    <h4 style="color: #2c3e50; margin-top: 0;">1. Waterfall Model</h4>
+                                    <p>A linear, sequential approach where each phase must be completed before the next begins.</p>
+                                    <div style="margin-top: 15px;">
+                                        <p style="font-weight: bold;"><i class="fas fa-thumbs-up" style="color: #27ae60; margin-right: 8px;"></i>Pros:</p>
+                                        <ul style="padding-left: 20px;">
+                                            <li>Simple and easy to understand</li>
+                                            <li>Clear milestones and deliverables</li>
+                                            <li>Good for small, well-defined projects</li>
+                                        </ul>
+                                        <p style="font-weight: bold; margin-top: 10px;"><i class="fas fa-thumbs-down" style="color: #e74c3c; margin-right: 8px;"></i>Cons:</p>
+                                        <ul style="padding-left: 20px;">
+                                            <li>Inflexible to changes</li>
+                                            <li>Testing happens late in the cycle</li>
+                                            <li>High risk of requirements changing</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div style="background-color: #f8f9fa; padding: 15px; border-left: 4px solid #27ae60; border-radius: 4px;">
+                                    <h4 style="color: #2c3e50; margin-top: 0;">2. Agile Model</h4>
+                                    <p>An iterative approach that delivers working software in small increments (sprints).</p>
+                                    <div style="margin-top: 15px;">
+                                        <p style="font-weight: bold;"><i class="fas fa-thumbs-up" style="color: #27ae60; margin-right: 8px;"></i>Pros:</p>
+                                        <ul style="padding-left: 20px;">
+                                            <li>Highly flexible to changes</li>
+                                            <li>Frequent deliverables keep stakeholders engaged</li>
+                                            <li>Early and continuous testing</li>
+                                        </ul>
+                                        <p style="font-weight: bold; margin-top: 10px;"><i class="fas fa-thumbs-down" style="color: #e74c3c; margin-right: 8px;"></i>Cons:</p>
+                                        <ul style="padding-left: 20px;">
+                                            <li>Requires active customer participation</li>
+                                            <li>Can be difficult to predict final cost/timeline</li>
+                                            <li>Needs disciplined team to work effectively</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div style="background-color: #f8f9fa; padding: 15px; border-left: 4px solid #27ae60; border-radius: 4px;">
+                                    <h4 style="color: #2c3e50; margin-top: 0;">3. Spiral Model</h4>
+                                    <p>Combines iterative development with thorough risk analysis at each phase.</p>
+                                    <div style="margin-top: 15px;">
+                                        <p style="font-weight: bold;"><i class="fas fa-thumbs-up" style="color: #27ae60; margin-right: 8px;"></i>Pros:</p>
+                                        <ul style="padding-left: 20px;">
+                                            <li>Excellent for high-risk projects</li>
+                                            <li>Allows for refinement at each iteration</li>
+                                            <li>Early prototypes help manage expectations</li>
+                                        </ul>
+                                        <p style="font-weight: bold; margin-top: 10px;"><i class="fas fa-thumbs-down" style="color: #e74c3c; margin-right: 8px;"></i>Cons:</p>
+                                        <ul style="padding-left: 20px;">
+                                            <li>Can be expensive due to multiple iterations</li>
+                                            <li>Requires expertise in risk assessment</li>
+                                            <li>Not suitable for small projects</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div style="background-color: #f8f9fa; padding: 15px; border-left: 4px solid #27ae60; border-radius: 4px;">
+                                    <h4 style="color: #2c3e50; margin-top: 0;">4. V-Model</h4>
+                                    <p>Extension of Waterfall where each development phase has a corresponding testing phase.</p>
+                                    <div style="margin-top: 15px;">
+                                        <p style="font-weight: bold;"><i class="fas fa-thumbs-up" style="color: #27ae60; margin-right: 8px;"></i>Pros:</p>
+                                        <ul style="padding-left: 20px;">
+                                            <li>High emphasis on testing and quality</li>
+                                            <li>Clear validation at each stage</li>
+                                            <li>Good for mission-critical systems</li>
+                                        </ul>
+                                        <p style="font-weight: bold; margin-top: 10px;"><i class="fas fa-thumbs-down" style="color: #e74c3c; margin-right: 8px;"></i>Cons:</p>
+                                        <ul style="padding-left: 20px;">
+                                            <li>Very rigid structure</li>
+                                            <li>Expensive to implement changes</li>
+                                            <li>Not suitable for projects with evolving requirements</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div style="background-color: #f8f9fa; padding: 15px; border-left: 4px solid #27ae60; border-radius: 4px;">
+                                    <h4 style="color: #2c3e50; margin-top: 0;">5. DevOps Model</h4>
+                                    <p>Combines development and operations with a focus on automation and CI/CD.</p>
+                                    <div style="margin-top: 15px;">
+                                        <p style="font-weight: bold;"><i class="fas fa-thumbs-up" style="color: #27ae60; margin-right: 8px;"></i>Pros:</p>
+                                        <ul style="padding-left: 20px;">
+                                            <li>Faster time-to-market</li>
+                                            <li>Improved collaboration between teams</li>
+                                            <li>Continuous improvement through feedback</li>
+                                        </ul>
+                                        <p style="font-weight: bold; margin-top: 10px;"><i class="fas fa-thumbs-down" style="color: #e74c3c; margin-right: 8px;"></i>Cons:</p>
+                                        <ul style="padding-left: 20px;">
+                                            <li>Requires significant cultural change</li>
+                                            <li>Heavy reliance on automation tools</li>
+                                            <li>Initial setup can be complex</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h3 style="color: #2c3e50; margin-top: 25px;">Choosing the Right Model</h3>
+                            <p>Consider these factors when selecting an SDLC model:</p>
+                            <ul style="padding-left: 20px;">
+                                <li style="margin-bottom: 8px;"><strong>Project Size:</strong> Small projects may use Waterfall, large ones may need Spiral or Agile</li>
+                                <li style="margin-bottom: 8px;"><strong>Requirements Clarity:</strong> Clear requirements suit Waterfall, evolving ones need Agile</li>
+                                <li style="margin-bottom: 8px;"><strong>Risk Level:</strong> High-risk projects benefit from Spiral model</li>
+                                <li style="margin-bottom: 8px;"><strong>Customer Involvement:</strong> Agile requires frequent customer feedback</li>
+                                <li style="margin-bottom: 8px;"><strong>Team Expertise:</strong> Some models require specialized skills</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background-color: white; border-radius: 8px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">
+                                <i class="fas fa-tools" style="margin-right: 10px;"></i>Best Practices in SDLC
+                            </h2>
+                            <p>Following these practices can significantly improve your software development process:</p>
+                            
+                            <h3 style="color: #2c3e50; margin-top: 25px;">1. Requirement Management</h3>
+                            <ul style="padding-left: 20px;">
+                                <li style="margin-bottom: 8px;">Create clear, measurable, and testable requirements</li>
+                                <li style="margin-bottom: 8px;">Use tools like JIRA or Trello for requirement tracking</li>
+                                <li style="margin-bottom: 8px;">Maintain traceability between requirements and test cases</li>
+                            </ul>
+                            
+                            <h3 style="color: #2c3e50; margin-top: 25px;">2. Design Principles</h3>
+                            <ul style="padding-left: 20px;">
+                                <li style="margin-bottom: 8px;">Follow SOLID principles for object-oriented design</li>
+                                <li style="margin-bottom: 8px;">Use design patterns where appropriate</li>
+                                <li style="margin-bottom: 8px;">Create modular, loosely coupled architectures</li>
+                            </ul>
+                            
+                            <h3 style="color: #2c3e50; margin-top: 25px;">3. Development Standards</h3>
+                            <ul style="padding-left: 20px;">
+                                <li style="margin-bottom: 8px;">Implement coding standards and style guides</li>
+                                <li style="margin-bottom: 8px;">Use version control (Git) with proper branching strategies</li>
+                                <li style="margin-bottom: 8px;">Conduct regular code reviews</li>
+                            </ul>
+                            
+                            <h3 style="color: #2c3e50; margin-top: 25px;">4. Testing Strategies</h3>
+                            <ul style="padding-left: 20px;">
+                                <li style="margin-bottom: 8px;">Implement Test-Driven Development (TDD) where possible</li>
+                                <li style="margin-bottom: 8px;">Automate regression testing</li>
+                                <li style="margin-bottom: 8px;">Include performance and security testing</li>
+                            </ul>
+                            
+                            <h3 style="color: #2c3e50; margin-top: 25px;">5. Deployment & Maintenance</h3>
+                            <ul style="padding-left: 20px;">
+                                <li style="margin-bottom: 8px;">Use CI/CD pipelines for automated deployments</li>
+                                <li style="margin-bottom: 8px;">Implement proper monitoring and logging</li>
+                                <li style="margin-bottom: 8px;">Plan for regular maintenance cycles</li>
+                            </ul>
+                            
+                            <h3 style="color: #2c3e50; margin-top: 25px;">Tools for Each Phase</h3>
+                            <ul style="padding-left: 20px;">
+                                <li style="margin-bottom: 8px;"><strong>Planning:</strong> JIRA, Trello, MS Project</li>
+                                <li style="margin-bottom: 8px;"><strong>Design:</strong> Lucidchart, Draw.io, Figma</li>
+                                <li style="margin-bottom: 8px;"><strong>Development:</strong> VS Code, IntelliJ, GitHub</li>
+                                <li style="margin-bottom: 8px;"><strong>Testing:</strong> Selenium, JUnit, Postman</li>
+                                <li style="margin-bottom: 8px;"><strong>Deployment:</strong> Jenkins, Docker, Kubernetes</li>
+                                <li style="margin-bottom: 8px;"><strong>Monitoring:</strong> New Relic, Datadog, Splunk</li>
+                            </ul>
+                        </div>
+                        
+                     
+            </main>
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+    const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+    const searchBox = document.getElementById("searchBox");
+
+    if (!sidebarList || !sidebarGrid) {
+        console.error("Sidebar elements not found!");
+        return;
+    }
+
+    let allTopics = [];
+
+    // Adjust JSON path based on file location
+    let jsonPath = window.location.pathname.includes("/topics/") ? "../softwarengineering.json" : "softwarengineering.json";
+
+    console.log("Fetching JSON from:", jsonPath); // Debugging
+
+    // Fetch Software Engineering Topics from JSON
+    fetch(jsonPath)
+        .then(response => {
+            console.log("Fetch Response:", response);
+            if (!response.ok) {
+                throw new Error("Failed to load JSON: " + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Fetched Data:", data);
+            if (!data.Software_Engineering) {
+                throw new Error("JSON does not contain 'Software_Engineering' key!");
+            }
+            allTopics = data.Software_Engineering;
+            displayTopics(allTopics);
+        })
+        .catch(error => console.error("Error loading topics:", error));
+
+    // Function to Display Topics in Sidebar
+    function displayTopics(topics) {
+        if (!Array.isArray(topics)) {
+            console.error("Invalid topics data:", topics);
+            return;
+        }
+
+        sidebarList.innerHTML = ""; // Clear list
+        sidebarGrid.innerHTML = ""; // Clear grid
+
+        topics.forEach(topic => {
+            let topicLink = topic.link; // Keep the original link
+
+            // 🖥️ Desktop List View
+            let li = document.createElement("li");
+            li.className = "list-group-item list-group-item-action";
+            li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+            sidebarList.appendChild(li);
+
+            // 📱 Mobile Grid View (3 in a row)
+            let div = document.createElement("div");
+            div.className = "col-4"; // Bootstrap grid (3 in a row)
+            div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+            sidebarGrid.appendChild(div);
+        });
+    }
+
+    // Search Topics
+    if (searchBox) {
+        searchBox.addEventListener("input", function () {
+            const searchText = this.value.toLowerCase();
+            const filteredTopics = allTopics.filter(topic =>
+                topic.name.toLowerCase().includes(searchText)
+            );
+            displayTopics(filteredTopics);
+        });
+    }
+});
+
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

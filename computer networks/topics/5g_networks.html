@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer Network</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/allsubject.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Computer Networks</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <h1>5G Networks</h1>
+                
+                <!-- Section 1 -->
+                <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">1. Introduction to 5G Technology</h2>
+                    <p>5G is the fifth generation of cellular network technology, designed to connect virtually everyone and everything together including machines, objects, and devices.</p>
+                    
+                    <div style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                        <h3 style="color: #2c3e50; margin-top: 30px;">Key 5G Performance Targets</h3>
+                        <ul>
+                            <li><strong>Peak data rates:</strong> 20 Gbps downlink, 10 Gbps uplink</li>
+                            <li><strong>Latency:</strong> As low as 1ms for URLLC</li>
+                            <li><strong>Mobility:</strong> Support up to 500 km/h</li>
+                            <li><strong>Connection density:</strong> 1 million devices/km²</li>
+                        </ul>
+                    </div>
+                    
+                    <h3 style="color: #2c3e50; margin-top: 30px;">Evolution of Mobile Networks</h3>
+                    <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                        <tr>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Generation</th>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Year</th>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Max Speed</th>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Key Technology</th>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #e8f4fc; padding: 10px; border-radius: 4px; font-weight: bold;">1G</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">1980s</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">2.4 Kbps</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Analog voice</td>
+                        </tr>
+                        <tr style="background-color: #f2f2f2;">
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #e8f4fc; padding: 10px; border-radius: 4px; font-weight: bold;">2G</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">1990s</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">64 Kbps</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Digital voice, SMS</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #e8f4fc; padding: 10px; border-radius: 4px; font-weight: bold;">3G</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">2000s</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">2 Mbps</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Mobile data, video calling</td>
+                        </tr>
+                        <tr style="background-color: #f2f2f2;">
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #e8f4fc; padding: 10px; border-radius: 4px; font-weight: bold;">4G LTE</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">2010s</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">100 Mbps</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Mobile broadband</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #e8f4fc; padding: 10px; border-radius: 4px; font-weight: bold;">5G</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">2020s</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">20 Gbps</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">IoT, URLLC, mMTC</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <!-- Section 2 -->
+                <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">2. 5G Network Architecture</h2>
+                    
+                    <div style="text-align: center; background-color: #f4f4f4; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                        <h3 style="color: #2c3e50; margin-top: 30px;">5G System Architecture</h3>
+                        <pre style="background: #f4f4f4; padding: 10px; border-left: 3px solid #3498db; overflow-x: auto; font-family: 'Courier New', Courier, monospace;">
+                +---------------------+       +---------------------+
+                |                     |       |                     |
+                |      User Device    |-------|      gNodeB (5G BS) |
+                | (UE - User Equipment)|       |                     |
+                +---------------------+       +---------------------+
+                        |                                   |
+                        |                                   |
+                +---------------------+       +---------------------+
+                |                     |       |                     |
+                |   5G Core Network   |-------|    Edge Computing   |
+                | (AMF, SMF, UPF etc.)|       |                     |
+                +---------------------+       +---------------------+
+                        |
+                        |
+                +---------------------+
+                |                     |
+                |   Cloud/Data Center |
+                |                     |
+                +---------------------+</pre>
+                    </div>
+                    
+                    <h3 style="color: #2c3e50; margin-top: 30px;">Key 5G Network Components</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+                        <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                            <h4 style="color: #2c3e50; margin-top: 30px;">Radio Access Network (RAN)</h4>
+                            <ul>
+                                <li>gNodeB (5G base station)</li>
+                                <li>Massive MIMO antennas</li>
+                                <li>Beamforming technology</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                            <h4 style="color: #2c3e50; margin-top: 30px;">5G Core Network</h4>
+                            <ul>
+                                <li>AMF (Access and Mobility Management)</li>
+                                <li>SMF (Session Management Function)</li>
+                                <li>UPF (User Plane Function)</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                            <h4 style="color: #2c3e50; margin-top: 30px;">Edge Computing</h4>
+                            <ul>
+                                <li>MEC (Multi-access Edge Computing)</li>
+                                <li>Local data processing</li>
+                                <li>Ultra-low latency services</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Section 3 -->
+                <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">3. 5G Frequency Spectrum</h2>
+                    
+                    <h3 style="color: #2c3e50; margin-top: 30px;">5G Spectrum Bands</h3>
+                    <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                        <tr>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Frequency Range</th>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Classification</th>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Characteristics</th>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Use Cases</th>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Sub-1 GHz (600-900 MHz)</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Low-band</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Wide coverage, good penetration</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Nationwide coverage</td>
+                        </tr>
+                        <tr style="background-color: #f2f2f2;">
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">1-6 GHz (e.g., 3.5 GHz)</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Mid-band</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Balance of coverage and capacity</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Urban/suburban areas</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">24-100 GHz (mmWave)</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">High-band</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Extreme capacity, short range</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Dense urban, stadiums</td>
+                        </tr>
+                    </table>
+                    
+                    <div style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                        <h3 style="color: #2c3e50; margin-top: 30px;">Global 5G Spectrum Allocation</h3>
+                        <ul>
+                            <li><strong>North America:</strong> 600 MHz, 2.5 GHz, 3.5 GHz, 28/39 GHz</li>
+                            <li><strong>Europe:</strong> 3.4-3.8 GHz, 26 GHz</li>
+                            <li><strong>Asia:</strong> 3.3-3.6 GHz, 4.8-5.0 GHz, 28 GHz</li>
+                            <li><strong>Australia:</strong> 3.6 GHz, 26 GHz</li>
+                        </ul>
+                    </div>
+                    
+                    <h3 style="color: #2c3e50; margin-top: 30px;">Spectrum Sharing Techniques</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+                        <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                            <h4 style="color: #2c3e50; margin-top: 30px;">Dynamic Spectrum Sharing (DSS)</h4>
+                            <p>Allows 4G and 5G to operate simultaneously on same spectrum</p>
+                        </div>
+                        
+                        <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                            <h4 style="color: #2c3e50; margin-top: 30px;">License Assisted Access (LAA)</h4>
+                            <p>Combines licensed and unlicensed spectrum</p>
+                        </div>
+                        
+                        <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                            <h4 style="color: #2c3e50; margin-top: 30px;">CBRS (Citizens Broadband Radio Service)</h4>
+                            <p>3-tier shared spectrum model (3.5 GHz in US)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Section 4 -->
+                <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">4. 5G Key Technologies</h2>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+                        <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                            <h3 style="color: #2c3e50; margin-top: 30px;">Massive MIMO</h3>
+                            <ul>
+                                <li>64-256 antenna elements</li>
+                                <li>3D beamforming</li>
+                                <li>Improved spectral efficiency</li>
+                                <li>Higher capacity and coverage</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                            <h3 style="color: #2c3e50; margin-top: 30px;">Beamforming</h3>
+                            <ul>
+                                <li>Precise signal direction</li>
+                                <li>Adaptive beam tracking</li>
+                                <li>Overcomes mmWave propagation</li>
+                                <li>Digital and hybrid approaches</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                            <h3 style="color: #2c3e50; margin-top: 30px;">Network Slicing</h3>
+                            <ul>
+                                <li>Virtual network partitioning</li>
+                                <li>Customized QoS per slice</li>
+                                <li>Isolated network functions</li>
+                                <li>End-to-end service management</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h3 style="color: #2c3e50; margin-top: 30px;">Additional 5G Technologies</h3>
+                    <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                        <tr>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Technology</th>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Description</th>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Benefit</th>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Small Cells</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Low-power base stations</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Dense network coverage</td>
+                        </tr>
+                        <tr style="background-color: #f2f2f2;">
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Full Duplex</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Simultaneous transmit/receive</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Doubled spectral efficiency</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Network Function Virtualization</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Software-based network functions</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Flexible deployment</td>
+                        </tr>
+                        <tr style="background-color: #f2f2f2;">
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Edge Computing</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Processing at network edge</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Reduced latency</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <!-- Section 5 -->
+                <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">5. 5G Use Cases and Applications</h2>
+                    
+                    <h3 style="color: #2c3e50; margin-top: 30px;">Three Main 5G Service Categories</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+                        <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                            <h4 style="color: #2c3e50; margin-top: 30px;">eMBB (Enhanced Mobile Broadband)</h4>
+                            <ul>
+                                <li>8K video streaming</li>
+                                <li>VR/AR applications</li>
+                                <li>Cloud gaming</li>
+                                <li>Peak data rates up to 20Gbps</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                            <h4 style="color: #2c3e50; margin-top: 30px;">URLLC (Ultra-Reliable Low Latency)</h4>
+                            <ul>
+                                <li>Industrial automation</li>
+                                <li>Autonomous vehicles</li>
+                                <li>Remote surgery</li>
+                                <li>Latency as low as 1ms</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                            <h4 style="color: #2c3e50; margin-top: 30px;">mMTC (Massive Machine Type Comms)</h4>
+                            <ul>
+                                <li>Smart cities</li>
+                                <li>IoT sensors</li>
+                                <li>Asset tracking</li>
+                                <li>1M devices/km² density</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h3 style="color: #2c3e50; margin-top: 30px;">Industry-Specific Applications</h3>
+                    <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                        <tr>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Industry</th>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">5G Application</th>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Requirements</th>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Healthcare</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Remote surgery, patient monitoring</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">URLLC, high reliability</td>
+                        </tr>
+                        <tr style="background-color: #f2f2f2;">
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Manufacturing</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Industrial IoT, predictive maintenance</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">mMTC, low latency</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Transportation</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">V2X communication, autonomous vehicles</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">URLLC, high mobility</td>
+                        </tr>
+                        <tr style="background-color: #f2f2f2;">
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Entertainment</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Cloud gaming, immersive media</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">eMBB, high bandwidth</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <!-- Section 6 -->
+                <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">6. 5G Core Network (5GC)</h2>
+                    
+                    <div style="text-align: center; background-color: #f4f4f4; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                        <h3 style="color: #2c3e50; margin-top: 30px;">5G Core Architecture</h3>
+                        <pre style="background: #f4f4f4; padding: 10px; border-left: 3px solid #3498db; overflow-x: auto; font-family: 'Courier New', Courier, monospace;">
+                +----------------+       +----------------+       +----------------+
+                |                |       |                |       |                |
+                | Access and     |-------| Session        |-------| User Plane     |
+                | Mobility Mgmt  |       | Management     |       | Function       |
+                | (AMF)          |       | (SMF)          |       | (UPF)          |
+                +----------------+       +----------------+       +----------------+
+                        |                        |                        |
+                        |                        |                        |
+                +----------------+       +----------------+       +----------------+
+                |                |       |                |       |                |
+                | Unified Data   |       | Network        |       | Policy Control |
+                | Management     |       | Exposure       |       | Function       |
+                | (UDM)          |       | Function       |       | (PCF)          |
+                |                |       | (NEF)          |       |                |
+                +----------------+       +----------------+       +----------------+</pre>
+                    </div>
+                    
+                    <h3 style="color: #2c3e50; margin-top: 30px;">Key 5G Core Functions</h3>
+                    <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                        <tr>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Function</th>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Acronym</th>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Purpose</th>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Access and Mobility Management</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">AMF</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Connection and mobility management</td>
+                        </tr>
+                        <tr style="background-color: #f2f2f2;">
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Session Management</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">SMF</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Session establishment and modification</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">User Plane</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">UPF</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Packet routing and forwarding</td>
+                        </tr>
+                        <tr style="background-color: #f2f2f2;">
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Unified Data Management</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">UDM</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Subscriber data and authentication</td>
+                        </tr>
+                    </table>
+                    
+                    <div style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                        <h3 style="color: #2c3e50; margin-top: 30px;">4G EPC vs 5G Core Differences</h3>
+                        <ul>
+                            <li><strong>Service-Based Architecture:</strong> 5GC uses HTTP/2 APIs between functions</li>
+                            <li><strong>Network Slicing:</strong> Native support in 5GC</li>
+                            <li><strong>Cloud-Native:</strong> Containerized microservices in 5GC</li>
+                            <li><strong>Separated Control/User Planes:</strong> More flexible in 5GC</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Section 7 -->
+                <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">7. 5G Radio Access Network (RAN)</h2>
+                    
+                    <div style="text-align: center; background-color: #f4f4f4; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                        <h3 style="color: #2c3e50; margin-top: 30px;">5G RAN Architecture Options</h3>
+                        <pre style="background: #f4f4f4; padding: 10px; border-left: 3px solid #3498db; overflow-x: auto; font-family: 'Courier New', Courier, monospace;">
+                +-------------------------------+       +-------------------------------+
+                |                               |       |                               |
+                |      Traditional RAN          |       |       Cloud RAN (C-RAN)       |
+                | (Baseband + Radio at cell site)|       | (Centralized baseband units)  |
+                +-------------------------------+       +-------------------------------+
+                                |                                       |
+                                |                                       |
+                +-------------------------------+       +-------------------------------+
+                |                               |       |                               |
+                |       Virtualized RAN         |       |       Open RAN (O-RAN)        |
+                | (VNFs on COTS hardware)       |       | (Open interfaces between RU,  |
+                |                               |       | DU and CU)                   |
+                +-------------------------------+       +-------------------------------+</pre>
+                    </div>
+                    
+                    <h3 style="color: #2c3e50; margin-top: 30px;">5G RAN Functional Split</h3>
+                    <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                        <tr>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Component</th>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Function</th>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Location</th>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Radio Unit (RU)</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">RF processing</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Cell site</td>
+                        </tr>
+                        <tr style="background-color: #f2f2f2;">
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Distributed Unit (DU)</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Real-time L1/L2 processing</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Near cell site or centralized</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Centralized Unit (CU)</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Non-real-time RRC/PDCP</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Central office/cloud</td>
+                        </tr>
+                    </table>
+                    
+                    <div style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                        <h3 style="color: #2c3e50; margin-top: 30px;">Open RAN (O-RAN) Principles</h3>
+                        <ul>
+                            <li>Disaggregated RAN components</li>
+                            <li>Open interfaces between components</li>
+                            <li>Virtualization and cloudification</li>
+                            <li>Multi-vendor interoperability</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Section 8 -->
+                <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">8. 5G Network Deployment Options</h2>
+                    
+                    <h3 style="color: #2c3e50; margin-top: 30px;">5G Deployment Models</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+                        <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                            <h4 style="color: #2c3e50; margin-top: 30px;">Non-Standalone (NSA)</h4>
+                            <ul>
+                                <li>LTE anchor + 5G NR carrier</li>
+                                <li>Faster time-to-market</li>
+                                <li>Leverages existing 4G core</li>
+                                <li>Options: EN-DC, NE-DC, NGEN-DC</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                            <h4 style="color: #2c3e50; margin-top: 30px;">Standalone (SA)</h4>
+                            <ul>
+                                <li>Pure 5G NR + 5G core</li>
+                                <li>Full 5G capabilities</li>
+                                <li>Network slicing support</li>
+                                <li>Future-proof architecture</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h3 style="color: #2c3e50; margin-top: 30px;">5G Deployment Strategies</h3>
+                    <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                        <tr>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Strategy</th>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Description</th>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Use Case</th>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Macro Cells</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Traditional high-power sites</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Wide-area coverage</td>
+                        </tr>
+                        <tr style="background-color: #f2f2f2;">
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Small Cells</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Low-power, short-range nodes</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Capacity hotspots</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Indoor Solutions</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">DAS, femtocells</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Enterprise, venues</td>
+                        </tr>
+                        <tr style="background-color: #f2f2f2;">
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Private Networks</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Dedicated 5G infrastructure</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Factories, campuses</td>
+                        </tr>
+                    </table>
+                    
+                    <div style="background-color: #ffebee; padding: 15px; border-left: 4px solid #f44336;">
+                        <h3 style="color: #2c3e50; margin-top: 30px;">Deployment Challenges</h3>
+                        <ul>
+                            <li>High infrastructure costs</li>
+                            <li>Site acquisition difficulties</li>
+                            <li>Backhaul requirements</li>
+                            <li>Power consumption</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Section 9 -->
+                <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">9. 5G Security Considerations</h2>
+                    
+                    <h3 style="color: #2c3e50; margin-top: 30px;">5G Security Architecture</h3>
+                    <div style="text-align: center; background-color: #f4f4f4; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                        <pre style="background: #f4f4f4; padding: 10px; border-left: 3px solid #3498db; overflow-x: auto; font-family: 'Courier New', Courier, monospace;">
+                +---------------------+
+                |                     |
+                | Application Security|
+                | (API protection,    |
+                |  secure slicing)    |
+                +---------------------+
+                        |
+                +---------------------+
+                |                     |
+                | Network Security    |
+                | (encryption,        |
+                |  authentication)    |
+                +---------------------+
+                        |
+                +---------------------+
+                |                     |
+                | Device Security     |
+                | (secure elements,   |
+                |  attestation)       |
+                +---------------------+</pre>
+                    </div>
+                    
+                    <h3 style="color: #2c3e50; margin-top: 30px;">5G Security Enhancements</h3>
+                    <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                        <tr>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Feature</th>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Description</th>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Benefit</th>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Enhanced Encryption</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">256-bit algorithms</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Stronger protection</td>
+                        </tr>
+                        <tr style="background-color: #f2f2f2;">
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">SUPI/SUCI</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Subscriber identity protection</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Privacy enhancement</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">SEPP</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Security Edge Protection Proxy</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Inter-operator security</td>
+                        </tr>
+                        <tr style="background-color: #f2f2f2;">
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">SBA Security</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">OAuth2, TLS for service-based interfaces</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">API protection</td>
+                        </tr>
+                    </table>
+                    
+                    <div style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                        <h3 style="color: #2c3e50; margin-top: 30px;">Emerging 5G Security Challenges</h3>
+                        <ul>
+                            <li>Supply chain risks</li>
+                            <li>Network slicing security</li>
+                            <li>Edge computing vulnerabilities</li>
+                            <li>Massive IoT device security</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Section 10 -->
+                <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">10. 5G Performance and Optimization</h2>
+                    
+                    <h3 style="color: #2c3e50; margin-top: 30px;">Key Performance Indicators (KPIs)</h3>
+                    <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                        <tr>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">KPI</th>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">4G LTE</th>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">5G Target</th>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Improvement</th>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Peak Data Rate</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">1 Gbps</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">20 Gbps</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">20x</td>
+                        </tr>
+                        <tr style="background-color: #f2f2f2;">
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">User Experienced Rate</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">10 Mbps</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">100 Mbps</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">10x</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Latency</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">30-50 ms</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">1 ms</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">30-50x</td>
+                        </tr>
+                        <tr style="background-color: #f2f2f2;">
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Mobility</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">350 km/h</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">500 km/h</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">1.4x</td>
+                        </tr>
+                    </table>
+                    
+                    <h3 style="color: #2c3e50; margin-top: 30px;">5G Optimization Techniques</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+                        <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                            <h4 style="color: #2c3e50; margin-top: 30px;">Beam Management</h4>
+                            <ul>
+                                <li>Beam sweeping</li>
+                                <li>Beam tracking</li>
+                                <li>Beam failure recovery</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                            <h4 style="color: #2c3e50; margin-top: 30px;">Mobility Optimization</h4>
+                            <ul>
+                                <li>Dual connectivity</li>
+                                <li>Conditional handover</li>
+                                <li>Mobility robustness optimization</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                            <h4 style="color: #2c3e50; margin-top: 30px;">Energy Efficiency</h4>
+                            <ul>
+                                <li>Sleep modes</li>
+                                <li>Traffic-aware operation</li>
+                                <li>AI-based optimization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Section 11 -->
+                <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">11. 5G Standards and Ecosystem</h2>
+                    
+                    <h3 style="color: #2c3e50; margin-top: 30px;">5G Standardization Timeline</h3>
+                    <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                        <tr>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Release</th>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Year</th>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Key Features</th>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Rel-15</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">2018</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">5G Phase 1, NSA and SA options</td>
+                        </tr>
+                        <tr style="background-color: #f2f2f2;">
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Rel-16</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">2020</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">URLLC enhancements, IIoT, V2X</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Rel-17</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">2022</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">mmWave enhancements, RedCap</td>
+                        </tr>
+                        <tr style="background-color: #f2f2f2;">
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Rel-18</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">2023-24</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">5G-Advanced, AI/ML integration</td>
+                        </tr>
+                    </table>
+                    
+                    <h3 style="color: #2c3e50; margin-top: 30px;">Key Standards Organizations</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+                        <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                            <h4 style="color: #2c3e50; margin-top: 30px;">3GPP</h4>
+                            <p>Develops technical specifications for 5G</p>
+                        </div>
+                        
+                        <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                            <h4 style="color: #2c3e50; margin-top: 30px;">ITU-R</h4>
+                            <p>Defines IMT-2020 requirements</p>
+                        </div>
+                        
+                        <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                            <h4 style="color: #2c3e50; margin-top: 30px;">GSMA</h4>
+                            <p>Industry association promoting 5G</p>
+                        </div>
+                    </div>
+                    
+                    <div style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                        <h3 style="color: #2c3e50; margin-top: 30px;">5G Device Ecosystem</h3>
+                        <ul>
+                            <li><strong>Smartphones:</strong> 5G modems (Snapdragon, Exynos)</li>
+                            <li><strong>CPEs:</strong> Fixed wireless access devices</li>
+                            <li><strong>Modules:</strong> IoT and industrial devices</li>
+                            <li><strong>Test Equipment:</strong> Network validation tools</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Section 12 -->
+                <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">12. Future of 5G: 5G-Advanced and 6G</h2>
+                    
+                    <h3 style="color: #2c3e50; margin-top: 30px;">5G-Advanced (Release 18+)</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+                        <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                            <h4 style="color: #2c3e50; margin-top: 30px;">AI/ML Integration</h4>
+                            <ul>
+                                <li>Network automation</li>
+                                <li>Predictive maintenance</li>
+                                <li>Intelligent resource allocation</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                            <h4 style="color: #2c3e50; margin-top: 30px;">Expanded Reality</h4>
+                            <ul>
+                                <li>XR (VR/AR/MR) optimizations</li>
+                                <li>Holographic communications</li>
+                                <li>Digital twins</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                            <h4 style="color: #2c3e50; margin-top: 30px;">Sensing and Communication</h4>
+                            <ul>
+                                <li>Joint communication and sensing</li>
+                                <li>Environmental awareness</li>
+                                <li>Radar-like applications</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h3 style="color: #2c3e50; margin-top: 30px;">6G Vision (2030+)</h3>
+                    <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                        <tr>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Area</th>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Target</th>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Potential Technology</th>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Peak Rate</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">1 Tbps</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">THz communications</td>
+                        </tr>
+                        <tr style="background-color: #f2f2f2;">
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Latency</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">0.1 ms</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Ultra-lean design</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Energy Efficiency</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">100x 5G</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Green networks</td>
+                        </tr>
+                        <tr style="background-color: #f2f2f2;">
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">AI Integration</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Native AI</td>
+                            <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Cognitive networks</td>
+                        </tr>
+                    </table>
+                    
+                    <div style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                        <h3 style="color: #2c3e50; margin-top: 30px;">Emerging Research Areas</h3>
+                        <ul>
+                            <li>Terahertz (THz) communications</li>
+                            <li>Reconfigurable intelligent surfaces</li>
+                            <li>Quantum communications</li>
+                            <li>Holographic beamforming</li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+            
+            
+            
+
+             <!-- Floating button to open chatbot -->
+    <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+    </div>
+    
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-container");
+            let button = document.getElementById("open-chatbot");
+    
+            if (!chatbot.classList.contains("active")) {
+                chatbot.classList.add("active");
+                button.style.display = "none"; // Hide button when chatbot is open
+            } else {
+                chatbot.classList.remove("active");
+                setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+            }
+        }
+    
+        // Load chatbot HTML dynamically
+        fetch("/chatbot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("chatbot-container").innerHTML += html;
+    
+            // Execute chatbot script after inserting HTML
+            let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+            for (let script of scripts) {
+                let newScript = document.createElement("script");
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript);
+            }
+        })
+        .catch(error => console.error("Error loading chatbot:", error));
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../computernetwork.json" : "computernetwork.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.Computer_Networks;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+        
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

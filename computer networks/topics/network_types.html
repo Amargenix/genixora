@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer Network</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/allsubject.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Computer Networks</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+              <h1>Network Types in Computer Networks</h1>
+                    
+                
+                    <!-- Introduction Section -->
+                    <section style="background-color: #e8f4f8; border-left: 5px solid #3498db; padding: 25px; margin-bottom: 40px; border-radius: 0 10px 10px 0;">
+                        <h2 style="color: #2980b9; margin-top: 0; font-size: 1.8em;">Introduction to Network Types</h2>
+                        <p style="font-size: 1.1em;">Computer networks can be categorized based on their geographical coverage, architecture, topology, and functional relationships. Understanding these classifications helps in designing, implementing, and managing networks effectively.</p>
+                    </section>
+                
+                    <!-- By Geographical Coverage Section -->
+                    <section style="margin-bottom: 45px;">
+                        <h2 style="color: #2980b9; border-left: 4px solid #3498db; padding-left: 15px; font-size: 1.8em;">1. Classification by Geographical Coverage</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; margin-top: 25px;">
+                            <!-- PAN -->
+                            <div style="background-color: white; border-radius: 10px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                                <h3 style="color: #16a085; margin-top: 0; font-size: 1.4em;">PAN (Personal Area Network)</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Range:</strong> Up to 10 meters</li>
+                                    <li><strong>Examples:</strong> Bluetooth devices, USB connections, smartwatches</li>
+                                    <li><strong>Technologies:</strong> Bluetooth, Zigbee, Infrared</li>
+                                    <li><strong>Use Cases:</strong> Connecting personal devices, wireless headphones</li>
+                                </ul>
+                                <div style="background-color: #f0f0f0; padding: 10px; border-radius: 5px; margin-top: 15px;">
+                                    <p style="margin: 0; font-style: italic;">Example: Wireless connection between smartphone and smartwatch</p>
+                                </div>
+                            </div>
+                            
+                            <!-- LAN -->
+                            <div style="background-color: white; border-radius: 10px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                                <h3 style="color: #16a085; margin-top: 0; font-size: 1.4em;">LAN (Local Area Network)</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Range:</strong> Up to 1-2 km (single building/campus)</li>
+                                    <li><strong>Examples:</strong> Office networks, school labs, home networks</li>
+                                    <li><strong>Technologies:</strong> Ethernet (IEEE 802.3), Wi-Fi (IEEE 802.11)</li>
+                                    <li><strong>Characteristics:</strong> High speed, low latency, private ownership</li>
+                                </ul>
+                                <div style="background-color: #f0f0f0; padding: 10px; border-radius: 5px; margin-top: 15px;">
+                                    <p style="margin: 0; font-style: italic;">Example: Corporate office network with connected computers and printers</p>
+                                </div>
+                            </div>
+                            
+                            <!-- MAN -->
+                            <div style="background-color: white; border-radius: 10px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                                <h3 style="color: #16a085; margin-top: 0; font-size: 1.4em;">MAN (Metropolitan Area Network)</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Range:</strong> 5-50 km (city-wide coverage)</li>
+                                    <li><strong>Examples:</strong> City-wide WiFi, cable TV networks</li>
+                                    <li><strong>Technologies:</strong> Fiber optics, microwave, WiMAX</li>
+                                    <li><strong>Characteristics:</strong> Medium speed, multiple ownership</li>
+                                </ul>
+                                <div style="background-color: #f0f0f0; padding: 10px; border-radius: 5px; margin-top: 15px;">
+                                    <p style="margin: 0; font-style: italic;">Example: University network spanning multiple campuses in a city</p>
+                                </div>
+                            </div>
+                            
+                            <!-- WAN -->
+                            <div style="background-color: white; border-radius: 10px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                                <h3 style="color: #16a085; margin-top: 0; font-size: 1.4em;">WAN (Wide Area Network)</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Range:</strong> Global coverage</li>
+                                    <li><strong>Examples:</strong> The Internet, corporate global networks</li>
+                                    <li><strong>Technologies:</strong> MPLS, leased lines, satellite</li>
+                                    <li><strong>Characteristics:</strong> Lower speed, higher latency, public/private</li>
+                                </ul>
+                                <div style="background-color: #f0f0f0; padding: 10px; border-radius: 5px; margin-top: 15px;">
+                                    <p style="margin: 0; font-style: italic;">Example: International bank network connecting branches worldwide</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <!-- By Architecture Section -->
+                    <section style="margin-bottom: 45px;">
+                        <h2 style="color: #2980b9; border-left: 4px solid #3498db; padding-left: 15px; font-size: 1.8em;">2. Classification by Architecture</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; margin-top: 25px;">
+                            <!-- Client-Server -->
+                            <div style="background-color: white; border-radius: 10px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                                <h3 style="color: #16a085; margin-top: 0; font-size: 1.4em;">Client-Server Architecture</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Structure:</strong> Centralized servers serve multiple clients</li>
+                                    <li><strong>Advantages:</strong> Centralized management, security, backup</li>
+                                    <li><strong>Disadvantages:</strong> Server dependency, potential bottlenecks</li>
+                                    <li><strong>Examples:</strong> Web applications, email systems</li>
+                                </ul>
+                                
+                            </div>
+                            
+                            <!-- Peer-to-Peer -->
+                            <div style="background-color: white; border-radius: 10px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                                <h3 style="color: #16a085; margin-top: 0; font-size: 1.4em;">Peer-to-Peer (P2P) Architecture</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Structure:</strong> All nodes are equal (peers)</li>
+                                    <li><strong>Advantages:</strong> No single point of failure, scalable</li>
+                                    <li><strong>Disadvantages:</strong> Difficult to manage, security challenges</li>
+                                    <li><strong>Examples:</strong> File sharing networks, blockchain</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Hybrid -->
+                            <div style="background-color: white; border-radius: 10px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                                <h3 style="color: #16a085; margin-top: 0; font-size: 1.4em;">Hybrid Architecture</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Structure:</strong> Combines client-server and P2P</li>
+                                    <li><strong>Advantages:</strong> Balances strengths of both models</li>
+                                    <li><strong>Disadvantages:</strong> More complex to implement</li>
+                                    <li><strong>Examples:</strong> Video conferencing, online gaming</li>
+                                </ul>
+                                
+                            </div>
+                        </div>
+                    </section>
+                
+                    <!-- By Topology Section -->
+                    <section style="margin-bottom: 45px;">
+                        <h2 style="color: #2980b9; border-left: 4px solid #3498db; padding-left: 15px; font-size: 1.8em;">3. Classification by Topology</h2>
+                        
+                        <div style="background-color: white; border-radius: 10px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-top: 25px;">
+                            <table style="width: 100%; border-collapse: collapse;">
+                                <tr style="background-color: #3498db; color: white;">
+                                    <th style="padding: 15px; text-align: left; border: 1px solid #ddd;">Topology</th>
+                                    <th style="padding: 15px; text-align: left; border: 1px solid #ddd;">Description</th>
+                                    <th style="padding: 15px; text-align: left; border: 1px solid #ddd;">Advantages</th>
+                                    <th style="padding: 15px; text-align: left; border: 1px solid #ddd;">Disadvantages</th>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="padding: 12px; border: 1px solid #ddd;">Bus</td>
+                                    <td style="padding: 12px; border: 1px solid #ddd;">Single cable connects all devices</td>
+                                    <td style="padding: 12px; border: 1px solid #ddd;">Simple, inexpensive</td>
+                                    <td style="padding: 12px; border: 1px solid #ddd;">Single point of failure</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px; border: 1px solid #ddd;">Star</td>
+                                    <td style="padding: 12px; border: 1px solid #ddd;">All devices connect to central hub</td>
+                                    <td style="padding: 12px; border: 1px solid #ddd;">Easy to troubleshoot</td>
+                                    <td style="padding: 12px; border: 1px solid #ddd;">Hub dependency</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="padding: 12px; border: 1px solid #ddd;">Ring</td>
+                                    <td style="padding: 12px; border: 1px solid #ddd;">Devices form circular path</td>
+                                    <td style="padding: 12px; border: 1px solid #ddd;">Equal network access</td>
+                                    <td style="padding: 12px; border: 1px solid #ddd;">Break disrupts entire network</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px; border: 1px solid #ddd;">Mesh</td>
+                                    <td style="padding: 12px; border: 1px solid #ddd;">Devices interconnected</td>
+                                    <td style="padding: 12px; border: 1px solid #ddd;">Redundant paths</td>
+                                    <td style="padding: 12px; border: 1px solid #ddd;">High cabling cost</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="padding: 12px; border: 1px solid #ddd;">Tree</td>
+                                    <td style="padding: 12px; border: 1px solid #ddd;">Hierarchical star networks</td>
+                                    <td style="padding: 12px; border: 1px solid #ddd;">Scalable</td>
+                                    <td style="padding: 12px; border: 1px solid #ddd;">Root dependency</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </section>
+                
+                    <!-- Specialized Network Types Section -->
+                    <section style="margin-bottom: 45px;">
+                        <h2 style="color: #2980b9; border-left: 4px solid #3498db; padding-left: 15px; font-size: 1.8em;">4. Specialized Network Types</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; margin-top: 25px;">
+                            <!-- SAN -->
+                            <div style="background-color: white; border-radius: 10px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                                <h3 style="color: #16a085; margin-top: 0; font-size: 1.4em;">SAN (Storage Area Network)</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Purpose:</strong> High-speed network for block-level storage</li>
+                                    <li><strong>Technologies:</strong> Fibre Channel, iSCSI, FCoE</li>
+                                    <li><strong>Benefits:</strong> Centralized storage, high performance</li>
+                                    <li><strong>Use Cases:</strong> Enterprise storage, data centers</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- VPN -->
+                            <div style="background-color: white; border-radius: 10px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                                <h3 style="color: #16a085; margin-top: 0; font-size: 1.4em;">VPN (Virtual Private Network)</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Purpose:</strong> Secure remote access to private networks</li>
+                                    <li><strong>Types:</strong> Site-to-site, remote access</li>
+                                    <li><strong>Protocols:</strong> IPsec, SSL/TLS, OpenVPN</li>
+                                    <li><strong>Use Cases:</strong> Remote work, secure browsing</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- SDN -->
+                            <div style="background-color: white; border-radius: 10px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                                <h3 style="color: #16a085; margin-top: 0; font-size: 1.4em;">SDN (Software Defined Networking)</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Concept:</strong> Decouples control plane from data plane</li>
+                                    <li><strong>Benefits:</strong> Centralized management, programmability</li>
+                                    <li><strong>Components:</strong> Controller, southbound APIs, applications</li>
+                                    <li><strong>Use Cases:</strong> Cloud networking, network virtualization</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- IoT Networks -->
+                            <div style="background-color: white; border-radius: 10px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                                <h3 style="color: #16a085; margin-top: 0; font-size: 1.4em;">IoT Networks</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Characteristics:</strong> Low-power, wide-area connectivity</li>
+                                    <li><strong>Technologies:</strong> LoRaWAN, NB-IoT, Zigbee</li>
+                                    <li><strong>Challenges:</strong> Security, scalability, power constraints</li>
+                                    <li><strong>Use Cases:</strong> Smart cities, industrial IoT</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <!-- Network Selection Factors -->
+                    <section style="margin-bottom: 45px;">
+                        <h2 style="color: #2980b9; border-left: 4px solid #3498db; padding-left: 15px; font-size: 1.8em;">Network Selection Factors</h2>
+                        
+                        <div style="background-color: white; border-radius: 10px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-top: 25px;">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                                <div>
+                                    <h3 style="color: #16a085; margin-top: 0;">Geographical Scope</h3>
+                                    <p>Choose PAN/LAN/MAN/WAN based on coverage needs</p>
+                                </div>
+                                <div>
+                                    <h3 style="color: #16a085; margin-top: 0;">Performance Requirements</h3>
+                                    <p>Consider bandwidth, latency, and throughput needs</p>
+                                </div>
+                                <div>
+                                    <h3 style="color: #16a085; margin-top: 0;">Cost Constraints</h3>
+                                    <p>Balance implementation and maintenance costs</p>
+                                </div>
+                                <div>
+                                    <h3 style="color: #16a085; margin-top: 0;">Security Needs</h3>
+                                    <p>Evaluate encryption, access control requirements</p>
+                                </div>
+                                <div>
+                                    <h3 style="color: #16a085; margin-top: 0;">Scalability</h3>
+                                    <p>Plan for future growth and expansion</p>
+                                </div>
+                                <div>
+                                    <h3 style="color: #16a085; margin-top: 0;">Reliability</h3>
+                                    <p>Consider redundancy and fault tolerance</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <!-- Future Trends -->
+                    <section style="margin-bottom: 45px;">
+                        <h2 style="color: #2980b9; border-left: 4px solid #3498db; padding-left: 15px; font-size: 1.8em;">Future Trends in Networking</h2>
+                        
+                        <div style="background-color: white; border-radius: 10px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-top: 25px;">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+                                <div>
+                                    <h3 style="color: #16a085; margin-top: 0;">5G Networks</h3>
+                                    <p>Ultra-high speed mobile networks enabling IoT and edge computing</p>
+                                </div>
+                                <div>
+                                    <h3 style="color: #16a085; margin-top: 0;">Wi-Fi 6/6E</h3>
+                                    <p>Next-generation wireless with higher throughput and efficiency</p>
+                                </div>
+                                <div>
+                                    <h3 style="color: #16a085; margin-top: 0;">Quantum Networking</h3>
+                                    <p>Quantum key distribution for ultra-secure communications</p>
+                                </div>
+                                <div>
+                                    <h3 style="color: #16a085; margin-top: 0;">AI-Driven Networking</h3>
+                                    <p>Machine learning for network optimization and security</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+            </main>  
+            
+            
+
+             <!-- Floating button to open chatbot -->
+    <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+    </div>
+    
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-container");
+            let button = document.getElementById("open-chatbot");
+    
+            if (!chatbot.classList.contains("active")) {
+                chatbot.classList.add("active");
+                button.style.display = "none"; // Hide button when chatbot is open
+            } else {
+                chatbot.classList.remove("active");
+                setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+            }
+        }
+    
+        // Load chatbot HTML dynamically
+        fetch("/chatbot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("chatbot-container").innerHTML += html;
+    
+            // Execute chatbot script after inserting HTML
+            let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+            for (let script of scripts) {
+                let newScript = document.createElement("script");
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript);
+            }
+        })
+        .catch(error => console.error("Error loading chatbot:", error));
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../computernetwork.json" : "computernetwork.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.Computer_Networks;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+        
+       
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    
