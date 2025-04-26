@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    <link rel="stylesheet" href="../dsa.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../dsa.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+            <main class="col-md-7 content">
+                <h1>🌱 Trie (Prefix Tree) – Complete In-Depth Explanation</h1>
+              
+                <p>
+                  A Trie (also known as a prefix tree) is a tree-like data structure that is used for efficient storage and retrieval of strings. It's particularly useful for searching, autocompletion, and spell checking.
+                </p>
+              
+                <h2>📌 Why are Tries Important?</h2>
+                <ul>
+                  <li>🚀 Efficient Prefix Searching:  Fast retrieval of words with a common prefix.</li>
+                  <li>💡 Autocompletion:  Used in search engines and text editors.</li>
+                  <li>✔️ Spell Checking:  Identifying misspelled words.</li>
+                </ul>
+              
+                <h1>📌 Understanding Tries with an Example</h1>
+                <p>
+                  Let's say we want to store the words "cat", "car", "dog", "dot", and "cab" in a Trie.  The Trie would look like this:
+                </p>
+              
+                <pre><code>
+                      root
+                     / | \
+                    c  d  .
+                   / \  |
+                  a   o  o
+                 / \   |
+                t   r  g
+                </code></pre>
+              
+                <p>
+                  Each node in the Trie represents a character.  Paths from the root to a node marked as an "end of word" represent a stored word.
+                </p>
+              
+                <h3>🔹 Key Points</h3>
+                <ul>
+                  <li>Nodes store characters.</li>
+                  <li>Paths represent words.</li>
+                  <li>Efficient for prefix-based searches.</li>
+                </ul>
+              
+                <h1>🛠 Solution Approach</h1>
+              
+                <p>
+                  The basic operations on a Trie are:
+                </p>
+              
+                <h2>📌 1. Insertion</h2>
+                <p>To insert a word, we traverse the Trie, creating nodes as needed, until we reach the end of the word. We mark the last node as an "end of word".</p>
+              
+                <h2>📌 2. Search</h2>
+                <p>To search for a word, we traverse the Trie according to the characters in the word. If we reach the end of the word and the last node is marked as "end of word", the word exists.  If we can't find a path for all characters or the end node is not marked "end of word", the word doesn't exist.</p>
+              
+                <h2>📌 3. Prefix Search</h2>
+                <p>Similar to search, but we stop at the node representing the end of the prefix.  All words under that node have the given prefix.</p>
+              
+                <pre><code>
+                  #include <iostream>
+                  #include <string>
+                  #include <vector>
+              
+                  using namespace std;
+              
+                  struct TrieNode {
+                      TrieNode* children[26]; // Assuming lowercase English alphabets
+                      bool isEndOfWord;
+              
+                      TrieNode() {
+                          for (int i = 0; i < 26; i++) {
+                              children[i] = nullptr;
+                          }
+                          isEndOfWord = false;
+                      }
+                  };
+              
+                  void insert(TrieNode* root, string word) {
+                      TrieNode* curr = root;
+                      for (char c : word) {
+                          int index = c - 'a';
+                          if (curr->children[index] == nullptr) {
+                              curr->children[index] = new TrieNode();
+                          }
+                          curr = curr->children[index];
+                      }
+                      curr->isEndOfWord = true;
+                  }
+              
+                  bool search(TrieNode* root, string word) {
+                      TrieNode* curr = root;
+                      for (char c : word) {
+                          int index = c - 'a';
+                          if (curr->children[index] == nullptr) {
+                              return false;
+                          }
+                          curr = curr->children[index];
+                      }
+                      return curr->isEndOfWord;
+                  }
+              
+                  bool startsWith(TrieNode* root, string prefix) {
+                    TrieNode* curr = root;
+                    for (char c : prefix) {
+                        int index = c - 'a';
+                        if (curr->children[index] == nullptr) {
+                            return false;
+                        }
+                        curr = curr->children[index];
+                    }
+                    return true; // Prefix found (doesn't have to be a complete word)
+                  }
+              
+                  int main() {
+                      TrieNode* root = new TrieNode();
+              
+                      insert(root, "cat");
+                      insert(root, "car");
+                      insert(root, "dog");
+                      insert(root, "dot");
+                      insert(root, "cab");
+              
+                      cout << "Searching for 'cat': " << search(root, "cat") << endl;    // Output: 1 (true)
+                      cout << "Searching for 'carpet': " << search(root, "carpet") << endl; // Output: 0 (false)
+                      cout << "Starts with 'ca': " << startsWith(root, "ca") << endl; // Output: 1 (true)
+              
+                      return 0;
+                  }
+                </code></pre>
+              
+                <h1>⏳ Time Complexity Analysis</h1>
+                <p>
+                  Insertion and search operations in a Trie have a time complexity of O(m), where m is the length of the word.
+                </p>
+              
+                <h1>🌍 Real-World Applications of Tries</h1>
+                <ul>
+                  <li>⌨️ Autocompletion in search engines and IDEs.</li>
+                  <li>✔️ Spell checkers.</li>
+                  <li>🌐 IP routing.</li>
+                  <li>🗂️ Storing dictionaries.</li>
+                </ul>
+              
+                <h2>🔗 Next Topics</h2>
+                <ul class="nexttopics-container">
+                  <li><a href="data_structures.html">📚 Data Structures</a></li>
+                  <li><a href="advanced_data_structures.html">Advanced Data Structures</a></li>
+                </ul>
+              </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../dsa.json" : "dsa.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.DSA;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    

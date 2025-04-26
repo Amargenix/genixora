@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../software engineering.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Software Engineering</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                 <h1>Unified Modeling Language (UML) Diagrams</h1>
+                <section id="introduction" style="margin-bottom: 40px;">
+                    <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">1. UML Fundamentals</h2>
+                    
+                    <div class="diagram-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">1.1 What is UML?</h3>
+                        <p>The <strong>Unified Modeling Language (UML)</strong> is a standardized modeling language for:</p>
+                        <ul>
+                            <li>Visualizing system designs</li>
+                            <li>Specifying system architecture</li>
+                            <li>Documenting software components</li>
+                            <li>Communicating design decisions</li>
+                        </ul>
+                        
+                        <div class="notation" style="background-color: #eafaf1; padding: 15px; border-left: 4px solid #2ecc71; margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">UML 2.x Diagram Categories</h4>
+                            <table style="width: 100%; border-collapse: collapse; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <tr>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Category</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Diagram Types</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Purpose</th>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Structural</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Class, Object, Component, Deployment, Composite Structure, Package, Profile</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">System organization and structure</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Behavioral</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Use Case, Activity, State Machine, Sequence, Communication, Timing, Interaction Overview</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">System behavior and interactions</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+            
+                    <div class="diagram-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">1.2 UML Notation Basics</h3>
+                        <div class="element-box" style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                            <h4 style="color: #2c3e50;">Common UML Elements</h4>
+                            <ul>
+                                <li><strong>Actors:</strong> External entities interacting with system</li>
+                                <li><strong>Classes:</strong> Blueprint for objects (name, attributes, methods)</li>
+                                <li><strong>Objects:</strong> Instances of classes</li>
+                                <li><strong>Interfaces:</strong> Contract of operations</li>
+                                <li><strong>Relationships:</strong> Associations, dependencies, generalizations</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="element-box" style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                            <h4 style="color: #2c3e50;">Relationship Types</h4>
+                            <table style="width: 100%; border-collapse: collapse; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <tr>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Relationship</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Notation</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Description</th>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Association</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">──────</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Structural relationship between classes</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Dependency</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">─────▷</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">One element uses/needs another</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Generalization</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">──────▷</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Inheritance (parent-child relationship)</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Realization</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">──────▷</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Class implements an interface</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Aggregation</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">──────◇</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">"Has-a" relationship (weak containment)</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Composition</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">──────◆</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Strong "whole-part" relationship</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            
+                <section id="structural-diagrams" style="margin-bottom: 40px;">
+                    <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">2. Structural Diagrams</h2>
+                    
+                    <div class="diagram-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        
+                        <div class="element-box" style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                            <h4 style="color: #2c3e50;">Class Diagram Elements</h4>
+                            <ul>
+                                <li><strong>Class:</strong> Rectangle with 3 compartments (name, attributes, methods)</li>
+                                <li><strong>Visibility:</strong> + (public), - (private), # (protected), ~ (package)</li>
+                                <li><strong>Multiplicity:</strong> 1 (exactly one), 0..1 (zero or one), * (many), 1..* (one or more)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="example" style="background-color: #fef9e7; border-left: 4px solid #f39c12; padding: 15px; margin: 20px 0; font-family: monospace;">
+                            <h4 style="color: #2c3e50;">Example: E-Commerce System</h4>
+                            <p><strong>Classes:</strong> Customer, Order, Product, Payment<br>
+                            <strong>Relationships:</strong><br>
+                            - Customer places Order (association)<br>
+                            - Order contains Products (composition)<br>
+                            - Payment depends on Order (dependency)</p>
+                        </div>
+                    </div>
+            
+                    <div class="diagram-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">2.2 Object Diagrams</h3>
+                        <div class="comparison" style="background-color: #fff8e1; padding: 15px; border-left: 4px solid #ffc107;">
+                            <h4 style="color: #2c3e50;">Class vs Object Diagrams</h4>
+                            <table style="width: 100%; border-collapse: collapse; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <tr>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Aspect</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Class Diagram</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Object Diagram</th>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Purpose</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Shows classes and relationships</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Shows objects at a specific time</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Elements</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Classes, interfaces</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Objects (instances)</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Usage</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Design phase</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Runtime snapshot</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div class="example" style="background-color: #fef9e7; border-left: 4px solid #f39c12; padding: 15px; margin: 20px 0; font-family: monospace;">
+                            <h4 style="color: #2c3e50;">Example: Library System</h4>
+                            <p><strong>Objects:</strong><br>
+                            - customer1:Customer (name="John", id=101)<br>
+                            - book1:Book (title="UML Guide", isbn="12345")<br>
+                            <strong>Links:</strong> customer1--borrows-->book1</p>
+                        </div>
+                    </div>
+            
+                    <div class="diagram-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">2.3 Component Diagrams</h3>
+                        <div class="element-box" style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                            <h4 style="color: #2c3e50;">Component Diagram Elements</h4>
+                            <ul>
+                                <li><strong>Component:</strong> Rectangular box with component icon</li>
+                                <li><strong>Interface:</strong> Lollipop (provided), socket (required)</li>
+                                <li><strong>Port:</strong> Interaction point between component and environment</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="example" style="background-color: #fef9e7; border-left: 4px solid #f39c12; padding: 15px; margin: 20px 0; font-family: monospace;">
+                            <h4 style="color: #2c3e50;">Example: Online Banking System</h4>
+                            <p><strong>Components:</strong><br>
+                            - User Interface<br>
+                            - Account Management<br>
+                            - Transaction Processing<br>
+                            - Database Access<br>
+                            <strong>Connections:</strong> Required/provided interfaces between components</p>
+                        </div>
+                    </div>
+            
+                    <div class="diagram-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">2.4 Deployment Diagrams</h3>
+                        <div class="element-box" style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                            <h4 style="color: #2c3e50;">Deployment Diagram Elements</h4>
+                            <ul>
+                                <li><strong>Node:</strong> Hardware/software execution environment</li>
+                                <li><strong>Artifact:</strong> Physical representation of software</li>
+                                <li><strong>Communication Path:</strong> Connection between nodes</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="example" style="background-color: #fef9e7; border-left: 4px solid #f39c12; padding: 15px; margin: 20px 0; font-family: monospace;">
+                            <h4 style="color: #2c3e50;">Example: Web Application Deployment</h4>
+                            <p><strong>Nodes:</strong><br>
+                            - Client Browser<br>
+                            - Web Server (Apache)<br>
+                            - Application Server (Tomcat)<br>
+                            - Database Server (MySQL)<br>
+                            <strong>Artifacts:</strong> WebApp.war, DatabaseSchema.sql</p>
+                        </div>
+                    </div>
+                </section>
+            
+                <section id="behavioral-diagrams" style="margin-bottom: 40px;">
+                    <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">3. Behavioral Diagrams</h2>
+                    
+                    <div class="diagram-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">3.1 Use Case Diagrams</h3>
+                        <div class="use-case" style="background-color: #ebf5fb; padding: 15px; border-left: 4px solid #2980b9;">
+                            <h4 style="color: #2c3e50;">Use Case Elements</h4>
+                            <ul>
+                                <li><strong>Actor:</strong> Stick figure (system user or external system)</li>
+                                <li><strong>Use Case:</strong> Oval (system functionality)</li>
+                                <li><strong>Relationships:</strong><br>
+                                    - Association (actor to use case)<br>
+                                    - Include (mandatory functionality)<br>
+                                    - Extend (optional functionality)<br>
+                                    - Generalization (specialization)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="example" style="background-color: #fef9e7; border-left: 4px solid #f39c12; padding: 15px; margin: 20px 0; font-family: monospace;">
+                            <h4 style="color: #2c3e50;">Example: ATM System</h4>
+                            <p><strong>Actors:</strong> Customer, Bank, Maintenance Technician<br>
+                            <strong>Use Cases:</strong><br>
+                            - Withdraw Cash<br>
+                            - Check Balance<br>
+                            - Transfer Funds<br>
+                            - Service Machine (extends Maintenance)</p>
+                        </div>
+                    </div>
+            
+                    <div class="diagram-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">3.2 Sequence Diagrams</h3>
+                        <div class="element-box" style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                            <h4 style="color: #2c3e50;">Sequence Diagram Elements</h4>
+                            <ul>
+                                <li><strong>Lifeline:</strong> Vertical dashed line (object's existence)</li>
+                                <li><strong>Activation Bar:</strong> Rectangle on lifeline (method execution)</li>
+                                <li><strong>Messages:</strong> Arrows between lifelines (synchronous, asynchronous, return)</li>
+                                <li><strong>Combined Fragments:</strong> alt, opt, loop, par (for logic)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="example" style="background-color: #fef9e7; border-left: 4px solid #f39c12; padding: 15px; margin: 20px 0; font-family: monospace;">
+                            <h4 style="color: #2c3e50;">Example: User Login</h4>
+                            <p><strong>Objects:</strong> UserInterface, LoginController, UserDB<br>
+                            <strong>Messages:</strong><br>
+                            1. enterCredentials()<br>
+                            2. validateUser()<br>
+                            3. [valid] getUserDetails()<br>
+                            4. return success</p>
+                        </div>
+                    </div>
+            
+                    <div class="diagram-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">3.3 Activity Diagrams</h3>
+                        <div class="element-box" style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                            <h4 style="color: #2c3e50;">Activity Diagram Elements</h4>
+                            <ul>
+                                <li><strong>Initial Node:</strong> Filled circle (start point)</li>
+                                <li><strong>Activity:</strong> Rounded rectangle (action)</li>
+                                <li><strong>Decision Node:</strong> Diamond (branching)</li>
+                                <li><strong>Fork/Join:</strong> Horizontal bar (parallel flows)</li>
+                                <li><strong>Final Node:</strong> Bullseye (end point)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="example" style="background-color: #fef9e7; border-left: 4px solid #f39c12; padding: 15px; margin: 20px 0; font-family: monospace;">
+                            <h4 style="color: #2c3e50;">Example: Order Processing</h4>
+                            <p><strong>Flow:</strong><br>
+                            Start → Receive Order → [In Stock] Process Payment → Ship Order → End<br>
+                            [Out of Stock] Notify Customer → End</p>
+                        </div>
+                    </div>
+            
+                    <div class="diagram-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">3.4 State Machine Diagrams</h3>
+                        <div class="element-box" style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                            <h4 style="color: #2c3e50;">State Diagram Elements</h4>
+                            <ul>
+                                <li><strong>State:</strong> Rounded rectangle (system condition)</li>
+                                <li><strong>Transition:</strong> Arrow (state change)</li>
+                                <li><strong>Event:</strong> Trigger for transition</li>
+                                <li><strong>Action:</strong> Activity during transition</li>
+                                <li><strong>Initial/Final States:</strong> Start/end points</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="example" style="background-color: #fef9e7; border-left: 4px solid #f39c12; padding: 15px; margin: 20px 0; font-family: monospace;">
+                            <h4 style="color: #2c3e50;">Example: Elevator Control</h4>
+                            <p><strong>States:</strong> Idle, Moving Up, Moving Down, Stopped<br>
+                            <strong>Transitions:</strong><br>
+                            - floorRequested → Moving Up/Down<br>
+                            - reachedDestination → Stopped<br>
+                            - doorOpened → Idle</p>
+                        </div>
+                    </div>
+                </section>
+            
+                <section id="tools-best-practices" style="margin-bottom: 40px;">
+                    <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">4. UML Tools and Best Practices</h2>
+                    
+                    <div class="diagram-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">4.1 UML Modeling Tools</h3>
+                        <div class="tool-list" style="background-color: #f5eef8; padding: 15px; border-left: 4px solid #9b59b6;">
+                            <h4 style="color: #2c3e50;">Popular UML Tools</h4>
+                            <table style="width: 100%; border-collapse: collapse; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <tr>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Tool</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Type</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Features</th>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Lucidchart</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Online</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Collaboration, templates</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Draw.io</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Online/Desktop</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Free, integrations</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Enterprise Architect</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Desktop</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Comprehensive, code generation</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Visual Paradigm</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Desktop/Online</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Agile support, team collaboration</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">PlantUML</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Text-based</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Version control friendly</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+            
+                    <div class="diagram-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">4.2 UML Best Practices</h3>
+                        <div class="best-practice">
+                            <h4 style="color: #2c3e50;">Effective UML Modeling</h4>
+                            <ul>
+                                <li>Start with high-level diagrams (use cases, components)</li>
+                                <li>Use consistent naming conventions</li>
+                                <li>Keep diagrams focused (7±2 elements per diagram)</li>
+                                <li>Use notes/comments for clarification</li>
+                                <li>Validate diagrams with stakeholders</li>
+                                <li>Maintain traceability between diagrams</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="best-practice">
+                            <h4 style="color: #2c3e50;">Common Mistakes to Avoid</h4>
+                            <ul>
+                                <li>Overly complex diagrams</li>
+                                <li>Inconsistent abstraction levels</li>
+                                <li>Missing key relationships</li>
+                                <li>Not updating diagrams with code changes</li>
+                                <li>Creating diagrams without purpose</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            
+                <section id="advanced-topics">
+                    <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">5. Advanced UML Concepts</h2>
+                    
+                    <div class="diagram-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">5.1 Interaction Diagrams</h3>
+                        <div class="comparison" style="background-color: #fff8e1; padding: 15px; border-left: 4px solid #ffc107;">
+                            <h4 style="color: #2c3e50;">Sequence vs Communication vs Timing</h4>
+                            <table style="width: 100%; border-collapse: collapse; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <tr>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Diagram</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Focus</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Best For</th>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Sequence</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Message ordering over time</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Detailed method calls</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Communication</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Object relationships</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Architectural overview</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Timing</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">State changes over time</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Real-time systems</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+            
+                    <div class="diagram-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">5.2 Composite Structure</h3>
+                        <div class="element-box" style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                            <h4 style="color: #2c3e50;">When to Use Composite Structure</h4>
+                            <ul>
+                                <li>Modeling complex component internals</li>
+                                <li>Showing parts and connectors</li>
+                                <li>Representing runtime architectures</li>
+                                <li>Modeling hardware/software interfaces</li>
+                            </ul>
+                        </div>
+                    </div>
+            
+                    <div class="diagram-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">5.3 Profile Diagrams</h3>
+                        <div class="element-box" style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                            <h4 style="color: #2c3e50;">Extending UML with Stereotypes</h4>
+                            <ul>
+                                <li>Create domain-specific UML extensions</li>
+                                <li>Define custom stereotypes, tagged values</li>
+                                <li>Apply to existing UML elements</li>
+                                <li>Example: «Service», «Entity», «Controller»</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+           
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+    const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+    const searchBox = document.getElementById("searchBox");
+
+    if (!sidebarList || !sidebarGrid) {
+        console.error("Sidebar elements not found!");
+        return;
+    }
+
+    let allTopics = [];
+
+    // Adjust JSON path based on file location
+    let jsonPath = window.location.pathname.includes("/topics/") ? "../softwarengineering.json" : "softwarengineering.json";
+
+    console.log("Fetching JSON from:", jsonPath); // Debugging
+
+    // Fetch Software Engineering Topics from JSON
+    fetch(jsonPath)
+        .then(response => {
+            console.log("Fetch Response:", response);
+            if (!response.ok) {
+                throw new Error("Failed to load JSON: " + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Fetched Data:", data);
+            if (!data.Software_Engineering) {
+                throw new Error("JSON does not contain 'Software_Engineering' key!");
+            }
+            allTopics = data.Software_Engineering;
+            displayTopics(allTopics);
+        })
+        .catch(error => console.error("Error loading topics:", error));
+
+    // Function to Display Topics in Sidebar
+    function displayTopics(topics) {
+        if (!Array.isArray(topics)) {
+            console.error("Invalid topics data:", topics);
+            return;
+        }
+
+        sidebarList.innerHTML = ""; // Clear list
+        sidebarGrid.innerHTML = ""; // Clear grid
+
+        topics.forEach(topic => {
+            let topicLink = topic.link; // Keep the original link
+
+            // 🖥️ Desktop List View
+            let li = document.createElement("li");
+            li.className = "list-group-item list-group-item-action";
+            li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+            sidebarList.appendChild(li);
+
+            // 📱 Mobile Grid View (3 in a row)
+            let div = document.createElement("div");
+            div.className = "col-4"; // Bootstrap grid (3 in a row)
+            div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+            sidebarGrid.appendChild(div);
+        });
+    }
+
+    // Search Topics
+    if (searchBox) {
+        searchBox.addEventListener("input", function () {
+            const searchText = this.value.toLowerCase();
+            const filteredTopics = allTopics.filter(topic =>
+                topic.name.toLowerCase().includes(searchText)
+            );
+            displayTopics(filteredTopics);
+        });
+    }
+});
+
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

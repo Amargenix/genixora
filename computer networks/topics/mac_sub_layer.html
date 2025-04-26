@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer Network</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/allsubject.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Computer Networks</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+               
+                <h1>MAC Sublayer in Computer Networks</h1>
+                       
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">Introduction to MAC Sublayer</h2>
+                        
+                        <div style="display: flex; margin-top: 20px;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h3 style="color: #3498db;">What is the MAC Sublayer?</h3>
+                                <p>The MAC (Media Access Control) sublayer is the lower portion of the Data Link Layer (Layer 2) in the OSI model. It provides addressing and channel access control mechanisms for network nodes to communicate.</p>
+                                
+                                <div style="background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 15px;">
+                                    <strong>Key Responsibilities:</strong>
+                                    <ul style="line-height: 1.6;">
+                                        <li>Frame addressing and recognition</li>
+                                        <li>Media access control</li>
+                                        <li>Error detection (but not correction)</li>
+                                        <li>Logical topology implementation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div style="flex: 1;">
+                                <h3 style="color: #3498db;">MAC Sublayer in OSI Model</h3>
+                                <div style="text-align: center; background-color: #e8f4fc; padding: 15px; border-radius: 5px;">
+                                    <strong>OSI Model Layers:</strong>
+                                    <ol style="text-align: left; line-height: 1.8;">
+                                        <li><strong>7. Application</strong></li>
+                                        <li><strong>6. Presentation</strong></li>
+                                        <li><strong>5. Session</strong></li>
+                                        <li><strong>4. Transport</strong></li>
+                                        <li><strong>3. Network</strong></li>
+                                        <li><strong>2. Data Link</strong> → <span style="color: #e74c3c;">MAC Sublayer</span> + LLC</li>
+                                        <li><strong>1. Physical</strong></li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">MAC Addressing</h2>
+                        
+                        <div style="display: flex; margin-top: 20px;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h3 style="color: #3498db;">MAC Address Structure</h3>
+                                <p>A MAC address is a 48-bit (6-byte) identifier typically represented in hexadecimal notation:</p>
+                                <div style="text-align: center; background-color: #f0f0f0; padding: 15px; border-radius: 5px;">
+                                    <code>00:1A:2B:3C:4D:5E</code> or <code>00-1A-2B-3C-4D-5E</code>
+                                </div>
+                                
+                                <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+                                    <tr style="background-color: #2c3e50; color: white;">
+                                        <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Part</th>
+                                        <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Bits</th>
+                                        <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Description</th>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">OUI</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">24</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Organizationally Unique Identifier (assigned by IEEE)</td>
+                                    </tr>
+                                    <tr style="background-color: #f9f9f9;">
+                                        <td style="padding: 8px; border: 1px solid #ddd;">NIC</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">24</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Network Interface Controller specific</td>
+                                    </tr>
+                                </table>
+                                
+                                <h3 style="color: #3498db; margin-top: 20px;">MAC Address Types</h3>
+                                <ul style="line-height: 1.6;">
+                                    <li><strong>Unicast:</strong> Directed to a specific device</li>
+                                    <li><strong>Multicast:</strong> Directed to a group of devices</li>
+                                    <li><strong>Broadcast:</strong> FF:FF:FF:FF:FF:FF (all devices on segment)</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="flex: 1;">
+                                <h3 style="color: #3498db;">MAC vs IP Addressing</h3>
+                                <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+                                    <tr style="background-color: #2c3e50; color: white;">
+                                        <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Feature</th>
+                                        <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">MAC Address</th>
+                                        <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">IP Address</th>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Layer</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Data Link (L2)</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Network (L3)</td>
+                                    </tr>
+                                    <tr style="background-color: #f9f9f9;">
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Assigned by</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Manufacturer</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Network admin/DHCP</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Format</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">48-bit hexadecimal</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">32/128-bit decimal/hex</td>
+                                    </tr>
+                                    <tr style="background-color: #f9f9f9;">
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Scope</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Local network</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Global/local</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Changeable</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Hardware-based (mostly fixed)</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Software-configurable</td>
+                                    </tr>
+                                </table>
+                                
+                                <h3 style="color: #3498db; margin-top: 20px;">MAC Address Lookup</h3>
+                                <p>The first 3 bytes (OUI) can identify the manufacturer:</p>
+                                <div style="background-color: #fff0f0; padding: 10px; border-radius: 5px;">
+                                    <p><strong>Example:</strong> 00:1A:2B → Google, Inc.</p>
+                                    <p>Tools like Wireshark or online OUI lookup can identify vendors.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">Media Access Control Methods</h2>
+                        
+                        <div style="display: flex; margin-top: 20px;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h3 style="color: #3498db;">Controlled Access</h3>
+                                <p>Devices take turns accessing the medium:</p>
+                                
+                                <h4 style="color: #2c3e50; margin-top: 15px;">Polling</h4>
+                                <p>A primary device controls access by polling secondary devices.</p>
+                                
+                                <h4 style="color: #2c3e50; margin-top: 15px;">Token Passing</h4>
+                                <p>Devices can transmit only when holding a token (used in Token Ring and FDDI).</p>
+                                <div style="background-color: #f8f9fa; padding: 10px; border-radius: 5px;">
+                                    <strong>Advantages:</strong> No collisions, deterministic<br>
+                                    <strong>Disadvantages:</strong> Token overhead, single point of failure
+                                </div>
+                                
+                                <h4 style="color: #2c3e50; margin-top: 15px;">TDMA/FDMA/CDMA</h4>
+                                <p>Time/Frequency/Code Division Multiple Access techniques used in wireless networks.</p>
+                            </div>
+                            
+                            <div style="flex: 1;">
+                                <h3 style="color: #3498db;">Random Access</h3>
+                                <p>Devices compete for medium access:</p>
+                                
+                                <h4 style="color: #2c3e50; margin-top: 15px;">ALOHA</h4>
+                                <p>Original random access protocol (pure and slotted versions).</p>
+                                
+                                <h4 style="color: #2c3e50; margin-top: 15px;">CSMA</h4>
+                                <p>Carrier Sense Multiple Access with variants:</p>
+                                <ul style="line-height: 1.6;">
+                                    <li><strong>CSMA/CD:</strong> Collision Detection (Ethernet)</li>
+                                    <li><strong>CSMA/CA:</strong> Collision Avoidance (Wi-Fi)</li>
+                                </ul>
+                                
+                                <div style="background-color: #e8f4fc; padding: 10px; border-radius: 5px; margin-top: 10px;">
+                                    <strong>CSMA/CD Process (Ethernet):</strong>
+                                    <ol>
+                                        <li>Listen before transmitting</li>
+                                        <li>If idle, transmit</li>
+                                        <li>If collision detected, send jam signal</li>
+                                        <li>Wait random backoff time, then retry</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">Ethernet MAC Sublayer</h2>
+                        
+                        <div style="display: flex; margin-top: 20px;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h3 style="color: #3498db;">Ethernet Frame Structure</h3>
+                                <table style="width: 100%; border-collapse: collapse;">
+                                    <tr style="background-color: #2c3e50; color: white;">
+                                        <th style="padding: 8px; text-align: center; border: 1px solid #ddd;">Field</th>
+                                        <th style="padding: 8px; text-align: center; border: 1px solid #ddd;">Size</th>
+                                        <th style="padding: 8px; text-align: center; border: 1px solid #ddd;">Description</th>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Preamble</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">7 bytes</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Synchronization</td>
+                                    </tr>
+                                    <tr style="background-color: #f9f9f9;">
+                                        <td style="padding: 8px; border: 1px solid #ddd;">SFD</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">1 byte</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Start Frame Delimiter</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Destination MAC</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">6 bytes</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Receiver address</td>
+                                    </tr>
+                                    <tr style="background-color: #f9f9f9;">
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Source MAC</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">6 bytes</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Sender address</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Type/Length</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">2 bytes</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">EtherType or frame length</td>
+                                    </tr>
+                                    <tr style="background-color: #f9f9f9;">
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Data</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">46-1500 bytes</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Payload</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">FCS</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">4 bytes</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Frame Check Sequence (CRC)</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            
+                            <div style="flex: 1;">
+                                <h3 style="color: #3498db;">Ethernet MAC Operation</h3>
+                                <p>Key aspects of Ethernet MAC sublayer:</p>
+                                
+                                <h4 style="color: #2c3e50; margin-top: 15px;">MAC Address Learning</h4>
+                                <p>Switches build MAC address tables by examining source addresses of incoming frames.</p>
+                                
+                                <h4 style="color: #2c3e50; margin-top: 15px;">Frame Forwarding</h4>
+                                <p>Switches use destination MAC addresses to forward frames to appropriate ports.</p>
+                                
+                                <h4 style="color: #2c3e50; margin-top: 15px;">Frame Filtering</h4>
+                                <p>Frames are filtered if source and destination are on the same switch port.</p>
+                                
+                                <h4 style="color: #2c3e50; margin-top: 15px;">Broadcast Handling</h4>
+                                <p>Broadcast frames (FF:FF:FF:FF:FF:FF) are flooded to all ports except the incoming port.</p>
+                                
+                                <div style="background-color: #fff0f0; padding: 10px; border-radius: 5px; margin-top: 15px;">
+                                    <strong>Minimum Frame Size:</strong> 64 bytes (to ensure collision detection)<br>
+                                    <strong>Maximum Frame Size:</strong> 1518 bytes (1522 with VLAN tagging)
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">Wireless MAC Sublayer</h2>
+                        
+                        <div style="display: flex; margin-top: 20px;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h3 style="color: #3498db;">IEEE 802.11 MAC</h3>
+                                <p>Wireless networks use CSMA/CA (Collision Avoidance) instead of CSMA/CD:</p>
+                                <ul style="line-height: 1.6;">
+                                    <li><strong>Hidden Node Problem:</strong> Solved with RTS/CTS (Request to Send/Clear to Send)</li>
+                                    <li><strong>DCF:</strong> Distributed Coordination Function (default mode)</li>
+                                    <li><strong>PCF:</strong> Point Coordination Function (optional polling mode)</li>
+                                </ul>
+                                
+                                <h4 style="color: #2c3e50; margin-top: 15px;">Wi-Fi Frame Structure</h4>
+                                <p>Contains more fields than Ethernet to handle wireless complexities:</p>
+                                <ul>
+                                    <li>Frame Control</li>
+                                    <li>Duration/ID</li>
+                                    <li>Address fields (up to 4 addresses)</li>
+                                    <li>Sequence Control</li>
+                                    <li>QoS Control</li>
+                                    <li>HT Control</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="flex: 1;">
+                                <h3 style="color: #3498db;">CSMA/CA Process</h3>
+                                <ol style="line-height: 1.6;">
+                                    <li>Listen to determine if channel is idle (physical + virtual carrier sense)</li>
+                                    <li>If busy, wait until channel becomes idle plus DIFS (DCF Interframe Space)</li>
+                                    <li>Choose random backoff time from contention window</li>
+                                    <li>Count down backoff timer while channel remains idle</li>
+                                    <li>If timer reaches zero, transmit frame</li>
+                                    <li>Wait for ACK (if not received, double contention window and retry)</li>
+                                </ol>
+                                
+                                <div style="background-color: #e8f4fc; padding: 10px; border-radius: 5px; margin-top: 15px;">
+                                    <strong>Virtual Carrier Sense:</strong> Uses NAV (Network Allocation Vector) in frame headers to reserve medium.
+                                </div>
+                                
+                                <h3 style="color: #3498db; margin-top: 20px;">Wi-Fi MAC Address Types</h3>
+                                <p>Wireless frames can contain up to 4 MAC addresses:</p>
+                                <ol>
+                                    <li>Receiver Address (RA)</li>
+                                    <li>Transmitter Address (TA)</li>
+                                    <li>Source Address (SA)</li>
+                                    <li>Destination Address (DA)</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </section>
+               
+
+
+
+            </main>  
+            
+            
+
+             <!-- Floating button to open chatbot -->
+    <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+    </div>
+    
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-container");
+            let button = document.getElementById("open-chatbot");
+    
+            if (!chatbot.classList.contains("active")) {
+                chatbot.classList.add("active");
+                button.style.display = "none"; // Hide button when chatbot is open
+            } else {
+                chatbot.classList.remove("active");
+                setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+            }
+        }
+    
+        // Load chatbot HTML dynamically
+        fetch("/chatbot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("chatbot-container").innerHTML += html;
+    
+            // Execute chatbot script after inserting HTML
+            let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+            for (let script of scripts) {
+                let newScript = document.createElement("script");
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript);
+            }
+        })
+        .catch(error => console.error("Error loading chatbot:", error));
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../computernetwork.json" : "computernetwork.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.Computer_Networks;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+        
+       
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

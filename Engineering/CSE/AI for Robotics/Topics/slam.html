@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Robotics</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>AI for Robotics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <h1>Simultaneous Localization and Mapping (SLAM)</h1>
+                 
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 30px;">
+                        <h2 style="color: #1a2980; border-bottom: 3px solid #26d0ce; padding-bottom: 10px; display: inline-block;">Introduction to SLAM</h2>
+                        
+                        <div style="display: flex; margin: 25px 0; gap: 20px; flex-wrap: wrap;">
+                            <div style="flex: 2; min-width: 300px;">
+                                <p>Simultaneous Localization and Mapping (SLAM) is a computational problem where a robot constructs or updates a map of an unknown environment while simultaneously keeping track of its location within it. This is considered a fundamental challenge in robotics and a key enabler for truly autonomous systems.</p>
+                                
+                                <p>SLAM algorithms combine data from various sensors (LIDAR, cameras, IMUs, etc.) to create consistent maps while estimating the robot's trajectory. The "chicken-and-egg" nature of the problem (you need a good map to localize and good localization to build a map) makes it particularly challenging.</p>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 250px; background-color: #f0f8ff; padding: 20px; border-radius: 8px; border-left: 5px solid #1a2980;">
+                                <h3 style="margin-top: 0; color: #1a2980;">Key Components</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>State Estimation:</strong> Tracking robot pose</li>
+                                    <li><strong>Landmark Extraction:</strong> Identifying features</li>
+                                    <li><strong>Data Association:</strong> Matching observations</li>
+                                    <li><strong>Map Representation:</strong> Storing environment</li>
+                                    <li><strong>Loop Closure:</strong> Recognizing revisited areas</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 30px;">
+                        <h2 style="color: #1a2980; border-bottom: 3px solid #26d0ce; padding-bottom: 10px; display: inline-block;">Types of SLAM Algorithms</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <!-- Filter-based SLAM -->
+                            <div style="background-color: #f9f9f9; border-radius: 8px; overflow: hidden; border: 1px solid #e0e0e0;">
+                                <div style="background-color: #1a2980; color: white; padding: 15px;">
+                                    <h3 style="margin: 0;">Filter-based SLAM</h3>
+                                </div>
+                                <div style="padding: 15px;">
+                                    <p><strong>Approach:</strong> Uses probabilistic filters to estimate the posterior over robot poses and map</p>
+                                    <p><strong>Variants:</strong></p>
+                                    <ul style="padding-left: 20px;">
+                                        <li>EKF-SLAM (Extended Kalman Filter)</li>
+                                        <li>FastSLAM (Particle Filter)</li>
+                                        <li>UKF-SLAM (Unscented Kalman Filter)</li>
+                                    </ul>
+                                    <p><strong>Pros:</strong> Well-understood, mathematically rigorous</p>
+                                    <p><strong>Cons:</strong> Computational complexity, linearization errors</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Graph-based SLAM -->
+                            <div style="background-color: #f9f9f9; border-radius: 8px; overflow: hidden; border: 1px solid #e0e0e0;">
+                                <div style="background-color: #26d0ce; color: white; padding: 15px;">
+                                    <h3 style="margin: 0;">Graph-based SLAM</h3>
+                                </div>
+                                <div style="padding: 15px;">
+                                    <p><strong>Approach:</strong> Formulates SLAM as a graph optimization problem</p>
+                                    <p><strong>Variants:</strong></p>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Pose Graph Optimization</li>
+                                        <li>g2o (General Graph Optimization)</li>
+                                        <li>GTSAM (Georgia Tech Smoothing and Mapping)</li>
+                                    </ul>
+                                    <p><strong>Pros:</strong> More accurate, handles non-linearities better</p>
+                                    <p><strong>Cons:</strong> Requires good initial guess, batch processing</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Visual SLAM -->
+                            <div style="background-color: #f9f9f9; border-radius: 8px; overflow: hidden; border: 1px solid #e0e0e0;">
+                                <div style="background-color: #4b6cb7; color: white; padding: 15px;">
+                                    <h3 style="margin: 0;">Visual SLAM (VSLAM)</h3>
+                                </div>
+                                <div style="padding: 15px;">
+                                    <p><strong>Approach:</strong> Uses cameras as primary sensors</p>
+                                    <p><strong>Variants:</strong></p>
+                                    <ul style="padding-left: 20px;">
+                                        <li>MonoSLAM (single camera)</li>
+                                        <li>PTAM (Parallel Tracking and Mapping)</li>
+                                        <li>ORB-SLAM (feature-based)</li>
+                                        <li>LSD-SLAM (direct method)</li>
+                                    </ul>
+                                    <p><strong>Pros:</strong> Rich data, low-cost sensors</p>
+                                    <p><strong>Cons:</strong> Sensitive to lighting, feature-poor environments</p>
+                                </div>
+                            </div>
+                            
+                            <!-- LiDAR SLAM -->
+                            <div style="background-color: #f9f9f9; border-radius: 8px; overflow: hidden; border: 1px solid #e0e0e0;">
+                                <div style="background-color: #3a7bd5; color: white; padding: 15px;">
+                                    <h3 style="margin: 0;">LiDAR SLAM</h3>
+                                </div>
+                                <div style="padding: 15px;">
+                                    <p><strong>Approach:</strong> Uses laser scanners for precise distance measurements</p>
+                                    <p><strong>Variants:</strong></p>
+                                    <ul style="padding-left: 20px;">
+                                        <li>LOAM (Lidar Odometry and Mapping)</li>
+                                        <li>Hector SLAM</li>
+                                        <li>Cartographer (Google)</li>
+                                    </ul>
+                                    <p><strong>Pros:</strong> Accurate, works in low-light</p>
+                                    <p><strong>Cons:</strong> Expensive, large data volumes</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 30px;">
+                        <h2 style="color: #1a2980; border-bottom: 3px solid #26d0ce; padding-bottom: 10px; display: inline-block;">SLAM Sensors and Modalities</h2>
+                        
+                        <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 20px;">
+                            <div style="flex: 1; min-width: 200px; background-color: #e3f2fd; padding: 15px; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 2em; color: #1a2980; margin-bottom: 10px;">📷</div>
+                                <h4 style="margin: 0 0 10px 0;">Cameras</h4>
+                                <p style="font-size: 0.9em;">Monocular, Stereo, RGB-D, Event-based</p>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 200px; background-color: #e8f5e9; padding: 15px; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 2em; color: #2e7d32; margin-bottom: 10px;">🔦</div>
+                                <h4 style="margin: 0 0 10px 0;">LiDAR</h4>
+                                <p style="font-size: 0.9em;">2D, 3D, Solid-state, MEMS-based</p>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 200px; background-color: #fff3e0; padding: 15px; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 2em; color: #e65100; margin-bottom: 10px;">📡</div>
+                                <h4 style="margin: 0 0 10px 0;">Radar</h4>
+                                <p style="font-size: 0.9em;">Millimeter-wave, Ultra-wideband</p>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 200px; background-color: #f3e5f5; padding: 15px; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 2em; color: #6a1b9a; margin-bottom: 10px;">🧭</div>
+                                <h4 style="margin: 0 0 10px 0;">IMU</h4>
+                                <p style="font-size: 0.9em;">Accelerometers, Gyroscopes, Magnetometers</p>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 200px; background-color: #e0f7fa; padding: 15px; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 2em; color: #00838f; margin-bottom: 10px;">🛰️</div>
+                                <h4 style="margin: 0 0 10px 0;">GNSS</h4>
+                                <p style="font-size: 0.9em;">GPS, GLONASS, Galileo (when available)</p>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 25px; background-color: #f5f5f5; padding: 20px; border-radius: 8px;">
+                            <h3 style="margin-top: 0; color: #1a2980;">Sensor Fusion in SLAM</h3>
+                            <p>Modern SLAM systems typically combine multiple sensor modalities to overcome individual limitations:</p>
+                            <ul style="padding-left: 20px;">
+                                <li><strong>Visual-Inertial Odometry (VIO):</strong> Cameras + IMU (e.g., VINS-Fusion, OKVIS)</li>
+                                <li><strong>LiDAR-Inertial Odometry:</strong> LiDAR + IMU (e.g., LIO-SAM, FAST-LIO2)</li>
+                                <li><strong>Visual-LiDAR Fusion:</strong> Cameras + LiDAR (e.g., VLOAM, VILENS)</li>
+                            </ul>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 30px;">
+                        <h2 style="color: #1a2980; border-bottom: 3px solid #26d0ce; padding-bottom: 10px; display: inline-block;">SLAM Mathematical Foundations</h2>
+                        
+                        <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
+                            <div style="flex: 1; min-width: 300px; background-color: #f8f9fa; padding: 20px; border-radius: 8px;">
+                                <h3 style="color: #1a2980; margin-top: 0;">Probabilistic Formulation</h3>
+                                <p>SLAM can be formulated as estimating the posterior probability:</p>
+                                <div style="background-color: #f0f0f0; padding: 15px; border-radius: 5px; font-family: monospace; margin: 10px 0;">
+                                    p(x<sub>1:t</sub>, m | z<sub>1:t</sub>, u<sub>1:t</sub>)
+                                </div>
+                                <p>Where:</p>
+                                <ul style="padding-left: 20px;">
+                                    <li>x<sub>1:t</sub>: Robot trajectory</li>
+                                    <li>m: Environment map</li>
+                                    <li>z<sub>1:t</sub>: Sensor observations</li>
+                                    <li>u<sub>1:t</sub>: Control inputs</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 300px; background-color: #f8f9fa; padding: 20px; border-radius: 8px;">
+                                <h3 style="color: #1a2980; margin-top: 0;">Key Equations</h3>
+                                
+                                <h4 style="margin-bottom: 5px;">Motion Model:</h4>
+                                <div style="background-color: #f0f0f0; padding: 10px; border-radius: 5px; font-family: monospace; margin-bottom: 15px;">
+                                    x<sub>t</sub> = f(x<sub>t-1</sub>, u<sub>t</sub>) + ε<sub>t</sub>
+                                </div>
+                                
+                                <h4 style="margin-bottom: 5px;">Observation Model:</h4>
+                                <div style="background-color: #f0f0f0; padding: 10px; border-radius: 5px; font-family: monospace; margin-bottom: 15px;">
+                                    z<sub>t</sub> = h(x<sub>t</sub>, m) + δ<sub>t</sub>
+                                </div>
+                                
+                                <p>Where ε<sub>t</sub> and δ<sub>t</sub> represent motion and observation noise respectively.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 20px; background-color: #e8eaf6; padding: 20px; border-radius: 8px;">
+                            <h3 style="color: #1a2980; margin-top: 0;">Graph Optimization</h3>
+                            <p>Modern SLAM systems often formulate the problem as a factor graph and solve it through nonlinear least squares optimization:</p>
+                            <div style="background-color: #f0f0f0; padding: 15px; border-radius: 5px; font-family: monospace; margin: 10px 0; text-align: center;">
+                                X* = argmin<sub>X</sub> ∑<sub>i</sub> ||e<sub>i</sub>(X)||<sup>2</sup><sub>Σ<sub>i</sub></sub>
+                            </div>
+                            <p>Where e<sub>i</sub>(X) are error terms and Σ<sub>i</sub> are covariance matrices.</p>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 30px;">
+                        <h2 style="color: #1a2980; border-bottom: 3px solid #26d0ce; padding-bottom: 10px; display: inline-block;">Applications of SLAM</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <!-- Autonomous Vehicles -->
+                            <div style="border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+                                <div style="height: 150px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'); background-size: cover; background-position: center; position: relative;">
+                                    <h3 style="position: absolute; bottom: 0; left: 0; right: 0; margin: 0; padding: 15px; color: white; background: linear-gradient(transparent, rgba(0,0,0,0.7));">Autonomous Vehicles</h3>
+                                </div>
+                                <div style="padding: 15px;">
+                                    <p>Self-driving cars use SLAM for localization and high-definition map creation, especially in GPS-denied environments like urban canyons or tunnels.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Robotics -->
+                            <div style="border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+                                <div style="height: 150px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1591117207239-788bf8de6c3b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'); background-size: cover; background-position: center; position: relative;">
+                                    <h3 style="position: absolute; bottom: 0; left: 0; right: 0; margin: 0; padding: 15px; color: white; background: linear-gradient(transparent, rgba(0,0,0,0.7));">Mobile Robotics</h3>
+                                </div>
+                                <div style="padding: 15px;">
+                                    <p>Service robots, warehouse robots, and drones rely on SLAM for navigation in dynamic environments like homes, factories, or outdoor spaces.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- AR/VR -->
+                            <div style="border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+                                <div style="height: 150px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'); background-size: cover; background-position: center; position: relative;">
+                                    <h3 style="position: absolute; bottom: 0; left: 0; right: 0; margin: 0; padding: 15px; color: white; background: linear-gradient(transparent, rgba(0,0,0,0.7));">AR/VR</h3>
+                                </div>
+                                <div style="padding: 15px;">
+                                    <p>Augmented and Virtual Reality systems use visual SLAM to understand and track the physical environment for realistic virtual object placement.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Industrial -->
+                            <div style="border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+                                <div style="height: 150px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1513828583688-c52646db42da?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'); background-size: cover; background-position: center; position: relative;">
+                                    <h3 style="position: absolute; bottom: 0; left: 0; right: 0; margin: 0; padding: 15px; color: white; background: linear-gradient(transparent, rgba(0,0,0,0.7));">Industrial Inspection</h3>
+                                </div>
+                                <div style="padding: 15px;">
+                                    <p>SLAM enables autonomous inspection of infrastructure like pipelines, power plants, and offshore platforms where GPS is unavailable.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 30px;">
+                        <h2 style="color: #1a2980; border-bottom: 3px solid #26d0ce; padding-bottom: 10px; display: inline-block;">Challenges and Future Directions</h2>
+                        
+                        <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
+                            <div style="flex: 1; min-width: 300px; background-color: #ffebee; padding: 20px; border-radius: 8px; border-left: 5px solid #f44336;">
+                                <h3 style="color: #d32f2f; margin-top: 0;">Current Challenges</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Dynamic Environments:</strong> Handling moving objects and scene changes</li>
+                                    <li><strong>Long-term Autonomy:</strong> Maintaining consistent maps over extended periods</li>
+                                    <li><strong>Scalability:</strong> Managing computational complexity in large environments</li>
+                                    <li><strong>Perceptual Aliasing:</strong> Distinguishing similar-looking places</li>
+                                    <li><strong>Multi-robot SLAM:</strong> Coordinating maps from multiple agents</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 300px; background-color: #e8f5e9; padding: 20px; border-radius: 8px; border-left: 5px solid #4caf50;">
+                                <h3 style="color: #2e7d32; margin-top: 0;">Emerging Trends</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Deep Learning for SLAM:</strong> Using neural networks for feature extraction, matching, and loop closure</li>
+                                    <li><strong>Semantic SLAM:</strong> Incorporating object recognition and scene understanding</li>
+                                    <li><strong>Event-based Vision:</strong> Using neuromorphic cameras for high-speed tracking</li>
+                                    <li><strong>Collaborative SLAM:</strong> Multiple robots building shared maps</li>
+                                    <li><strong>Edge Computing:</strong> Running SLAM on resource-constrained devices</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 30px;">
+                        <h2 style="color: #1a2980; border-bottom: 3px solid #26d0ce; padding-bottom: 10px; display: inline-block;">Popular SLAM Frameworks</h2>
+                        
+                        <div style="overflow-x: auto; margin-top: 20px;">
+                            <table style="width: 100%; border-collapse: collapse;">
+                                <thead>
+                                    <tr style="background: linear-gradient(135deg, #1a2980, #26d0ce); color: white;">
+                                        <th style="padding: 12px; text-align: left;">Framework</th>
+                                        <th style="padding: 12px; text-align: left;">Type</th>
+                                        <th style="padding: 12px; text-align: left;">Sensors</th>
+                                        <th style="padding: 12px; text-align: left;">Features</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #e0e0e0;">
+                                        <td style="padding: 12px; font-weight: bold;">ORB-SLAM3</td>
+                                        <td style="padding: 12px;">Visual/VISLAM</td>
+                                        <td style="padding: 12px;">Monocular/Stereo/RGB-D/IMU</td>
+                                        <td style="padding: 12px;">Feature-based, multi-map, inertial</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #e0e0e0; background-color: #f9f9f9;">
+                                        <td style="padding: 12px; font-weight: bold;">LIO-SAM</td>
+                                        <td style="padding: 12px;">LiDAR-Inertial</td>
+                                        <td style="padding: 12px;">3D LiDAR + IMU</td>
+                                        <td style="padding: 12px;">Tightly-coupled, factor graph</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #e0e0e0;">
+                                        <td style="padding: 12px; font-weight: bold;">RTAB-Map</td>
+                                        <td style="padding: 12px;">Visual/LiDAR</td>
+                                        <td style="padding: 12px;">RGB-D/Stereo/LiDAR</td>
+                                        <td style="padding: 12px;">Appearance-based loop closure</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #e0e0e0; background-color: #f9f9f9;">
+                                        <td style="padding: 12px; font-weight: bold;">VINS-Fusion</td>
+                                        <td style="padding: 12px;">Visual-Inertial</td>
+                                        <td style="padding: 12px;">Monocular/Stereo + IMU</td>
+                                        <td style="padding: 12px;">Optimization-based, GNSS fusion</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 12px; font-weight: bold;">Cartographer</td>
+                                        <td style="padding: 12px;">LiDAR</td>
+                                        <td style="padding: 12px;">2D/3D LiDAR</td>
+                                        <td style="padding: 12px;">Submap-based, real-time</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                
+                  
+
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [ ];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics") ? "../AI for Robotics.json" : "../AI for Robotics.json";
+
+                                              
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch AI for Robotics Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.AI_for_Robotics;
+                        displayTopics(allTopics);
+                    }
+                    )
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+           
+            
+            
+            
+            
+            
+            
+            </body>
+            </html>        

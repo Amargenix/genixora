@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer Network</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/allsubject.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Computer Networks</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+               <h1>Network Automation</h1>
+                <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+        <h2 style="color: #2c5364; border-bottom: 2px solid #203a43; padding-bottom: 10px; margin-top: 0;">Introduction to Network Automation</h2>
+        
+        <div style="display: flex; gap: 25px; flex-wrap: wrap; margin-bottom: 20px;">
+            <div style="flex: 1; min-width: 300px;">
+                <p>Network automation refers to the process of automating the configuration, management, testing, deployment, and operation of physical and virtual network devices. It enables network engineers to manage networks more efficiently with fewer manual operations.</p>
+                <p>With the increasing complexity of modern networks and the demand for rapid service delivery, automation has become essential for network operations.</p>
+            </div>
+            <div style="flex: 1; min-width: 300px; background-color: #f0f4f8; padding: 20px; border-radius: 5px; border-left: 4px solid #2c5364;">
+                <h3 style="color: #2c5364; margin-top: 0;">Key Benefits</h3>
+                <ul style="padding-left: 20px;">
+                    <li><strong>Increased Efficiency:</strong> Faster provisioning and configuration</li>
+                    <li><strong>Reduced Errors:</strong> Eliminates manual configuration mistakes</li>
+                    <li><strong>Improved Consistency:</strong> Standardized configurations across devices</li>
+                    <li><strong>Enhanced Security:</strong> Automated compliance checks and remediation</li>
+                    <li><strong>Cost Reduction:</strong> Lower operational expenses</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+        <h2 style="color: #2c5364; border-bottom: 2px solid #203a43; padding-bottom: 10px; margin-top: 0;">Network Automation Components</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 25px;">
+            <div style="background-color: #f8fafc; padding: 20px; border-radius: 5px; border-top: 3px solid #2c5364;">
+                <h3 style="color: #2c5364; margin-top: 0;">1. Automation Tools</h3>
+                <ul style="padding-left: 20px;">
+                    <li>Ansible, Puppet, Chef, SaltStack</li>
+                    <li>Python scripts with Netmiko, NAPALM</li>
+                    <li>Terraform for infrastructure as code</li>
+                    <li>Custom-built automation frameworks</li>
+                </ul>
+            </div>
+            
+            <div style="background-color: #f8fafc; padding: 20px; border-radius: 5px; border-top: 3px solid #0f2027;">
+                <h3 style="color: #2c5364; margin-top: 0;">2. Network APIs</h3>
+                <ul style="padding-left: 20px;">
+                    <li>RESTful APIs (NETCONF, RESTCONF)</li>
+                    <li>gRPC and gNMI</li>
+                    <li>SSH/CLI automation</li>
+                    <li>SNMP for monitoring</li>
+                </ul>
+            </div>
+            
+            <div style="background-color: #f8fafc; padding: 20px; border-radius: 5px; border-top: 3px solid #203a43;">
+                <h3 style="color: #2c5364; margin-top: 0;">3. Data Formats</h3>
+                <ul style="padding-left: 20px;">
+                    <li>YAML for configuration</li>
+                    <li>JSON for API communication</li>
+                    <li>XML for legacy systems</li>
+                    <li>Jinja2 for templates</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div style="background-color: #f0f4f8; padding: 20px; border-radius: 5px;">
+            <h3 style="color: #2c5364; margin-top: 0;">Network Automation Stack</h3>
+            <div style="display: flex; justify-content: center; margin: 20px 0;">
+                <div style="text-align: center; width: 100%; max-width: 700px;">
+                    <div style="background-color: #2c5364; color: white; padding: 12px; border-radius: 5px; margin-bottom: 5px;">Orchestration Layer (ServiceNow, Kubernetes)</div>
+                    <div style="background-color: #203a43; color: white; padding: 12px; border-radius: 5px; margin-bottom: 5px;">Automation Tools (Ansible, Terraform)</div>
+                    <div style="background-color: #0f2027; color: white; padding: 12px; border-radius: 5px; margin-bottom: 5px;">Network APIs (RESTCONF, NETCONF)</div>
+                    <div style="background-color: #2c5364; color: white; padding: 12px; border-radius: 5px;">Network Devices (Routers, Switches, Firewalls)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+        <h2 style="color: #2c5364; border-bottom: 2px solid #203a43; padding-bottom: 10px; margin-top: 0;">Popular Network Automation Tools</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 25px;">
+            <div style="background-color: #f8fafc; padding: 20px; border-radius: 5px; border-left: 4px solid #2c5364;">
+                <h3 style="color: #2c5364; margin-top: 0;">Ansible</h3>
+                <p>Agentless automation tool using YAML playbooks for configuration management and application deployment.</p>
+                <p><strong>Key Features:</strong></p>
+                <ul style="padding-left: 20px;">
+                    <li>Idempotent operations</li>
+                    <li>Large collection of network modules</li>
+                    <li>Integration with other tools</li>
+                </ul>
+            </div>
+            
+            <div style="background-color: #f8fafc; padding: 20px; border-radius: 5px; border-left: 4px solid #0f2027;">
+                <h3 style="color: #2c5364; margin-top: 0;">Terraform</h3>
+                <p>Infrastructure as Code (IaC) tool for building, changing, and versioning network infrastructure.</p>
+                <p><strong>Key Features:</strong></p>
+                <ul style="padding-left: 20px;">
+                    <li>Declarative configuration</li>
+                    <li>State management</li>
+                    <li>Multi-cloud support</li>
+                </ul>
+            </div>
+            
+            <div style="background-color: #f8fafc; padding: 20px; border-radius: 5px; border-left: 4px solid #203a43;">
+                <h3 style="color: #2c5364; margin-top: 0;">Python with Libraries</h3>
+                <p>Custom automation scripts using Python with networking libraries.</p>
+                <p><strong>Key Libraries:</strong></p>
+                <ul style="padding-left: 20px;">
+                    <li>Netmiko (SSH automation)</li>
+                    <li>NAPALM (multi-vendor API)</li>
+                    <li>PyATS (testing framework)</li>
+                    <li>Paramiko (SSH protocol)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse;">
+                <tr style="background-color: #2c5364; color: white;">
+                    <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Tool</th>
+                    <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Type</th>
+                    <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Primary Use</th>
+                    <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Language</th>
+                    <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Learning Curve</th>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Ansible</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Configuration Mgmt</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Device configuration</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">YAML</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Low</td>
+                </tr>
+                <tr style="background-color: #f2f2f2;">
+                    <td style="padding: 10px; border: 1px solid #ddd;">Terraform</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Infrastructure as Code</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Resource provisioning</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">HCL</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Medium</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Python</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Programming</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Custom automation</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Python</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">High</td>
+                </tr>
+                <tr style="background-color: #f2f2f2;">
+                    <td style="padding: 10px; border: 1px solid #ddd;">Puppet</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Configuration Mgmt</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Policy enforcement</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Ruby/DSL</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Medium</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Chef</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Configuration Mgmt</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Infrastructure automation</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Ruby/DSL</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">High</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+        <h2 style="color: #2c5364; border-bottom: 2px solid #203a43; padding-bottom: 10px; margin-top: 0;">Network Automation Use Cases</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 25px;">
+            <div style="background-color: #f0f4f8; padding: 20px; border-radius: 5px;">
+                <h3 style="color: #2c5364; margin-top: 0;">Configuration Management</h3>
+                <ul style="padding-left: 20px;">
+                    <li>Bulk device configuration</li>
+                    <li>Configuration templating</li>
+                    <li>Configuration drift remediation</li>
+                    <li>Golden configuration enforcement</li>
+                </ul>
+            </div>
+            
+            <div style="background-color: #f0f4f8; padding: 20px; border-radius: 5px;">
+                <h3 style="color: #2c5364; margin-top: 0;">Network Provisioning</h3>
+                <ul style="padding-left: 20px;">
+                    <li>Zero-touch provisioning</li>
+                    <li>VLAN/VRF provisioning</li>
+                    <li>Service activation</li>
+                    <li>Cloud network provisioning</li>
+                </ul>
+            </div>
+            
+            <div style="background-color: #f0f4f8; padding: 20px; border-radius: 5px;">
+                <h3 style="color: #2c5364; margin-top: 0;">Monitoring & Remediation</h3>
+                <ul style="padding-left: 20px;">
+                    <li>Automated health checks</li>
+                    <li>Event-driven automation</li>
+                    <li>Self-healing networks</li>
+                    <li>Anomaly detection</li>
+                </ul>
+            </div>
+            
+            <div style="background-color: #f0f4f8; padding: 20px; border-radius: 5px;">
+                <h3 style="color: #2c5364; margin-top: 0;">Security Automation</h3>
+                <ul style="padding-left: 20px;">
+                    <li>Policy enforcement</li>
+                    <li>Threat response</li>
+                    <li>Compliance auditing</li>
+                    <li>Firewall rule management</li>
+                </ul>
+            </div>
+            
+            <div style="background-color: #f0f4f8; padding: 20px; border-radius: 5px;">
+                <h3 style="color: #2c5364; margin-top: 0;">Testing & Validation</h3>
+                <ul style="padding-left: 20px;">
+                    <li>Network testing</li>
+                    <li>Change validation</li>
+                    <li>Pre-post checks</li>
+                    <li>Network simulation</li>
+                </ul>
+            </div>
+            
+            <div style="background-color: #f0f4f8; padding: 20px; border-radius: 5px;">
+                <h3 style="color: #2c5364; margin-top: 0;">Multi-cloud Networking</h3>
+                <ul style="padding-left: 20px;">
+                    <li>Cloud interconnect</li>
+                    <li>SD-WAN automation</li>
+                    <li>Hybrid cloud networking</li>
+                    <li>Cloud resource provisioning</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+        <h2 style="color: #2c5364; border-bottom: 2px solid #203a43; padding-bottom: 10px; margin-top: 0;">Network Automation Architecture</h2>
+        
+        <div style="display: flex; gap: 25px; flex-wrap: wrap; margin-bottom: 25px;">
+            <div style="flex: 1; min-width: 300px;">
+                <h3 style="color: #2c5364;">Traditional Approach</h3>
+                <ul style="padding-left: 20px;">
+                    <li>Manual CLI configurations</li>
+                    <li>Device-by-device management</li>
+                    <li>Reactive troubleshooting</li>
+                    <li>Limited scalability</li>
+                    <li>High operational overhead</li>
+                </ul>
+            </div>
+            
+            <div style="flex: 1; min-width: 300px;">
+                <h3 style="color: #2c5364;">Automated Approach</h3>
+                <ul style="padding-left: 20px;">
+                    <li>Infrastructure as Code (IaC)</li>
+                    <li>Intent-based networking</li>
+                    <li>API-driven interactions</li>
+                    <li>Continuous validation</li>
+                    <li>Self-documenting systems</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div style="background-color: #f0f4f8; padding: 20px; border-radius: 5px;">
+            <h3 style="color: #2c5364; margin-top: 0;">Automation Maturity Model</h3>
+            <div style="display: flex; justify-content: center; margin: 20px 0;">
+                <div style="text-align: center; width: 100%; max-width: 800px;">
+                    <div style="display: flex; margin-bottom: 5px;">
+                        <div style="flex: 1; text-align: right; padding-right: 10px; font-weight: bold;">Level 5:</div>
+                        <div style="flex: 4; text-align: left; background-color: #2c5364; color: white; padding: 8px; border-radius: 5px;">Autonomous Networks (AI/ML-driven)</div>
+                    </div>
+                    <div style="display: flex; margin-bottom: 5px;">
+                        <div style="flex: 1; text-align: right; padding-right: 10px; font-weight: bold;">Level 4:</div>
+                        <div style="flex: 4; text-align: left; background-color: #203a43; color: white; padding: 8px; border-radius: 5px;">Closed-loop Automation (Self-healing)</div>
+                    </div>
+                    <div style="display: flex; margin-bottom: 5px;">
+                        <div style="flex: 1; text-align: right; padding-right: 10px; font-weight: bold;">Level 3:</div>
+                        <div style="flex: 4; text-align: left; background-color: #0f2027; color: white; padding: 8px; border-radius: 5px;">Orchestrated Automation (Workflows)</div>
+                    </div>
+                    <div style="display: flex; margin-bottom: 5px;">
+                        <div style="flex: 1; text-align: right; padding-right: 10px; font-weight: bold;">Level 2:</div>
+                        <div style="flex: 4; text-align: left; background-color: #2c5364; color: white; padding: 8px; border-radius: 5px;">Basic Automation (Scripts/Tools)</div>
+                    </div>
+                    <div style="display: flex;">
+                        <div style="flex: 1; text-align: right; padding-right: 10px; font-weight: bold;">Level 1:</div>
+                        <div style="flex: 4; text-align: left; background-color: #203a43; color: white; padding: 8px; border-radius: 5px;">Manual Processes (CLI)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background-color: #e2ecf0; color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px;">
+        <h2 style="margin-top: 0; border-bottom: 2px solid #2c5364; padding-bottom: 10px;">Best Practices for Network Automation</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
+            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 5px;">
+                <h3 style="color: #2c5364; margin-top: 0;">Start Small</h3>
+                <p>Begin with simple, repetitive tasks before tackling complex workflows.</p>
+            </div>
+            
+            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 5px;">
+                <h3 style="color: #2c5364; margin-top: 0;">Version Control</h3>
+                <p>Use Git for all automation code and configurations.</p>
+            </div>
+            
+            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 5px;">
+                <h3 style="color: #2c5364; margin-top: 0;">Testing Framework</h3>
+                <p>Implement automated testing for all network changes.</p>
+            </div>
+            
+            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 5px;">
+                <h3 style="color: #2c5364; margin-top: 0;">Documentation</h3>
+                <p>Maintain comprehensive documentation for all automation workflows.</p>
+            </div>
+            
+            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 5px;">
+                <h3 style="color: #2c5364; margin-top: 0;">Security First</h3>
+                <p>Secure automation systems with RBAC and credential management.</p>
+            </div>
+            
+            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 5px;">
+                <h3 style="color: #2c5364; margin-top: 0;">Continuous Improvement</h3>
+                <p>Regularly review and optimize automation processes.</p>
+            </div>
+        </div>
+    </section>
+
+    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+        <h2 style="color: #2c5364; border-bottom: 2px solid #203a43; padding-bottom: 10px; margin-top: 0;">Future Trends in Network Automation</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
+            <div style="background-color: #f0f4f8; padding: 20px; border-radius: 5px;">
+                <h3 style="color: #2c5364; margin-top: 0;">AI/ML Integration</h3>
+                <p>Machine learning for predictive analytics and intelligent automation.</p>
+            </div>
+            
+            <div style="background-color: #f0f4f8; padding: 20px; border-radius: 5px;">
+                <h3 style="color: #2c5364; margin-top: 0;">Intent-Based Networking</h3>
+                <p>Declarative networking where intent drives automated configuration.</p>
+            </div>
+            
+            <div style="background-color: #f0f4f8; padding: 20px; border-radius: 5px;">
+                <h3 style="color: #2c5364; margin-top: 0;">Network as Code</h3>
+                <p>Full lifecycle management of network infrastructure through code.</p>
+            </div>
+            
+            <div style="background-color: #f0f4f8; padding: 20px; border-radius: 5px;">
+                <h3 style="color: #2c5364; margin-top: 0;">Zero-Touch Provisioning</h3>
+                <p>Complete automation of device onboarding and configuration.</p>
+            </div>
+            
+            <div style="background-color: #f0f4f8; padding: 20px; border-radius: 5px;">
+                <h3 style="color: #2c5364; margin-top: 0;">Self-Healing Networks</h3>
+                <p>Automated detection and remediation of network issues.</p>
+            </div>
+            
+            <div style="background-color: #f0f4f8; padding: 20px; border-radius: 5px;">
+                <h3 style="color: #2c5364; margin-top: 0;">5G Automation</h3>
+                <p>Automated orchestration of 5G network slices and services.</p>
+            </div>
+        </div>
+    </section>
+
+         
+           
+</main>  
+            
+            
+
+             <!-- Floating button to open chatbot -->
+    <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+    </div>
+    
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-container");
+            let button = document.getElementById("open-chatbot");
+    
+            if (!chatbot.classList.contains("active")) {
+                chatbot.classList.add("active");
+                button.style.display = "none"; // Hide button when chatbot is open
+            } else {
+                chatbot.classList.remove("active");
+                setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+            }
+        }
+    
+        // Load chatbot HTML dynamically
+        fetch("/chatbot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("chatbot-container").innerHTML += html;
+    
+            // Execute chatbot script after inserting HTML
+            let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+            for (let script of scripts) {
+                let newScript = document.createElement("script");
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript);
+            }
+        })
+        .catch(error => console.error("Error loading chatbot:", error));
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../computernetwork.json" : "computernetwork.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.Computer_Networks;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+        
+       
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

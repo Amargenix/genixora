@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../opp.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+
+
+
+
+            <main class="col-md-7 content">
+                <h2>🔹 Polymorphism in Object-Oriented Programming</h2>
+            
+                <p>
+                    **Polymorphism** is a fundamental concept in Object-Oriented Programming (OOP) that allows objects of different classes to be treated as objects of a common superclass. The term polymorphism means "many shapes," and it enables a single interface to control access to different underlying forms (data types). Polymorphism is primarily achieved through two mechanisms: method overriding and method overloading.
+                </p>
+            
+                <h3>📌 Why Use Polymorphism?</h3>
+                <p>Polymorphism provides several advantages in programming:</p>
+                <ul>
+                    <li>✅ **Code Reusability**: By allowing different classes to be treated through a common interface, polymorphism enables code to be reused without modification.</li>
+                    <li>✅ **Increased Flexibility**: It allows the implementation of algorithms that can work on objects of different types, increasing the flexibility of the code.</li>
+                    <li>✅ **Simplified Code Maintenance**: Changes to class implementations do not affect the code that uses polymorphic behavior, making it easier to maintain and update.</li>
+                    <li>✅ **Enhanced Extensibility**: New classes can be added with minimal impact on existing code, as they can easily integrate into the polymorphic structure.</li>
+                </ul>
+            
+                <h3>📌 Types of Polymorphism</h3>
+                <p>Polymorphism can be categorized into two main types:</p>
+                <ul>
+                    <li><b>Compile-Time Polymorphism:</b> Also known as static polymorphism, it is achieved through method overloading or operator overloading. The method to be executed is determined at compile time.</li>
+                    <li><b>Runtime Polymorphism:</b> Also known as dynamic polymorphism, it is achieved through method overriding. The method to be executed is determined at runtime based on the object type.</li>
+                </ul>
+            
+                <h3>🖥️ Compile-Time Polymorphism Example in Java</h3>
+                <p>Here is an example of compile-time polymorphism using method overloading in Java:</p>
+                <pre><code>
+            class MathOperations {
+                // Method to add two integers
+                public int add(int a, int b) {
+                    return a + b;
+                }
+            
+                // Method to add three integers
+                public int add(int a, int b, int c) {
+                    return a + b + c;
+                }
+            
+                // Method to add two double values
+                public double add(double a, double b) {
+                    return a + b;
+                }
+            }
+            
+            // Usage
+            public class Main {
+                public static void main(String[] args) {
+                    MathOperations math = new MathOperations();
+                    System.out.println("Sum of two integers: " + math.add(5, 10)); // Output: 15
+                    System.out.println("Sum of three integers: " + math.add(5, 10, 15)); // Output: 30
+                    System.out.println("Sum of two doubles: " + math.add(5.5, 10.5)); // Output: 16.0
+                }
+            }
+                </code></pre>
+            
+                <h3>🖥️ Runtime Polymorphism Example in Java</h3>
+                <p>Here is an example of runtime polymorphism using method overriding in Java:</p>
+                <pre><code>
+            class Animal {
+                public void sound() {
+                    System.out.println("Animal makes a sound");
+                }
+            }
+            
+            class Dog extends Animal {
+                @Override
+                public void sound() {
+                    System.out.println("Dog barks");
+                }
+            }
+            
+            class Cat extends Animal {
+                @Override
+                public void sound() {
+                    System.out.println("Cat meows");
+                }
+            }
+            
+            // Usage
+            public class Main {
+                public static void main(String[] args) {
+                    Animal myDog = new Dog();
+                    Animal myCat = new Cat();
+                    
+                    myDog.sound(); // Output: Dog barks
+                    myCat.sound(); // Output: Cat meows
+                }
+            }
+                </code></pre>
+            
+                <h3>🖥️ Polymorphism Example in Python</h3>
+                <p>Here is an example of polymorphism in Python using method overriding:</p>
+                <pre><code>
+            class Animal:
+                def sound(self):
+                    print("Animal makes a sound")
+            
+            class Dog(Animal):
+                def sound(self):
+                    print("Dog barks")
+            
+            class Cat(Animal):
+                def sound(self):
+                    print("Cat meows")
+            
+            # Usage
+            def make_sound(animal):
+                animal.sound()
+            
+            my_dog = Dog()
+            my_cat = Cat()
+            
+            make_sound(my_dog)  # Output: Dog barks
+            make_sound(my_cat)  # Output: Cat meows
+                </code></pre>
+            
+                <h3>📌 Best Practices for Using Polymorphism</h3>
+                <ul>
+                    <li>✅ **Design for Extensibility**: When designing classes, consider how polymorphism can be used to accommodate future extensions and modifications.</li>
+                    <li>✅ **Favor Interfaces**: Use interfaces or abstract classes to define common behavior for polymorphic classes, enhancing code clarity and maintainability.</li>
+                    <li>✅ **Avoid Overusing**: While polymorphism provides many benefits, overusing it can lead to complex and hard-to-maintain code. Use it judiciously.</li>
+                    <li>✅ **Document Your Code**: Provide clear documentation for polymorphic behavior to help other developers understand how to use the code effectively.</li>
+                </ul>
+            
+                <h3>🎯 Summary</h3>
+                <p>
+                    Polymorphism is a key principle of Object-Oriented Programming that enhances flexibility, reusability, and maintainability of code.  
+                    By allowing different classes to be treated through a common interface, polymorphism enables developers to write cleaner and more efficient code.
+                </p>
+            
+                <h2>🔗 Next Topics</h2>
+                <ul class="nexttopics-container">
+                    <li><a href="inheritance.html">👉 Inheritance</a></li>
+                    <li><a href="encapsulation.html">👉 Encapsulation</a></li>
+                    <li><a href="abstraction.html">👉 Abstraction</a></li>
+                </ul>
+            </main>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+     
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../opp.json" : "opp.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.OOP;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

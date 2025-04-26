@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Robotics</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>AI in Healthcare</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <h1>Medical Data in AI Healthcare</h1>
+                   
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 10px; margin-bottom: 40px; box-shadow: 0 3px 8px rgba(0,0,0,0.08);">
+                        <h2 style="color: #2980b9; border-bottom: 2px solid #2980b9; padding-bottom: 10px; font-size: 1.8em;">Types of Medical Data Used in AI</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 25px; margin-top: 25px;">
+                            <div style="background-color: #eaf2f8; padding: 20px; border-radius: 8px; border-left: 5px solid #2980b9;">
+                                <h3 style="margin-top: 0; color: #2980b9;">📊 Structured Clinical Data</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Electronic Health Records (EHRs)</li>
+                                    <li>Laboratory test results</li>
+                                    <li>Vital signs measurements</li>
+                                    <li>Medication records</li>
+                                    <li>Diagnosis codes (ICD-10/11)</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #eaf2f8; padding: 20px; border-radius: 8px; border-left: 5px solid #2980b9;">
+                                <h3 style="margin-top: 0; color: #2980b9;">📝 Unstructured Clinical Data</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Physician notes</li>
+                                    <li>Radiology reports</li>
+                                    <li>Discharge summaries</li>
+                                    <li>Clinical trial narratives</li>
+                                    <li>Research publications</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #eaf2f8; padding: 20px; border-radius: 8px; border-left: 5px solid #2980b9;">
+                                <h3 style="margin-top: 0; color: #2980b9;">🖼️ Medical Imaging Data</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>X-rays (DICOM format)</li>
+                                    <li>CT/MRI scans</li>
+                                    <li>Ultrasound images</li>
+                                    <li>Pathology slides (whole slide imaging)</li>
+                                    <li>Ophthalmology scans</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #eaf2f8; padding: 20px; border-radius: 8px; border-left: 5px solid #2980b9;">
+                                <h3 style="margin-top: 0; color: #2980b9;">🧬 Omics Data</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Genomic sequences</li>
+                                    <li>Proteomics data</li>
+                                    <li>Metabolomics profiles</li>
+                                    <li>Epigenetic markers</li>
+                                    <li>Microbiome compositions</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #eaf2f8; padding: 20px; border-radius: 8px; border-left: 5px solid #2980b9;">
+                                <h3 style="margin-top: 0; color: #2980b9;">⌚ Wearable & IoT Data</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Continuous glucose monitoring</li>
+                                    <li>ECG/heart rate data</li>
+                                    <li>Sleep patterns</li>
+                                    <li>Activity tracking</li>
+                                    <li>Implantable device data</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #eaf2f8; padding: 20px; border-radius: 8px; border-left: 5px solid #2980b9;">
+                                <h3 style="margin-top: 0; color: #2980b9;">🗣️ Patient-Generated Data</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Symptom diaries</li>
+                                    <li>Patient-reported outcomes</li>
+                                    <li>Mobile health app data</li>
+                                    <li>Voice/speech patterns</li>
+                                    <li>Social determinants of health</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 10px; margin-bottom: 40px; box-shadow: 0 3px 8px rgba(0,0,0,0.08);">
+                        <h2 style="color: #2980b9; border-bottom: 2px solid #2980b9; padding-bottom: 10px; font-size: 1.8em;">Data Challenges in Healthcare AI</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px;">
+                                <h3 style="margin-top: 0; color: #2980b9;">Data Quality Issues</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Inconsistent data entry practices</li>
+                                    <li>Missing or incomplete records</li>
+                                    <li>Documentation variability between providers</li>
+                                    <li>Legacy system data conversion errors</li>
+                                    <li>Unstructured free-text challenges</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px;">
+                                <h3 style="margin-top: 0; color: #2980b9;">Interoperability Barriers</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Proprietary EHR system silos</li>
+                                    <li>Varying data standards (HL7, FHIR, etc.)</li>
+                                    <li>Inconsistent coding practices</li>
+                                    <li>Regional/national differences</li>
+                                    <li>Legacy system compatibility</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px;">
+                                <h3 style="margin-top: 0; color: #2980b9;">Privacy & Security Concerns</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>HIPAA/GDPR compliance requirements</li>
+                                    <li>De-identification challenges</li>
+                                    <li>Re-identification risks</li>
+                                    <li>Data breach vulnerabilities</li>
+                                    <li>Consent management complexities</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 30px; background-color: #e8f4f8; padding: 20px; border-radius: 8px; border: 1px dashed #2980b9;">
+                            <h3 style="margin-top: 0; color: #2980b9;">Data Volume Statistics</h3>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; text-align: center;">
+                                <div>
+                                    <div style="font-size: 1.8em; font-weight: bold; color: #2980b9;">~2,314 EB</div>
+                                    <div>Global healthcare data by 2025 (1 EB = 1 billion GB)</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 1.8em; font-weight: bold; color: #2980b9;">80-90%</div>
+                                    <div>Percentage unstructured (notes, images, etc.)</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 1.8em; font-weight: bold; color: #2980b9;">50-100 TB</div>
+                                    <div>Data generated annually by large hospital</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 1.8em; font-weight: bold; color: #2980b9;">>1 PB</div>
+                                    <div>Genomic data per cancer patient (whole genome sequencing)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 10px; margin-bottom: 40px; box-shadow: 0 3px 8px rgba(0,0,0,0.08);">
+                        <h2 style="color: #2980b9; border-bottom: 2px solid #2980b9; padding-bottom: 10px; font-size: 1.8em;">Data Processing Pipeline</h2>
+                        
+                        <div style="display: flex; overflow-x: auto; padding: 20px 0; margin-top: 20px; scrollbar-width: none;">
+                            <div style="display: flex; gap: 15px; min-width: 100%;">
+                                <!-- Pipeline Step 1 -->
+                                <div style="flex: 1; min-width: 200px; background-color: #e1f0fa; padding: 20px; border-radius: 8px; position: relative;">
+                                    <div style="position: absolute; top: -15px; left: 20px; background-color: #2980b9; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">1</div>
+                                    <h3 style="margin-top: 5px; color: #2980b9;">Data Acquisition</h3>
+                                    <p>Collection from EHRs, devices, imaging systems, labs, etc.</p>
+                                    <ul style="padding-left: 20px; font-size: 0.9em;">
+                                        <li>APIs & HL7 interfaces</li>
+                                        <li>DICOM servers</li>
+                                        <li>IoT device streams</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Pipeline Step 2 -->
+                                <div style="flex: 1; min-width: 200px; background-color: #d4e7f7; padding: 20px; border-radius: 8px; position: relative;">
+                                    <div style="position: absolute; top: -15px; left: 20px; background-color: #2980b9; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">2</div>
+                                    <h3 style="margin-top: 5px; color: #2980b9;">Data Cleaning</h3>
+                                    <p>Identifying and correcting corrupt/inaccurate records</p>
+                                    <ul style="padding-left: 20px; font-size: 0.9em;">
+                                        <li>Missing value imputation</li>
+                                        <li>Outlier detection</li>
+                                        <li>Standardization</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Pipeline Step 3 -->
+                                <div style="flex: 1; min-width: 200px; background-color: #c7def4; padding: 20px; border-radius: 8px; position: relative;">
+                                    <div style="position: absolute; top: -15px; left: 20px; background-color: #2980b9; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">3</div>
+                                    <h3 style="margin-top: 5px; color: #2980b9;">Data Annotation</h3>
+                                    <p>Labeling data for supervised learning</p>
+                                    <ul style="padding-left: 20px; font-size: 0.9em;">
+                                        <li>Clinical expert review</li>
+                                        <li>Radiologist markings</li>
+                                        <li>Natural language processing</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Pipeline Step 4 -->
+                                <div style="flex: 1; min-width: 200px; background-color: #bad5f1; padding: 20px; border-radius: 8px; position: relative;">
+                                    <div style="position: absolute; top: -15px; left: 20px; background-color: #2980b9; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">4</div>
+                                    <h3 style="margin-top: 5px; color: #2980b9;">Feature Engineering</h3>
+                                    <p>Creating meaningful input variables</p>
+                                    <ul style="padding-left: 20px; font-size: 0.9em;">
+                                        <li>Clinical feature extraction</li>
+                                        <li>Image feature detection</li>
+                                        <li>Temporal pattern analysis</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Pipeline Step 5 -->
+                                <div style="flex: 1; min-width: 200px; background-color: #adccee; padding: 20px; border-radius: 8px; position: relative;">
+                                    <div style="position: absolute; top: -15px; left: 20px; background-color: #2980b9; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">5</div>
+                                    <h3 style="margin-top: 5px; color: #2980b9;">Model Training</h3>
+                                    <p>Developing predictive algorithms</p>
+                                    <ul style="padding-left: 20px; font-size: 0.9em;">
+                                        <li>Supervised/unsupervised learning</li>
+                                        <li>Deep neural networks</li>
+                                        <li>Validation protocols</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Pipeline Step 6 -->
+                                <div style="flex: 1; min-width: 200px; background-color: #a0c3eb; padding: 20px; border-radius: 8px; position: relative;">
+                                    <div style="position: absolute; top: -15px; left: 20px; background-color: #2980b9; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">6</div>
+                                    <h3 style="margin-top: 5px; color: #2980b9;">Deployment</h3>
+                                    <p>Integration into clinical workflow</p>
+                                    <ul style="padding-left: 20px; font-size: 0.9em;">
+                                        <li>EHR integration</li>
+                                        <li>Clinical decision support</li>
+                                        <li>Real-time monitoring</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 30px; background-color: #f0f7ff; padding: 20px; border-radius: 8px;">
+                            <h3 style="margin-top: 0; color: #2980b9;">Key Technologies in Medical Data Processing</h3>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
+                                <div style="text-align: center; padding: 15px; background-color: white; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                                    <div style="font-size: 2em;">⚙️</div>
+                                    <div>FHIR APIs</div>
+                                </div>
+                                <div style="text-align: center; padding: 15px; background-color: white; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                                    <div style="font-size: 2em;">🔍</div>
+                                    <div>NLP Pipelines</div>
+                                </div>
+                                <div style="text-align: center; padding: 15px; background-color: white; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                                    <div style="font-size: 2em;">🖥️</div>
+                                    <div>DICOM Viewers</div>
+                                </div>
+                                <div style="text-align: center; padding: 15px; background-color: white; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                                    <div style="font-size: 2em;">🧩</div>
+                                    <div>Data Lakes</div>
+                                </div>
+                                <div style="text-align: center; padding: 15px; background-color: white; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                                    <div style="font-size: 2em;">🔐</div>
+                                    <div>De-ID Tools</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 10px; margin-bottom: 40px; box-shadow: 0 3px 8px rgba(0,0,0,0.08);">
+                        <h2 style="color: #2980b9; border-bottom: 2px solid #2980b9; padding-bottom: 10px; font-size: 1.8em;">Data Standards & Interoperability</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div style="border: 1px solid #ddd; padding: 20px; border-radius: 8px;">
+                                <h3 style="margin-top: 0; color: #2980b9;">HL7 FHIR</h3>
+                                <p>Fast Healthcare Interoperability Resources (FHIR) standard for exchanging healthcare information electronically.</p>
+                                <ul style="padding-left: 20px;">
+                                    <li>RESTful API architecture</li>
+                                    <li>Modular components (Resources)</li>
+                                    <li>JSON/XML formats</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="border: 1px solid #ddd; padding: 20px; border-radius: 8px;">
+                                <h3 style="margin-top: 0; color: #2980b9;">DICOM</h3>
+                                <p>Digital Imaging and Communications in Medicine standard for medical imaging.</p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Image storage and transmission</li>
+                                    <li>Metadata standards</li>
+                                    <li>Workflow management</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="border: 1px solid #ddd; padding: 20px; border-radius: 8px;">
+                                <h3 style="margin-top: 0; color: #2980b9;">OMOP CDM</h3>
+                                <p>Observational Medical Outcomes Partnership Common Data Model for observational research.</p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Standardized vocabularies</li>
+                                    <li>Cross-institution research</li>
+                                    <li>Large-scale analytics</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="border: 1px solid #ddd; padding: 20px; border-radius: 8px;">
+                                <h3 style="margin-top: 0; color: #2980b9;">ICD/SNOMED/LOINC</h3>
+                                <p>Standardized coding systems for diagnoses, procedures, and observations.</p>
+                                <ul style="padding-left: 20px;">
+                                    <li>ICD-10/11 for diagnoses</li>
+                                    <li>SNOMED CT for clinical terms</li>
+                                    <li>LOINC for lab tests</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: #e0e9ef; padding: 30px; border-radius: 10px; margin-bottom: 40px; color: white;">
+                        <h2 style="margin-top: 0; font-size: 1.8em; border-bottom: 2px solid rgba(255,255,255,0.3); padding-bottom: 10px;">Future of Medical Data in AI</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px;">
+                                <h3 style="margin-top: 0;">Synthetic Data Generation</h3>
+                                <p>AI-created patient data that preserves statistical properties without real patient information.</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px;">
+                                <h3 style="margin-top: 0;">Federated Learning</h3>
+                                <p>Training models across decentralized devices without exchanging raw data.</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px;">
+                                <h3 style="margin-top: 0;">Blockchain for Health Data</h3>
+                                <p>Secure, immutable ledgers for patient-controlled data sharing.</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px;">
+                                <h3 style="margin-top: 0;">Continuous Learning Systems</h3>
+                                <p>AI models that safely adapt to new data in real clinical environments.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                   
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [ ];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics") ? "../AI in Healthcare.json" : "../AI in Healthcare.json";
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch AI for Robotics Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.AI_in_Healthcare;
+                        displayTopics(allTopics);
+                    }
+                    )
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+            </body>
+            </html>        

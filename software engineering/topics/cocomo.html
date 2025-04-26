@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../software engineering.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Software Engineering</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+        <main class="col-md-7 content">
+                    <h1>Software Cost Estimation Models (COCOMO)</h1>
+                    
+                    <section id="intro" style="margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">1. Introduction to Software Cost Estimation</h2>
+                        <p>Software cost estimation predicts the <span style="font-weight: bold; color: #e74c3c;">effort, time, and resources</span> required to develop a software project.</p>
+                        
+                        <div style="background-color: #fff; border-radius: 5px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3 style="color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Why Estimation Matters</h3>
+                            <ul>
+                                <li><strong>Budget Planning:</strong> Allocate resources effectively</li>
+                                <li><strong>Project Scheduling:</strong> Set realistic deadlines</li>
+                                <li><strong>Risk Management:</strong> Identify potential overruns early</li>
+                                <li><strong>Client Communication:</strong> Set proper expectations</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background-color: #fff; border-radius: 5px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3 style="color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Common Estimation Challenges</h3>
+                            <ul>
+                                <li>Changing requirements</li>
+                                <li>Technology uncertainties</li>
+                                <li>Team productivity variations</li>
+                                <li>Incomplete information at project start</li>
+                            </ul>
+                        </div>
+                    </section>
+                
+                    <div style="page-break-after: always; border-top: 1px dashed #ccc; margin: 30px 0;"></div>
+                
+                    <section id="models" style="margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">2. Types of Estimation Models</h2>
+                        
+                        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                            <tr>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">Model Type</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">Description</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">When to Use</th>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: left;"><strong>Algorithmic Models</strong></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Mathematical formulas based on project parameters</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">When historical data is available</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: left;"><strong>Expert Judgment</strong></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Based on experience of similar projects</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Early project phases</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: left;"><strong>Analogy Estimation</strong></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Compare with similar completed projects</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">When similar projects exist</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: left;"><strong>Bottom-Up Estimation</strong></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Estimate individual components then sum</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">When requirements are detailed</td>
+                            </tr>
+                        </table>
+                    </section>
+                
+                    <div style="page-break-after: always; border-top: 1px dashed #ccc; margin: 30px 0;"></div>
+                
+                    <section id="cocomo-intro" style="margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">3. Introduction to COCOMO</h2>
+                        <p>COCOMO (Constructive Cost Model) is an <span style="font-weight: bold; color: #e74c3c;">algorithmic software cost estimation model</span> developed by Barry Boehm in 1981.</p>
+                        
+                        <div style="background-color: #fff; border-radius: 5px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3 style="color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Key Characteristics</h3>
+                            <ul>
+                                <li>Based on <strong>lines of code (LOC)</strong> as primary input</li>
+                                <li>Uses <strong>effort multipliers</strong> for different project factors</li>
+                                <li>Provides estimates for <strong>effort, schedule, and cost</strong></li>
+                                <li>Has evolved through multiple versions (Basic, Intermediate, Detailed)</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background-color: #fff; border-radius: 5px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3 style="color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 5px;">COCOMO Versions</h3>
+                            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                                <tr>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">Version</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">Description</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">Complexity</th>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">COCOMO I (1981)</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Original model with three modes</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Basic to Intermediate</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">COCOMO II (1995)</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Updated for modern software practices</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">More detailed</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </section>
+                
+                    <div style="page-break-after: always; border-top: 1px dashed #ccc; margin: 30px 0;"></div>
+                
+                    <section id="cocomo-models" style="margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">4. COCOMO I Models</h2>
+                        
+                        <div style="display: flex; gap: 20px; margin: 20px 0;">
+                            <div style="flex: 1; background: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h3 style="color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Organic Mode</h3>
+                                <ul>
+                                    <li>Small teams</li>
+                                    <li>Familiar environment</li>
+                                    <li>Simple requirements</li>
+                                    <li>Example: Small business applications</li>
+                                </ul>
+                            </div>
+                            <div style="flex: 1; background: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h3 style="color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Semi-Detached Mode</h3>
+                                <ul>
+                                    <li>Medium teams</li>
+                                    <li>Mixed experience</li>
+                                    <li>Medium complexity</li>
+                                    <li>Example: Utility systems</li>
+                                </ul>
+                            </div>
+                            <div style="flex: 1; background: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h3 style="color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Embedded Mode</h3>
+                                <ul>
+                                    <li>Large teams</li>
+                                    <li>Complex requirements</li>
+                                    <li>Rigid constraints</li>
+                                    <li>Example: Real-time systems</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="background-color: #fff; border-radius: 5px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3 style="color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Basic COCOMO Equations</h3>
+                            <div style="font-family: 'Times New Roman', Times, serif; font-size: 1.2em; text-align: center; margin: 15px 0; padding: 10px; background-color: #f0f0f0; border-radius: 5px;">
+                                Effort (E) = a × (KLOC)<sup>b</sup> person-months
+                            </div>
+                            <div style="font-family: 'Times New Roman', Times, serif; font-size: 1.2em; text-align: center; margin: 15px 0; padding: 10px; background-color: #f0f0f0; border-radius: 5px;">
+                                Development Time (D) = c × (E)<sup>d</sup> months
+                            </div>
+                            
+                            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                                <tr>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">Mode</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">a</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">b</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">c</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">d</th>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Organic</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">2.4</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">1.05</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">2.5</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">0.38</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Semi-Detached</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">3.0</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">1.12</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">2.5</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">0.35</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Embedded</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">3.6</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">1.20</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">2.5</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">0.32</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </section>
+                
+                    <div style="page-break-after: always; border-top: 1px dashed #ccc; margin: 30px 0;"></div>
+                
+                    <section id="intermediate-cocomo" style="margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">5. Intermediate COCOMO</h2>
+                        <p>Extends Basic COCOMO by including <span style="font-weight: bold; color: #e74c3c;">15 cost drivers</span> that adjust the effort estimate.</p>
+                        
+                        <div style="background-color: #fff; border-radius: 5px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3 style="color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Intermediate COCOMO Formula</h3>
+                            <div style="font-family: 'Times New Roman', Times, serif; font-size: 1.2em; text-align: center; margin: 15px 0; padding: 10px; background-color: #f0f0f0; border-radius: 5px;">
+                                E<sub>intermediate</sub> = E<sub>basic</sub> × (Product of 15 Effort Multipliers)
+                            </div>
+                        </div>
+                        
+                        <div style="background-color: #fff; border-radius: 5px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3 style="color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Cost Driver Categories</h3>
+                            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                                <tr>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">Category</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">Cost Drivers</th>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Product Attributes</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Required reliability, Database size, Product complexity</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Hardware Attributes</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Execution time constraints, Main storage constraints</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Personnel Attributes</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Analyst capability, Programmer capability</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Project Attributes</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Use of modern practices, Required development schedule</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </section>
+                
+                    <div style="page-break-after: always; border-top: 1px dashed #ccc; margin: 30px 0;"></div>
+                
+                    <section id="detailed-cocomo" style="margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">6. Detailed COCOMO</h2>
+                        <p>Adds <span style="font-weight: bold; color: #e74c3c;">phase-sensitive effort multipliers</span> and three-level product hierarchy.</p>
+                        
+                        <div style="background-color: #fff; border-radius: 5px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3 style="color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Key Features</h3>
+                            <ul>
+                                <li>Estimates effort for each development phase separately</li>
+                                <li>Considers system, subsystem, and module levels</li>
+                                <li>Uses phase-specific cost drivers</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background-color: #fff; border-radius: 5px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3 style="color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Development Phases</h3>
+                            <ol>
+                                <li>Requirements and Product Design</li>
+                                <li>Detailed Design</li>
+                                <li>Code and Unit Test</li>
+                                <li>Integration and Test</li>
+                            </ol>
+                        </div>
+                    </section>
+                
+                    <div style="page-break-after: always; border-top: 1px dashed #ccc; margin: 30px 0;"></div>
+                
+                    <section id="cocomo2" style="margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">7. COCOMO II</h2>
+                        <p>Updated version addressing <span style="font-weight: bold; color: #e74c3c;">modern software development practices</span> like object-oriented programming and software reuse.</p>
+                        
+                        <div style="background-color: #fff; border-radius: 5px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3 style="color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 5px;">COCOMO II Models</h3>
+                            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                                <tr>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">Model</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">Purpose</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">When Used</th>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Application Composition</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">GUI-based applications</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Early prototyping</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Early Design</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Architecture evaluation</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Requirements phase</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Post-Architecture</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Detailed estimation</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">After design complete</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div style="background-color: #fff; border-radius: 5px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3 style="color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 5px;">COCOMO II Equation</h3>
+                            <div style="font-family: 'Times New Roman', Times, serif; font-size: 1.2em; text-align: center; margin: 15px 0; padding: 10px; background-color: #f0f0f0; border-radius: 5px;">
+                                PM = A × Size<sup>E</sup> × ∏EM<sub>i</sub>
+                            </div>
+                            <p>Where:</p>
+                            <ul>
+                                <li>PM = Person-months</li>
+                                <li>A = Calibration constant</li>
+                                <li>E = Scale factor exponent</li>
+                                <li>EM = Effort multipliers (17 factors)</li>
+                            </ul>
+                        </div>
+                    </section>
+                
+                    <div style="page-break-after: always; border-top: 1px dashed #ccc; margin: 30px 0;"></div>
+                
+                    <section id="calculation" style="margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">8. COCOMO Calculation Example</h2>
+                        
+                        <div style="counter-reset: step-counter;">
+                            <div style="position: relative; padding-left: 40px; margin-bottom: 15px;">
+                                <h3 style="color: #2c3e50;">Step 1: Estimate Project Size</h3>
+                                <p>Estimate the project will be 50,000 lines of code (50 KLOC)</p>
+                            </div>
+                            
+                            <div style="position: relative; padding-left: 40px; margin-bottom: 15px;">
+                                <h3 style="color: #2c3e50;">Step 2: Select Project Mode</h3>
+                                <p>Choose Semi-Detached mode (medium complexity)</p>
+                            </div>
+                            
+                            <div style="position: relative; padding-left: 40px; margin-bottom: 15px;">
+                                <h3 style="color: #2c3e50;">Step 3: Calculate Basic Effort</h3>
+                                <div style="font-family: 'Times New Roman', Times, serif; font-size: 1.2em; text-align: center; margin: 15px 0; padding: 10px; background-color: #f0f0f0; border-radius: 5px;">
+                                    E = 3.0 × (50)<sup>1.12</sup> = 3.0 × 79.6 ≈ 239 person-months
+                                </div>
+                            </div>
+                            
+                            <div style="position: relative; padding-left: 40px; margin-bottom: 15px;">
+                                <h3 style="color: #2c3e50;">Step 4: Calculate Development Time</h3>
+                                <div style="font-family: 'Times New Roman', Times, serif; font-size: 1.2em; text-align: center; margin: 15px 0; padding: 10px; background-color: #f0f0f0; border-radius: 5px;">
+                                    D = 2.5 × (239)<sup>0.35</sup> ≈ 2.5 × 5.5 ≈ 13.75 months
+                                </div>
+                            </div>
+                            
+                            <div style="position: relative; padding-left: 40px; margin-bottom: 15px;">
+                                <h3 style="color: #2c3e50;">Step 5: Adjust for Cost Drivers</h3>
+                                <p>If product complexity is high (multiplier = 1.15) and team experience is low (multiplier = 1.13):</p>
+                                <div style="font-family: 'Times New Roman', Times, serif; font-size: 1.2em; text-align: center; margin: 15px 0; padding: 10px; background-color: #f0f0f0; border-radius: 5px;">
+                                    Adjusted Effort = 239 × 1.15 × 1.13 ≈ 310 person-months
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <div style="page-break-after: always; border-top: 1px dashed #ccc; margin: 30px 0;"></div>
+                
+                    <section id="alternatives" style="margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">9. Alternative Estimation Models</h2>
+                        
+                        <div style="background-color: #fff; border-radius: 5px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3 style="color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Function Point Analysis</h3>
+                            <p>Measures functionality based on user requirements rather than LOC</p>
+                            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                                <tr>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">Component</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">Description</th>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Inputs</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">User inputs to the system</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Outputs</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">User outputs from the system</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Inquiries</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Interactive queries</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div style="background-color: #fff; border-radius: 5px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3 style="color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Use Case Points</h3>
+                            <p>Estimates based on use cases and technical/environmental factors</p>
+                        </div>
+                    </section>
+                
+                    <div style="page-break-after: always; border-top: 1px dashed #ccc; margin: 30px 0;"></div>
+                
+                    <section id="best-practices">
+                        <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">10. Best Practices for Software Estimation</h2>
+                        
+                        <ul>
+                            <li><strong>Use multiple techniques</strong> and compare results</li>
+                            <li><strong>Update estimates</strong> as project progresses</li>
+                            <li><strong>Include contingency</strong> for unexpected issues</li>
+                            <li><strong>Document assumptions</strong> behind estimates</li>
+                            <li><strong>Learn from past projects</strong> to improve accuracy</li>
+                        </ul>
+                    </section>
+                
+            </main>
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+    const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+    const searchBox = document.getElementById("searchBox");
+
+    if (!sidebarList || !sidebarGrid) {
+        console.error("Sidebar elements not found!");
+        return;
+    }
+
+    let allTopics = [];
+
+    // Adjust JSON path based on file location
+    let jsonPath = window.location.pathname.includes("/topics/") ? "../softwarengineering.json" : "softwarengineering.json";
+
+    console.log("Fetching JSON from:", jsonPath); // Debugging
+
+    // Fetch Software Engineering Topics from JSON
+    fetch(jsonPath)
+        .then(response => {
+            console.log("Fetch Response:", response);
+            if (!response.ok) {
+                throw new Error("Failed to load JSON: " + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Fetched Data:", data);
+            if (!data.Software_Engineering) {
+                throw new Error("JSON does not contain 'Software_Engineering' key!");
+            }
+            allTopics = data.Software_Engineering;
+            displayTopics(allTopics);
+        })
+        .catch(error => console.error("Error loading topics:", error));
+
+    // Function to Display Topics in Sidebar
+    function displayTopics(topics) {
+        if (!Array.isArray(topics)) {
+            console.error("Invalid topics data:", topics);
+            return;
+        }
+
+        sidebarList.innerHTML = ""; // Clear list
+        sidebarGrid.innerHTML = ""; // Clear grid
+
+        topics.forEach(topic => {
+            let topicLink = topic.link; // Keep the original link
+
+            // 🖥️ Desktop List View
+            let li = document.createElement("li");
+            li.className = "list-group-item list-group-item-action";
+            li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+            sidebarList.appendChild(li);
+
+            // 📱 Mobile Grid View (3 in a row)
+            let div = document.createElement("div");
+            div.className = "col-4"; // Bootstrap grid (3 in a row)
+            div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+            sidebarGrid.appendChild(div);
+        });
+    }
+
+    // Search Topics
+    if (searchBox) {
+        searchBox.addEventListener("input", function () {
+            const searchText = this.value.toLowerCase();
+            const filteredTopics = allTopics.filter(topic =>
+                topic.name.toLowerCase().includes(searchText)
+            );
+            displayTopics(filteredTopics);
+        });
+    }
+});
+
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

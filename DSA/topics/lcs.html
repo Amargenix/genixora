@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    <link rel="stylesheet" href="../dsa.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../dsa.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+            <main class="col-md-7 content">
+                <h1>🔗 Longest Common Subsequence (LCS) – Complete In-Depth Explanation</h1>
+            
+                <p>
+                    The **Longest Common Subsequence (LCS)** problem is a fundamental **dynamic programming**  
+                    problem that finds the **longest subsequence** present in **two given strings** in the **same order**  
+                    but **not necessarily contiguous**.
+                </p>
+            
+                <h2>📌 Why is LCS Important?</h2>
+                <ul>
+                    <li>✅ **Used in DNA sequence alignment & bioinformatics.**</li>
+                    <li>🚀 **Essential in diff tools (e.g., Git diff, text comparison).**</li>
+                    <li>🔍 **Helps in spell checkers & error correction.**</li>
+                    <li>📡 **Used in data compression algorithms.**</li>
+                </ul>
+            
+                <h1>📌 Understanding LCS with an Example</h1>
+                <p>
+                    Given two strings:
+                </p>
+                <pre><code>
+                    X = "ACDBE"
+                    Y = "ABCDE"
+                </code></pre>
+            
+                <p>
+                    The **Longest Common Subsequence** is **"ACDE"** (length = 4).
+                </p>
+            
+                <h3>🔹 **Key Points**</h3>
+                <ul>
+                    <li>✅ LCS is **not contiguous**, unlike substrings.</li>
+                    <li>📉 LCS is **not unique**; multiple valid solutions may exist.</li>
+                </ul>
+            
+                <h1>🛠 Solution Approaches</h1>
+            
+                <h2>📌 **1. Recursion (Brute Force) – O(2^N) Complexity**</h2>
+                <p>
+                    We compare characters from both strings:
+                </p>
+                <ul>
+                    <li>✅ If characters match, **include** them in the LCS.</li>
+                    <li>🔍 Otherwise, explore **both possibilities** (excluding either character).</li>
+                </ul>
+            
+                <pre><code>
+                int LCS(string X, string Y, int i, int j) {
+                    if (i == 0 || j == 0) return 0;
+            
+                    if (X[i - 1] == Y[j - 1]) 
+                        return 1 + LCS(X, Y, i - 1, j - 1);
+                    else 
+                        return max(LCS(X, Y, i - 1, j), LCS(X, Y, i, j - 1));
+                }
+                </code></pre>
+            
+                <p>🔴 **Disadvantage:** This solution is **exponential (O(2^N))** and infeasible for large inputs.</p>
+            
+                <h2>📌 **2. Dynamic Programming (O(N × M) Complexity)**</h2>
+                <p>
+                    Instead of recomputing results, we store them in a **2D table (memoization)**  
+                    to avoid redundant calculations.
+                </p>
+            
+                <h3>🔹 **Bottom-Up DP Approach (Tabulation Method)**</h3>
+                <pre><code>
+                int LCS_DP(string X, string Y) {
+                    int N = X.length(), M = Y.length();
+                    vector<vector<int>> dp(N + 1, vector<int>(M + 1, 0));
+            
+                    for (int i = 1; i <= N; i++) {
+                        for (int j = 1; j <= M; j++) {
+                            if (X[i - 1] == Y[j - 1]) 
+                                dp[i][j] = 1 + dp[i - 1][j - 1];
+                            else 
+                                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]);
+                        }
+                    }
+                    return dp[N][M];
+                }
+                </code></pre>
+            
+                <h2>📌 **3. Space Optimized DP (O(M) Complexity)**</h2>
+                <p>
+                    Instead of using a **2D array**, we use a **1D array** and update values row-wise.
+                </p>
+            
+                <pre><code>
+                int LCS_Optimized(string X, string Y) {
+                    int N = X.length(), M = Y.length();
+                    vector<int> prev(M + 1, 0), curr(M + 1, 0);
+            
+                    for (int i = 1; i <= N; i++) {
+                        for (int j = 1; j <= M; j++) {
+                            if (X[i - 1] == Y[j - 1]) 
+                                curr[j] = 1 + prev[j - 1];
+                            else 
+                                curr[j] = max(prev[j], curr[j - 1]);
+                        }
+                        prev = curr;
+                    }
+                    return prev[M];
+                }
+                </code></pre>
+            
+                <h1>📌 Printing the LCS Sequence</h1>
+                <p>Using **backtracking**, we reconstruct the LCS from the DP table.</p>
+            
+                <pre><code>
+                string printLCS(string X, string Y) {
+                    int N = X.length(), M = Y.length();
+                    vector<vector<int>> dp(N + 1, vector<int>(M + 1, 0));
+            
+                    for (int i = 1; i <= N; i++) {
+                        for (int j = 1; j <= M; j++) {
+                            if (X[i - 1] == Y[j - 1]) 
+                                dp[i][j] = 1 + dp[i - 1][j - 1];
+                            else 
+                                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]);
+                        }
+                    }
+            
+                    int i = N, j = M;
+                    string LCS_String = "";
+            
+                    while (i > 0 && j > 0) {
+                        if (X[i - 1] == Y[j - 1]) {
+                            LCS_String += X[i - 1];
+                            i--; j--;
+                        } else if (dp[i - 1][j] > dp[i][j - 1]) {
+                            i--;
+                        } else {
+                            j--;
+                        }
+                    }
+                    reverse(LCS_String.begin(), LCS_String.end());
+                    return LCS_String;
+                }
+                </code></pre>
+            
+                <h1>⏳ Time Complexity Analysis</h1>
+                <table border="1">
+                    <tr>
+                        <th>Algorithm</th>
+                        <th>Time Complexity</th>
+                    </tr>
+                    <tr>
+                        <td>Recursive (Brute Force)</td>
+                        <td>O(2^N)</td>
+                    </tr>
+                    <tr>
+                        <td>Dynamic Programming (2D Table)</td>
+                        <td>O(N × M)</td>
+                    </tr>
+                    <tr>
+                        <td>Space Optimized DP (1D Table)</td>
+                        <td>O(N × M) with O(M) space</td>
+                    </tr>
+                </table>
+            
+                <h1>🌍 Real-World Applications of LCS</h1>
+                <ul>
+                    <li>📡 **Bioinformatics** – DNA sequence alignment.</li>
+                    <li>📝 **Text Comparison** – Finding differences in documents.</li>
+                    <li>🔍 **Data Compression** – Detecting repeated sequences.</li>
+                    <li>💡 **Error Detection & Correction** – Spell checkers & auto-correct.</li>
+                </ul>
+            
+                <h2>🔗 Next Topics</h2>
+                <ul class="nexttopics-container">
+                    <li><a href="edit_distance.html">✂️ Edit Distance (Levenshtein Distance)</a></li>
+                    <li><a href="lis.html">📏 Longest Increasing Subsequence (LIS)</a></li>
+                    <li><a href="suffix_array.html">📑 Suffix Array & LCP</a></li>
+                </ul>
+            </main>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../dsa.json" : "dsa.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.DSA;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    

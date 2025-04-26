@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Robotics</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>AI in Healthcare</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <h1>AI in Mental Health: Revolutionizing Psychological Care</h1>
+                    
+                    
+                     
+                
+                    <section id="intro" style="margin-bottom: 30px; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #4a4e69; border-left: 4px solid #9a8c98; padding-left: 10px;">1. Introduction to AI in Mental Health</h2>
+                        <p style="text-align: justify;">Artificial Intelligence is transforming mental healthcare by providing innovative tools for assessment, diagnosis, treatment, and ongoing support. AI applications in mental health range from chatbots providing cognitive behavioral therapy to advanced algorithms predicting suicide risk, helping to address the global mental health crisis where nearly 1 billion people live with a mental disorder (WHO).</p>
+                        
+                        <div style="background-color: #eaf2f8; padding: 15px; border-radius: 5px; margin-top: 15px;">
+                            <h3 style="color: #3d5a80; margin-top: 0;">Global Mental Health Crisis</h3>
+                            <ul style="columns: 2; column-gap: 30px;">
+                                <li>Depression affects 280 million people worldwide</li>
+                                <li>Only about 1 in 3 people with depression receive treatment</li>
+                                <li>AI can help bridge the treatment gap of 40-70% globally</li>
+                                <li>Mental health apps market to reach $26 billion by 2027</li>
+                                <li>AI therapy bots can serve 10x more patients than human therapists</li>
+                                <li>75% of mental health conditions begin before age 24</li>
+                            </ul>
+                        </div>
+                    </section>
+                
+                    <section id="applications" style="margin-bottom: 30px; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #4a4e69; border-left: 4px solid #9a8c98; padding-left: 10px;">2. Key Applications of AI in Mental Health</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div style="background-color: #f8edeb; padding: 15px; border-radius: 8px; border-top: 3px solid #f28482;">
+                                <h3 style="color: #f28482; margin-top: 0;">Diagnostic Tools</h3>
+                                <p>AI analyzes speech patterns, facial expressions, typing behavior, and social media activity to detect early signs of mental health conditions like depression, anxiety, and PTSD with up to 85% accuracy.</p>
+                            </div>
+                            
+                            <div style="background-color: #f8edeb; padding: 15px; border-radius: 8px; border-top: 3px solid #f28482;">
+                                <h3 style="color: #f28482; margin-top: 0;">Therapeutic Chatbots</h3>
+                                <p>24/7 available conversational agents providing CBT, DBT, and other evidence-based therapies. Examples include Woebot and Wysa with demonstrated clinical effectiveness.</p>
+                            </div>
+                            
+                            <div style="background-color: #f8edeb; padding: 15px; border-radius: 8px; border-top: 3px solid #f28482;">
+                                <h3 style="color: #f28482; margin-top: 0;">Personalized Treatment</h3>
+                                <p>Machine learning algorithms recommend customized treatment plans based on individual symptoms, genetics, lifestyle, and treatment history.</p>
+                            </div>
+                            
+                            <div style="background-color: #f8edeb; padding: 15px; border-radius: 8px; border-top: 3px solid #f28482;">
+                                <h3 style="color: #f28482; margin-top: 0;">Crisis Intervention</h3>
+                                <p>AI systems detect suicide risk from language patterns and alert human responders. Some can predict suicide attempts weeks in advance.</p>
+                            </div>
+                            
+                            <div style="background-color: #f8edeb; padding: 15px; border-radius: 8px; border-top: 3px solid #f28482;">
+                                <h3 style="color: #f28482; margin-top: 0;">Medication Management</h3>
+                                <p>AI tracks medication adherence and side effects, adjusting psychiatric prescriptions in collaboration with clinicians.</p>
+                            </div>
+                            
+                            <div style="background-color: #f8edeb; padding: 15px; border-radius: 8px; border-top: 3px solid #f28482;">
+                                <h3 style="color: #f28482; margin-top: 0;">Mental Health Monitoring</h3>
+                                <p>Wearables and apps continuously assess mood, stress, and cognitive function through voice, movement, and physiological signals.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section id="technologies" style="margin-bottom: 30px; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #4a4e69; border-left: 4px solid #9a8c98; padding-left: 10px;">3. Core Technologies Powering Mental Health AI</h2>
+                        
+                        <div style="overflow-x: auto;">
+                            <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+                                <thead>
+                                    <tr style="background-color: #9a8c98; color: white;">
+                                        <th style="padding: 12px; text-align: left; min-width: 150px;">Technology</th>
+                                        <th style="padding: 12px; text-align: left;">Description</th>
+                                        <th style="padding: 12px; text-align: left;">Application Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #ddd;">
+                                        <td style="padding: 12px;"><strong>Natural Language Processing</strong></td>
+                                        <td style="padding: 12px;">Analyzes speech and text for emotional tone, word choice, and cognitive patterns</td>
+                                        <td style="padding: 12px;">Detecting depression from social media posts</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #ddd;">
+                                        <td style="padding: 12px;"><strong>Affective Computing</strong></td>
+                                        <td style="padding: 12px;">Interprets facial expressions, voice tone, and physiological signals</td>
+                                        <td style="padding: 12px;">Mood tracking through smartphone cameras</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #ddd;">
+                                        <td style="padding: 12px;"><strong>Predictive Analytics</strong></td>
+                                        <td style="padding: 12px;">Identifies risk factors and predicts mental health episodes</td>
+                                        <td style="padding: 12px;">Forecasting bipolar disorder manic episodes</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #ddd;">
+                                        <td style="padding: 12px;"><strong>Generative AI</strong></td>
+                                        <td style="padding: 12px;">Creates personalized therapeutic content and simulations</td>
+                                        <td style="padding: 12px;">Customized exposure therapy for PTSD</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #ddd;">
+                                        <td style="padding: 12px;"><strong>Reinforcement Learning</strong></td>
+                                        <td style="padding: 12px;">Adapts interventions based on user responses over time</td>
+                                        <td style="padding: 12px;">Personalizing chatbot therapy approaches</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 12px;"><strong>Computer Vision</strong></td>
+                                        <td style="padding: 12px;">Analyzes micro-expressions and body language</td>
+                                        <td style="padding: 12px;">Detecting anxiety during virtual therapy sessions</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                
+                    <section id="benefits" style="margin-bottom: 30px; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #4a4e69; border-left: 4px solid #9a8c98; padding-left: 10px;">4. Benefits of AI in Mental Healthcare</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; margin-top: 20px;">
+                            <div style="background-color: #e8fccf; padding: 15px; border-radius: 8px;">
+                                <h3 style="color: #588157; margin-top: 0;">Accessibility</h3>
+                                <p>24/7 availability removes barriers to care for rural populations and those unable to afford traditional therapy.</p>
+                            </div>
+                            
+                            <div style="background-color: #e8fccf; padding: 15px; border-radius: 8px;">
+                                <h3 style="color: #588157; margin-top: 0;">Early Detection</h3>
+                                <p>Identifies subtle warning signs long before clinical symptoms emerge, enabling prevention.</p>
+                            </div>
+                            
+                            <div style="background-color: #e8fccf; padding: 15px; border-radius: 8px;">
+                                <h3 style="color: #588157; margin-top: 0;">Reduced Stigma</h3>
+                                <p>Anonymous digital interactions encourage help-seeking among those uncomfortable with traditional care.</p>
+                            </div>
+                            
+                            <div style="background-color: #e8fccf; padding: 15px; border-radius: 8px;">
+                                <h3 style="color: #588157; margin-top: 0;">Consistency</h3>
+                                <p>Provides standardized, evidence-based care unaffected by human variability or fatigue.</p>
+                            </div>
+                            
+                            <div style="background-color: #e8fccf; padding: 15px; border-radius: 8px;">
+                                <h3 style="color: #588157; margin-top: 0;">Data Integration</h3>
+                                <p>Combines information from multiple sources (wearables, EHRs, apps) for holistic assessment.</p>
+                            </div>
+                            
+                            <div style="background-color: #e8fccf; padding: 15px; border-radius: 8px;">
+                                <h3 style="color: #588157; margin-top: 0;">Cost Reduction</h3>
+                                <p>Lowers healthcare costs by preventing crises and reducing unnecessary interventions.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="background-color: #d8f3dc; padding: 15px; border-radius: 8px; margin-top: 20px;">
+                            <h3 style="color: #2d6a4f; margin-top: 0;">Clinical Effectiveness</h3>
+                            <p>Studies show AI interventions can be as effective as human-delivered therapy for certain conditions:</p>
+                            <ul style="columns: 2; column-gap: 30px;">
+                                <li>70% reduction in depression symptoms (Woebot)</li>
+                                <li>60% improvement in anxiety measures (Wysa)</li>
+                                <li>85% accuracy in suicide risk prediction</li>
+                                <li>40% better medication adherence with AI reminders</li>
+                                <li>3x faster PTSD symptom reduction with VR+AI therapy</li>
+                                <li>92% user satisfaction with AI therapy bots</li>
+                            </ul>
+                        </div>
+                    </section>
+                
+                    <section id="challenges" style="margin-bottom: 30px; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #4a4e69; border-left: 4px solid #9a8c98; padding-left: 10px;">5. Challenges and Ethical Considerations</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div style="background-color: #ffddd2; padding: 15px; border-radius: 8px;">
+                                <h3 style="color: #d00000; margin-top: 0;">Privacy Concerns</h3>
+                                <p>Mental health data is extremely sensitive. Ensuring secure storage and ethical use of personal information is critical.</p>
+                            </div>
+                            
+                            <div style="background-color: #ffddd2; padding: 15px; border-radius: 8px;">
+                                <h3 style="color: #d00000; margin-top: 0;">Algorithmic Bias</h3>
+                                <p>AI systems may perform differently across demographics if trained on non-representative data.</p>
+                            </div>
+                            
+                            <div style="background-color: #ffddd2; padding: 15px; border-radius: 8px;">
+                                <h3 style="color: #d00000; margin-top: 0;">Over-Reliance Risk</h3>
+                                <p>Potential for users to depend solely on AI rather than seeking human care when needed.</p>
+                            </div>
+                            
+                            <div style="background-color: #ffddd2; padding: 15px; border-radius: 8px;">
+                                <h3 style="color: #d00000; margin-top: 0;">Regulatory Gaps</h3>
+                                <p>Most mental health apps aren't FDA-approved as medical devices, creating quality concerns.</p>
+                            </div>
+                            
+                            <div style="background-color: #ffddd2; padding: 15px; border-radius: 8px;">
+                                <h3 style="color: #d00000; margin-top: 0;">Clinical Validation</h3>
+                                <p>Many AI tools lack rigorous clinical trials proving their effectiveness compared to standard care.</p>
+                            </div>
+                            
+                            <div style="background-color: #ffddd2; padding: 15px; border-radius: 8px;">
+                                <h3 style="color: #d00000; margin-top: 0;">Human Connection</h3>
+                                <p>Therapeutic alliance is crucial in mental health - can AI truly replicate this human element?</p>
+                            </div>
+                        </div>
+                        
+                        <div style="background-color: #fff3b0; padding: 15px; border-radius: 8px; margin-top: 20px;">
+                            <h3 style="color: #9d0208; margin-top: 0;">Current Regulatory Landscape</h3>
+                            <ul style="columns: 2; column-gap: 30px;">
+                                <li>FDA has cleared only about 40 AI mental health tools</li>
+                                <li>EU AI Act classifies mental health AI as high-risk</li>
+                                <li>HIPAA compliance required for US healthcare data</li>
+                                <li>GDPR imposes strict rules on EU mental health data</li>
+                                <li>Most app stores don't verify mental health claims</li>
+                                <li>Professional licensing boards developing teletherapy rules</li>
+                            </ul>
+                        </div>
+                    </section>
+                
+                    <section id="case-studies" style="margin-bottom: 30px; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #4a4e69; border-left: 4px solid #9a8c98; padding-left: 10px;">6. Case Studies and Real-World Implementations</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
+                                <div style="background-color: #4a4e69; color: white; padding: 10px;">
+                                    <h3 style="margin: 0;">Woebot Health</h3>
+                                </div>
+                                <div style="padding: 15px;">
+                                    <p>CBT-based chatbot demonstrating:</p>
+                                    <ul>
+                                        <li>70% reduction in depression symptoms</li>
+                                        <li>Engagement rates 3x higher than mental health apps</li>
+                                        <li>FDA Breakthrough Device designation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
+                                <div style="background-color: #4a4e69; color: white; padding: 10px;">
+                                    <h3 style="margin: 0;">Kintsugi</h3>
+                                </div>
+                                <div style="padding: 15px;">
+                                    <p>Voice analysis AI detecting depression:</p>
+                                    <ul>
+                                        <li>80% accuracy in identifying depression</li>
+                                        <li>20-second voice sample analysis</li>
+                                        <li>Integrated with major EHR systems</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
+                                <div style="background-color: #4a4e69; color: white; padding: 10px;">
+                                    <h3 style="margin: 0;">Mindstrong</h3>
+                                </div>
+                                <div style="padding: 15px;">
+                                    <p>Smartphone behavior monitoring:</p>
+                                    <ul>
+                                        <li>Detects mood changes via typing patterns</li>
+                                        <li>Used in 12 health systems</li>
+                                        <li>50% reduction in hospitalizations</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section id="future" style="margin-bottom: 30px; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #4a4e69; border-left: 4px solid #9a8c98; padding-left: 10px;">7. Future Trends in AI Mental Health</h2>
+                        
+                        <div style="background-color: #e2d5e6; padding: 20px; border-radius: 8px; margin-top: 20px;">
+                            <h3 style="color: #5e2b97; margin-top: 0;">Emerging Directions</h3>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px;">
+                                <div style="background-color: white; padding: 10px; border-radius: 5px;">
+                                    <h4 style="margin: 0 0 5px 0; color: #5e2b97;">Multimodal Integration</h4>
+                                    <p>Combining voice, text, facial, and physiological data for comprehensive assessment</p>
+                                </div>
+                                <div style="background-color: white; padding: 10px; border-radius: 5px;">
+                                    <h4 style="margin: 0 0 5px 0; color: #5e2b97;">Digital Phenotyping</h4>
+                                    <p>Continuous mental state monitoring through smartphone and wearable data</p>
+                                </div>
+                                <div style="background-color: white; padding: 10px; border-radius: 5px;">
+                                    <h4 style="margin: 0 0 5px 0; color: #5e2b97;">Precision Psychiatry</h4>
+                                    <p>AI-driven personalized treatment matching based on biomarkers and genetics</p>
+                                </div>
+                                <div style="background-color: white; padding: 10px; border-radius: 5px;">
+                                    <h4 style="margin: 0 0 5px 0; color: #5e2b97;">VR Therapy</h4>
+                                    <p>Immersive environments with AI adapting scenarios in real-time</p>
+                                </div>
+                                <div style="background-color: white; padding: 10px; border-radius: 5px;">
+                                    <h4 style="margin: 0 0 5px 0; color: #5e2b97;">Emotionally Intelligent AI</h4>
+                                    <p>Systems that better understand and respond to complex emotional states</p>
+                                </div>
+                                <div style="background-color: white; padding: 10px; border-radius: 5px;">
+                                    <h4 style="margin: 0 0 5px 0; color: #5e2b97;">Global Mental Health</h4>
+                                    <p>AI solutions scaling mental healthcare in developing countries</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="background-color: #cddafd; padding: 15px; border-radius: 8px; margin-top: 20px;">
+                            <h3 style="color: #1d3557; margin-top: 0;">Market Projections</h3>
+                            <ul style="columns: 2; column-gap: 30px;">
+                                <li>AI mental health market to grow at 37.1% CAGR through 2030</li>
+                                <li>80% of psychiatrists expected to use AI tools by 2027</li>
+                                <li>50% of mental health apps to incorporate AI by 2025</li>
+                                <li>AI could address 30% of global mental health treatment gap</li>
+                                <li>70% of patients open to AI-assisted therapy</li>
+                                <li>$2.5 billion VC investment in mental health AI since 2020</li>
+                            </ul>
+                        </div>
+                    </section>
+                
+                    <div style="background-color: #b4bcf1; color: white; padding: 25px; border-radius: 8px; margin-top: 30px;">
+                        <h2 style="margin-top: 0; color: #f2e9e4;">Conclusion: The Future of AI in Mental Health</h2>
+                        <p>AI is poised to revolutionize mental healthcare by making services more accessible, affordable, and effective. While not a replacement for human clinicians, AI serves as a powerful complement - extending care to underserved populations, providing early intervention, and offering continuous support between therapy sessions. As technology advances and ethical frameworks develop, AI will likely become an integral part of mental healthcare systems worldwide, helping to address the global mental health crisis.</p>
+                        <p style="font-style: italic; border-top: 1px solid #9a8c98; padding-top: 15px; margin-bottom: 0;">"The greatest potential of AI in mental health lies not in replacing human connection, but in scaling the human touch to those who need it most."</p>
+                    </div>
+                </div>
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [ ];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics") ? "../AI in Healthcare.json" : "../AI in Healthcare.json";
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch AI for Robotics Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.AI_in_Healthcare;
+                        displayTopics(allTopics);
+                    }
+                    )
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+            </body>
+            </html>        

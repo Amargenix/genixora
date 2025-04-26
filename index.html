@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amargenix - Study Platform</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    
+    
+    
+</head>
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+     <!-- Load Navbar and Footer -->
+     <script>
+        fetch("navbar.html").then(response => response.text()).then(data => {
+            document.getElementById("navbar-placeholder").innerHTML = data;
+        });
+
+        fetch("footer.html").then(response => response.text()).then(data => {
+            document.getElementById("footer-placeholder").innerHTML = data;
+        });
+    </script>
+     <!-- Bootstrap 5 JS -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Hero Section -->
+    <header class="bg-primary text-white text-center py-5">
+        <h1>Welcome to Amargenix</h1>
+        <p>Master Programming, Engineering, and Competitive Exams</p>
+    </header>
+
+    
+
+    <!-- Search Bar -->
+    <div class="container my-4">
+        <input type="text" id="searchBox" class="form-control" placeholder="Search for topics...">
+    </div>
+
+    <!-- Topics Section -->
+    <div class="container">
+        <h2 class="text-center">Explore Topics</h2>
+        <div class="row" id="topics-list"></div>
+    </div>
+
+
+    <div id="category-container">
+        <!-- Categories will be loaded here -->
+    </div>
+    <!-- Load Chatbot Dynamically -->
+     <!-- Load Chatbot on All Pages -->
+
+
+
+
+   
+
+
+      
+     <style>
+       
+    </style>
+    
+    <!-- Floating button to open chatbot -->
+    <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+    </div>
+    
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-container");
+            let button = document.getElementById("open-chatbot");
+    
+            if (!chatbot.classList.contains("active")) {
+                chatbot.classList.add("active");
+                button.style.display = "none"; // Hide button when chatbot is open
+            } else {
+                chatbot.classList.remove("active");
+                setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+            }
+        }
+    
+        // Load chatbot HTML dynamically
+        fetch("/chatbot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("chatbot-container").innerHTML += html;
+    
+            // Execute chatbot script after inserting HTML
+            let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+            for (let script of scripts) {
+                let newScript = document.createElement("script");
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript);
+            }
+        })
+        .catch(error => console.error("Error loading chatbot:", error));
+    </script>
+    
+    
+
+
+
+
+    
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+   
+    <script src="script.js"></script>
+
+   
+
+</body>
+</html>

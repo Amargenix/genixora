@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    <link rel="stylesheet" href="../dsa.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../dsa.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+
+
+            <main class="col-md-7 content">
+                <h1>📐 Computational Geometry – Comprehensive Study Guide</h1>
+            
+                <p>
+                    **Computational Geometry** is the study of **geometric algorithms**  
+                    that solve problems related to points, lines, and shapes in 2D and 3D space.
+                </p>
+            
+                <h2>⚡ Why is Computational Geometry Important?</h2>
+                <ul>
+                    <li>🚀 **Used in Computer Graphics & Image Processing**.</li>
+                    <li>📌 **Essential for AI & Robotics (Path Planning, Object Detection)**.</li>
+                    <li>📡 **Used in Geographic Information Systems (GIS)**.</li>
+                    <li>🔍 **Helps in 3D Modeling & Simulations**.</li>
+                </ul>
+            
+                <h1>📌 Basic Geometric Concepts</h1>
+            
+                <h2>1️⃣ **Points & Coordinate Geometry**</h2>
+                <p>Each point is represented as **(x, y) in 2D space**.</p>
+            
+                <h2>2️⃣ **Distance Between Two Points**</h2>
+                <pre><code>
+                double distance(Point p1, Point p2) {
+                    return sqrt(pow(p2.x - p1.x, 2) + pow(p2.y - p1.y, 2));
+                }
+                </code></pre>
+            
+                <h2>3️⃣ **Line Equation (y = mx + c)**</h2>
+                <p>Formula to find slope **m**:</p>
+                <pre><code>
+                m = (y2 - y1) / (x2 - x1);
+                </code></pre>
+            
+                <h2>4️⃣ **Area of a Triangle (Using Determinant)**</h2>
+                <pre><code>
+                double triangleArea(Point p1, Point p2, Point p3) {
+                    return abs((p1.x * (p2.y - p3.y) + 
+                                p2.x * (p3.y - p1.y) + 
+                                p3.x * (p1.y - p2.y)) / 2.0);
+                }
+                </code></pre>
+            
+                <h1>🔄 Convex Hull Algorithms</h1>
+            
+                <h2>📌 **1. Graham’s Scan Algorithm (O(n log n))**</h2>
+                <p>Finds the smallest **convex polygon** that encloses all given points.</p>
+                <pre><code>
+                bool ccw(Point a, Point b, Point c) {
+                    return (b.y - a.y) * (c.x - b.x) > (b.x - a.x) * (c.y - b.y);
+                }
+            
+                vector<Point> convexHull(vector<Point>& points) {
+                    sort(points.begin(), points.end(), [](Point a, Point b) {
+                        return a.x < b.x || (a.x == b.x && a.y < b.y);
+                    });
+            
+                    vector<Point> hull;
+                    for (int i = 0; i < 2; i++) {
+                        int start = hull.size();
+                        for (auto& p : points) {
+                            while (hull.size() >= start + 2 && !ccw(hull[hull.size()-2], hull.back(), p))
+                                hull.pop_back();
+                            hull.push_back(p);
+                        }
+                        hull.pop_back();
+                        reverse(points.begin(), points.end());
+                    }
+                    return hull;
+                }
+                </code></pre>
+            
+                <h2>📌 **2. Jarvis March Algorithm (O(nh))**</h2>
+                <p>Finds the convex hull by selecting the **leftmost point** and iteratively  
+                adding the next extreme point.</p>
+            
+                <h1>🛠️ Line Intersection & Closest Pair of Points</h1>
+            
+                <h2>📌 **1. Checking if Two Lines Intersect**</h2>
+                <pre><code>
+                bool doIntersect(Point p1, Point q1, Point p2, Point q2) {
+                    return (ccw(p1, q1, p2) != ccw(p1, q1, q2)) && 
+                           (ccw(p2, q2, p1) != ccw(p2, q2, q1));
+                }
+                </code></pre>
+            
+                <h2>📌 **2. Closest Pair of Points Algorithm (O(n log n))**</h2>
+                <pre><code>
+                double closestPair(vector<Point>& points) {
+                    sort(points.begin(), points.end(), [](Point a, Point b) { return a.x < b.x; });
+                    return closestUtil(points, 0, points.size() - 1);
+                }
+                </code></pre>
+            
+                <h1>🌀 Triangulation & Voronoi Diagrams</h1>
+                <p>
+                    **Triangulation** is the process of **dividing a shape into triangles**,  
+                    making computations easier.
+                </p>
+            
+                <h1>🌍 Real-World Applications of Computational Geometry</h1>
+                <ul>
+                    <li>📡 **Geographic Information Systems (GIS)** – Mapping and navigation.</li>
+                    <li>🎮 **Game Development** – Collision detection & physics engines.</li>
+                    <li>🤖 **Artificial Intelligence & Robotics** – Object detection & pathfinding.</li>
+                    <li>🖼️ **Computer Graphics & 3D Modeling** – Used in rendering 3D shapes.</li>
+                </ul>
+            
+                <h1>⏳ Time Complexity Analysis</h1>
+                <table border="1">
+                    <tr>
+                        <th>Algorithm</th>
+                        <th>Time Complexity</th>
+                    </tr>
+                    <tr>
+                        <td>Convex Hull (Graham’s Scan)</td>
+                        <td>O(n log n)</td>
+                    </tr>
+                    <tr>
+                        <td>Closest Pair of Points</td>
+                        <td>O(n log n)</td>
+                    </tr>
+                    <tr>
+                        <td>Line Intersection Check</td>
+                        <td>O(1)</td>
+                    </tr>
+                    <tr>
+                        <td>Voronoi Diagram</td>
+                        <td>O(n log n)</td>
+                    </tr>
+                </table>
+            
+                <h2>🔗 Next Topics</h2>
+                <ul class="nexttopics-container">
+                    <li><a href="graph_algorithms.html">📡 Graph Algorithms</a></li>
+                    <li><a href="segment_trees.html">🌳 Segment Trees</a></li>
+                    <li><a href="convex_hull.html">🛠️ Convex Hull Algorithms</a></li>
+                </ul>
+            </main>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../dsa.json" : "dsa.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.DSA;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    

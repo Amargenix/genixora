@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer Network</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/allsubject.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Computer Networks</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+               <h1>Network Devices in Computer Networks</h1>
+                
+                <div style="background-color: #e8f4f8; border-left: 5px solid #3498db; padding: 20px; margin-bottom: 30px; border-radius: 0 8px 8px 0;">
+                    <p style="font-size: 18px; margin: 0;">Network devices are physical or virtual components that enable communication and interaction between devices on a computer network.</p>
+                </div>
+                
+                <h2 style="color: #2980b9; margin-top: 40px; border-left: 4px solid #3498db; padding-left: 15px; font-size: 24px;">Common Network Devices</h2>
+                
+                <!-- Hub -->
+                <div style="background-color: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <h3 style="color: #16a085; font-size: 22px; margin-top: 0;">1. Hub</h3>
+                    <ul style="padding-left: 20px;">
+                        <li><strong>Function:</strong> Basic networking device that connects multiple Ethernet devices</li>
+                        <li><strong>Layer:</strong> Physical layer (Layer 1)</li>
+                        <li><strong>Operation:</strong> Broadcasts all data to all connected devices</li>
+                        <li><strong>Types:</strong> Passive, Active, Intelligent</li>
+                        <li><strong>Advantages:</strong> Simple, inexpensive, easy to install</li>
+                        <li><strong>Disadvantages:</strong> Creates collision domains, no traffic filtering, security risks</li>
+                    </ul>
+                </div>
+                
+                <!-- Switch -->
+                <div style="background-color: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <h3 style="color: #16a085; font-size: 22px; margin-top: 0;">2. Switch</h3>
+                    <ul style="padding-left: 20px;">
+                        <li><strong>Function:</strong> Intelligent device that connects devices on a LAN</li>
+                        <li><strong>Layer:</strong> Data Link layer (Layer 2), some are Layer 3</li>
+                        <li><strong>Operation:</strong> Uses MAC addresses to forward frames to correct destination</li>
+                        <li><strong>Types:</strong> Unmanaged, Managed, Smart, PoE, Layer 3</li>
+                        <li><strong>Advantages:</strong> Creates separate collision domains, improves network performance</li>
+                        <li><strong>Disadvantages:</strong> More expensive than hubs, configuration can be complex</li>
+                    </ul>
+                    
+                    <div style="background-color: #f9f9f9; border-left: 3px solid #3498db; padding: 10px; margin-top: 15px;">
+                        <p style="margin: 0; font-style: italic;">Switch vs Hub: Switches are more intelligent than hubs as they can identify which device is connected to which port and send data only to the intended recipient.</p>
+                    </div>
+                </div>
+                
+                <!-- Router -->
+                <div style="background-color: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <h3 style="color: #16a085; font-size: 22px; margin-top: 0;">3. Router</h3>
+                    <ul style="padding-left: 20px;">
+                        <li><strong>Function:</strong> Connects multiple networks and routes packets between them</li>
+                        <li><strong>Layer:</strong> Network layer (Layer 3)</li>
+                        <li><strong>Operation:</strong> Uses IP addresses to determine best path for data packets</li>
+                        <li><strong>Types:</strong> Wired, Wireless, Core, Edge, Virtual</li>
+                        <li><strong>Features:</strong> NAT, Firewall, DHCP, VPN, QoS</li>
+                        <li><strong>Advantages:</strong> Connects different networks, provides security features</li>
+                    </ul>
+                </div>
+                
+                <!-- Bridge -->
+                <div style="background-color: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <h3 style="color: #16a085; font-size: 22px; margin-top: 0;">4. Bridge</h3>
+                    <ul style="padding-left: 20px;">
+                        <li><strong>Function:</strong> Connects two network segments and filters traffic</li>
+                        <li><strong>Layer:</strong> Data Link layer (Layer 2)</li>
+                        <li><strong>Operation:</strong> Uses MAC addresses to forward or block frames</li>
+                        <li><strong>Types:</strong> Transparent, Source-routing, Translational</li>
+                        <li><strong>Advantages:</strong> Reduces collision domains, filters traffic</li>
+                    </ul>
+                </div>
+                
+                <!-- Gateway -->
+                <div style="background-color: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <h3 style="color: #16a085; font-size: 22px; margin-top: 0;">5. Gateway</h3>
+                    <ul style="padding-left: 20px;">
+                        <li><strong>Function:</strong> Connects networks with different protocols or architectures</li>
+                        <li><strong>Layer:</strong> Works across all layers (1-7)</li>
+                        <li><strong>Operation:</strong> Protocol conversion between different networks</li>
+                        <li><strong>Examples:</strong> Email gateway, VoIP gateway, cloud gateway</li>
+                        <li><strong>Advantages:</strong> Enables communication between dissimilar networks</li>
+                    </ul>
+                </div>
+                
+                <!-- Modem -->
+                <div style="background-color: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <h3 style="color: #16a085; font-size: 22px; margin-top: 0;">6. Modem</h3>
+                    <ul style="padding-left: 20px;">
+                        <li><strong>Function:</strong> Modulates and demodulates signals for transmission over telephone lines</li>
+                        <li><strong>Layer:</strong> Physical layer (Layer 1)</li>
+                        <li><strong>Types:</strong> DSL, Cable, Dial-up, Cellular</li>
+                        <li><strong>Operation:</strong> Converts digital signals to analog and vice versa</li>
+                    </ul>
+                </div>
+                
+                <h2 style="color: #2980b9; margin-top: 40px; border-left: 4px solid #3498db; padding-left: 15px; font-size: 24px;">Specialized Network Devices</h2>
+                
+                <!-- Firewall -->
+                <div style="background-color: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <h3 style="color: #16a085; font-size: 22px; margin-top: 0;">Firewall</h3>
+                    <ul style="padding-left: 20px;">
+                        <li><strong>Function:</strong> Network security system that monitors and controls incoming/outgoing traffic</li>
+                        <li><strong>Types:</strong> Packet-filtering, Stateful inspection, Proxy, Next-generation</li>
+                        <li><strong>Operation:</strong> Uses rules to allow or block traffic based on security policies</li>
+                    </ul>
+                </div>
+                
+                <!-- Wireless Access Point -->
+                <div style="background-color: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <h3 style="color: #16a085; font-size: 22px; margin-top: 0;">Wireless Access Point (WAP)</h3>
+                    <ul style="padding-left: 20px;">
+                        <li><strong>Function:</strong> Allows wireless devices to connect to a wired network</li>
+                        <li><strong>Standards:</strong> 802.11a/b/g/n/ac/ax (Wi-Fi 6)</li>
+                        <li><strong>Features:</strong> Multiple SSIDs, VLAN support, PoE, Mesh networking</li>
+                    </ul>
+                </div>
+                
+                <!-- Load Balancer -->
+                <div style="background-color: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <h3 style="color: #16a085; font-size: 22px; margin-top: 0;">Load Balancer</h3>
+                    <ul style="padding-left: 20px;">
+                        <li><strong>Function:</strong> Distributes network traffic across multiple servers</li>
+                        <li><strong>Types:</strong> Hardware-based, Software-based, Cloud-based</li>
+                        <li><strong>Algorithms:</strong> Round-robin, Least connections, IP hash</li>
+                    </ul>
+                </div>
+                
+                <h2 style="color: #2980b9; margin-top: 40px; border-left: 4px solid #3498db; padding-left: 15px; font-size: 24px;">Network Device Comparison</h2>
+                
+                <table style="width: 100%; border-collapse: collapse; margin: 20px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                    <tr style="background-color: #3498db; color: white;">
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Device</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">OSI Layer</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Intelligence Level</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Primary Function</th>
+                    </tr>
+                    <tr style="background-color: #f2f2f2;">
+                        <td style="border: 1px solid #ddd; padding: 12px;">Hub</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Layer 1</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">None</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Signal repeater</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Switch</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Layer 2</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">High</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Frame forwarding</td>
+                    </tr>
+                    <tr style="background-color: #f2f2f2;">
+                        <td style="border: 1px solid #ddd; padding: 12px;">Router</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Layer 3</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Very High</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Packet routing</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Bridge</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Layer 2</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Medium</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Network segmentation</td>
+                    </tr>
+                </table>
+                
+                <h2 style="color: #2980b9; margin-top: 40px; border-left: 4px solid #3498db; padding-left: 15px; font-size: 24px;">Emerging Network Devices</h2>
+                
+                <!-- SDN Controller -->
+                <div style="background-color: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <h3 style="color: #16a085; font-size: 22px; margin-top: 0;">SDN Controller</h3>
+                    <ul style="padding-left: 20px;">
+                        <li><strong>Function:</strong> Centralized control of network devices in Software-Defined Networking</li>
+                        <li><strong>Benefits:</strong> Programmable network, Centralized management, Automation</li>
+                    </ul>
+                </div>
+                
+                <!-- Network Functions Virtualization -->
+                <div style="background-color: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <h3 style="color: #16a085; font-size: 22px; margin-top: 0;">NFV (Network Functions Virtualization)</h3>
+                    <ul style="padding-left: 20px;">
+                        <li><strong>Function:</strong> Virtualizes network services that traditionally ran on dedicated hardware</li>
+                        <li><strong>Examples:</strong> Virtual routers, Virtual firewalls, Virtual load balancers</li>
+                    </ul>
+                </div>
+               
+            </main>  
+            
+            
+
+             <!-- Floating button to open chatbot -->
+    <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+    </div>
+    
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-container");
+            let button = document.getElementById("open-chatbot");
+    
+            if (!chatbot.classList.contains("active")) {
+                chatbot.classList.add("active");
+                button.style.display = "none"; // Hide button when chatbot is open
+            } else {
+                chatbot.classList.remove("active");
+                setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+            }
+        }
+    
+        // Load chatbot HTML dynamically
+        fetch("/chatbot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("chatbot-container").innerHTML += html;
+    
+            // Execute chatbot script after inserting HTML
+            let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+            for (let script of scripts) {
+                let newScript = document.createElement("script");
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript);
+            }
+        })
+        .catch(error => console.error("Error loading chatbot:", error));
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../computernetwork.json" : "computernetwork.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.Computer_Networks;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+        
+       
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer Network</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/allsubject.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Computer Networks</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+               <h1>Variable Length Subnet Mask (VLSM)</h1>
+                
+                    <div style="background-color: #f8f9fa; padding: 15px; border-left: 4px solid #3498db; margin-bottom: 20px;">
+                        <p style="margin: 0;">VLSM is a technique that allows network administrators to allocate IP addresses more efficiently by using subnet masks of different lengths for different subnets within the same network.</p>
+                    </div>
+                
+                    <h2 style="color: #2980b9; margin-top: 25px;">Basic Concepts</h2>
+                
+                    <div style="background-color: #e8f4fc; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+                        <h3 style="color: #16a085;">Traditional Subnetting vs VLSM</h3>
+                        <ul style="padding-left: 20px;">
+                            <li style="margin-bottom: 8px;"><strong>Fixed Length Subnet Mask (FLSM):</strong> All subnets have the same size, leading to IP address wastage</li>
+                            <li style="margin-bottom: 8px;"><strong>Variable Length Subnet Mask (VLSM):</strong> Subnets can have different sizes based on requirements, minimizing IP address wastage</li>
+                        </ul>
+                    </div>
+                
+                    <h2 style="color: #2980b9; margin-top: 25px;">How VLSM Works</h2>
+                
+                    <div style="background-color: #f0f7fd; padding: 15px; border: 1px solid #d6e9f1; border-radius: 5px; margin-bottom: 20px;">
+                        <ol style="padding-left: 20px;">
+                            <li style="margin-bottom: 10px;"><strong>Determine requirements:</strong> Identify how many hosts are needed in each subnet</li>
+                            <li style="margin-bottom: 10px;"><strong>Sort subnets:</strong> Arrange subnets in descending order based on host requirements</li>
+                            <li style="margin-bottom: 10px;"><strong>Allocate largest first:</strong> Assign the largest subnet from the available address space</li>
+                            <li style="margin-bottom: 10px;"><strong>Continue allocation:</strong> Move to the next largest subnet and allocate from remaining space</li>
+                            <li style="margin-bottom: 10px;"><strong>Repeat:</strong> Continue until all subnets are allocated</li>
+                        </ol>
+                    </div>
+                
+                    <h2 style="color: #2980b9; margin-top: 25px;">VLSM Calculation Example</h2>
+                
+                    <div style="background-color: #eaf7ea; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+                        <p>Given network: 192.168.1.0/24</p>
+                        <p>Subnet requirements:</p>
+                        <ul style="padding-left: 20px;">
+                            <li>Subnet A: 60 hosts</li>
+                            <li>Subnet B: 30 hosts</li>
+                            <li>Subnet C: 12 hosts</li>
+                            <li>Subnet D: 5 hosts</li>
+                        </ul>
+                
+                        <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+                            <tr style="background-color: #2c3e50; color: white;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Subnet</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Hosts Needed</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Subnet Mask</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Address Range</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Broadcast Address</th>
+                            </tr>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 8px; border: 1px solid #ddd;">A</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">60</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">/26 (255.255.255.192)</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">192.168.1.0 - 192.168.1.63</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">192.168.1.63</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #ddd;">B</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">30</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">/27 (255.255.255.224)</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">192.168.1.64 - 192.168.1.95</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">192.168.1.95</td>
+                            </tr>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 8px; border: 1px solid #ddd;">C</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">12</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">/28 (255.255.255.240)</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">192.168.1.96 - 192.168.1.111</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">192.168.1.111</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #ddd;">D</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">5</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">/29 (255.255.255.248)</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">192.168.1.112 - 192.168.1.119</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">192.168.1.119</td>
+                            </tr>
+                        </table>
+                    </div>
+                
+                    <h2 style="color: #2980b9; margin-top: 25px;">Advantages of VLSM</h2>
+                
+                    <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+                        <ul style="padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">Efficient use of IP address space</li>
+                            <li style="margin-bottom: 8px;">Reduces IP address wastage</li>
+                            <li style="margin-bottom: 8px;">Allows hierarchical addressing</li>
+                            <li style="margin-bottom: 8px;">Better network organization</li>
+                            <li style="margin-bottom: 8px;">Supports route summarization</li>
+                        </ul>
+                    </div>
+                
+                    <h2 style="color: #2980b9; margin-top: 25px;">Disadvantages of VLSM</h2>
+                
+                    <div style="background-color: #fef5f5; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+                        <ul style="padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">More complex to implement than FLSM</li>
+                            <li style="margin-bottom: 8px;">Requires careful planning</li>
+                            <li style="margin-bottom: 8px;">Troubleshooting can be more difficult</li>
+                            <li style="margin-bottom: 8px;">Not all legacy routing protocols support VLSM</li>
+                        </ul>
+                    </div>
+                
+                    <h2 style="color: #2980b9; margin-top: 25px;">Practical Applications</h2>
+                
+                    <div style="background-color: #f8f5ff; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+                        <ul style="padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">Enterprise networks with varying subnet size requirements</li>
+                            <li style="margin-bottom: 8px;">Internet Service Providers (ISPs) allocating addresses to customers</li>
+                            <li style="margin-bottom: 8px;">Data center networks with different sized segments</li>
+                            <li style="margin-bottom: 8px;">Any environment where IP address conservation is important</li>
+                        </ul>
+                    </div>
+                
+                    <h2 style="color: #2980b9; margin-top: 25px;">VLSM and CIDR</h2>
+                
+                    <div style="background-color: #f0f8ff; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+                        <p>VLSM is closely related to Classless Inter-Domain Routing (CIDR):</p>
+                        <ul style="padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">Both allow for more flexible address allocation</li>
+                            <li style="margin-bottom: 8px;">CIDR is used for routing between networks (supernetting)</li>
+                            <li style="margin-bottom: 8px;">VLSM is used within a single network (subnetting)</li>
+                            <li style="margin-bottom: 8px;">Modern routing protocols (OSPF, EIGRP, BGPv4) support both</li>
+                        </ul>
+                    </div>
+                
+                    <div style="background-color: #fff8e1; padding: 15px; border-left: 4px solid #ffc107; margin-top: 30px;">
+                        <h3 style="color: #e65100; margin-top: 0;">Key Takeaways</h3>
+                        <ul style="padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">VLSM allows different subnet masks in the same network</li>
+                            <li style="margin-bottom: 8px;">Allocate largest subnets first for efficient space utilization</li>
+                            <li style="margin-bottom: 8px;">Essential for modern network design and IP conservation</li>
+                            <li style="margin-bottom: 8px;">Requires careful planning and documentation</li>
+                        </ul>
+                    </div>
+        
+            </main>  
+            
+            
+
+             <!-- Floating button to open chatbot -->
+    <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+    </div>
+    
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-container");
+            let button = document.getElementById("open-chatbot");
+    
+            if (!chatbot.classList.contains("active")) {
+                chatbot.classList.add("active");
+                button.style.display = "none"; // Hide button when chatbot is open
+            } else {
+                chatbot.classList.remove("active");
+                setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+            }
+        }
+    
+        // Load chatbot HTML dynamically
+        fetch("/chatbot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("chatbot-container").innerHTML += html;
+    
+            // Execute chatbot script after inserting HTML
+            let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+            for (let script of scripts) {
+                let newScript = document.createElement("script");
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript);
+            }
+        })
+        .catch(error => console.error("Error loading chatbot:", error));
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../computernetwork.json" : "computernetwork.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.Computer_Networks;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+        
+       
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Robotics</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>AI in Healthcare</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+               <h1>Project Heart Risk: AI in Cardiovascular Healthcare</h1>
+                  
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                        <h2 style="color: #1a5276; border-bottom: 2px solid #1a5276; padding-bottom: 10px;">Introduction to AI in Heart Risk Assessment</h2>
+                        <p>Artificial Intelligence is transforming cardiovascular healthcare by enabling more accurate, personalized, and early prediction of heart disease risk. Project Heart Risk represents a cutting-edge approach that leverages machine learning algorithms to analyze complex medical data and identify patients at risk before symptoms appear.</p>
+                        
+                        <div style="display: flex; margin: 20px 0;">
+                            <div style="flex: 1; padding: 15px; background-color: #eaf2f8; border-radius: 6px; margin-right: 10px;">
+                                <h3 style="color: #2874a6; margin-top: 0;">Traditional Methods</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Reliance on limited risk factors (age, cholesterol, etc.)</li>
+                                    <li>Static risk scoring systems (Framingham, ASCVD)</li>
+                                    <li>One-size-fits-all approach</li>
+                                    <li>Often detects risk only after damage occurs</li>
+                                </ul>
+                            </div>
+                            <div style="flex: 1; padding: 15px; background-color: #e8f8f5; border-radius: 6px; margin-left: 10px;">
+                                <h3 style="color: #1e8449; margin-top: 0;">AI-Powered Approach</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Analyzes hundreds of complex variables</li>
+                                    <li>Dynamic, continuously learning models</li>
+                                    <li>Personalized risk assessment</li>
+                                    <li>Predictive capabilities before symptoms emerge</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                        <h2 style="color: #1a5276; border-bottom: 2px solid #1a5276; padding-bottom: 10px;">Key Components of Project Heart Risk</h2>
+                        
+                        <h3 style="color: #2874a6;">1. Data Collection and Integration</h3>
+                        <p>The system aggregates data from multiple sources:</p>
+                        <ul style="padding-left: 20px;">
+                            <li><strong>Electronic Health Records (EHR):</strong> Medical history, lab results, medications</li>
+                            <li><strong>Wearable Devices:</strong> Continuous heart rate, activity levels, sleep patterns</li>
+                            <li><strong>Imaging Data:</strong> Echocardiograms, CT scans, MRI results</li>
+                            <li><strong>Genomic Data:</strong> Genetic predisposition markers</li>
+                            <li><strong>Lifestyle Factors:</strong> Diet, exercise, stress levels</li>
+                        </ul>
+                        
+                        <h3 style="color: #2874a6; margin-top: 20px;">2. Machine Learning Models</h3>
+                        <div style="display: flex; flex-wrap: wrap; gap: 15px; margin: 15px 0;">
+                            <div style="flex: 1; min-width: 200px; padding: 15px; background-color: #fef9e7; border-radius: 6px; border-left: 4px solid #f1c40f;">
+                                <h4 style="margin: 0 0 10px 0; color: #d35400;">Deep Neural Networks</h4>
+                                <p style="margin: 0;">For complex pattern recognition in imaging data</p>
+                            </div>
+                            <div style="flex: 1; min-width: 200px; padding: 15px; background-color: #eaf2f8; border-radius: 6px; border-left: 4px solid #3498db;">
+                                <h4 style="margin: 0 0 10px 0; color: #2874a6;">Random Forests</h4>
+                                <p style="margin: 0;">For analyzing structured clinical data</p>
+                            </div>
+                            <div style="flex: 1; min-width: 200px; padding: 15px; background-color: #e8f8f5; border-radius: 6px; border-left: 4px solid #2ecc71;">
+                                <h4 style="margin: 0 0 10px 0; color: #1e8449;">Time-Series Analysis</h4>
+                                <p style="margin: 0;">For continuous monitoring data from wearables</p>
+                            </div>
+                        </div>
+                        
+                        <h3 style="color: #2874a6; margin-top: 20px;">3. Risk Prediction Output</h3>
+                        <p>The system generates:</p>
+                        <ul style="padding-left: 20px;">
+                            <li>Personalized risk scores (short-term and long-term)</li>
+                            <li>Visual risk trajectory projections</li>
+                            <li>Key contributing factors identification</li>
+                            <li>Personalized intervention recommendations</li>
+                        </ul>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                        <h2 style="color: #1a5276; border-bottom: 2px solid #1a5276; padding-bottom: 10px;">Clinical Benefits</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div style="padding: 15px; background-color: #f5eef8; border-radius: 6px; border-top: 3px solid #9b59b6;">
+                                <h3 style="margin-top: 0; color: #6c3483;">Early Detection</h3>
+                                <p>Identifies high-risk patients up to 5 years earlier than traditional methods, allowing for preventive interventions.</p>
+                            </div>
+                            <div style="padding: 15px; background-color: #eaf2f8; border-radius: 6px; border-top: 3px solid #3498db;">
+                                <h3 style="margin-top: 0; color: #2874a6;">Accuracy</h3>
+                                <p>Demonstrates 92% accuracy in clinical trials compared to 70-75% for conventional risk scores.</p>
+                            </div>
+                            <div style="padding: 15px; background-color: #e8f8f5; border-radius: 6px; border-top: 3px solid #2ecc71;">
+                                <h3 style="margin-top: 0; color: #1e8449;">Personalization</h3>
+                                <p>Tailors recommendations based on individual patient profiles and response patterns.</p>
+                            </div>
+                            <div style="padding: 15px; background-color: #fef9e7; border-radius: 6px; border-top: 3px solid #f39c12;">
+                                <h3 style="margin-top: 0; color: #d35400;">Cost Reduction</h3>
+                                <p>Potential to reduce cardiovascular-related hospitalizations by 30-40% through early intervention.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                        <h2 style="color: #1a5276; border-bottom: 2px solid #1a5276; padding-bottom: 10px;">Implementation Challenges</h2>
+                        
+                        <div style="background-color: #fdedec; padding: 15px; border-radius: 6px; border-left: 4px solid #e74c3c; margin-bottom: 20px;">
+                            <h3 style="margin-top: 0; color: #c0392b;">Data Privacy and Security</h3>
+                            <p>Ensuring HIPAA/GDPR compliance while handling sensitive health data requires robust encryption and access controls.</p>
+                        </div>
+                        
+                        <div style="background-color: #fef5e7; padding: 15px; border-radius: 6px; border-left: 4px solid #e67e22; margin-bottom: 20px;">
+                            <h3 style="margin-top: 0; color: #d35400;">Algorithm Transparency</h3>
+                            <p>Balancing complex "black box" algorithms with the need for explainability in clinical decision-making.</p>
+                        </div>
+                        
+                        <div style="background-color: #f4ecf7; padding: 15px; border-radius: 6px; border-left: 4px solid #8e44ad;">
+                            <h3 style="margin-top: 0; color: #7d3c98;">Clinical Integration</h3>
+                            <p>Workflow integration challenges in busy clinical environments and physician acceptance of AI recommendations.</p>
+                        </div>
+                        
+                        <div style="background-color: #eaf2f8; padding: 15px; border-radius: 6px; border-left: 4px solid #2980b9;">
+                            <h3 style="margin-top: 0; color: #2874a6;">Regulatory Approval</h3>
+                            <p>Navigating FDA approval processes for AI-based clinical decision support systems.</p>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                        <h2 style="color: #1a5276; border-bottom: 2px solid #1a5276; padding-bottom: 10px;">Future Directions</h2>
+                        
+                        <div style="display: flex; align-items: center; margin: 20px 0;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h3 style="color: #2874a6;">Advanced Predictive Capabilities</h3>
+                                <p>Future versions aim to incorporate:</p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Real-time risk monitoring with IoT devices</li>
+                                    <li>Social determinants of health data integration</li>
+                                    <li>Environmental factors (air quality, etc.)</li>
+                                    <li>Microbiome analysis for metabolic insights</li>
+                                </ul>
+                            </div>
+                            <div style="flex: 1; text-align: center; background-color: #eaf2f8; padding: 15px; border-radius: 6px;">
+                                <p style="font-style: italic; margin: 0;">"The integration of AI in cardiovascular risk prediction represents the most significant advancement in preventive cardiology since the development of statins."</p>
+                                <p style="font-weight: bold; margin: 10px 0 0 0;">- Dr. Sarah Chen, Cardiologist</p>
+                            </div>
+                        </div>
+                        
+                        <h3 style="color: #2874a6; margin-top: 20px;">Global Health Impact</h3>
+                        <p>Efforts are underway to adapt the technology for low-resource settings through:</p>
+                        <ul style="padding-left: 20px;">
+                            <li>Simplified mobile interfaces for community health workers</li>
+                            <li>Low-cost wearable integration</li>
+                            <li>Adaptation for regional disease patterns</li>
+                            <li>Offline functionality for areas with poor connectivity</li>
+                        </ul>
+                    </section>
+                
+                  
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [ ];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics") ? "../AI in Healthcare.json" : "../AI in Healthcare.json";
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch AI for Robotics Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.AI_in_Healthcare;
+                        displayTopics(allTopics);
+                    }
+                    )
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+            </body>
+            </html>        

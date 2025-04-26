@@ -1,0 +1,164 @@
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2024 Amargenix. All Rights Reserved.</p>
+        <p>
+            <a href="privacy.html">Privacy Policy</a> | 
+            <a href="terms.html">Terms of Service</a>
+        </p>
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+
+
+    
+</footer>
+<style>/* 🌍 Ensure Footer Stays at the Bottom */
+    body, html {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .content-wrapper {
+        flex: 1; /* Pushes the footer down */
+    }
+    
+    /* 🔻 Footer */
+    .footer {
+        background-color: #222;
+        color: white;
+        padding: 15px 0;
+        text-align: center;
+        font-size: 16px;
+        width: 100%;
+    }
+    .footer a {
+        color: #007bff;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    .footer a:hover {
+        color: #ffcc00;
+        text-decoration: underline;
+    }
+    </style>
+
+
+ <!-- Floating button to open chatbot -->
+ <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+ <!-- Chatbot container -->
+ <div id="chatbot-container">
+     <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+ </div>
+ 
+ <script>
+     // Function to toggle chatbot visibility
+     function toggleChatbot() {
+         let chatbot = document.getElementById("chatbot-container");
+         let button = document.getElementById("open-chatbot");
+ 
+         if (!chatbot.classList.contains("active")) {
+             chatbot.classList.add("active");
+             button.style.display = "none"; // Hide button when chatbot is open
+         } else {
+             chatbot.classList.remove("active");
+             setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+         }
+     }
+ 
+     // Load chatbot HTML dynamically
+     fetch("/chatbot.html")
+     .then(response => response.text())
+     .then(html => {
+         document.getElementById("chatbot-container").innerHTML += html;
+ 
+         // Execute chatbot script after inserting HTML
+         let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+         for (let script of scripts) {
+             let newScript = document.createElement("script");
+             newScript.text = script.textContent;
+             document.body.appendChild(newScript);
+         }
+     })
+     .catch(error => console.error("Error loading chatbot:", error));
+ </script>
+ 
+ 
+<style>
+    
+
+
+ /* Floating chatbot button */
+ #open-chatbot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+#open-chatbot:hover {
+    background-color: #0056b3;
+}
+
+/* Chatbot container (Initially Hidden) */
+#chatbot-container {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 350px;
+    height: 420px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    display: none;
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* When chatbot is active */
+#chatbot-container.active {
+    display: block;
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Close button */
+#close-chatbot {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    #chatbot-container {
+        width: 90%;
+        height: 450px;
+        bottom: 70px;
+        right: 5%;
+    }
+}
+</style>

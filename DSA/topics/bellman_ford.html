@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    <link rel="stylesheet" href="../dsa.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../dsa.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+            
+
+
+
+            <main class="col-md-7 content">
+                <h1>🔄 Bellman-Ford Algorithm – Shortest Path in Graphs</h1>
+            
+                <p>
+                    The **Bellman-Ford Algorithm** is a **graph algorithm** used for finding  
+                    the **shortest path from a single source vertex to all other vertices** in a **weighted graph**.  
+                    Unlike **Dijkstra's Algorithm**, Bellman-Ford can **handle graphs with negative weight edges**.
+                </p>
+            
+                <h2>⚡ Key Features of Bellman-Ford Algorithm</h2>
+                <ul>
+                    <li>✅ Works for both **positive and negative** edge weights.</li>
+                    <li>✅ Detects **negative weight cycles** in the graph.</li>
+                    <li>✅ Solves **Single-Source Shortest Path** problems.</li>
+                    <li>❌ **Slower than Dijkstra's Algorithm** (O(V × E) time complexity).</li>
+                </ul>
+            
+                <h1>⚙️ How Does the Bellman-Ford Algorithm Work?</h1>
+                <p>
+                    The algorithm works by **iteratively relaxing all edges** in the graph  
+                    <strong>(V - 1) times</strong> to guarantee the shortest distance to each vertex.
+                </p>
+            
+                <h2>📌 Step-by-Step Process</h2>
+                <ol>
+                    <li>✅ **Initialize** the distance to all vertices as **infinity (∞)**, except the source vertex (0).</li>
+                    <li>🔄 **Relax all edges** V-1 times (where V = number of vertices).</li>
+                    <li>🚨 **Check for Negative Weight Cycles** – If relaxation is still possible, a **negative cycle exists**.</li>
+                </ol>
+            
+                <h3>🔢 Mathematical Formula for Edge Relaxation</h3>
+                <p>The shortest path estimate is updated using:</p>
+                <pre><code>
+                if (dist[u] + weight(u, v) < dist[v]):
+                    dist[v] = dist[u] + weight(u, v)
+                </code></pre>
+            
+                <h1>🛠️ Bellman-Ford Algorithm Implementation (C++)</h1>
+                <pre><code>
+                #include &lt;iostream&gt;
+                #include &lt;vector&gt;
+                #include &lt;limits.h&gt;
+            
+                using namespace std;
+            
+                struct Edge {
+                    int src, dest, weight;
+                };
+            
+                void bellmanFord(vector&lt;Edge&gt; &edges, int V, int E, int source) {
+                    vector&lt;int&gt; dist(V, INT_MAX);
+                    dist[source] = 0;
+            
+                    for (int i = 1; i &lt; V; i++) {
+                        for (int j = 0; j &lt; E; j++) {
+                            int u = edges[j].src;
+                            int v = edges[j].dest;
+                            int weight = edges[j].weight;
+                            if (dist[u] != INT_MAX && dist[u] + weight &lt; dist[v]) {
+                                dist[v] = dist[u] + weight;
+                            }
+                        }
+                    }
+            
+                    // Checking for Negative Weight Cycles
+                    for (int j = 0; j &lt; E; j++) {
+                        int u = edges[j].src;
+                        int v = edges[j].dest;
+                        int weight = edges[j].weight;
+                        if (dist[u] != INT_MAX && dist[u] + weight &lt; dist[v]) {
+                            cout &lt;&lt; "Graph contains a negative weight cycle!";
+                            return;
+                        }
+                    }
+            
+                    // Printing the shortest distances
+                    cout &lt;&lt; "Vertex Distance from Source:\n";
+                    for (int i = 0; i &lt; V; i++) {
+                        cout &lt;&lt; i &lt;&lt; " \t\t " &lt;&lt; dist[i] &lt;&lt; endl;
+                    }
+                }
+            
+                int main() {
+                    int V = 5; // Number of vertices
+                    int E = 8; // Number of edges
+                    vector&lt;Edge&gt; edges = {
+                        {0, 1, -1}, {0, 2, 4}, {1, 2, 3}, {1, 3, 2},
+                        {1, 4, 2}, {3, 2, 5}, {3, 1, 1}, {4, 3, -3}
+                    };
+            
+                    bellmanFord(edges, V, E, 0);
+                    return 0;
+                }
+                </code></pre>
+            
+                <h1>🔄 Comparison: Bellman-Ford vs Dijkstra's Algorithm</h1>
+                <table border="1">
+                    <tr>
+                        <th>Feature</th>
+                        <th>Bellman-Ford</th>
+                        <th>Dijkstra's Algorithm</th>
+                    </tr>
+                    <tr>
+                        <td>Time Complexity</td>
+                        <td>O(V × E)</td>
+                        <td>O(V log V) (using Priority Queue)</td>
+                    </tr>
+                    <tr>
+                        <td>Handles Negative Edges</td>
+                        <td>✅ Yes</td>
+                        <td>❌ No</td>
+                    </tr>
+                    <tr>
+                        <td>Handles Negative Cycles</td>
+                        <td>✅ Yes</td>
+                        <td>❌ No</td>
+                    </tr>
+                    <tr>
+                        <td>Performance</td>
+                        <td>Slower (Iterative)</td>
+                        <td>Faster (Greedy Approach)</td>
+                    </tr>
+                </table>
+            
+                <h1>⏳ Time Complexity Analysis</h1>
+                <ul>
+                    <li>✅ **Best Case**: O(V × E) – No negative weight cycle.</li>
+                    <li>❌ **Worst Case**: O(V × E) – Graph with dense edges.</li>
+                </ul>
+            
+                <h1>🌍 Real-World Applications of Bellman-Ford Algorithm</h1>
+                <ul>
+                    <li>📡 **Routing Protocols** – Used in **distance vector routing algorithms**.</li>
+                    <li>📂 **Network Packet Transmission** – Optimizes network data flow.</li>
+                    <li>🚗 **Traffic Navigation Systems** – Finds **optimal shortest paths**.</li>
+                    <li>📊 **Financial Systems** – Detects arbitrage opportunities in stock trading.</li>
+                </ul>
+            
+                <h2>🔗 Next Topics</h2>
+                <ul class="nexttopics-container">
+                    <li><a href="dijkstra.html">📡 Dijkstra's Algorithm</a></li>
+                    <li><a href="floyd_warshall.html">🔁 Floyd-Warshall Algorithm</a></li>
+                    <li><a href="graph_traversal.html">🌉 Graph Traversal Techniques</a></li>
+                </ul>
+            </main>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../dsa.json" : "dsa.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.DSA;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    

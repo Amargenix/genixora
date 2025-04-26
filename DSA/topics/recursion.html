@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    <link rel="stylesheet" href="../dsa.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../dsa.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+
+
+
+
+            <main class="col-md-7 content">
+                <h1>🔄 Recursion in Data Structures & Algorithms</h1>
+            
+                <p>
+                    **Recursion** is a technique where a **function calls itself** to solve a problem  
+                    by breaking it down into **smaller subproblems**.
+                </p>
+            
+                <h2>⚡ Why Use Recursion?</h2>
+                <ul>
+                    <li>📌 **Simplifies Complex Problems** - Reduces code complexity.</li>
+                    <li>⚡ **Backtracking Algorithms** - Used in **DFS, Maze Solving, Sudoku, N-Queens.**</li>
+                    <li>📚 **Tree & Graph Traversals** - Used in **Preorder, Inorder, Postorder.**</li>
+                    <li>🔄 **Converts Loops into Elegant Code** - Helpful in **sorting algorithms.**</li>
+                </ul>
+            
+                <h1>🔁 How Recursion Works?</h1>
+                <p>
+                    Recursion follows the **Divide & Conquer approach**, solving problems in **two steps:**
+                </p>
+                <ul>
+                    <li>✅ **Base Case** - The condition where recursion stops.</li>
+                    <li>♻️ **Recursive Case** - The function calls itself with a smaller problem.</li>
+                </ul>
+            
+                <h2>🛠️ Example: Factorial of a Number</h2>
+                <pre><code>
+                int factorial(int n) {
+                    if (n == 0) return 1; // Base Case
+                    return n * factorial(n - 1); // Recursive Case
+                }
+                </code></pre>
+            
+                <h2>🔄 Types of Recursion</h2>
+            
+                <h3>🔹 1. Direct Recursion</h3>
+                <p>A function calls itself directly.</p>
+                <pre><code>
+                void func() {
+                    func();  // Direct self-call
+                }
+                </code></pre>
+            
+                <h3>🔸 2. Indirect Recursion</h3>
+                <p>Two or more functions call each other.</p>
+                <pre><code>
+                void A() { B(); }
+                void B() { A(); }
+                </code></pre>
+            
+                <h3>🔄 3. Tail Recursion</h3>
+                <p>Recursive call is the **last statement** in the function.</p>
+                <pre><code>
+                void tailRecursion(int n) {
+                    if (n == 0) return;
+                    tailRecursion(n - 1);
+                }
+                </code></pre>
+            
+                <h3>🔃 4. Non-Tail Recursion</h3>
+                <p>Recursive call is **not the last statement**.</p>
+                <pre><code>
+                int nonTail(int n) {
+                    if (n == 0) return 0;
+                    return n + nonTail(n - 1);
+                }
+                </code></pre>
+            
+                <h2>⚙️ Recursive vs Iterative Approaches</h2>
+                <p>
+                    Some problems can be solved using both **recursion and iteration**.
+                </p>
+                <table border="1">
+                    <tr>
+                        <th>Aspect</th>
+                        <th>Recursion</th>
+                        <th>Iteration</th>
+                    </tr>
+                    <tr>
+                        <td>Code Simplicity</td>
+                        <td>✅ Simple & clean</td>
+                        <td>❌ May require more lines</td>
+                    </tr>
+                    <tr>
+                        <td>Time Complexity</td>
+                        <td>⚠️ May be **O(2ⁿ)** (Exponential)</td>
+                        <td>⚡ Usually **O(n)** (Linear)</td>
+                    </tr>
+                    <tr>
+                        <td>Memory Usage</td>
+                        <td>⚠️ Uses **stack memory (O(n))**</td>
+                        <td>✅ Uses **constant memory (O(1))**</td>
+                    </tr>
+                    <tr>
+                        <td>Performance</td>
+                        <td>❌ May cause **Stack Overflow**</td>
+                        <td>✅ More efficient for large inputs</td>
+                    </tr>
+                </table>
+            
+                <h2>📊 Applications of Recursion</h2>
+                <ul>
+                    <li>🌲 **Tree Traversals** - Used in **Binary Trees & Graphs.**</li>
+                    <li>🎭 **Backtracking Problems** - Used in **N-Queens, Maze Solving.**</li>
+                    <li>🔍 **Divide & Conquer Algorithms** - Used in **Merge Sort, Quick Sort.**</li>
+                    <li>🔄 **Dynamic Programming** - Used in **Fibonacci, Knapsack Problem.**</li>
+                </ul>
+            
+                <h2>✅ Advantages & ❌ Disadvantages</h2>
+                <ul>
+                    <li>✅ **Reduces Code Complexity** - Easier to understand.</li>
+                    <li>✅ **Great for Tree & Graph Problems** - Simplifies traversal.</li>
+                    <li>❌ **Higher Memory Usage** - Uses function call stack.</li>
+                    <li>❌ **May Cause Stack Overflow** - If base case is missing.</li>
+                </ul>
+                
+                <h2>🔗 Next Topics</h2>
+                <ul class="nexttopics-container">
+                    <li><a href="sorting.html">📊 Sorting Algorithms</a></li>
+                    <li><a href="searching.html">🔍 Searching Algorithms</a></li>
+                </ul>
+            </main>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+     
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../dsa.json" : "dsa.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.DSA;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Robotics</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>AI for Robotics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <h1>Swarm Robotics in AI for Robotics</h1>
+                
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">Introduction to Swarm Robotics</h2>
+                        <p>Swarm robotics is an approach to the coordination of multiple robots as a system that consists of large numbers of mostly simple physical robots. It is inspired by the collective behavior of social insects (ants, bees, termites) and other animal societies (flocks of birds, schools of fish).</p>
+                        
+                        <div style="display: flex; margin: 20px 0;">
+                            <div style="flex: 1; padding: 15px; background-color: #f0f8ff; border-radius: 5px; margin-right: 10px;">
+                                <h3 style="color: #2980b9;">Key Characteristics</h3>
+                                <ul>
+                                    <li>Decentralized control</li>
+                                    <li>Distributed sensing and communication</li>
+                                    <li>Collective problem-solving</li>
+                                    <li>Scalability and robustness</li>
+                                    <li>Emergent behavior from simple rules</li>
+                                </ul>
+                            </div>
+                            <div style="flex: 1; padding: 15px; background-color: #fff0f5; border-radius: 5px;">
+                                <h3 style="color: #c0392b;">Biological Inspiration</h3>
+                                <ul>
+                                    <li>Ant colony foraging</li>
+                                    <li>Bee swarm decision-making</li>
+                                    <li>Bird flocking patterns</li>
+                                    <li>Fish schooling behavior</li>
+                                    <li>Bacterial growth patterns</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">Core Principles of Swarm Robotics</h2>
+                        
+                        <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                            <div style="flex: 1; min-width: 300px; background-color: #eaf7fd; padding: 15px; border-radius: 5px;">
+                                <h3 style="color: #3498db;">1. Self-Organization</h3>
+                                <p>Global patterns emerge from local interactions without centralized control. Robots follow simple rules based on their neighbors' states and environmental conditions.</p>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 300px; background-color: #f0f8ff; padding: 15px; border-radius: 5px;">
+                                <h3 style="color: #3498db;">2. Stigmergy</h3>
+                                <p>Indirect coordination through environment modification (like ants leaving pheromone trails). Robots modify the environment which then influences other robots' behavior.</p>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 300px; background-color: #eaf7fd; padding: 15px; border-radius: 5px;">
+                                <h3 style="color: #3498db;">3. Scalability</h3>
+                                <p>The system should maintain functionality regardless of the number of robots (within reasonable limits). Performance typically improves with more robots.</p>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 300px; background-color: #f0f8ff; padding: 15px; border-radius: 5px;">
+                                <h3 style="color: #3498db;">4. Robustness</h3>
+                                <p>The system should continue functioning even if individual robots fail. No single point of failure exists in the swarm.</p>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 300px; background-color: #eaf7fd; padding: 15px; border-radius: 5px;">
+                                <h3 style="color: #3498db;">5. Flexibility</h3>
+                                <p>The swarm should be able to adapt to different environments and task requirements without explicit reprogramming.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">Swarm Robotics Algorithms</h2>
+                        
+                        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                            <thead>
+                                <tr style="background-color: #2c3e50; color: white;">
+                                    <th style="padding: 12px; text-align: left;">Algorithm</th>
+                                    <th style="padding: 12px; text-align: left;">Description</th>
+                                    <th style="padding: 12px; text-align: left;">Application</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 12px; font-weight: bold;">Flocking Algorithm</td>
+                                    <td style="padding: 12px;">Based on Reynolds' rules: separation, alignment, cohesion</td>
+                                    <td style="padding: 12px;">Area coverage, surveillance</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                                    <td style="padding: 12px; font-weight: bold;">Ant Colony Optimization</td>
+                                    <td style="padding: 12px;">Pheromone-based path finding</td>
+                                    <td style="padding: 12px;">Path planning, network routing</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 12px; font-weight: bold;">Particle Swarm Optimization</td>
+                                    <td style="padding: 12px;">Social sharing of best solutions</td>
+                                    <td style="padding: 12px;">Optimization problems</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                                    <td style="padding: 12px; font-weight: bold;">Granular Media Approach</td>
+                                    <td style="padding: 12px;">Modeling robots as particles in a medium</td>
+                                    <td style="padding: 12px;">Object transportation</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px; font-weight: bold;">Artificial Potential Fields</td>
+                                    <td style="padding: 12px;">Attractive and repulsive virtual forces</td>
+                                    <td style="padding: 12px;">Formation control, obstacle avoidance</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">Applications of Swarm Robotics</h2>
+                        
+                        <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                            <div style="flex: 1; min-width: 250px; border: 1px solid #ddd; border-radius: 5px; overflow: hidden;">
+                                <div style="background-color: #16a085; color: white; padding: 10px 15px;">
+                                    <h3 style="margin: 0;">Search and Rescue</h3>
+                                </div>
+                                <div style="padding: 15px;">
+                                    <p>Swarm robots can quickly cover large disaster areas to locate survivors, map dangerous environments, and deliver supplies.</p>
+                                </div>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 250px; border: 1px solid #ddd; border-radius: 5px; overflow: hidden;">
+                                <div style="background-color: #27ae60; color: white; padding: 10px 15px;">
+                                    <h3 style="margin: 0;">Environmental Monitoring</h3>
+                                </div>
+                                <div style="padding: 15px;">
+                                    <p>Monitoring pollution, tracking wildlife, or measuring ocean currents over large areas with minimal environmental impact.</p>
+                                </div>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 250px; border: 1px solid #ddd; border-radius: 5px; overflow: hidden;">
+                                <div style="background-color: #2980b9; color: white; padding: 10px 15px;">
+                                    <h3 style="margin: 0;">Agriculture</h3>
+                                </div>
+                                <div style="padding: 15px;">
+                                    <p>Precision farming with swarm robots for planting, weeding, monitoring crop health, and harvesting.</p>
+                                </div>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 250px; border: 1px solid #ddd; border-radius: 5px; overflow: hidden;">
+                                <div style="background-color: #8e44ad; color: white; padding: 10px 15px;">
+                                    <h3 style="margin: 0;">Construction</h3>
+                                </div>
+                                <div style="padding: 15px;">
+                                    <p>Collective construction of structures in hazardous or inaccessible environments using modular components.</p>
+                                </div>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 250px; border: 1px solid #ddd; border-radius: 5px; overflow: hidden;">
+                                <div style="background-color: #f39c12; color: white; padding: 10px 15px;">
+                                    <h3 style="margin: 0;">Medical Applications</h3>
+                                </div>
+                                <div style="padding: 15px;">
+                                    <p>Microscopic robot swarms for targeted drug delivery, minimally invasive surgery, or clearing arterial blockages.</p>
+                                </div>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 250px; border: 1px solid #ddd; border-radius: 5px; overflow: hidden;">
+                                <div style="background-color: #e74c3c; color: white; padding: 10px 15px;">
+                                    <h3 style="margin: 0;">Space Exploration</h3>
+                                </div>
+                                <div style="padding: 15px;">
+                                    <p>Planetary exploration with multiple low-cost robots that can cover large areas and share information.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">Challenges in Swarm Robotics</h2>
+                        
+                        <div style="background-color: #fdf2e9; padding: 20px; border-left: 5px solid #e67e22; margin-bottom: 20px;">
+                            <h3 style="color: #d35400;">Design Challenges</h3>
+                            <ul>
+                                <li>Creating simple yet effective individual behaviors that lead to desired collective behavior</li>
+                                <li>Balancing between too much and too little communication</li>
+                                <li>Designing robust local sensing capabilities</li>
+                                <li>Ensuring scalability across different swarm sizes</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background-color: #f4ecf7; padding: 20px; border-left: 5px solid #9b59b6; margin-bottom: 20px;">
+                            <h3 style="color: #8e44ad;">Technical Challenges</h3>
+                            <ul>
+                                <li>Energy efficiency and power management</li>
+                                <li>Localization and navigation without global positioning</li>
+                                <li>Real-time processing with limited computational resources</li>
+                                <li>Maintaining swarm coherence in dynamic environments</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background-color: #e8f8f5; padding: 20px; border-left: 5px solid #1abc9c;">
+                            <h3 style="color: #16a085;">Theoretical Challenges</h3>
+                            <ul>
+                                <li>Predicting emergent behaviors from local rules</li>
+                                <li>Formal verification of swarm behaviors</li>
+                                <li>Developing metrics for swarm performance</li>
+                                <li>Understanding the limits of swarm intelligence</li>
+                            </ul>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">Future Directions</h2>
+                        
+                        <div style="display: flex; flex-wrap: wrap; gap: 15px;">
+                            <div style="flex: 1; min-width: 200px; background-color: #f8f9fa; padding: 15px; border-radius: 5px; border: 1px dashed #7f8c8d;">
+                                <h4 style="margin: 0 0 10px 0; color: #34495e;">Heterogeneous Swarms</h4>
+                                <p>Combining different types of robots with complementary capabilities in a single swarm.</p>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 200px; background-color: #f8f9fa; padding: 15px; border-radius: 5px; border: 1px dashed #7f8c8d;">
+                                <h4 style="margin: 0 0 10px 0; color: #34495e;">Human-Swarm Interaction</h4>
+                                <p>Developing intuitive interfaces for humans to control and collaborate with robot swarms.</p>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 200px; background-color: #f8f9fa; padding: 15px; border-radius: 5px; border: 1px dashed #7f8c8d;">
+                                <h4 style="margin: 0 0 10px 0; color: #34495e;">Evolutionary Approaches</h4>
+                                <p>Using evolutionary algorithms to automatically design swarm behaviors.</p>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 200px; background-color: #f8f9fa; padding: 15px; border-radius: 5px; border: 1px dashed #7f8c8d;">
+                                <h4 style="margin: 0 0 10px 0; color: #34495e;">Molecular Robotics</h4>
+                                <p>Extending swarm principles to nanoscale for medical applications.</p>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 200px; background-color: #f8f9fa; padding: 15px; border-radius: 5px; border: 1px dashed #7f8c8d;">
+                                <h4 style="margin: 0 0 10px 0; color: #34495e;">Cognitive Swarms</h4>
+                                <p>Incorporating higher-level reasoning capabilities while maintaining swarm principles.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                  
+
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [ ];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics") ? "../AI for Robotics.json" : "../AI for Robotics.json";
+
+                                              
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch AI for Robotics Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.AI_for_Robotics;
+                        displayTopics(allTopics);
+                    }
+                    )
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+           
+            
+            
+            
+            
+            
+            
+            </body>
+            </html>        

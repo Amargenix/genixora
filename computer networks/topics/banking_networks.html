@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer Network</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/allsubject.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Computer Networks</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+               
+                
+                    <style>
+                        body {
+                            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                            line-height: 1.6;
+                            color: #333;
+                            max-width: 1200px;
+                            margin: 0 auto;
+                            padding: 20px;
+                            background-color: #f5f7fa;
+                        }
+                        h1, h2, h3, h4 {
+                            color: #2c3e50;
+                            margin-top: 30px;
+                        }
+                        h1 {
+                            text-align: center;
+                            border-bottom: 2px solid #3498db;
+                            padding-bottom: 10px;
+                        }
+                        h2 {
+                            background-color: #e8f4fc;
+                            padding: 12px;
+                            border-left: 4px solid #3498db;
+                        }
+                        .card {
+                            background-color: white;
+                            border-radius: 8px;
+                            padding: 20px;
+                            margin: 20px 0;
+                            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                        }
+                        .tech-box {
+                            background-color: #f8f9fa;
+                            padding: 15px;
+                            margin: 15px 0;
+                            border-left: 4px solid #27ae60;
+                        }
+                        table {
+                            width: 100%;
+                            border-collapse: collapse;
+                            margin: 20px 0;
+                        }
+                        th, td {
+                            border: 1px solid #ddd;
+                            padding: 12px;
+                            text-align: left;
+                        }
+                        th {
+                            background-color: #3498db;
+                            color: white;
+                        }
+                        tr:nth-child(even) {
+                            background-color: #f2f2f2;
+                        }
+                        pre {
+                            background: #f4f4f4;
+                            padding: 10px;
+                            border-left: 3px solid #3498db;
+                            overflow-x: auto;
+                            font-family: 'Courier New', Courier, monospace;
+                        }
+                        .grid {
+                            display: grid;
+                            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                            gap: 20px;
+                            margin: 20px 0;
+                        }
+                        .grid-item {
+                            background-color: #fff;
+                            padding: 15px;
+                            border-radius: 5px;
+                            box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+                        }
+                        .warning {
+                            background-color: #ffebee;
+                            padding: 15px;
+                            border-left: 4px solid #f44336;
+                        }
+                        .diagram {
+                            text-align: center;
+                            background-color: #f4f4f4;
+                            padding: 15px;
+                            border-radius: 5px;
+                            margin: 20px 0;
+                        }
+                        .protocol {
+                            background-color: #e8f4fc;
+                            padding: 10px;
+                            border-radius: 4px;
+                            font-family: monospace;
+                        }
+                        .security {
+                            background-color: #fff8e1;
+                            padding: 10px;
+                            border-radius: 4px;
+                        }
+                    </style>
+                </head>
+                
+                
+                <h1>Banking Networks</h1>
+                
+                <!-- Section 1 -->
+                <div class="card">
+                    <h2>1. Introduction to Banking Networks</h2>
+                    <p>Banking networks are specialized computer networks that facilitate financial transactions, connect banking institutions, and enable secure communication between various financial entities.</p>
+                    
+                    <div class="tech-box">
+                        <h3>Key Characteristics of Banking Networks</h3>
+                        <ul>
+                            <li>High availability (99.999% uptime requirements)</li>
+                            <li>End-to-end encryption for all transactions</li>
+                            <li>Strict regulatory compliance (PCI DSS, GDPR, etc.)</li>
+                            <li>Multi-layered security architecture</li>
+                            <li>Real-time transaction processing</li>
+                        </ul>
+                    </div>
+                    
+                    <h3>Evolution of Banking Networks</h3>
+                    <table>
+                        <tr>
+                            <th>Era</th>
+                            <th>Technology</th>
+                            <th>Capabilities</th>
+                        </tr>
+                        <tr>
+                            <td>1960s-1970s</td>
+                            <td>Batch processing</td>
+                            <td>Overnight transaction settlement</td>
+                        </tr>
+                        <tr>
+                            <td>1980s</td>
+                            <td>Online transaction processing</td>
+                            <td>Real-time account updates</td>
+                        </tr>
+                        <tr>
+                            <td>1990s</td>
+                            <td>Internet banking</td>
+                            <td>Customer-facing online services</td>
+                        </tr>
+                        <tr>
+                            <td>2000s</td>
+                            <td>Mobile banking</td>
+                            <td>Anytime, anywhere access</td>
+                        </tr>
+                        <tr>
+                            <td>2010s-present</td>
+                            <td>Cloud, blockchain, APIs</td>
+                            <td>Open banking, instant payments</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <!-- Section 2 -->
+                <div class="card">
+                    <h2>2. Banking Network Architecture</h2>
+                    
+                    <div class="diagram">
+                        <h3>Typical Banking Network Topology</h3>
+                        <pre>
+                +---------------------+       +---------------------+
+                |                     |       |                     |
+                |   Core Banking      |-------|   Payment Switch    |
+                |   System (CBS)      |       |   (SWIFT, etc.)     |
+                +---------------------+       +---------------------+
+                        |                                   |
+                        |                                   |
+                +---------------------+       +---------------------+
+                |                     |       |                     |
+                |   Branch Networks   |-------|   ATM Network       |
+                |   (MPLS/VPN)        |       |                     |
+                +---------------------+       +---------------------+
+                        |                                   |
+                        |                                   |
+                +---------------------+       +---------------------+
+                |                     |       |                     |
+                |   Internet Banking  |-------|   Mobile Banking    |
+                |   Platform          |       |   Platform          |
+                +---------------------+       +---------------------+</pre>
+                    </div>
+                    
+                    <h3>Key Components</h3>
+                    <div class="grid">
+                        <div class="grid-item">
+                            <h4>Core Banking System</h4>
+                            <ul>
+                                <li>Central transaction processing</li>
+                                <li>Customer account management</li>
+                                <li>Typically runs on mainframes (IBM zSeries)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="grid-item">
+                            <h4>Payment Networks</h4>
+                            <ul>
+                                <li>SWIFT for international transfers</li>
+                                <li>ACH for domestic transfers</li>
+                                <li>Card networks (Visa, Mastercard)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="grid-item">
+                            <h4>Delivery Channels</h4>
+                            <ul>
+                                <li>Branch networks</li>
+                                <li>ATM networks</li>
+                                <li>Internet/mobile banking</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Section 3 -->
+                <div class="card">
+                    <h2>3. Banking Network Protocols</h2>
+                    
+                    <h3>Financial Messaging Protocols</h3>
+                    <table>
+                        <tr>
+                            <th>Protocol</th>
+                            <th>Type</th>
+                            <th>Usage</th>
+                            <th>Security</th>
+                        </tr>
+                        <tr>
+                            <td class="protocol">SWIFT FIN</td>
+                            <td>Financial messaging</td>
+                            <td>International transfers</td>
+                            <td>PKI, encryption</td>
+                        </tr>
+                        <tr>
+                            <td class="protocol">ISO 8583</td>
+                            <td>Card transaction</td>
+                            <td>ATM/POS transactions</td>
+                            <td>3DES, AES</td>
+                        </tr>
+                        <tr>
+                            <td class="protocol">FIX</td>
+                            <td>Trading protocol</td>
+                            <td>Securities trading</td>
+                            <td>TLS, signatures</td>
+                        </tr>
+                        <tr>
+                            <td class="protocol">NACHA</td>
+                            <td>ACH format</td>
+                            <td>Domestic transfers (US)</td>
+                            <td>SFTP, encryption</td>
+                        </tr>
+                    </table>
+                    
+                    <div class="tech-box">
+                        <h3>SWIFT Message Example</h3>
+                        <pre>
+                {1:F01BANKBEBBAXXX0000000000}
+                {2:I100BANKDEFFXXXXN}
+                {3:{108:MT103}}
+                {4:
+                :20:REF12345
+                :32A:220102EUR100000,
+                :50K:/123456789
+                CUSTOMER NAME
+                ADDRESS LINE 1
+                ADDRESS LINE 2
+                :59:/456789123
+                BENEFICIARY NAME
+                BENEFICIARY ADDRESS
+                :70:PAYMENT INVOICE 123
+                -}</pre>
+                    </div>
+                    
+                    <h3>Communication Protocols</h3>
+                    <div class="grid">
+                        <div class="grid-item">
+                            <h4>Secure File Transfer</h4>
+                            <ul>
+                                <li>SFTP (SSH File Transfer Protocol)</li>
+                                <li>FTPS (FTP over SSL/TLS)</li>
+                                <li>AS2 (Applicability Statement 2)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="grid-item">
+                            <h4>Real-Time Protocols</h4>
+                            <ul>
+                                <li>MQ (IBM WebSphere MQ)</li>
+                                <li>HTTPS (RESTful APIs)</li>
+                                <li>WebSockets (for real-time updates)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Section 4 -->
+                <div class="card">
+                    <h2>4. Payment Systems and Networks</h2>
+                    
+                    <h3>Types of Payment Systems</h3>
+                    <div class="grid">
+                        <div class="grid-item">
+                            <h4>Retail Payment Systems</h4>
+                            <ul>
+                                <li>ACH (Automated Clearing House)</li>
+                                <li>Card networks (Visa, Mastercard)</li>
+                                <li>Real-Time Payments (RTP)</li>
+                                <li>Mobile payment systems</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="grid-item">
+                            <h4>Wholesale Payment Systems</h4>
+                            <ul>
+                                <li>SWIFT (international)</li>
+                                <li>Fedwire (US)</li>
+                                <li>CHAPS (UK)</li>
+                                <li>TARGET2 (EU)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h3>Payment Network Architecture</h3>
+                    <div class="diagram">
+                        <pre>
+                +---------------------+       +---------------------+
+                |                     |       |                     |
+                |   Originating Bank  |-------|   Payment Network   |
+                |                     |       |   (SWIFT, ACH, etc.)|
+                +---------------------+       +---------------------+
+                                                      |
+                                                      |
+                                             +---------------------+
+                                             |                     |
+                                             |   Receiving Bank    |
+                                             |                     |
+                                             +---------------------+</pre>
+                    </div>
+                    
+                    <div class="tech-box">
+                        <h3>Payment Message Flow</h3>
+                        <ol>
+                            <li>Customer initiates payment at originating bank</li>
+                            <li>Bank validates and formats payment message</li>
+                            <li>Message sent to payment network with security controls</li>
+                            <li>Payment network routes to receiving bank</li>
+                            <li>Receiving bank credits beneficiary account</li>
+                            <li>Settlement occurs between banks</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <!-- Section 5 -->
+                <div class="card">
+                    <h2>5. Banking Network Security</h2>
+                    
+                    <h3>Security Framework</h3>
+                    <div class="grid">
+                        <div class="grid-item">
+                            <h4>Perimeter Security</h4>
+                            <ul>
+                                <li>Firewalls (Palo Alto, Check Point)</li>
+                                <li>IPS/IDS systems</li>
+                                <li>DDoS protection</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="grid-item">
+                            <h4>Data Protection</h4>
+                            <ul>
+                                <li>End-to-end encryption</li>
+                                <li>HSMs (Hardware Security Modules)</li>
+                                <li>Tokenization</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="grid-item">
+                            <h4>Access Control</h4>
+                            <ul>
+                                <li>Multi-factor authentication</li>
+                                <li>Role-based access control</li>
+                                <li>Privileged access management</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h3>Security Standards and Compliance</h3>
+                    <table>
+                        <tr>
+                            <th>Standard</th>
+                            <th>Scope</th>
+                            <th>Requirements</th>
+                        </tr>
+                        <tr>
+                            <td class="security">PCI DSS</td>
+                            <td>Card payments</td>
+                            <td>Encryption, access control, monitoring</td>
+                        </tr>
+                        <tr>
+                            <td class="security">SWIFT CSP</td>
+                            <td>SWIFT network</td>
+                            <td>Secure architecture, anomaly detection</td>
+                        </tr>
+                        <tr>
+                            <td class="security">GDPR</td>
+                            <td>EU data protection</td>
+                            <td>Data privacy, breach notification</td>
+                        </tr>
+                        <tr>
+                            <td class="security">ISO 27001</td>
+                            <td>Information security</td>
+                            <td>Risk management, security controls</td>
+                        </tr>
+                    </table>
+                    
+                    <div class="warning">
+                        <h3>Common Security Threats</h3>
+                        <ul>
+                            <li><strong>SWIFT/Bank hacks:</strong> Compromising payment systems</li>
+                            <li><strong>ATM malware:</strong> Jackpotting attacks</li>
+                            <li><strong>Phishing:</strong> Targeting bank employees</li>
+                            <li><strong>Insider threats:</strong> Malicious or compromised staff</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Section 6 -->
+                <div class="card">
+                    <h2>6. Core Banking Infrastructure</h2>
+                    
+                    <div class="diagram">
+                        <h3>Core Banking System Architecture</h3>
+                        <pre>
+                +---------------------+
+                |                     |
+                |   Presentation      |
+                |   Layer (Web, API)  |
+                +---------------------+
+                        |
+                +---------------------+
+                |                     |
+                |   Application       |
+                |   Layer (Business   |
+                |   Logic)            |
+                +---------------------+
+                        |
+                +---------------------+
+                |                     |
+                |   Database Layer    |
+                |   (IBM DB2, Oracle) |
+                +---------------------+
+                        |
+                +---------------------+
+                |                     |
+                |   Integration       |
+                |   Layer (ESB, MQ)   |
+                +---------------------+</pre>
+                    </div>
+                    
+                    <h3>Core Banking Platforms</h3>
+                    <table>
+                        <tr>
+                            <th>Platform</th>
+                            <th>Vendor</th>
+                            <th>Technology</th>
+                        </tr>
+                        <tr>
+                            <td>Flexcube</td>
+                            <td>Oracle</td>
+                            <td>Java, Oracle DB</td>
+                        </tr>
+                        <tr>
+                            <td>Temenos T24</td>
+                            <td>Temenos</td>
+                            <td>Java, jBASE</td>
+                        </tr>
+                        <tr>
+                            <td>Finacle</td>
+                            <td>Infosys</td>
+                            <td>Java, Oracle/SQL Server</td>
+                        </tr>
+                        <tr>
+                            <td>Bankmaster</td>
+                            <td>Misys</td>
+                            <td>C++, proprietary DB</td>
+                        </tr>
+                    </table>
+                    
+                    <div class="tech-box">
+                        <h3>Integration Technologies</h3>
+                        <ul>
+                            <li><strong>ESB:</strong> IBM Integration Bus, MuleSoft</li>
+                            <li><strong>Messaging:</strong> IBM MQ, Apache Kafka</li>
+                            <li><strong>APIs:</strong> REST, SOAP, GraphQL</li>
+                            <li><strong>ETL:</strong> Informatica, Talend</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Section 7 -->
+                <div class="card">
+                    <h2>7. ATM and Card Networks</h2>
+                    
+                    <h3>ATM Network Architecture</h3>
+                    <div class="diagram">
+                        <pre>
+                +----------------+       +----------------+       +----------------+
+                |                |       |                |       |                |
+                |      ATM       |-------|   ATM Switch   |-------|  Bank Host     |
+                |                |       |                |       |  System        |
+                +----------------+       +----------------+       +----------------+
+                        |                         |
+                +----------------+       +----------------+
+                |                |       |                |
+                |   Processor    |-------|   Card Network |
+                |                |       | (Visa, etc.)   |
+                +----------------+       +----------------+</pre>
+                    </div>
+                    
+                    <h3>ATM Communication Protocols</h3>
+                    <table>
+                        <tr>
+                            <th>Protocol</th>
+                            <th>Layer</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td class="protocol">ISO 8583</td>
+                            <td>Application</td>
+                            <td>Financial transaction messaging</td>
+                        </tr>
+                        <tr>
+                            <td class="protocol">NDC/DDC</td>
+                            <td>Presentation</td>
+                            <td>Diebold/NCR proprietary formats</td>
+                        </tr>
+                        <tr>
+                            <td class="protocol">X.25</td>
+                            <td>Network</td>
+                            <td>Legacy, still used in some regions</td>
+                        </tr>
+                        <tr>
+                            <td class="protocol">TCP/IP</td>
+                            <td>Network</td>
+                            <td>Modern implementations</td>
+                        </tr>
+                    </table>
+                    
+                    <div class="tech-box">
+                        <h3>ATM Security Measures</h3>
+                        <ul>
+                            <li>Hardware Security Module (HSM) for PIN management</li>
+                            <li>End-to-end encryption (E2EE) for all transactions</li>
+                            <li>Tamper-proof hardware (anti-skimming devices)</li>
+                            <li>Regular security patches and updates</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Section 8 -->
+                <div class="card">
+                    <h2>8. Internet and Mobile Banking</h2>
+                    
+                    <h3>Digital Banking Architecture</h3>
+                    <div class="diagram">
+                        <pre>
+                +---------------------+
+                |                     |
+                |   Client Devices    |
+                | (Browser, Mobile)   |
+                +---------------------+
+                        |
+                +---------------------+
+                |                     |
+                |   Web/API Gateway   |
+                | (Load Balancer, WAF)|
+                +---------------------+
+                        |
+                +---------------------+
+                |                     |
+                |   Application       |
+                |   Servers           |
+                +---------------------+
+                        |
+                +---------------------+
+                |                     |
+                |   Core Banking      |
+                |   Integration       |
+                +---------------------+</pre>
+                    </div>
+                    
+                    <h3>Digital Banking Technologies</h3>
+                    <div class="grid">
+                        <div class="grid-item">
+                            <h4>Frontend</h4>
+                            <ul>
+                                <li>React/Angular for web</li>
+                                <li>Native iOS/Android apps</li>
+                                <li>Progressive Web Apps (PWA)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="grid-item">
+                            <h4>Backend</h4>
+                            <ul>
+                                <li>Java Spring Boot, .NET Core</li>
+                                <li>Node.js for API services</li>
+                                <li>Microservices architecture</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="grid-item">
+                            <h4>Security</h4>
+                            <ul>
+                                <li>OAuth 2.0/OpenID Connect</li>
+                                <li>Biometric authentication</li>
+                                <li>Behavioral analytics</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="warning">
+                        <h3>Digital Banking Threats</h3>
+                        <ul>
+                            <li><strong>Account takeover:</strong> Credential stuffing attacks</li>
+                            <li><strong>Man-in-the-browser:</strong> Banking trojans</li>
+                            <li><strong>API abuses:</strong> Automated attacks on APIs</li>
+                            <li><strong>Social engineering:</strong> Phishing, vishing</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Section 9 -->
+                <div class="card">
+                    <h2>9. Cloud Computing in Banking</h2>
+                    
+                    <h3>Cloud Adoption Models</h3>
+                    <div class="grid">
+                        <div class="grid-item">
+                            <h4>Private Cloud</h4>
+                            <ul>
+                                <li>Dedicated infrastructure</li>
+                                <li>Higher control and security</li>
+                                <li>Used for sensitive workloads</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="grid-item">
+                            <h4>Public Cloud</h4>
+                            <ul>
+                                <li>AWS, Azure, GCP</li>
+                                <li>Used for customer-facing apps</li>
+                                <li>Hybrid cloud common</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="grid-item">
+                            <h4>Banking as a Service</h4>
+                            <ul>
+                                <li>Cloud-native banking platforms</li>
+                                <li>API-driven financial services</li>
+                                <li>Fintech partnerships</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h3>Cloud Security Considerations</h3>
+                    <table>
+                        <tr>
+                            <th>Area</th>
+                            <th>Considerations</th>
+                            <th>Solutions</th>
+                        </tr>
+                        <tr>
+                            <td>Data Protection</td>
+                            <td>Regulatory requirements</td>
+                            <td>Encryption, tokenization</td>
+                        </tr>
+                        <tr>
+                            <td>Access Control</td>
+                            <td>Privileged access</td>
+                            <td>IAM, PAM, MFA</td>
+                        </tr>
+                        <tr>
+                            <td>Compliance</td>
+                            <td>Audit requirements</td>
+                            <td>CSP certifications, monitoring</td>
+                        </tr>
+                    </table>
+                    
+                    <div class="tech-box">
+                        <h3>Major Cloud Banking Providers</h3>
+                        <ul>
+                            <li><strong>AWS:</strong> AWS Banking Competency Partners</li>
+                            <li><strong>Microsoft:</strong> Azure for Banking</li>
+                            <li><strong>Google:</strong> Google Cloud for Financial Services</li>
+                            <li><strong>IBM:</strong> IBM Cloud for Financial Services</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Section 10 -->
+                <div class="card">
+                    <h2>10. Blockchain in Banking Networks</h2>
+                    
+                    <h3>Blockchain Applications</h3>
+                    <div class="grid">
+                        <div class="grid-item">
+                            <h4>Payments</h4>
+                            <ul>
+                                <li>Cross-border transfers</li>
+                                <li>Real-time settlement</li>
+                                <li>Stablecoins</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="grid-item">
+                            <h4>Trade Finance</h4>
+                            <ul>
+                                <li>Letter of credit</li>
+                                <li>Supply chain finance</li>
+                                <li>Document authentication</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="grid-item">
+                            <h4>Identity</h4>
+                            <ul>
+                                <li>KYC/AML utilities</li>
+                                <li>Self-sovereign identity</li>
+                                <li>Credential verification</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h3>Banking Blockchain Consortia</h3>
+                    <table>
+                        <tr>
+                            <th>Consortium</th>
+                            <th>Focus</th>
+                            <th>Members</th>
+                        </tr>
+                        <tr>
+                            <td>R3 Corda</td>
+                            <td>Enterprise blockchain</td>
+                            <td>200+ financial institutions</td>
+                        </tr>
+                        <tr>
+                            <td>Enterprise Ethereum</td>
+                            <td>Smart contracts</td>
+                            <td>JPMorgan, Santander</td>
+                        </tr>
+                        <tr>
+                            <td>Hyperledger</td>
+                            <td>Open-source blockchain</td>
+                            <td>Linux Foundation members</td>
+                        </tr>
+                    </table>
+                    
+                    <div class="tech-box">
+                        <h3>Blockchain Implementation Challenges</h3>
+                        <ul>
+                            <li>Regulatory uncertainty</li>
+                            <li>Scalability limitations</li>
+                            <li>Integration with legacy systems</li>
+                            <li>Energy consumption (PoW)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Section 11 -->
+                <div class="card">
+                    <h2>11. Emerging Technologies in Banking</h2>
+                    
+                    <h3>Innovation Areas</h3>
+                    <div class="grid">
+                        <div class="grid-item">
+                            <h4>AI and Machine Learning</h4>
+                            <ul>
+                                <li>Fraud detection</li>
+                                <li>Credit scoring</li>
+                                <li>Chatbots and virtual assistants</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="grid-item">
+                            <h4>Open Banking</h4>
+                            <ul>
+                                <li>PSD2 (Europe)</li>
+                                <li>API ecosystems</li>
+                                <li>Third-party providers</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="grid-item">
+                            <h4>Quantum Computing</h4>
+                            <ul>
+                                <li>Portfolio optimization</li>
+                                <li>Risk analysis</li>
+                                <li>Cryptography challenges</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h3>API Economy in Banking</h3>
+                    <table>
+                        <tr>
+                            <th>API Type</th>
+                            <th>Examples</th>
+                            <th>Standards</th>
+                        </tr>
+                        <tr>
+                            <td>Account Information</td>
+                            <td>Balance checks, transactions</td>
+                            <td>Open Banking Standard</td>
+                        </tr>
+                        <tr>
+                            <td>Payment Initiation</td>
+                            <td>Direct payments</td>
+                            <td>STET, Berlin Group</td>
+                        </tr>
+                        <tr>
+                            <td>Product Information</td>
+                            <td>Loan rates, features</td>
+                            <td>Bank-specific</td>
+                        </tr>
+                    </table>
+                    
+                    <div class="warning">
+                        <h3>Implementation Challenges</h3>
+                        <ul>
+                            <li>Legacy system integration</li>
+                            <li>Regulatory compliance</li>
+                            <li>Security risks</li>
+                            <li>Organizational resistance</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Section 12 -->
+                <div class="card">
+                    <h2>12. Banking Network Operations</h2>
+                    
+                    <h3>Network Monitoring</h3>
+                    <div class="grid">
+                        <div class="grid-item">
+                            <h4>Performance Monitoring</h4>
+                            <ul>
+                                <li>Latency measurement</li>
+                                <li>Packet loss detection</li>
+                                <li>Jitter analysis</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="grid-item">
+                            <h4>Security Monitoring</h4>
+                            <ul>
+                                <li>SIEM systems</li>
+                                <li>Anomaly detection</li>
+                                <li>Threat intelligence</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="grid-item">
+                            <h4>Transaction Monitoring</h4>
+                            <ul>
+                                <li>End-to-end tracking</li>
+                                <li>SLA compliance</li>
+                                <li>Failover testing</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h3>Disaster Recovery</h3>
+                    <table>
+                        <tr>
+                            <th>Component</th>
+                            <th>Recovery Strategy</th>
+                            <th>RTO/RPO</th>
+                        </tr>
+                        <tr>
+                            <td>Core Banking</td>
+                            <td>Hot standby, active-active</td>
+                            <td>RTO: <1hr, RPO: <1min</td>
+                        </tr>
+                        <tr>
+                            <td>Payment Systems</td>
+                            <td>Geographic redundancy</td>
+                            <td>RTO: <15min, RPO: 0</td>
+                        </tr>
+                        <tr>
+                            <td>Branch Networks</td>
+                            <td>Local caching, alternate routes</td>
+                            <td>RTO: <4hr, RPO: <1hr</td>
+                        </tr>
+                    </table>
+                    
+                    <div class="tech-box">
+                        <h3>Best Practices</h3>
+                        <ul>
+                            <li>24/7 network operations centers</li>
+                            <li>Regular failover testing</li>
+                            <li>Capacity planning and scaling</li>
+                            <li>Vendor management for critical services</li>
+                        </ul>
+                    </div>
+                </div>
+                
+               
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </main>  
+            
+            
+
+             <!-- Floating button to open chatbot -->
+    <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+    </div>
+    
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-container");
+            let button = document.getElementById("open-chatbot");
+    
+            if (!chatbot.classList.contains("active")) {
+                chatbot.classList.add("active");
+                button.style.display = "none"; // Hide button when chatbot is open
+            } else {
+                chatbot.classList.remove("active");
+                setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+            }
+        }
+    
+        // Load chatbot HTML dynamically
+        fetch("/chatbot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("chatbot-container").innerHTML += html;
+    
+            // Execute chatbot script after inserting HTML
+            let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+            for (let script of scripts) {
+                let newScript = document.createElement("script");
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript);
+            }
+        })
+        .catch(error => console.error("Error loading chatbot:", error));
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../computernetwork.json" : "computernetwork.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.Computer_Networks;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+        
+       
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    <link rel="stylesheet" href="../dsa.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../dsa.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+
+            <main class="col-md-7 content">
+                <h1>📏 Longest Increasing Subsequence (LIS) – Complete In-Depth Explanation</h1>
+            
+                <p>
+                    The **Longest Increasing Subsequence (LIS)** problem is a **dynamic programming problem**  
+                    that finds the longest subsequence of a given sequence where the elements are  
+                    **in increasing order** (not necessarily contiguous).
+                </p>
+            
+                <h2>📌 Why is LIS Important?</h2>
+                <ul>
+                    <li>✅ **Used in stock market analysis for trend prediction.**</li>
+                    <li>🚀 **Helps in finding the longest ordered sequence in data.**</li>
+                    <li>🔍 **Useful in bioinformatics for DNA sequencing.**</li>
+                    <li>📡 **Applied in computer vision for motion analysis.**</li>
+                </ul>
+            
+                <h1>📌 Understanding LIS with an Example</h1>
+                <p>
+                    Given an array:  
+                </p>
+                <pre><code>
+                    arr = [10, 22, 9, 33, 21, 50, 41, 60]
+                </code></pre>
+            
+                <p>
+                    The **Longest Increasing Subsequence (LIS)** is **[10, 22, 33, 50, 60]** (length = 5).
+                </p>
+            
+                <h3>🔹 **Key Points**</h3>
+                <ul>
+                    <li>✅ The elements **must be in increasing order** but **not necessarily contiguous**.</li>
+                    <li>📉 The LIS **may not be unique**; multiple valid solutions may exist.</li>
+                </ul>
+            
+                <h1>🛠 Solution Approaches</h1>
+            
+                <h2>📌 **1. Recursion (Brute Force) – O(2^N) Complexity**</h2>
+                <p>
+                    A **recursive solution** checks whether to include an element or exclude it.
+                </p>
+                <pre><code>
+                int LIS_Rec(vector<int>& arr, int prev, int index) {
+                    if (index == arr.size()) return 0;
+            
+                    int exclude = LIS_Rec(arr, prev, index + 1);
+                    int include = 0;
+                    if (prev == -1 || arr[index] > arr[prev]) 
+                        include = 1 + LIS_Rec(arr, index, index + 1);
+            
+                    return max(include, exclude);
+                }
+                </code></pre>
+            
+                <p>🔴 **Disadvantage:** This solution is **exponential (O(2^N))** and inefficient for large inputs.</p>
+            
+                <h2>📌 **2. Dynamic Programming (O(N²) Complexity)**</h2>
+                <p>
+                    Instead of recomputing results, we store them in a **DP array**.
+                </p>
+            
+                <pre><code>
+                int LIS_DP(vector<int>& arr) {
+                    int N = arr.size();
+                    vector<int> dp(N, 1);
+            
+                    for (int i = 1; i < N; i++) {
+                        for (int j = 0; j < i; j++) {
+                            if (arr[i] > arr[j]) 
+                                dp[i] = max(dp[i], dp[j] + 1);
+                        }
+                    }
+                    return *max_element(dp.begin(), dp.end());
+                }
+                </code></pre>
+            
+                <h2>📌 **3. Optimized LIS Using Binary Search (O(N log N))**</h2>
+                <p>
+                    We maintain a **sorted array** where each element **replaces** the first larger element found using binary search.
+                </p>
+            
+                <pre><code>
+                int LIS_BinarySearch(vector<int>& arr) {
+                    vector<int> lis;
+                    for (int num : arr) {
+                        auto it = lower_bound(lis.begin(), lis.end(), num);
+                        if (it == lis.end()) lis.push_back(num);
+                        else *it = num;
+                    }
+                    return lis.size();
+                }
+                </code></pre>
+            
+                <h1>📌 Printing the LIS Sequence</h1>
+                <p>We store the indices of predecessors to reconstruct the LIS.</p>
+            
+                <pre><code>
+                vector<int> printLIS(vector<int>& arr) {
+                    int N = arr.size();
+                    vector<int> dp(N, 1), parent(N, -1);
+                    int maxLen = 0, endIdx = 0;
+            
+                    for (int i = 1; i < N; i++) {
+                        for (int j = 0; j < i; j++) {
+                            if (arr[i] > arr[j] && dp[i] < dp[j] + 1) {
+                                dp[i] = dp[j] + 1;
+                                parent[i] = j;
+                            }
+                        }
+                        if (dp[i] > maxLen) {
+                            maxLen = dp[i];
+                            endIdx = i;
+                        }
+                    }
+            
+                    vector<int> lis;
+                    for (int i = endIdx; i >= 0; i = parent[i]) {
+                        lis.push_back(arr[i]);
+                        if (parent[i] == -1) break;
+                    }
+                    reverse(lis.begin(), lis.end());
+                    return lis;
+                }
+                </code></pre>
+            
+                <h1>⏳ Time Complexity Analysis</h1>
+                <table border="1">
+                    <tr>
+                        <th>Algorithm</th>
+                        <th>Time Complexity</th>
+                    </tr>
+                    <tr>
+                        <td>Recursive (Brute Force)</td>
+                        <td>O(2^N)</td>
+                    </tr>
+                    <tr>
+                        <td>Dynamic Programming (DP Table)</td>
+                        <td>O(N²)</td>
+                    </tr>
+                    <tr>
+                        <td>Binary Search Optimization</td>
+                        <td>O(N log N)</td>
+                    </tr>
+                </table>
+            
+                <h1>🌍 Real-World Applications of LIS</h1>
+                <ul>
+                    <li>📈 **Stock Market Analysis** – Finding upward trends.</li>
+                    <li>🧬 **Bioinformatics** – DNA sequence alignment.</li>
+                    <li>📡 **Data Compression** – Identifying ordered sequences.</li>
+                    <li>🔗 **Pattern Recognition** – Analyzing ordered patterns.</li>
+                </ul>
+            
+                <h2>🔗 Next Topics</h2>
+                <ul class="nexttopics-container">
+                    <li><a href="lcs.html">🔗 Longest Common Subsequence (LCS)</a></li>
+                    <li><a href="binary_search.html">🔍 Binary Search Applications</a></li>
+                    <li><a href="dp.html">📜 Dynamic Programming Techniques</a></li>
+                </ul>
+            </main>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../dsa.json" : "dsa.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.DSA;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    <link rel="stylesheet" href="dsa.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../opp.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+
+            <main class="col-md-7 content">
+                <h2>🔹 Behavioral Design Patterns in OOP</h2>
+            
+                <p>
+                    **Behavioral Design Patterns** focus on how objects **interact and communicate** with each other. 
+                    These patterns improve flexibility by defining **how responsibilities are distributed among objects**.
+                </p>
+            
+                <h3>📌 Why Use Behavioral Patterns?</h3>
+                <p>Behavioral patterns help in managing **object interactions** efficiently.</p>
+                <ul>
+                    <li>✅ **Reduces Code Complexity** – Defines clear rules for object communication.</li>
+                    <li>✅ **Encapsulation of Behavior** – Keeps business logic modular.</li>
+                    <li>✅ **Enhances Maintainability** – Easy to modify interactions between objects.</li>
+                    <li>✅ **Promotes Code Reusability** – Behavior can be reused in different parts of the program.</li>
+                </ul>
+            
+                <h3>📌 Common Behavioral Patterns</h3>
+            
+                <h4>🔹 1. Strategy Pattern</h4>
+                <p>Defines a **family of algorithms** and selects one at runtime.</p>
+                <pre><code>
+            interface PaymentStrategy {
+                void pay(int amount);
+            }
+            
+            class CreditCardPayment implements PaymentStrategy {
+                public void pay(int amount) {
+                    System.out.println("Paid $" + amount + " using Credit Card.");
+                }
+            }
+            
+            class PayPalPayment implements PaymentStrategy {
+                public void pay(int amount) {
+                    System.out.println("Paid $" + amount + " using PayPal.");
+                }
+            }
+            
+            class PaymentProcessor {
+                private PaymentStrategy strategy;
+            
+                public PaymentProcessor(PaymentStrategy strategy) {
+                    this.strategy = strategy;
+                }
+            
+                void executePayment(int amount) {
+                    strategy.pay(amount);
+                }
+            }
+            
+            // Usage
+            public class Main {
+                public static void main(String[] args) {
+                    PaymentProcessor payment = new PaymentProcessor(new PayPalPayment());
+                    payment.executePayment(100);
+                }
+            }
+                </code></pre>
+            
+                <h4>🔹 2. Observer Pattern</h4>
+                <p>Allows multiple objects (**observers**) to react when a subject (**observable**) changes.</p>
+                <pre><code>
+            import java.util.ArrayList;
+            import java.util.List;
+            
+            interface Observer {
+                void update(String message);
+            }
+            
+            class Subscriber implements Observer {
+                private String name;
+                
+                Subscriber(String name) {
+                    this.name = name;
+                }
+            
+                public void update(String message) {
+                    System.out.println(name + " received: " + message);
+                }
+            }
+            
+            class YouTubeChannel {
+                private List<Observer> subscribers = new ArrayList<>();
+            
+                void subscribe(Observer o) {
+                    subscribers.add(o);
+                }
+            
+                void notifySubscribers(String message) {
+                    for (Observer o : subscribers) {
+                        o.update(message);
+                    }
+                }
+            }
+            
+            // Usage
+            public class Main {
+                public static void main(String[] args) {
+                    YouTubeChannel channel = new YouTubeChannel();
+                    Observer user1 = new Subscriber("Alice");
+                    Observer user2 = new Subscriber("Bob");
+            
+                    channel.subscribe(user1);
+                    channel.subscribe(user2);
+            
+                    channel.notifySubscribers("New video uploaded!");
+                }
+            }
+                </code></pre>
+            
+                <h4>🔹 3. Command Pattern</h4>
+                <p>Encapsulates a request as an object to **support undo/redo actions**.</p>
+                <pre><code>
+            interface Command {
+                void execute();
+            }
+            
+            class LightOnCommand implements Command {
+                public void execute() {
+                    System.out.println("Light is turned ON");
+                }
+            }
+            
+            class RemoteControl {
+                private Command command;
+                
+                RemoteControl(Command command) {
+                    this.command = command;
+                }
+            
+                void pressButton() {
+                    command.execute();
+                }
+            }
+            
+            // Usage
+            public class Main {
+                public static void main(String[] args) {
+                    Command lightOn = new LightOnCommand();
+                    RemoteControl remote = new RemoteControl(lightOn);
+                    remote.pressButton();
+                }
+            }
+                </code></pre>
+            
+                <h3>🎯 Summary</h3>
+                <p>
+                    Behavioral design patterns **define object communication** while keeping business logic independent. 
+                    Common patterns include **Strategy, Observer, and Command**.
+                </p>
+            
+                <h2>🔗 Next Topics</h2>
+                <ul class="nexttopics-container">
+                    <li><a href="strategy_pattern.html">👉 Strategy Pattern</a></li>
+                    <li><a href="observer_pattern.html">👉 Observer Pattern</a></li>
+                    <li><a href="command_pattern.html">👉 Command Pattern</a></li>
+                </ul>
+            </main>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+     
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../opp.json" : "opp.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.OOP;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

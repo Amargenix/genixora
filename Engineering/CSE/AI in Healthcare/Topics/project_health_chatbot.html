@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Robotics</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>AI in Healthcare</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+               <h1>Project Health Chatbot</h1>
+   
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 10px; margin-bottom: 35px; box-shadow: 0 3px 8px rgba(0,0,0,0.08);">
+                        <h2 style="color: #0066cc; border-bottom: 2px solid #0066cc; padding-bottom: 12px; font-size: 1.8em;">The Evolution of Healthcare Chatbots</h2>
+                        
+                        <div style="display: flex; margin: 25px 0; gap: 20px;">
+                            <div style="flex: 1; background-color: #f0f9ff; padding: 20px; border-radius: 8px; border-left: 5px solid #0066cc;">
+                                <h3 style="color: #004080; margin-top: 0;">Traditional Healthcare Access</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Limited by office hours and staff availability</li>
+                                    <li>Long wait times for appointments</li>
+                                    <li>Geographical barriers to care</li>
+                                    <li>High administrative burden</li>
+                                    <li>Reactive rather than proactive care</li>
+                                </ul>
+                            </div>
+                            <div style="flex: 1; background-color: #f0fff4; padding: 20px; border-radius: 8px; border-left: 5px solid #00aa50;">
+                                <h3 style="color: #006633; margin-top: 0;">AI Chatbot Advantages</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>24/7 instant access to healthcare information</li>
+                                    <li>Reduced wait times and immediate responses</li>
+                                    <li>Global accessibility through digital platforms</li>
+                                    <li>Automated administrative tasks</li>
+                                    <li>Proactive health monitoring and reminders</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <p style="font-size: 1.1em;">Project Health Chatbot represents the next generation of healthcare interaction, combining natural language processing with medical knowledge bases to create intelligent, empathetic virtual health assistants.</p>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 10px; margin-bottom: 35px; box-shadow: 0 3px 8px rgba(0,0,0,0.08);">
+                        <h2 style="color: #0066cc; border-bottom: 2px solid #0066cc; padding-bottom: 12px; font-size: 1.8em;">Core Capabilities</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div style="background-color: #fff8e6; padding: 20px; border-radius: 8px; border-top: 4px solid #ffaa00;">
+                                <h3 style="color: #cc8800; margin-top: 0;">Symptom Assessment</h3>
+                                <p>Uses advanced NLP to understand patient-reported symptoms and provide:</p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Preliminary triage recommendations</li>
+                                    <li>Likely condition possibilities</li>
+                                    <li>Urgency level assessment</li>
+                                    <li>Next-step guidance</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f0f9ff; padding: 20px; border-radius: 8px; border-top: 4px solid #0066cc;">
+                                <h3 style="color: #004080; margin-top: 0;">Medication Management</h3>
+                                <p>Helps patients with prescription and OTC medications:</p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Dosage reminders and tracking</li>
+                                    <li>Drug interaction checks</li>
+                                    <li>Refill coordination</li>
+                                    <li>Side effect documentation</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f0fff4; padding: 20px; border-radius: 8px; border-top: 4px solid #00aa50;">
+                                <h3 style="color: #006633; margin-top: 0;">Appointment Coordination</h3>
+                                <p>Automates scheduling and healthcare navigation:</p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Intelligent appointment booking</li>
+                                    <li>Pre-visit preparation</li>
+                                    <li>Follow-up coordination</li>
+                                    <li>Provider matching</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #fff0f5; padding: 20px; border-radius: 8px; border-top: 4px solid #cc0066;">
+                                <h3 style="color: #99004d; margin-top: 0;">Health Education</h3>
+                                <p>Provides personalized health information:</p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Condition-specific resources</li>
+                                    <li>Preventive care guidance</li>
+                                    <li>Treatment option explanations</li>
+                                    <li>Multilingual support</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f5f0ff; padding: 20px; border-radius: 8px; border-top: 4px solid #6600cc;">
+                                <h3 style="color: #4d0099; margin-top: 0;">Mental Health Support</h3>
+                                <p>Offers preliminary psychological assistance:</p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Mood tracking</li>
+                                    <li>Coping strategies</li>
+                                    <li>Crisis resource connection</li>
+                                    <li>Therapy prep assistance</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #e6f9ff; padding: 20px; border-radius: 8px; border-top: 4px solid #00aacc;">
+                                <h3 style="color: #0088aa; margin-top: 0;">Chronic Condition Support</h3>
+                                <p>Specialized assistance for ongoing conditions:</p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Disease-specific monitoring</li>
+                                    <li>Lifestyle modification coaching</li>
+                                    <li>Complication warning signs</li>
+                                    <li>Care team communication</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 10px; margin-bottom: 35px; box-shadow: 0 3px 8px rgba(0,0,0,0.08);">
+                        <h2 style="color: #0066cc; border-bottom: 2px solid #0066cc; padding-bottom: 12px; font-size: 1.8em;">Technical Architecture</h2>
+                        
+                        <div style="display: flex; margin: 20px 0; gap: 20px;">
+                            <div style="flex: 1;">
+                                <h3 style="color: #004080;">Natural Language Processing Stack</h3>
+                                <div style="background-color: #f5f5f5; padding: 15px; border-radius: 6px;">
+                                    <ul style="padding-left: 20px;">
+                                        <li><strong>Intent Recognition:</strong> BERT-based classification models</li>
+                                        <li><strong>Entity Extraction:</strong> Custom medical NER models</li>
+                                        <li><strong>Sentiment Analysis:</strong> Emotion detection for empathetic responses</li>
+                                        <li><strong>Context Management:</strong> Dialogue state tracking</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div style="flex: 1;">
+                                <h3 style="color: #004080;">Knowledge Integration</h3>
+                                <div style="background-color: #f5f5f5; padding: 15px; border-radius: 6px;">
+                                    <ul style="padding-left: 20px;">
+                                        <li>Integrated with 50+ medical knowledge bases</li>
+                                        <li>Real-time connection to EHR systems</li>
+                                        <li>FDA-cleared medical content</li>
+                                        <li>Continually updated clinical guidelines</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="background-color: #e6f7ff; padding: 20px; border-radius: 8px; margin-top: 20px; border-left: 5px solid #0066cc;">
+                            <h3 style="color: #004080; margin-top: 0;">Multi-Channel Deployment</h3>
+                            <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 15px;">
+                                <div style="background-color: white; padding: 10px 15px; border-radius: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center;">
+                                    <span style="background-color: #0066cc; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 10px;">1</span>
+                                    Web Browser
+                                </div>
+                                <div style="background-color: white; padding: 10px 15px; border-radius: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center;">
+                                    <span style="background-color: #0066cc; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 10px;">2</span>
+                                    Mobile Apps
+                                </div>
+                                <div style="background-color: white; padding: 10px 15px; border-radius: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center;">
+                                    <span style="background-color: #0066cc; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 10px;">3</span>
+                                    SMS/Text
+                                </div>
+                                <div style="background-color: white; padding: 10px 15px; border-radius: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center;">
+                                    <span style="background-color: #0066cc; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 10px;">4</span>
+                                    Voice Assistants
+                                </div>
+                                <div style="background-color: white; padding: 10px 15px; border-radius: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center;">
+                                    <span style="background-color: #0066cc; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 10px;">5</span>
+                                    Hospital Kiosks
+                                </div>
+                                <div style="background-color: white; padding: 10px 15px; border-radius: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center;">
+                                    <span style="background-color: #0066cc; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 10px;">6</span>
+                                    Telehealth Platforms
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 10px; margin-bottom: 35px; box-shadow: 0 3px 8px rgba(0,0,0,0.08);">
+                        <h2 style="color: #0066cc; border-bottom: 2px solid #0066cc; padding-bottom: 12px; font-size: 1.8em;">Clinical Impact and Results</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div style="text-align: center; padding: 20px; background-color: #f0f9ff; border-radius: 8px;">
+                                <div style="font-size: 2.5em; font-weight: bold; color: #0066cc; margin-bottom: 10px;">40%</div>
+                                <p style="margin: 0;">Reduction in unnecessary ER visits through proper triage</p>
+                            </div>
+                            <div style="text-align: center; padding: 20px; background-color: #f0fff4; border-radius: 8px;">
+                                <div style="font-size: 2.5em; font-weight: bold; color: #00aa50; margin-bottom: 10px;">92%</div>
+                                <p style="margin: 0;">Patient satisfaction with chatbot interactions</p>
+                            </div>
+                            <div style="text-align: center; padding: 20px; background-color: #fff8e6; border-radius: 8px;">
+                                <div style="font-size: 2.5em; font-weight: bold; color: #ffaa00; margin-bottom: 10px;">3.5x</div>
+                                <p style="margin: 0;">Increase in preventive care engagement</p>
+                            </div>
+                            <div style="text-align: center; padding: 20px; background-color: #fff0f5; border-radius: 8px;">
+                                <div style="font-size: 2.5em; font-weight: bold; color: #cc0066; margin-bottom: 10px;">30%</div>
+                                <p style="margin: 0;">Reduction in administrative staff workload</p>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 30px; background-color: #f9f9f9; padding: 20px; border-radius: 8px;">
+                            <h3 style="color: #004080; margin-top: 0;">Case Study: Diabetes Management</h3>
+                            <p>Implementation at City General Hospital showed:</p>
+                            <ul style="padding-left: 20px;">
+                                <li>45% improvement in medication adherence</li>
+                                <li>28% reduction in A1C levels among engaged patients</li>
+                                <li>62% of patients reported better understanding of their condition</li>
+                                <li>Clinicians saved 15 minutes per patient visit through pre-visit data collection</li>
+                            </ul>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 10px; margin-bottom: 35px; box-shadow: 0 3px 8px rgba(0,0,0,0.08);">
+                        <h2 style="color: #0066cc; border-bottom: 2px solid #0066cc; padding-bottom: 12px; font-size: 1.8em;">Future Development Roadmap</h2>
+                        
+                        <div style="margin-top: 20px;">
+                            <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+                                <div style="background-color: #0066cc; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">2024</div>
+                                <div>
+                                    <h3 style="margin: 0 0 5px 0; color: #004080;">Multimodal Interaction</h3>
+                                    <p>Integration of voice, image, and video analysis for more natural interactions and diagnostic support.</p>
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+                                <div style="background-color: #0066cc; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">2025</div>
+                                <div>
+                                    <h3 style="margin: 0 0 5px 0; color: #004080;">Predictive Health Analytics</h3>
+                                    <p>Advanced machine learning models to predict health deterioration before symptoms appear.</p>
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+                                <div style="background-color: #0066cc; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">2026</div>
+                                <div>
+                                    <h3 style="margin: 0 0 5px 0; color: #004080;">Augmented Reality Integration</h3>
+                                    <p>AR interfaces for physical therapy guidance and medical education.</p>
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; align-items: flex-start;">
+                                <div style="background-color: #0066cc; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">2027+</div>
+                                <div>
+                                    <h3 style="margin: 0 0 5px 0; color: #004080;">Autonomous Health Agent</h3>
+                                    <p>Fully autonomous digital health assistant capable of end-to-end care coordination.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                  
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [ ];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics") ? "../AI in Healthcare.json" : "../AI in Healthcare.json";
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch AI for Robotics Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.AI_in_Healthcare;
+                        displayTopics(allTopics);
+                    }
+                    )
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+            </body>
+            </html>        

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../opp.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+
+            <main class="col-md-7 content">
+                <h2>🔹 Templates and Generics in Programming</h2>
+            
+                <p>
+                    **Templates** in C++ and **Generics** in languages like Java and C# are powerful features that allow developers to write flexible and reusable code.  
+                    They enable the creation of functions and classes that can operate on different data types without sacrificing type safety.
+                </p>
+            
+                <h3>📌 Overview of Templates and Generics</h3>
+                <p>
+                    - **Templates**: A feature in C++ that allows functions and classes to operate with generic types.  
+                    Templates enable type parameters to be specified when defining a function or a class, resulting in more reusable code.
+                    <br>
+                    - **Generics**: A feature in languages like Java and C# that provides a way to create classes, interfaces, and methods with a placeholder for the data type.  
+                    Generics improve code reusability and type safety by allowing the same code to work with different data types.
+                </p>
+            
+                <h3>📌 Benefits of Using Templates and Generics</h3>
+                <ul>
+                    <li>✅ **Type Safety**: Templates and generics ensure type safety at compile time, reducing runtime errors.</li>
+                    <li>✅ **Code Reusability**: Write code once and reuse it with different data types without duplicating code.</li>
+                    <li>✅ **Maintainability**: Improves code readability and maintainability by reducing code duplication.</li>
+                    <li>✅ **Performance**: In many cases, templates and generics can lead to better performance by enabling compile-time optimizations.</li>
+                </ul>
+            
+                <h3>🖥️ Templates in C++</h3>
+                <p>Here is an example demonstrating the use of templates in C++:</p>
+                <pre><code>
+            #include &lt;iostream&gt;
+            
+            template &lt;typename T&gt; // Template declaration
+            T add(T a, T b) {
+                return a + b; // Function to add two numbers
+            }
+            
+            int main() {
+                std::cout &lt;&lt; "Sum of integers: " &lt;&lt; add(5, 10) &lt;&lt; std::endl; // Works with integers
+                std::cout &lt;&lt; "Sum of doubles: " &lt;&lt; add(5.5, 10.5) &lt;&lt; std::endl; // Works with doubles
+                return 0;
+            }
+                </code></pre>
+            
+                <h3>🖥️ Generics in Java</h3>
+                <p>Here is an example demonstrating the use of generics in Java:</p>
+                <pre><code>
+            public class GenericAdd&lt;T extends Number&gt; { // Generic class with type constraint
+                public T add(T a, T b) {
+                    return (T) (Double.valueOf(a.doubleValue() + b.doubleValue()); // Add two numbers
+                }
+            
+                public static void main(String[] args) {
+                    GenericAdd&lt;Integer&gt; intAdder = new GenericAdd&lt;&gt;();
+                    System.out.println("Sum of integers: " + intAdder.add(5, 10));
+            
+                    GenericAdd&lt;Double&gt; doubleAdder = new GenericAdd&lt;&gt;();
+                    System.out.println("Sum of doubles: " + doubleAdder.add(5.5, 10.5));
+                }
+            }
+                </code></pre>
+            
+                <h3>🖥️ Generics in C#</h3>
+                <p>Here is an example demonstrating the use of generics in C#:</p>
+                <pre><code>
+            using System;
+            
+            public class GenericAdd&lt;T&gt; where T : struct { // Generic class with type constraint
+                public T Add(T a, T b) {
+                    dynamic first = a; // Use dynamic for adding
+                    dynamic second = b;
+                    return first + second; // Add two numbers
+                }
+            }
+            
+            class Program {
+                static void Main() {
+                    var intAdder = new GenericAdd&lt;int&gt;();
+                    Console.WriteLine("Sum of integers: " + intAdder.Add(5, 10));
+            
+                    var doubleAdder = new GenericAdd&lt;double&gt;();
+                    Console.WriteLine("Sum of doubles: " + doubleAdder.Add(5.5, 10.5));
+                }
+            }
+                </code></pre>
+            
+                <h3>📌 Best Practices for Using Templates and Generics</h3>
+                <ul>
+                    <li>✅ **Use Descriptive Names**: Choose descriptive names for type parameters to improve code readability.</li>
+                    <li>✅ **Limit Type Constraints**: Use type constraints when necessary to ensure that only appropriate types are used.</li>
+                    <li>✅ **Avoid Excessive Complexity**: Keep template and generic code simple to maintain readability and ease of understanding.</li>
+                    <li>✅ **Test Thoroughly**: Write tests for generic and template code to ensure it works correctly across different types.</li>
+                </ul>
+            
+                <h3>🎯 Summary</h3>
+                <p>
+                    Templates and generics are powerful programming features that enhance code reusability and type safety.  
+                    By allowing developers to create flexible and maintainable code, these features facilitate the development of robust applications.  
+                    Understanding how to implement templates and generics effectively can lead to better software design and improved performance.
+                </p>
+            
+                <h2>🔗 Next Topics</h2>
+                <ul class="nexttopics-container">
+                    <li><a href="functional_programming.html">👉 Functional Programming Concepts</a></li>
+                    <li><a href="design_patterns.html">👉 Design Patterns Overview</a></li>
+                    <li><a href="error_handling.html">👉 Error Handling in Programming</a></li>
+                </ul>
+            </main>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+     
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../opp.json" : "opp.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.OOP;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

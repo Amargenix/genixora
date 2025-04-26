@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer Network</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/allsubject.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Computer Networks</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                
+                    <h1>Cloud Networking in Computer Networks</h1>
+                    
+                    <!-- Section 1 -->
+                    <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">1. Introduction to Cloud Networking</h2>
+                        <p>Cloud networking refers to the hosting of network capabilities and resources in a public, private, or hybrid cloud. This includes network management, connectivity, and security services that are delivered on-demand.</p>
+                        
+                        <div style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                            <h3 style="color: #2c3e50; margin-top: 30px;">Key Characteristics</h3>
+                            <ul>
+                                <li><strong>On-demand self-service:</strong> Users can provision resources without human interaction</li>
+                                <li><strong>Broad network access:</strong> Available over standard network mechanisms</li>
+                                <li><strong>Resource pooling:</strong> Multi-tenant model with dynamic resource allocation</li>
+                                <li><strong>Rapid elasticity:</strong> Quickly scale up or down as needed</li>
+                                <li><strong>Measured service:</strong> Pay-per-use billing model</li>
+                            </ul>
+                        </div>
+                        
+                        <h3 style="color: #2c3e50; margin-top: 30px;">Evolution of Cloud Networking</h3>
+                        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                            <tr>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Phase</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Time Period</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Key Developments</th>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Mainframe Computing</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">1950s-1970s</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Time-sharing systems</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Client-Server</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">1980s-1990s</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Distributed computing</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Web 2.0</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Late 1990s</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Internet-based services</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Cloud Computing</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">2000s-present</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Virtualization, IaaS, PaaS, SaaS</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <!-- Section 2 -->
+                    <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">2. Cloud Networking Models</h2>
+                        
+                        <h3 style="color: #2c3e50; margin-top: 30px;">Deployment Models</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+                            <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                                <h4 style="color: #2c3e50;">Public Cloud</h4>
+                                <ul>
+                                    <li>Services offered over public internet</li>
+                                    <li>Multi-tenant environment</li>
+                                    <li>Examples: AWS, Azure, GCP</li>
+                                    <li>Pay-as-you-go pricing</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                                <h4 style="color: #2c3e50;">Private Cloud</h4>
+                                <ul>
+                                    <li>Dedicated to single organization</li>
+                                    <li>Greater control and security</li>
+                                    <li>On-premises or hosted</li>
+                                    <li>Higher upfront costs</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                                <h4 style="color: #2c3e50;">Hybrid Cloud</h4>
+                                <ul>
+                                    <li>Combination of public and private</li>
+                                    <li>Workload portability</li>
+                                    <li>Flexible infrastructure</li>
+                                    <li>Complex management</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <h3 style="color: #2c3e50; margin-top: 30px;">Service Models</h3>
+                        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                            <tr>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Model</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Description</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Examples</th>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">IaaS</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Basic infrastructure (servers, storage, networking)</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">AWS EC2, Azure VMs</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">PaaS</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Platform for developing and deploying applications</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Google App Engine, Heroku</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">SaaS</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Ready-to-use software applications</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Salesforce, Office 365</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">NaaS</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Network services delivered as cloud services</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">AWS VPC, Azure Virtual Network</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <!-- Section 3 -->
+                    <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">3. Cloud Network Architecture</h2>
+                        
+                        <div style="text-align: center; background-color: #f4f4f4; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                            <h3 style="color: #2c3e50;">Typical Cloud Network Architecture</h3>
+                            <pre style="background: #f4f4f4; padding: 10px; border-left: 3px solid #3498db; overflow-x: auto; font-family: 'Courier New', Courier, monospace;">
+                    +----------------+       +----------------+       +----------------+
+                    |                |       |                |       |                |
+                    |   Internet     |-------|  Edge/         |-------|  Core          |
+                    |                |       |  Access Layer  |       |  Network       |
+                    +----------------+       +----------------+       +----------------+
+                                                    |                        |
+                                                    |                        |
+                                            +----------------+       +----------------+
+                                            |                |       |                |
+                                            |  Aggregation   |-------|  Data Center   |
+                                            |  Layer         |       |  Network       |
+                                            +----------------+       +----------------+
+                                                    |
+                                                    |
+                                            +----------------+
+                                            |                |
+                                            |  End Users/    |
+                                            |  Applications  |
+                                            +----------------+</pre>
+                        </div>
+                        
+                        <h3 style="color: #2c3e50; margin-top: 30px;">Key Components</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+                            <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                                <h4 style="color: #2c3e50;">Virtual Networks</h4>
+                                <ul>
+                                    <li>Software-defined network segments</li>
+                                    <li>Isolated from other tenants</li>
+                                    <li>Customizable IP ranges</li>
+                                    <li>Example: AWS VPC, Azure VNet</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                                <h4 style="color: #2c3e50;">Load Balancers</h4>
+                                <ul>
+                                    <li>Distribute traffic across instances</li>
+                                    <li>Improve availability and scalability</li>
+                                    <li>Types: Application, Network, Gateway</li>
+                                    <li>Example: AWS ALB/NLB, Azure Load Balancer</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                                <h4 style="color: #2c3e50;">Content Delivery Networks</h4>
+                                <ul>
+                                    <li>Cache content at edge locations</li>
+                                    <li>Reduce latency for end users</li>
+                                    <li>DDoS protection</li>
+                                    <li>Example: CloudFront, Akamai</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Section 4 -->
+                    <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">4. Cloud Networking Technologies</h2>
+                        
+                        <h3 style="color: #2c3e50; margin-top: 30px;">Core Technologies</h3>
+                        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                            <tr>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Technology</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Description</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Use Case</th>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">SDN</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Separates control plane from data plane</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Network programmability</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">NFV</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Virtualizes network functions</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Firewalls, routers as software</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">VXLAN</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Overlay network encapsulation</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Multi-tenancy in cloud</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Geneve</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Next-gen network virtualization</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Cloud-native networking</td>
+                            </tr>
+                        </table>
+                        
+                        <h3 style="color: #2c3e50; margin-top: 30px;">Cloud-Specific Networking Services</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+                            <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                                <h4 style="color: #2c3e50;">AWS Networking</h4>
+                                <ul>
+                                    <li>VPC (Virtual Private Cloud)</li>
+                                    <li>Direct Connect</li>
+                                    <li>Route 53 (DNS)</li>
+                                    <li>CloudFront (CDN)</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                                <h4 style="color: #2c3e50;">Azure Networking</h4>
+                                <ul>
+                                    <li>Virtual Network</li>
+                                    <li>ExpressRoute</li>
+                                    <li>Azure DNS</li>
+                                    <li>Front Door</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                                <h4 style="color: #2c3e50;">Google Cloud Networking</h4>
+                                <ul>
+                                    <li>VPC Network</li>
+                                    <li>Cloud Interconnect</li>
+                                    <li>Cloud DNS</li>
+                                    <li>Cloud CDN</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Section 5 -->
+                    <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">5. Cloud Connectivity Options</h2>
+                        
+                        <h3 style="color: #2c3e50; margin-top: 30px;">Internet-Based Connectivity</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+                            <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                                <h4 style="color: #2c3e50;">Public Internet</h4>
+                                <ul>
+                                    <li>Standard internet connection</li>
+                                    <li>Lowest cost option</li>
+                                    <li>Variable performance</li>
+                                    <li>Security concerns</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                                <h4 style="color: #2c3e50;">VPN Connections</h4>
+                                <ul>
+                                    <li>Encrypted tunnels over internet</li>
+                                    <li>IPSec or SSL VPN</li>
+                                    <li>Better security</li>
+                                    <li>Moderate performance</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <h3 style="color: #2c3e50; margin-top: 30px;">Dedicated Connectivity</h3>
+                        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                            <tr>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Service</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Provider</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Speed</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Use Case</th>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">AWS Direct Connect</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Amazon</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">1Gbps-100Gbps</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">High-throughput workloads</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Azure ExpressRoute</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Microsoft</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">50Mbps-100Gbps</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Mission-critical apps</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Google Cloud Interconnect</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Google</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">10Gbps-100Gbps</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Data-intensive services</td>
+                            </tr>
+                        </table>
+                        
+                        <div style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                            <h3 style="color: #2c3e50;">Connectivity Comparison</h3>
+                            <ul>
+                                <li><strong>Public Internet:</strong> Cheapest, least reliable (100-500ms latency)</li>
+                                <li><strong>VPN:</strong> Moderate cost, better security (50-200ms latency)</li>
+                                <li><strong>Dedicated:</strong> Most expensive, most reliable (1-10ms latency)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Section 6 -->
+                    <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">6. Cloud Network Security</h2>
+                        
+                        <h3 style="color: #2c3e50; margin-top: 30px;">Security Challenges</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+                            <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                                <h4 style="color: #2c3e50;">Data Protection</h4>
+                                <ul>
+                                    <li>Encryption in transit and at rest</li>
+                                    <li>Key management</li>
+                                    <li>Data residency requirements</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                                <h4 style="color: #2c3e50;">Access Control</h4>
+                                <ul>
+                                    <li>Identity and access management</li>
+                                    <li>Least privilege principles</li>
+                                    <li>Multi-factor authentication</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                                <h4 style="color: #2c3e50;">Network Protection</h4>
+                                <ul>
+                                    <li>Firewalls and segmentation</li>
+                                    <li>DDoS protection</li>
+                                    <li>Intrusion detection/prevention</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <h3 style="color: #2c3e50; margin-top: 30px;">Security Solutions</h3>
+                        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                            <tr>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Solution</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Description</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Providers</th>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Cloud Firewalls</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Stateful inspection at cloud edge</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">AWS Network Firewall, Azure Firewall</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Web Application Firewalls</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Protect against web exploits</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">AWS WAF, Cloudflare</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Cloud Security Groups</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Virtual firewalls for instances</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">All major clouds</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Zero Trust Networks</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Verify before trust model</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Google BeyondCorp, Zscaler</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <!-- Section 7 -->
+                    <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">7. Multi-Cloud Networking</h2>
+                        
+                        <h3 style="color: #2c3e50; margin-top: 30px;">Challenges of Multi-Cloud</h3>
+                        <div style="background-color: #ffebee; padding: 15px; border-left: 4px solid #f44336;">
+                            <ul>
+                                <li>Different APIs and management tools</li>
+                                <li>Inconsistent networking models</li>
+                                <li>Data transfer costs between clouds</li>
+                                <li>Security policy fragmentation</li>
+                                <li>Monitoring and troubleshooting complexity</li>
+                            </ul>
+                        </div>
+                        
+                        <h3 style="color: #2c3e50; margin-top: 30px;">Multi-Cloud Networking Solutions</h3>
+                        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                            <tr>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Solution</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Approach</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Vendors</th>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Cloud Network Virtualization</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Abstract underlying cloud networks</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Aviatrix, Alkira</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Service Mesh</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Connect services across clouds</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Istio, Linkerd</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">SD-WAN for Cloud</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Optimize cloud connectivity</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">VMware, Cisco</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Cloud Exchange</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Private interconnect between clouds</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Equinix, Megaport</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <!-- Section 8 -->
+                    <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">8. Cloud Networking Performance</h2>
+                        
+                        <h3 style="color: #2c3e50; margin-top: 30px;">Performance Metrics</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+                            <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                                <h4 style="color: #2c3e50;">Latency</h4>
+                                <ul>
+                                    <li>Round-trip time for requests</li>
+                                    <li>Typically 1-100ms in cloud</li>
+                                    <li>Affected by distance, network path</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                                <h4 style="color: #2c3e50;">Throughput</h4>
+                                <ul>
+                                    <li>Data transfer rate</li>
+                                    <li>1Gbps-100Gbps for cloud networks</li>
+                                    <li>Depends on instance type</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                                <h4 style="color: #2c3e50;">Packet Loss</h4>
+                                <ul>
+                                    <li>Percentage of lost packets</li>
+                                    <li>Should be <0.1% in cloud</li>
+                                    <li>Indicates network issues</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <h3 style="color: #2c3e50; margin-top: 30px;">Performance Optimization</h3>
+                        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                            <tr>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Technique</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Implementation</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Impact</th>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Instance Placement</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Same availability zone</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Reduces latency by 5-10x</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Enhanced Networking</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">SR-IOV, ENA</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Higher throughput, lower CPU</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Content Caching</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">CDN, edge locations</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Reduces latency for end users</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Protocol Optimization</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">QUIC, HTTP/3</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Faster connection setup</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <!-- Section 9 -->
+                    <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">9. Cloud Networking Costs</h2>
+                        
+                        <h3 style="color: #2c3e50; margin-top: 30px;">Cost Components</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+                            <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                                <h4 style="color: #2c3e50;">Data Transfer Costs</h4>
+                                <ul>
+                                    <li>Egress fees ($0.01-$0.12/GB)</li>
+                                    <li>Cross-region transfer</li>
+                                    <li>Internet egress</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                                <h4 style="color: #2c3e50;">Network Services</h4>
+                                <ul>
+                                    <li>Load balancers ($0.02-$0.10/hr)</li>
+                                    <li>NAT gateways ($0.045/hr + $0.045/GB)</li>
+                                    <li>VPN connections ($0.05-$0.12/hr)</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                                <h4 style="color: #2c3e50;">Premium Features</h4>
+                                <ul>
+                                    <li>Dedicated connections ($200-$3000/month)</li>
+                                    <li>Advanced security services</li>
+                                    <li>Global accelerators</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <h3 style="color: #2c3e50; margin-top: 30px;">Cost Optimization Strategies</h3>
+                        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                            <tr>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Strategy</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Implementation</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Savings Potential</th>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Reduce Egress</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">CDN caching, compression</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">30-70%</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Right-Size Services</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Match capacity to need</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">20-50%</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Commitment Discounts</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Reserved capacity</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">25-75%</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Architecture Review</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Optimize network flows</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">10-40%</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <!-- Section 10 -->
+                    <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">10. Emerging Trends in Cloud Networking</h2>
+                        
+                        <h3 style="color: #2c3e50; margin-top: 30px;">Key Trends</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+                            <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                                <h4 style="color: #2c3e50;">Edge Computing</h4>
+                                <ul>
+                                    <li>Processing closer to data sources</li>
+                                    <li>Reduced latency for IoT</li>
+                                    <li>5G integration</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                                <h4 style="color: #2c3e50;">AI-Driven Networking</h4>
+                                <ul>
+                                    <li>Predictive traffic engineering</li>
+                                    <li>Automated troubleshooting</li>
+                                    <li>Self-healing networks</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                                <h4 style="color: #2c3e50;">Zero Trust Security</h4>
+                                <ul>
+                                    <li>Identity-based access</li>
+                                    <li>Micro-segmentation</li>
+                                    <li>Continuous verification</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <h3 style="color: #2c3e50; margin-top: 30px;">Future Technologies</h3>
+                        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                            <tr>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Technology</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Potential Impact</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Timeframe</th>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Quantum Networking</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Ultra-secure communications</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">2030+</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">6G Networks</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Terahertz frequencies</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">2030+</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Neuromorphic Chips</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Brain-like network processing</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">2025+</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Satellite Cloud Networks</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Global low-latency coverage</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">2025+</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <!-- Section 11 -->
+                    <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">11. Case Studies</h2>
+                        
+                        <h3 style="color: #2c3e50; margin-top: 30px;">Netflix Migration to AWS</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+                            <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                                <h4 style="color: #2c3e50;">Challenge</h4>
+                                <p>Scale streaming to millions of users with high availability</p>
+                            </div>
+                            
+                            <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                                <h4 style="color: #2c3e50;">Solution</h4>
+                                <ul>
+                                    <li>Multi-region AWS deployment</li>
+                                    <li>Open Connect CDN</li>
+                                    <li>Chaos engineering</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                                <h4 style="color: #2c3e50;">Results</h4>
+                                <ul>
+                                    <li>99.99% availability</li>
+                                    <li>Sub-second startup times</li>
+                                    <li>Scaled to 200M+ subscribers</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <h3 style="color: #2c3e50; margin-top: 30px;">Capital One Cloud Migration</h3>
+                        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                            <tr>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Aspect</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Detail</th>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Challenge</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Move regulated financial data to cloud</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Solution</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Hybrid cloud with strong security controls</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Networking</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">AWS Direct Connect, private subnets</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Results</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Closed data centers, improved agility</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <!-- Section 12 -->
+                    <div style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">12. Best Practices for Cloud Networking</h2>
+                        
+                        <div style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                            <h3 style="color: #2c3e50;">Design Principles</h3>
+                            <ul>
+                                <li><strong>Scalability:</strong> Design for growth and spikes</li>
+                                <li><strong>Resilience:</strong> Multi-AZ, multi-region</li>
+                                <li><strong>Security:</strong> Defense in depth</li>
+                                <li><strong>Cost Optimization:</strong> Right-size resources</li>
+                                <li><strong>Automation:</strong> Infrastructure as code</li>
+                            </ul>
+                        </div>
+                        
+                        <h3 style="color: #2c3e50; margin-top: 30px;">Implementation Checklist</h3>
+                        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                            <tr>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Area</th>
+                                <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Checklist Item</th>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Network Design</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Proper CIDR planning, subnet design</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Security</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Network ACLs, security groups configured</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Monitoring</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Flow logs enabled, metrics collected</td>
+                            </tr>
+                            <tr style="background-color: #f2f2f2;">
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Cost Control</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Egress monitoring, budget alerts</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Documentation</td>
+                                <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Network diagrams, runbooks created</td>
+                            </tr>
+                        </table>
+                        
+                        <h3 style="color: #2c3e50; margin-top: 30px;">Tools for Cloud Networking</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+                            <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                                <h4 style="color: #2c3e50;">Monitoring</h4>
+                                <ul>
+                                    <li>CloudWatch (AWS)</li>
+                                    <li>Azure Monitor</li>
+                                    <li>Stackdriver (GCP)</li>
+                                    <li>Datadog, New Relic</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                                <h4 style="color: #2c3e50;">Automation</h4>
+                                <ul>
+                                    <li>Terraform</li>
+                                    <li>Ansible</li>
+                                    <li>CloudFormation</li>
+                                    <li>Deployment Manager</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1);">
+                                <h4 style="color: #2c3e50;">Security</h4>
+                                <ul>
+                                    <li>Palo Alto VM-Series</li>
+                                    <li>Check Point CloudGuard</li>
+                                    <li>Zscaler</li>
+                                    <li>Prisma Cloud</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+              
+              
+            </main>  
+            
+            
+
+             <!-- Floating button to open chatbot -->
+    <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+    </div>
+    
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-container");
+            let button = document.getElementById("open-chatbot");
+    
+            if (!chatbot.classList.contains("active")) {
+                chatbot.classList.add("active");
+                button.style.display = "none"; // Hide button when chatbot is open
+            } else {
+                chatbot.classList.remove("active");
+                setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+            }
+        }
+    
+        // Load chatbot HTML dynamically
+        fetch("/chatbot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("chatbot-container").innerHTML += html;
+    
+            // Execute chatbot script after inserting HTML
+            let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+            for (let script of scripts) {
+                let newScript = document.createElement("script");
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript);
+            }
+        })
+        .catch(error => console.error("Error loading chatbot:", error));
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../computernetwork.json" : "computernetwork.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.Computer_Networks;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+        
+       
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

@@ -1,0 +1,40 @@
+[
+    { "name": "Introduction to Big Data", "id": "intro_big_data", "link": "intro_big_data.html" },
+    { "name": "Characteristics of Big Data (5 Vs)", "id": "big_data_5vs", "link": "big_data_5vs.html" },
+    { "name": "Big Data vs Traditional Data", "id": "big_data_vs_traditional", "link": "big_data_vs_traditional.html" },
+    { "name": "Big Data Applications and Use Cases", "id": "big_data_applications", "link": "big_data_applications.html" },
+    { "name": "Big Data Architecture Overview", "id": "big_data_architecture", "link": "big_data_architecture.html" },
+  
+    { "name": "Introduction to Hadoop Ecosystem", "id": "intro_hadoop", "link": "intro_hadoop.html" },
+    { "name": "HDFS (Hadoop Distributed File System)", "id": "hdfs", "link": "hdfs.html" },
+    { "name": "MapReduce Programming Model", "id": "mapreduce", "link": "mapreduce.html" },
+    { "name": "YARN: Yet Another Resource Negotiator", "id": "yarn", "link": "yarn.html" },
+    { "name": "Hive: Data Warehousing on Hadoop", "id": "hive", "link": "hive.html" },
+    { "name": "Pig: Platform for Data Flow", "id": "pig", "link": "pig.html" },
+    { "name": "Sqoop: Data Transfer Between Hadoop and RDBMS", "id": "sqoop", "link": "sqoop.html" },
+    { "name": "Flume: Data Ingestion from Logs", "id": "flume", "link": "flume.html" },
+  
+    { "name": "Apache Spark Overview", "id": "spark_overview", "link": "spark_overview.html" },
+    { "name": "Spark Core Concepts", "id": "spark_core", "link": "spark_core.html" },
+    { "name": "Spark RDDs and DataFrames", "id": "spark_rdds", "link": "spark_rdds.html" },
+    { "name": "Spark SQL for Structured Data", "id": "spark_sql", "link": "spark_sql.html" },
+    { "name": "Spark Streaming", "id": "spark_streaming", "link": "spark_streaming.html" },
+    { "name": "Spark MLlib for Machine Learning", "id": "spark_mllib", "link": "spark_mllib.html" },
+  
+    { "name": "NoSQL Databases (HBase, Cassandra, MongoDB)", "id": "nosql_databases", "link": "nosql_databases.html" },
+    { "name": "Data Lakes and Data Warehouses", "id": "data_lakes", "link": "data_lakes.html" },
+    { "name": "Data Processing Frameworks Comparison", "id": "framework_comparison", "link": "framework_comparison.html" },
+  
+    { "name": "Data Ingestion Tools (Kafka, NiFi)", "id": "data_ingestion_tools", "link": "data_ingestion_tools.html" },
+    { "name": "Real-Time Analytics vs Batch Processing", "id": "realtime_vs_batch", "link": "realtime_vs_batch.html" },
+    { "name": "Big Data Security and Governance", "id": "big_data_security", "link": "big_data_security.html" },
+  
+    { "name": "Big Data in Healthcare", "id": "big_data_healthcare", "link": "big_data_healthcare.html" },
+    { "name": "Big Data in Finance", "id": "big_data_finance", "link": "big_data_finance.html" },
+    { "name": "Big Data in E-Commerce", "id": "big_data_ecommerce", "link": "big_data_ecommerce.html" },
+  
+    { "name": "Capstone Project: Analyze Social Media Data with Spark", "id": "project_social_spark", "link": "project_social_spark.html" },
+    { "name": "Capstone Project: Build a Real-Time Log Monitoring System", "id": "project_log_monitoring", "link": "project_log_monitoring.html" },
+    { "name": "Career and Certification Paths in Big Data", "id": "big_data_certifications", "link": "big_data_certifications.html" }
+  ]
+  

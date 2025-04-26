@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer Network</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/allsubject.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Computer Networks</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+               <h1>Subnet Calculator in Computer Networking</h1>
+                    
+                    <div style="background-color: #e3f2fd; padding: 20px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <p style="margin: 0; font-size: 1.1em; font-style: italic; color: #0d47a1;">
+                            "A subnet calculator is an essential tool for network administrators that helps in designing, implementing, and troubleshooting IP networks by calculating subnet parameters from given IP addresses."
+                        </p>
+                    </div>
+                
+                    <h2 style="color: #1565c0; margin-top: 40px; border-left: 5px solid #1976d2; padding-left: 15px;">What is Subnetting?</h2>
+                    
+                    <div style="background-color: white; padding: 20px; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <p>Subnetting is the process of dividing a single network into smaller logical subnetworks (subnets). This is done to:</p>
+                        <ul style="padding-left: 25px;">
+                            <li>Improve network performance and reduce congestion</li>
+                            <li>Enhance security by isolating network segments</li>
+                            <li>Optimize IP address allocation</li>
+                            <li>Simplify network management</li>
+                        </ul>
+                    </div>
+                
+                    <h2 style="color: #1565c0; margin-top: 40px; border-left: 5px solid #1976d2; padding-left: 15px;">Key Subnetting Concepts</h2>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px;">
+                        <div style="background-color: #e8f5e9; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3 style="color: #2e7d32; margin-top: 0;">IP Address</h3>
+                            <p>A unique identifier for devices on a network (e.g., 192.168.1.1). Consists of:</p>
+                            <ul style="padding-left: 20px;">
+                                <li><strong>Network portion</strong> - Identifies the network</li>
+                                <li><strong>Host portion</strong> - Identifies the device</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background-color: #e8f5e9; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3 style="color: #2e7d32; margin-top: 0;">Subnet Mask</h3>
+                            <p>A 32-bit number that masks an IP address (e.g., 255.255.255.0). Defines:</p>
+                            <ul style="padding-left: 20px;">
+                                <li>Which part is network</li>
+                                <li>Which part is host</li>
+                            </ul>
+                            <p>1s represent network, 0s represent hosts.</p>
+                        </div>
+                        
+                        <div style="background-color: #e8f5e9; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3 style="color: #2e7d32; margin-top: 0;">CIDR Notation</h3>
+                            <p>Compact representation of IP address and subnet mask (e.g., 192.168.1.0/24).</p>
+                            <p>The number after the slash (/) indicates how many bits are set to 1 in the subnet mask.</p>
+                            <p>Example: /24 = 255.255.255.0</p>
+                        </div>
+                        
+                        <div style="background-color: #e8f5e9; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3 style="color: #2e7d32; margin-top: 0;">Network Address</h3>
+                            <p>The first address in a subnet where all host bits are 0 (e.g., 192.168.1.0).</p>
+                            <p>Identifies the subnet itself and cannot be assigned to hosts.</p>
+                        </div>
+                        
+                        <div style="background-color: #e8f5e9; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3 style="color: #2e7d32; margin-top: 0;">Broadcast Address</h3>
+                            <p>The last address in a subnet where all host bits are 1 (e.g., 192.168.1.255).</p>
+                            <p>Used to send data to all devices in the subnet.</p>
+                        </div>
+                        
+                        <div style="background-color: #e8f5e9; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3 style="color: #2e7d32; margin-top: 0;">Usable Host Range</h3>
+                            <p>All addresses between network and broadcast addresses.</p>
+                            <p>For 192.168.1.0/24: 192.168.1.1 to 192.168.1.254</p>
+                        </div>
+                    </div>
+                
+                    <h2 style="color: #1565c0; margin-top: 40px; border-left: 5px solid #1976d2; padding-left: 15px;">What Does a Subnet Calculator Do?</h2>
+                    
+                    <div style="background-color: white; padding: 20px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <p>A subnet calculator automates the process of determining subnet parameters:</p>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 15px;">
+                            <div>
+                                <h4 style="color: #0d47a1; margin-bottom: 10px;">Inputs:</h4>
+                                <ul style="padding-left: 20px;">
+                                    <li>IP address</li>
+                                    <li>Subnet mask (or CIDR notation)</li>
+                                    <li>Optional: Number of required subnets or hosts per subnet</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 style="color: #0d47a1; margin-bottom: 10px;">Outputs:</h4>
+                                <ul style="padding-left: 20px;">
+                                    <li>Network address</li>
+                                    <li>Broadcast address</li>
+                                    <li>Usable host range</li>
+                                    <li>Number of hosts per subnet</li>
+                                    <li>Subnet bits and host bits</li>
+                                    <li>Wildcard mask</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <h2 style="color: #1565c0; margin-top: 40px; border-left: 5px solid #1976d2; padding-left: 15px;">Subnet Calculation Examples</h2>
+                    
+                    <div style="background-color: #fff3e0; padding: 20px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h3 style="color: #e65100; margin-top: 0;">Example 1: Basic Subnet Calculation</h3>
+                        <p><strong>Given:</strong> 192.168.1.0/24</p>
+                        
+                        <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+                            <tr style="background-color: #ffe0b2;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #ffcc80;">Parameter</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #ffcc80;">Value</th>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ffcc80;">Network Address</td>
+                                <td style="padding: 10px; border: 1px solid #ffcc80;">192.168.1.0</td>
+                            </tr>
+                            <tr style="background-color: #fff8e1;">
+                                <td style="padding: 10px; border: 1px solid #ffcc80;">Subnet Mask</td>
+                                <td style="padding: 10px; border: 1px solid #ffcc80;">255.255.255.0</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ffcc80;">CIDR Notation</td>
+                                <td style="padding: 10px; border: 1px solid #ffcc80;">/24</td>
+                            </tr>
+                            <tr style="background-color: #fff8e1;">
+                                <td style="padding: 10px; border: 1px solid #ffcc80;">Broadcast Address</td>
+                                <td style="padding: 10px; border: 1px solid #ffcc80;">192.168.1.255</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ffcc80;">Usable Host Range</td>
+                                <td style="padding: 10px; border: 1px solid #ffcc80;">192.168.1.1 - 192.168.1.254</td>
+                            </tr>
+                            <tr style="background-color: #fff8e1;">
+                                <td style="padding: 10px; border: 1px solid #ffcc80;">Total Hosts</td>
+                                <td style="padding: 10px; border: 1px solid #ffcc80;">254</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div style="background-color: #e8eaf6; padding: 20px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h3 style="color: #3949ab; margin-top: 0;">Example 2: Subnet Division</h3>
+                        <p><strong>Given:</strong> 192.168.1.0/24, need 4 subnets</p>
+                        
+                        <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+                            <tr style="background-color: #c5cae9;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #9fa8da;">Subnet</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #9fa8da;">Network Address</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #9fa8da;">Usable Range</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #9fa8da;">Broadcast</th>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #9fa8da;">Subnet 1</td>
+                                <td style="padding: 10px; border: 1px solid #9fa8da;">192.168.1.0/26</td>
+                                <td style="padding: 10px; border: 1px solid #9fa8da;">192.168.1.1-62</td>
+                                <td style="padding: 10px; border: 1px solid #9fa8da;">192.168.1.63</td>
+                            </tr>
+                            <tr style="background-color: #e8eaf6;">
+                                <td style="padding: 10px; border: 1px solid #9fa8da;">Subnet 2</td>
+                                <td style="padding: 10px; border: 1px solid #9fa8da;">192.168.1.64/26</td>
+                                <td style="padding: 10px; border: 1px solid #9fa8da;">192.168.1.65-126</td>
+                                <td style="padding: 10px; border: 1px solid #9fa8da;">192.168.1.127</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #9fa8da;">Subnet 3</td>
+                                <td style="padding: 10px; border: 1px solid #9fa8da;">192.168.1.128/26</td>
+                                <td style="padding: 10px; border: 1px solid #9fa8da;">192.168.1.129-190</td>
+                                <td style="padding: 10px; border: 1px solid #9fa8da;">192.168.1.191</td>
+                            </tr>
+                            <tr style="background-color: #e8eaf6;">
+                                <td style="padding: 10px; border: 1px solid #9fa8da;">Subnet 4</td>
+                                <td style="padding: 10px; border: 1px solid #9fa8da;">192.168.1.192/26</td>
+                                <td style="padding: 10px; border: 1px solid #9fa8da;">192.168.1.193-254</td>
+                                <td style="padding: 10px; border: 1px solid #9fa8da;">192.168.1.255</td>
+                            </tr>
+                        </table>
+                        
+                        <p style="margin-top: 15px;"><strong>Calculation:</strong> Borrowed 2 bits (since 2²=4 subnets), new subnet mask is /26 (255.255.255.192)</p>
+                    </div>
+                
+                    <h2 style="color: #1565c0; margin-top: 40px; border-left: 5px solid #1976d2; padding-left: 15px;">Subnetting Cheat Sheet</h2>
+                    
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse; margin-bottom: 30px; min-width: 600px;">
+                            <thead>
+                                <tr style="background-color: #1565c0; color: white;">
+                                    <th style="padding: 12px; text-align: center; border: 1px solid #0d47a1;">CIDR</th>
+                                    <th style="padding: 12px; text-align: center; border: 1px solid #0d47a1;">Subnet Mask</th>
+                                    <th style="padding: 12px; text-align: center; border: 1px solid #0d47a1;">Wildcard</th>
+                                    <th style="padding: 12px; text-align: center; border: 1px solid #0d47a1;"># of Subnets</th>
+                                    <th style="padding: 12px; text-align: center; border: 1px solid #0d47a1;"># of Hosts</th>
+                                    <th style="padding: 12px; text-align: center; border: 1px solid #0d47a1;">Class</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">/8</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">255.0.0.0</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">0.255.255.255</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">1</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">16,777,214</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">A</td>
+                                </tr>
+                                <tr style="background-color: #e3f2fd;">
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">/16</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">255.255.0.0</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">0.0.255.255</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">256</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">65,534</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">B</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">/24</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">255.255.255.0</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">0.0.0.255</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">65,536</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">254</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">C</td>
+                                </tr>
+                                <tr style="background-color: #e3f2fd;">
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">/25</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">255.255.255.128</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">0.0.0.127</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">2</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">126</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">-</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">/26</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">255.255.255.192</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">0.0.0.63</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">4</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">62</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">-</td>
+                                </tr>
+                                <tr style="background-color: #e3f2fd;">
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">/27</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">255.255.255.224</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">0.0.0.31</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">8</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">30</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">-</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">/28</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">255.255.255.240</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">0.0.0.15</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">16</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">14</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">-</td>
+                                </tr>
+                                <tr style="background-color: #e3f2fd;">
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">/29</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">255.255.255.248</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">0.0.0.7</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">32</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">6</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">-</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">/30</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">255.255.255.252</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">0.0.0.3</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">64</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">2</td>
+                                    <td style="padding: 10px; text-align: center; border: 1px solid #bbdefb;">-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                    <h2 style="color: #1565c0; margin-top: 40px; border-left: 5px solid #1976d2; padding-left: 15px;">How Subnet Calculators Work</h2>
+                    
+                    <div style="background-color: white; padding: 20px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h3 style="color: #0d47a1; margin-top: 0;">Step-by-Step Process</h3>
+                        
+                        <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+                            <div style="width: 30px; height: 30px; background-color: #1565c0; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: bold; flex-shrink: 0;">1</div>
+                            <div>
+                                <h4 style="margin: 0 0 5px 0; color: #0d47a1;">Input Analysis</h4>
+                                <p>The calculator parses the input IP address and subnet mask (or CIDR notation).</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+                            <div style="width: 30px; height: 30px; background-color: #1565c0; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: bold; flex-shrink: 0;">2</div>
+                            <div>
+                                <h4 style="margin: 0 0 5px 0; color: #0d47a1;">Binary Conversion</h4>
+                                <p>Converts the IP address and subnet mask to binary form for bitwise operations.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+                            <div style="width: 30px; height: 30px; background-color: #1565c0; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: bold; flex-shrink: 0;">3</div>
+                            <div>
+                                <h4 style="margin: 0 0 5px 0; color: #0d47a1;">Network Address Calculation</h4>
+                                <p>Performs a bitwise AND operation between IP address and subnet mask to determine the network address.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+                            <div style="width: 30px; height: 30px; background-color: #1565c0; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: bold; flex-shrink: 0;">4</div>
+                            <div>
+                                <h4 style="margin: 0 0 5px 0; color: #0d47a1;">Broadcast Address Calculation</h4>
+                                <p>Determines the broadcast address by setting all host bits to 1.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+                            <div style="width: 30px; height: 30px; background-color: #1565c0; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: bold; flex-shrink: 0;">5</div>
+                            <div>
+                                <h4 style="margin: 0 0 5px 0; color: #0d47a1;">Host Range Determination</h4>
+                                <p>Calculates the first and last usable host addresses.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; align-items: flex-start;">
+                            <div style="width: 30px; height: 30px; background-color: #1565c0; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: bold; flex-shrink: 0;">6</div>
+                            <div>
+                                <h4 style="margin: 0 0 5px 0; color: #0d47a1;">Subnet Division (if requested)</h4>
+                                <p>When dividing into subnets, calculates the new subnet mask and determines the ranges for each subnet.</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <h2 style="color: #1565c0; margin-top: 40px; border-left: 5px solid #1976d2; padding-left: 15px;">Types of Subnet Calculators</h2>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px;">
+                        <div style="background-color: #fce4ec; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3 style="color: #ad1457; margin-top: 0;">Basic Subnet Calculator</h3>
+                            <p>Calculates network parameters from a given IP and subnet mask.</p>
+                            <ul style="padding-left: 20px;">
+                                <li>Network/broadcast addresses</li>
+                                <li>Usable host range</li>
+                                <li>Number of hosts</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background-color: #fce4ec; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3 style="color: #ad1457; margin-top: 0;">VLSM Calculator</h3>
+                            <p>Variable Length Subnet Masking calculator for efficient IP allocation.</p>
+                            <ul style="padding-left: 20px;">
+                                <li>Creates subnets of different sizes</li>
+                                <li>Minimizes wasted IP space</li>
+                                <li>Complex network designs</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background-color: #fce4ec; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3 style="color: #ad1457; margin-top: 0;">Supernet Calculator</h3>
+                            <p>Combines multiple networks into a larger supernetwork.</p>
+                            <ul style="padding-left: 20px;">
+                                <li>Route summarization</li>
+                                <li>CIDR block creation</li>
+                                <li>Reduces routing table size</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background-color: #fce4ec; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3 style="color: #ad1457; margin-top: 0;">IPv6 Subnet Calculator</h3>
+                            <p>Specialized for IPv6's 128-bit address space.</p>
+                            <ul style="padding-left: 20px;">
+                                <li>Handles hexadecimal notation</li>
+                                <li>Calculates /64 subnets</li>
+                                <li>IPv6 prefix delegation</li>
+                            </ul>
+                        </div>
+                    </div>
+                
+                    <h2 style="color: #1565c0; margin-top: 40px; border-left: 5px solid #1976d2; padding-left: 15px;">Practical Applications</h2>
+                    
+                    <div style="background-color: #e0f7fa; padding: 20px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+                            <div>
+                                <h3 style="color: #00838f; margin-top: 0;">Network Design</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Planning IP address allocation</li>
+                                    <li>Determining optimal subnet sizes</li>
+                                    <li>Creating hierarchical network structures</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h3 style="color: #00838f; margin-top: 0;">Troubleshooting</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Identifying misconfigured devices</li>
+                                    <li>Verifying network boundaries</li>
+                                    <li>Checking for IP conflicts</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h3 style="color: #00838f; margin-top: 0;">Security</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Creating DMZ networks</li>
+                                    <li>Implementing network segmentation</li>
+                                    <li>Configuring firewall rules</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h3 style="color: #00838f; margin-top: 0;">Cloud Computing</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Designing VPC networks</li>
+                                    <li>Allocating subnets to availability zones</li>
+                                    <li>Configuring network security groups</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <h2 style="color: #1565c0; margin-top: 40px; border-left: 5px solid #1976d2; padding-left: 15px;">Popular Subnet Calculator Tools</h2>
+                    
+                    <div style="background-color: white; padding: 20px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
+                            <div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 15px;">
+                                <h3 style="margin-top: 0; color: #0d47a1;">SolarWinds Subnet Calculator</h3>
+                                <p>Professional tool with advanced features for network engineers.</p>
+                                <p><strong>Platform:</strong> Windows</p>
+                            </div>
+                            
+                            <div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 15px;">
+                                <h3 style="margin-top: 0; color: #0d47a1;">Spiceworks Subnet Calculator</h3>
+                                <p>Web-based calculator with simple, intuitive interface.</p>
+                                <p><strong>Platform:</strong> Web</p>
+                            </div>
+                            
+                            <div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 15px;">
+                                <h3 style="margin-top: 0; color: #0d47a1;">ipcalc</h3>
+                                <p>Command-line tool available on Linux/Unix systems.</p>
+                                <p><strong>Platform:</strong> Linux/Unix</p>
+                            </div>
+                            
+                            <div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 15px;">
+                                <h3 style="margin-top: 0; color: #0d47a1;">CalculatorSoup</h3>
+                                <p>Online calculator with detailed subnet information.</p>
+                                <p><strong>Platform:</strong> Web</p>
+                            </div>
+                            
+                            <div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 15px;">
+                                <h3 style="margin-top: 0; color: #0d47a1;">SubnetCalc (Mobile)</h3>
+                                <p>Mobile app for subnet calculations on the go.</p>
+                                <p><strong>Platform:</strong> iOS/Android</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div style="background-color: #e1f5fe; padding: 25px; border-radius: 8px; margin-top: 40px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #0277bd; margin-top: 0; text-align: center;">Conclusion</h2>
+                        <p style="text-align: center; font-size: 1.1em;">Subnet calculators are indispensable tools for network professionals, simplifying the complex process of IP address management and subnet design. By automating calculations that would otherwise be time-consuming and error-prone, these tools enable efficient network planning, troubleshooting, and optimization in both IPv4 and IPv6 environments.</p>
+                    </div>
+                
+            </main>  
+            
+            
+
+             <!-- Floating button to open chatbot -->
+    <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+    </div>
+    
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-container");
+            let button = document.getElementById("open-chatbot");
+    
+            if (!chatbot.classList.contains("active")) {
+                chatbot.classList.add("active");
+                button.style.display = "none"; // Hide button when chatbot is open
+            } else {
+                chatbot.classList.remove("active");
+                setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+            }
+        }
+    
+        // Load chatbot HTML dynamically
+        fetch("/chatbot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("chatbot-container").innerHTML += html;
+    
+            // Execute chatbot script after inserting HTML
+            let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+            for (let script of scripts) {
+                let newScript = document.createElement("script");
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript);
+            }
+        })
+        .catch(error => console.error("Error loading chatbot:", error));
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../computernetwork.json" : "computernetwork.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.Computer_Networks;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+        
+       
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

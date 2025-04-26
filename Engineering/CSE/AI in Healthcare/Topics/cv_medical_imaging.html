@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Robotics</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>AI in Healthcare</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <h1>Computer Vision in Medical Imaging</h1>
+                    
+                    <div style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 25px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <h2 style="color: #6c5ce7; margin-top: 0;">Fundamentals of Medical Computer Vision</h2>
+                        <p>Computer vision (CV) in medical imaging applies advanced algorithms to analyze and interpret visual medical data. These systems can detect patterns, quantify features, and assist in diagnosis with superhuman precision in specific tasks.</p>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div style="background-color: white; padding: 15px; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                                <h3 style="color: #00b894; margin-top: 0;">Core Technologies</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Convolutional Neural Networks (CNNs)</li>
+                                    <li>U-Net architectures for segmentation</li>
+                                    <li>Vision Transformers (ViTs)</li>
+                                    <li>Generative Adversarial Networks (GANs)</li>
+                                    <li>3D volumetric analysis</li>
+                                    <li>Multimodal fusion techniques</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: white; padding: 15px; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                                <h3 style="color: #00b894; margin-top: 0;">Data Characteristics</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>High-dimensional data (2D, 3D, 4D)</li>
+                                    <li>Multiple modalities (CT, MRI, X-ray, etc.)</li>
+                                    <li>Variable resolutions and contrasts</li>
+                                    <li>DICOM standard format</li>
+                                    <li>Requires expert annotations</li>
+                                    <li>Privacy-sensitive data</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="background-color: #fff; border-left: 5px solid #fd79a8; padding: 20px; margin-bottom: 30px; box-shadow: 0 3px 10px rgba(0,0,0,0.05);">
+                        <h2 style="color: #e84393; margin-top: 0;">Key Applications in Clinical Practice</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 15px;">
+                            <div style="background-color: #ffeaa7; padding: 15px; border-radius: 8px;">
+                                <h4 style="color: #d63031; margin-top: 0;">Detection</h4>
+                                <p>Identifying abnormalities (tumors, fractures, hemorrhages) with high sensitivity</p>
+                            </div>
+                            
+                            <div style="background-color: #a29bfe; padding: 15px; border-radius: 8px; color: white;">
+                                <h4 style="margin-top: 0;">Segmentation</h4>
+                                <p>Delineating anatomical structures and pathologies at pixel level</p>
+                            </div>
+                            
+                            <div style="background-color: #55efc4; padding: 15px; border-radius: 8px;">
+                                <h4 style="color: #0984e3; margin-top: 0;">Classification</h4>
+                                <p>Categorizing images by disease type, severity, or other characteristics</p>
+                            </div>
+                            
+                            <div style="background-color: #fd79a8; padding: 15px; border-radius: 8px; color: white;">
+                                <h4 style="margin-top: 0;">Quantification</h4>
+                                <p>Measuring tumor volume, tissue characteristics, disease progression</p>
+                            </div>
+                            
+                            <div style="background-color: #74b9ff; padding: 15px; border-radius: 8px; color: white;">
+                                <h4 style="margin-top: 0;">Reconstruction</h4>
+                                <p>Enhancing image quality from limited or noisy data</p>
+                            </div>
+                            
+                            <div style="background-color: #fab1a0; padding: 15px; border-radius: 8px;">
+                                <h4 style="color: #d63031; margin-top: 0;">Registration</h4>
+                                <p>Aligning images from different modalities or time points</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="background-color: #dfe6e9; padding: 25px; border-radius: 10px; margin-bottom: 30px;">
+                        <h2 style="color: #2d3436; margin-top: 0;">Disease-Specific Applications</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div style="background-color: white; padding: 15px; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                                <h3 style="color: #e17055; margin-top: 0;">Oncology</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Tumor detection and characterization</li>
+                                    <li>Treatment response assessment</li>
+                                    <li>Radiotherapy planning</li>
+                                    <li>Metastasis detection</li>
+                                    <li>Radiomics feature extraction</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: white; padding: 15px; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                                <h3 style="color: #e17055; margin-top: 0;">Neurology</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Stroke detection and triage</li>
+                                    <li>Alzheimer's disease biomarkers</li>
+                                    <li>Multiple sclerosis lesion tracking</li>
+                                    <li>Brain tumor segmentation</li>
+                                    <li>Functional MRI analysis</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: white; padding: 15px; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                                <h3 style="color: #e17055; margin-top: 0;">Cardiology</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Coronary artery calcium scoring</li>
+                                    <li>Echocardiography analysis</li>
+                                    <li>Plaque characterization</li>
+                                    <li>Cardiac MRI segmentation</li>
+                                    <li>Aortic aneurysm detection</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: white; padding: 15px; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                                <h3 style="color: #e17055; margin-top: 0;">Pulmonology</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>COVID-19 pneumonia detection</li>
+                                    <li>Lung nodule classification</li>
+                                    <li>COPD quantification</li>
+                                    <li>Pulmonary embolism detection</li>
+                                    <li>Pleural effusion quantification</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: linear-gradient(to right, #a8e6cf, #dcedc1); padding: 25px; border-radius: 10px; margin-bottom: 30px;">
+                        <h2 style="color: #1a5276; margin-top: 0;">Technical Challenges and Solutions</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div style="background-color: rgba(255,255,255,0.7); padding: 15px; border-radius: 8px;">
+                                <h3 style="color: #1a5276; margin-top: 0;">Data Limitations</h3>
+                                <p><strong>Challenge:</strong> Limited labeled medical datasets<br>
+                                <strong>Solutions:</strong> Transfer learning, synthetic data generation, federated learning</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.7); padding: 15px; border-radius: 8px;">
+                                <h3 style="color: #1a5276; margin-top: 0;">Model Interpretability</h3>
+                                <p><strong>Challenge:</strong> Black-box nature of deep learning<br>
+                                <strong>Solutions:</strong> Attention mechanisms, saliency maps, explainable AI techniques</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.7); padding: 15px; border-radius: 8px;">
+                                <h3 style="color: #1a5276; margin-top: 0;">Generalization</h3>
+                                <p><strong>Challenge:</strong> Performance across institutions<br>
+                                <strong>Solutions:</strong> Domain adaptation, multi-center studies, robust architectures</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.7); padding: 15px; border-radius: 8px;">
+                                <h3 style="color: #1a5276; margin-top: 0;">Clinical Integration</h3>
+                                <p><strong>Challenge:</strong> Workflow implementation<br>
+                                <strong>Solutions:</strong> PACS integration, real-time processing, clinician feedback loops</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="background-color: #2d3436; color: white; padding: 25px; border-radius: 10px; margin-bottom: 30px;">
+                        <h2 style="color: #00cec9; margin-top: 0;">Regulatory Landscape</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div style="background-color: #636e72; padding: 15px; border-radius: 8px;">
+                                <h3 style="color: #81ecec; margin-top: 0;">FDA Approval</h3>
+                                <p>510(k) clearance or De Novo classification for medical AI devices</p>
+                            </div>
+                            
+                            <div style="background-color: #636e72; padding: 15px; border-radius: 8px;">
+                                <h3 style="color: #81ecec; margin-top: 0;">CE Marking</h3>
+                                <p>European conformity for medical devices under MDR regulations</p>
+                            </div>
+                            
+                            <div style="background-color: #636e72; padding: 15px; border-radius: 8px;">
+                                <h3 style="color: #81ecec; margin-top: 0;">Clinical Validation</h3>
+                                <p>Requires prospective studies showing clinical utility and safety</p>
+                            </div>
+                            
+                            <div style="background-color: #636e72; padding: 15px; border-radius: 8px;">
+                                <h3 style="color: #81ecec; margin-top: 0;">Quality Standards</h3>
+                                <p>ISO 13485 for quality management systems in medical devices</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="background-color: #f7f1e3; padding: 25px; border-radius: 10px; margin-bottom: 30px;">
+                        <h2 style="color: #cc8e35; margin-top: 0;">Future Directions</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div style="background-color: white; padding: 15px; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                                <h3 style="color: #cc8e35; margin-top: 0;">Multimodal Fusion</h3>
+                                <p>Integrating imaging with genomics, pathology, and clinical data</p>
+                            </div>
+                            
+                            <div style="background-color: white; padding: 15px; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                                <h3 style="color: #cc8e35; margin-top: 0;">Edge Computing</h3>
+                                <p>On-device processing for real-time analysis at point-of-care</p>
+                            </div>
+                            
+                            <div style="background-color: white; padding: 15px; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                                <h3 style="color: #cc8e35; margin-top: 0;">Self-Supervised Learning</h3>
+                                <p>Reducing dependency on labeled data through pretext tasks</p>
+                            </div>
+                            
+                            <div style="background-color: white; padding: 15px; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                                <h3 style="color: #cc8e35; margin-top: 0;">Federated Learning</h3>
+                                <p>Collaborative model training without sharing patient data</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="background-color: #ffeaa7; padding: 20px; border-radius: 10px; text-align: center;">
+                        <h2 style="color: #d63031; margin-top: 0;">Impact on Healthcare</h2>
+                        <p style="font-size: 1.1em;">Computer vision in medical imaging is transforming healthcare by enabling earlier disease detection, more precise diagnoses, personalized treatment planning, and quantitative monitoring of disease progression - ultimately leading to improved patient outcomes and more efficient healthcare delivery.</p>
+                    </div>
+                </div>
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [ ];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics") ? "../AI in Healthcare.json" : "../AI in Healthcare.json";
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch AI for Robotics Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.AI_in_Healthcare;
+                        displayTopics(allTopics);
+                    }
+                    )
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+            </body>
+            </html>        

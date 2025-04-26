@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../software engineering.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Software Engineering</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+            
+                <main class="col-md-7 content">
+                    <h1>Software Requirements Engineering</h1>
+                    
+                    <section id="introduction" style="background-color: #fff; border-radius: 5px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;"> Introduction to Requirements Engineering</h2>
+                        <p>Requirements Engineering (RE) is the disciplined process of defining, documenting, and maintaining software requirements. It bridges the gap between stakeholder needs and system capabilities.</p>
+                        
+                        <div style="display: flex; gap: 20px; margin: 20px 0;">
+                            <div style="flex: 1; padding: 15px; border-radius: 5px; background-color: #e8f8f0; border-left: 4px solid #2ecc71;">
+                                <h3 style="color: #2980b9; margin-top: 20px;">Importance of RE</h3>
+                                <ul>
+                                    <li>Foundation for successful projects</li>
+                                    <li>Reduces development costs (fixes are cheaper early)</li>
+                                    <li>Aligns stakeholders and development teams</li>
+                                    <li>Provides basis for testing and validation</li>
+                                    <li>Mitigates project risks</li>
+                                </ul>
+                            </div>
+                            <div style="flex: 1; padding: 15px; border-radius: 5px; background-color: #fde8e8; border-left: 4px solid #e74c3c;">
+                                <h3 style="color: #2980b9; margin-top: 20px;">Common Challenges</h3>
+                                <ul>
+                                    <li>Incomplete or ambiguous requirements</li>
+                                    <li>Changing requirements</li>
+                                    <li>Communication gaps</li>
+                                    <li>Conflicting stakeholder needs</li>
+                                    <li>Requirements volatility</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        
+                    </section>
+                
+                    <section id="types" style="background-color: #fff; border-radius: 5px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;"> Types of Software Requirements</h2>
+                        
+                        <div style="margin: 15px 0; padding: 15px; background-color: #f8f9fa; border-radius: 5px;">
+                            <h3 style="color: #2980b9; margin-top: 20px;">Functional Requirements</h3>
+                            <p>Define what the system should do - the features and functionalities.</p>
+                            <div style="background-color: #e8f8f0; padding: 15px; border-radius: 5px; margin: 15px 0; border-left: 4px solid #2ecc71;">
+                                <p><strong>Example:</strong> "The system shall allow users to reset their password by providing their email address."</p>
+                            </div>
+                        </div>
+                        
+                        <div style="margin: 15px 0; padding: 15px; background-color: #f8f9fa; border-radius: 5px;">
+                            <h3 style="color: #2980b9; margin-top: 20px;">Non-Functional Requirements</h3>
+                            <p>Define how well the system performs its functions - the quality attributes.</p>
+                            <div style="background-color: #e8f8f0; padding: 15px; border-radius: 5px; margin: 15px 0; border-left: 4px solid #2ecc71;">
+                                <p><strong>Example:</strong> "The system shall respond to user authentication requests within 2 seconds under normal load conditions."</p>
+                            </div>
+                        </div>
+                        
+                        <div style="text-align: center; margin: 20px 0; background: white; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3 style="color: #2980b9; margin-top: 20px;">Requirements Hierarchy</h3>
+                            <div style="background: #eee; padding: 40px; text-align: center; border-radius: 5px; margin: 10px 0;">
+                                [Pyramid diagram showing Business → User → Functional/Non-functional → System requirements]
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section id="process" style="background-color: #fff; border-radius: 5px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-top: 3px solid #3498db;">
+                        <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                            <div style="background: #3498db; color: white; width: 40px; height: 40px; border-radius: 50%; text-align: center; line-height: 40px; margin-right: 15px; flex-shrink: 0; font-weight: bold;">1</div>
+                            <div>
+                                <h2 style="color: #2c3e50; margin-top: 0;"> Requirements Engineering Process</h2>
+                                <p>The systematic approach to gathering, analyzing, documenting, and managing requirements</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; margin: 15px 0; align-items: flex-start;">
+                            <div style="background: #3498db; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 15px; flex-shrink: 0;">1</div>
+                            <div style="flex: 1;">
+                                <h3 style="color: #2980b9; margin-top: 20px;">Requirements Elicitation</h3>
+                                <p>Discovering requirements through various techniques</p>
+                                <div style="margin: 15px 0; padding: 15px; background-color: #f9f9f9; border-radius: 5px; border-left: 4px solid #9b59b6;">
+                                    <h4 style="color: #2980b9; margin-top: 20px;">Key Techniques:</h4>
+                                    <ul>
+                                        <li>Interviews</li>
+                                        <li>Workshops</li>
+                                        <li>Surveys</li>
+                                        <li>Observation</li>
+                                        <li>Document analysis</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="text-align: center; margin: 20px 0; background: white; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3 style="color: #2980b9; margin-top: 20px;">Requirements Engineering Process Flow</h3>
+                            <div style="background: #eee; padding: 40px; text-align: center; border-radius: 5px; margin: 10px 0;">
+                                [Circular diagram showing Elicitation → Analysis → Specification → Validation → Management]
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section id="elicitation" style="background-color: #fff; border-radius: 5px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-top: 3px solid #3498db;">
+                        <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                            <div style="background: #3498db; color: white; width: 40px; height: 40px; border-radius: 50%; text-align: center; line-height: 40px; margin-right: 15px; flex-shrink: 0; font-weight: bold;">2</div>
+                            <div>
+                                <h2 style="color: #2c3e50; margin-top: 0;"> Requirements Elicitation Techniques</h2>
+                                <p>Methods for discovering and gathering requirements from stakeholders</p>
+                            </div>
+                        </div>
+                        
+                        <div style="margin: 15px 0; padding: 15px; background-color: #f9f9f9; border-radius: 5px; border-left: 4px solid #9b59b6;">
+                            <h3 style="color: #2980b9; margin-top: 20px;">Interviews</h3>
+                            <p>One-on-one discussions with stakeholders to understand needs.</p>
+                            <div style="display: flex; gap: 20px; margin: 20px 0;">
+                                <div style="flex: 1; padding: 15px; border-radius: 5px; background-color: #e8f8f0; border-left: 4px solid #2ecc71;">
+                                    <h4 style="color: #2980b9; margin-top: 20px;">Advantages</h4>
+                                    <ul>
+                                        <li>Detailed information</li>
+                                        <li>Personal interaction</li>
+                                        <li>Follow-up questions possible</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1; padding: 15px; border-radius: 5px; background-color: #fde8e8; border-left: 4px solid #e74c3c;">
+                                    <h4 style="color: #2980b9; margin-top: 20px;">Disadvantages</h4>
+                                    <ul>
+                                        <li>Time-consuming</li>
+                                        <li>May be biased</li>
+                                        <li>Difficult to scale</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section id="specification" style="background-color: #fff; border-radius: 5px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-top: 3px solid #3498db;">
+                        <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                            <div style="background: #3498db; color: white; width: 40px; height: 40px; border-radius: 50%; text-align: center; line-height: 40px; margin-right: 15px; flex-shrink: 0; font-weight: bold;">4</div>
+                            <div>
+                                <h2 style="color: #2c3e50; margin-top: 0;"> Requirements Specification</h2>
+                                <p>Documenting requirements in a structured, unambiguous format</p>
+                            </div>
+                        </div>
+                        
+                        <div style="margin: 15px 0; padding: 15px; background-color: #f0f7fd; border-radius: 5px; border: 1px dashed #3498db;">
+                            <h3 style="color: #2980b9; margin-top: 20px;">Software Requirements Specification (SRS)</h3>
+                            <p>Comprehensive document describing functional and non-functional requirements.</p>
+                            
+                            <div style="background-color: #e8f4fc; padding: 15px; border-radius: 5px; margin: 15px 0; border-left: 4px solid #3498db;">
+                                <h4 style="color: #2980b9; margin-top: 20px;">SRS Outline</h4>
+                                <ol>
+                                    <li><strong>Introduction</strong>
+                                        <ul>
+                                            <li>Purpose</li>
+                                            <li>Scope</li>
+                                            <li>Definitions</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Overall Description</strong>
+                                        <ul>
+                                            <li>Product perspective</li>
+                                            <li>User characteristics</li>
+                                            <li>Constraints</li>
+                                        </ul>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section id="conclusion" style="background-color: #fff; border-radius: 5px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;"> Conclusion</h2>
+                        <p>Effective Requirements Engineering is critical for software project success. By systematically eliciting, analyzing, documenting, validating, and managing requirements, organizations can significantly improve project outcomes.</p>
+                        
+                        <div style="margin: 15px 0; padding: 15px; background-color: #f9f9f9; border-radius: 5px;">
+                            <h3 style="color: #2980b9; margin-top: 20px;">Key Takeaways</h3>
+                            <ol>
+                                <li>Requirements are the foundation of successful software projects</li>
+                                <li>Multiple techniques should be used for comprehensive requirements gathering</li>
+                                <li>Clear, unambiguous documentation is essential</li>
+                                <li>Validation ensures requirements meet stakeholder needs</li>
+                                <li>Ongoing management handles inevitable changes</li>
+                            </ol>
+                        </div>
+                    </section>
+                </main>
+               
+                    
+
+            
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+    const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+    const searchBox = document.getElementById("searchBox");
+
+    if (!sidebarList || !sidebarGrid) {
+        console.error("Sidebar elements not found!");
+        return;
+    }
+
+    let allTopics = [];
+
+    // Adjust JSON path based on file location
+    let jsonPath = window.location.pathname.includes("/topics/") ? "../softwarengineering.json" : "softwarengineering.json";
+
+    console.log("Fetching JSON from:", jsonPath); // Debugging
+
+    // Fetch Software Engineering Topics from JSON
+    fetch(jsonPath)
+        .then(response => {
+            console.log("Fetch Response:", response);
+            if (!response.ok) {
+                throw new Error("Failed to load JSON: " + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Fetched Data:", data);
+            if (!data.Software_Engineering) {
+                throw new Error("JSON does not contain 'Software_Engineering' key!");
+            }
+            allTopics = data.Software_Engineering;
+            displayTopics(allTopics);
+        })
+        .catch(error => console.error("Error loading topics:", error));
+
+    // Function to Display Topics in Sidebar
+    function displayTopics(topics) {
+        if (!Array.isArray(topics)) {
+            console.error("Invalid topics data:", topics);
+            return;
+        }
+
+        sidebarList.innerHTML = ""; // Clear list
+        sidebarGrid.innerHTML = ""; // Clear grid
+
+        topics.forEach(topic => {
+            let topicLink = topic.link; // Keep the original link
+
+            // 🖥️ Desktop List View
+            let li = document.createElement("li");
+            li.className = "list-group-item list-group-item-action";
+            li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+            sidebarList.appendChild(li);
+
+            // 📱 Mobile Grid View (3 in a row)
+            let div = document.createElement("div");
+            div.className = "col-4"; // Bootstrap grid (3 in a row)
+            div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+            sidebarGrid.appendChild(div);
+        });
+    }
+
+    // Search Topics
+    if (searchBox) {
+        searchBox.addEventListener("input", function () {
+            const searchText = this.value.toLowerCase();
+            const filteredTopics = allTopics.filter(topic =>
+                topic.name.toLowerCase().includes(searchText)
+            );
+            displayTopics(filteredTopics);
+        });
+    }
+});
+
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

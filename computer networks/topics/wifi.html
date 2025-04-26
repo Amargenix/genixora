@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer Network</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/allsubject.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Computer Networks</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+               <h1>Wi-Fi Technology in Computer Networks</h1>
+                        <p style="text-align: center; font-size: 1.2em; margin-top: 10px; opacity: 0.9;">Wireless Networking Standards, Technologies, and Security</p>
+                    
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <h2 style="color: #6e48aa; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px; margin-top: 0;">What is Wi-Fi?</h2>
+                        <p>Wi-Fi (Wireless Fidelity) is a family of wireless network protocols based on the IEEE 802.11 standards, commonly used for local area networking of devices and Internet access. Wi-Fi allows electronic devices to connect to a wireless LAN (WLAN) network, mainly using the 2.4 GHz and 5 GHz radio bands.</p>
+                        
+                        <div style="display: flex; justify-content: space-between; margin-top: 20px; flex-wrap: wrap;">
+                            <div style="flex: 1; min-width: 300px; background-color: #f0f7ff; padding: 15px; border-radius: 6px; margin: 0 10px 20px 0;">
+                                <h3 style="color: #2c5282; margin-top: 0;">Key Characteristics</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Wireless connectivity without cables</li>
+                                    <li>Uses radio frequency technology</li>
+                                    <li>Standardized by IEEE 802.11 family</li>
+                                    <li>Operates in unlicensed spectrum</li>
+                                    <li>Typical range: 20m indoors to 100m outdoors</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 300px; background-color: #fff0f0; padding: 15px; border-radius: 6px; margin: 0 0 20px 10px;">
+                                <h3 style="color: #97266d; margin-top: 0;">Main Advantages</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Mobility and convenience</li>
+                                    <li>Easy installation and scalability</li>
+                                    <li>Cost-effective (no cabling infrastructure)</li>
+                                    <li>Backward compatibility between versions</li>
+                                    <li>Wide industry support</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <h2 style="color: #6e48aa; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px; margin-top: 0;">Wi-Fi Standards Evolution</h2>
+                        
+                        <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+                            <thead>
+                                <tr style="background: linear-gradient(90deg, #6e48aa 0%, #9d50bb 100%); color: white;">
+                                    <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Standard</th>
+                                    <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Year</th>
+                                    <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Frequency</th>
+                                    <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Max Speed</th>
+                                    <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Features</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border: 1px solid #ddd;">
+                                    <td style="padding: 10px; border: 1px solid #ddd;"><strong>802.11a</strong></td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">1999</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">5 GHz</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">54 Mbps</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">First 5GHz standard, OFDM</td>
+                                </tr>
+                                <tr style="border: 1px solid #ddd; background-color: #f8f9fa;">
+                                    <td style="padding: 10px; border: 1px solid #ddd;"><strong>802.11b</strong></td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">1999</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">2.4 GHz</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">11 Mbps</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">First widely adopted standard</td>
+                                </tr>
+                                <tr style="border: 1px solid #ddd;">
+                                    <td style="padding: 10px; border: 1px solid #ddd;"><strong>802.11g</strong></td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">2003</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">2.4 GHz</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">54 Mbps</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">OFDM in 2.4GHz, backward compatible</td>
+                                </tr>
+                                <tr style="border: 1px solid #ddd; background-color: #f8f9fa;">
+                                    <td style="padding: 10px; border: 1px solid #ddd;"><strong>802.11n (Wi-Fi 4)</strong></td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">2009</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">2.4/5 GHz</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">600 Mbps</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">MIMO, channel bonding</td>
+                                </tr>
+                                <tr style="border: 1px solid #ddd;">
+                                    <td style="padding: 10px; border: 1px solid #ddd;"><strong>802.11ac (Wi-Fi 5)</strong></td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">2013</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">5 GHz</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">3.5 Gbps</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">MU-MIMO, wider channels</td>
+                                </tr>
+                                <tr style="border: 1px solid #ddd; background-color: #f8f9fa;">
+                                    <td style="padding: 10px; border: 1px solid #ddd;"><strong>802.11ax (Wi-Fi 6)</strong></td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">2019</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">2.4/5/6 GHz</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">9.6 Gbps</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">OFDMA, TWT, 1024-QAM</td>
+                                </tr>
+                                <tr style="border: 1px solid #ddd;">
+                                    <td style="padding: 10px; border: 1px solid #ddd;"><strong>802.11be (Wi-Fi 7)</strong></td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">2024 (est.)</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">2.4/5/6 GHz</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">46 Gbps</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">320 MHz channels, Multi-Link Operation</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <div style="margin-top: 20px; background-color: #f0f7ff; padding: 15px; border-radius: 6px; border-left: 4px solid #4299e1;">
+                            <h3 style="margin-top: 0; color: #2c5282;">Key Technologies in Modern Wi-Fi</h3>
+                            <div style="display: flex; flex-wrap: wrap; gap: 15px;">
+                                <div style="flex: 1; min-width: 200px; background-color: white; padding: 10px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                                    <h4 style="margin: 0 0 8px 0; color: #4a5568;">MIMO</h4>
+                                    <p style="margin: 0;">Multiple Input Multiple Output - uses multiple antennas to improve performance</p>
+                                </div>
+                                <div style="flex: 1; min-width: 200px; background-color: white; padding: 10px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                                    <h4 style="margin: 0 0 8px 0; color: #4a5568;">OFDMA</h4>
+                                    <p style="margin: 0;">Orthogonal Frequency Division Multiple Access - improves efficiency with multiple devices</p>
+                                </div>
+                                <div style="flex: 1; min-width: 200px; background-color: white; padding: 10px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                                    <h4 style="margin: 0 0 8px 0; color: #4a5568;">Beamforming</h4>
+                                    <p style="margin: 0;">Directs signals toward specific devices rather than broadcasting in all directions</p>
+                                </div>
+                                <div style="flex: 1; min-width: 200px; background-color: white; padding: 10px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                                    <h4 style="margin: 0 0 8px 0; color: #4a5568;">TWT</h4>
+                                    <p style="margin: 0;">Target Wake Time - improves battery life for IoT devices</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <h2 style="color: #6e48aa; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px; margin-top: 0;">Wi-Fi Frequency Bands</h2>
+                        
+                        <div style="display: flex; justify-content: space-between; margin-top: 20px; flex-wrap: wrap;">
+                            <div style="flex: 1; min-width: 300px; margin: 0 15px 20px 0;">
+                                <h3 style="color: #2c5282; margin-top: 0;">2.4 GHz Band</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Frequency range: 2.400 - 2.4835 GHz</li>
+                                    <li>14 channels (only 11 usable in US)</li>
+                                    <li>Better range but more interference</li>
+                                    <li>Used by many devices (microwaves, Bluetooth)</li>
+                                    <li>Channel width typically 20 MHz</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 300px; margin: 0 0 20px 15px;">
+                                <h3 style="color: #97266d; margin-top: 0;">5 GHz Band</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Frequency range: 5.150 - 5.925 GHz</li>
+                                    <li>24 non-overlapping channels (more in some regions)</li>
+                                    <li>Higher speeds but shorter range</li>
+                                    <li>Less crowded than 2.4 GHz</li>
+                                    <li>Channel widths up to 160 MHz</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 20px; background-color: #fff0f0; padding: 15px; border-radius: 6px; border-left: 4px solid #e53e3e;">
+                            <h3 style="margin-top: 0; color: #97266d;">6 GHz Band (Wi-Fi 6E)</h3>
+                            <p>The newest addition to Wi-Fi spectrum (since 2020) offering:</p>
+                            <ul style="padding-left: 20px;">
+                                <li>Frequency range: 5.925 - 7.125 GHz</li>
+                                <li>59 additional 20MHz channels (or fewer wider channels)</li>
+                                <li>No legacy device interference</li>
+                                <li>Enables full potential of Wi-Fi 6/6E</li>
+                                <li>Requires new hardware (Wi-Fi 6E routers and devices)</li>
+                            </ul>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <h2 style="color: #6e48aa; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px; margin-top: 0;">Wi-Fi Network Components</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div style="background-color: #f8f9fa; padding: 15px; border-radius: 6px; border: 1px solid #e2e8f0;">
+                                <h3 style="margin-top: 0; color: #2c5282;">Access Point (AP)</h3>
+                                <p>Device that allows wireless devices to connect to a wired network using Wi-Fi</p>
+                                <p><strong>Types:</strong> Standalone, Controller-based, Cloud-managed</p>
+                            </div>
+                            
+                            <div style="background-color: #f8f9fa; padding: 15px; border-radius: 6px; border: 1px solid #e2e8f0;">
+                                <h3 style="margin-top: 0; color: #2c5282;">Wireless Router</h3>
+                                <p>Combination device that includes AP, router, switch, and often modem functionality</p>
+                                <p><strong>Features:</strong> NAT, firewall, DHCP server</p>
+                            </div>
+                            
+                            <div style="background-color: #f8f9fa; padding: 15px; border-radius: 6px; border: 1px solid #e2e8f0;">
+                                <h3 style="margin-top: 0; color: #2c5282;">Wireless Clients</h3>
+                                <p>Devices that connect to the Wi-Fi network (laptops, smartphones, IoT devices)</p>
+                                <p><strong>Requirements:</strong> Wi-Fi adapter, correct drivers</p>
+                            </div>
+                            
+                            <div style="background-color: #f8f9fa; padding: 15px; border-radius: 6px; border: 1px solid #e2e8f0;">
+                                <h3 style="margin-top: 0; color: #2c5282;">Wireless Controller</h3>
+                                <p>Centralized management system for multiple APs in enterprise environments</p>
+                                <p><strong>Functions:</strong> Configuration, monitoring, security</p>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 25px; background-color: #f0fff4; padding: 15px; border-radius: 6px; border-left: 4px solid #38a169;">
+                            <h3 style="margin-top: 0; color: #276749;">Wi-Fi Network Topologies</h3>
+                            <div style="display: flex; flex-wrap: wrap; gap: 15px;">
+                                <div style="flex: 1; min-width: 200px; background-color: white; padding: 10px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                                    <h4 style="margin: 0 0 8px 0; color: #4a5568;">Infrastructure Mode</h4>
+                                    <p style="margin: 0;">Clients connect through an access point (most common)</p>
+                                </div>
+                                <div style="flex: 1; min-width: 200px; background-color: white; padding: 10px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                                    <h4 style="margin: 0 0 8px 0; color: #4a5568;">Ad-hoc Mode</h4>
+                                    <p style="margin: 0;">Device-to-device direct connection without AP</p>
+                                </div>
+                                <div style="flex: 1; min-width: 200px; background-color: white; padding: 10px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                                    <h4 style="margin: 0 0 8px 0; color: #4a5568;">Mesh Network</h4>
+                                    <p style="margin: 0;">Multiple APs work together to extend coverage</p>
+                                </div>
+                                <div style="flex: 1; min-width: 200px; background-color: white; padding: 10px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                                    <h4 style="margin: 0 0 8px 0; color: #4a5568;">WDS (Wireless Distribution System)</h4>
+                                    <p style="margin: 0;">APs connect wirelessly to extend network range</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <h2 style="color: #6e48aa; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px; margin-top: 0;">Wi-Fi Security Protocols</h2>
+                        
+                        <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+                            <thead>
+                                <tr style="background: linear-gradient(90deg, #6e48aa 0%, #9d50bb 100%); color: white;">
+                                    <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Protocol</th>
+                                    <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Year</th>
+                                    <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Encryption</th>
+                                    <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Security Level</th>
+                                    <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border: 1px solid #ddd;">
+                                    <td style="padding: 10px; border: 1px solid #ddd;"><strong>WEP</strong></td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">1997</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">RC4 (64/128-bit)</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Very Weak</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Deprecated</td>
+                                </tr>
+                                <tr style="border: 1px solid #ddd; background-color: #f8f9fa;">
+                                    <td style="padding: 10px; border: 1px solid #ddd;"><strong>WPA</strong></td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">2003</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">TKIP with RC4</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Weak</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Deprecated</td>
+                                </tr>
+                                <tr style="border: 1px solid #ddd;">
+                                    <td style="padding: 10px; border: 1px solid #ddd;"><strong>WPA2</strong></td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">2004</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">CCMP (AES)</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Strong</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Widely Used</td>
+                                </tr>
+                                <tr style="border: 1px solid #ddd; background-color: #f8f9fa;">
+                                    <td style="padding: 10px; border: 1px solid #ddd;"><strong>WPA3</strong></td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">2018</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">GCMP-256 (AES)</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Very Strong</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Current Standard</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <div style="margin-top: 25px; background-color: #fffaf0; padding: 20px; border-radius: 6px; border-left: 4px solid #dd6b20;">
+                            <h3 style="margin-top: 0; color: #9c4221;">WPA3 Improvements</h3>
+                            <div style="display: flex; flex-wrap: wrap; gap: 15px;">
+                                <div style="flex: 1; min-width: 250px; background-color: white; padding: 15px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                                    <h4 style="margin: 0 0 10px 0; color: #4a5568;">Simultaneous Authentication of Equals (SAE)</h4>
+                                    <p style="margin: 0;">Replaces PSK to prevent offline dictionary attacks</p>
+                                </div>
+                                <div style="flex: 1; min-width: 250px; background-color: white; padding: 15px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                                    <h4 style="margin: 0 0 10px 0; color: #4a5568;">192-bit Security Suite</h4>
+                                    <p style="margin: 0;">For enterprise networks requiring higher security</p>
+                                </div>
+                                <div style="flex: 1; min-width: 250px; background-color: white; padding: 15px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                                    <h4 style="margin: 0 0 10px 0; color: #4a5568;">Forward Secrecy</h4>
+                                    <p style="margin: 0;">Prevents decryption of old traffic if password is compromised</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 25px; background-color: #fff5f5; padding: 15px; border-radius: 6px; border-left: 4px solid #e53e3e;">
+                            <h3 style="margin-top: 0; color: #c53030;">Wi-Fi Security Best Practices</h3>
+                            <ul style="padding-left: 20px;">
+                                <li>Always use WPA3 if available, or WPA2 with AES as fallback</li>
+                                <li>Use strong, complex passwords (minimum 12 characters)</li>
+                                <li>Disable WPS (Wi-Fi Protected Setup) as it's vulnerable</li>
+                                <li>Change default admin credentials on routers/APs</li>
+                                <li>Keep firmware updated on all network devices</li>
+                                <li>Disable remote administration features</li>
+                                <li>Consider using a separate guest network</li>
+                                <li>For enterprises, implement 802.1X authentication</li>
+                            </ul>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <h2 style="color: #6e48aa; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px; margin-top: 0;">Wi-Fi Performance Optimization</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div style="background-color: #f0f7ff; padding: 15px; border-radius: 6px;">
+                                <h3 style="margin-top: 0; color: #2c5282;">Channel Selection</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Use Wi-Fi analyzer tools to find least congested channels</li>
+                                    <li>In 2.4GHz, use channels 1, 6, or 11 (non-overlapping)</li>
+                                    <li>For 5GHz, use DFS channels if available and supported</li>
+                                    <li>Enable automatic channel selection if available</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #fff0f0; padding: 15px; border-radius: 6px;">
+                                <h3 style="margin-top: 0; color: #97266d;">Router Placement</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Central location in the area needing coverage</li>
+                                    <li>Elevated position (not on floor)</li>
+                                    <li>Away from large metal objects and appliances</li>
+                                    <li>Orientation of antennas matters (vertical for most devices)</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f0fff4; padding: 15px; border-radius: 6px;">
+                                <h3 style="margin-top: 0; color: #276749;">Advanced Settings</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Enable band steering to direct clients to 5GHz</li>
+                                    <li>Adjust transmit power if needed (not always max)</li>
+                                    <li>Consider wider channels in 5GHz (80MHz or 160MHz)</li>
+                                    <li>Enable WMM (Wi-Fi Multimedia) for QoS</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 25px; background-color: #faf5ff; padding: 15px; border-radius: 6px; border-left: 4px solid #9f7aea;">
+                            <h3 style="margin-top: 0; color: #6b46c1;">Troubleshooting Common Wi-Fi Issues</h3>
+                            <div style="display: flex; flex-wrap: wrap; gap: 15px;">
+                                <div style="flex: 1; min-width: 200px; background-color: white; padding: 10px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                                    <h4 style="margin: 0 0 8px 0; color: #4a5568;">Slow Speeds</h4>
+                                    <ul style="padding-left: 20px; margin: 0;">
+                                        <li>Check for interference</li>
+                                        <li>Test with wired connection</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1; min-width: 200px; background-color: white; padding: 10px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                                    <h4 style="margin: 0 0 8px 0; color: #4a5568;">Connection Drops</h4>
+                                    <ul style="padding-left: 20px; margin: 0;">
+                                        <li>Update drivers/firmware</li>
+                                        <li>Check for overheating</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1; min-width: 200px; background-color: white; padding: 10px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                                    <h4 style="margin: 0 0 8px 0; color: #4a5568;">Dead Zones</h4>
+                                    <ul style="padding-left: 20px; margin: 0;">
+                                        <li>Consider mesh system</li>
+                                        <li>Add range extenders</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1; min-width: 200px; background-color: white; padding: 10px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                                    <h4 style="margin: 0 0 8px 0; color: #4a5568;">Authentication Issues</h4>
+                                    <ul style="padding-left: 20px; margin: 0;">
+                                        <li>Verify password</li>
+                                        <li>Check security protocol</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                </main>  
+            
+            
+
+             <!-- Floating button to open chatbot -->
+    <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+    </div>
+    
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-container");
+            let button = document.getElementById("open-chatbot");
+    
+            if (!chatbot.classList.contains("active")) {
+                chatbot.classList.add("active");
+                button.style.display = "none"; // Hide button when chatbot is open
+            } else {
+                chatbot.classList.remove("active");
+                setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+            }
+        }
+    
+        // Load chatbot HTML dynamically
+        fetch("/chatbot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("chatbot-container").innerHTML += html;
+    
+            // Execute chatbot script after inserting HTML
+            let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+            for (let script of scripts) {
+                let newScript = document.createElement("script");
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript);
+            }
+        })
+        .catch(error => console.error("Error loading chatbot:", error));
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../computernetwork.json" : "computernetwork.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.Computer_Networks;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+        
+       
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

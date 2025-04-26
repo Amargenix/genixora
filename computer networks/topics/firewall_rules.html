@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer Network</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/allsubject.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Computer Networks</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <h1>Firewall Rules in Computer Networks</h1>
+                
+                    <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+                        <p>Firewall rules are the set of instructions that determine how a firewall should handle incoming and outgoing network traffic. They form the backbone of network security by controlling what traffic is allowed or blocked.</p>
+                    </div>
+                
+                    <h2 style="color: #2980b9; margin-top: 30px;">Types of Firewall Rules</h2>
+                
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px;">
+                        <div style="background-color: #e8f4fc; padding: 15px; border-radius: 5px; border-left: 4px solid #3498db;">
+                            <h3 style="color: #2c3e50; margin-top: 0;">Inbound Rules</h3>
+                            <p>Control incoming traffic from external networks to your internal network. Examples include allowing HTTP (port 80) or blocking SSH (port 22) from specific IP ranges.</p>
+                        </div>
+                        
+                        <div style="background-color: #e8f4fc; padding: 15px; border-radius: 5px; border-left: 4px solid #3498db;">
+                            <h3 style="color: #2c3e50; margin-top: 0;">Outbound Rules</h3>
+                            <p>Manage traffic originating from your internal network going to external networks. For instance, blocking certain websites or restricting FTP uploads.</p>
+                        </div>
+                        
+                        <div style="background-color: #e8f4fc; padding: 15px; border-radius: 5px; border-left: 4px solid #3498db;">
+                            <h3 style="color: #2c3e50; margin-top: 0;">Internal Rules</h3>
+                            <p>Govern traffic between devices within the same network segment, often used in enterprise environments to implement zero-trust architectures.</p>
+                        </div>
+                    </div>
+                
+                    <h2 style="color: #2980b9;">Key Components of Firewall Rules</h2>
+                    
+                    <table style="width: 100%; border-collapse: collapse; margin-bottom: 30px;">
+                        <thead style="background-color: #3498db; color: white;">
+                            <tr>
+                                <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Component</th>
+                                <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Description</th>
+                                <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #ddd;">
+                                <td style="padding: 12px; border: 1px solid #ddd;">Source IP</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">Originating IP address or range</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">192.168.1.100 or 10.0.0.0/24</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                                <td style="padding: 12px; border: 1px solid #ddd;">Destination IP</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">Target IP address or range</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">203.0.113.45 or 0.0.0.0/0 (any)</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ddd;">
+                                <td style="padding: 12px; border: 1px solid #ddd;">Protocol</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">Network protocol (TCP, UDP, ICMP, etc.)</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">TCP for web traffic</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                                <td style="padding: 12px; border: 1px solid #ddd;">Port Number</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">Source/destination port or range</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">80 (HTTP), 443 (HTTPS)</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ddd;">
+                                <td style="padding: 12px; border: 1px solid #ddd;">Action</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">Allow, deny, reject, or log</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">Allow for permitted traffic</td>
+                            </tr>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 12px; border: 1px solid #ddd;">Direction</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">Inbound, outbound, or both</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">Inbound for external requests</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                
+                    <h2 style="color: #2980b9;">Common Firewall Rule Examples</h2>
+                
+                    <div style="background-color: #f0f7ff; padding: 20px; border-radius: 5px; margin-bottom: 30px;">
+                        <h3 style="margin-top: 0; color: #2c3e50;">1. Allow Web Traffic</h3>
+                        <pre style="background-color: #eef; padding: 15px; border-radius: 5px; overflow-x: auto;">
+                Action: ALLOW
+                Protocol: TCP
+                Destination Port: 80,443
+                Direction: Inbound
+                Description: Allow HTTP/HTTPS traffic from any source</pre>
+                
+                        <h3 style="color: #2c3e50;">2. Block Specific IP Range</h3>
+                        <pre style="background-color: #eef; padding: 15px; border-radius: 5px; overflow-x: auto;">
+                Action: DENY
+                Source IP: 192.168.100.0/24
+                Protocol: ANY
+                Direction: Both
+                Description: Block all traffic from suspicious subnet</pre>
+                
+                        <h3 style="color: #2c3e50;">3. Restrict SSH Access</h3>
+                        <pre style="background-color: #eef; padding: 15px; border-radius: 5px; overflow-x: auto;">
+                Action: ALLOW
+                Protocol: TCP
+                Destination Port: 22
+                Source IP: 10.0.1.50
+                Direction: Inbound
+                Description: Only allow SSH from admin workstation</pre>
+                    </div>
+                
+                    <h2 style="color: #2980b9;">Firewall Rule Best Practices</h2>
+                
+                    <ul style="background-color: #f8f9fa; padding: 20px 20px 20px 40px; border-radius: 5px;">
+                        <li style="margin-bottom: 10px;"><strong>Principle of Least Privilege:</strong> Only allow necessary traffic and block everything else by default</li>
+                        <li style="margin-bottom: 10px;"><strong>Explicit Deny Rule:</strong> Always include a final rule that explicitly denies all unspecified traffic</li>
+                        <li style="margin-bottom: 10px;"><strong>Regular Audits:</strong> Review and clean up rules periodically to remove unused or obsolete rules</li>
+                        <li style="margin-bottom: 10px;"><strong>Documentation:</strong> Maintain clear documentation for all rules including purpose and owner</li>
+                        <li style="margin-bottom: 10px;"><strong>Rule Order Matters:</strong> Firewalls process rules top-down - place specific rules before general ones</li>
+                        <li><strong>Logging:</strong> Enable logging for critical rules to monitor allowed/denied traffic</li>
+                    </ul>
+                
+                    <h2 style="color: #2980b9;">Types of Firewalls and Their Rule Implementation</h2>
+                
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px;">
+                        <div style="background-color: #e8f4fc; padding: 15px; border-radius: 5px;">
+                            <h3 style="color: #2c3e50; margin-top: 0;">Packet Filtering Firewalls</h3>
+                            <p>Examine packets in isolation based on header information (IP, port, protocol). Fast but limited context.</p>
+                            <p><strong>Rule Example:</strong> Block all UDP traffic on port 53 (DNS) from external sources.</p>
+                        </div>
+                        
+                        <div style="background-color: #e8f4fc; padding: 15px; border-radius: 5px;">
+                            <h3 style="color: #2c3e50; margin-top: 0;">Stateful Inspection Firewalls</h3>
+                            <p>Track active connections and only allow traffic that's part of established, legitimate sessions.</p>
+                            <p><strong>Rule Example:</strong> Allow return traffic for outbound HTTP requests without explicit inbound rule.</p>
+                        </div>
+                        
+                        <div style="background-color: #e8f4fc; padding: 15px; border-radius: 5px;">
+                            <h3 style="color: #2c3e50; margin-top: 0;">Application-Level Gateways</h3>
+                            <p>Understand specific application protocols and can filter based on application-layer data.</p>
+                            <p><strong>Rule Example:</strong> Allow HTTP traffic but block specific URLs or file types.</p>
+                        </div>
+                        
+                        <div style="background-color: #e8f4fc; padding: 15px; border-radius: 5px;">
+                            <h3 style="color: #2c3e50; margin-top: 0;">Next-Gen Firewalls</h3>
+                            <p>Combine traditional filtering with intrusion prevention, TLS inspection, and application awareness.</p>
+                            <p><strong>Rule Example:</strong> Allow Office 365 traffic but block personal OneDrive uploads.</p>
+                        </div>
+                    </div>
+                
+                    <h2 style="color: #2980b9;">Advanced Firewall Rule Concepts</h2>
+                
+                    <div style="background-color: #f5f5f5; padding: 20px; border-radius: 5px; margin-bottom: 30px;">
+                        <h3 style="margin-top: 0; color: #2c3e50;">1. Time-Based Rules</h3>
+                        <p>Rules that are only active during specific time periods. Useful for:</p>
+                        <ul>
+                            <li>Restricting access during non-business hours</li>
+                            <li>Allowing backup traffic only at night</li>
+                            <li>Temporary access for contractors</li>
+                        </ul>
+                
+                        <h3 style="color: #2c3e50;">2. Geo-Blocking</h3>
+                        <p>Blocking traffic based on geographic location of IP addresses. Commonly used to:</p>
+                        <ul>
+                            <li>Block known hostile regions</li>
+                            <li>Comply with data sovereignty laws</li>
+                            <li>Prevent unauthorized international access</li>
+                        </ul>
+                
+                        <h3 style="color: #2c3e50;">3. Rate Limiting</h3>
+                        <p>Rules that limit the number of connections or bandwidth from specific sources to prevent:</p>
+                        <ul>
+                            <li>DDoS attacks</li>
+                            <li>Bandwidth abuse</li>
+                            <li>Brute force attempts</li>
+                        </ul>
+                    </div>
+                
+                    <div style="background-color: #e8f8f5; padding: 20px; border-radius: 5px; border-left: 5px solid #2ecc71;">
+                        <h2 style="color: #27ae60; margin-top: 0;">Firewall Rule Management Tips</h2>
+                        <ol>
+                            <li><strong>Use naming conventions:</strong> "Web-Inbound-Allow" is better than "Rule_42"</li>
+                            <li><strong>Group related rules:</strong> Keep all rules for a specific application/service together</li>
+                            <li><strong>Test changes:</strong> Always test new rules in a non-production environment first</li>
+                            <li><strong>Change management:</strong> Implement formal processes for rule modifications</li>
+                            <li><strong>Backup configurations:</strong> Regularly backup firewall configurations</li>
+                            <li><strong>Monitor effectiveness:</strong> Use firewall logs to verify rules are working as intended</li>
+                        </ol>
+                    </div>
+                
+                    <div style="margin-top: 40px; padding: 20px; background-color: #fff4e6; border-radius: 5px;">
+                        <h2 style="color: #e67e22;">Common Firewall Rule Mistakes to Avoid</h2>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px;">
+                            <div style="background-color: #fff9f2; padding: 15px; border-radius: 5px;">
+                                <h4 style="margin-top: 0; color: #d35400;">Overly Permissive Rules</h4>
+                                <p>Using "ANY" for protocol, port, or IP when specific values would suffice creates security holes.</p>
+                            </div>
+                            <div style="background-color: #fff9f2; padding: 15px; border-radius: 5px;">
+                                <h4 style="margin-top: 0; color: #d35400;">Rule Shadowing</h4>
+                                <p>When a general rule makes a specific rule unreachable due to improper ordering.</p>
+                            </div>
+                            <div style="background-color: #fff9f2; padding: 15px; border-radius: 5px;">
+                                <h4 style="margin-top: 0; color: #d35400;">Orphaned Rules</h4>
+                                <p>Rules that remain after the systems/services they were created for are decommissioned.</p>
+                            </div>
+                            <div style="background-color: #fff9f2; padding: 15px; border-radius: 5px;">
+                                <h4 style="margin-top: 0; color: #d35400;">Lack of Logging</h4>
+                                <p>Not logging denied traffic makes it impossible to detect attack attempts.</p>
+                            </div>
+                            <div style="background-color: #fff9f2; padding: 15px; border-radius: 5px;">
+                                <h4 style="margin-top: 0; color: #d35400;">Ignoring Internal Traffic</h4>
+                                <p>Focusing only on external threats while neglecting internal network segmentation.</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div style="margin-top: 40px; background-color: #f0f7ff; padding: 20px; border-radius: 5px;">
+                        <h2 style="color: #2980b9;">Firewall Rule Implementation Process</h2>
+                        <div style="display: flex; flex-wrap: wrap; gap: 15px;">
+                            <div style="flex: 1; min-width: 200px; background-color: white; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h3 style="margin-top: 0; color: #2c3e50;">1. Requirements</h3>
+                                <p>Identify business needs and security requirements for the rule</p>
+                            </div>
+                            <div style="flex: 1; min-width: 200px; background-color: white; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h3 style="margin-top: 0; color: #2c3e50;">2. Design</h3>
+                                <p>Create rule with specific parameters following least privilege</p>
+                            </div>
+                            <div style="flex: 1; min-width: 200px; background-color: white; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h3 style="margin-top: 0; color: #2c3e50;">3. Approval</h3>
+                                <p>Get formal approval through change management process</p>
+                            </div>
+                            <div style="flex: 1; min-width: 200px; background-color: white; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h3 style="margin-top: 0; color: #2c3e50;">4. Testing</h3>
+                                <p>Test in non-production environment and verify behavior</p>
+                            </div>
+                            <div style="flex: 1; min-width: 200px; background-color: white; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h3 style="margin-top: 0; color: #2c3e50;">5. Deployment</h3>
+                                <p>Implement in production during approved maintenance window</p>
+                            </div>
+                            <div style="flex: 1; min-width: 200px; background-color: white; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h3 style="margin-top: 0; color: #2c3e50;">6. Verification</h3>
+                                <p>Confirm rule is working as intended and document</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div style="margin-top: 40px; background-color: #f9f9f9; padding: 20px; border-radius: 5px; border: 1px solid #eee;">
+                        <h2 style="color: #2c3e50;">Firewall Rule Examples for Common Scenarios</h2>
+                        
+                        <h3 style="color: #3498db;">Small Business Office</h3>
+                        <ol>
+                            <li>Allow outbound HTTP/HTTPS/DNS for all users</li>
+                            <li>Allow inbound HTTPS to web server (DMZ)</li>
+                            <li>Allow RDP only from office public IP to jump host</li>
+                            <li>Block all other inbound traffic</li>
+                        </ol>
+                        
+                        <h3 style="color: #3498db;">E-Commerce Website</h3>
+                        <ol>
+                            <li>Allow HTTP/HTTPS from any to web servers</li>
+                            <li>Allow SQL only from web servers to database</li>
+                            <li>Allow SSH only from management network</li>
+                            <li>Rate limit connections per IP to prevent scraping</li>
+                            <li>Geo-block high-risk countries</li>
+                        </ol>
+                        
+                        <h3 style="color: #3498db;">Home Network</h3>
+                        <ol>
+                            <li>Allow all outbound traffic</li>
+                            <li>Block all inbound traffic by default</li>
+                            <li>Allow inbound RDP/VNC only from specific IPs</li>
+                            <li>Enable NAT for internal devices</li>
+                        </ol>
+                    </div>
+                
+                    <div style="margin-top: 40px; background-color: #eaf2f8; padding: 20px; border-radius: 5px;">
+                        <h2 style="color: #2980b9;">Firewall Rule Optimization Techniques</h2>
+                        
+                        <h3 style="color: #2c3e50;">Rule Consolidation</h3>
+                        <p>Combine similar rules to reduce total number (e.g., multiple port rules for same IPs can often be combined)</p>
+                        
+                        <h3 style="color: #2c3e50;">Rule Reordering</h3>
+                        <p>Place frequently matched rules higher in the rulebase to improve performance</p>
+                        
+                        <h3 style="color: #2c3e50;">Object Grouping</h3>
+                        <p>Use network groups, service groups, etc. to simplify management (e.g., "Web-Servers" group)</p>
+                        
+                        <h3 style="color: #2c3e50;">Rule Analysis Tools</h3>
+                        <p>Use built-in or third-party tools to identify redundant, shadowed, or unused rules</p>
+                    </div>
+                
+                    <div style="margin-top: 40px; background-color: #fff; padding: 20px; border-radius: 5px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2c3e50;">Firewall Rule Documentation Template</h2>
+                        <pre style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; overflow-x: auto;">
+                Rule Name: [Descriptive name]
+                Rule ID: [Unique identifier]
+                Action: [Allow/Deny/Reject]
+                Source: [IP/range/object-group]
+                Destination: [IP/range/object-group]
+                Service: [Port/protocol/application]
+                Direction: [Inbound/Outbound/Internal]
+                Enabled: [Yes/No]
+                Logging: [Enabled/Disabled]
+                Created: [Date]
+                Created By: [Name/Team]
+                Last Modified: [Date]
+                Business Justification: [Reason for rule]
+                Owner: [Team/individual responsible]
+                Expiration: [If temporary]
+                Related Tickets: [Change/incident references]
+                Notes: [Additional information]</pre>
+                    </div>
+                
+                    <div style="margin-top: 40px; background-color: #f8f9fa; padding: 20px; border-radius: 5px;">
+                        <h2 style="color: #2c3e50;">Conclusion</h2>
+                        <p>Effective firewall rule management is critical for network security. By following best practices - implementing least privilege, maintaining proper documentation, regularly auditing rules, and using structured processes for changes - organizations can maintain strong security postures while enabling necessary business communications.</p>
+                        <p>Remember that firewall rules are just one component of a defense-in-depth security strategy, and should be complemented with other controls like intrusion prevention systems, endpoint protection, and user education.</p>
+                    </div>
+                
+
+            </main>  
+            
+            
+
+             <!-- Floating button to open chatbot -->
+    <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+    </div>
+    
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-container");
+            let button = document.getElementById("open-chatbot");
+    
+            if (!chatbot.classList.contains("active")) {
+                chatbot.classList.add("active");
+                button.style.display = "none"; // Hide button when chatbot is open
+            } else {
+                chatbot.classList.remove("active");
+                setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+            }
+        }
+    
+        // Load chatbot HTML dynamically
+        fetch("/chatbot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("chatbot-container").innerHTML += html;
+    
+            // Execute chatbot script after inserting HTML
+            let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+            for (let script of scripts) {
+                let newScript = document.createElement("script");
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript);
+            }
+        })
+        .catch(error => console.error("Error loading chatbot:", error));
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../computernetwork.json" : "computernetwork.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.Computer_Networks;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+        
+       
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

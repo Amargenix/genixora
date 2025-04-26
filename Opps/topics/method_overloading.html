@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../opp.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+
+
+
+
+
+
+
+            <main class="col-md-7 content">
+                <h2>🔹 Method Overloading in Programming</h2>
+            
+                <p>
+                    **Method Overloading** is a feature in programming that allows a class to have more than one method with the same name, but different parameters.  
+                    This enables methods to perform similar functions with different types or numbers of arguments, enhancing code readability and usability.
+                </p>
+            
+                <h3>📌 Why Use Method Overloading?</h3>
+                <p>Method overloading provides several advantages in programming.</p>
+                <ul>
+                    <li>✅ **Improved Code Clarity** – Allows methods to have the same name, making the code easier to read and understand.</li>
+                    <li>✅ **Enhanced Usability** – Enables methods to handle different input types or argument counts, offering flexibility to users.</li>
+                    <li>✅ **Support for Polymorphism** – Facilitates the ability to use a single method name to represent different behaviors, depending on the context.</li>
+                    <li>✅ **Reduction of Code Duplication** – Minimizes the need for multiple methods with different names that perform similar tasks.</li>
+                </ul>
+            
+                <h3>📌 How Method Overloading Works</h3>
+                <p>Method overloading works by differentiating methods based on their parameter lists. This can include:</p>
+                <ul>
+                    <li>Different number of parameters: Two methods can have the same name but different numbers of arguments.</li>
+                    <li>Different types of parameters: Methods can have the same name with parameters of different data types.</li>
+                    <li>Different order of parameters: Methods can accept parameters of the same types but in a different order.</li>
+                </ul>
+            
+                <h3>🖥️ Method Overloading in Java</h3>
+                <p>In Java, method overloading is implemented by defining multiple methods in a class with the same name but different parameter lists. Here is an example:</p>
+                <pre><code>
+            class Calculator {
+                // Method to add two integers
+                public int add(int a, int b) {
+                    return a + b;
+                }
+            
+                // Method to add three integers
+                public int add(int a, int b, int c) {
+                    return a + b + c;
+                }
+            
+                // Method to add two double values
+                public double add(double a, double b) {
+                    return a + b;
+                }
+            }
+            
+            public class Main {
+                public static void main(String[] args) {
+                    Calculator calculator = new Calculator();
+                    System.out.println("Sum of two integers: " + calculator.add(5, 10)); // Output: 15
+                    System.out.println("Sum of three integers: " + calculator.add(5, 10, 15)); // Output: 30
+                    System.out.println("Sum of two doubles: " + calculator.add(5.5, 10.5)); // Output: 16.0
+                }
+            }
+                </code></pre>
+            
+                <h3>🖥️ Method Overloading in Python</h3>
+                <p>Python does not support method overloading in the traditional sense, but similar functionality can be achieved using default parameters or variable-length arguments. Here is an example:</p>
+                <pre><code>
+            class Calculator:
+                def add(self, a, b, c=0):
+                    return a + b + c
+            
+            calculator = Calculator()
+            print("Sum of two integers: ", calculator.add(5, 10)) # Output: 15
+            print("Sum of three integers: ", calculator.add(5, 10, 15)) # Output: 30
+                </code></pre>
+            
+                <h3>📌 Best Practices for Method Overloading</h3>
+                <ul>
+                    <li>✅ Keep method names meaningful and descriptive, even when overloading.</li>
+                    <li>✅ Ensure that overloaded methods have distinct signatures to avoid confusion.</li>
+                    <li>✅ Document each method clearly to explain its parameters and expected behavior.</li>
+                    <li>✅ Use method overloading judiciously to maintain code readability and avoid complexity.</li>
+                </ul>
+            
+                <h3>🎯 Summary</h3>
+                <p>
+                    Method overloading allows a class to define multiple methods with the same name but different parameters, improving code clarity and usability.  
+                    It provides flexibility to handle different input types and counts, enabling developers to create cleaner and more efficient code.
+                </p>
+            
+                <h2>🔗 Next Topics</h2>
+                <ul class="nexttopics-container">
+                    <li><a href="method_overriding.html">👉 Method Overriding</a></li>
+                    <li><a href="polymorphism.html">👉 Polymorphism</a></li>
+                    <li><a href="interfaces.html">👉 Interfaces in Programming</a></li>
+                </ul>
+            </main>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+     
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../opp.json" : "opp.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.OOP;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

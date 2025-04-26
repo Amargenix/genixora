@@ -1,0 +1,8 @@
+{
+    "Tools": [
+        { "name": "Typing Test", "link": "tools/typing_test.html" },
+        { "name": "Code Formatters", "link": "tools/code_formatters.html" },
+        { "name": "Code Converters", "link": "tools/code_converters.html" },
+        { "name": "Random Password Generator", "link": "tools/password_generator.html" }
+    ]
+}

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agile Anti-Patterns</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Agile and Scrum</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <h1>User Stories </h1>
+                    
+                    <div style="background-color: #ebf8ff; padding: 25px; border-radius: 10px; border-left: 6px solid #3182ce; margin-bottom: 35px;">
+                        <h2 style="color: #2b6cb0; margin-top: 0; font-size: 1.8em;">Definition</h2>
+                        <p style="font-size: 1.1em; font-weight: 500;">A user story is an informal, natural language description of a software feature written from the perspective of the end user. It follows a simple template: <strong style="color: #3182ce;">"As a [type of user], I want [some goal] so that [some reason]."</strong> User stories are the primary artifact used to define product functionality in Agile development.</p>
+                    </div>
+                    
+                    <div style="display: flex; flex-wrap: wrap; gap: 25px; margin-bottom: 35px;">
+                        <div style="flex: 1; min-width: 300px; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                            <h3 style="color: #4a5568; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; font-size: 1.5em;">Key Characteristics</h3>
+                            <ul style="padding-left: 25px;">
+                                <li style="margin-bottom: 12px;"><strong style="color: #3182ce;">User-centered:</strong> Focused on user needs, not technical implementation</li>
+                                <li style="margin-bottom: 12px;"><strong style="color: #3182ce;">Small:</strong> Should be completable within one sprint</li>
+                                <li style="margin-bottom: 12px;"><strong style="color: #3182ce;">Independent:</strong> Should not depend on other stories</li>
+                                <li style="margin-bottom: 12px;"><strong style="color: #3182ce;">Negotiable:</strong> Details emerge through collaboration</li>
+                                <li style="margin-bottom: 12px;"><strong style="color: #3182ce;">Valuable:</strong> Must deliver tangible value to users</li>
+                                <li style="margin-bottom: 12px;"><strong style="color: #3182ce;">Estimable:</strong> Team should be able to size it</li>
+                                <li><strong style="color: #3182ce;">Testable:</strong> Must have clear acceptance criteria</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="flex: 1; min-width: 300px; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                            <h3 style="color: #4a5568; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; font-size: 1.5em;">INVEST Model</h3>
+                            <p style="margin-bottom: 15px;">The INVEST acronym describes attributes of good user stories:</p>
+                            <ul style="padding-left: 25px;">
+                                <li style="margin-bottom: 10px;"><strong style="color: #3182ce;">I</strong>ndependent</li>
+                                <li style="margin-bottom: 10px;"><strong style="color: #3182ce;">N</strong>egotiable</li>
+                                <li style="margin-bottom: 10px;"><strong style="color: #3182ce;">V</strong>aluable</li>
+                                <li style="margin-bottom: 10px;"><strong style="color: #3182ce;">E</strong>stimable</li>
+                                <li style="margin-bottom: 10px;"><strong style="color: #3182ce;">S</strong>mall</li>
+                                <li><strong style="color: #3182ce;">T</strong>estable</li>
+                            </ul>
+                        </div>
+                    </div>
+                
+                    <h2 style="color: #2b6cb0; border-left: 5px solid #3182ce; padding-left: 15px; font-size: 1.8em; margin-top: 40px;">User Story Components</h2>
+                    <div style="background-color: white; padding: 25px; border-radius: 10px; margin-bottom: 35px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                            <div style="background-color: #f0fff4; padding: 20px; border-radius: 8px; border-left: 4px solid #38a169;">
+                                <h3 style="color: #2f855a; margin-top: 0; font-size: 1.3em;">1. Card (Description)</h3>
+                                <p>The basic user story following the standard template:</p>
+                                <div style="background-color: #e6fffa; padding: 15px; border-radius: 6px; font-style: italic;">
+                                    "As a registered user, I want to reset my password so that I can regain access when I forget it."
+                                </div>
+                            </div>
+                            
+                            <div style="background-color: #fff5f5; padding: 20px; border-radius: 8px; border-left: 4px solid #e53e3e;">
+                                <h3 style="color: #c53030; margin-top: 0; font-size: 1.3em;">2. Conversation</h3>
+                                <p>Discussions that clarify details between team and stakeholders:</p>
+                                <ul style="padding-left: 20px;">
+                                    <li>What triggers password reset?</li>
+                                    <li>What verification is needed?</li>
+                                    <li>How many attempts allowed?</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #ebf8ff; padding: 20px; border-radius: 8px; border-left: 4px solid #3182ce;">
+                                <h3 style="color: #2b6cb0; margin-top: 0; font-size: 1.3em;">3. Confirmation (Acceptance Criteria)</h3>
+                                <p>Specific conditions that must be met for story completion:</p>
+                                <ol style="padding-left: 20px;">
+                                    <li>System sends reset link to registered email</li>
+                                    <li>Link expires after 24 hours</li>
+                                    <li>New password meets complexity requirements</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <h2 style="color: #2b6cb0; border-left: 5px solid #3182ce; padding-left: 15px; font-size: 1.8em;">Writing Effective User Stories</h2>
+                    <div style="background-color: white; padding: 25px; border-radius: 10px; margin-bottom: 35px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                        <h3 style="color: #4a5568; font-size: 1.4em;">Best Practices</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div style="background-color: #fefcbf; padding: 15px; border-radius: 6px;">
+                                <h4 style="margin-top: 0; color: #744210;">Focus on User Needs</h4>
+                                <p>Describe what users need, not how to implement it</p>
+                            </div>
+                            <div style="background-color: #fed7d7; padding: 15px; border-radius: 6px;">
+                                <h4 style="margin-top: 0; color: #742a2a;">Use Personas</h4>
+                                <p>Reference specific user types for clarity</p>
+                            </div>
+                            <div style="background-color: #c6f6d5; padding: 15px; border-radius: 6px;">
+                                <h4 style="margin-top: 0; color: #22543d;">Slice Vertically</h4>
+                                <p>Deliver thin end-to-end functionality</p>
+                            </div>
+                            <div style="background-color: #bee3f8; padding: 15px; border-radius: 6px;">
+                                <h4 style="margin-top: 0; color: #2c5282;">Collaborate</h4>
+                                <p>Refine stories with whole team</p>
+                            </div>
+                        </div>
+                        
+                        <h3 style="color: #4a5568; font-size: 1.4em; margin-top: 30px;">Common Pitfalls to Avoid</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div style="background-color: #feebc8; padding: 15px; border-radius: 6px; border-left: 4px solid #dd6b20;">
+                                <h4 style="margin-top: 0; color: #9c4221;">Too Technical</h4>
+                                <p>Avoid implementation details in the story</p>
+                            </div>
+                            <div style="background-color: #fed7d7; padding: 15px; border-radius: 6px; border-left: 4px solid #e53e3e;">
+                                <h4 style="margin-top: 0; color: #9b2c2c;">Too Large</h4>
+                                <p>Break epics down into smaller stories</p>
+                            </div>
+                            <div style="background-color: #e9d8fd; padding: 15px; border-radius: 6px; border-left: 4px solid #6b46c1;">
+                                <h4 style="margin-top: 0; color: #553c9a;">Vague Benefits</h4>
+                                <p>Clearly articulate the "so that" value</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <h2 style="color: #2b6cb0; border-left: 5px solid #3182ce; padding-left: 15px; font-size: 1.8em;">User Story Examples</h2>
+                    <div style="background-color: white; padding: 25px; border-radius: 10px; margin-bottom: 35px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+                            <div style="background-color: #f0fff4; padding: 20px; border-radius: 8px;">
+                                <h3 style="color: #2f855a; margin-top: 0;">E-commerce Example</h3>
+                                <div style="background-color: #e6fffa; padding: 15px; border-radius: 6px; font-style: italic; margin-bottom: 15px;">
+                                    "As a shopper, I want to filter products by price range so that I can find items within my budget."
+                                </div>
+                                <p><strong>Acceptance Criteria:</strong></p>
+                                <ol style="padding-left: 20px;">
+                                    <li>Filter shows min/max price inputs</li>
+                                    <li>Results update in real-time</li>
+                                    <li>Filter persists during navigation</li>
+                                </ol>
+                            </div>
+                            
+                            <div style="background-color: #fff5f5; padding: 20px; border-radius: 8px;">
+                                <h3 style="color: #c53030; margin-top: 0;">Mobile App Example</h3>
+                                <div style="background-color: #ffebee; padding: 15px; border-radius: 6px; font-style: italic; margin-bottom: 15px;">
+                                    "As a frequent traveler, I want to save favorite locations so that I can quickly check their status."
+                                </div>
+                                <p><strong>Acceptance Criteria:</strong></p>
+                                <ol style="padding-left: 20px;">
+                                    <li>Star icon adds to favorites</li>
+                                    <li>Favorites appear at top of list</li>
+                                    <li>Saved between sessions</li>
+                                </ol>
+                            </div>
+                            
+                            <div style="background-color: #ebf8ff; padding: 20px; border-radius: 8px;">
+                                <h3 style="color: #2b6cb0; margin-top: 0;">SAAS Example</h3>
+                                <div style="background-color: #ebf4ff; padding: 15px; border-radius: 6px; font-style: italic; margin-bottom: 15px;">
+                                    "As an admin, I want to export user data as CSV so that I can analyze it in Excel."
+                                </div>
+                                <p><strong>Acceptance Criteria:</strong></p>
+                                <ol style="padding-left: 20px;">
+                                    <li>Export button on user management page</li>
+                                    <li>Includes all visible columns</li>
+                                    <li>Properly formatted CSV file</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div style="background-color: #ebf8ff; padding: 25px; border-radius: 10px; border-left: 6px solid #3182ce;">
+                        <h2 style="color: #2b6cb0; margin-top: 0; font-size: 1.8em;">User Story Lifecycle in Scrum</h2>
+                        <div style="display: flex; overflow-x: auto; gap: 20px; padding-bottom: 15px; margin-top: 20px;">
+                            <div style="min-width: 200px; background-color: #bee3f8; padding: 15px; border-radius: 8px; text-align: center;">
+                                <h3 style="margin-top: 0; color: #2c5282;">1. Discovery</h3>
+                                <p>Identify user need</p>
+                            </div>
+                            <div style="min-width: 200px; background-color: #90cdf4; padding: 15px; border-radius: 8px; text-align: center;">
+                                <h3 style="margin-top: 0; color: #2a4365;">2. Drafting</h3>
+                                <p>Write initial story</p>
+                            </div>
+                            <div style="min-width: 200px; background-color: #63b3ed; padding: 15px; border-radius: 8px; text-align: center;">
+                                <h3 style="margin-top: 0; color: #1e4e8c;">3. Refinement</h3>
+                                <p>Add details and criteria</p>
+                            </div>
+                            <div style="min-width: 200px; background-color: #4299e1; padding: 15px; border-radius: 8px; text-align: center; color: white;">
+                                <h3 style="margin-top: 0;">4. Estimation</h3>
+                                <p>Size the story</p>
+                            </div>
+                            <div style="min-width: 200px; background-color: #3182ce; padding: 15px; border-radius: 8px; text-align: center; color: white;">
+                                <h3 style="margin-top: 0;">5. Implementation</h3>
+                                <p>Develop and test</p>
+                            </div>
+                            <div style="min-width: 200px; background-color: #2b6cb0; padding: 15px; border-radius: 8px; text-align: center; color: white;">
+                                <h3 style="margin-top: 0;">6. Validation</h3>
+                                <p>Acceptance and demo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics/") ? "../Agile_and_Scrum.json" : "../Agile_and_Scrum.json";
+            
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch DSA Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.Agile_and_Scrum;
+                        displayTopics(allTopics);
+                    })
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+           
+            
+            
+            
+            
+            
+            
+            </body>
+            </html>     

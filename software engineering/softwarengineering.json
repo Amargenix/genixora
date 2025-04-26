@@ -1,0 +1,41 @@
+{
+    "Software_Engineering": [
+        { "name": "Introduction to Software Engineering", "id": "se_intro", "link": "se_intro.html" },
+        { "name": "Software Development Life Cycle (SDLC)", "id": "sdlc", "link": "sdlc.html" },
+        { "name": "Software Process Models", "id": "process_models", "link": "process_models.html" },
+        { "name": "Agile Methodology", "id": "agile", "link": "agile.html" },
+        
+        { "name": "Software Requirement Engineering", "id": "requirement_engineering", "link": "requirement_engineering.html" },
+        { "name": "Functional & Non-Functional Requirements", "id": "functional_nonfunctional", "link": "functional_nonfunctional.html" },
+        { "name": "Software Requirement Specification (SRS)", "id": "srs", "link": "srs.html" },
+        
+        { "name": "Software Design Principles", "id": "design_principles", "link": "design_principles.html" },
+        { "name": "Software Architecture & Design Patterns", "id": "architecture_patterns", "link": "architecture_patterns.html" },
+        { "name": "UML Diagrams", "id": "uml", "link": "uml.html" },
+        
+        { "name": "Software Development & Coding Standards", "id": "coding_standards", "link": "coding_standards.html" },
+        { "name": "Software Configuration Management (SCM)", "id": "scm", "link": "scm.html" },
+        { "name": "Version Control Systems (Git, SVN)", "id": "vcs", "link": "vcs.html" },
+        
+        { "name": "Software Testing & Quality Assurance", "id": "testing", "link": "testing.html" },
+        { "name": "Unit Testing, Integration Testing", "id": "unit_integration_testing", "link": "unit_integration_testing.html" },
+        { "name": "Automated Testing & CI/CD", "id": "automated_testing", "link": "automated_testing.html" },
+        { "name": "Software Quality Models (ISO, CMMI)", "id": "quality_models", "link": "quality_models.html" },
+        
+        { "name": "Software Project Management", "id": "project_management", "link": "project_management.html" },
+        { "name": "Risk Management in Software Engineering", "id": "risk_management", "link": "risk_management.html" },
+        { "name": "Software Cost Estimation Models (COCOMO)", "id": "cocomo", "link": "cocomo.html" },
+        
+        { "name": "Software Maintenance & Evolution", "id": "maintenance", "link": "maintenance.html" },
+        { "name": "Reverse Engineering & Reengineering", "id": "reverse_engineering", "link": "reverse_engineering.html" },
+        
+        { "name": "Software Security & Ethics", "id": "security_ethics", "link": "security_ethics.html" },
+        { "name": "Secure Software Development Lifecycle (SSDLC)", "id": "ssdlc", "link": "ssdlc.html" },
+        { "name": "Software Licensing & Intellectual Property", "id": "software_licensing", "link": "software_licensing.html" },
+        
+        { "name": "Emerging Trends in Software Engineering", "id": "emerging_trends", "link": "emerging_trends.html" },
+        { "name": "DevOps & Continuous Integration", "id": "devops", "link": "devops.html" },
+        { "name": "Cloud Computing in Software Engineering", "id": "cloud_computing", "link": "cloud_computing.html" },
+        { "name": "Artificial Intelligence in Software Engineering", "id": "ai_se", "link": "ai_se.html" }
+    ]
+}

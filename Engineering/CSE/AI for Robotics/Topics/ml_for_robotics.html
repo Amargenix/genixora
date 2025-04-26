@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Robotics</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>AI for Robotics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+               <h1>Machine Learning for Robotics</h1>   
+            
+                
+                        <!-- Core Concepts Section -->
+                        <div style="background:white;border-radius:12px;padding:40px;margin-bottom:40px;box-shadow:0 5px 15px rgba(0,0,0,0.05);border:1px solid #e2e8f0;">
+                            <h2 style="color:#10b981;border-bottom:2px solid #10b981;padding-bottom:12px;margin-top:0;font-size:1.8rem;">Core ML Concepts for Robotics</h2>
+                            
+                            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;margin-top:30px;">
+                                <!-- Perception -->
+                                <div style="background:#ecfdf5;padding:25px;border-radius:8px;border-left:4px solid #10b981;">
+                                    <h3 style="margin-top:0;color:#10b981;">👁️ Perception</h3>
+                                    <ul style="padding-left:20px;margin:0;">
+                                        <li style="margin-bottom:8px;">CNNs for object recognition (YOLO, Faster R-CNN)</li>
+                                        <li style="margin-bottom:8px;">Point cloud processing (PointNet, VoxelNet)</li>
+                                        <li style="margin-bottom:8px;">Semantic segmentation (Mask R-CNN)</li>
+                                        <li>Multi-sensor fusion (Kalman Filters, Bayesian Networks)</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Control -->
+                                <div style="background:#ecfdf5;padding:25px;border-radius:8px;border-left:4px solid #10b981;">
+                                    <h3 style="margin-top:0;color:#10b981;">🎮 Control</h3>
+                                    <ul style="padding-left:20px;margin:0;">
+                                        <li style="margin-bottom:8px;">Reinforcement Learning (PPO, SAC, DDPG)</li>
+                                        <li style="margin-bottom:8px;">Imitation Learning (Behavioral Cloning, GAIL)</li>
+                                        <li style="margin-bottom:8px;">Inverse Dynamics Models</li>
+                                        <li>Model Predictive Control (MPC)</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Planning -->
+                                <div style="background:#ecfdf5;padding:25px;border-radius:8px;border-left:4px solid #10b981;">
+                                    <h3 style="margin-top:0;color:#10b981;">🗺️ Planning</h3>
+                                    <ul style="padding-left:20px;margin:0;">
+                                        <li style="margin-bottom:8px;">Graph Neural Networks for path planning</li>
+                                        <li style="margin-bottom:8px;">Monte Carlo Tree Search (MCTS)</li>
+                                        <li style="margin-bottom:8px;">Neural Motion Planners</li>
+                                        <li>Hierarchical Reinforcement Learning</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- ML Approaches Section -->
+                        <div style="background:white;border-radius:12px;padding:40px;margin-bottom:40px;box-shadow:0 5px 15px rgba(0,0,0,0.05);border:1px solid #e2e8f0;">
+                            <h2 style="color:#10b981;border-bottom:2px solid #10b981;padding-bottom:12px;margin-top:0;font-size:1.8rem;">ML Approaches in Robotics</h2>
+                            
+                            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;margin-top:30px;">
+                                <!-- Supervised Learning -->
+                                <div style="border:1px solid #e2e8f0;border-radius:10px;padding:25px;transition:all 0.3s ease;background:#fff;">
+                                    <div style="background:#10b981;color:white;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:1.8rem;">🏷️</div>
+                                    <h3 style="text-align:center;color:#10b981;margin:0 0 15px;">Supervised Learning</h3>
+                                    <ul style="padding-left:20px;margin:0;">
+                                        <li style="margin-bottom:8px;">Object detection/classification</li>
+                                        <li style="margin-bottom:8px;">Grasp pose prediction</li>
+                                        <li style="margin-bottom:8px;">Sensor calibration</li>
+                                        <li>State estimation</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Reinforcement Learning -->
+                                <div style="border:1px solid #e2e8f0;border-radius:10px;padding:25px;transition:all 0.3s ease;background:#fff;">
+                                    <div style="background:#059669;color:white;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:1.8rem;">🎯</div>
+                                    <h3 style="text-align:center;color:#059669;margin:0 0 15px;">Reinforcement Learning</h3>
+                                    <ul style="padding-left:20px;margin:0;">
+                                        <li style="margin-bottom:8px;">Locomotion control</li>
+                                        <li style="margin-bottom:8px;">Manipulation skills</li>
+                                        <li style="margin-bottom:8px;">Autonomous driving</li>
+                                        <li>Multi-agent coordination</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Self-Supervised Learning -->
+                                <div style="border:1px solid #e2e8f0;border-radius:10px;padding:25px;transition:all 0.3s ease;background:#fff;">
+                                    <div style="background:#047857;color:white;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:1.8rem;">🔄</div>
+                                    <h3 style="text-align:center;color:#047857;margin:0 0 15px;">Self-Supervised Learning</h3>
+                                    <ul style="padding-left:20px;margin:0;">
+                                        <li style="margin-bottom:8px;">Representation learning</li>
+                                        <li style="margin-bottom:8px;">Contrastive learning</li>
+                                        <li style="margin-bottom:8px;">Predictive models</li>
+                                        <li>Data-efficient learning</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Meta-Learning -->
+                                <div style="border:1px solid #e2e8f0;border-radius:10px;padding:25px;transition:all 0.3s ease;background:#fff;">
+                                    <div style="background:#065f46;color:white;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:1.8rem;">🧠</div>
+                                    <h3 style="text-align:center;color:#065f46;margin:0 0 15px;">Meta-Learning</h3>
+                                    <ul style="padding-left:20px;margin:0;">
+                                        <li style="margin-bottom:8px;">Few-shot adaptation</li>
+                                        <li style="margin-bottom:8px;">Sim-to-real transfer</li>
+                                        <li style="margin-bottom:8px;">Continual learning</li>
+                                        <li>Multi-task learning</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Key Algorithms Section -->
+                        <div style="background:white;border-radius:12px;padding:40px;margin-bottom:40px;box-shadow:0 5px 15px rgba(0,0,0,0.05);border:1px solid #e2e8f0;">
+                            <h2 style="color:#10b981;border-bottom:2px solid #10b981;padding-bottom:12px;margin-top:0;font-size:1.8rem;">Key ML Algorithms for Robotics</h2>
+                            
+                            <div style="overflow-x:auto;margin-top:30px;">
+                                <table style="width:100%;border-collapse:collapse;">
+                                    <thead>
+                                        <tr style="background:#10b981;color:white;">
+                                            <th style="padding:12px;text-align:left;">Algorithm</th>
+                                            <th style="padding:12px;text-align:left;">Type</th>
+                                            <th style="padding:12px;text-align:left;">Robotic Application</th>
+                                            <th style="padding:12px;text-align:left;">Performance</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="border-bottom:1px solid #e2e8f0;">
+                                            <td style="padding:12px;">PPO (Proximal Policy Optimization)</td>
+                                            <td style="padding:12px;">Reinforcement Learning</td>
+                                            <td style="padding:12px;">Locomotion control</td>
+                                            <td style="padding:12px;">90% success on rough terrain</td>
+                                        </tr>
+                                        <tr style="border-bottom:1px solid #e2e8f0;">
+                                            <td style="padding:12px;">YOLOv7</td>
+                                            <td style="padding:12px;">Computer Vision</td>
+                                            <td style="padding:12px;">Object detection</td>
+                                            <td style="padding:12px;">70 FPS at 56.8 mAP</td>
+                                        </tr>
+                                        <tr style="border-bottom:1px solid #e2e8f0;">
+                                            <td style="padding:12px;">PointNet++</td>
+                                            <td style="padding:12px;">3D Perception</td>
+                                            <td style="padding:12px;">Point cloud processing</td>
+                                            <td style="padding:12px;">91.9% accuracy on ShapeNet</td>
+                                        </tr>
+                                        <tr style="border-bottom:1px solid #e2e8f0;">
+                                            <td style="padding:12px;">GNN Motion Planner</td>
+                                            <td style="padding:12px;">Planning</td>
+                                            <td style="padding:12px;">Path planning</td>
+                                            <td style="padding:12px;">3x faster than RRT*</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding:12px;">MAML (Model-Agnostic Meta-Learning)</td>
+                                            <td style="padding:12px;">Meta-Learning</td>
+                                            <td style="padding:12px;">Few-shot adaptation</td>
+                                            <td style="padding:12px;">5-10x faster adaptation</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                
+                        <!-- Implementation Section -->
+                        <div style="background:rgb(207, 219, 222);border-radius:12px;padding:40px;margin-bottom:40px;box-shadow:0 5px 15px rgba(115, 196, 196, 0.05);border:1px solid #e2e8f0;">
+                            <h2 style="color:#10b981;border-bottom:2px solid #10b981;padding-bottom:12px;margin-top:0;font-size:1.8rem;">Implementation Frameworks</h2>
+                            
+                            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;margin-top:30px;">
+                                <!-- ROS -->
+                                <div style="position:relative;border-radius:10px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.1);height:280px;background:linear-gradient(rgba(125, 159, 162, 0.3),rgba(46, 200, 205, 0.7)),url('https://example.com/ros-ml.jpg');background-size:cover;color:white;padding:25px;display:flex;flex-direction:column;justify-content:flex-end;">
+                                    <h3 style="margin:0 0 15px;font-size:1.5rem;">ROS 2 + ML</h3>
+                                    <p style="margin:0;">Robot Operating System with ML packages like ROS2-TensorFlow, ROS-PyTorch for seamless integration.</p>
+                                </div>
+                                
+                                <!-- NVIDIA -->
+                                <div style="position:relative;border-radius:10px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.1);height:280px;background:linear-gradient(rgba(125, 159, 162, 0.3),rgba(46, 200, 205, 0.7)),url('https://example.com/ros-ml.jpg');background-size:cover;color:white;padding:25px;display:flex;flex-direction:column;justify-content:flex-end;">
+                                    <h3 style="margin:0 0 15px;font-size:1.5rem;">NVIDIA Isaac</h3>
+                                    <p style="margin:0;">End-to-end platform with GPU-accelerated ML for perception, planning and control.</p>
+                                </div>
+                                
+                                <!-- Google -->
+                                <div style="position:relative;border-radius:10px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.1);height:280px;background:linear-gradient(rgba(125, 159, 162, 0.3),rgba(46, 200, 205, 0.7)),url('https://example.com/ros-ml.jpg');background-size:cover;color:white;padding:25px;display:flex;flex-direction:column;justify-content:flex-end;">
+                                    <h3 style="margin:0 0 15px;font-size:1.5rem;">Google Robotics</h3>
+                                    <p style="margin:0;">Open-source frameworks for large-scale robot learning (RT-1, RT-2 models).</p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Challenges Section -->
+                        <div style="background:white;border-radius:12px;padding:40px;margin-bottom:40px;box-shadow:0 5px 15px rgba(0,0,0,0.05);border:1px solid #e2e8f0;">
+                            <h2 style="color:#10b981;border-bottom:2px solid #10b981;padding-bottom:12px;margin-top:0;font-size:1.8rem;">Challenges in ML for Robotics</h2>
+                            
+                            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:30px;">
+                                <div style="background:#f0fdf4;padding:20px;border-radius:8px;border-left:4px solid #10b981;">
+                                    <h3 style="margin-top:0;color:#10b981;">🔄 Sim-to-Real Gap</h3>
+                                    <p>Reality mismatch between simulation training and real-world deployment (domain adaptation needed).</p>
+                                </div>
+                                
+                                <div style="background:#f0fdf4;padding:20px;border-radius:8px;border-left:4px solid #10b981;">
+                                    <h3 style="margin-top:0;color:#10b981;">📊 Data Scarcity</h3>
+                                    <p>Limited real-world robotic datasets (solutions: synthetic data, transfer learning).</p>
+                                </div>
+                                
+                                <div style="background:#f0fdf4;padding:20px;border-radius:8px;border-left:4px solid #10b981;">
+                                    <h3 style="margin-top:0;color:#10b981;">⏱️ Real-time Constraints</h3>
+                                    <p>Strict latency requirements (<100ms for many applications).</p>
+                                </div>
+                                
+                                <div style="background:#f0fdf4;padding:20px;border-radius:8px;border-left:4px solid #10b981;">
+                                    <h3 style="margin-top:0;color:#10b981;">🛡️ Safety Concerns</h3>
+                                    <p>Certifying neural network behavior for safety-critical systems.</p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Future Trends Section -->
+                        <div style="background:linear-gradient(135deg,#4fd2ad,#10b981);color:white;border-radius:12px;padding:50px 40px;margin-bottom:40px;box-shadow:0 10px 25px rgba(4,120,87,0.3);">
+                            <h2 style="margin-top:0;border-bottom:2px solid rgba(255,255,255,0.3);padding-bottom:12px;">Future Trends</h2>
+                            
+                            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;margin-top:30px;">
+                                <div style="background:rgba(182, 224, 225, 0.1);padding:25px;border-radius:8px;backdrop-filter:blur(5px);">
+                                    <h3 style="margin-top:0;">Foundation Models</h3>
+                                    <p>Large pre-trained models (RT-2, PaLM-E) adapted for robotics tasks.</p>
+                                </div>
+                                
+                                <div style="background:rgba(255,255,255,0.1);padding:25px;border-radius:8px;backdrop-filter:blur(5px);">
+                                    <h3 style="margin-top:0;">Neuro-Symbolic AI</h3>
+                                    <p>Combining neural networks with symbolic reasoning for explainable decisions.</p>
+                                </div>
+                                
+                                <div style="background:rgba(255,255,255,0.1);padding:25px;border-radius:8px;backdrop-filter:blur(5px);">
+                                    <h3 style="margin-top:0;">Embodied AI</h3>
+                                    <p>Agents that learn through interaction with physical environments.</p>
+                                </div>
+                                
+                                <div style="background:rgba(255,255,255,0.1);padding:25px;border-radius:8px;backdrop-filter:blur(5px);">
+                                    <h3 style="margin-top:0;">Multi-Modal Learning</h3>
+                                    <p>Integrating vision, language, and sensor data for richer understanding.</p>
+                                </div>
+                            </div>
+                        </div>
+                
+                     
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [ ];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics") ? "../AI for Robotics.json" : "../AI for Robotics.json";
+
+                                              
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch AI for Robotics Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.AI_for_Robotics;
+                        displayTopics(allTopics);
+                    }
+                    )
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+           
+            
+            
+            
+            
+            
+            
+            </body>
+            </html>        

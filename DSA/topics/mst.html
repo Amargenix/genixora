@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    <link rel="stylesheet" href="../dsa.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../dsa.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+
+            <main class="col-md-7 content">
+                <h1>🌲 Minimum Spanning Tree (MST) – Complete In-Depth Explanation</h1>
+            
+                <p>
+                    A **Minimum Spanning Tree (MST)** is a **subset of edges** in a **connected, weighted graph**  
+                    that connects all vertices with the **minimum total edge weight** and **without forming cycles**.
+                </p>
+            
+                <h2>📌 Why is MST Important?</h2>
+                <ul>
+                    <li>✅ **Used in network design (telecommunication, electrical circuits, road networks).**</li>
+                    <li>📡 **Essential for clustering in machine learning.**</li>
+                    <li>🚀 **Forms the basis for algorithms like Approximate TSP.**</li>
+                    <li>🔍 **Efficient in constructing trees with minimal cost in weighted graphs.**</li>
+                </ul>
+            
+                <h1>📌 Understanding MST with an Example</h1>
+                <p>
+                    Given the following weighted graph:
+                </p>
+                <pre><code>
+                     2       3
+                  A---B---C
+                  |   |   |
+                1 |   4   | 6
+                  |   |   |
+                  D---E---F
+                     5
+                </code></pre>
+            
+                <p>
+                    The **Minimum Spanning Tree (MST)** would be:
+                </p>
+                <pre><code>
+                     2       3
+                  A---B---C
+                  |        
+                1 |        
+                  |        
+                  D        
+                </code></pre>
+            
+                <h3>🔹 **Key Points**</h3>
+                <ul>
+                    <li>✅ The MST must have exactly **V - 1 edges** (where V is the number of vertices).</li>
+                    <li>📉 The MST must have the **minimum possible total weight**.</li>
+                    <li>🔄 There can be **multiple valid MSTs** for a given graph.</li>
+                </ul>
+            
+                <h1>🛠 Solution Approaches</h1>
+            
+                <h2>📌 **1. Kruskal’s Algorithm (Greedy, O(E log E))**</h2>
+                <p>
+                    Kruskal’s Algorithm sorts all edges by weight and adds them **one by one**  
+                    while ensuring **no cycles are formed** (using Disjoint Set Union - DSU).
+                </p>
+                <pre><code>
+                struct Edge {
+                    int src, dest, weight;
+                };
+            
+                struct Graph {
+                    int V, E;
+                    vector<Edge> edges;
+                };
+            
+                struct DSU {
+                    vector<int> parent, rank;
+            
+                    DSU(int n) {
+                        parent.resize(n);
+                        rank.resize(n, 0);
+                        for (int i = 0; i < n; i++) parent[i] = i;
+                    }
+            
+                    int find(int x) {
+                        if (parent[x] != x) parent[x] = find(parent[x]);
+                        return parent[x];
+                    }
+            
+                    void unite(int x, int y) {
+                        int rootX = find(x), rootY = find(y);
+                        if (rootX != rootY) {
+                            if (rank[rootX] > rank[rootY]) parent[rootY] = rootX;
+                            else if (rank[rootX] < rank[rootY]) parent[rootX] = rootY;
+                            else {
+                                parent[rootY] = rootX;
+                                rank[rootX]++;
+                            }
+                        }
+                    }
+                };
+            
+                void Kruskal(Graph &graph) {
+                    sort(graph.edges.begin(), graph.edges.end(), [](Edge a, Edge b) {
+                        return a.weight < b.weight;
+                    });
+            
+                    DSU dsu(graph.V);
+                    vector<Edge> mst;
+                    int mstCost = 0;
+            
+                    for (Edge e : graph.edges) {
+                        if (dsu.find(e.src) != dsu.find(e.dest)) {
+                            dsu.unite(e.src, e.dest);
+                            mst.push_back(e);
+                            mstCost += e.weight;
+                        }
+                    }
+            
+                    cout << "Minimum Spanning Tree Cost: " << mstCost << endl;
+                    for (Edge e : mst) {
+                        cout << e.src << " -- " << e.dest << " == " << e.weight << endl;
+                    }
+                }
+                </code></pre>
+            
+                <h2>📌 **2. Prim’s Algorithm (Greedy, O(V²) or O(E log V) with Priority Queue)**</h2>
+                <p>
+                    Prim’s Algorithm starts from any node and **grows** the MST by selecting the  
+                    **minimum weight edge** that connects to an already visited node.
+                </p>
+            
+                <pre><code>
+                void Prim(vector<vector<pair<int, int>>>& graph, int V) {
+                    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+                    vector<int> key(V, INT_MAX), parent(V, -1);
+                    vector<bool> inMST(V, false);
+            
+                    pq.push({0, 0}); // {cost, node}
+                    key[0] = 0;
+            
+                    while (!pq.empty()) {
+                        int u = pq.top().second;
+                        pq.pop();
+                        inMST[u] = true;
+            
+                        for (auto &[v, weight] : graph[u]) {
+                            if (!inMST[v] && weight < key[v]) {
+                                key[v] = weight;
+                                pq.push({key[v], v});
+                                parent[v] = u;
+                            }
+                        }
+                    }
+            
+                    for (int i = 1; i < V; i++) {
+                        cout << parent[i] << " - " << i << " (weight: " << key[i] << ")\n";
+                    }
+                }
+                </code></pre>
+            
+                <h1>⏳ Time Complexity Analysis</h1>
+                <table border="1">
+                    <tr>
+                        <th>Algorithm</th>
+                        <th>Time Complexity</th>
+                    </tr>
+                    <tr>
+                        <td>Kruskal's Algorithm</td>
+                        <td>O(E log E)</td>
+                    </tr>
+                    <tr>
+                        <td>Prim’s Algorithm (Priority Queue - Fibonacci Heap)</td>
+                        <td>O(E log V)</td>
+                    </tr>
+                    <tr>
+                        <td>Prim’s Algorithm (Adjacency Matrix)</td>
+                        <td>O(V²)</td>
+                    </tr>
+                </table>
+            
+                <h1>🌍 Real-World Applications of MST</h1>
+                <ul>
+                    <li>📡 **Network Design** – Laying down **minimum-cost communication cables.**</li>
+                    <li>🚗 **Road Systems** – Designing **minimum-cost road networks.**</li>
+                    <li>🔗 **Computer Clustering** – Connecting **servers with minimal latency.**</li>
+                    <li>🛰 **Electric Grid Design** – Optimizing **power transmission networks.**</li>
+                </ul>
+            
+                <h2>🔗 Next Topics</h2>
+                <ul class="nexttopics-container">
+                    <li><a href="kruskal.html">🌉 Kruskal’s Algorithm</a></li>
+                    <li><a href="prim.html">📡 Prim’s Algorithm</a></li>
+                    <li><a href="graph_algorithms.html">🌍 Graph Algorithms</a></li>
+                </ul>
+            </main>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../dsa.json" : "dsa.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.DSA;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    

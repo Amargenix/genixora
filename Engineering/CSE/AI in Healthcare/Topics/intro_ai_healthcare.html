@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Robotics</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>AI in Healthcare</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <h1>Introduction to Artificial Intelligence in Healthcare</h1>
+                        <p style="font-size: 1.2em; color: #636e72;">Transforming Medicine Through Intelligent Technologies</p>
+                    </header>
+                
+                    <section style="background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%); color: white; padding: 30px; border-radius: 10px; margin-bottom: 40px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+                        <h2 style="margin-top: 0; font-size: 1.8em;">What is AI in Healthcare?</h2>
+                        <p style="font-size: 1.1em;">Artificial Intelligence in healthcare refers to the use of complex algorithms and software to emulate human cognition in the analysis, interpretation, and comprehension of complicated medical and healthcare data. AI systems can perform tasks that typically require human intelligence, such as pattern recognition, learning from experience, and drawing conclusions from data.</p>
+                        <div style="display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 25px;">
+                            <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 8px; width: 30%; min-width: 250px; margin-bottom: 15px; backdrop-filter: blur(5px);">
+                                <h3 style="margin-top: 0;">Machine Learning</h3>
+                                <p>Algorithms that improve automatically through experience</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 8px; width: 30%; min-width: 250px; margin-bottom: 15px; backdrop-filter: blur(5px);">
+                                <h3 style="margin-top: 0;">Deep Learning</h3>
+                                <p>Neural networks with multiple layers for complex pattern recognition</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 8px; width: 30%; min-width: 250px; margin-bottom: 15px; backdrop-filter: blur(5px);">
+                                <h3 style="margin-top: 0;">Natural Language Processing</h3>
+                                <p>Understanding and generating human language from medical texts</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="margin-bottom: 40px;">
+                        <h2 style="color: #0984e3; font-size: 1.8em; border-left: 5px solid #0984e3; padding-left: 15px;">Why AI is Revolutionizing Healthcare</h2>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 20px;">
+                            <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s;">
+                                <div style="background: #74b9ff; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+                                    <span style="color: white; font-size: 1.5em;">1</span>
+                                </div>
+                                <h3 style="margin-top: 0; color: #2d3436;">Data Explosion</h3>
+                                <p>Healthcare data is projected to grow at 36% annually - AI helps make sense of this deluge of information from EHRs, wearables, genomic sequencing, and medical imaging.</p>
+                            </div>
+                            <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s;">
+                                <div style="background: #74b9ff; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+                                    <span style="color: white; font-size: 1.5em;">2</span>
+                                </div>
+                                <h3 style="margin-top: 0; color: #2d3436;">Precision Medicine</h3>
+                                <p>AI enables personalized treatment plans by analyzing a patient's unique genetic makeup, lifestyle, and environmental factors.</p>
+                            </div>
+                            <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s;">
+                                <div style="background: #74b9ff; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+                                    <span style="color: white; font-size: 1.5em;">3</span>
+                                </div>
+                                <h3 style="margin-top: 0; color: #2d3436;">Workforce Shortages</h3>
+                                <p>With projected shortages of up to 139,000 physicians by 2033, AI can help bridge gaps in diagnosis and treatment.</p>
+                            </div>
+                            <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s;">
+                                <div style="background: #74b9ff; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+                                    <span style="color: white; font-size: 1.5em;">4</span>
+                                </div>
+                                <h3 style="margin-top: 0; color: #2d3436;">Cost Pressures</h3>
+                                <p>AI could save the US healthcare economy $150 billion annually by 2026 through improved efficiency and reduced errors.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background: white; border-radius: 10px; padding: 30px; margin-bottom: 40px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                        <h2 style="color: #0984e3; margin-top: 0; font-size: 1.8em;">Key Applications of AI in Healthcare</h2>
+                        <div style="overflow-x: auto;">
+                            <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+                                <thead>
+                                    <tr style="background-color: #0984e3; color: white;">
+                                        <th style="padding: 15px; text-align: left;">Application Area</th>
+                                        <th style="padding: 15px; text-align: left;">AI Solutions</th>
+                                        <th style="padding: 15px; text-align: left;">Impact</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #dfe6e9;">
+                                        <td style="padding: 15px; font-weight: bold;">Medical Imaging</td>
+                                        <td style="padding: 15px;">Radiology image analysis, CT/MRI reconstruction</td>
+                                        <td style="padding: 15px;">30% faster diagnosis with 95%+ accuracy</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #dfe6e9;">
+                                        <td style="padding: 15px; font-weight: bold;">Drug Discovery</td>
+                                        <td style="padding: 15px;">Molecular modeling, clinical trial optimization</td>
+                                        <td style="padding: 15px;">Reduces discovery time from 5 years to 1 year</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #dfe6e9;">
+                                        <td style="padding: 15px; font-weight: bold;">Electronic Health Records</td>
+                                        <td style="padding: 15px;">Clinical documentation, predictive analytics</td>
+                                        <td style="padding: 15px;">Reduces physician documentation time by 45%</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #dfe6e9;">
+                                        <td style="padding: 15px; font-weight: bold;">Remote Monitoring</td>
+                                        <td style="padding: 15px;">Wearable data analysis, early warning systems</td>
+                                        <td style="padding: 15px;">Reduces hospital readmissions by 38%</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 15px; font-weight: bold;">Administrative</td>
+                                        <td style="padding: 15px;">Claims processing, appointment scheduling</td>
+                                        <td style="padding: 15px;">Cuts administrative costs by $18 billion annually</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                
+                    <section style="margin-bottom: 40px;">
+                        <h2 style="color: #0984e3; font-size: 1.8em; border-left: 5px solid #0984e3; padding-left: 15px;">Current State of AI in Healthcare</h2>
+                        <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px;">
+                            <div style="flex: 1; min-width: 300px; background: white; padding: 25px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                                <h3 style="margin-top: 0; color: #00b894;">Adoption Statistics</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li style="margin-bottom: 10px;">38% of healthcare organizations implemented AI in 2022 (up from 10% in 2017)</li>
+                                    <li style="margin-bottom: 10px;">90% of hospitals have an AI strategy in place or in development</li>
+                                    <li style="margin-bottom: 10px;">AI healthcare market to reach $45.2 billion by 2026 (CAGR of 44.9%)</li>
+                                    <li>75% of large healthcare organizations have multiple AI projects underway</li>
+                                </ul>
+                            </div>
+                            <div style="flex: 1; min-width: 300px; background: white; padding: 25px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                                <h3 style="margin-top: 0; color: #e17055;">Implementation Challenges</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li style="margin-bottom: 10px;">Data privacy concerns (HIPAA/GDPR compliance)</li>
+                                    <li style="margin-bottom: 10px;">Integration with legacy systems (average hospital uses 16 different EHR systems)</li>
+                                    <li style="margin-bottom: 10px;">Clinician resistance and workflow disruption</li>
+                                    <li style="margin-bottom: 10px;">Algorithm bias and fairness issues</li>
+                                    <li>Regulatory approval processes</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background: #0b9bc3; color: white; padding: 30px; border-radius: 10px; margin-bottom: 40px;">
+                        <h2 style="margin-top: 0; font-size: 1.8em; color: #74b9ff;">Future Directions in Healthcare AI</h2>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div>
+                                <h3 style="color: #00cec9;">Multimodal AI</h3>
+                                <p>Combining imaging, genomics, EHR, and sensor data for holistic diagnosis</p>
+                            </div>
+                            <div>
+                                <h3 style="color: #00cec9;">Explainable AI</h3>
+                                <p>Developing transparent models clinicians can understand and trust</p>
+                            </div>
+                            <div>
+                                <h3 style="color: #00cec9;">Edge AI</h3>
+                                <p>Processing data on medical devices rather than in the cloud</p>
+                            </div>
+                            <div>
+                                <h3 style="color: #00cec9;">Generative AI</h3>
+                                <p>Synthetic data generation and drug molecule creation</p>
+                            </div>
+                            <div>
+                                <h3 style="color: #00cec9;">AI-Augmented Clinicians</h3>
+                                <p>Human-AI collaboration rather than replacement</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="text-align: center; background: #dfe6e9; padding: 30px; border-radius: 10px;">
+                        <h2 style="margin-top: 0; color: #2d3436;">Getting Started with AI in Healthcare</h2>
+                        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-top: 20px;">
+                            <div style="background: #0984e3; color: white; padding: 12px 25px; border-radius: 25px; font-weight: bold;">Identify High-Impact Use Cases</div>
+                            <div style="background: #0984e3; color: white; padding: 12px 25px; border-radius: 25px; font-weight: bold;">Assess Data Readiness</div>
+                            <div style="background: #0984e3; color: white; padding: 12px 25px; border-radius: 25px; font-weight: bold;">Start with Pilot Projects</div>
+                            <div style="background: #0984e3; color: white; padding: 12px 25px; border-radius: 25px; font-weight: bold;">Focus on Clinician Adoption</div>
+                            <div style="background: #0984e3; color: white; padding: 12px 25px; border-radius: 25px; font-weight: bold;">Plan for Scale</div>
+                        </div>
+                        <p style="margin-top: 25px; font-size: 1.1em;">AI in healthcare is not about replacing doctors, but about augmenting human capabilities to deliver better, faster, and more affordable care to more people.</p>
+                    </section>
+                
+                    
+                </div>
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [ ];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics") ? "../AI in Healthcare.json" : "../AI in Healthcare.json";
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch AI for Robotics Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.AI_in_Healthcare;
+                        displayTopics(allTopics);
+                    }
+                    )
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+            </body>
+            </html>        

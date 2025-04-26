@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Robotics</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>AI for Robotics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <h1>Natural Language Processing in Robotics</h1>
+                   
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                        <h2 style="color: #3a7bd5; border-bottom: 3px solid #00d2ff; padding-bottom: 10px; font-size: 1.8em;">Fundamentals of NLP in Robotics</h2>
+                        
+                        <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 25px;">
+                            <div style="flex: 1; min-width: 300px; background-color: #e8f4fc; padding: 20px; border-radius: 6px; border-left: 5px solid #3a7bd5;">
+                                <h3 style="color: #3a7bd5; margin-top: 0;">Core Capabilities</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Speech Recognition:</strong> Converting speech to text</li>
+                                    <li><strong>Natural Language Understanding:</strong> Extracting meaning</li>
+                                    <li><strong>Dialog Management:</strong> Maintaining conversation context</li>
+                                    <li><strong>Speech Synthesis:</strong> Generating natural responses</li>
+                                </ul>
+                            </div>
+                            <div style="flex: 1; min-width: 300px; background-color: #f0f9eb; padding: 20px; border-radius: 6px; border-left: 5px solid #7cb342;">
+                                <h3 style="color: #7cb342; margin-top: 0;">Key Challenges</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Ambiguity in natural language</li>
+                                    <li>Background noise in real environments</li>
+                                    <li>Accommodating diverse speech patterns</li>
+                                    <li>Maintaining conversation context</li>
+                                </ul>
+                            </div>
+                            <div style="flex: 1; min-width: 300px; background-color: #f5f0f7; padding: 20px; border-radius: 6px; border-left: 5px solid #9c27b0;">
+                                <h3 style="color: #9c27b0; margin-top: 0;">Robotic Applications</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Voice-controlled manipulation</li>
+                                    <li>Interactive service robots</li>
+                                    <li>Human-robot collaboration</li>
+                                    <li>Robotic tutoring systems</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 30px; background-color: #fff3e0; padding: 20px; border-radius: 6px;">
+                            <h3 style="color: #fb8c00; margin-top: 0;">NLP Pipeline in Robotics</h3>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px; overflow-x: auto;">
+                                <div style="text-align: center; padding: 10px; min-width: 120px;">
+                                    <div style="background-color: #3a7bd5; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; font-weight: bold;">1</div>
+                                    <p style="margin-top: 8px; font-weight: bold;">Speech Recognition</p>
+                                </div>
+                                <div style="text-align: center; padding: 10px; min-width: 120px;">
+                                    <div style="background-color: #00d2ff; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; font-weight: bold;">2</div>
+                                    <p style="margin-top: 8px; font-weight: bold;">Text Processing</p>
+                                </div>
+                                <div style="text-align: center; padding: 10px; min-width: 120px;">
+                                    <div style="background-color: #7cb342; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; font-weight: bold;">3</div>
+                                    <p style="margin-top: 8px; font-weight: bold;">Intent Recognition</p>
+                                </div>
+                                <div style="text-align: center; padding: 10px; min-width: 120px;">
+                                    <div style="background-color: #9c27b0; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; font-weight: bold;">4</div>
+                                    <p style="margin-top: 8px; font-weight: bold;">Action Planning</p>
+                                </div>
+                                <div style="text-align: center; padding: 10px; min-width: 120px;">
+                                    <div style="background-color: #fb8c00; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; font-weight: bold;">5</div>
+                                    <p style="margin-top: 8px; font-weight: bold;">Response Generation</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                        <h2 style="color: #3a7bd5; border-bottom: 3px solid #00d2ff; padding-bottom: 10px; font-size: 1.8em;">Key NLP Technologies for Robotics</h2>
+                        
+                        <div style="margin-bottom: 30px;">
+                            <h3 style="color: #4285f4; background-color: #e8f0fe; padding: 12px; border-radius: 5px;">1. Speech Recognition</h3>
+                            <div style="display: flex; gap: 25px; margin-top: 20px;">
+                                <div style="flex: 1;">
+                                    <h4 style="color: #3367d6; margin-bottom: 10px;">Techniques</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li><strong>Acoustic Modeling:</strong> Phoneme recognition</li>
+                                        <li><strong>Language Modeling:</strong> Word sequence prediction</li>
+                                        <li><strong>End-to-End:</strong> Direct audio to text</li>
+                                        <li><strong>Wake Word Detection:</strong> Robot activation</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1; background-color: #f5f5f5; padding: 15px; border-radius: 6px;">
+                                    <h4 style="color: #3367d6; margin-bottom: 10px;">Robotic Considerations</h4>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                        <span style="background-color: #4285f4; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Noise Robustness</span>
+                                        <span style="background-color: #4285f4; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Low Latency</span>
+                                        <span style="background-color: #4285f4; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Edge Processing</span>
+                                        <span style="background-color: #4285f4; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Multi-Mic Arrays</span>
+                                    </div>
+                                    <div style="margin-top: 15px; background-color: #e8f0fe; padding: 12px; border-radius: 5px;">
+                                        <strong>Example:</strong> Using beamforming microphone arrays to focus on human speech in noisy factory environments
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="margin-top: 20px; background-color: #f5f5f5; padding: 15px; border-radius: 6px; font-family: monospace;">
+                                # Python speech recognition example<br>
+                                import speech_recognition as sr<br>
+                                <br>
+                                r = sr.Recognizer()<br>
+                                with sr.Microphone() as source:<br>
+                                &nbsp;&nbsp;print("Listening...")<br>
+                                &nbsp;&nbsp;audio = r.listen(source)<br>
+                                &nbsp;&nbsp;try:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;text = r.recognize_google(audio)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;print(f"You said: {text}")<br>
+                                &nbsp;&nbsp;except Exception as e:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;print("Error:", e)
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 30px;">
+                            <h3 style="color: #0f9d58; background-color: #e6f4ea; padding: 12px; border-radius: 5px;">2. Natural Language Understanding</h3>
+                            <div style="display: flex; gap: 25px; margin-top: 20px;">
+                                <div style="flex: 1;">
+                                    <h4 style="color: #0b8043; margin-bottom: 10px;">Components</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li><strong>Intent Classification:</strong> User goal identification</li>
+                                        <li><strong>Entity Recognition:</strong> Key information extraction</li>
+                                        <li><strong>Sentiment Analysis:</strong> Emotional tone detection</li>
+                                        <li><strong>Coreference Resolution:</strong> Pronoun resolution</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1; background-color: #f5f5f5; padding: 15px; border-radius: 6px;">
+                                    <h4 style="color: #0b8043; margin-bottom: 10px;">Robotic Applications</h4>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                        <span style="background-color: #0f9d58; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Command Parsing</span>
+                                        <span style="background-color: #0f9d58; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Task Delegation</span>
+                                        <span style="background-color: #0f9d58; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Safety Monitoring</span>
+                                        <span style="background-color: #0f9d58; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Context Awareness</span>
+                                    </div>
+                                    <div style="margin-top: 15px; background-color: #e6f4ea; padding: 12px; border-radius: 5px;">
+                                        <strong>Example:</strong> Understanding "Put the red block next to the one I showed you yesterday" requires memory and spatial reasoning
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 30px;">
+                            <h3 style="color: #db4437; background-color: #fce8e6; padding: 12px; border-radius: 5px;">3. Dialog Management</h3>
+                            <div style="display: flex; gap: 25px; margin-top: 20px;">
+                                <div style="flex: 1;">
+                                    <h4 style="color: #c53929; margin-bottom: 10px;">Approaches</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li><strong>Rule-based:</strong> Finite state machines</li>
+                                        <li><strong>Frame-based:</strong> Slot filling</li>
+                                        <li><strong>Statistical:</strong> POMDP models</li>
+                                        <li><strong>Neural:</strong> End-to-end learning</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1; background-color: #f5f5f5; padding: 15px; border-radius: 6px;">
+                                    <h4 style="color: #c53929; margin-bottom: 10px;">Robotic Considerations</h4>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                        <span style="background-color: #db4437; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Multi-turn</span>
+                                        <span style="background-color: #db4437; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Clarification</span>
+                                        <span style="background-color: #db4437; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Task Grounding</span>
+                                        <span style="background-color: #db4437; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Error Recovery</span>
+                                    </div>
+                                    <div style="margin-top: 15px; background-color: #fce8e6; padding: 12px; border-radius: 5px;">
+                                        <strong>Example:</strong> Robot asking clarifying questions when given ambiguous instructions like "Put it over there"
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 style="color: #ff7043; background-color: #fbe9e7; padding: 12px; border-radius: 5px;">4. Speech Synthesis</h3>
+                            <div style="display: flex; gap: 25px; margin-top: 20px;">
+                                <div style="flex: 1;">
+                                    <h4 style="color: #e64a19; margin-bottom: 10px;">Technologies</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li><strong>Concatenative:</strong> Pre-recorded segments</li>
+                                        <li><strong>Parametric:</strong> Statistical models</li>
+                                        <li><strong>Neural TTS:</strong> WaveNet, Tacotron</li>
+                                        <li><strong>Emotional Speech:</strong> Affect modulation</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1; background-color: #f5f5f5; padding: 15px; border-radius: 6px;">
+                                    <h4 style="color: #e64a19; margin-bottom: 10px;">Robotic Applications</h4>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                        <span style="background-color: #ff7043; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Status Reporting</span>
+                                        <span style="background-color: #ff7043; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Instruction Giving</span>
+                                        <span style="background-color: #ff7043; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Social Interaction</span>
+                                        <span style="background-color: #ff7043; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Accessibility</span>
+                                    </div>
+                                    <div style="margin-top: 15px; background-color: #fbe9e7; padding: 12px; border-radius: 5px;">
+                                        <strong>Example:</strong> Delivery robot explaining package handling instructions using natural intonation
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                        <h2 style="color: #3a7bd5; border-bottom: 3px solid #00d2ff; padding-bottom: 10px; font-size: 1.8em;">NLP Applications in Robotics</h2>
+                        
+                        <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 25px;">
+                            <div style="flex: 1; min-width: 300px; background-color: #e8f4fc; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #3a7bd5; margin-top: 0;">Industrial Robotics</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Voice-controlled manufacturing</li>
+                                    <li>Maintenance instruction systems</li>
+                                    <li>Quality control reporting</li>
+                                    <li>Safety alert communication</li>
+                                </ul>
+                                <div style="margin-top: 15px; background-color: #bbdefb; padding: 10px; border-radius: 4px; font-size: 0.9em;">
+                                    <strong>Example:</strong> Factory worker verbally programming robot trajectories
+                                </div>
+                            </div>
+                            <div style="flex: 1; min-width: 300px; background-color: #e6f4ea; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #0f9d58; margin-top: 0;">Service Robotics</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Customer service assistants</li>
+                                    <li>Hotel concierge robots</li>
+                                    <li>Retail shopping guides</li>
+                                    <li>Restaurant order takers</li>
+                                </ul>
+                                <div style="margin-top: 15px; background-color: #c8e6c9; padding: 10px; border-radius: 4px; font-size: 0.9em;">
+                                    <strong>Example:</strong> Hospital robot understanding patient requests in multiple languages
+                                </div>
+                            </div>
+                            <div style="flex: 1; min-width: 300px; background-color: #f5f0f7; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #9c27b0; margin-top: 0;">Domestic Robotics</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Smart home control</li>
+                                    <li>Elderly care assistants</li>
+                                    <li>Educational companions</li>
+                                    <li>Entertainment systems</li>
+                                </ul>
+                                <div style="margin-top: 15px; background-color: #e1bee7; padding: 10px; border-radius: 4px; font-size: 0.9em;">
+                                    <strong>Example:</strong> Home robot understanding "Clean up the toys in the living room but leave the blue one"
+                                </div>
+                            </div>
+                            <div style="flex: 1; min-width: 300px; background-color: #fce8e6; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #db4437; margin-top: 0;">Specialized Robotics</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Surgical command systems</li>
+                                    <li>Disaster response coordination</li>
+                                    <li>Agricultural monitoring</li>
+                                    <li>Space exploration assistants</li>
+                                </ul>
+                                <div style="margin-top: 15px; background-color: #ffcdd2; padding: 10px; border-radius: 4px; font-size: 0.9em;">
+                                    <strong>Example:</strong> Search-and-rescue robot understanding verbal descriptions of missing persons
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                        <h2 style="color: #3a7bd5; border-bottom: 3px solid #00d2ff; padding-bottom: 10px; font-size: 1.8em;">Implementation Considerations</h2>
+                        
+                        <div style="display: flex; gap: 20px; margin-top: 20px;">
+                            <div style="flex: 1; background-color: #e8f4fc; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #3a7bd5; margin-top: 0;">Technical Challenges</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Real-time Processing:</strong> Low-latency requirements</li>
+                                    <li><strong>Resource Constraints:</strong> Limited onboard compute</li>
+                                    <li><strong>Noisy Environments:</strong> Factory/street noise</li>
+                                    <li><strong>Domain Adaptation:</strong> Specialized vocabularies</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="flex: 1; background-color: #f0f9eb; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #7cb342; margin-top: 0;">Human Factors</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Expectation Management:</strong> Avoiding anthropomorphism</li>
+                                    <li><strong>Error Recovery:</strong> Handling misunderstandings</li>
+                                    <li><strong>Cultural Adaptation:</strong> Language nuances</li>
+                                    <li><strong>Accessibility:</strong> Supporting diverse users</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 20px; background-color: #fff3e0; padding: 20px; border-radius: 6px;">
+                            <h3 style="color: #fb8c00; margin-top: 0;">Architecture Options</h3>
+                            <div style="display: flex; gap: 20px; margin-top: 15px;">
+                                <div style="flex: 1;">
+                                    <h4 style="color: #e65100; margin-bottom: 10px;">Cloud-based</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Higher accuracy models</li>
+                                        <li>Continuous updates</li>
+                                        <li>Network dependency</li>
+                                        <li>Privacy concerns</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1;">
+                                    <h4 style="color: #e65100; margin-bottom: 10px;">Edge-based</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Faster response</li>
+                                        <li>Works offline</li>
+                                        <li>Limited model size</li>
+                                        <li>More secure</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1;">
+                                    <h4 style="color: #e65100; margin-bottom: 10px;">Hybrid</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Basic functions on-device</li>
+                                        <li>Complex queries to cloud</li>
+                                        <li>Balanced approach</li>
+                                        <li>More complex to implement</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 20px; background-color: #f5f0f7; padding: 20px; border-radius: 6px;">
+                            <h3 style="color: #9c27b0; margin-top: 0;">Evaluation Metrics</h3>
+                            <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+                                <thead>
+                                    <tr style="background-color: #9c27b0; color: white;">
+                                        <th style="padding: 10px; text-align: left;">Metric</th>
+                                        <th style="padding: 10px; text-align: left;">Description</th>
+                                        <th style="padding: 10px; text-align: left;">Target Values</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #e0e0e0;">
+                                        <td style="padding: 10px;">Word Error Rate</td>
+                                        <td style="padding: 10px;">Speech recognition accuracy</td>
+                                        <td style="padding: 10px;"><5% in quiet, <15% in noise</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #e0e0e0;">
+                                        <td style="padding: 10px;">Intent Accuracy</td>
+                                        <td style="padding: 10px;">Correct goal identification</td>
+                                        <td style="padding: 10px;">>90% for common commands</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #e0e0e0;">
+                                        <td style="padding: 10px;">Response Time</td>
+                                        <td style="padding: 10px;">Time to process and respond</td>
+                                        <td style="padding: 10px;"><1 second for basic commands</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 10px;">User Satisfaction</td>
+                                        <td style="padding: 10px;">Subjective experience rating</td>
+                                        <td style="padding: 10px;">>4/5 on Likert scale</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                
+                    <section style="background: linear-gradient(135deg, #3a7bd5, #00d2ff); color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                        <h2 style="border-bottom: 2px solid rgba(255,255,255,0.3); padding-bottom: 10px; font-size: 1.8em;">Future Directions</h2>
+                        
+                        <div style="display: flex; gap: 20px; margin-top: 20px;">
+                            <div style="flex: 1; background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #ffffff; margin-top: 0;">Technological Advances</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Multimodal Integration:</strong> Combining speech with gestures</li>
+                                    <li><strong>Contextual Awareness:</strong> Environment-aware dialog</li>
+                                    <li><strong>Personalization:</strong> Learning user preferences</li>
+                                    <li><strong>Emotional Intelligence:</strong> Affect-sensitive responses</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="flex: 1; background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #ffffff; margin-top: 0;">Emerging Applications</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Mental Health:</strong> Therapeutic conversation agents</li>
+                                    <li><strong>Education:</strong> Personalized tutoring robots</li>
+                                    <li><strong>Accessibility:</strong> Enhanced assistive technologies</li>
+                                    <li><strong>Space Exploration:</strong> Autonomous mission control</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 30px; background-color: rgba(255,255,255,0.15); padding: 20px; border-radius: 6px; text-align: center; font-style: italic;">
+                            "The future of NLP in robotics lies not just in understanding words, but in comprehending intent, context, and emotion - enabling truly natural human-robot collaboration."
+                        </div>
+                    </section>
+                
+                  
+
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [ ];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics") ? "../AI for Robotics.json" : "../AI for Robotics.json";
+
+                                              
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch AI for Robotics Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.AI_for_Robotics;
+                        displayTopics(allTopics);
+                    }
+                    )
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+           
+            
+            
+            
+            
+            
+            
+            </body>
+            </html>        

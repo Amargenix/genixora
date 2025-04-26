@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer Network</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/allsubject.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Computer Networks</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <h1>Network Topologies</h1>
+                   
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                        <h2 style="color: #302b63; border-bottom: 2px solid #24243e; padding-bottom: 10px; margin-top: 0;">Introduction to Network Topologies</h2>
+                        
+                        <div style="display: flex; gap: 25px; flex-wrap: wrap; margin-bottom: 20px;">
+                            <div style="flex: 1; min-width: 300px;">
+                                <p>A network topology refers to the physical or logical arrangement of nodes (computers, switches, routers, etc.) and connections in a network. It defines how different nodes communicate with each other and how data flows through the network.</p>
+                                <p>Choosing the right topology is crucial for network performance, reliability, and scalability.</p>
+                            </div>
+                            <div style="flex: 1; min-width: 300px; background-color: #f0f0f7; padding: 20px; border-radius: 5px; border-left: 4px solid #302b63;">
+                                <h3 style="color: #302b63; margin-top: 0;">Key Considerations</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Cost:</strong> Cable/equipment requirements</li>
+                                    <li><strong>Scalability:</strong> Ease of adding new nodes</li>
+                                    <li><strong>Reliability:</strong> Fault tolerance</li>
+                                    <li><strong>Performance:</strong> Data transfer speed</li>
+                                    <li><strong>Management:</strong> Ease of troubleshooting</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                        <h2 style="color: #302b63; border-bottom: 2px solid #24243e; padding-bottom: 10px; margin-top: 0;">Physical Topologies</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 25px;">
+                            <div style="background-color: #f5f5ff; padding: 20px; border-radius: 5px; border-top: 3px solid #302b63;">
+                                <h3 style="color: #302b63; margin-top: 0;">Bus Topology</h3>
+                                <p>All devices connected to a single backbone cable (trunk) with terminators at both ends.</p>
+                                <p><strong>Characteristics:</strong></p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Simple and inexpensive</li>
+                                    <li>Single point of failure (backbone)</li>
+                                    <li>Collisions occur (CSMA/CD)</li>
+                                    <li>Difficult to troubleshoot</li>
+                                </ul>
+                                <p><strong>Example:</strong> Early Ethernet networks (10Base2, 10Base5)</p>
+                            </div>
+                            
+                            <div style="background-color: #f5f5ff; padding: 20px; border-radius: 5px; border-top: 3px solid #0f0c29;">
+                                <h3 style="color: #302b63; margin-top: 0;">Star Topology</h3>
+                                <p>All devices connected to a central hub or switch.</p>
+                                <p><strong>Characteristics:</strong></p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Easy to install and manage</li>
+                                    <li>Central point of failure (hub/switch)</li>
+                                    <li>No collisions (with switch)</li>
+                                    <li>Scalable - easy to add nodes</li>
+                                </ul>
+                                <p><strong>Example:</strong> Modern Ethernet networks, WiFi networks</p>
+                            </div>
+                            
+                            <div style="background-color: #f5f5ff; padding: 20px; border-radius: 5px; border-top: 3px solid #24243e;">
+                                <h3 style="color: #302b63; margin-top: 0;">Ring Topology</h3>
+                                <p>Devices connected in a circular fashion with data traveling in one direction.</p>
+                                <p><strong>Characteristics:</strong></p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Equal network access for all nodes</li>
+                                    <li>Single point of failure (unless dual-ring)</li>
+                                    <li>Token passing mechanism</li>
+                                    <li>Difficult to add/remove nodes</li>
+                                </ul>
+                                <p><strong>Example:</strong> Token Ring (IEEE 802.5), FDDI</p>
+                            </div>
+                            
+                            <div style="background-color: #f5f5ff; padding: 20px; border-radius: 5px; border-top: 3px solid #4e4376;">
+                                <h3 style="color: #302b63; margin-top: 0;">Mesh Topology</h3>
+                                <p>Every device connected to every other device in the network.</p>
+                                <p><strong>Characteristics:</strong></p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Highly fault tolerant</li>
+                                    <li>Redundant paths</li>
+                                    <li>Expensive to implement</li>
+                                    <li>Complex to manage</li>
+                                </ul>
+                                <p><strong>Types:</strong> Full mesh (all connected), Partial mesh (some connected)</p>
+                                <p><strong>Example:</strong> WANs, Internet backbone</p>
+                            </div>
+                            
+                            <div style="background-color: #f5f5ff; padding: 20px; border-radius: 5px; border-top: 3px solid #302b63;">
+                                <h3 style="color: #302b63; margin-top: 0;">Tree Topology</h3>
+                                <p>Combination of star topologies connected via bus topology (hierarchical).</p>
+                                <p><strong>Characteristics:</strong></p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Scalable for large networks</li>
+                                    <li>Point-to-point wiring</li>
+                                    <li>Root node failure affects entire network</li>
+                                    <li>Used in wide area networks</li>
+                                </ul>
+                                <p><strong>Example:</strong> Enterprise networks, cable TV networks</p>
+                            </div>
+                            
+                            <div style="background-color: #f5f5ff; padding: 20px; border-radius: 5px; border-top: 3px solid #0f0c29;">
+                                <h3 style="color: #302b63; margin-top: 0;">Hybrid Topology</h3>
+                                <p>Combination of two or more different topologies.</p>
+                                <p><strong>Characteristics:</strong></p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Flexible and reliable</li>
+                                    <li>Can optimize strengths of different topologies</li>
+                                    <li>Complex design</li>
+                                    <li>Expensive to implement</li>
+                                </ul>
+                                <p><strong>Example:</strong> Star-Ring, Star-Bus networks</p>
+                            </div>
+                        </div>
+                        
+                        <div style="background-color: #f0f0f7; padding: 20px; border-radius: 5px;">
+                            <h3 style="color: #302b63; margin-top: 0;">Physical Topology Comparison</h3>
+                            <div style="overflow-x: auto;">
+                                <table style="width: 100%; border-collapse: collapse;">
+                                    <tr style="background-color: #302b63; color: white;">
+                                        <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Topology</th>
+                                        <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Cost</th>
+                                        <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Scalability</th>
+                                        <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Fault Tolerance</th>
+                                        <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Complexity</th>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Bus</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Low</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Poor</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Low</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Low</td>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Star</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Medium</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Good</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Medium</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Low</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Ring</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Medium</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Fair</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Low (unless dual-ring)</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Medium</td>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Mesh</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">High</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Excellent</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">High</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">High</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Tree</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Medium-High</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Good</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Medium</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Medium</td>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Hybrid</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">High</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Excellent</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">High</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">High</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                        <h2 style="color: #302b63; border-bottom: 2px solid #24243e; padding-bottom: 10px; margin-top: 0;">Logical Topologies</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 25px;">
+                            <div style="background-color: #f5f5ff; padding: 20px; border-radius: 5px; border-left: 4px solid #302b63;">
+                                <h3 style="color: #302b63; margin-top: 0;">Logical Bus</h3>
+                                <p>All devices receive all transmissions but only the intended recipient processes it.</p>
+                                <p><strong>Characteristics:</strong></p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Signals broadcast to all devices</li>
+                                    <li>Used in Ethernet networks</li>
+                                    <li>MAC addresses determine recipients</li>
+                                    <li>CSMA/CD access method</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f5f5ff; padding: 20px; border-radius: 5px; border-left: 4px solid #0f0c29;">
+                                <h3 style="color: #302b63; margin-top: 0;">Logical Ring</h3>
+                                <p>Data travels sequentially from one device to another until it reaches its destination.</p>
+                                <p><strong>Characteristics:</strong></p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Token passing mechanism</li>
+                                    <li>Deterministic access</li>
+                                    <li>Used in Token Ring and FDDI</li>
+                                    <li>No collisions</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f5f5ff; padding: 20px; border-radius: 5px; border-left: 4px solid #24243e;">
+                                <h3 style="color: #302b63; margin-top: 0;">Logical Star</h3>
+                                <p>Central device controls all communications (even if physically wired differently).</p>
+                                <p><strong>Characteristics:</strong></p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Switch makes forwarding decisions</li>
+                                    <li>Point-to-point connections</li>
+                                    <li>Full-duplex communication</li>
+                                    <li>Common in modern networks</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="background-color: #f0f0f7; padding: 20px; border-radius: 5px;">
+                            <h3 style="color: #302b63; margin-top: 0;">Physical vs Logical Topology</h3>
+                            <div style="overflow-x: auto;">
+                                <table style="width: 100%; border-collapse: collapse;">
+                                    <tr style="background-color: #302b63; color: white;">
+                                        <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Aspect</th>
+                                        <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Physical Topology</th>
+                                        <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Logical Topology</th>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Definition</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Actual layout of devices and cables</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">How data flows between nodes</td>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Visibility</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Can be seen and touched</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Conceptual, not visible</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Example</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Star wiring with cables</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Ethernet's logical bus</td>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Change Impact</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Requires rewiring</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Changed via configuration</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Performance</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Affects signal quality</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">Affects data flow efficiency</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                        <h2 style="color: #302b63; border-bottom: 2px solid #24243e; padding-bottom: 10px; margin-top: 0;">Wireless Topologies</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 25px;">
+                            <div style="background-color: #f5f5ff; padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #302b63; margin-top: 0;">Infrastructure Mode</h3>
+                                <p>Devices communicate through an access point (central device).</p>
+                                <p><strong>Characteristics:</strong></p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Similar to star topology</li>
+                                    <li>Centralized management</li>
+                                    <li>Better security</li>
+                                    <li>Extended service set (ESS) for roaming</li>
+                                </ul>
+                                <p><strong>Example:</strong> Enterprise WiFi networks</p>
+                            </div>
+                            
+                            <div style="background-color: #f5f5ff; padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #302b63; margin-top: 0;">Ad-hoc Mode</h3>
+                                <p>Devices communicate directly with each other without an access point.</p>
+                                <p><strong>Characteristics:</strong></p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Decentralized</li>
+                                    <li>Quick to set up</li>
+                                    <li>Limited range</li>
+                                    <li>Less secure</li>
+                                </ul>
+                                <p><strong>Example:</strong> Device-to-device file sharing</p>
+                            </div>
+                            
+                            <div style="background-color: #f5f5ff; padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #302b63; margin-top: 0;">Mesh Networks</h3>
+                                <p>Wireless devices form a mesh with multiple connection paths.</p>
+                                <p><strong>Characteristics:</strong></p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Self-healing</li>
+                                    <li>Self-configuring</li>
+                                    <li>Highly reliable</li>
+                                    <li>Complex to manage</li>
+                                </ul>
+                                <p><strong>Example:</strong> Smart home systems, municipal WiFi</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                        <h2 style="color: #302b63; border-bottom: 2px solid #24243e; padding-bottom: 10px; margin-top: 0;">Topology Selection Criteria</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 25px;">
+                            <div style="background-color: #f0f0f7; padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #302b63; margin-top: 0;">Network Size</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Small networks:</strong> Star or bus</li>
+                                    <li><strong>Medium networks:</strong> Star or tree</li>
+                                    <li><strong>Large networks:</strong> Tree or hybrid</li>
+                                    <li><strong>Enterprise networks:</strong> Hierarchical (core, distribution, access)</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f0f0f7; padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #302b63; margin-top: 0;">Budget Constraints</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Low budget:</strong> Bus or simple star</li>
+                                    <li><strong>Medium budget:</strong> Star with switches</li>
+                                    <li><strong>High budget:</strong> Mesh or hybrid</li>
+                                    <li>Consider both initial and maintenance costs</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f0f0f7; padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #302b63; margin-top: 0;">Performance Needs</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>High bandwidth:</strong> Star or mesh</li>
+                                    <li><strong>Low latency:</strong> Star or point-to-point</li>
+                                    <li><strong>Deterministic performance:</strong> Ring</li>
+                                    <li><strong>Scalability:</strong> Tree or hybrid</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f0f0f7; padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #302b63; margin-top: 0;">Reliability Requirements</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Mission-critical:</strong> Mesh or dual-ring</li>
+                                    <li><strong>Fault tolerance:</strong> Redundant paths</li>
+                                    <li><strong>High availability:</strong> Multiple connections</li>
+                                    <li><strong>Single points of failure:</strong> Avoid bus or simple star</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: #e5e5ed; color: rgb(30, 17, 17); padding: 30px; border-radius: 8px; margin-bottom: 30px;">
+                        <h2 style="margin-top: 0; border-bottom: 2px solid #302b63; padding-bottom: 10px;">Emerging Topology Trends</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #2f2fa8; margin-top: 0;">Software-Defined Networking</h3>
+                                <p>Decoupling control plane from data plane, enabling dynamic topology changes.</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #3030a9; margin-top: 0;">Intent-Based Networking</h3>
+                                <p>Networks that automatically adjust topology based on business policies.</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #3e3ebc; margin-top: 0;">Edge Computing</h3>
+                                <p>Distributed topology with processing at the edge of the network.</p>
+                            </div>
+                            
+                            <div style="background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 5px;">
+                                <h3 style="color: #4141b4; margin-top: 0;">5G Network Slicing</h3>
+                                <p>Virtual topologies created on demand for specific applications.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+            </main>  
+            
+            
+
+             <!-- Floating button to open chatbot -->
+    <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+    </div>
+    
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-container");
+            let button = document.getElementById("open-chatbot");
+    
+            if (!chatbot.classList.contains("active")) {
+                chatbot.classList.add("active");
+                button.style.display = "none"; // Hide button when chatbot is open
+            } else {
+                chatbot.classList.remove("active");
+                setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+            }
+        }
+    
+        // Load chatbot HTML dynamically
+        fetch("/chatbot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("chatbot-container").innerHTML += html;
+    
+            // Execute chatbot script after inserting HTML
+            let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+            for (let script of scripts) {
+                let newScript = document.createElement("script");
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript);
+            }
+        })
+        .catch(error => console.error("Error loading chatbot:", error));
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../computernetwork.json" : "computernetwork.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.Computer_Networks;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+        
+       
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

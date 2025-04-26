@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../software engineering.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Software Engineering</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content"">
+    
+                    <h1>Version Control Systems (Git & SVN)</h1>
+               
+            
+                <section id="fundamentals" style="margin-bottom: 40px;">
+                    <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">1. Version Control Fundamentals</h2>
+                    
+                    <div class="vcs-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">1.1 What is Version Control?</h3>
+                        <p>A <strong>Version Control System (VCS)</strong> tracks changes to files over time so you can:</p>
+                        <ul>
+                            <li>Recall specific versions later</li>
+                            <li>Collaborate with multiple developers</li>
+                            <li>Revert files or entire projects to previous states</li>
+                            <li>Compare changes over time</li>
+                            <li>Identify who made changes and why</li>
+                        </ul>
+                        
+                        <div class="concept-box" style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                            <h4 style="color: #2c3e50;">Key Benefits</h4>
+                            <ul>
+                                <li><strong>Collaboration:</strong> Multiple people work simultaneously</li>
+                                <li><strong>Backup:</strong> Complete history of changes</li>
+                                <li><strong>Experimentation:</strong> Safe environment to try ideas</li>
+                                <li><strong>Accountability:</strong> Track who changed what</li>
+                                <li><strong>Reproducibility:</strong> Recreate any project state</li>
+                            </ul>
+                        </div>
+                    </div>
+            
+                    <div class="vcs-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">1.2 Types of Version Control</h3>
+                        <div class="comparison" style="background-color: #fff8e1; padding: 15px; border-left: 4px solid #ffc107;">
+                            <h4 style="color: #2c3e50;">Centralized vs Distributed</h4>
+                            <table style="width: 100%; border-collapse: collapse; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <tr>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Aspect</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Centralized (SVN)</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Distributed (Git)</th>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Repository</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Single central server</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Every clone is full repository</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Workflow</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Checkout-edit-commit</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Clone-edit-stage-commit-push</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Network</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Needed for most operations</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Only needed to share changes</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Branching</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Heavyweight (directory copies)</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Lightweight (instant branches)</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Speed</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Slower for remote operations</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Most operations are local</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            
+                <section id="git" style="margin-bottom: 40px;">
+                    <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">2. Git - Distributed Version Control</h2>
+                    
+                    <div class="vcs-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">2.1 Git Architecture</h3>
+                        <div class="architecture" style="background-color: #ebf5fb; padding: 15px; border-left: 4px solid #2980b9;">
+                            <h4 style="color: #2c3e50;">Three Main Areas</h4>
+                            <ol>
+                                <li><strong>Working Directory:</strong> Actual files you edit</li>
+                                <li><strong>Staging Area (Index):</strong> Prepares changes for commit</li>
+                                <li><strong>Git Directory (.git):</strong> Where Git stores metadata and object database</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="branch-visual" style="text-align: center; margin: 20px 0;">
+                            <img src="https://git-scm.com/book/en/v2/images/areas.png" alt="Git Architecture" style="max-width: 100%; border: 1px solid #ddd; border-radius: 4px;">
+                        </div>
+                        
+                        <div class="concept-box" style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                            <h4 style="color: #2c3e50;">Key Concepts</h4>
+                            <ul>
+                                <li><strong>Snapshot:</strong> Git records complete file states (not diffs)</li>
+                                <li><strong>SHA-1 Hash:</strong> 40-character checksum identifies all objects</li>
+                                <li><strong>Immutable Objects:</strong> Once created, objects never change</li>
+                            </ul>
+                        </div>
+                    </div>
+            
+                    <div class="vcs-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">2.2 Basic Git Workflow</h3>
+                        <div class="workflow" style="background-color: #eafaf1; padding: 15px; border-left: 4px solid #2ecc71; margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">Daily Commands</h4>
+                            <ol>
+                                <li><code>git init</code> - Create new repository</li>
+                                <li><code>git clone [url]</code> - Copy existing repository</li>
+                                <li><code>git status</code> - View changed files</li>
+                                <li><code>git add [file]</code> - Stage changes</li>
+                                <li><code>git commit -m "message"</code> - Record changes</li>
+                                <li><code>git push</code> - Send changes to remote</li>
+                                <li><code>git pull</code> - Fetch and merge changes</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="example">
+                            <h4 style="color: #2c3e50;">Example: First-Time Setup</h4>
+                            <div class="command" style="background-color: #fef9e7; border-left: 4px solid #f39c12; padding: 15px; margin: 20px 0; font-family: monospace;">
+                                # Configure user information<br>
+                                git config --global user.name "John Doe"<br>
+                                git config --global user.email "john@example.com"<br><br>
+                                
+                                # Create new project<br>
+                                mkdir my-project<br>
+                                cd my-project<br>
+                                git init<br><br>
+                                
+                                # Add and commit first file<br>
+                                echo "# My Project" > README.md<br>
+                                git add README.md<br>
+                                git commit -m "Initial commit"
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="vcs-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">2.3 Branching and Merging</h3>
+                        <div class="branch-visual" style="text-align: center; margin: 20px 0;">
+                            <img src="https://git-scm.com/book/en/v2/images/basic-branching-6.png" alt="Git Branching" style="max-width: 100%; border: 1px solid #ddd; border-radius: 4px;">
+                        </div>
+                        
+                        <div class="workflow" style="background-color: #eafaf1; padding: 15px; border-left: 4px solid #2ecc71; margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">Branch Commands</h4>
+                            <div class="command" style="background-color: #fef9e7; border-left: 4px solid #f39c12; padding: 15px; margin: 20px 0; font-family: monospace;">
+                                # List all branches<br>
+                                git branch<br><br>
+                                
+                                # Create new branch<br>
+                                git branch feature-login<br><br>
+                                
+                                # Switch to branch<br>
+                                git checkout feature-login<br>
+                                # Or (newer syntax)<br>
+                                git switch feature-login<br><br>
+                                
+                                # Create and switch in one command<br>
+                                git checkout -b feature-login<br><br>
+                                
+                                # Merge branch into current branch<br>
+                                git merge feature-login<br><br>
+                                
+                                # Delete branch<br>
+                                git branch -d feature-login
+                            </div>
+                        </div>
+                        
+                        <div class="concept-box" style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                            <h4 style="color: #2c3e50;">Merge Strategies</h4>
+                            <ul>
+                                <li><strong>Fast-forward:</strong> When no divergent changes exist</li>
+                                <li><strong>3-way merge:</strong> Creates new merge commit when branches diverge</li>
+                                <li><strong>Rebase:</strong> Moves branch commits to tip of target branch</li>
+                            </ul>
+                        </div>
+                    </div>
+            
+                    <div class="vcs-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">2.4 Remote Repositories</h3>
+                        <div class="workflow" style="background-color: #eafaf1; padding: 15px; border-left: 4px solid #2ecc71; margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">Working with Remotes</h4>
+                            <div class="command" style="background-color: #fef9e7; border-left: 4px solid #f39c12; padding: 15px; margin: 20px 0; font-family: monospace;">
+                                # List configured remotes<br>
+                                git remote -v<br><br>
+                                
+                                # Add new remote<br>
+                                git remote add origin https://github.com/user/repo.git<br><br>
+                                
+                                # Push branch to remote<br>
+                                git push -u origin main<br><br>
+                                
+                                # Fetch changes from remote<br>
+                                git fetch<br><br>
+                                
+                                # Pull changes (fetch + merge)<br>
+                                git pull<br><br>
+                                
+                                # Clone existing repository<br>
+                                git clone https://github.com/user/repo.git
+                            </div>
+                        </div>
+                        
+                        <div class="concept-box" style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                            <h4 style="color: #2c3e50;">Common Hosting Services</h4>
+                            <ul>
+                                <li>GitHub</li>
+                                <li>GitLab</li>
+                                <li>Bitbucket</li>
+                                <li>Azure DevOps</li>
+                            </ul>
+                        </div>
+                    </div>
+            
+                    <div class="vcs-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">2.5 Advanced Git</h3>
+                        <div class="workflow" style="background-color: #eafaf1; padding: 15px; border-left: 4px solid #2ecc71; margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">Undoing Changes</h4>
+                            <div class="command" style="background-color: #fef9e7; border-left: 4px solid #f39c12; padding: 15px; margin: 20px 0; font-family: monospace;">
+                                # Unstage file (keep changes)<br>
+                                git reset HEAD file.txt<br><br>
+                                
+                                # Discard local changes<br>
+                                git checkout -- file.txt<br><br>
+                                
+                                # Amend last commit<br>
+                                git commit --amend<br><br>
+                                
+                                # Revert a commit (creates new undo commit)<br>
+                                git revert abc123<br><br>
+                                
+                                # Reset to previous commit (caution!)<br>
+                                git reset --hard abc123
+                            </div>
+                        </div>
+                        
+                        <div class="workflow" style="background-color: #eafaf1; padding: 15px; border-left: 4px solid #2ecc71; margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">Rebasing</h4>
+                            <div class="command" style="background-color: #fef9e7; border-left: 4px solid #f39c12; padding: 15px; margin: 20px 0; font-family: monospace;">
+                                # Rebase current branch onto main<br>
+                                git rebase main<br><br>
+                                
+                                # Interactive rebase (last 3 commits)<br>
+                                git rebase -i HEAD~3<br><br>
+                                
+                                # Common interactive commands:<br>
+                                # p = pick (use commit)<br>
+                                # r = reword (edit commit message)<br>
+                                # e = edit (amend commit)<br>
+                                # s = squash (combine with previous)
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            
+                <section id="svn" style="margin-bottom: 40px;">
+                    <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">3. SVN - Centralized Version Control</h2>
+                    
+                    <div class="vcs-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">3.1 SVN Architecture</h3>
+                        <div class="architecture" style="background-color: #ebf5fb; padding: 15px; border-left: 4px solid #2980b9;">
+                            <h4 style="color: #2c3e50;">Repository Structure</h4>
+                            <ul>
+                                <li><strong>Central Repository:</strong> Single source of truth</li>
+                                <li><strong>Working Copy:</strong> Local snapshot of files</li>
+                                <li><strong>Revisions:</strong> Numbered snapshots of entire repository</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="concept-box" style="background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #27ae60;">
+                            <h4 style="color: #2c3e50;">Key Differences from Git</h4>
+                            <ul>
+                                <li>No local repository - only working copy</li>
+                                <li>Revision numbers apply to entire repository</li>
+                                <li>Branching implemented via directory copies</li>
+                                <li>Requires network connection for most operations</li>
+                            </ul>
+                        </div>
+                    </div>
+            
+                    <div class="vcs-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">3.2 Basic SVN Workflow</h3>
+                        <div class="workflow" style="background-color: #eafaf1; padding: 15px; border-left: 4px solid #2ecc71; margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">Daily Commands</h4>
+                            <div class="command" style="background-color: #fef9e7; border-left: 4px solid #f39c12; padding: 15px; margin: 20px 0; font-family: monospace;">
+                                # Checkout repository<br>
+                                svn checkout http://svn.example.com/repo/trunk<br><br>
+                                
+                                # Update working copy<br>
+                                svn update<br><br>
+                                
+                                # Check status of files<br>
+                                svn status<br><br>
+                                
+                                # Add new file to version control<br>
+                                svn add file.txt<br><br>
+                                
+                                # Commit changes<br>
+                                svn commit -m "Added new feature"<br><br>
+                                
+                                # View commit history<br>
+                                svn log
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="vcs-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">3.3 Branching in SVN</h3>
+                        <div class="workflow" style="background-color: #eafaf1; padding: 15px; border-left: 4px solid #2ecc71; margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">Branch/Tag Operations</h4>
+                            <div class="command" style="background-color: #fef9e7; border-left: 4px solid #f39c12; padding: 15px; margin: 20px 0; font-family: monospace;">
+                                # Create branch (copy trunk to branches)<br>
+                                svn copy http://svn.example.com/repo/trunk \<br>
+                                        http://svn.example.com/repo/branches/feature-x \<br>
+                                        -m "Creating feature-x branch"<br><br>
+                                
+                                # Switch working copy to branch<br>
+                                svn switch http://svn.example.com/repo/branches/feature-x<br><br>
+                                
+                                # Merge changes from trunk to branch<br>
+                                svn merge http://svn.example.com/repo/trunk<br><br>
+                                
+                                # Create tag (similar to branch)<br>
+                                svn copy http://svn.example.com/repo/trunk \<br>
+                                        http://svn.example.com/repo/tags/v1.0 \<br>
+                                        -m "Tagging version 1.0"
+                            </div>
+                        </div>
+                        
+                        <div class="warning" style="background-color: #fdecea; border-left: 4px solid #e74c3c; padding: 15px;">
+                            <h4 style="color: #2c3e50;">Important Notes</h4>
+                            <ul>
+                                <li>SVN branches are just directory copies (cheap but not as flexible as Git)</li>
+                                <li>Merging requires careful tracking of revision numbers</li>
+                                <li>Always update before committing to avoid conflicts</li>
+                            </ul>
+                        </div>
+                    </div>
+            
+                    <div class="vcs-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">3.4 Advanced SVN</h3>
+                        <div class="workflow" style="background-color: #eafaf1; padding: 15px; border-left: 4px solid #2ecc71; margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">Useful Commands</h4>
+                            <div class="command" style="background-color: #fef9e7; border-left: 4px solid #f39c12; padding: 15px; margin: 20px 0; font-family: monospace;">
+                                # View differences<br>
+                                svn diff<br>
+                                svn diff -r 100:200 file.txt<br><br>
+                                
+                                # Revert local changes<br>
+                                svn revert file.txt<br><br>
+                                
+                                # Resolve conflicts<br>
+                                svn resolve --accept=mine-full file.txt<br><br>
+                                
+                                # View file history<br>
+                                svn blame file.txt<br><br>
+                                
+                                # Export clean copy (no .svn folders)<br>
+                                svn export http://svn.example.com/repo/trunk
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            
+                <section id="comparison" style="margin-bottom: 40px;">
+                    <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">4. Git vs SVN Comparison</h2>
+                    
+                    <div class="vcs-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">4.1 When to Use Each</h3>
+                        <div class="comparison" style="background-color: #fff8e1; padding: 15px; border-left: 4px solid #ffc107;">
+                            <table style="width: 100%; border-collapse: collapse; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <tr>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Consideration</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">Git</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left; background-color: #3498db; color: white;">SVN</th>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Project Size</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Excellent for large projects</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Better for smaller, centralized teams</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Internet Access</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Works offline</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Requires server connection</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Branching</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Lightweight, frequent branching</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Heavyweight, less frequent</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Learning Curve</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Steeper initially</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Simpler basic workflow</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Binary Files</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Handles them but not ideally</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px; text-align: left;">Better with large binaries</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+            
+                    <div class="vcs-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">4.2 Migration Between Systems</h3>
+                        <div class="workflow" style="background-color: #eafaf1; padding: 15px; border-left: 4px solid #2ecc71; margin: 15px 0;">
+                            <h4 style="color: #2c3e50;">SVN to Git Migration</h4>
+                            <div class="command" style="background-color: #fef9e7; border-left: 4px solid #f39c12; padding: 15px; margin: 20px 0; font-family: monospace;">
+                                # Install git-svn<br>
+                                sudo apt-get install git-svn<br><br>
+                                
+                                # Clone SVN repo with history<br>
+                                git svn clone http://svn.example.com/repo \<br>
+                                              --authors-file=users.txt \<br>
+                                              --stdlayout my-git-repo<br><br>
+                                
+                                # Clean up branches and tags<br>
+                                cd my-git-repo<br>
+                                git remote add origin git@github.com:user/repo.git<br>
+                                git push -u origin --all<br>
+                                git push -u origin --tags
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            
+                <section id="best-practices">
+                    <h2 style="color: #2c3e50; background-color: #e8f4fc; padding: 12px; border-left: 4px solid #3498db; margin-top: 30px;">5. Version Control Best Practices</h2>
+                    
+                    <div class="vcs-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">5.1 General Guidelines</h3>
+                        <div class="best-practice">
+                            <h4 style="color: #2c3e50;">Commit Practices</h4>
+                            <ul>
+                                <li>Commit often, perfect later, publish once</li>
+                                <li>Each commit should represent one logical change</li>
+                                <li>Write meaningful commit messages</li>
+                                <li>Don't commit generated files or secrets</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="best-practice">
+                            <h4 style="color: #2c3e50;">Branching Strategies</h4>
+                            <ul>
+                                <li><strong>Git Flow:</strong> Feature, develop, release, hotfix branches</li>
+                                <li><strong>GitHub Flow:</strong> Simple main branch + feature branches</li>
+                                <li><strong>Trunk-Based Development:</strong> Small frequent commits to main</li>
+                            </ul>
+                        </div>
+                    </div>
+            
+                    <div class="vcs-card" style="background-color: white; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #2980b9;">
+                        <h3 style="color: #2c3e50;">5.2 Collaboration Practices</h3>
+                        <div class="best-practice">
+                            <h4 style="color: #2c3e50;">Team Workflows</h4>
+                            <ul>
+                                <li>Agree on branching strategy upfront</li>
+                                <li>Use pull requests for code review</li>
+                                <li>Rebase feature branches before merging</li>
+                                <li>Resolve merge conflicts carefully</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="best-practice">
+                            <h4 style="color: #2c3e50;">.gitignore Tips</h4>
+                            <ul>
+                                <li>Ignore OS-specific files (.DS_Store, thumbs.db)</li>
+                                <li>Ignore IDE/config files (.idea, .vscode)</li>
+                                <li>Ignore dependencies (node_modules, .venv)</li>
+                                <li>Ignore build artifacts (bin, obj, *.exe)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+
+            
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+    const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+    const searchBox = document.getElementById("searchBox");
+
+    if (!sidebarList || !sidebarGrid) {
+        console.error("Sidebar elements not found!");
+        return;
+    }
+
+    let allTopics = [];
+
+    // Adjust JSON path based on file location
+    let jsonPath = window.location.pathname.includes("/topics/") ? "../softwarengineering.json" : "softwarengineering.json";
+
+    console.log("Fetching JSON from:", jsonPath); // Debugging
+
+    // Fetch Software Engineering Topics from JSON
+    fetch(jsonPath)
+        .then(response => {
+            console.log("Fetch Response:", response);
+            if (!response.ok) {
+                throw new Error("Failed to load JSON: " + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Fetched Data:", data);
+            if (!data.Software_Engineering) {
+                throw new Error("JSON does not contain 'Software_Engineering' key!");
+            }
+            allTopics = data.Software_Engineering;
+            displayTopics(allTopics);
+        })
+        .catch(error => console.error("Error loading topics:", error));
+
+    // Function to Display Topics in Sidebar
+    function displayTopics(topics) {
+        if (!Array.isArray(topics)) {
+            console.error("Invalid topics data:", topics);
+            return;
+        }
+
+        sidebarList.innerHTML = ""; // Clear list
+        sidebarGrid.innerHTML = ""; // Clear grid
+
+        topics.forEach(topic => {
+            let topicLink = topic.link; // Keep the original link
+
+            // 🖥️ Desktop List View
+            let li = document.createElement("li");
+            li.className = "list-group-item list-group-item-action";
+            li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+            sidebarList.appendChild(li);
+
+            // 📱 Mobile Grid View (3 in a row)
+            let div = document.createElement("div");
+            div.className = "col-4"; // Bootstrap grid (3 in a row)
+            div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+            sidebarGrid.appendChild(div);
+        });
+    }
+
+    // Search Topics
+    if (searchBox) {
+        searchBox.addEventListener("input", function () {
+            const searchText = this.value.toLowerCase();
+            const filteredTopics = allTopics.filter(topic =>
+                topic.name.toLowerCase().includes(searchText)
+            );
+            displayTopics(filteredTopics);
+        });
+    }
+});
+
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

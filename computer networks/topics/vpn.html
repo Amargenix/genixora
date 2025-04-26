@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer Network</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/allsubject.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Computer Networks</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                 <h1>Virtual Private Networks (VPNs)</h1>
+                     
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                        <h2 style="color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 8px; margin-top: 0;">Introduction to VPN</h2>
+                        <p>A <strong>Virtual Private Network (VPN)</strong> extends a private network across a public network, enabling users to send and receive data across shared or public networks as if their computing devices were directly connected to the private network.</p>
+                        
+                        <div style="display: flex; justify-content: space-between; margin: 25px 0; flex-wrap: wrap;">
+                            <div style="width: 48%; background-color: #e3f2fd; padding: 20px; border-radius: 6px; border-left: 5px solid #1976d2; margin-bottom: 15px;">
+                                <h3 style="color: #0d47a1; margin-top: 0;">Key Characteristics</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Creates secure "tunnel" over public internet</li>
+                                    <li>Encrypts all transmitted data</li>
+                                    <li>Hides user's real IP address</li>
+                                    <li>Provides access to restricted resources</li>
+                                    <li>Works across different devices and platforms</li>
+                                </ul>
+                            </div>
+                            <div style="width: 48%; background-color: #e8f5e9; padding: 20px; border-radius: 6px; border-left: 5px solid #388e3c; margin-bottom: 15px;">
+                                <h3 style="color: #1b5e20; margin-top: 0;">Primary Benefits</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Enhanced security and privacy</li>
+                                    <li>Bypass geographic restrictions</li>
+                                    <li>Secure remote access to company networks</li>
+                                    <li>Protection on public Wi-Fi networks</li>
+                                    <li>Prevent ISP tracking and throttling</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                        <h2 style="color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 8px; margin-top: 0;">How VPNs Work</h2>
+                        
+                        <div style="text-align: center; margin: 20px 0;">
+                            <div style="display: inline-block; text-align: left; max-width: 100%; background-color: #f8f9fa; padding: 20px; border-radius: 6px; border: 1px solid #ddd;">
+                                <div style="margin-bottom: 15px; font-weight: bold; color: #2c3e50;">VPN Connection Process:</div>
+                                <ol style="padding-left: 20px; margin: 0;">
+                                    <li>User initiates connection to VPN server</li>
+                                    <li>VPN client encrypts all outgoing data</li>
+                                    <li>Encrypted data travels through public internet</li>
+                                    <li>VPN server decrypts the data</li>
+                                    <li>Server forwards request to destination (web server, etc.)</li>
+                                    <li>Response travels back through the encrypted tunnel</li>
+                                </ol>
+                            </div>
+                        </div>
+                        
+                        <div style="background-color: #f5f5f5; padding: 20px; border-radius: 6px; margin-top: 20px;">
+                            <h3 style="color: #2c3e50; margin-top: 0;">VPN Encryption Process</h3>
+                            <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+                                <div style="width: 48%; margin-bottom: 15px;">
+                                    <h4 style="color: #3498db; margin-bottom: 5px;">1. Handshake Phase</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Client and server authenticate each other</li>
+                                        <li>Negotiate encryption protocols</li>
+                                        <li>Establish secure session keys</li>
+                                    </ul>
+                                </div>
+                                <div style="width: 48%; margin-bottom: 15px;">
+                                    <h4 style="color: #3498db; margin-bottom: 5px;">2. Tunnel Establishment</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Create encrypted communication channel</li>
+                                        <li>Set up data encapsulation protocol</li>
+                                        <li>Verify connection integrity</li>
+                                    </ul>
+                                </div>
+                                <div style="width: 48%;">
+                                    <h4 style="color: #3498db; margin-bottom: 5px;">3. Data Transmission</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>All data encrypted before transmission</li>
+                                        <li>Packets encapsulated with VPN headers</li>
+                                        <li>Secure transmission through public network</li>
+                                    </ul>
+                                </div>
+                                <div style="width: 48%;">
+                                    <h4 style="color: #3498db; margin-bottom: 5px;">4. Termination</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Secure session closure</li>
+                                        <li>Keys discarded</li>
+                                        <li>Connection logs updated</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                        <h2 style="color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 8px; margin-top: 0;">VPN Protocols</h2>
+                        
+                        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                            <thead>
+                                <tr style="background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%); color: white;">
+                                    <th style="padding: 12px; text-align: left; border: 1px solid #2c3e50;">Protocol</th>
+                                    <th style="padding: 12px; text-align: left; border: 1px solid #2c3e50;">Description</th>
+                                    <th style="padding: 12px; text-align: left; border: 1px solid #2c3e50;">Security</th>
+                                    <th style="padding: 12px; text-align: left; border: 1px solid #2c3e50;">Speed</th>
+                                    <th style="padding: 12px; text-align: left; border: 1px solid #2c3e50;">Port</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">OpenVPN</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Open-source, highly configurable</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Excellent (AES-256)</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Medium</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">TCP/UDP 1194</td>
+                                </tr>
+                                <tr style="background-color: #f9f9f9;">
+                                    <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">IPSec/IKEv2</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Common for mobile devices</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Excellent</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Fast</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">UDP 500, 4500</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">L2TP/IPSec</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Combination protocol</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Good (double encryption)</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Slow</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">UDP 1701</td>
+                                </tr>
+                                <tr style="background-color: #f9f9f9;">
+                                    <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">PPTP</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Oldest VPN protocol</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Weak (compromised)</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Fastest</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">TCP 1723</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">WireGuard</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Modern, lightweight</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Excellent</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Very Fast</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">UDP 51820</td>
+                                </tr>
+                                <tr style="background-color: #f9f9f9;">
+                                    <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">SSTP</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Microsoft-developed</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Good (SSL 3.0)</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Medium</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">TCP 443</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                        <h2 style="color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 8px; margin-top: 0;">Types of VPNs</h2>
+                        
+                        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; margin: 20px 0;">
+                            <div style="width: 48%; background-color: #fff8e1; padding: 20px; border-radius: 6px; border-left: 5px solid #ffa000; margin-bottom: 20px;">
+                                <h3 style="color: #e65100; margin-top: 0;">1. Remote Access VPN</h3>
+                                <p>Allows individual users to connect to a private network from remote locations.</p>
+                                <p><strong>Use Cases:</strong></p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Employees working from home</li>
+                                    <li>Business travelers accessing company resources</li>
+                                    <li>Secure access to files and applications</li>
+                                </ul>
+                                <p><strong>Examples:</strong> Corporate VPNs, Commercial VPN services</p>
+                            </div>
+                            
+                            <div style="width: 48%; background-color: #e8f5e9; padding: 20px; border-radius: 6px; border-left: 5px solid #388e3c; margin-bottom: 20px;">
+                                <h3 style="color: #1b5e20; margin-top: 0;">2. Site-to-Site VPN</h3>
+                                <p>Connects entire networks to each other, typically used by businesses with multiple offices.</p>
+                                <p><strong>Use Cases:</strong></p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Connecting branch offices to headquarters</li>
+                                    <li>Linking data centers</li>
+                                    <li>Secure cloud connectivity</li>
+                                </ul>
+                                <p><strong>Examples:</strong> MPLS VPNs, IPsec VPN tunnels</p>
+                            </div>
+                            
+                            <div style="width: 48%; background-color: #e1f5fe; padding: 20px; border-radius: 6px; border-left: 5px solid #0288d1; margin-bottom: 20px;">
+                                <h3 style="color: #01579b; margin-top: 0;">3. Client-to-Site VPN</h3>
+                                <p>Similar to remote access VPN but typically refers to individual devices connecting to a network.</p>
+                                <p><strong>Use Cases:</strong></p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Contractors accessing specific resources</li>
+                                    <li>Temporary employee access</li>
+                                    <li>Secure BYOD (Bring Your Own Device) policies</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="width: 48%; background-color: #f3e5f5; padding: 20px; border-radius: 6px; border-left: 5px solid #7b1fa2; margin-bottom: 20px;">
+                                <h3 style="color: #4a148c; margin-top: 0;">4. SSL/TLS VPN</h3>
+                                <p>Provides secure remote access through a web browser without requiring dedicated client software.</p>
+                                <p><strong>Use Cases:</strong></p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Access from public computers</li>
+                                    <li>Quick access to web applications</li>
+                                    <li>When client installation isn't possible</li>
+                                </ul>
+                                <p><strong>Examples:</strong> Citrix Gateway, OpenVPN Access Server</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                        <h2 style="color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 8px; margin-top: 0;">VPN Security Features</h2>
+                        
+                        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; margin: 20px 0;">
+                            <div style="width: 30%; background-color: #f5f5f5; padding: 15px; border-radius: 6px; margin-bottom: 15px; text-align: center;">
+                                <h4 style="color: #2c3e50; margin-top: 0;">Encryption</h4>
+                                <p>Scrambles data to prevent interception</p>
+                                <p><strong>Algorithms:</strong> AES, Blowfish, Camellia</p>
+                            </div>
+                            <div style="width: 30%; background-color: #f5f5f5; padding: 15px; border-radius: 6px; margin-bottom: 15px; text-align: center;">
+                                <h4 style="color: #2c3e50; margin-top: 0;">Tunneling</h4>
+                                <p>Encapsulates data packets within other packets</p>
+                                <p><strong>Methods:</strong> PPTP, L2TP, IPsec</p>
+                            </div>
+                            <div style="width: 30%; background-color: #f5f5f5; padding: 15px; border-radius: 6px; margin-bottom: 15px; text-align: center;">
+                                <h4 style="color: #2c3e50; margin-top: 0;">Authentication</h4>
+                                <p>Verifies user identity before granting access</p>
+                                <p><strong>Methods:</strong> Certificates, 2FA, OTP</p>
+                            </div>
+                            <div style="width: 30%; background-color: #f5f5f5; padding: 15px; border-radius: 6px; margin-bottom: 15px; text-align: center;">
+                                <h4 style="color: #2c3e50; margin-top: 0;">Kill Switch</h4>
+                                <p>Blocks internet if VPN connection drops</p>
+                                <p>Prevents data leaks</p>
+                            </div>
+                            <div style="width: 30%; background-color: #f5f5f5; padding: 15px; border-radius: 6px; margin-bottom: 15px; text-align: center;">
+                                <h4 style="color: #2c3e50; margin-top: 0;">DNS Leak Protection</h4>
+                                <p>Ensures DNS queries go through VPN</p>
+                                <p>Prevents exposure of browsing activity</p>
+                            </div>
+                            <div style="width: 30%; background-color: #f5f5f5; padding: 15px; border-radius: 6px; margin-bottom: 15px; text-align: center;">
+                                <h4 style="color: #2c3e50; margin-top: 0;">Split Tunneling</h4>
+                                <p>Routes some traffic through VPN while other traffic accesses internet directly</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section
+                        <h3 style="margin-top: 0;">VPN Implementation Considerations</h3>
+                        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 800px; margin: 0 auto;">
+                            <div style="width: 48%; margin-bottom: 10px;">
+                                <h4 style="margin-bottom: 5px;">For Organizations</h4>
+                                <ul style="padding-left: 20px; text-align: left; list-style-type: none;">
+                                    <li>✓ Choose enterprise-grade solutions</li>
+                                    <li>✓ Implement strong authentication</li>
+                                    <li>✓ Monitor VPN usage and logs</li>
+                                </ul>
+                            </div>
+                            <div style="width: 48%; margin-bottom: 10px;">
+                                <h4 style="margin-bottom: 5px;">For Individuals</h4>
+                                <ul style="padding-left: 20px; text-align: left; list-style-type: none;">
+                                    <li>✓ Research VPN provider's privacy policy</li>
+                                    <li>✓ Check for no-logs certification</li>
+                                    <li>✓ Test for DNS/IP leaks</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </section>
+                
+            </main>  
+            
+            
+
+             <!-- Floating button to open chatbot -->
+    <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+    </div>
+    
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-container");
+            let button = document.getElementById("open-chatbot");
+    
+            if (!chatbot.classList.contains("active")) {
+                chatbot.classList.add("active");
+                button.style.display = "none"; // Hide button when chatbot is open
+            } else {
+                chatbot.classList.remove("active");
+                setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+            }
+        }
+    
+        // Load chatbot HTML dynamically
+        fetch("/chatbot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("chatbot-container").innerHTML += html;
+    
+            // Execute chatbot script after inserting HTML
+            let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+            for (let script of scripts) {
+                let newScript = document.createElement("script");
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript);
+            }
+        })
+        .catch(error => console.error("Error loading chatbot:", error));
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../computernetwork.json" : "computernetwork.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.Computer_Networks;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+        
+       
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

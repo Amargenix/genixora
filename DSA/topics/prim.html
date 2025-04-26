@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    <link rel="stylesheet" href="../dsa.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../dsa.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+            <main class="col-md-7 content">
+                <h1>📡 Prim's Algorithm – Complete In-Depth Explanation</h1>
+              
+                <p>
+                  Prim's Algorithm is a greedy algorithm used to find a <strong>Minimum Spanning Tree (MST)</strong> for a weighted, undirected graph.  An MST connects all vertices in a graph without cycles and with the minimum total edge weight.
+                </p>
+              
+                <h2>📌 Why is Prim's Algorithm Important?</h2>
+                <ul>
+                  <li>⚙️ Fundamental algorithm for network design.</li>
+                  <li>💡 Efficiently finds the cheapest way to connect all nodes.</li>
+                  <li>🚀 Used in various applications, from telecommunications to circuit design.</li>
+                </ul>
+              
+                <h1>📌 Understanding Prim's Algorithm with an Example</h1>
+                <p>
+                  Let's consider a simple graph:
+                </p>
+                <pre><code>
+                    2    3
+                A --- B --- C
+                |    |    |
+                1    4    6
+                |    |    |
+                D --- E --- F
+                    5
+                </code></pre>
+              
+                <p>
+                  Prim's Algorithm starts at an arbitrary vertex (e.g., A) and iteratively adds the edge with the smallest weight that connects a vertex in the MST to a vertex not yet in the MST.  Here's a step-by-step visualization:
+                </p>
+              
+                <ol>
+                  <li><strong>Start with A:</strong> Add A to the MST.</li>
+                  <li><strong>Smallest edge from A:</strong> Edge A-D (weight 1). Add D to the MST.</li>
+                  <li><strong>Smallest edge from A or D:</strong> Edge A-B (weight 2). Add B to the MST.</li>
+                  <li><strong>Smallest edge from A, B, or D:</strong> Edge B-C (weight 3). Add C to the MST.</li>
+                  <li><strong>Smallest edge from A, B, C, or D:</strong> Edge D-E (weight 5). Add E to the MST.</li>
+                  <li><strong>Smallest edge from A, B, C, D, or E:</strong> Edge C-F (weight 6). Add F to the MST.</li>
+                </ol>
+              
+                <p>
+                  The resulting MST is:
+                </p>
+                  <pre><code>
+                    2    3
+                A --- B --- C
+                |        |
+                1        6
+                |        |
+                D --- E   F
+                    5
+                </code></pre>
+              
+                <h3>🔹 Key Points</h3>
+                <ul>
+                  <li>Starts from an arbitrary vertex.</li>
+                  <li>Greedily selects the minimum-weight edge connecting the MST to a new vertex.</li>
+                  <li>Guarantees finding the MST.</li>
+                </ul>
+              
+                <h1>🛠 Solution Approaches</h1>
+              
+                <p>
+                  Prim's Algorithm can be implemented in a few ways, with different time complexities:
+                </p>
+              
+                <h2>📌 1. Using an Adjacency Matrix (O(V²))</h2>
+                <p>
+                  This approach is simpler to implement but less efficient for sparse graphs (graphs with few edges).
+                </p>
+              
+                <h2>📌 2. Using a Priority Queue (O(E log V))</h2>
+                <p>
+                  This approach is more efficient, especially for sparse graphs. It uses a priority queue to keep track of the smallest edges.
+                </p>
+              
+                <pre><code>
+                  #include <iostream>
+                  #include <vector>
+                  #include <queue>
+                  #include <climits>
+              
+                  using namespace std;
+              
+                  void primMST(vector<vector<pair<int, int>>>& adj, int V) {
+                      priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+                      vector<int> key(V, INT_MAX); // Stores min edge weight to connect to MST
+                      vector<int> parent(V, -1);    // Stores parent node in MST
+                      vector<bool> inMST(V, false);   // Tracks vertices already in MST
+              
+                      pq.push({0, 0}); // {weight, vertex} - Start with vertex 0 and weight 0
+                      key[0] = 0;
+              
+                      for (int count = 0; count < V - 1; count++) {
+                          int u = pq.top().second;
+                          pq.pop();
+                          inMST[u] = true;
+              
+                          for (auto& edge : adj[u]) {
+                              int v = edge.first;
+                              int weight = edge.second;
+              
+                              if (inMST[v] == false && weight < key[v]) {
+                                  parent[v] = u;
+                                  key[v] = weight;
+                                  pq.push({key[v], v});
+                              }
+                          }
+                      }
+              
+                      cout << "Edge \tWeight\n";
+                      for (int i = 1; i < V; i++)
+                          cout << parent[i] << " - " << i << "\t" << key[i] << "\n";
+                  }
+              
+                  int main() {
+                      int V = 6;
+                      vector<vector<pair<int, int>>> adj(V);
+              
+                      // Add edges (example graph)
+                      adj[0].push_back({1, 2}); adj[1].push_back({0, 2});
+                      adj[0].push_back({3, 1}); adj[3].push_back({0, 1});
+                      adj[1].push_back({2, 3}); adj[2].push_back({1, 3});
+                      adj[3].push_back({4, 5}); adj[4].push_back({3, 5});
+                      adj[1].push_back({4,4}); adj[4].push_back({1,4});
+                      adj[2].push_back({5, 6}); adj[5].push_back({2, 6});
+              
+                      primMST(adj, V);
+              
+                      return 0;
+                  }
+                </code></pre>
+              
+                <h1>⏳ Time Complexity Analysis</h1>
+                <p>
+                  Using a priority queue, Prim's Algorithm has a time complexity of <strong>O(E log V)</strong>, where E is the number of edges and V is the number of vertices.
+                </p>
+              
+                <h1>🌍 Real-World Applications of Prim's Algorithm</h1>
+                <ul>
+                  <li>📡 Network design (telecommunications, computer networks).</li>
+                  <li>🔌 Designing efficient electrical grids.</li>
+                  <li>🗺 Road network planning.</li>
+                </ul>
+              
+                <h2>🔗 Next Topics</h2>
+                <ul class="nexttopics-container">
+                  <li><a href="mst.html">🌲 Minimum Spanning Tree (MST)</a></li>
+                  <li><a href="kruskal.html">🌉 Kruskal's Algorithm</a></li>
+                  <li><a href="graph_algorithms.html">🌍 Graph Algorithms</a></li>
+                </ul>
+              </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../dsa.json" : "dsa.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.DSA;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    

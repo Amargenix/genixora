@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    <link rel="stylesheet" href="../dsa.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../dsa.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+            <main class="col-md-7 content">
+                <h1>🔍 Ternary Search – Complete In-Depth Explanation</h1>
+              
+                <p>
+                  Ternary search is a search algorithm used to find the maximum or minimum value of a unimodal function (a function with a single peak or trough). It's similar to binary search but divides the search space into three parts instead of two.
+                </p>
+              
+                <h2>📌 Why is Ternary Search Important?</h2>
+                <ul>
+                  <li>💡 Efficiently finds the extremum of unimodal functions.</li>
+                  <li>⚙️ Useful in optimization problems.</li>
+                  <li>🚀 Faster than linear search for certain functions.</li>
+                </ul>
+              
+                <h1>📌 Understanding Ternary Search with an Example</h1>
+                <p>
+                  Let's say we have a unimodal function f(x) and we want to find its maximum value within a given range [left, right].  Ternary search works as follows:
+                </p>
+              
+                <ol>
+                  <li>Divide the interval [left, right] into three equal parts:</li>
+                  <ul>
+                    <li>mid1 = left + (right - left) / 3</li>
+                    <li>mid2 = right - (right - left) / 3</li>
+                  </ul>
+                  <li>Evaluate the function at mid1 and mid2: f(mid1) and f(mid2).</li>
+                  <li>If f(mid1) < f(mid2), the maximum must be in the interval [mid1, right].  So, set left = mid1.</li>
+                  <li>If f(mid1) > f(mid2), the maximum must be in the interval [left, mid2]. So, set right = mid2.</li>
+                  <li>Repeat steps 1-4 until the interval [left, right] becomes sufficiently small (within a desired tolerance).</li>
+                </ol>
+              
+                <p>
+                  Imagine finding the peak of a hill. You test at two points. If the point on the right is higher, you know the peak must be to the right of the left test point. If the left point is higher, you know it's to the left of the right test point.
+                </p>
+              
+                <h3>🔹 Key Points</h3>
+                <ul>
+                  <li>Works only for unimodal functions.</li>
+                  <li>Divides the search space into three parts.</li>
+                  <li>Repeatedly narrows down the interval.</li>
+                </ul>
+              
+                <h1>🛠 Solution Approach</h1>
+              
+                <pre><code>
+                  #include <iostream>
+                  #include <iomanip> // For setting precision
+              
+                  using namespace std;
+              
+                  // Example unimodal function (replace with your actual function)
+                  double f(double x) {
+                      return -x * x + 10 * x + 5; // Example: a parabola with a maximum
+                  }
+              
+                  double ternarySearch(double left, double right, double tolerance = 1e-6) {
+                      while (right - left > tolerance) {
+                          double mid1 = left + (right - left) / 3;
+                          double mid2 = right - (right - left) / 3;
+              
+                          if (f(mid1) < f(mid2)) {
+                              left = mid1;
+                          } else {
+                              right = mid2;
+                          }
+                      }
+                      return (left + right) / 2; // Return the approximate x-value of the extremum
+                  }
+              
+                  int main() {
+                      double left = 0;
+                      double right = 10;
+              
+                      double result = ternarySearch(left, right);
+              
+                      cout << fixed << setprecision(6); // Set precision for output
+                      cout << "Maximum value found at x = " << result << endl;
+                      cout << "f(x) = " << f(result) << endl;
+              
+                      return 0;
+                  }
+                </code></pre>
+              
+                <h1>⏳ Time Complexity Analysis</h1>
+                <p>
+                  The time complexity of ternary search is O(log<sub>3</sub> n), which is approximately O(log n).  It's slightly slower than binary search, but still logarithmic.
+                </p>
+              
+                <h1>🌍 Real-World Applications of Ternary Search</h1>
+                <ul>
+                  <li>⚙️ Optimization problems (finding the best parameters).</li>
+                  <li>📈 Finding the peak of a curve.</li>
+                  <li>🤖 Machine learning (tuning hyperparameters).</li>
+                </ul>
+              
+                <h2>🔗 Next Topics</h2>
+                <ul class="nexttopics-container">
+                  <li><a href="searching.html">🔎 Searching Algorithms</a></li>
+                  <li><a href="optimization.html">📈 Optimization Techniques</a></li>
+                </ul>
+              </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../dsa.json" : "dsa.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.DSA;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    

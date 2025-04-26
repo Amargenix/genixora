@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Robotics</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>AI in Healthcare</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+               <h1>AI Emergency in Healthcare: Critical Applications and Challenges</h1>
+                   
+                
+                    <h2 style="color: #2980b9; border-bottom: 1px solid #eee; padding-bottom: 5px;">1. Introduction to AI in Emergency Healthcare</h2>
+                    <p style="text-align: justify; margin-bottom: 20px;">
+                        Artificial Intelligence is revolutionizing emergency healthcare by enabling faster, more accurate decision-making during critical situations. AI systems can process vast amounts of medical data in real-time, assisting healthcare professionals in emergency departments, ambulance services, and disaster response scenarios.
+                    </p>
+                    
+                    <div style="background-color: #e8f4fc; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+                        <h3 style="color: #2c3e50; margin-top: 0;">Key Statistics:</h3>
+                        <ul style="margin-bottom: 0;">
+                            <li>AI in emergency medicine market projected to reach $3.5 billion by 2027 (CAGR 35.2%)</li>
+                            <li>AI triage systems can reduce emergency department wait times by 30-50%</li>
+                            <li>Machine learning models can predict cardiac arrest up to 6 hours in advance with 85% accuracy</li>
+                        </ul>
+                    </div>
+                
+                    <h2 style="color: #2980b9; border-bottom: 1px solid #eee; padding-bottom: 5px;">2. Key Applications in Emergency Situations</h2>
+                    
+                    <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">
+                        <div style="flex: 1; min-width: 250px; background-color: #f0f7fd; padding: 15px; border-radius: 5px;">
+                            <h3 style="color: #2c3e50; margin-top: 0;">Triage Systems</h3>
+                            <p>AI-powered triage analyzes patient symptoms, vital signs, and medical history to prioritize treatment based on urgency.</p>
+                        </div>
+                        
+                        <div style="flex: 1; min-width: 250px; background-color: #f0f7fd; padding: 15px; border-radius: 5px;">
+                            <h3 style="color: #2c3e50; margin-top: 0;">Medical Imaging Analysis</h3>
+                            <p>Instant interpretation of X-rays, CT scans, and MRIs for trauma cases, strokes, and internal injuries.</p>
+                        </div>
+                        
+                        <div style="flex: 1; min-width: 250px; background-color: #f0f7fd; padding: 15px; border-radius: 5px;">
+                            <h3 style="color: #2c3e50; margin-top: 0;">Predictive Analytics</h3>
+                            <p>Forecasting patient deterioration, sepsis onset, or cardiac events before visible symptoms appear.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 30px;">
+                        <div style="flex: 1; min-width: 250px; background-color: #f0f7fd; padding: 15px; border-radius: 5px;">
+                            <h3 style="color: #2c3e50; margin-top: 0;">Ambulance Dispatch Optimization</h3>
+                            <p>AI algorithms determine optimal ambulance routing and resource allocation during mass casualty events.</p>
+                        </div>
+                        
+                        <div style="flex: 1; min-width: 250px; background-color: #f0f7fd; padding: 15px; border-radius: 5px;">
+                            <h3 style="color: #2c3e50; margin-top: 0;">Drug Interaction Alerts</h3>
+                            <p>Real-time checking for dangerous medication combinations in emergency prescribing situations.</p>
+                        </div>
+                        
+                        <div style="flex: 1; min-width: 250px; background-color: #f0f7fd; padding: 15px; border-radius: 5px;">
+                            <h3 style="color: #2c3e50; margin-top: 0;">Disaster Response</h3>
+                            <p>AI coordinates resources, predicts injury patterns, and optimizes field hospital setups in natural disasters.</p>
+                        </div>
+                    </div>
+                
+                    <h2 style="color: #2980b9; border-bottom: 1px solid #eee; padding-bottom: 5px;">3. Technologies Powering AI Emergency Systems</h2>
+                    
+                    <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                        <thead>
+                            <tr style="background-color: #3498db; color: white;">
+                                <th style="padding: 10px; text-align: left;">Technology</th>
+                                <th style="padding: 10px; text-align: left;">Application</th>
+                                <th style="padding: 10px; text-align: left;">Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #ddd;">
+                                <td style="padding: 10px;">Machine Learning</td>
+                                <td style="padding: 10px;">Predictive analytics, pattern recognition</td>
+                                <td style="padding: 10px;">Early warning scores for sepsis</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ddd;">
+                                <td style="padding: 10px;">Natural Language Processing</td>
+                                <td style="padding: 10px;">Extracting insights from EMS reports</td>
+                                <td style="padding: 10px;">Automated trauma severity scoring</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ddd;">
+                                <td style="padding: 10px;">Computer Vision</td>
+                                <td style="padding: 10px;">Medical imaging analysis</td>
+                                <td style="padding: 10px;">Stroke detection in CT scans</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ddd;">
+                                <td style="padding: 10px;">Robotics</td>
+                                <td style="padding: 10px;">Emergency procedures</td>
+                                <td style="padding: 10px;">Automated CPR devices</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px;">IoT Sensors</td>
+                                <td style="padding: 10px;">Continuous monitoring</td>
+                                <td style="padding: 10px;">Wearable crash detection</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                
+                    <h2 style="color: #2980b9; border-bottom: 1px solid #eee; padding-bottom: 5px;">4. Benefits and Advantages</h2>
+                    
+                    <div style="background-color: #e8f7e8; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+                        <h3 style="color: #27ae60; margin-top: 0;">Key Benefits of AI in Emergency Medicine</h3>
+                        <ul>
+                            <li><strong>Speed:</strong> AI processes information and images much faster than humans</li>
+                            <li><strong>Accuracy:</strong> Reduces diagnostic errors in high-pressure situations</li>
+                            <li><strong>Consistency:</strong> Provides standardized assessments unaffected by fatigue</li>
+                            <li><strong>Resource Optimization:</strong> Better allocation of limited emergency resources</li>
+                            <li><strong>Data Integration:</strong> Combines multiple data sources for comprehensive analysis</li>
+                            <li><strong>Remote Support:</strong> Enables expert consultation in rural or underserved areas</li>
+                        </ul>
+                    </div>
+                
+                    <h2 style="color: #2980b9; border-bottom: 1px solid #eee; padding-bottom: 5px;">5. Challenges and Ethical Considerations</h2>
+                    
+                    <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">
+                        <div style="flex: 1; min-width: 300px; background-color: #fef2f2; padding: 15px; border-radius: 5px;">
+                            <h3 style="color: #c0392b; margin-top: 0;">Technical Challenges</h3>
+                            <ul>
+                                <li>Integration with legacy hospital systems</li>
+                                <li>Data quality and standardization issues</li>
+                                <li>Real-time processing requirements</li>
+                                <li>Algorithm transparency and explainability</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="flex: 1; min-width: 300px; background-color: #fef2f2; padding: 15px; border-radius: 5px;">
+                            <h3 style="color: #c0392b; margin-top: 0;">Ethical Considerations</h3>
+                            <ul>
+                                <li>Liability for AI-driven decisions</li>
+                                <li>Patient consent for AI analysis</li>
+                                <li>Potential algorithmic bias</li>
+                                <li>Over-reliance on technology</li>
+                                <li>Data privacy concerns</li>
+                            </ul>
+                        </div>
+                    </div>
+                
+                    <h2 style="color: #2980b9; border-bottom: 1px solid #eee; padding-bottom: 5px;">6. Case Studies and Real-world Examples</h2>
+                    
+                    <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+                        <h3 style="color: #2c3e50; margin-top: 0;">Notable Implementations</h3>
+                        
+                        <div style="margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px dashed #ccc;">
+                            <h4 style="margin-bottom: 5px; color: #3498db;">Johns Hopkins Hospital - AI Triage System</h4>
+                            <p>Reduced wait times for critical patients by 40% while maintaining 98% accuracy in prioritization.</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px dashed #ccc;">
+                            <h4 style="margin-bottom: 5px; color: #3498db;">London Ambulance Service - Predictive Dispatch</h4>
+                            <p>AI predicts emergency call volumes and optimal ambulance positioning, improving response times by 18%.</p>
+                        </div>
+                        
+                        <div>
+                            <h4 style="margin-bottom: 5px; color: #3498db;">Mayo Clinic - Stroke Detection AI</h4>
+                            <p>Computer vision system detects ischemic strokes on CT scans with 94% accuracy within 2 minutes of imaging.</p>
+                        </div>
+                    </div>
+                
+                    <h2 style="color: #2980b9; border-bottom: 1px solid #eee; padding-bottom: 5px;">7. Future Trends and Developments</h2>
+                    
+                    <div style="background-color: #f0f0f0; padding: 15px; border-radius: 5px;">
+                        <h3 style="color: #2c3e50; margin-top: 0;">Emerging Directions in AI Emergency Medicine</h3>
+                        <ul>
+                            <li><strong>Edge AI:</strong> On-device processing for faster response without cloud dependence</li>
+                            <li><strong>Multimodal AI:</strong> Combining imaging, vitals, and voice analysis for comprehensive assessment</li>
+                            <li><strong>Generative AI:</strong> Simulating emergency scenarios for training purposes</li>
+                            <li><strong>Autonomous Emergency Systems:</strong> Self-contained trauma pods with AI-guided treatment</li>
+                            <li><strong>Global Emergency Networks:</strong> AI systems coordinating international disaster responses</li>
+                            <li><strong>Explainable AI (XAI):</strong> Developing transparent models clinicians can trust</li>
+                        </ul>
+                    </div>
+                
+                    <div style="margin-top: 30px; padding: 15px; background-color: #c1daf4; color: white; border-radius: 5px;">
+                        <h3 style="margin-top: 0;">Conclusion</h3>
+                        <p>AI in emergency healthcare represents a transformative shift in how we approach critical care situations. While challenges remain in implementation, ethics, and regulation, the potential benefits for patient outcomes and healthcare efficiency are substantial. As technology continues to advance, AI will likely become an indispensable tool in emergency medicine worldwide.</p>
+                    </div>
+                </div>
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [ ];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics") ? "../AI in Healthcare.json" : "../AI in Healthcare.json";
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch AI for Robotics Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.AI_in_Healthcare;
+                        displayTopics(allTopics);
+                    }
+                    )
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+            </body>
+            </html>        

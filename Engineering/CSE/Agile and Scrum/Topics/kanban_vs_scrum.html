@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agile Anti-Patterns</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Agile and Scrum</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+              <h1>Kanban vs Scrum</h1>
+                   
+                
+                    <section style="margin-bottom: 40px; background-color: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <h2 style="color: #3a7bd5; margin-top: 0; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px;">Fundamental Differences</h2>
+                        
+                        <div style="display: flex; gap: 20px; margin-top: 20px; flex-wrap: wrap;">
+                            <div style="flex: 1; min-width: 300px; background-color: #e3f2fd; padding: 20px; border-radius: 6px; border-left: 4px solid #1976d2;">
+                                <h3 style="color: #0d47a1; margin-top: 0; text-align: center;">Scrum</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Iterative approach</strong> with fixed-length Sprints (typically 2-4 weeks)</li>
+                                    <li><strong>Prescribed roles</strong> (Product Owner, Scrum Master, Development Team)</li>
+                                    <li><strong>Structured ceremonies</strong> (Sprint Planning, Daily Scrum, Review, Retrospective)</li>
+                                    <li><strong>Commitment-based</strong> - team commits to Sprint Goals</li>
+                                    <li><strong>Batch-oriented</strong> work delivery at Sprint end</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 300px; background-color: #e0f7fa; padding: 20px; border-radius: 6px; border-left: 4px solid #00838f;">
+                                <h3 style="color: #006064; margin-top: 0; text-align: center;">Kanban</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Continuous flow</strong> with no fixed iterations</li>
+                                    <li><strong>No prescribed roles</strong> (can work with existing roles)</li>
+                                    <li><strong>Flexible meetings</strong> (as needed, no required ceremonies)</li>
+                                    <li><strong>Pull-based system</strong> - work pulled when capacity available</li>
+                                    <li><strong>Continuous delivery</strong> of individual items</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 25px; background-color: #fff3e0; padding: 20px; border-radius: 6px; border-left: 4px solid #fb8c00;">
+                            <h3 style="color: #e65100; margin-top: 0;">Key Philosophical Differences</h3>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin-top: 15px;">
+                                <div style="background-color: white; padding: 15px; border-radius: 5px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                                    <h4 style="color: #3a7bd5; margin-top: 0;">Time Orientation</h4>
+                                    <p><strong>Scrum:</strong> Time-boxed (fixed iterations)<br>
+                                    <strong>Kanban:</strong> Event-driven (continuous flow)</p>
+                                </div>
+                                <div style="background-color: white; padding: 15px; border-radius: 5px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                                    <h4 style="color: #3a7bd5; margin-top: 0;">Change Philosophy</h4>
+                                    <p><strong>Scrum:</strong> Changes wait until next Sprint<br>
+                                    <strong>Kanban:</strong> Changes can happen anytime</p>
+                                </div>
+                                <div style="background-color: white; padding: 15px; border-radius: 5px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                                    <h4 style="color: #3a7bd5; margin-top: 0;">Metrics Focus</h4>
+                                    <p><strong>Scrum:</strong> Velocity (per Sprint)<br>
+                                    <strong>Kanban:</strong> Cycle time (per item)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="margin-bottom: 40px; background-color: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <h2 style="color: #3a7bd5; margin-top: 0; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px;">When to Use Each Methodology</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <div style="background-color: #e8eaf6; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #3949ab; margin-top: 0; text-align: center;">Scrum Works Best For</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Projects with clearly defined deliverables</li>
+                                    <li>Teams that benefit from structured cadence</li>
+                                    <li>Situations requiring stakeholder alignment at regular intervals</li>
+                                    <li>Work that can be broken into 2-4 week increments</li>
+                                    <li>Teams new to Agile needing clear guidance</li>
+                                    <li>Products with evolving requirements needing frequent inspection</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #e1f5fe; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #0277bd; margin-top: 0; text-align: center;">Kanban Works Best For</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Teams with unpredictable or variable workloads</li>
+                                    <li>Maintenance or support work with frequent interruptions</li>
+                                    <li>Organizations resistant to role/process changes</li>
+                                    <li>Work that arrives unpredictably or needs immediate attention</li>
+                                    <li>Mature teams comfortable with self-organization</li>
+                                    <li>Process improvement initiatives (visualizing workflow)</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #f3e5f5; padding: 20px; border-radius: 6px; grid-column: span 2;">
+                                <h3 style="color: #8e24aa; margin-top: 0; text-align: center;">Scrumban (Hybrid Approach)</h3>
+                                <p>Many teams combine elements of both methodologies:</p>
+                                <ul style="columns: 2; column-gap: 30px; padding-left: 20px;">
+                                    <li>Using Scrum's ceremonies with Kanban's WIP limits</li>
+                                    <li>Maintaining Sprint cadence but allowing item changes</li>
+                                    <li>Visualizing work on a Kanban board within Sprints</li>
+                                    <li>Tracking both velocity and cycle time metrics</li>
+                                    <li>Applying flow principles to Scrum's execution</li>
+                                    <li>Using Kanban for bug tracking alongside Scrum for features</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="margin-bottom: 40px; background-color: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <h2 style="color: #3a7bd5; margin-top: 0; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px;">Detailed Methodology Comparison</h2>
+                        
+                        <div style="overflow-x: auto; margin-top: 20px;">
+                            <table style="width: 100%; border-collapse: collapse; min-width: 600px;">
+                                <thead>
+                                    <tr style="background-color: #3a7bd5; color: white;">
+                                        <th style="padding: 12px 15px; text-align: left;">Aspect</th>
+                                        <th style="padding: 12px 15px; text-align: left; width: 45%;">Scrum</th>
+                                        <th style="padding: 12px 15px; text-align: left; width: 45%;">Kanban</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #ddd;">
+                                        <td style="padding: 12px 15px; font-weight: bold; background-color: #f8f9f9;">Work Structure</td>
+                                        <td style="padding: 12px 15px;">Fixed-length Sprints (typically 2-4 weeks)</td>
+                                        <td style="padding: 12px 15px;">Continuous flow with no timeboxes</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #ddd;">
+                                        <td style="padding: 12px 15px; font-weight: bold; background-color: #f8f9f9;">Roles</td>
+                                        <td style="padding: 12px 15px;">Product Owner, Scrum Master, Development Team</td>
+                                        <td style="padding: 12px 15px;">No prescribed roles (uses existing structure)</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #ddd;">
+                                        <td style="padding: 12px 15px; font-weight: bold; background-color: #f8f9f9;">Planning</td>
+                                        <td style="padding: 12px 15px;">Sprint Planning at start of each iteration</td>
+                                        <td style="padding: 12px 15px;">On-demand planning as needed</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #ddd;">
+                                        <td style="padding: 12px 15px; font-weight: bold; background-color: #f8f9f9;">Commitment</td>
+                                        <td style="padding: 12px 15px;">Team commits to Sprint Goal</td>
+                                        <td style="padding: 12px 15px;">No commitment - pull work as capacity allows</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #ddd;">
+                                        <td style="padding: 12px 15px; font-weight: bold; background-color: #f8f9f9;">Delivery</td>
+                                        <td style="padding: 12px 15px;">At end of Sprint (batched delivery)</td>
+                                        <td style="padding: 12px 15px;">Continuous delivery (single-piece flow)</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #ddd;">
+                                        <td style="padding: 12px 15px; font-weight: bold; background-color: #f8f9f9;">Change Management</td>
+                                        <td style="padding: 12px 15px;">Changes wait until next Sprint</td>
+                                        <td style="padding: 12px 15px;">Changes can happen anytime</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #ddd;">
+                                        <td style="padding: 12px 15px; font-weight: bold; background-color: #f8f9f9;">Metrics</td>
+                                        <td style="padding: 12px 15px;">Velocity, Sprint Burndown</td>
+                                        <td style="padding: 12px 15px;">Cycle Time, Throughput, Cumulative Flow</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #ddd;">
+                                        <td style="padding: 12px 15px; font-weight: bold; background-color: #f8f9f9;">Board</td>
+                                        <td style="padding: 12px 15px;">Reset each Sprint (typically To Do, In Progress, Done)</td>
+                                        <td style="padding: 12px 15px;">Persistent (reflects actual workflow stages)</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #ddd;">
+                                        <td style="padding: 12px 15px; font-weight: bold; background-color: #f8f9f9;">Work In Progress</td>
+                                        <td style="padding: 12px 15px;">No formal WIP limits (except Sprint scope)</td>
+                                        <td style="padding: 12px 15px;">Explicit WIP limits for each column</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 12px 15px; font-weight: bold; background-color: #f8f9f9;">Best For</td>
+                                        <td style="padding: 12px 15px;">Product development, new features</td>
+                                        <td style="padding: 12px 15px;">Support, maintenance, operational work</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                
+                    <section style="margin-bottom: 40px; background-color: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <h2 style="color: #3a7bd5; margin-top: 0; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px;">Visualizing the Differences</h2>
+                        
+                        <div style="display: flex; gap: 20px; margin-top: 20px; flex-wrap: wrap;">
+                            <div style="flex: 1; min-width: 300px; background-color: #e3f2fd; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #0d47a1; margin-top: 0; text-align: center;">Scrum Workflow</h3>
+                                <div style="background-color: white; padding: 15px; border-radius: 5px; margin-top: 15px; text-align: center;">
+                                    <p style="font-weight: bold; margin: 5px 0; color: #3a7bd5;">Sprint Planning →</p>
+                                    <p style="font-weight: bold; margin: 5px 0; color: #3a7bd5;">Daily Scrum →</p>
+                                    <p style="font-weight: bold; margin: 5px 0; color: #3a7bd5;">Development Work →</p>
+                                    <p style="font-weight: bold; margin: 5px 0; color: #3a7bd5;">Sprint Review →</p>
+                                    <p style="font-weight: bold; margin: 5px 0; color: #3a7bd5;">Sprint Retrospective</p>
+                                    <p style="margin-top: 10px;">Repeat every 2-4 weeks</p>
+                                </div>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 300px; background-color: #e0f7fa; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #006064; margin-top: 0; text-align: center;">Kanban Workflow</h3>
+                                <div style="background-color: white; padding: 15px; border-radius: 5px; margin-top: 15px; text-align: center;">
+                                    <div style="display: flex; justify-content: space-around; margin-bottom: 10px;">
+                                        <div style="background-color: #f5f5f5; padding: 8px 15px; border-radius: 4px; font-weight: bold;">Backlog</div>
+                                        <div>→</div>
+                                        <div style="background-color: #fff8e1; padding: 8px 15px; border-radius: 4px; font-weight: bold;">Ready</div>
+                                        <div>→</div>
+                                        <div style="background-color: #e3f2fd; padding: 8px 15px; border-radius: 4px; font-weight: bold;">In Progress</div>
+                                        <div>→</div>
+                                        <div style="background-color: #e8f5e9; padding: 8px 15px; border-radius: 4px; font-weight: bold;">Done</div>
+                                    </div>
+                                    <p>Continuous flow with WIP limits at each stage</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 25px; background-color: #fff8e1; padding: 20px; border-radius: 6px; border-left: 4px solid #ffa000;">
+                            <h3 style="color: #ff6f00; margin-top: 0;">Board Comparison</h3>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin-top: 15px;">
+                                <div style="background-color: white; padding: 15px; border-radius: 5px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                                    <h4 style="color: #3a7bd5; margin-top: 0;">Scrum Board</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Simple columns (To Do, In Progress, Done)</li>
+                                        <li>Reset for each Sprint</li>
+                                        <li>Shows Sprint Goal and selected backlog items</li>
+                                        <li>Tasks often broken down from user stories</li>
+                                        <li>Burndown chart shows progress</li>
+                                    </ul>
+                                </div>
+                                <div style="background-color: white; padding: 15px; border-radius: 5px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                                    <h4 style="color: #3a7bd5; margin-top: 0;">Kanban Board</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Detailed workflow stages (multiple columns)</li>
+                                        <li>Persistent across time</li>
+                                        <li>Shows all work items in the system</li>
+                                        <li>WIP limits clearly marked for each column</li>
+                                        <li>Cycle time and flow metrics emphasized</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="margin-bottom: 40px; background-color: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <h2 style="color: #3a7bd5; margin-top: 0; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px;">Choosing Between Kanban and Scrum</h2>
+                        
+                        <div style="margin-top: 20px;">
+                            <div style="background-color: #f1f8e9; padding: 20px; border-radius: 6px; margin-bottom: 20px;">
+                                <h3 style="color: #33691e; margin-top: 0;">Consider Scrum When...</h3>
+                                <ul style="padding-left: 20px; columns: 2; column-gap: 30px;">
+                                    <li>You're developing new products or features</li>
+                                    <li>The team is new to Agile methodologies</li>
+                                    <li>Requirements evolve but can wait 2-4 weeks</li>
+                                    <li>Stakeholders need regular demo/sync points</li>
+                                    <li>You need structured ceremonies to build discipline</li>
+                                    <li>The work can be broken into Sprint-sized chunks</li>
+                                    <li>You want to measure team velocity</li>
+                                    <li>There's value in batch delivery of features</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background-color: #e8f5e9; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #2e7d32; margin-top: 0;">Consider Kanban When...</h3>
+                                <ul style="padding-left: 20px; columns: 2; column-gap: 30px;">
+                                    <li>You're maintaining existing systems</li>
+                                    <li>The team is experienced with Agile principles</li>
+                                    <li>Work arrives unpredictably or needs quick response</li>
+                                    <li>You need continuous delivery of items</li>
+                                    <li>Process improvement is the primary goal</li>
+                                    <li>Work items vary significantly in size/complexity</li>
+                                    <li>You want to optimize flow and reduce cycle time</li>
+                                    <li>There's resistance to changing roles/processes</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 25px; background-color: #e1f5fe; padding: 20px; border-radius: 6px; border-left: 4px solid #0288d1;">
+                            <h3 style="color: #01579b; margin-top: 0;">Can You Combine Both?</h3>
+                            <p><strong>Yes!</strong> Many teams successfully blend elements of both methodologies in what's sometimes called "Scrumban":</p>
+                            <ul style="padding-left: 20px; columns: 2; column-gap: 30px;">
+                                <li>Using Scrum's ceremonies with Kanban's WIP limits</li>
+                                <li>Maintaining Sprints but allowing item changes mid-Sprint</li>
+                                <li>Visualizing work on a Kanban board within Sprints</li>
+                                <li>Tracking both velocity and cycle time metrics</li>
+                                <li>Applying flow principles to Scrum's execution</li>
+                                <li>Using Kanban for bugs/incidents alongside Scrum for features</li>
+                            </ul>
+                        </div>
+                    </section>
+                
+                   
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics/") ? "../Agile_and_Scrum.json" : "../Agile_and_Scrum.json";
+            
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch DSA Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.Agile_and_Scrum;
+                        displayTopics(allTopics);
+                    })
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+           
+            
+            
+            
+            
+            
+            
+            </body>
+            </html>     

@@ -1,0 +1,9 @@
+{
+    "Data Science & ML": [
+        { "name": "Data Science With Python", "link": "topics/data_science_python.html" },
+        { "name": "Machine Learning", "link": "topics/machine_learning.html" },
+        { "name": "Deep Learning", "link": "topics/deep_learning.html" },
+        { "name": "Pandas", "link": "topics/pandas.html" },
+        { "name": "NumPy", "link": "topics/numpy.html" }
+    ]
+}

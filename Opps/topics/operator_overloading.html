@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../opp.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+
+
+
+
+            <main class="col-md-7 content">
+                <h2>🔹 Operator Overloading in Programming</h2>
+            
+                <p>
+                    **Operator overloading** is a feature in programming that allows developers to define custom behavior for standard operators (such as addition, subtraction, and comparison) when applied to user-defined types or objects. This enhances the readability and usability of code by enabling intuitive interactions with objects using familiar operators.
+                </p>
+            
+                <h3>📌 Why Use Operator Overloading?</h3>
+                <p>Operator overloading provides several advantages:</p>
+                <ul>
+                    <li>✅ **Improves Code Readability**: It allows objects to be manipulated in a way that is similar to built-in types, making the code more intuitive and easier to understand.</li>
+                    <li>✅ **Enhances Usability**: Custom types can behave like primitive types, allowing developers to use familiar operators without additional function calls.</li>
+                    <li>✅ **Facilitates Mathematical Operations**: It is particularly useful for creating classes that represent mathematical entities, such as vectors or matrices, allowing natural expressions of operations.</li>
+                    <li>✅ **Promotes Consistency**: By defining operator behavior, developers can ensure that operations on objects are consistent and follow expected mathematical rules.</li>
+                </ul>
+            
+                <h3>📌 How Operator Overloading Works</h3>
+                <p>Operator overloading is typically implemented by defining specific methods in a class. The method names usually correspond to the operator being overloaded. Below are common operators that can be overloaded:</p>
+                <ul>
+                    <li><b>Arithmetic Operators:</b> Such as addition (+), subtraction (-), multiplication (*), and division (/).</li>
+                    <li><b>Comparison Operators:</b> Such as equality (==), inequality (!=), greater than (>), and less than (<).</li>
+                    <li><b>Unary Operators:</b> Such as negation (-) and increment (++) if supported by the language.</li>
+                </ul>
+            
+                <h3>🖥️ Operator Overloading in Python</h3>
+                <p>In Python, operator overloading is achieved by defining special methods (also known as magic methods) in a class. Here is an example:</p>
+                <pre><code>
+            class Vector:
+                def __init__(self, x, y):
+                    self.x = x
+                    self.y = y
+            
+                def __add__(self, other):
+                    return Vector(self.x + other.x, self.y + other.y)
+            
+                def __sub__(self, other):
+                    return Vector(self.x - other.x, self.y - other.y)
+            
+                def __str__(self):
+                    return f"Vector({self.x}, {self.y})"
+            
+            # Usage
+            vector1 = Vector(2, 3)
+            vector2 = Vector(5, 7)
+            
+            result_add = vector1 + vector2
+            result_sub = vector1 - vector2
+            
+            print("Addition:", result_add)  # Output: Vector(7, 10)
+            print("Subtraction:", result_sub)  # Output: Vector(-3, -4)
+                </code></pre>
+            
+                <h3>🖥️ Operator Overloading in Java</h3>
+                <p>Java does not support operator overloading directly. However, it can be simulated by using methods. Here is an example:</p>
+                <pre><code>
+            class Vector {
+                private int x;
+                private int y;
+            
+                public Vector(int x, int y) {
+                    this.x = x;
+                    this.y = y;
+                }
+            
+                public Vector add(Vector other) {
+                    return new Vector(this.x + other.x, this.y + other.y);
+                }
+            
+                public Vector subtract(Vector other) {
+                    return new Vector(this.x - other.x, this.y - other.y);
+                }
+            
+                @Override
+                public String toString() {
+                    return "Vector(" + x + ", " + y + ")";
+                }
+            }
+            
+            // Usage
+            public class Main {
+                public static void main(String[] args) {
+                    Vector vector1 = new Vector(2, 3);
+                    Vector vector2 = new Vector(5, 7);
+            
+                    Vector resultAdd = vector1.add(vector2);
+                    Vector resultSub = vector1.subtract(vector2);
+            
+                    System.out.println("Addition: " + resultAdd);  // Output: Vector(7, 10)
+                    System.out.println("Subtraction: " + resultSub);  // Output: Vector(-3, -4)
+                }
+            }
+                </code></pre>
+            
+                <h3>📌 Best Practices for Operator Overloading</h3>
+                <ul>
+                    <li>✅ **Maintain Expected Behavior**: Ensure that the overloaded operator behaves in a manner that is consistent with the expected behavior of that operator.</li>
+                    <li>✅ **Limit Overloading**: Avoid overloading too many operators for a single class, as this can lead to confusion and reduce code clarity.</li>
+                    <li>✅ **Provide Clear Documentation**: Document the overloaded operators to clarify their intended usage and behavior to other developers.</li>
+                    <li>✅ **Avoid Ambiguity**: Ensure that overloaded operators do not introduce ambiguity in the code, making it difficult for others to understand the intended operations.</li>
+                </ul>
+            
+                <h3>🎯 Summary</h3>
+                <p>
+                    Operator overloading is a powerful feature that enhances the usability and readability of code by allowing custom types to use standard operators.  
+                    Understanding how to properly implement operator overloading is crucial for creating intuitive and maintainable code in programming.
+                </p>
+            
+                <h2>🔗 Next Topics</h2>
+                <ul class="nexttopics-container">
+                    <li><a href="encapsulation.html">👉 Encapsulation</a></li>
+                    <li><a href="inheritance.html">👉 Inheritance</a></li>
+                    <li><a href="polymorphism.html">👉 Polymorphism</a></li>
+                </ul>
+            </main>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+     
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../opp.json" : "opp.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.OOP;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Robotics</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>AI for Robotics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <h1>Object Tracking in Robotics</h1>
+                
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                        <h2 style="color: #8E2DE2; border-bottom: 3px solid #4A00E0; padding-bottom: 10px; font-size: 1.8em;">Fundamentals of Object Tracking</h2>
+                        
+                        <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 25px;">
+                            <div style="flex: 1; min-width: 300px; background-color: #f3e5f5; padding: 20px; border-radius: 6px; border-left: 5px solid #8E2DE2;">
+                                <h3 style="color: #8E2DE2; margin-top: 0;">Key Concepts</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Detection:</strong> Identifying objects in each frame</li>
+                                    <li><strong>Association:</strong> Linking detections across frames</li>
+                                    <li><strong>Prediction:</strong> Estimating future positions</li>
+                                    <li><strong>Recovery:</strong> Handling occlusions and reappearances</li>
+                                </ul>
+                            </div>
+                            <div style="flex: 1; min-width: 300px; background-color: #e3f2fd; padding: 20px; border-radius: 6px; border-left: 5px solid #1976D2;">
+                                <h3 style="color: #1976D2; margin-top: 0;">Tracking Challenges</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Occlusions and obstructions</li>
+                                    <li>Appearance changes (lighting, angle)</li>
+                                    <li>Real-time processing requirements</li>
+                                    <li>Multiple interacting objects</li>
+                                </ul>
+                            </div>
+                            <div style="flex: 1; min-width: 300px; background-color: #e8f5e9; padding: 20px; border-radius: 6px; border-left: 5px solid #388E3C;">
+                                <h3 style="color: #388E3C; margin-top: 0;">Robotic Applications</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Autonomous navigation</li>
+                                    <li>Human-robot interaction</li>
+                                    <li>Industrial quality control</li>
+                                    <li>Surveillance and security</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 30px; background-color: #fff3e0; padding: 20px; border-radius: 6px;">
+                            <h3 style="color: #E64A19; margin-top: 0;">Tracking Pipeline</h3>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px; overflow-x: auto;">
+                                <div style="text-align: center; padding: 10px; min-width: 120px;">
+                                    <div style="background-color: #8E2DE2; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; font-weight: bold;">1</div>
+                                    <p style="margin-top: 8px; font-weight: bold;">Object Detection</p>
+                                </div>
+                                <div style="text-align: center; padding: 10px; min-width: 120px;">
+                                    <div style="background-color: #4A00E0; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; font-weight: bold;">2</div>
+                                    <p style="margin-top: 8px; font-weight: bold;">Feature Extraction</p>
+                                </div>
+                                <div style="text-align: center; padding: 10px; min-width: 120px;">
+                                    <div style="background-color: #1976D2; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; font-weight: bold;">3</div>
+                                    <p style="margin-top: 8px; font-weight: bold;">Data Association</p>
+                                </div>
+                                <div style="text-align: center; padding: 10px; min-width: 120px;">
+                                    <div style="background-color: #388E3C; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; font-weight: bold;">4</div>
+                                    <p style="margin-top: 8px; font-weight: bold;">State Estimation</p>
+                                </div>
+                                <div style="text-align: center; padding: 10px; min-width: 120px;">
+                                    <div style="background-color: #E64A19; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; font-weight: bold;">5</div>
+                                    <p style="margin-top: 8px; font-weight: bold;">Trajectory Analysis</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                        <h2 style="color: #8E2DE2; border-bottom: 3px solid #4A00E0; padding-bottom: 10px; font-size: 1.8em;">Tracking Algorithms and Techniques</h2>
+                        
+                        <div style="margin-bottom: 30px;">
+                            <h3 style="color: #7B1FA2; background-color: #F3E5F5; padding: 12px; border-radius: 5px;">1. Traditional Computer Vision Approaches</h3>
+                            <div style="display: flex; gap: 25px; margin-top: 20px;">
+                                <div style="flex: 1;">
+                                    <h4 style="color: #4A148C; margin-bottom: 10px;">Methods</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li><strong>Optical Flow:</strong> Lucas-Kanade, Farnebäck</li>
+                                        <li><strong>Feature-based:</strong> SIFT, SURF, ORB tracking</li>
+                                        <li><strong>Template Matching:</strong> Correlation-based</li>
+                                        <li><strong>Mean-Shift:</strong> Kernel-based tracking</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1; background-color: #f5f5f5; padding: 15px; border-radius: 6px;">
+                                    <h4 style="color: #4A148C; margin-bottom: 10px;">Robotic Applications</h4>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                        <span style="background-color: #7B1FA2; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Low-Power Devices</span>
+                                        <span style="background-color: #7B1FA2; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Structured Environments</span>
+                                        <span style="background-color: #7B1FA2; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Known Objects</span>
+                                        <span style="background-color: #7B1FA2; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Real-Time Systems</span>
+                                    </div>
+                                    <div style="margin-top: 15px; background-color: #F3E5F5; padding: 12px; border-radius: 5px;">
+                                        <strong>Example:</strong> Industrial robot tracking known parts on a conveyor belt using template matching
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="margin-top: 20px; background-color: #f5f5f5; padding: 15px; border-radius: 6px; font-family: monospace;">
+                                # OpenCV Mean-Shift tracking example<br>
+                                import cv2<br>
+                                <br>
+                                # Initialize tracker<br>
+                                tracker = cv2.TrackerMeanShift_create()<br>
+                                bbox = (x, y, w, h)  # Initial bounding box<br>
+                                tracker.init(frame, bbox)<br>
+                                <br>
+                                # Update tracker<br>
+                                success, bbox = tracker.update(new_frame)<br>
+                                if success:<br>
+                                &nbsp;&nbsp;x, y, w, h = [int(v) for v in bbox]<br>
+                                &nbsp;&nbsp;cv2.rectangle(new_frame, (x, y), (x+w, y+h), (0,255,0), 2)
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 30px;">
+                            <h3 style="color: #0288D1; background-color: #E1F5FE; padding: 12px; border-radius: 5px;">2. Machine Learning Based Tracking</h3>
+                            <div style="display: flex; gap: 25px; margin-top: 20px;">
+                                <div style="flex: 1;">
+                                    <h4 style="color: #01579B; margin-bottom: 10px;">Approaches</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li><strong>Discriminative Correlation Filters:</strong> MOSSE, KCF</li>
+                                        <li><strong>Siamese Networks:</strong> SiamFC, SiamRPN</li>
+                                        <li><strong>Reinforcement Learning:</strong> Policy-based tracking</li>
+                                        <li><strong>Online Learning:</strong> Adaptive appearance models</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1; background-color: #f5f5f5; padding: 15px; border-radius: 6px;">
+                                    <h4 style="color: #01579B; margin-bottom: 10px;">Advantages</h4>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                        <span style="background-color: #0288D1; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Adaptability</span>
+                                        <span style="background-color: #0288D1; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Robustness</span>
+                                        <span style="background-color: #0288D1; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Generalization</span>
+                                        <span style="background-color: #0288D1; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">Performance</span>
+                                    </div>
+                                    <div style="margin-top: 15px; background-color: #E1F5FE; padding: 12px; border-radius: 5px;">
+                                        <strong>Example:</strong> Drone tracking moving vehicles using Siamese networks with aerial perspective adaptation
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 30px;">
+                            <h3 style="color: #D32F2F; background-color: #FFEBEE; padding: 12px; border-radius: 5px;">3. Deep Learning Trackers</h3>
+                            <div style="display: flex; gap: 25px; margin-top: 20px;">
+                                <div style="flex: 1;">
+                                    <h4 style="color: #B71C1C; margin-bottom: 10px;">Architectures</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li><strong>Detection-based:</strong> Tracktor, FairMOT</li>
+                                        <li><strong>Attention-based:</strong> TransTrack, TrTr</li>
+                                        <li><strong>Graph-based:</strong> Relation networks</li>
+                                        <li><strong>Transformer-based:</strong> TrackFormer</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1; background-color: #f5f5f5; padding: 15px; border-radius: 6px;">
+                                    <h4 style="color: #B71C1C; margin-bottom: 10px;">Performance</h4>
+                                    <table style="width: 100%; border-collapse: collapse;">
+                                        <thead>
+                                            <tr style="background-color: #D32F2F; color: white;">
+                                                <th style="padding: 8px; text-align: left;">Tracker</th>
+                                                <th style="padding: 8px; text-align: left;">Precision</th>
+                                                <th style="padding: 8px; text-align: left;">FPS</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr style="border-bottom: 1px solid #e0e0e0;">
+                                                <td style="padding: 8px;">SORT</td>
+                                                <td style="padding: 8px;">77.6%</td>
+                                                <td style="padding: 8px;">260</td>
+                                            </tr>
+                                            <tr style="border-bottom: 1px solid #e0e0e0;">
+                                                <td style="padding: 8px;">DeepSORT</td>
+                                                <td style="padding: 8px;">79.1%</td>
+                                                <td style="padding: 8px;">40</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px;">FairMOT</td>
+                                                <td style="padding: 8px;">82.2%</td>
+                                                <td style="padding: 8px;">30</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div style="margin-top: 15px; background-color: #FFEBEE; padding: 12px; border-radius: 5px;">
+                                        <strong>Example:</strong> Service robot tracking multiple people in crowded environments using FairMOT
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 style="color: #F57C00; background-color: #FFF3E0; padding: 12px; border-radius: 5px;">4. Multi-Object Tracking (MOT)</h3>
+                            <div style="display: flex; gap: 25px; margin-top: 20px;">
+                                <div style="flex: 1;">
+                                    <h4 style="color: #E65100; margin-bottom: 10px;">Frameworks</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li><strong>Detection-based:</strong> Track-by-detect</li>
+                                        <li><strong>Joint Detection:</strong> Unified models</li>
+                                        <li><strong>Association Methods:</strong> Hungarian algorithm</li>
+                                        <li><strong>Trajectory Prediction:</strong> Kalman filters, LSTM</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1; background-color: #f5f5f5; padding: 15px; border-radius: 6px;">
+                                    <h4 style="color: #E65100; margin-bottom: 10px;">Metrics</h4>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                        <span style="background-color: #F57C00; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">MOTA</span>
+                                        <span style="background-color: #F57C00; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">MOTP</span>
+                                        <span style="background-color: #F57C00; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">IDF1</span>
+                                        <span style="background-color: #F57C00; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.9em;">HOTA</span>
+                                    </div>
+                                    <div style="margin-top: 15px; background-color: #FFF3E0; padding: 12px; border-radius: 5px;">
+                                        <strong>Example:</strong> Autonomous vehicle tracking pedestrians, vehicles, and cyclists simultaneously
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                        <h2 style="color: #8E2DE2; border-bottom: 3px solid #4A00E0; padding-bottom: 10px; font-size: 1.8em;">Robotic Applications of Object Tracking</h2>
+                        
+                        <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 25px;">
+                            <div style="flex: 1; min-width: 300px; background-color: #EDE7F6; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #5E35B1; margin-top: 0;">Autonomous Navigation</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Dynamic obstacle avoidance</li>
+                                    <li>Pedestrian tracking</li>
+                                    <li>Traffic participant monitoring</li>
+                                    <li>Path planning adaptation</li>
+                                </ul>
+                                <div style="margin-top: 15px; background-color: #D1C4E9; padding: 10px; border-radius: 4px; font-size: 0.9em;">
+                                    <strong>Example:</strong> Warehouse robot tracking moving forklifts and adjusting its path in real-time
+                                </div>
+                            </div>
+                            <div style="flex: 1; min-width: 300px; background-color: #E8F5E9; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #388E3C; margin-top: 0;">Human-Robot Interaction</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Gesture recognition</li>
+                                    <li>Gaze following</li>
+                                    <li>Social distance maintenance</li>
+                                    <li>Collaborative task tracking</li>
+                                </ul>
+                                <div style="margin-top: 15px; background-color: #C8E6C9; padding: 10px; border-radius: 4px; font-size: 0.9em;">
+                                    <strong>Example:</strong> Healthcare robot tracking patient movements for fall prevention
+                                </div>
+                            </div>
+                            <div style="flex: 1; min-width: 300px; background-color: #E3F2FD; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #1976D2; margin-top: 0;">Industrial Automation</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Product quality inspection</li>
+                                    <li>Assembly line monitoring</li>
+                                    <li>Defect tracking</li>
+                                    <li>Pick-and-place operations</li>
+                                </ul>
+                                <div style="margin-top: 15px; background-color: #BBDEFB; padding: 10px; border-radius: 4px; font-size: 0.9em;">
+                                    <strong>Example:</strong> Robotic arm tracking irregularly shaped objects on a conveyor belt
+                                </div>
+                            </div>
+                            <div style="flex: 1; min-width: 300px; background-color: #FFEBEE; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #D32F2F; margin-top: 0;">Surveillance & Security</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Intruder detection</li>
+                                    <li>Crowd monitoring</li>
+                                    <li>Abnormal behavior detection</li>
+                                    <li>Perimeter protection</li>
+                                </ul>
+                                <div style="margin-top: 15px; background-color: #FFCDD2; padding: 10px; border-radius: 4px; font-size: 0.9em;">
+                                    <strong>Example:</strong> Autonomous security robot tracking suspicious individuals across multiple camera feeds
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                        <h2 style="color: #8E2DE2; border-bottom: 3px solid #4A00E0; padding-bottom: 10px; font-size: 1.8em;">Implementation Considerations</h2>
+                        
+                        <div style="display: flex; gap: 20px; margin-top: 20px;">
+                            <div style="flex: 1; background-color: #F3E5F5; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #7B1FA2; margin-top: 0;">Hardware Requirements</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Sensors:</strong> RGB-D cameras, LiDAR, thermal</li>
+                                    <li><strong>Processing:</strong> GPUs, TPUs, VPUs</li>
+                                    <li><strong>Power Constraints:</strong> Mobile robot limitations</li>
+                                    <li><strong>Latency:</strong> Real-time processing needs</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="flex: 1; background-color: #E1F5FE; padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #0288D1; margin-top: 0;">Software Frameworks</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>OpenCV:</strong> Traditional CV tracking</li>
+                                    <li><strong>ROS:</strong> Robotic integration</li>
+                                    <li><strong>PyTorch/TensorFlow:</strong> DL tracking</li>
+                                    <li><strong>NVIDIA Isaac:</strong> Accelerated tracking</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 20px; background-color: #FFF3E0; padding: 20px; border-radius: 6px;">
+                            <h3 style="color: #F57C00; margin-top: 0;">Algorithm Selection Guide</h3>
+                            <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+                                <thead>
+                                    <tr style="background-color: #F57C00; color: white;">
+                                        <th style="padding: 10px; text-align: left;">Scenario</th>
+                                        <th style="padding: 10px; text-align: left;">Recommended Approach</th>
+                                        <th style="padding: 10px; text-align: left;">Considerations</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #e0e0e0;">
+                                        <td style="padding: 10px;">Limited compute</td>
+                                        <td style="padding: 10px;">KCF, CSRT</td>
+                                        <td style="padding: 10px;">Balances accuracy and speed</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #e0e0e0;">
+                                        <td style="padding: 10px;">Multiple objects</td>
+                                        <td style="padding: 10px;">SORT, DeepSORT</td>
+                                        <td style="padding: 10px;">ID assignment crucial</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #e0e0e0;">
+                                        <td style="padding: 10px;">Occlusion heavy</td>
+                                        <td style="padding: 10px;">FairMOT, Tracktor</td>
+                                        <td style="padding: 10px;">Re-identification important</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 10px;">Real-time critical</td>
+                                        <td style="padding: 10px;">Lightweight Siamese</td>
+                                        <td style="padding: 10px;">Optimized architectures</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div style="margin-top: 20px; background-color: #E8F5E9; padding: 20px; border-radius: 6px;">
+                            <h3 style="color: #388E3C; margin-top: 0;">Performance Optimization</h3>
+                            <div style="display: flex; gap: 20px; margin-top: 15px;">
+                                <div style="flex: 1;">
+                                    <h4 style="color: #2E7D32; margin-bottom: 10px;">Techniques</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Model quantization</li>
+                                        <li>Pruning</li>
+                                        <li>Knowledge distillation</li>
+                                        <li>Hardware-specific optimizations</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1;">
+                                    <h4 style="color: #2E7D32; margin-bottom: 10px;">Trade-offs</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Accuracy vs. speed</li>
+                                        <li>Detection vs. tracking</li>
+                                        <li>Online vs. offline</li>
+                                        <li>General vs. specialized</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background: linear-gradient(135deg, #0f75b9, #4d0a8f); color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                        <h2 style="border-bottom: 2px solid rgba(255,255,255,0.3); padding-bottom: 10px; font-size: 1.8em;">Emerging Trends and Future Directions</h2>
+                        
+                        <div style="display: flex; gap: 20px; margin-top: 20px;">
+                            <div style="flex: 1; background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #030622; margin-top: 0;">Technological Advances</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Neuromorphic Vision:</strong> Event-based cameras</li>
+                                    <li><strong>Transformer Architectures:</strong> Attention mechanisms</li>
+                                    <li><strong>3D Tracking:</strong> Point cloud processing</li>
+                                    <li><strong>Multi-Modal Fusion:</strong> Combining vision, LiDAR, radar</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="flex: 1; background-color: rgba(255,255,255,0.1); padding: 20px; border-radius: 6px;">
+                                <h3 style="color: #14092b; margin-top: 0;">Research Frontiers</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Self-Supervised Tracking:</strong> Reducing annotation needs</li>
+                                    <li><strong>Continual Learning:</strong> Adapting to new objects</li>
+                                    <li><strong>Explainable Tracking:</strong> Interpretable decisions</li>
+                                    <li><strong>Swarm Tracking:</strong> Distributed approaches</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 30px; background-color: rgba(255,255,255,0.15); padding: 20px; border-radius: 6px; text-align: center; font-style: italic;">
+                            "The future of object tracking in robotics lies in creating systems that can persistently track objects across complex environments while understanding context and intent - enabling truly intelligent interaction with the dynamic world."
+                        </div>
+                    </section>
+                
+             
+
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [ ];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics") ? "../AI for Robotics.json" : "../AI for Robotics.json";
+
+                                              
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch AI for Robotics Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.AI_for_Robotics;
+                        displayTopics(allTopics);
+                    }
+                    )
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+           
+            
+            
+            
+            
+            
+            
+            </body>
+            </html>        

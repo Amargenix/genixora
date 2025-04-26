@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agile Anti-Patterns</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Agile and Scrum</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 900px; margin: 0 auto; padding: 25px; color: #2d3436; line-height: 1.6; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <h1 style="color: #0984e3; border-bottom: 2px solid #74b9ff; padding-bottom: 10px; text-align: center;">Sprint Goal Grooming in Agile and Scrum</h1>
+                    
+                    <div style="background-color: #dfe6e9; padding: 20px; border-radius: 5px; margin-bottom: 25px;">
+                        <h2 style="color: #00b894; margin-top: 0;">Definition</h2>
+                        <p style="font-size: 1.1em;">Sprint Goal Grooming is the process of refining and aligning the team's understanding of the objective they want to achieve in the upcoming sprint. It involves collaborative discussion to create a clear, shared purpose that guides the team's work throughout the sprint.</p>
+                    </div>
+                    
+                    <h2 style="color: #00b894; border-left: 4px solid #00b894; padding-left: 10px;">Purpose and Importance</h2>
+                    <div style="background-color: white; padding: 15px; border-radius: 5px; margin-bottom: 20px; border: 1px solid #dfe6e9;">
+                        <ul style="padding-left: 20px;">
+                            <li style="margin-bottom: 10px;"><strong style="color: #6c5ce7;">Alignment:</strong> Creates shared understanding of sprint purpose across team and stakeholders</li>
+                            <li style="margin-bottom: 10px;"><strong style="color: #6c5ce7;">Focus:</strong> Helps team prioritize work and avoid scope creep during sprint</li>
+                            <li style="margin-bottom: 10px;"><strong style="color: #6c5ce7;">Motivation:</strong> Provides a clear target that energizes the team</li>
+                            <li style="margin-bottom: 10px;"><strong style="color: #6c5ce7;">Flexibility:</strong> Guides the team when they need to adapt work during sprint</li>
+                            <li style="margin-bottom: 10px;"><strong style="color: #6c5ce7;">Transparency:</strong> Helps stakeholders understand what value will be delivered</li>
+                        </ul>
+                    </div>
+                
+                    <h2 style="color: #00b894; border-left: 4px solid #00b894; padding-left: 10px;">When Sprint Goal Grooming Happens</h2>
+                    <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 25px;">
+                        <div style="flex: 1; min-width: 250px; background-color: #a5dff9; padding: 15px; border-radius: 5px;">
+                            <h3 style="color: #0984e3; margin-top: 0;">During Backlog Refinement</h3>
+                            <p>Initial discussions about potential sprint goals emerge as user stories are refined</p>
+                        </div>
+                        <div style="flex: 1; min-width: 250px; background-color: #a5dff9; padding: 15px; border-radius: 5px;">
+                            <h3 style="color: #0984e3; margin-top: 0;">Sprint Planning Part 1</h3>
+                            <p>Primary time for goal grooming as team reviews backlog with Product Owner</p>
+                        </div>
+                        <div style="flex: 1; min-width: 250px; background-color: #a5dff9; padding: 15px; border-radius: 5px;">
+                            <h3 style="color: #0984e3; margin-top: 0;">Sprint Planning Part 2</h3>
+                            <p>Final goal is formalized after team understands capacity and selects backlog items</p>
+                        </div>
+                    </div>
+                
+                    <h2 style="color: #00b894; border-left: 4px solid #00b894; padding-left: 10px;">Characteristics of Effective Sprint Goals</h2>
+                    <div style="background-color: white; padding: 15px; border-radius: 5px; margin-bottom: 20px; border: 1px solid #dfe6e9;">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <tr style="background-color: #00b894; color: white;">
+                                <th style="padding: 10px; text-align: left;">Characteristic</th>
+                                <th style="padding: 10px; text-align: left;">Description</th>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #dfe6e9;">
+                                <td style="padding: 10px;"><strong>Value-Oriented</strong></td>
+                                <td style="padding: 10px;">Focuses on the "why" rather than just the "what"</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #dfe6e9;">
+                                <td style="padding: 10px;"><strong>Concise</strong></td>
+                                <td style="padding: 10px;">1-2 sentences that are easy to remember</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #dfe6e9;">
+                                <td style="padding: 10px;"><strong>Measurable</strong></td>
+                                <td style="padding: 10px;">Success criteria should be clear</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #dfe6e9;">
+                                <td style="padding: 10px;"><strong>Achievable</strong></td>
+                                <td style="padding: 10px;">Realistic within sprint timeframe</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px;"><strong>Flexible</strong></td>
+                                <td style="padding: 10px;">Allows for adaptation during sprint</td>
+                            </tr>
+                        </table>
+                    </div>
+                
+                    <h2 style="color: #00b894; border-left: 4px solid #00b894; padding-left: 10px;">Examples of Good Sprint Goals</h2>
+                    <div style="background-color: #e3f2fd; padding: 15px; border-radius: 5px; margin-bottom: 25px;">
+                        <div style="background-color: white; padding: 15px; margin-bottom: 10px; border-radius: 3px; border-left: 4px solid #00b894;">
+                            <strong>E-commerce Example:</strong> "Implement the checkout process for guest users to reduce cart abandonment by 15%"
+                        </div>
+                        <div style="background-color: white; padding: 15px; margin-bottom: 10px; border-radius: 3px; border-left: 4px solid #00b894;">
+                            <strong>Mobile App Example:</strong> "Deliver push notification functionality to re-engage inactive users"
+                        </div>
+                        <div style="background-color: white; padding: 15px; border-radius: 3px; border-left: 4px solid #00b894;">
+                            <strong>SAAS Example:</strong> "Enable CSV export of reports to meet enterprise customer requirements"
+                        </div>
+                    </div>
+                
+                    <h2 style="color: #00b894; border-left: 4px solid #00b894; padding-left: 10px;">Common Challenges and Solutions</h2>
+                    <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">
+                        <div style="flex: 1; min-width: 250px; background-color: #ffecb3; padding: 15px; border-radius: 5px;">
+                            <h3 style="color: #ff8f00; margin-top: 0;">Challenge: Vague Goals</h3>
+                            <p><strong>Solution:</strong> Use SMART criteria (Specific, Measurable, Achievable, Relevant, Time-bound)</p>
+                        </div>
+                        <div style="flex: 1; min-width: 250px; background-color: #ffecb3; padding: 15px; border-radius: 5px;">
+                            <h3 style="color: #ff8f00; margin-top: 0;">Challenge: Too Many Goals</h3>
+                            <p><strong>Solution:</strong> Focus on one primary objective per sprint</p>
+                        </div>
+                        <div style="flex: 1; min-width: 250px; background-color: #ffecb3; padding: 15px; border-radius: 5px;">
+                            <h3 style="color: #ff8f00; margin-top: 0;">Challenge: Lack of Buy-in</h3>
+                            <p><strong>Solution:</strong> Collaborative goal-setting with entire team</p>
+                        </div>
+                    </div>
+                
+                    <div style="background-color: #d4edda; padding: 15px; border-radius: 5px; margin-top: 25px; border-left: 4px solid #28a745;">
+                        <h3 style="color: #28a745; margin-top: 0;">Best Practices</h3>
+                        <ul style="padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">Involve the whole Scrum Team in goal formulation</li>
+                            <li style="margin-bottom: 8px;">Base goals on Product Backlog priorities and product vision</li>
+                            <li style="margin-bottom: 8px;">Display the sprint goal prominently (task board, digital tools)</li>
+                            <li style="margin-bottom: 8px;">Reference the goal during daily scrums to maintain focus</li>
+                            <li style="margin-bottom: 8px;">Review goal achievement during sprint review</li>
+                        </ul>
+                    </div>
+                </div> 
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics/") ? "../Agile_and_Scrum.json" : "../Agile_and_Scrum.json";
+            
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch DSA Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.Agile_and_Scrum;
+                        displayTopics(allTopics);
+                    })
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+           
+            
+            
+            
+            
+            
+            
+            </body>
+            </html>     

@@ -1,0 +1,14 @@
+{
+    "categories": [
+        { "name": "DSA", "file": "https://amaresh015.netlify.app/dsa/dsa" },
+        { "name": "Object-Oriented Programming", "file": "/Opps/opp.html" },
+        { "name": "Data Science & ML", "file": "data_science.json" },
+        { "name": "Web Technologies", "file": "web_tech.json" },
+        { "name": "DevOps & Cloud", "file": "devops.json" },
+        { "name": "System Design", "file": "system_design.json" },
+        { "name": "Interview Guide", "file": "interview.json" },
+        { "name": "Competitive Exams", "file": "exams.json" },
+        { "name": "Software Development", "file": "development.json" },
+        { "name": "Online Tools", "file": "tools.json" }
+    ]
+}

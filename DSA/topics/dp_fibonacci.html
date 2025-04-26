@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    <link rel="stylesheet" href="../dsa.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../dsa.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+
+            <main class="col-md-7 content">
+                <h1>🔢 Fibonacci Sequence Using Dynamic Programming</h1>
+            
+                <p>
+                    The **Fibonacci Sequence** is a series of numbers where **each number is the sum of the two preceding ones**:
+                </p>
+                <pre><code>
+                Fibonacci Series: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
+                Formula: F(n) = F(n-1) + F(n-2)
+                </code></pre>
+            
+                <h2>⚡ Why Optimize Fibonacci Calculation?</h2>
+                <ul>
+                    <li>❌ **Recursive approach is slow (O(2ⁿ) complexity)**.</li>
+                    <li>✅ **Dynamic Programming reduces time to O(n)**.</li>
+                    <li>✅ **Efficient space optimization can make it O(1)**.</li>
+                </ul>
+            
+                <h1>📌 **1. Naïve Recursive Approach (O(2ⁿ))**</h1>
+                <p>
+                    A simple recursive approach calculates Fibonacci **inefficiently**.
+                </p>
+                <pre><code>
+                int fibonacci(int n) {
+                    if (n <= 1) return n;
+                    return fibonacci(n - 1) + fibonacci(n - 2);
+                }
+                </code></pre>
+            
+                <h3>❌ **Why is This Slow?**</h3>
+                <p>Because it **recomputes values** multiple times, leading to **exponential time complexity**.</p>
+            
+                <h1>📌 **2. Memoization (Top-Down DP, O(n))**</h1>
+                <p>We **store computed results** to avoid redundant calculations.</p>
+                <pre><code>
+                vector<int> memo(100, -1);
+            
+                int fibonacciMemo(int n) {
+                    if (n <= 1) return n;
+                    if (memo[n] != -1) return memo[n]; // Check stored value
+                    return memo[n] = fibonacciMemo(n - 1) + fibonacciMemo(n - 2);
+                }
+                </code></pre>
+            
+                <h3>✅ **Why is Memoization Faster?**</h3>
+                <ul>
+                    <li>📌 Uses **extra space** (O(n)) but reduces redundant calculations.</li>
+                    <li>⚡ Improves time complexity from **O(2ⁿ) to O(n)**.</li>
+                </ul>
+            
+                <h1>📌 **3. Tabulation (Bottom-Up DP, O(n))**</h1>
+                <p>
+                    We **build up the solution iteratively** instead of using recursion.
+                </p>
+                <pre><code>
+                int fibonacciTabulation(int n) {
+                    vector<int> dp(n + 1);
+                    dp[0] = 0, dp[1] = 1;
+                    for (int i = 2; i <= n; i++)
+                        dp[i] = dp[i - 1] + dp[i - 2];
+                    return dp[n];
+                }
+                </code></pre>
+            
+                <h3>✅ **Why is Tabulation Better?**</h3>
+                <ul>
+                    <li>🚀 **No recursive calls, hence avoids stack overflow.**</li>
+                    <li>✅ **Still O(n) time complexity but avoids recursion overhead.**</li>
+                </ul>
+            
+                <h1>📌 **4. Space Optimization (O(1) Space, O(n) Time)**</h1>
+                <p>
+                    We only need **two previous numbers**, so we can **remove the array** and use two variables.
+                </p>
+                <pre><code>
+                int fibonacciOptimized(int n) {
+                    if (n <= 1) return n;
+                    int a = 0, b = 1, c;
+                    for (int i = 2; i <= n; i++) {
+                        c = a + b;
+                        a = b;
+                        b = c;
+                    }
+                    return b;
+                }
+                </code></pre>
+            
+                <h1>📌 **5. Fibonacci Using Matrix Exponentiation (O(log n))**</h1>
+                <p>
+                    We can calculate Fibonacci using **matrix exponentiation**, reducing time complexity to **O(log n)**.
+                </p>
+                <pre><code>
+                void multiply(int F[2][2], int M[2][2]) {
+                    int x = F[0][0] * M[0][0] + F[0][1] * M[1][0];
+                    int y = F[0][0] * M[0][1] + F[0][1] * M[1][1];
+                    int z = F[1][0] * M[0][0] + F[1][1] * M[1][0];
+                    int w = F[1][0] * M[0][1] + F[1][1] * M[1][1];
+                    F[0][0] = x; F[0][1] = y;
+                    F[1][0] = z; F[1][1] = w;
+                }
+            
+                void power(int F[2][2], int n) {
+                    if (n == 0 || n == 1) return;
+                    int M[2][2] = {{1, 1}, {1, 0}};
+                    power(F, n / 2);
+                    multiply(F, F);
+                    if (n % 2 != 0) multiply(F, M);
+                }
+            
+                int fibonacciMatrixExponentiation(int n) {
+                    if (n == 0) return 0;
+                    int F[2][2] = {{1, 1}, {1, 0}};
+                    power(F, n - 1);
+                    return F[0][0];
+                }
+                </code></pre>
+            
+                <h3>✅ **Why Use Matrix Exponentiation?**</h3>
+                <ul>
+                    <li>🚀 **Much faster (O(log n)) compared to O(n) DP approaches.**</li>
+                    <li>✅ **Used in advanced mathematical and cryptographic applications.**</li>
+                </ul>
+            
+                <h1>⏳ Time Complexity Analysis</h1>
+                <table border="1">
+                    <tr>
+                        <th>Approach</th>
+                        <th>Time Complexity</th>
+                        <th>Space Complexity</th>
+                    </tr>
+                    <tr>
+                        <td>Recursion</td>
+                        <td>O(2ⁿ)</td>
+                        <td>O(n) (Recursion stack)</td>
+                    </tr>
+                    <tr>
+                        <td>Memoization (Top-Down DP)</td>
+                        <td>O(n)</td>
+                        <td>O(n)</td>
+                    </tr>
+                    <tr>
+                        <td>Tabulation (Bottom-Up DP)</td>
+                        <td>O(n)</td>
+                        <td>O(n)</td>
+                    </tr>
+                    <tr>
+                        <td>Space Optimized DP</td>
+                        <td>O(n)</td>
+                        <td>O(1)</td>
+                    </tr>
+                    <tr>
+                        <td>Matrix Exponentiation</td>
+                        <td>O(log n)</td>
+                        <td>O(1)</td>
+                    </tr>
+                </table>
+            
+                <h1>🌍 Real-World Applications of Fibonacci Sequence</h1>
+                <ul>
+                    <li>📈 **Stock Market Analysis** – Predicting trends.</li>
+                    <li>🔢 **Cryptography & Encoding Algorithms**.</li>
+                    <li>🎮 **Procedural Game Development & Fractals**.</li>
+                    <li>📡 **Data Structures & Algorithms (Tree Generation, Heap Management).**</li>
+                </ul>
+            
+                <h2>🔗 Next Topics</h2>
+                <ul class="nexttopics-container">
+                    <li><a href="dp.html">🎯 Introduction to Dynamic Programming</a></li>
+                    <li><a href="knapsack.html">📦 0/1 Knapsack Problem</a></li>
+                </ul>
+            </main>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../dsa.json" : "dsa.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.DSA;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    

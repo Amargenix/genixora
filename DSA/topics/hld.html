@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    <link rel="stylesheet" href="../dsa.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../dsa.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+
+            <main class="col-md-7 content">
+                <h1>🌳 Heavy-Light Decomposition (HLD) – Comprehensive Study Guide</h1>
+            
+                <p>
+                    **Heavy-Light Decomposition (HLD)** is a **tree decomposition technique**  
+                    that allows us to efficiently process **path queries and updates** in **O(log² N)**  
+                    time using **Segment Tree or Fenwick Tree**.
+                </p>
+            
+                <h2>⚡ Why Use HLD?</h2>
+                <ul>
+                    <li>✅ **Fast path queries in O(log² N) instead of O(N).**</li>
+                    <li>🚀 **Efficiently handles dynamic updates in trees.**</li>
+                    <li>🔍 **Useful in Lowest Common Ancestor (LCA) queries.**</li>
+                    <li>📡 **Essential for competitive programming (ICPC, Codeforces, AtCoder).**</li>
+                </ul>
+            
+                <h1>📌 Understanding Heavy & Light Edges</h1>
+            
+                <h2>📥 **1. Heavy Edges**</h2>
+                <p>The **edge connecting a parent node** to the **child node with the largest subtree**.</p>
+            
+                <h2>📤 **2. Light Edges**</h2>
+                <p>All other edges that do not belong to the heavy path.</p>
+            
+                <h1>📌 Breaking the Tree into Heavy & Light Paths</h1>
+            
+                <h2>📌 Step-by-Step Process:</h2>
+                <ol>
+                    <li>✅ Find the **size of each subtree**.</li>
+                    <li>📌 Identify the **child with the largest subtree** (Heavy Child).</li>
+                    <li>🔄 Connect all **heavy children** into **heavy paths**.</li>
+                    <li>🔗 Light edges remain separate & can be handled separately.</li>
+                </ol>
+            
+                <h1>🛠️ Heavy-Light Decomposition Implementation</h1>
+            
+                <h2>📌 **1. DFS to Compute Subtree Sizes**</h2>
+                <pre><code>
+                vector<vector<int>> tree;
+                vector<int> parent, depth, subtreeSize, heavyChild;
+            
+                int dfs(int node, int par) {
+                    parent[node] = par;
+                    subtreeSize[node] = 1;
+                    int maxSubtree = 0;
+            
+                    for (int child : tree[node]) {
+                        if (child == par) continue;
+                        depth[child] = depth[node] + 1;
+                        int childSize = dfs(child, node);
+                        subtreeSize[node] += childSize;
+            
+                        if (childSize > maxSubtree) {
+                            maxSubtree = childSize;
+                            heavyChild[node] = child;
+                        }
+                    }
+                    return subtreeSize[node];
+                }
+                </code></pre>
+            
+                <h2>📌 **2. Building Heavy-Light Chains**</h2>
+                <pre><code>
+                vector<int> chainHead, positionInBase, baseArray;
+                int chainCount = 0, pos = 0;
+            
+                void hld(int node, int head) {
+                    chainHead[node] = head;
+                    positionInBase[node] = pos++;
+                    baseArray.push_back(node);
+            
+                    if (heavyChild[node] != -1)
+                        hld(heavyChild[node], head);
+            
+                    for (int child : tree[node]) {
+                        if (child != parent[node] && child != heavyChild[node])
+                            hld(child, child); // Start a new chain
+                    }
+                }
+                </code></pre>
+            
+                <h1>📏 Path Queries Using Segment Tree</h1>
+            
+                <h2>📌 **1. Updating Values in a Path (O(log² N))**</h2>
+                <pre><code>
+                int queryPath(int u, int v) {
+                    int result = 0;
+            
+                    while (chainHead[u] != chainHead[v]) {
+                        if (depth[chainHead[u]] < depth[chainHead[v]]) swap(u, v);
+                        result += segmentTree.query(positionInBase[chainHead[u]], positionInBase[u]);
+                        u = parent[chainHead[u]];
+                    }
+                    
+                    if (depth[u] > depth[v]) swap(u, v);
+                    result += segmentTree.query(positionInBase[u], positionInBase[v]);
+                    return result;
+                }
+                </code></pre>
+            
+                <h2>📌 **2. Finding Lowest Common Ancestor (LCA) Using HLD**</h2>
+                <pre><code>
+                int LCA(int u, int v) {
+                    while (chainHead[u] != chainHead[v]) {
+                        if (depth[chainHead[u]] < depth[chainHead[v]]) swap(u, v);
+                        u = parent[chainHead[u]];
+                    }
+                    return (depth[u] < depth[v]) ? u : v;
+                }
+                </code></pre>
+            
+                <h1>⏳ Time Complexity Analysis</h1>
+                <table border="1">
+                    <tr>
+                        <th>Operation</th>
+                        <th>Time Complexity</th>
+                    </tr>
+                    <tr>
+                        <td>Preprocessing (DFS & HLD)</td>
+                        <td>O(N)</td>
+                    </tr>
+                    <tr>
+                        <td>Path Query</td>
+                        <td>O(log² N)</td>
+                    </tr>
+                    <tr>
+                        <td>Point Update</td>
+                        <td>O(log N)</td>
+                    </tr>
+                    <tr>
+                        <td>Lowest Common Ancestor (LCA)</td>
+                        <td>O(log N)</td>
+                    </tr>
+                </table>
+            
+                <h1>🌍 Real-World Applications of HLD</h1>
+                <ul>
+                    <li>📡 **Network Routing** – Fast processing of **network queries**.</li>
+                    <li>🎮 **Game Development** – Efficient **region queries** in maps.</li>
+                    <li>🔄 **Tree-Based DP Problems** – Queries on **subtree sums**.</li>
+                    <li>🗂 **File System Optimization** – Managing **hierarchical structures**.</li>
+                </ul>
+            
+                <h2>🔗 Next Topics</h2>
+                <ul class="nexttopics-container">
+                    <li><a href="segment_trees.html">🌳 Segment Trees</a></li>
+                    <li><a href="lca.html">📡 Lowest Common Ancestor (LCA)</a></li>
+                    <li><a href="graph_traversal.html">🌉 Graph Traversal (BFS & DFS)</a></li>
+                </ul>
+            </main>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../dsa.json" : "dsa.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.DSA;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    

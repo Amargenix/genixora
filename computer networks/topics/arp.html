@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer Network</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/allsubject.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Computer Networks</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+               
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>ARP (Address Resolution Protocol) </title>
+                    <style>
+                        body {
+                            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                            line-height: 1.6;
+                            color: #333;
+                            max-width: 1200px;
+                            margin: 0 auto;
+                            padding: 20px;
+                            background-color: #f5f7fa;
+                        }
+                        h1, h2, h3, h4 {
+                            color: #2c3e50;
+                            margin-top: 30px;
+                        }
+                        h1 {
+                            text-align: center;
+                            border-bottom: 2px solid #3498db;
+                            padding-bottom: 10px;
+                        }
+                        h2 {
+                            background-color: #e8f4fc;
+                            padding: 12px;
+                            border-left: 4px solid #3498db;
+                        }
+                        .card {
+                            background-color: white;
+                            border-radius: 8px;
+                            padding: 20px;
+                            margin: 20px 0;
+                            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                        }
+                        .tech-box {
+                            background-color: #f8f9fa;
+                            padding: 15px;
+                            margin: 15px 0;
+                            border-left: 4px solid #27ae60;
+                        }
+                        table {
+                            width: 100%;
+                            border-collapse: collapse;
+                            margin: 20px 0;
+                        }
+                        th, td {
+                            border: 1px solid #ddd;
+                            padding: 12px;
+                            text-align: left;
+                        }
+                        th {
+                            background-color: #3498db;
+                            color: white;
+                        }
+                        tr:nth-child(even) {
+                            background-color: #f2f2f2;
+                        }
+                        pre {
+                            background: #f4f4f4;
+                            padding: 10px;
+                            border-left: 3px solid #3498db;
+                            overflow-x: auto;
+                            font-family: 'Courier New', Courier, monospace;
+                        }
+                        .grid {
+                            display: grid;
+                            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                            gap: 20px;
+                            margin: 20px 0;
+                        }
+                        .grid-item {
+                            background-color: #fff;
+                            padding: 15px;
+                            border-radius: 5px;
+                            box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+                        }
+                        .warning {
+                            background-color: #ffebee;
+                            padding: 15px;
+                            border-left: 4px solid #f44336;
+                        }
+                        .diagram {
+                            text-align: center;
+                            background-color: #f4f4f4;
+                            padding: 15px;
+                            border-radius: 5px;
+                            margin: 20px 0;
+                        }
+                        .packet {
+                            background-color: #e8f4fc;
+                            padding: 10px;
+                            border-radius: 4px;
+                            font-family: monospace;
+                        }
+                    </style>
+                </head>
+                
+                
+                <h1>Address Resolution Protocol (ARP) - Complete Guide</h1>
+                
+                <!-- Section 1 -->
+                <div class="card">
+                    <h2>1. Introduction to ARP</h2>
+                    <p>The Address Resolution Protocol (ARP) is a fundamental protocol used in TCP/IP networks to map IP addresses to their corresponding MAC (Media Access Control) addresses.</p>
+                    
+                    <div class="tech-box">
+                        <h3>Key Characteristics of ARP</h3>
+                        <ul>
+                            <li>Operates at Layer 2 (Data Link Layer) of the OSI model</li>
+                            <li>Resolves IPv4 addresses to MAC addresses</li>
+                            <li>Works only within the same local network segment</li>
+                            <li>Defined in RFC 826 (1982)</li>
+                        </ul>
+                    </div>
+                    
+                    <h3>Why ARP is Needed</h3>
+                    <div class="diagram">
+                        <pre>
+                +----------------+       +----------------+
+                |                |       |                |
+                |   IP Address   | ----> |   MAC Address  |
+                |   (Logical)    |       |   (Physical)   |
+                |                |       |                |
+                +----------------+       +----------------+</pre>
+                        <p>Network devices need both IP and MAC addresses for communication:
+                        <ul>
+                            <li>IP addresses are used for end-to-end delivery across networks</li>
+                            <li>MAC addresses are used for hop-to-hop delivery on the same network</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Section 2 -->
+                <div class="card">
+                    <h2>2. ARP Operation Fundamentals</h2>
+                    
+                    <div class="diagram">
+                        <h3>Basic ARP Process</h3>
+                        <pre>
+                1. Host A wants to send to Host B (IP known, MAC unknown)
+                2. Host A broadcasts ARP Request: "Who has IP B? Tell A"
+                3. Host B responds with ARP Reply: "IP B is at MAC B"
+                4. Host A caches this mapping and sends frames to MAC B</pre>
+                    </div>
+                    
+                    <h3>ARP Packet Types</h3>
+                    <table>
+                        <tr>
+                            <th>Packet Type</th>
+                            <th>Opcode</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>ARP Request</td>
+                            <td>1</td>
+                            <td>Broadcast query for MAC address</td>
+                        </tr>
+                        <tr>
+                            <td>ARP Reply</td>
+                            <td>2</td>
+                            <td>Unicast response with MAC address</td>
+                        </tr>
+                        <tr>
+                            <td>RARP Request</td>
+                            <td>3</td>
+                            <td>Reverse ARP request (obsolete)</td>
+                        </tr>
+                        <tr>
+                            <td>RARP Reply</td>
+                            <td>4</td>
+                            <td>Reverse ARP reply (obsolete)</td>
+                        </tr>
+                    </table>
+                    
+                    <div class="tech-box">
+                        <h3>ARP Cache</h3>
+                        <p>Devices maintain an ARP cache (table) that stores recent IP-to-MAC address mappings:</p>
+                        <pre>
+                C:\> arp -a
+                
+                Interface: 192.168.1.100 --- 0xa
+                  Internet Address      Physical Address      Type
+                  192.168.1.1           00-1a-2b-3c-4d-5e    dynamic
+                  192.168.1.255         ff-ff-ff-ff-ff-ff    static</pre>
+                    </div>
+                </div>
+                
+                <!-- Section 3 -->
+                <div class="card">
+                    <h2>3. ARP Packet Format</h2>
+                    
+                    <div class="diagram">
+                        <h3>ARP Packet Structure</h3>
+                        <pre>
+                 0                   1                   2                   3
+                 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+                +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+                |      Hardware Type            |      Protocol Type            |
+                +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+                | Hardware Addr Length          | Protocol Addr Length          |
+                +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+                |      Operation Code           |                               |
+                +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+                               +
+                |                       Sender Hardware Address                 |
+                +                               +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+                |                               |                               |
+                +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+                               +
+                |                       Sender Protocol Address                 |
+                +                               +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+                |                               |                               |
+                +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+                               +
+                |                       Target Hardware Address                 |
+                +                               +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+                |                               |                               |
+                +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+                               +
+                |                       Target Protocol Address                 |
+                +                               +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+                |                               |                               |
+                +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</pre>
+                    </div>
+                    
+                    <h3>Field Descriptions</h3>
+                    <table>
+                        <tr>
+                            <th>Field</th>
+                            <th>Size (bytes)</th>
+                            <th>Description</th>
+                            <th>Example Values</th>
+                        </tr>
+                        <tr>
+                            <td>Hardware Type</td>
+                            <td>2</td>
+                            <td>Type of hardware interface</td>
+                            <td>1 (Ethernet)</td>
+                        </tr>
+                        <tr>
+                            <td>Protocol Type</td>
+                            <td>2</td>
+                            <td>Type of protocol address</td>
+                            <td>0x0800 (IPv4)</td>
+                        </tr>
+                        <tr>
+                            <td>HW Addr Length</td>
+                            <td>1</td>
+                            <td>Length of MAC address</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>Proto Addr Length</td>
+                            <td>1</td>
+                            <td>Length of protocol address</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>Operation</td>
+                            <td>2</td>
+                            <td>ARP request or reply</td>
+                            <td>1 (request), 2 (reply)</td>
+                        </tr>
+                        <tr>
+                            <td>Sender HW Addr</td>
+                            <td>6</td>
+                            <td>MAC of sender</td>
+                            <td>00:1A:2B:3C:4D:5E</td>
+                        </tr>
+                        <tr>
+                            <td>Sender Proto Addr</td>
+                            <td>4</td>
+                            <td>IP of sender</td>
+                            <td>192.168.1.100</td>
+                        </tr>
+                        <tr>
+                            <td>Target HW Addr</td>
+                            <td>6</td>
+                            <td>MAC of target</td>
+                            <td>00:00:00:00:00:00 (request)</td>
+                        </tr>
+                        <tr>
+                            <td>Target Proto Addr</td>
+                            <td>4</td>
+                            <td>IP of target</td>
+                            <td>192.168.1.1</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <!-- Section 4 -->
+                <div class="card">
+                    <h2>4. ARP Operation in Detail</h2>
+                    
+                    <div class="diagram">
+                        <h3>ARP Request Example</h3>
+                        <pre>
+                Source MAC: 00:1A:2B:3C:4D:5E (Host A)
+                Destination MAC: FF:FF:FF:FF:FF:FF (Broadcast)
+                ARP Operation: 1 (Request)
+                Sender MAC: 00:1A:2B:3C:4D:5E
+                Sender IP: 192.168.1.100
+                Target MAC: 00:00:00:00:00:00
+                Target IP: 192.168.1.1</pre>
+                    </div>
+                    
+                    <div class="diagram">
+                        <h3>ARP Reply Example</h3>
+                        <pre>
+                Source MAC: 00:1B:2C:3D:4E:5F (Host B)
+                Destination MAC: 00:1A:2B:3C:4D:5E (Host A)
+                ARP Operation: 2 (Reply)
+                Sender MAC: 00:1B:2C:3D:4E:5F
+                Sender IP: 192.168.1.1
+                Target MAC: 00:1A:2B:3C:4D:5E
+                Target IP: 192.168.1.100</pre>
+                    </div>
+                    
+                    <h3>ARP Cache Behavior</h3>
+                    <table>
+                        <tr>
+                            <th>Action</th>
+                            <th>Cache Update</th>
+                            <th>Timeout</th>
+                        </tr>
+                        <tr>
+                            <td>Receive ARP Reply</td>
+                            <td>Add/update entry</td>
+                            <td>Typically 10-20 min</td>
+                        </tr>
+                        <tr>
+                            <td>Send ARP Request</td>
+                            <td>Create incomplete entry</td>
+                            <td>Few seconds (retry timeout)</td>
+                        </tr>
+                        <tr>
+                            <td>Receive ARP Request</td>
+                            <td>Update sender's info</td>
+                            <td>Same as above</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <!-- Section 5 -->
+                <div class="card">
+                    <h2>5. ARP Variants and Related Protocols</h2>
+                    
+                    <h3>Types of ARP</h3>
+                    <div class="grid">
+                        <div class="grid-item">
+                            <h4>Proxy ARP</h4>
+                            <ul>
+                                <li>Router answers ARP requests on behalf of hosts</li>
+                                <li>Used when hosts are on different physical networks</li>
+                                <li>Helps with network renumbering</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="grid-item">
+                            <h4>Gratuitous ARP</h4>
+                            <ul>
+                                <li>Host announces its IP-to-MAC mapping</li>
+                                <li>Used for:
+                                    <ul>
+                                        <li>Duplicate IP detection</li>
+                                        <li>Failover scenarios</li>
+                                        <li>Cache updates</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="grid-item">
+                            <h4>Reverse ARP (RARP)</h4>
+                            <ul>
+                                <li>Obsolete protocol</li>
+                                <li>Used to find IP from MAC</li>
+                                <li>Replaced by DHCP and BOOTP</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h3>Related Protocols</h3>
+                    <table>
+                        <tr>
+                            <th>Protocol</th>
+                            <th>Purpose</th>
+                            <th>Relation to ARP</th>
+                        </tr>
+                        <tr>
+                            <td>NDP (IPv6)</td>
+                            <td>IPv6 neighbor discovery</td>
+                            <td>Replaces ARP in IPv6</td>
+                        </tr>
+                        <tr>
+                            <td>Inverse ARP</td>
+                            <td>Frame Relay DLCI to IP mapping</td>
+                            <td>Similar concept</td>
+                        </tr>
+                        <tr>
+                            <td>DHCP</td>
+                            <td>IP address assignment</td>
+                            <td>Replaced RARP</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <!-- Section 6 -->
+                <div class="card">
+                    <h2>6. ARP in Different Network Scenarios</h2>
+                    
+                    <h3>ARP Across Subnets</h3>
+                    <div class="diagram">
+                        <pre>
+                +--------+      +--------+      +--------+
+                | Host A |------| Router |------| Host B |
+                +--------+      +--------+      +--------+
+                192.168.1.100  192.168.1.1     10.0.0.100
+                               10.0.0.1
+                
+                1. Host A ARPs for router (192.168.1.1)
+                2. Router forwards packet to Host B
+                3. Router may ARP for Host B if needed</pre>
+                    </div>
+                    
+                    <h3>ARP in VLAN Environments</h3>
+                    <div class="tech-box">
+                        <ul>
+                            <li>ARP requests are confined to the originating VLAN</li>
+                            <li>Router or Layer 3 switch performs inter-VLAN routing</li>
+                            <li>Proxy ARP may be used in some configurations</li>
+                        </ul>
+                    </div>
+                    
+                    <h3>ARP in Wireless Networks</h3>
+                    <table>
+                        <tr>
+                            <th>Scenario</th>
+                            <th>ARP Behavior</th>
+                        </tr>
+                        <tr>
+                            <td>Infrastructure Mode</td>
+                            <td>Normal ARP, AP handles broadcasts</td>
+                        </tr>
+                        <tr>
+                            <td>Ad-hoc Mode</td>
+                            <td>Direct ARP between stations</td>
+                        </tr>
+                        <tr>
+                            <td>Mesh Networks</td>
+                            <td>May use modified ARP or proxy</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <!-- Section 7 -->
+                <div class="card">
+                    <h2>7. ARP Cache Management</h2>
+                    
+                    <h3>ARP Cache Operations</h3>
+                    <div class="grid">
+                        <div class="grid-item">
+                            <h4>Viewing ARP Cache</h4>
+                            <pre>
+                # Windows
+                arp -a
+                
+                # Linux/Unix
+                arp -n
+                ip neigh show</pre>
+                        </div>
+                        
+                        <div class="grid-item">
+                            <h4>Clearing ARP Cache</h4>
+                            <pre>
+                # Windows
+                netsh interface ip delete arpcache
+                
+                # Linux
+                ip neigh flush all
+                
+                # Cisco IOS
+                clear arp-cache</pre>
+                        </div>
+                        
+                        <div class="grid-item">
+                            <h4>Adding Static Entries</h4>
+                            <pre>
+                # Windows
+                arp -s 192.168.1.1 00-1a-2b-3c-4d-5e
+                
+                # Linux
+                arp -i eth0 -s 192.168.1.1 00:1a:2b:3c:4d:5e</pre>
+                        </div>
+                    </div>
+                    
+                    <h3>ARP Cache Timeout Values</h3>
+                    <table>
+                        <tr>
+                            <th>System</th>
+                            <th>Default Timeout</th>
+                            <th>Configurable</th>
+                        </tr>
+                        <tr>
+                            <td>Windows</td>
+                            <td>15-45 seconds (incomplete)<br>10-20 minutes (complete)</td>
+                            <td>Yes (registry)</td>
+                        </tr>
+                        <tr>
+                            <td>Linux</td>
+                            <td>30 seconds (incomplete)<br>60 seconds (reachable)</td>
+                            <td>Yes (sysctl)</td>
+                        </tr>
+                        <tr>
+                            <td>Cisco IOS</td>
+                            <td>4 hours</td>
+                            <td>Yes (arp timeout)</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <!-- Section 8 -->
+                <div class="card">
+                    <h2>8. ARP Security Considerations</h2>
+                    
+                    <h3>ARP Vulnerabilities</h3>
+                    <div class="grid">
+                        <div class="grid-item">
+                            <h4>ARP Spoofing</h4>
+                            <ul>
+                                <li>Attacker sends fake ARP replies</li>
+                                <li>Can intercept or modify traffic</li>
+                                <li>Basis for man-in-the-middle attacks</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="grid-item">
+                            <h4>ARP Flooding</h4>
+                            <ul>
+                                <li>Overwhelms switch CAM tables</li>
+                                <li>Can lead to switch fail-open</li>
+                                <li>Enables sniffing in switched networks</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h3>ARP Security Mechanisms</h3>
+                    <table>
+                        <tr>
+                            <th>Mechanism</th>
+                            <th>Description</th>
+                            <th>Effectiveness</th>
+                        </tr>
+                        <tr>
+                            <td>Static ARP Entries</td>
+                            <td>Manually configured mappings</td>
+                            <td>High (but not scalable)</td>
+                        </tr>
+                        <tr>
+                            <td>ARP Inspection</td>
+                            <td>Validates ARP packets</td>
+                            <td>High (requires switch support)</td>
+                        </tr>
+                        <tr>
+                            <td>Private VLANs</td>
+                            <td>Limits communication between hosts</td>
+                            <td>Medium</td>
+                        </tr>
+                        <tr>
+                            <td>Encryption</td>
+                            <td>Protects data confidentiality</td>
+                            <td>High (but doesn't prevent spoofing)</td>
+                        </tr>
+                    </table>
+                    
+                    <div class="warning">
+                        <h3>ARP Spoofing Detection</h3>
+                        <ul>
+                            <li>Monitor for multiple MACs claiming same IP</li>
+                            <li>Watch for MAC addresses changing frequently</li>
+                            <li>Use tools like Arpwatch or XArp</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Section 9 -->
+                <div class="card">
+                    <h2>9. ARP in IPv6 (NDP)</h2>
+                    
+                    <div class="tech-box">
+                        <h3>Neighbor Discovery Protocol (NDP)</h3>
+                        <p>IPv6 replaces ARP with the Neighbor Discovery Protocol (NDP), which provides additional functionality:</p>
+                        <ul>
+                            <li>Uses ICMPv6 messages instead of ARP</li>
+                            <li>Performs address resolution (like ARP)</li>
+                            <li>Also handles router discovery, address autoconfiguration</li>
+                            <li>More secure with Cryptographically Generated Addresses (CGA)</li>
+                        </ul>
+                    </div>
+                    
+                    <h3>NDP vs ARP Comparison</h3>
+                    <table>
+                        <tr>
+                            <th>Feature</th>
+                            <th>ARP (IPv4)</th>
+                            <th>NDP (IPv6)</th>
+                        </tr>
+                        <tr>
+                            <td>Protocol</td>
+                            <td>Separate protocol</td>
+                            <td>Part of ICMPv6</td>
+                        </tr>
+                        <tr>
+                            <td>Message Types</td>
+                            <td>Request/Reply</td>
+                            <td>Neighbor Solicitation/Advertisement</td>
+                        </tr>
+                        <tr>
+                            <td>Security</td>
+                            <td>None (vulnerable to spoofing)</td>
+                            <td>SEcure Neighbor Discovery (SEND)</td>
+                        </tr>
+                        <tr>
+                            <td>Multicast Use</td>
+                            <td>Broadcast</td>
+                            <td>Solicited-node multicast</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <!-- Section 10 -->
+                <div class="card">
+                    <h2>10. ARP Troubleshooting</h2>
+                    
+                    <h3>Common ARP Issues</h3>
+                    <div class="grid">
+                        <div class="grid-item">
+                            <h4>Duplicate IP Addresses</h4>
+                            <ul>
+                                <li>Multiple devices respond to ARP for same IP</li>
+                                <li>Detected via gratuitous ARP</li>
+                                <li>Causes intermittent connectivity</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="grid-item">
+                            <h4>ARP Timeouts</h4>
+                            <ul>
+                                <li>Entries expire too quickly</li>
+                                <li>Causes frequent ARP traffic</li>
+                                <li>Adjust timeout values if needed</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="grid-item">
+                            <h4>Incomplete ARP</h4>
+                            <ul>
+                                <li>No response to ARP requests</li>
+                                <li>Check physical connectivity</li>
+                                <li>Verify target host is on same network</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h3>ARP Troubleshooting Commands</h3>
+                    <table>
+                        <tr>
+                            <th>Task</th>
+                            <th>Windows</th>
+                            <th>Linux</th>
+                            <th>Cisco IOS</th>
+                        </tr>
+                        <tr>
+                            <td>View ARP cache</td>
+                            <td>arp -a</td>
+                            <td>arp -n</td>
+                            <td>show arp</td>
+                        </tr>
+                        <tr>
+                            <td>Clear ARP cache</td>
+                            <td>netsh interface ip delete arpcache</td>
+                            <td>ip neigh flush all</td>
+                            <td>clear arp-cache</td>
+                        </tr>
+                        <tr>
+                            <td>Monitor ARP</td>
+                            <td>Network Monitor</td>
+                            <td>tcpdump -i eth0 arp</td>
+                            <td>debug arp</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <!-- Section 11 -->
+                <div class="card">
+                    <h2>11. ARP in Network Devices</h2>
+                    
+                    <h3>ARP in Switches</h3>
+                    <div class="tech-box">
+                        <ul>
+                            <li>Switches operate at Layer 2 and don't use ARP themselves</li>
+                            <li>Maintain MAC address tables (CAM tables) for forwarding</li>
+                            <li>Flood ARP requests to all ports (broadcast)</li>
+                            <li>May have ARP inspection features for security</li>
+                        </ul>
+                    </div>
+                    
+                    <h3>ARP in Routers</h3>
+                    <table>
+                        <tr>
+                            <th>Function</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>Proxy ARP</td>
+                            <td>Respond to ARP requests for other networks</td>
+                        </tr>
+                        <tr>
+                            <td>ARP for Next Hop</td>
+                            <td>Resolve MAC of next router when forwarding</td>
+                        </tr>
+                        <tr>
+                            <td>ARP Cache</td>
+                            <td>Maintain IP-to-MAC mappings for connected networks</td>
+                        </tr>
+                    </table>
+                    
+                    <h3>ARP in Firewalls</h3>
+                    <div class="grid">
+                        <div class="grid-item">
+                            <h4>Stateful Inspection</h4>
+                            <p>Track ARP conversations to detect anomalies</p>
+                        </div>
+                        
+                        <div class="grid-item">
+                            <h4>ARP Filtering</h4>
+                            <p>Block malicious ARP packets</p>
+                        </div>
+                        
+                        <div class="grid-item">
+                            <h4>ARP Spoofing Protection</h4>
+                            <p>Prevent unauthorized ARP updates</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Section 12 -->
+                <div class="card">
+                    <h2>12. Advanced ARP Concepts</h2>
+                    
+                    <h3>ARP for Different Media Types</h3>
+                    <table>
+                        <tr>
+                            <th>Media Type</th>
+                            <th>ARP Adaptation</th>
+                        </tr>
+                        <tr>
+                            <td>Ethernet</td>
+                            <td>Standard ARP (RFC 826)</td>
+                        </tr>
+                        <tr>
+                            <td>Token Ring</td>
+                            <td>Uses different hardware type</td>
+                        </tr>
+                        <tr>
+                            <td>Frame Relay</td>
+                            <td>Uses Inverse ARP</td>
+                        </tr>
+                        <tr>
+                            <td>ATM</td>
+                            <td>Uses ATMARP</td>
+                        </tr>
+                    </table>
+                    
+                    <h3>ARP in Virtualization</h3>
+                    <div class="grid">
+                        <div class="grid-item">
+                            <h4>Virtual Machines</h4>
+                            <ul>
+                                <li>Hypervisor may handle ARP for VMs</li>
+                                <li>Virtual switches maintain ARP caches</li>
+                                <li>Potential for ARP spoofing between VMs</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="grid-item">
+                            <h4>Containers</h4>
+                            <ul>
+                                <li>Host typically handles ARP</li>
+                                <li>Bridge networks may have separate ARP tables</li>
+                                <li>Overlay networks may use proxy ARP</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-box">
+                        <h3>ARP in Software Defined Networking</h3>
+                        <ul>
+                            <li>SDN controllers may centralize ARP handling</li>
+                            <li>OpenFlow switches can proxy ARP requests</li>
+                            <li>ARP traffic can be managed via flow rules</li>
+                            <li>Potential for ARP optimization in SDN</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </main>  
+            
+            
+
+             <!-- Floating button to open chatbot -->
+    <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+    
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+    </div>
+    
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-container");
+            let button = document.getElementById("open-chatbot");
+    
+            if (!chatbot.classList.contains("active")) {
+                chatbot.classList.add("active");
+                button.style.display = "none"; // Hide button when chatbot is open
+            } else {
+                chatbot.classList.remove("active");
+                setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+            }
+        }
+    
+        // Load chatbot HTML dynamically
+        fetch("/chatbot.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("chatbot-container").innerHTML += html;
+    
+            // Execute chatbot script after inserting HTML
+            let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+            for (let script of scripts) {
+                let newScript = document.createElement("script");
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript);
+            }
+        })
+        .catch(error => console.error("Error loading chatbot:", error));
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../computernetwork.json" : "computernetwork.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.Computer_Networks;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+        
+       
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

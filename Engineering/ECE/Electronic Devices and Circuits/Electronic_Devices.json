@@ -1,0 +1,14 @@
+{
+  "Electronic_Devices": [
+    { "name": "Semiconductor Fundamentals", "id": "semi_fund", "link": "semi_fund.html" },
+    { "name": "PN Junction Diodes", "id": "pn_diode", "link": "pn_diode.html" },
+    { "name": "Bipolar Junction Transistors", "id": "bjt", "link": "bjt.html" },
+    { "name": "Field Effect Transistors", "id": "fet", "link": "fet.html" },
+    { "name": "Amplifier Circuits", "id": "amplifiers", "link": "amplifiers.html" },
+    { "name": "Feedback Circuits", "id": "feedback", "link": "feedback.html" },
+    { "name": "Oscillator Circuits", "id": "oscillators", "link": "oscillators.html" },
+    { "name": "Power Supplies", "id": "power_supply", "link": "power_supply.html" },
+    { "name": "Operational Amplifiers", "id": "op_amp", "link": "op_amp.html" },
+    { "name": "Integrated Circuit Design", "id": "ic_design", "link": "ic_design.html" }
+  ]
+}

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Robotics</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>AI for Robotics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+               <h1>ROS Navigation Stack</h1>
+                    
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 30px; border-left: 6px solid #114357;">
+                        <h2 style="color: #114357; border-bottom: 2px solid #2a5298; padding-bottom: 12px; font-size: 1.8em;">Core Components</h2>
+                        
+                        <div style="display: flex; gap: 25px; margin-top: 25px;">
+                            <div style="flex: 1; background-color: #e8f0fe; padding: 20px; border-radius: 8px;">
+                                <h3 style="color: #114357; margin-top: 0;">1. Move Base</h3>
+                                <p>The central node that coordinates all navigation components:</p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Global planner (path planning)</li>
+                                    <li>Local planner (trajectory execution)</li>
+                                    <li>Recovery behaviors</li>
+                                    <li>Action server interface</li>
+                                </ul>
+                            </div>
+                            <div style="flex: 1; background-color: #e8f0fe; padding: 20px; border-radius: 8px;">
+                                <h3 style="color: #114357; margin-top: 0;">2. AMCL (Localization)</h3>
+                                <p>Adaptive Monte Carlo Localization:</p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Particle filter-based</li>
+                                    <li>Estimates robot pose in map</li>
+                                    <li>Integrates odometry and laser data</li>
+                                    <li>Handles dynamic environments</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 25px; margin-top: 25px;">
+                            <div style="flex: 1; background-color: #e8f0fe; padding: 20px; border-radius: 8px;">
+                                <h3 style="color: #114357; margin-top: 0;">3. Costmaps</h3>
+                                <p>Layered 2D grid representations:</p>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Global Costmap:</strong> For path planning</li>
+                                    <li><strong>Local Costmap:</strong> For obstacle avoidance</li>
+                                    <li>Layers: Static, Obstacle, Inflation</li>
+                                    <li>Configurable resolution and size</li>
+                                </ul>
+                            </div>
+                            <div style="flex: 1; background-color: #e8f0fe; padding: 20px; border-radius: 8px;">
+                                <h3 style="color: #114357; margin-top: 0;">4. Planners</h3>
+                                <p>Path planning algorithms:</p>
+                                <ul style="padding-left: 20px;">
+                                    <li><strong>Global:</strong> Navfn, Global Planner</li>
+                                    <li><strong>Local:</strong> DWA, TEB, EBand</li>
+                                    <li>Custom planners can be integrated</li>
+                                    <li>Optimize for safety and efficiency</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 30px; border-left: 6px solid #2a5298;">
+                        <h2 style="color: #2a5298; border-bottom: 2px solid #114357; padding-bottom: 12px; font-size: 1.8em;">Navigation Pipeline</h2>
+                        
+                        <div style="text-align: center; margin: 30px 0;">
+                            <div style="display: inline-block; background-color: #f0f7ff; padding: 20px; border-radius: 10px; position: relative;">
+                                <div style="display: flex; justify-content: space-between; width: 600px; max-width: 100%;">
+                                    <div style="text-align: center; width: 24%;">
+                                        <div style="background-color: #2a5298; color: white; width: 50px; height: 50px; line-height: 50px; border-radius: 50%; margin: 0 auto 10px;">1</div>
+                                        <p style="margin: 0; font-weight: bold;">Mapping</p>
+                                        <p style="margin: 5px 0 0; font-size: 0.9em;">(SLAM/Gmapping)</p>
+                                    </div>
+                                    <div style="text-align: center; width: 24%;">
+                                        <div style="background-color: #2a5298; color: white; width: 50px; height: 50px; line-height: 50px; border-radius: 50%; margin: 0 auto 10px;">2</div>
+                                        <p style="margin: 0; font-weight: bold;">Localization</p>
+                                        <p style="margin: 5px 0 0; font-size: 0.9em;">(AMCL)</p>
+                                    </div>
+                                    <div style="text-align: center; width: 24%;">
+                                        <div style="background-color: #2a5298; color: white; width: 50px; height: 50px; line-height: 50px; border-radius: 50%; margin: 0 auto 10px;">3</div>
+                                        <p style="margin: 0; font-weight: bold;">Path Planning</p>
+                                        <p style="margin: 5px 0 0; font-size: 0.9em;">(Global/Local)</p>
+                                    </div>
+                                    <div style="text-align: center; width: 24%;">
+                                        <div style="background-color: #2a5298; color: white; width: 50px; height: 50px; line-height: 50px; border-radius: 50%; margin: 0 auto 10px;">4</div>
+                                        <p style="margin: 0; font-weight: bold;">Motion Control</p>
+                                        <p style="margin: 5px 0 0; font-size: 0.9em;">(Base Controller)</p>
+                                    </div>
+                                </div>
+                                <div style="position: absolute; top: 25px; left: 75px; width: 450px; height: 4px; background-color: #2a5298; z-index: 0;"></div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 30px;">
+                            <h3 style="color: #2a5298;">Data Flow Diagram</h3>
+                            <div style="background-color: #f0f7ff; padding: 20px; border-radius: 8px; margin-top: 15px;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                                    <div style="width: 30%; background-color: #2a5298; color: white; padding: 10px; border-radius: 6px; text-align: center;">Sensors<br>(Laser, Odometry)</div>
+                                    <div style="width: 30%; background-color: #2a5298; color: white; padding: 10px; border-radius: 6px; text-align: center;">ROS Navigation<br>Stack</div>
+                                    <div style="width: 30%; background-color: #2a5298; color: white; padding: 10px; border-radius: 6px; text-align: center;">Actuators<br>(Motors)</div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                                    <div style="width: 48%; height: 60px; background-color: white; border: 2px dashed #2a5298; border-radius: 6px; display: flex; align-items: center; justify-content: center;">
+                                        <span style="color: #2a5298;">/scan → /map → /amcl_pose</span>
+                                    </div>
+                                    <div style="width: 48%; height: 60px; background-color: white; border: 2px dashed #2a5298; border-radius: 6px; display: flex; align-items: center; justify-content: center;">
+                                        <span style="color: #2a5298;">/cmd_vel → Motor Controller</span>
+                                    </div>
+                                </div>
+                                <div style="text-align: center; background-color: white; padding: 10px; border-radius: 6px; border: 2px solid #2a5298;">
+                                    <span style="color: #2a5298;">MoveBase Action Interface: /move_base/goal, /move_base/result</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 30px; border-left: 6px solid #4a6fa5;">
+                        <h2 style="color: #4a6fa5; border-bottom: 2px solid #114357; padding-bottom: 12px; font-size: 1.8em;">Configuration & Tuning</h2>
+                        
+                        <div style="margin-top: 25px;">
+                            <h3 style="color: #4a6fa5;">Key Configuration Files</h3>
+                            <div style="display: flex; gap: 20px; margin-top: 15px;">
+                                <div style="flex: 1; background-color: #e8f0fe; padding: 15px; border-radius: 8px;">
+                                    <h4 style="color: #4a6fa5; margin-top: 0;">costmap_common_params.yaml</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Obstacle layer parameters</li>
+                                        <li>Inflation radius</li>
+                                        <li>Robot footprint</li>
+                                        <li>Observation sources</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1; background-color: #e8f0fe; padding: 15px; border-radius: 8px;">
+                                    <h4 style="color: #4a6fa5; margin-top: 0;">global_costmap_params.yaml</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Global frame</li>
+                                        <li>Update frequency</li>
+                                        <li>Static map usage</li>
+                                        <li>Planner window</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1; background-color: #e8f0fe; padding: 15px; border-radius: 8px;">
+                                    <h4 style="color: #4a6fa5; margin-top: 0;">local_costmap_params.yaml</h4>
+                                    <ul style="padding-left: 20px;">
+                                        <li>Rolling window</li>
+                                        <li>Update frequency</li>
+                                        <li>Publish frequency</li>
+                                        <li>Transform tolerance</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 30px;">
+                            <h3 style="color: #4a6fa5;">Tuning Parameters</h3>
+                            <div style="background-color: #f0f7ff; padding: 20px; border-radius: 8px; margin-top: 15px;">
+                                <table style="width: 100%; border-collapse: collapse;">
+                                    <thead>
+                                        <tr style="background-color: #4a6fa5; color: white;">
+                                            <th style="padding: 12px; text-align: left;">Parameter</th>
+                                            <th style="padding: 12px; text-align: left;">Description</th>
+                                            <th style="padding: 12px; text-align: left;">Typical Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="border-bottom: 1px solid #ddd;">
+                                            <td style="padding: 12px;">controller_frequency</td>
+                                            <td style="padding: 12px;">Local planner update rate</td>
+                                            <td style="padding: 12px;">10-20 Hz</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #ddd;">
+                                            <td style="padding: 12px;">max_vel_x</td>
+                                            <td style="padding: 12px;">Maximum forward velocity</td>
+                                            <td style="padding: 12px;">0.5-1.0 m/s</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #ddd;">
+                                            <td style="padding: 12px;">acc_lim_x</td>
+                                            <td style="padding: 12px;">Acceleration limit</td>
+                                            <td style="padding: 12px;">0.5-2.0 m/s²</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #ddd;">
+                                            <td style="padding: 12px;">inflation_radius</td>
+                                            <td style="padding: 12px;">Costmap obstacle inflation</td>
+                                            <td style="padding: 12px;">0.3-0.5 m</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 12px;">transform_tolerance</td>
+                                            <td style="padding: 12px;">TF transform tolerance</td>
+                                            <td style="padding: 12px;">0.2-0.5 s</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 30px; border-left: 6px solid #114357;">
+                        <h2 style="color: #114357; border-bottom: 2px solid #2a5298; padding-bottom: 12px; font-size: 1.8em;">Implementation Example</h2>
+                        
+                        <div style="margin-top: 25px;">
+                            <h3 style="color: #114357;">Basic Navigation Launch File</h3>
+                            <div style="background-color: #263238; color: #eceff1; padding: 20px; border-radius: 8px; font-family: monospace; overflow-x: auto; margin-top: 15px;">
+                                <pre style="margin: 0; white-space: pre-wrap;">
+                &lt;launch&gt;
+                    &lt;!-- Map Server --&gt;
+                    &lt;node pkg="map_server" type="map_server" name="map_server" args="$(find my_robot)/maps/map.yaml"/&gt;
+                
+                    &lt;!-- AMCL --&gt;
+                    &lt;node pkg="amcl" type="amcl" name="amcl" output="screen"&gt;
+                        &lt;rosparam file="$(find my_robot)/config/amcl_params.yaml" command="load"/&gt;
+                    &lt;/node&gt;
+                
+                    &lt;!-- Move Base --&gt;
+                    &lt;node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen"&gt;
+                        &lt;rosparam file="$(find my_robot)/config/costmap_common_params.yaml" command="load" ns="global_costmap"/&gt;
+                        &lt;rosparam file="$(find my_robot)/config/costmap_common_params.yaml" command="load" ns="local_costmap"/&gt;
+                        &lt;rosparam file="$(find my_robot)/config/local_costmap_params.yaml" command="load"/&gt;
+                        &lt;rosparam file="$(find my_robot)/config/global_costmap_params.yaml" command="load"/&gt;
+                        &lt;rosparam file="$(find my_robot)/config/base_local_planner_params.yaml" command="load"/&gt;
+                    &lt;/node&gt;
+                
+                    &lt;!-- RViz --&gt;
+                    &lt;node pkg="rviz" type="rviz" name="rviz" args="-d $(find my_robot)/rviz/navigation.rviz"/&gt;
+                &lt;/launch&gt;
+                                </pre>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 30px;">
+                            <h3 style="color: #114357;">Python Navigation Client</h3>
+                            <div style="background-color: #263238; color: #eceff1; padding: 20px; border-radius: 8px; font-family: monospace; overflow-x: auto; margin-top: 15px;">
+                                <pre style="margin: 0; white-space: pre-wrap;">
+                #!/usr/bin/env python
+                import rospy
+                import actionlib
+                from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal
+                
+                def move_to_goal(x, y, theta):
+                    client = actionlib.SimpleActionClient('move_base', MoveBaseAction)
+                    client.wait_for_server()
+                    
+                    goal = MoveBaseGoal()
+                    goal.target_pose.header.frame_id = "map"
+                    goal.target_pose.header.stamp = rospy.Time.now()
+                    
+                    goal.target_pose.pose.position.x = x
+                    goal.target_pose.pose.position.y = y
+                    goal.target_pose.pose.orientation.z = theta
+                    goal.target_pose.pose.orientation.w = 1.0
+                    
+                    client.send_goal(goal)
+                    wait = client.wait_for_result()
+                    
+                    if not wait:
+                        rospy.logerr("Action server not available!")
+                        return False
+                    return client.get_result()
+                
+                if __name__ == '__main__':
+                    try:
+                        rospy.init_node('navigation_client')
+                        result = move_to_goal(2.0, 3.0, 0.5)
+                        if result:
+                            rospy.loginfo("Goal execution done!")
+                    except rospy.ROSInterruptException:
+                        rospy.loginfo("Navigation test finished.")
+                                </pre>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2a5298; border-bottom: 2px solid #114357; padding-bottom: 12px; font-size: 1.8em;">Advanced Topics</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; margin-top: 30px;">
+                            <div style="background-color: #e8f0fe; padding: 20px; border-radius: 8px; border-top: 4px solid #2a5298;">
+                                <h3 style="color: #2a5298; margin-top: 0;">Dynamic Reconfigure</h3>
+                                <p>Tune parameters on-the-fly without restarting nodes. Essential for real-world testing and optimization.</p>
+                            </div>
+                            <div style="background-color: #e8f0fe; padding: 20px; border-radius: 8px; border-top: 4px solid #2a5298;">
+                                <h3 style="color: #2a5298; margin-top: 0;">Multi-Robot Navigation</h3>
+                                <p>Coordinating navigation for robot teams using namespaces and multi-master communication.</p>
+                            </div>
+                            <div style="background-color: #e8f0fe; padding: 20px; border-radius: 8px; border-top: 4px solid #2a5298;">
+                                <h3 style="color: #2a5298; margin-top: 0;">3D Navigation</h3>
+                                <p>Extending navigation stack for drones and other 3D-motion robots using octomaps.</p>
+                            </div>
+                            <div style="background-color: #e8f0fe; padding: 20px; border-radius: 8px; border-top: 4px solid #2a5298;">
+                                <h3 style="color: #2a5298; margin-top: 0;">Machine Learning Integration</h3>
+                                <p>Using RL or deep learning for improved obstacle prediction and path planning.</p>
+                            </div>
+                            <div style="background-color: #e8f0fe; padding: 20px; border-radius: 8px; border-top: 4px solid #2a5298;">
+                                <h3 style="color: #2a5298; margin-top: 0;">Custom Planners</h3>
+                                <p>Implementing specialized planning algorithms for unique robot kinematics or environments.</p>
+                            </div>
+                            <div style="background-color: #e8f0fe; padding: 20px; border-radius: 8px; border-top: 4px solid #2a5298;">
+                                <h3 style="color: #2a5298; margin-top: 0;">Semantic Navigation</h3>
+                                <p>Incorporating object recognition and semantic information into navigation decisions.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                   
+
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [ ];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics") ? "../AI for Robotics.json" : "../AI for Robotics.json";
+
+                                              
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch AI for Robotics Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.AI_for_Robotics;
+                        displayTopics(allTopics);
+                    }
+                    )
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+           
+            
+            
+            
+            
+            
+            
+            </body>
+            </html>        

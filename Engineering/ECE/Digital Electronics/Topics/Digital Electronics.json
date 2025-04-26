@@ -1,0 +1,14 @@
+{
+  "Digital_Electronics": [
+    { "name": "Introduction to Digital Electronics", "id": "digital_intro", "link": "digital_intro.html" },
+    { "name": "Number Systems and Codes", "id": "number_systems", "link": "number_systems.html" },
+    { "name": "Logic Gates and Boolean Algebra", "id": "logic_gates", "link": "logic_gates.html" },
+    { "name": "Combinational Logic Circuits", "id": "combinational_logic", "link": "combinational_logic.html" },
+    { "name": "Sequential Logic Circuits", "id": "sequential_logic", "link": "sequential_logic.html" },
+    { "name": "Flip-Flops and Registers", "id": "flip_flops", "link": "flip_flops.html" },
+    { "name": "Counters and Shift Registers", "id": "counters", "link": "counters.html" },
+    { "name": "Memory Devices", "id": "memory_devices", "link": "memory_devices.html" },
+    { "name": "Programmable Logic Devices", "id": "pld", "link": "pld.html" },
+    { "name": "Digital System Design", "id": "digital_design", "link": "digital_design.html" }
+  ]
+}

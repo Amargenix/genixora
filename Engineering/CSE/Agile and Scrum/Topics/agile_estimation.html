@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agile Anti-Patterns</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Agile and Scrum</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <h1>Agile Estimation Techniques</h1>
+                     
+                  
+                    <section style="background-color: white; border-radius: 8px; padding: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 30px;">
+                      <h2 style="color: #4a90e2; border-left: 5px solid #4a90e2; padding-left: 15px; margin-top: 0;">Why Agile Estimation Differs</h2>
+                      <p>Traditional estimation focuses on time (hours/days), while Agile estimation focuses on <strong>relative sizing</strong> and <strong>complexity</strong> using abstract units.</p>
+                      
+                      <div style="display: flex; gap: 20px; margin: 20px 0; flex-wrap: wrap;">
+                        <div style="flex: 1; min-width: 250px; background-color: #e8f4f8; padding: 15px; border-radius: 5px;">
+                          <h3 style="color: #2c3e50; margin-top: 0;">Traditional Estimation</h3>
+                          <ul style="padding-left: 20px;">
+                            <li>Time-based (hours/days)</li>
+                            <li>Individual contributor estimates</li>
+                            <li>Fixed scope assumptions</li>
+                            <li>Detailed upfront planning</li>
+                          </ul>
+                        </div>
+                        <div style="flex: 1; min-width: 250px; background-color: #d5e8d4; padding: 15px; border-radius: 5px;">
+                          <h3 style="color: #2c3e50; margin-top: 0;">Agile Estimation</h3>
+                          <ul style="padding-left: 20px;">
+                            <li>Relative sizing (story points)</li>
+                            <li>Team-based consensus</li>
+                            <li>Variable scope flexibility</li>
+                            <li>Progressive refinement</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </section>
+                  
+                    <section style="background-color: white; border-radius: 8px; padding: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 30px;">
+                      <h2 style="color: #4a90e2; border-left: 5px solid #4a90e2; padding-left: 15px; margin-top: 0;">Key Estimation Techniques</h2>
+                      
+                      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 25px;">
+                        <div style="background-color: #f0f7fd; padding: 15px; border-radius: 5px; border: 1px solid #d0e3f0;">
+                          <h3 style="color: #2980b9; margin-top: 0;">Story Points</h3>
+                          <p>Abstract units representing effort, complexity, and risk. Typically uses Fibonacci sequence (1, 2, 3, 5, 8, 13, 20, 40, 100).</p>
+                          <div style="background-color: #e3f2fd; padding: 10px; border-radius: 3px; margin-top: 10px;">
+                            <strong>Example:</strong> Implementing login screen = 3 points, Payment integration = 8 points
+                          </div>
+                        </div>
+                        
+                        <div style="background-color: #f0f7fd; padding: 15px; border-radius: 5px; border: 1px solid #d0e3f0;">
+                          <h3 style="color: #2980b9; margin-top: 0;">Planning Poker</h3>
+                          <p>Consensus-based technique where team members privately select cards representing their estimate, then discuss differences.</p>
+                          <div style="background-color: #e3f2fd; padding: 10px; border-radius: 3px; margin-top: 10px;">
+                            <strong>Process:</strong> 1. Present story → 2. Discuss → 3. Vote → 4. Repeat until consensus
+                          </div>
+                        </div>
+                        
+                        <div style="background-color: #f0f7fd; padding: 15px; border-radius: 5px; border: 1px solid #d0e3f0;">
+                          <h3 style="color: #2980b9; margin-top: 0;">T-Shirt Sizing</h3>
+                          <p>Relative sizing using XS, S, M, L, XL for quick high-level estimates, often used for roadmap planning.</p>
+                          <div style="background-color: #e3f2fd; padding: 10px; border-radius: 3px; margin-top: 10px;">
+                            <strong>Scale:</strong> XS (1pt), S (2-3pts), M (5pts), L (8pts), XL (13+pts)
+                          </div>
+                        </div>
+                        
+                        <div style="background-color: #f0f7fd; padding: 15px; border-radius: 5px; border: 1px solid #d0e3f0;">
+                          <h3 style="color: #2980b9; margin-top: 0;">Bucket System</h3>
+                          <p>Fast estimation method where items are sorted into predefined buckets (e.g., 1, 2, 3, 5, 8, 13, 20 points).</p>
+                          <div style="background-color: #e3f2fd; padding: 10px; border-radius: 3px; margin-top: 10px;">
+                            <strong>Best for:</strong> Large backlogs needing quick estimation
+                          </div>
+                        </div>
+                        
+                        <div style="background-color: #f0f7fd; padding: 15px; border-radius: 5px; border: 1px solid #d0e3f0;">
+                          <h3 style="color: #2980b9; margin-top: 0;">Affinity Mapping</h3>
+                          <p>Grouping user stories by relative size through silent sorting, then assigning point values to groups.</p>
+                          <div style="background-color: #e3f2fd; padding: 10px; border-radius: 3px; margin-top: 10px;">
+                            <strong>Advantage:</strong> Visual comparison of all items
+                          </div>
+                        </div>
+                        
+                        <div style="background-color: #f0f7fd; padding: 15px; border-radius: 5px; border: 1px solid #d0e3f0;">
+                          <h3 style="color: #2980b9; margin-top: 0;">Dot Voting</h3>
+                          <p>Team members allocate dots to represent effort/complexity, with more dots indicating larger size.</p>
+                          <div style="background-color: #e3f2fd; padding: 10px; border-radius: 3px; margin-top: 10px;">
+                            <strong>Variation:</strong> Use different colored dots for risk/uncertainty
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  
+                    <section style="background-color: white; border-radius: 8px; padding: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 30px;">
+                      <h2 style="color: #4a90e2; border-left: 5px solid #4a90e2; padding-left: 15px; margin-top: 0;">The Estimation Process</h2>
+                      
+                      <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 20px; margin-bottom: 20px;">
+                        <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px;">
+                          <h3 style="color: #2c3e50; margin-top: 0;">1. Baseline Story</h3>
+                          <p>Establish a reference story the team agrees is "3 points" to compare all other stories against.</p>
+                        </div>
+                        <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px;">
+                          <h3 style="color: #2c3e50; margin-top: 0;">2. Relative Sizing</h3>
+                          <p>Compare new stories to baseline: "Is this twice as hard? Then it's probably 5 points."</p>
+                        </div>
+                      </div>
+                      
+                      <div style="background-color: #e8f4f8; padding: 20px; border-radius: 5px; margin-bottom: 20px;">
+                        <h3 style="margin-top: 0; color: #2c3e50;">Estimation Factors to Consider</h3>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;">
+                          <div>
+                            <h4 style="color: #2980b9; margin-bottom: 5px;">Effort</h4>
+                            <p>How much work is involved?</p>
+                          </div>
+                          <div>
+                            <h4 style="color: #2980b9; margin-bottom: 5px;">Complexity</h4>
+                            <p>How difficult is the work?</p>
+                          </div>
+                          <div>
+                            <h4 style="color: #2980b9; margin-bottom: 5px;">Uncertainty</h4>
+                            <p>How many unknowns exist?</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <h3 style="color: #2c3e50;">Estimation Do's and Don'ts</h3>
+                      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div style="background-color: #e8f5e9; padding: 15px; border-radius: 5px;">
+                          <h4 style="color: #27ae60; margin-top: 0;">Do</h4>
+                          <ul style="padding-left: 20px;">
+                            <li>Estimate as a team</li>
+                            <li>Compare to known stories</li>
+                            <li>Consider all aspects (dev, test, etc.)</li>
+                            <li>Re-estimate when new info emerges</li>
+                          </ul>
+                        </div>
+                        <div style="background-color: #ffebee; padding: 15px; border-radius: 5px;">
+                          <h4 style="color: #e53935; margin-top: 0;">Don't</h4>
+                          <ul style="padding-left: 20px;">
+                            <li>Convert points to hours</li>
+                            <li>Let managers dictate estimates</li>
+                            <li>Anchor on previous estimates</li>
+                            <li>Ignore uncertainty</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </section>
+                  
+                    <section style="background-color: white; border-radius: 8px; padding: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 30px;">
+                      <h2 style="color: #4a90e2; border-left: 5px solid #4a90e2; padding-left: 15px; margin-top: 0;">Velocity and Capacity Planning</h2>
+                      
+                      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                        <div style="background-color: #f0f4c3; padding: 15px; border-radius: 5px;">
+                          <h3 style="color: #2c3e50; margin-top: 0;">Velocity</h3>
+                          <p>The average number of story points a team completes per sprint. Calculated after 3-5 sprints.</p>
+                          <div style="background-color: #e6ee9c; padding: 10px; border-radius: 3px; margin-top: 10px;">
+                            <strong>Example:</strong> If team completes 24, 26, 22 points → Avg velocity = 24
+                          </div>
+                        </div>
+                        <div style="background-color: #d7ccc8; padding: 15px; border-radius: 5px;">
+                          <h3 style="color: #2c3e50; margin-top: 0;">Capacity</h3>
+                          <p>The total available working hours for a sprint, considering holidays, PTO, and other commitments.</p>
+                          <div style="background-color: #bcaaa4; padding: 10px; border-radius: 3px; margin-top: 10px;">
+                            <strong>Calculation:</strong> (Team members × Work hours/day × Sprint days) - Unavailable time
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div style="background-color: #e3f2fd; padding: 20px; border-radius: 5px;">
+                        <h3 style="margin-top: 0; color: #1565c0;">Using Velocity for Forecasting</h3>
+                        <p>Once velocity is established, teams can forecast how many sprints remaining work will take:</p>
+                        <div style="display: flex; justify-content: space-around; text-align: center; margin-top: 15px;">
+                          <div style="background-color: white; padding: 10px 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <div style="font-size: 1.5em; font-weight: bold; color: #4a90e2;">Total Backlog</div>
+                            <div style="font-size: 2em;">320 pts</div>
+                          </div>
+                          <div style="font-size: 2em; align-self: center;">÷</div>
+                          <div style="background-color: white; padding: 10px 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <div style="font-size: 1.5em; font-weight: bold; color: #4a90e2;">Avg Velocity</div>
+                            <div style="font-size: 2em;">24 pts</div>
+                          </div>
+                          <div style="font-size: 2em; align-self: center;">=</div>
+                          <div style="background-color: white; padding: 10px 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <div style="font-size: 1.5em; font-weight: bold; color: #4a90e2;">Sprints Needed</div>
+                            <div style="font-size: 2em;">~14</div>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  
+                    <section style="background-color: white; border-radius: 8px; padding: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                      <h2 style="color: #4a90e2; border-left: 5px solid #4a90e2; padding-left: 15px; margin-top: 0;">Advanced Estimation Concepts</h2>
+                      
+                      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 20px;">
+                        <div style="background-color: #f3e5f5; padding: 15px; border-radius: 5px;">
+                          <h3 style="color: #8e24aa; margin-top: 0;">Spikes</h3>
+                          <p>Time-boxed research tasks to reduce uncertainty before estimating. Typically 2-8 hours.</p>
+                        </div>
+                        <div style="background-color: #e0f7fa; padding: 15px; border-radius: 5px;">
+                          <h3 style="color: #00838f; margin-top: 0;">Reference Stories</h3>
+                          <p>Maintain a catalog of previously completed stories with their point values for comparison.</p>
+                        </div>
+                        <div style="background-color: #fff8e1; padding: 15px; border-radius: 5px;">
+                          <h3 style="color: #ff8f00; margin-top: 0;">Re-Estimation</h3>
+                          <p>When stories change significantly or new information emerges, re-estimate to maintain accuracy.</p>
+                        </div>
+                      </div>
+                      
+                      <div style="background-color: #e8eaf6; padding: 20px; border-radius: 5px;">
+                        <h3 style="margin-top: 0; color: #3949ab;">Estimation Anti-Patterns</h3>
+                        <div style="columns: 2; column-gap: 30px;">
+                          <ul style="padding-left: 20px;">
+                            <li style="margin-bottom: 8px;"><strong>Padding estimates:</strong> Building in buffer "just in case"</li>
+                            <li style="margin-bottom: 8px;"><strong>Anchoring:</strong> Being influenced by first number suggested</li>
+                            <li style="margin-bottom: 8px;"><strong>Expert estimation:</strong> Relying on one person's opinion</li>
+                          </ul>
+                          <ul style="padding-left: 20px;">
+                            <li style="margin-bottom: 8px;"><strong>Reverse engineering:</strong> Starting from desired date</li>
+                            <li style="margin-bottom: 8px;"><strong>Ignoring variance:</strong> Not accounting for natural fluctuation</li>
+                            <li style="margin-bottom: 8px;"><strong>Point inflation:</strong> Gradually increasing estimates over time</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </section>
+                  
+                   
+                  </div>
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics/") ? "../Agile_and_Scrum.json" : "../Agile_and_Scrum.json";
+            
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch DSA Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.Agile_and_Scrum;
+                        displayTopics(allTopics);
+                    })
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+           
+            
+            
+            
+            
+            
+            
+            </body>
+            </html>     

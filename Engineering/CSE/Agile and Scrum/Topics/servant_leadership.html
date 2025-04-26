@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agile Anti-Patterns</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Agile and Scrum</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+                <h1>Servant Leadership</h1>
+            
+                  
+                    <section style="background-color: white; border-radius: 8px; padding: 25px; margin-bottom: 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                      <h2 style="color: #2980b9; border-bottom: 2px solid #f1c40f; padding-bottom: 8px; margin-top: 0;">What is Servant Leadership?</h2>
+                      <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                        <div style="flex: 1; min-width: 300px;">
+                          <p>Servant leadership is a philosophy where the leader's primary goal is to serve their team. This approach:</p>
+                          <ul style="padding-left: 20px; line-height: 1.6;">
+                            <li>Focuses on the growth and well-being of team members</li>
+                            <li>Prioritizes team needs over the leader's own agenda</li>
+                            <li>Builds trust and empowers individuals</li>
+                            <li>Creates a culture of collaboration and shared purpose</li>
+                          </ul>
+                        </div>
+                        <div style="flex: 1; min-width: 300px; background-color: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #f1c40f;">
+                          <h3 style="color: #16a085; margin-top: 0;">Origin</h3>
+                          <p>The concept was coined by Robert K. Greenleaf in 1970, inspired by Hermann Hesse's novel <em>Journey to the East</em> where the group's servant was actually their leader.</p>
+                        </div>
+                      </div>
+                    </section>
+                  
+                    <section style="background-color: white; border-radius: 8px; padding: 25px; margin-bottom: 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                      <h2 style="color: #2980b9; border-bottom: 2px solid #f1c40f; padding-bottom: 8px; margin-top: 0;">Servant Leadership in Agile Context</h2>
+                      <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px;">
+                        <div style="flex: 1; min-width: 300px; background-color: #e8f4fc; padding: 15px; border-radius: 8px;">
+                          <h3 style="color: #2980b9; margin-top: 0;">Why Agile Needs Servant Leaders</h3>
+                          <ul style="padding-left: 20px;">
+                            <li>Agile values individuals and interactions over processes</li>
+                            <li>Self-organizing teams require empowerment, not control</li>
+                            <li>Complex work demands collaborative problem-solving</li>
+                            <li>Continuous improvement needs psychological safety</li>
+                          </ul>
+                        </div>
+                        <div style="flex: 1; min-width: 300px; background-color: #e8f4fc; padding: 15px; border-radius: 8px;">
+                          <h3 style="color: #2980b9; margin-top: 0;">Manifesto Alignment</h3>
+                          <ul style="padding-left: 20px;">
+                            <li>"Individuals and interactions over processes and tools"</li>
+                            <li>"Customer collaboration over contract negotiation"</li>
+                            <li>"Responding to change over following a plan"</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div style="background-color: #fff8e1; padding: 15px; border-radius: 8px; border-left: 4px solid #f1c40f;">
+                        <p style="margin: 0; font-style: italic;">"The servant-leader is servant first... It begins with the natural feeling that one wants to serve, to serve first." - Robert K. Greenleaf</p>
+                      </div>
+                    </section>
+                  
+                    <section style="background-color: white; border-radius: 8px; padding: 25px; margin-bottom: 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                      <h2 style="color: #2980b9; border-bottom: 2px solid #f1c40f; padding-bottom: 8px; margin-top: 0;">Servant Leadership in Scrum Roles</h2>
+                      
+                      <div style="margin-bottom: 25px;">
+                        <h3 style="color: #e74c3c; display: flex; align-items: center;">
+                          <span style="background-color: #e74c3c; color: white; width: 30px; height: 30px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-right: 10px;">1</span>
+                          Scrum Master as Servant Leader
+                        </h3>
+                        <div style="display: flex; flex-wrap: wrap; gap: 15px;">
+                          <div style="flex: 1; min-width: 250px; background-color: #fdedec; padding: 15px; border-radius: 8px;">
+                            <h4 style="color: #c0392b; margin-top: 0;">Primary Focus</h4>
+                            <ul style="padding-left: 20px;">
+                              <li>Serving the Development Team</li>
+                              <li>Serving the Product Owner</li>
+                              <li>Serving the organization</li>
+                            </ul>
+                          </div>
+                          <div style="flex: 1; min-width: 250px; background-color: #fdedec; padding: 15px; border-radius: 8px;">
+                            <h4 style="color: #c0392b; margin-top: 0;">Key Behaviors</h4>
+                            <ul style="padding-left: 20px;">
+                              <li>Removing impediments</li>
+                              <li>Facilitating Scrum events</li>
+                              <li>Coaching rather than directing</li>
+                              <li>Shielding the team from distractions</li>
+                            </ul>
+                          </div>
+                          <div style="flex: 1; min-width: 250px; background-color: #fdedec; padding: 15px; border-radius: 8px;">
+                            <h4 style="color: #c0392b; margin-top: 0;">Mindset Shift</h4>
+                            <p>From "I'm in charge" to "How can I help?"</p>
+                            <p>From giving answers to asking powerful questions</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div style="margin-bottom: 25px;">
+                        <h3 style="color: #2ecc71; display: flex; align-items: center;">
+                          <span style="background-color: #2ecc71; color: white; width: 30px; height: 30px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-right: 10px;">2</span>
+                          Product Owner as Servant Leader
+                        </h3>
+                        <div style="display: flex; flex-wrap: wrap; gap: 15px;">
+                          <div style="flex: 1; min-width: 250px; background-color: #e8f8f5; padding: 15px; border-radius: 8px;">
+                            <h4 style="color: #27ae60; margin-top: 0;">Primary Focus</h4>
+                            <ul style="padding-left: 20px;">
+                              <li>Serving customers and stakeholders</li>
+                              <li>Serving the Development Team</li>
+                              <li>Maximizing product value</li>
+                            </ul>
+                          </div>
+                          <div style="flex: 1; min-width: 250px; background-color: #e8f8f5; padding: 15px; border-radius: 8px;">
+                            <h4 style="color: #27ae60; margin-top: 0;">Key Behaviors</h4>
+                            <ul style="padding-left: 20px;">
+                              <li>Clear communication of vision</li>
+                              <li>Being available to the team</li>
+                              <li>Making timely decisions</li>
+                              <li>Balancing stakeholder needs</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div>
+                        <h3 style="color: #3498db; display: flex; align-items: center;">
+                          <span style="background-color: #3498db; color: white; width: 30px; height: 30px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-right: 10px;">3</span>
+                          Development Team as Servant Leaders
+                        </h3>
+                        <div style="display: flex; flex-wrap: wrap; gap: 15px;">
+                          <div style="flex: 1; min-width: 250px; background-color: #eaf2f8; padding: 15px; border-radius: 8px;">
+                            <h4 style="color: #2980b9; margin-top: 0;">Primary Focus</h4>
+                            <ul style="padding-left: 20px;">
+                              <li>Serving the product and customers</li>
+                              <li>Serving each other</li>
+                              <li>Delivering quality increments</li>
+                            </ul>
+                          </div>
+                          <div style="flex: 1; min-width: 250px; background-color: #eaf2f8; padding: 15px; border-radius: 8px;">
+                            <h4 style="color: #2980b9; margin-top: 0;">Key Behaviors</h4>
+                            <ul style="padding-left: 20px;">
+                              <li>Collaborative decision-making</li>
+                              <li>Knowledge sharing</li>
+                              <li>Helping teammates</li>
+                              <li>Collective ownership</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  
+                    <section style="background-color: white; border-radius: 8px; padding: 25px; margin-bottom: 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                      <h2 style="color: #2980b9; border-bottom: 2px solid #f1c40f; padding-bottom: 8px; margin-top: 0;">10 Characteristics of Servant Leaders</h2>
+                      
+                      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                        <div style="background-color: #f5f5f5; padding: 15px; border-radius: 8px; border-left: 4px solid #3498db;">
+                          <h3 style="color: #2c3e50; margin-top: 0;">1. Listening</h3>
+                          <p>Genuinely paying attention to team members' concerns and ideas without judgment.</p>
+                        </div>
+                        <div style="background-color: #f5f5f5; padding: 15px; border-radius: 8px; border-left: 4px solid #3498db;">
+                          <h3 style="color: #2c3e50; margin-top: 0;">2. Empathy</h3>
+                          <p>Understanding and sharing the feelings of others, walking in their shoes.</p>
+                        </div>
+                        <div style="background-color: #f5f5f5; padding: 15px; border-radius: 8px; border-left: 4px solid #3498db;">
+                          <h3 style="color: #2c3e50; margin-top: 0;">3. Healing</h3>
+                          <p>Helping to resolve conflicts and supporting emotional recovery.</p>
+                        </div>
+                        <div style="background-color: #f5f5f5; padding: 15px; border-radius: 8px; border-left: 4px solid #3498db;">
+                          <h3 style="color: #2c3e50; margin-top: 0;">4. Awareness</h3>
+                          <p>Being mindful of team dynamics and one's own impact on others.</p>
+                        </div>
+                        <div style="background-color: #f5f5f5; padding: 15px; border-radius: 8px; border-left: 4px solid #3498db;">
+                          <h3 style="color: #2c3e50; margin-top: 0;">5. Persuasion</h3>
+                          <p>Building consensus through reasoning rather than authority.</p>
+                        </div>
+                        <div style="background-color: #f5f5f5; padding: 15px; border-radius: 8px; border-left: 4px solid #3498db;">
+                          <h3 style="color: #2c3e50; margin-top: 0;">6. Conceptualization</h3>
+                          <p>Seeing the big picture and helping others understand it.</p>
+                        </div>
+                        <div style="background-color: #f5f5f5; padding: 15px; border-radius: 8px; border-left: 4px solid #3498db;">
+                          <h3 style="color: #2c3e50; margin-top: 0;">7. Foresight</h3>
+                          <p>Anticipating consequences and guiding the team accordingly.</p>
+                        </div>
+                        <div style="background-color: #f5f5f5; padding: 15px; border-radius: 8px; border-left: 4px solid #3498db;">
+                          <h3 style="color: #2c3e50; margin-top: 0;">8. Stewardship</h3>
+                          <p>Taking responsibility for the team's work and environment.</p>
+                        </div>
+                        <div style="background-color: #f5f5f5; padding: 15px; border-radius: 8px; border-left: 4px solid #3498db;">
+                          <h3 style="color: #2c3e50; margin-top: 0;">9. Commitment to Growth</h3>
+                          <p>Dedicated to the personal and professional growth of each team member.</p>
+                        </div>
+                        <div style="background-color: #f5f5f5; padding: 15px; border-radius: 8px; border-left: 4px solid #3498db;">
+                          <h3 style="color: #2c3e50; margin-top: 0;">10. Building Community</h3>
+                          <p>Fostering a sense of belonging and shared purpose.</p>
+                        </div>
+                      </div>
+                    </section>
+                  
+                    <section style="background-color: white; border-radius: 8px; padding: 25px; margin-bottom: 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                      <h2 style="color: #2980b9; border-bottom: 2px solid #f1c40f; padding-bottom: 8px; margin-top: 0;">Servant Leadership in Practice</h2>
+                      
+                      <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px;">
+                        <div style="flex: 1; min-width: 300px;">
+                          <h3 style="color: #16a085;">Daily Activities</h3>
+                          <ul style="padding-left: 20px;">
+                            <li>Asking "How can I help?" instead of giving orders</li>
+                            <li>Removing organizational impediments</li>
+                            <li>Facilitating rather than leading meetings</li>
+                            <li>Celebrating team successes</li>
+                            <li>Creating safe spaces for experimentation</li>
+                          </ul>
+                        </div>
+                        <div style="flex: 1; min-width: 300px;">
+                          <h3 style="color: #16a085;">Powerful Questions</h3>
+                          <ul style="padding-left: 20px;">
+                            <li>"What do you need to be successful?"</li>
+                            <li>"How can we improve this process?"</li>
+                            <li>"What obstacles are you facing?"</li>
+                            <li>"What would great look like here?"</li>
+                            <li>"How can I support you better?"</li>
+                          </ul>
+                        </div>
+                      </div>
+                      
+                      <div style="background-color: #e8f4fc; padding: 15px; border-radius: 8px;">
+                        <h3 style="color: #2980b9; margin-top: 0;">Servant Leadership vs Traditional Leadership</h3>
+                        <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+                          <thead>
+                            <tr style="background-color: #3498db; color: white;">
+                              <th style="padding: 10px; text-align: left; border: 1px solid #2980b9;">Aspect</th>
+                              <th style="padding: 10px; text-align: left; border: 1px solid #2980b9;">Traditional Leader</th>
+                              <th style="padding: 10px; text-align: left; border: 1px solid #2980b9;">Servant Leader</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="padding: 8px; border: 1px solid #bdc3c7;"><strong>Focus</strong></td>
+                              <td style="padding: 8px; border: 1px solid #bdc3c7;">Organizational goals</td>
+                              <td style="padding: 8px; border: 1px solid #bdc3c7;">Team needs and growth</td>
+                            </tr>
+                            <tr style="background-color: #f8f9f9;">
+                              <td style="padding: 8px; border: 1px solid #bdc3c7;"><strong>Decision Making</strong></td>
+                              <td style="padding: 8px; border: 1px solid #bdc3c7;">Top-down</td>
+                              <td style="padding: 8px; border: 1px solid #bdc3c7;">Collaborative</td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 8px; border: 1px solid #bdc3c7;"><strong>Power</strong></td>
+                              <td style="padding: 8px; border: 1px solid #bdc3c7;">Held by leader</td>
+                              <td style="padding: 8px; border: 1px solid #bdc3c7;">Shared with team</td>
+                            </tr>
+                            <tr style="background-color: #f8f9f9;">
+                              <td style="padding: 8px; border: 1px solid #bdc3c7;"><strong>Success Measure</strong></td>
+                              <td style="padding: 8px; border: 1px solid #bdc3c7;">Results achieved</td>
+                              <td style="padding: 8px; border: 1px solid #bdc3c7;">Team growth and results</td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 8px; border: 1px solid #bdc3c7;"><strong>Primary Role</strong></td>
+                              <td style="padding: 8px; border: 1px solid #bdc3c7;">Director</td>
+                              <td style="padding: 8px; border: 1px solid #bdc3c7;">Facilitator</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  
+                    <section style="background-color: white; border-radius: 8px; padding: 25px; margin-bottom: 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                      <h2 style="color: #2980b9; border-bottom: 2px solid #f1c40f; padding-bottom: 8px; margin-top: 0;">Benefits of Servant Leadership in Agile</h2>
+                      
+                      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; margin-top: 20px;">
+                        <div style="background-color: #e8f8f5; padding: 15px; border-radius: 8px; text-align: center;">
+                          <div style="background-color: #2ecc71; color: white; width: 50px; height: 50px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 10px; font-size: 1.5em;">✓</div>
+                          <h3 style="color: #27ae60; margin-top: 0;">Higher Engagement</h3>
+                          <p>Team members feel valued and empowered</p>
+                        </div>
+                        <div style="background-color: #eaf2f8; padding: 15px; border-radius: 8px; text-align: center;">
+                          <div style="background-color: #3498db; color: white; width: 50px; height: 50px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 10px; font-size: 1.5em;">✓</div>
+                          <h3 style="color: #2980b9; margin-top: 0;">Better Collaboration</h3>
+                          <p>Breaks down silos and fosters teamwork</p>
+                        </div>
+                        <div style="background-color: #f4ecf7; padding: 15px; border-radius: 8px; text-align: center;">
+                          <div style="background-color: #9b59b6; color: white; width: 50px; height: 50px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 10px; font-size: 1.5em;">✓</div>
+                          <h3 style="color: #8e44ad; margin-top: 0;">Increased Innovation</h3>
+                          <p>Creates safe space for creative solutions</p>
+                        </div>
+                        <div style="background-color: #fef5e7; padding: 15px; border-radius: 8px; text-align: center;">
+                          <div style="background-color: #f39c12; color: white; width: 50px; height: 50px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 10px; font-size: 1.5em;">✓</div>
+                          <h3 style="color: #d35400; margin-top: 0;">Higher Retention</h3>
+                          <p>Employees stay longer in supportive environments</p>
+                        </div>
+                        <div style="background-color: #fdedec; padding: 15px; border-radius: 8px; text-align: center;">
+                          <div style="background-color: #e74c3c; color: white; width: 50px; height: 50px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 10px; font-size: 1.5em;">✓</div>
+                          <h3 style="color: #c0392b; margin-top: 0;">Faster Adaptation</h3>
+                          <p>Teams respond better to change</p>
+                        </div>
+                        <div style="background-color: #e8f6f3; padding: 15px; border-radius: 8px; text-align: center;">
+                          <div style="background-color: #1abc9c; color: white; width: 50px; height: 50px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 10px; font-size: 1.5em;">✓</div>
+                          <h3 style="color: #16a085; margin-top: 0;">Continuous Improvement</h3>
+                          <p>Culture of learning and growth</p>
+                        </div>
+                      </div>
+                    </section>
+                  
+                    <section style="background-color: white; border-radius: 8px; padding: 25px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                      <h2 style="color: #2980b9; border-bottom: 2px solid #f1c40f; padding-bottom: 8px; margin-top: 0;">Developing Servant Leadership Skills</h2>
+                      
+                      <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px;">
+                        <div style="flex: 1; min-width: 300px; background-color: #f8f9fa; padding: 15px; border-radius: 8px;">
+                          <h3 style="color: #2c3e50; margin-top: 0;">Self-Assessment</h3>
+                          <ul style="padding-left: 20px;">
+                            <li>Regular reflection on leadership approach</li>
+                            <li>Seeking 360-degree feedback</li>
+                            <li>Identifying areas for growth</li>
+                          </ul>
+                        </div>
+                        <div style="flex: 1; min-width: 300px; background-color: #f8f9fa; padding: 15px; border-radius: 8px;">
+                          <h3 style="color: #2c3e50; margin-top: 0;">Practice Techniques</h3>
+                          <ul style="padding-left: 20px;">
+                            <li>Active listening exercises</li>
+                            <li>Powerful questioning techniques</li>
+                            <li>Empathy mapping</li>
+                          </ul>
+                        </div>
+                        <div style="flex: 1; min-width: 300px; background-color: #f8f9fa; padding: 15px; border-radius: 8px;">
+                          <h3 style="color: #2c3e50; margin-top: 0;">Continuous Learning</h3>
+                          <ul style="padding-left: 20px;">
+                            <li>Reading leadership literature</li>
+                            <li>Attending workshops</li>
+                            <li>Finding a mentor</li>
+                          </ul>
+                        </div>
+                      </div>
+                      
+                      <div style="margin-top: 20px; background-color: #fff8e1; padding: 15px; border-radius: 8px; border-left: 4px solid #f1c40f;">
+                        <h3 style="color: #f39c12; margin-top: 0;">Practical Exercise: The Serving Day</h3>
+                        <p>Commit one day per week where your only focus is serving your team. During this day:</p>
+                        <ul style="padding-left: 20px;">
+                          <li>Ask each team member "How can I help you today?"</li>
+                          <li>Focus on removing impediments</li>
+                          <li>Document what you learn about team needs</li>
+                        </ul>
+                      </div>
+                    </section>
+                  
+                    
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics/") ? "../Agile_and_Scrum.json" : "../Agile_and_Scrum.json";
+            
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch DSA Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.Agile_and_Scrum;
+                        displayTopics(allTopics);
+                    })
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+           
+            
+            
+            
+            
+            
+            
+            </body>
+            </html>     

@@ -1,0 +1,30 @@
+{  "AI_in_Healthcare":
+ [
+    { "name": "Introduction to AI in Healthcare", "id": "intro_ai_healthcare", "link": "intro_ai_healthcare.html" },
+    { "name": "Overview of Healthcare Systems", "id": "healthcare_systems", "link": "healthcare_systems.html" },
+    { "name": "Medical Data Types and Sources", "id": "medical_data", "link": "medical_data.html" },
+    { "name": "Ethics, Privacy, and Bias in Medical AI", "id": "ethics_privacy", "link": "ethics_privacy.html" },
+    { "name": "Machine Learning Basics for Healthcare", "id": "ml_basics_healthcare", "link": "ml_basics_healthcare.html" },
+    { "name": "Natural Language Processing in Healthcare", "id": "nlp_healthcare", "link": "nlp_healthcare.html" },
+    { "name": "Computer Vision in Medical Imaging", "id": "cv_medical_imaging", "link": "cv_medical_imaging.html" },
+    { "name": "Predictive Analytics for Patient Risk", "id": "predictive_analytics", "link": "predictive_analytics.html" },
+    { "name": "Disease Diagnosis using AI", "id": "disease_diagnosis", "link": "disease_diagnosis.html" },
+    { "name": "AI in Radiology (X-rays, CT, MRI)", "id": "ai_radiology", "link": "ai_radiology.html" },
+    { "name": "AI in Pathology and Lab Diagnostics", "id": "ai_pathology", "link": "ai_pathology.html" },
+    { "name": "AI for Personalized Medicine", "id": "personalized_medicine", "link": "personalized_medicine.html" },
+    { "name": "AI in Drug Discovery and Development", "id": "drug_discovery", "link": "drug_discovery.html" },
+    { "name": "Remote Monitoring and Wearable Devices", "id": "remote_monitoring", "link": "remote_monitoring.html" },
+    { "name": "Chatbots for Patient Support", "id": "chatbots_healthcare", "link": "chatbots_healthcare.html" },
+    { "name": "Reinforcement Learning in Treatment Optimization", "id": "rl_treatment", "link": "rl_treatment.html" },
+    { "name": "AI in Mental Health Monitoring", "id": "ai_mental_health", "link": "ai_mental_health.html" },
+    { "name": "AI in Emergency Response Systems", "id": "ai_emergency", "link": "ai_emergency.html" },
+    { "name": "Integration of AI with EHR Systems", "id": "ai_ehr_integration", "link": "ai_ehr_integration.html" },
+    { "name": "Regulatory Challenges in AI Healthcare", "id": "regulatory_ai_healthcare", "link": "regulatory_ai_healthcare.html" },
+    { "name": "Future Trends and Innovations in AI Healthcare", "id": "future_ai_healthcare", "link": "future_ai_healthcare.html" },
+    { "name": "Project: COVID-19 Chest X-ray Diagnosis with AI", "id": "project_covid_xray", "link": "project_covid_xray.html" },
+    { "name": "Project: Diabetes Prediction System", "id": "project_diabetes_prediction", "link": "project_diabetes_prediction.html" },
+    { "name": "Project: AI Chatbot for Health Consultation", "id": "project_health_chatbot", "link": "project_health_chatbot.html" },
+    { "name": "Project: Brain Tumor Detection using Deep Learning", "id": "project_brain_tumor", "link": "project_brain_tumor.html" },
+    { "name": "Project: Heart Disease Risk Prediction", "id": "project_heart_risk", "link": "project_heart_risk.html" }
+  ]
+}

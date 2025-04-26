@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agile And Scrum</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Agile and Scrum</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+               <h1>Agile Anti-Patterns</h1>
+                        
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #4b6cb7; border-bottom: 2px solid #eee; padding-bottom: 10px;">Introduction to Agile Anti-Patterns</h2>
+                        <p>Agile anti-patterns are common practices that appear helpful but actually undermine Agile principles and reduce effectiveness. They often emerge when teams go through the motions of Agile without fully embracing the mindset.</p>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #4b6cb7; border-bottom: 2px solid #eee; padding-bottom: 10px;">Common Agile Anti-Patterns</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <!-- Anti-pattern 1 -->
+                            <div style="background-color: #f8f9fa; padding: 20px; border-radius: 6px; border-left: 4px solid #4b6cb7;">
+                                <h3 style="margin-top: 0; color: #2c3e50;">Waterfall in Agile Clothing</h3>
+                                <p>Teams follow all Agile ceremonies but still work in sequential phases with big upfront design and late testing.</p>
+                                <p style="font-weight: bold; color: #e74c3c;">Symptoms:</p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Long planning phases before development starts</li>
+                                    <li>Testing happens only at the end of sprints</li>
+                                    <li>Minimal customer feedback during development</li>
+                                </ul>
+                            </div>
+                
+                            <!-- Anti-pattern 2 -->
+                            <div style="background-color: #f8f9fa; padding: 20px; border-radius: 6px; border-left: 4px solid #4b6cb7;">
+                                <h3 style="margin-top: 0; color: #2c3e50;">Sprint Zombies</h3>
+                                <p>Team goes through sprint rituals mechanically without understanding or commitment.</p>
+                                <p style="font-weight: bold; color: #e74c3c;">Symptoms:</p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Standups become status reports to the Scrum Master</li>
+                                    <li>No engagement in backlog refinement</li>
+                                    <li>Retrospectives produce no actionable improvements</li>
+                                </ul>
+                            </div>
+                
+                            <!-- Anti-pattern 3 -->
+                            <div style="background-color: #f8f9fa; padding: 20px; border-radius: 6px; border-left: 4px solid #4b6cb7;">
+                                <h3 style="margin-top: 0; color: #2c3e50;">Feature Factory</h3>
+                                <p>Focus on output (features delivered) rather than outcomes (value to customers).</p>
+                                <p style="font-weight: bold; color: #e74c3c;">Symptoms:</p>
+                                <ul style="padding-left: 20px;">
+                                    <li>No measurement of feature usage or impact</li>
+                                    <li>Prioritization based on stakeholder requests rather than value</li>
+                                    <li>Minimal A/B testing or experimentation</li>
+                                </ul>
+                            </div>
+                
+                            <!-- Anti-pattern 4 -->
+                            <div style="background-color: #f8f9fa; padding: 20px; border-radius: 6px; border-left: 4px solid #4b6cb7;">
+                                <h3 style="margin-top: 0; color: #2c3e50;">Scrummerfall</h3>
+                                <p>Combination of Scrum and Waterfall where sprints are used but work isn't truly iterative.</p>
+                                <p style="font-weight: bold; color: #e74c3c;">Symptoms:</p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Multi-sprint epics with no demonstrable value until the end</li>
+                                    <li>Dependencies between teams create bottlenecks</li>
+                                    <li>Hardening sprints before releases</li>
+                                </ul>
+                            </div>
+                
+                            <!-- Anti-pattern 5 -->
+                            <div style="background-color: #f8f9fa; padding: 20px; border-radius: 6px; border-left: 4px solid #4b6cb7;">
+                                <h3 style="margin-top: 0; color: #2c3e50;">Agile Theater</h3>
+                                <p>Superficial adoption of Agile practices without real change in how work gets done.</p>
+                                <p style="font-weight: bold; color: #e74c3c;">Symptoms:</p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Beautiful burn-down charts but poor quality deliverables</li>
+                                    <li>Management demands fixed scope and deadlines</li>
+                                    <li>Team has no autonomy to make decisions</li>
+                                </ul>
+                            </div>
+                
+                            <!-- Anti-pattern 6 -->
+                            <div style="background-color: #f8f9fa; padding: 20px; border-radius: 6px; border-left: 4px solid #4b6cb7;">
+                                <h3 style="margin-top: 0; color: #2c3e50;">Hero Culture</h3>
+                                <p>Reliance on individual heroes to save projects rather than sustainable team practices.</p>
+                                <p style="font-weight: bold; color: #e74c3c;">Symptoms:</p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Consistent overtime and burnout</li>
+                                    <li>Knowledge silos rather than shared ownership</li>
+                                    <li>Celebration of "crunch time" heroics</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #4b6cb7; border-bottom: 2px solid #eee; padding-bottom: 10px;">Scrum-Specific Anti-Patterns</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px; margin-top: 20px;">
+                            <!-- Scrum Anti-pattern 1 -->
+                            <div style="background-color: #f0f7ff; padding: 20px; border-radius: 6px; border-left: 4px solid #3498db;">
+                                <h3 style="margin-top: 0; color: #2c3e50;">The Scrum Master as Team Admin</h3>
+                                <p>Scrum Master becomes just a meeting organizer rather than a servant leader and change agent.</p>
+                                <p style="font-weight: bold; color: #2980b9;">Solutions:</p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Focus on removing impediments</li>
+                                    <li>Coach the team on self-organization</li>
+                                    <li>Facilitate rather than administer</li>
+                                </ul>
+                            </div>
+                
+                            <!-- Scrum Anti-pattern 2 -->
+                            <div style="background-color: #f0f7ff; padding: 20px; border-radius: 6px; border-left: 4px solid #3498db;">
+                                <h3 style="margin-top: 0; color: #2c3e50;">Overloaded Product Backlog</h3>
+                                <p>Backlog becomes a dumping ground with hundreds of poorly defined items.</p>
+                                <p style="font-weight: bold; color: #2980b9;">Solutions:</p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Regular backlog refinement sessions</li>
+                                    <li>Apply DEEP criteria (Detailed, Emergent, Estimated, Prioritized)</li>
+                                    <li>Archive or delete low-priority items</li>
+                                </ul>
+                            </div>
+                
+                            <!-- Scrum Anti-pattern 3 -->
+                            <div style="background-color: #f0f7ff; padding: 20px; border-radius: 6px; border-left: 4px solid #3498db;">
+                                <h3 style="margin-top: 0; color: #2c3e50;">Sprint Commitment as Contract</h3>
+                                <p>Team feels pressured to complete all committed items regardless of discoveries.</p>
+                                <p style="font-weight: bold; color: #2980b9;">Solutions:</p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Reframe commitment as forecast</li>
+                                    <li>Allow scope adjustment within sprint if needed</li>
+                                    <li>Focus on delivering value rather than checking boxes</li>
+                                </ul>
+                            </div>
+                
+                            <!-- Scrum Anti-pattern 4 -->
+                            <div style="background-color: #f0f7ff; padding: 20px; border-radius: 6px; border-left: 4px solid #3498db;">
+                                <h3 style="margin-top: 0; color: #2c3e50;">Daily Standup as Status Meeting</h3>
+                                <p>Standup becomes a passive report to the Scrum Master rather than active planning.</p>
+                                <p style="font-weight: bold; color: #2980b9;">Solutions:</p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Keep it brief and focused on coordination</li>
+                                    <li>Have team members talk to each other, not just the SM</li>
+                                    <li>Move detailed discussions to parking lot</li>
+                                </ul>
+                            </div>
+                
+                            <!-- Scrum Anti-pattern 5 -->
+                            <div style="background-color: #f0f7ff; padding: 20px; border-radius: 6px; border-left: 4px solid #3498db;">
+                                <h3 style="margin-top: 0; color: #2c3e50;">Skipping Retrospectives</h3>
+                                <p>Team cancels retrospectives when "too busy" or doesn't implement improvements.</p>
+                                <p style="font-weight: bold; color: #2980b9;">Solutions:</p>
+                                <ul style="padding-left: 20px;">
+                                    <li>Make retrospectives sacred time</li>
+                                    <li>Assign owners to improvement actions</li>
+                                    <li>Follow up on previous action items</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <h2 style="color: #4b6cb7; border-bottom: 2px solid #eee; padding-bottom: 10px;">Organizational Anti-Patterns</h2>
+                        
+                        <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+                            <thead style="background-color: #4b6cb7; color: white;">
+                                <tr>
+                                    <th style="padding: 12px; text-align: left;">Anti-Pattern</th>
+                                    <th style="padding: 12px; text-align: left;">Impact</th>
+                                    <th style="padding: 12px; text-align: left;">Solution</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 12px;"><strong>Agile at Team Level Only</strong><br>Only development teams practice Agile while leadership operates traditionally</td>
+                                    <td style="padding: 12px;">Misalignment between strategy and execution, conflicting priorities</td>
+                                    <td style="padding: 12px;">Agile transformation must include leadership and support functions</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 12px;"><strong>Velocity as Performance Metric</strong><br>Using velocity to compare teams or evaluate performance</td>
+                                    <td style="padding: 12px;">Inflated estimates, gaming the system, reduced collaboration</td>
+                                    <td style="padding: 12px;">Use velocity only for internal team planning, focus on outcomes</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 12px;"><strong>Distributed Teams with No Adaptation</strong><br>Running distributed teams exactly like co-located ones</td>
+                                    <td style="padding: 12px;">Communication breakdowns, cultural misunderstandings, delays</td>
+                                    <td style="padding: 12px;">Invest in collaboration tools, overlap hours, and relationship building</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px;"><strong>Agile Project Management Office</strong><br>Creating an Agile PMO that imposes standardized processes</td>
+                                    <td style="padding: 12px;">Loss of team autonomy, one-size-fits-all approach, bureaucracy</td>
+                                    <td style="padding: 12px;">Shift PMO to enablement role with communities of practice</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                
+                    <section style="background-color: #e8f4f8; padding: 25px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 30px; border-left: 6px solid #3498db;">
+                        <h2 style="color: #2c3e50; margin-top: 0;">Overcoming Agile Anti-Patterns</h2>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+                            <div>
+                                <h3 style="color: #2c3e50;">Prevention Strategies</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li style="margin-bottom: 10px;"><strong>Continuous Education:</strong> Regular Agile training and coaching at all levels</li>
+                                    <li style="margin-bottom: 10px;"><strong>Mindset Shift:</strong> Focus on principles over practices, outcomes over outputs</li>
+                                    <li style="margin-bottom: 10px;"><strong>Inspect & Adapt:</strong> Make retrospectives meaningful with concrete actions</li>
+                                    <li style="margin-bottom: 10px;"><strong>Empower Teams:</strong> Give teams autonomy to make decisions about their work</li>
+                                    <li><strong>Value Focus:</strong> Always tie work back to customer value and business outcomes</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 style="color: #2c3e50;">Recovery Tactics</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li style="margin-bottom: 10px;"><strong>Root Cause Analysis:</strong> Use techniques like 5 Whys to understand why anti-patterns emerge</li>
+                                    <li style="margin-bottom: 10px;"><strong>Experimentation:</strong> Try small changes rather than big process overhauls</li>
+                                    <li style="margin-bottom: 10px;"><strong>Transparency:</strong> Make problems visible without blame</li>
+                                    <li style="margin-bottom: 10px;"><strong>External Perspective:</strong> Bring in Agile coaches for fresh insights</li>
+                                    <li><strong>Celebrate Learning:</strong> Recognize that failures provide valuable lessons</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                   
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics/") ? "../Agile_and_Scrum.json" : "../Agile_and_Scrum.json";
+            
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch DSA Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.Agile_and_Scrum;
+                        displayTopics(allTopics);
+                    })
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+           
+            
+            
+            
+            
+            
+            
+            </body>
+            </html>     

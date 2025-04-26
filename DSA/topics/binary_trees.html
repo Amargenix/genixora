@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    <link rel="stylesheet" href="../dsa.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../dsa.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>DSA Topics</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+
+
+            <main class="col-md-7 content">
+                <h1>🌳 Binary Trees – Comprehensive Study Guide</h1>
+            
+                <p>
+                    A **Binary Tree** is a **hierarchical data structure** where each node has **at most two children**.  
+                    It is widely used in **searching, graph traversal, parsing expressions, and AI algorithms**.
+                </p>
+            
+                <h2>📌 Why are Binary Trees Important?</h2>
+                <ul>
+                    <li>🚀 **Efficient Searching** – Used in **Binary Search Trees (BSTs)**.</li>
+                    <li>⚡ **Optimized Storage** – Used in **heap-based priority queues**.</li>
+                    <li>🔄 **Traversal in Various Orders** – Used in **expression parsing, Huffman coding, etc.**</li>
+                    <li>📂 **Used in File Systems & Databases** – Hierarchical data management.</li>
+                </ul>
+            
+                <h1>📚 Binary Tree Terminologies</h1>
+                <ul>
+                    <li>🌳 **Root** – The topmost node of a tree.</li>
+                    <li>🍃 **Leaf Node** – A node with no children.</li>
+                    <li>🔄 **Parent & Child** – A node **above** is called a **parent**, and the node **below** is called a **child**.</li>
+                    <li>🔢 **Degree** – The number of children a node has.</li>
+                    <li>📏 **Height of a Node** – The number of edges on the longest path from a node to a leaf.</li>
+                </ul>
+            
+                <h1>🛠️ Representation of a Binary Tree</h1>
+            
+                <h2>1️⃣ **Using Arrays (For Complete Binary Trees)**</h2>
+                <p>A complete binary tree can be represented as an **array**, where:</p>
+                <ul>
+                    <li>**Left child** of `i` is at `2*i + 1`.</li>
+                    <li>**Right child** of `i` is at `2*i + 2`.</li>
+                </ul>
+                <pre><code>
+                int tree[] = {1, 2, 3, 4, 5, 6, 7}; // Binary tree stored in an array
+                </code></pre>
+            
+                <h2>2️⃣ **Using Pointers (Dynamic Representation)**</h2>
+                <pre><code>
+                struct Node {
+                    int data;
+                    Node* left;
+                    Node* right;
+                };
+                </code></pre>
+            
+                <h1>📌 Types of Binary Trees</h1>
+                <ul>
+                    <li>✅ **Full Binary Tree** – Every node has **0 or 2 children**.</li>
+                    <li>✅ **Complete Binary Tree** – All levels are completely filled except possibly the last.</li>
+                    <li>✅ **Perfect Binary Tree** – All internal nodes have **two children**, and all leaves are at the same level.</li>
+                    <li>✅ **Balanced Binary Tree** – The height of the tree is **logarithmic** in terms of the number of nodes.</li>
+                </ul>
+            
+                <h1>🔄 Tree Traversal Techniques</h1>
+                <h2>📌 **1. Depth-First Traversal (DFS)**</h2>
+                <ul>
+                    <li>➡️ **Preorder (Root → Left → Right)**</li>
+                    <li>➡️ **Inorder (Left → Root → Right) – Used in BSTs**</li>
+                    <li>➡️ **Postorder (Left → Right → Root) – Used in expression trees**</li>
+                </ul>
+            
+                <h2>📌 **2. Breadth-First Traversal (BFS)**</h2>
+                <ul>
+                    <li>🔢 **Level Order Traversal (Node by node level-wise)**</li>
+                </ul>
+            
+                <h1>🔍 Binary Search Tree (BST)</h1>
+                <p>A **Binary Search Tree (BST)** is a special type of binary tree where:</p>
+                <ul>
+                    <li>✔️ Left subtree **contains smaller values**.</li>
+                    <li>✔️ Right subtree **contains larger values**.</li>
+                    <li>✔️ Searching and insertion take **O(log n)** time.</li>
+                </ul>
+            
+                <h1>⚖️ Balanced Binary Trees</h1>
+                <ul>
+                    <li>📌 **AVL Trees** – Self-balancing BSTs.</li>
+                    <li>📌 **Red-Black Trees** – Used in **self-balancing operations**.</li>
+                    <li>📌 **B-Trees** – Used in **database indexing**.</li>
+                </ul>
+            
+                <h1>⏳ Time Complexity Analysis</h1>
+                <table border="1">
+                    <tr>
+                        <th>Operation</th>
+                        <th>Best Case</th>
+                        <th>Worst Case</th>
+                    </tr>
+                    <tr>
+                        <td>Search</td>
+                        <td>O(log n)</td>
+                        <td>O(n)</td>
+                    </tr>
+                    <tr>
+                        <td>Insertion</td>
+                        <td>O(log n)</td>
+                        <td>O(n)</td>
+                    </tr>
+                    <tr>
+                        <td>Deletion</td>
+                        <td>O(log n)</td>
+                        <td>O(n)</td>
+                    </tr>
+                </table>
+            
+                <h1>🌍 Real-World Applications of Binary Trees</h1>
+                <ul>
+                    <li>📂 **File System Management** – Organizing files in directories.</li>
+                    <li>🔍 **Binary Search Trees (BST)** – Efficient **searching & sorting**.</li>
+                    <li>🛒 **E-commerce Platforms** – Recommendation systems.</li>
+                    <li>🤖 **Artificial Intelligence (AI)** – Decision Trees.</li>
+                </ul>
+            
+                <h2>🔗 Next Topics</h2>
+                <ul class="nexttopics-container">
+                    <li><a href="bst.html">🔍 Binary Search Tree (BST)</a></li>
+                    <li><a href="graph_traversal.html">📡 Graph Traversal Techniques</a></li>
+                    <li><a href="heap.html">⚡ Heap & Priority Queues</a></li>
+                </ul>
+            </main>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+        const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+        const searchBox = document.getElementById("searchBox");
+    
+        if (!sidebarList || !sidebarGrid) {
+            console.error("Sidebar elements not found!");
+            return;
+        }
+    
+        let allTopics = [];
+    
+        // Adjust JSON path based on file location
+        let jsonPath = window.location.pathname.includes("/topics/") ? "../dsa.json" : "dsa.json";
+    
+        console.log("Fetching JSON from:", jsonPath); // Debugging
+    
+        // Fetch DSA Topics from JSON
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                allTopics = data.DSA;
+                displayTopics(allTopics);
+            })
+            .catch(error => console.error("Error loading topics:", error));
+    
+        // Function to Display Topics in Sidebar
+        function displayTopics(topics) {
+            sidebarList.innerHTML = ""; // Clear list
+            sidebarGrid.innerHTML = ""; // Clear grid
+    
+            topics.forEach(topic => {
+                let topicLink = topic.link; // Keep the original link
+                // 🖥️ Desktop List View
+                let li = document.createElement("li");
+                li.className = "list-group-item list-group-item-action";
+                li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                sidebarList.appendChild(li);
+    
+                // 📱 Mobile Grid View (3 in a row)
+                let div = document.createElement("div");
+                div.className = "col-4"; // Bootstrap grid (3 in a row)
+                div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                sidebarGrid.appendChild(div);
+            });
+        }
+    
+        // Search Topics
+        if (searchBox) {
+            searchBox.addEventListener("input", function () {
+                const searchText = this.value.toLowerCase();
+                const filteredTopics = allTopics.filter(topic => 
+                    topic.name.toLowerCase().includes(searchText)
+                );
+                displayTopics(filteredTopics);
+            });
+        }
+    });
+    
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    

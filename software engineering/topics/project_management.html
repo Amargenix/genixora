@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DSA</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../software engineering.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>Software Engineering</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  <!-- Hidden in mobile -->
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+
+                <main class="col-md-7 content">
+                    <h1>Software Project Management </h1>
+                    
+                    <section id="intro" style="margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">1. Introduction to Software Project Management</h2>
+                        <div style="background-color: #fff; border-radius: 5px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3>Why Software Projects Fail</h3>
+                            <ul>
+                                <li>31% of projects are canceled before completion</li>
+                                <li>52% of projects cost 189% of original estimates</li>
+                                <li>Only 16% of software projects are completed on-time and on-budget</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background-color: #fff; border-radius: 5px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3>Key Differences from Traditional PM</h3>
+                            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                                <tr>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">Factor</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">Traditional Projects</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">Software Projects</th>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Requirements</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Fixed</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Evolving</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Output</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Physical product</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Intellectual product</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Success Metrics</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Time, cost, scope</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Quality, user satisfaction</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </section>
+                
+                    <div style="page-break-after: always; border-top: 1px dashed #ccc; margin: 30px 0;"></div>
+                
+                    <section id="methodologies" style="margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">2. Project Management Methodologies</h2>
+                        
+                        <div style="border-left: 4px solid #2ecc71; padding-left: 15px; margin: 15px 0;">
+                            <h3>Waterfall Model</h3>
+                            <div style="display: flex; align-items: center; margin: 15px 0;">
+                                <div style="background: #3498db; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 15px;">1</div>
+                                <div>Requirements</div>
+                            </div>
+                            <div style="display: flex; align-items: center; margin: 15px 0;">
+                                <div style="background: #3498db; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 15px;">2</div>
+                                <div>Design</div>
+                            </div>
+                            <div style="display: flex; align-items: center; margin: 15px 0;">
+                                <div style="background: #3498db; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 15px;">3</div>
+                                <div>Implementation</div>
+                            </div>
+                            <div style="display: flex; align-items: center; margin: 15px 0;">
+                                <div style="background: #3498db; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 15px;">4</div>
+                                <div>Verification</div>
+                            </div>
+                            <div style="display: flex; align-items: center; margin: 15px 0;">
+                                <div style="background: #3498db; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 15px;">5</div>
+                                <div>Maintenance</div>
+                            </div>
+                        </div>
+                        
+                        <div style="border-left: 4px solid #2ecc71; padding-left: 15px; margin: 15px 0;">
+                            <h3>Agile Scrum</h3>
+                            <div style="display: flex; gap: 20px; margin: 20px 0;">
+                                <div style="flex: 1; background: white; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                    <h4>Roles</h4>
+                                    <ul>
+                                        <li>Product Owner</li>
+                                        <li>Scrum Master</li>
+                                        <li>Development Team</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1; background: white; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                    <h4>Artifacts</h4>
+                                    <ul>
+                                        <li>Product Backlog</li>
+                                        <li>Sprint Backlog</li>
+                                        <li>Increment</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1; background: white; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                    <h4>Ceremonies</h4>
+                                    <ul>
+                                        <li>Sprint Planning</li>
+                                        <li>Daily Standup</li>
+                                        <li>Sprint Review</li>
+                                        <li>Retrospective</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <div style="page-break-after: always; border-top: 1px dashed #ccc; margin: 30px 0;"></div>
+                
+                    <section id="planning" style="margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">3. Project Planning</h2>
+                        
+                        <div style="background-color: #fff; border-radius: 5px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3>Work Breakdown Structure (WBS)</h3>
+                            <div style="background-color: #eaf7fd; padding: 10px; border-left: 3px solid #3498db; margin: 10px 0;">
+                                <p style="font-weight: bold; color: #e74c3c;">Example WBS for E-Commerce Project:</p>
+                                <div style="font-family: Consolas, Monaco, 'Andale Mono', monospace; background-color: #f5f5f5; padding: 10px; border-radius: 3px; overflow-x: auto;">
+                1.0 E-Commerce Website
+                ├── 1.1 User Authentication
+                │   ├── 1.1.1 Registration
+                │   └── 1.1.2 Login/Logout
+                ├── 1.2 Product Catalog
+                │   ├── 1.2.1 Product Listing
+                │   └── 1.2.2 Product Details
+                └── 1.3 Shopping Cart
+                    ├── 1.3.1 Add/Remove Items
+                    └── 1.3.2 Checkout Process
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="background-color: #fff; border-radius: 5px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3>Estimation Techniques</h3>
+                            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                                <tr>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">Technique</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">When to Use</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">Accuracy</th>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Function Points</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Early requirements</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">±20%</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">COCOMO II</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Detailed requirements</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">±15%</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Planning Poker</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Agile projects</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">±30%</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </section>
+                
+                    <div style="page-break-after: always; border-top: 1px dashed #ccc; margin: 30px 0;"></div>
+                
+                    <section id="scheduling" style="margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">4. Project Scheduling</h2>
+                        
+                        <div style="background-color: #fff; border-radius: 5px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3>Gantt Chart Example</h3>
+                            <div style="background-color: #eaf7fd; padding: 10px; border-left: 3px solid #3498db; margin: 10px 0;">
+                                <p style="font-weight: bold; color: #e74c3c;">Sample Project Timeline:</p>
+                                <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                                    <tr>
+                                        <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">Task</th>
+                                        <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">Start</th>
+                                        <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">End</th>
+                                        <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">Duration</th>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Requirements</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Jan 1</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Jan 15</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">15 days</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">UI Design</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Jan 16</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Feb 5</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">21 days</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <div style="background-color: #fff; border-radius: 5px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3>Critical Path Method (CPM)</h3>
+                            <div style="background-color: #eaf7fd; padding: 10px; border-left: 3px solid #3498db; margin: 10px 0;">
+                                <div style="font-family: Consolas, Monaco, 'Andale Mono', monospace; background-color: #f5f5f5; padding: 10px; border-radius: 3px; overflow-x: auto;">
+                Tasks:
+                A (3 days) → B (2 days) → D (4 days) → F (1 day)
+                A → C (5 days) → E (3 days) → F
+                Critical Path: A → C → E → F (Total: 12 days)
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <div style="page-break-after: always; border-top: 1px dashed #ccc; margin: 30px 0;"></div>
+                
+                    <section id="risk" style="margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">5. Risk Management</h2>
+                        
+                        <div style="background-color: #fff; border-radius: 5px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3>Risk Assessment Matrix</h3>
+                            <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px; margin: 20px 0;">
+                                <div style="padding: 10px; text-align: center; border: 1px solid #ddd;">Probability/Impact</div>
+                                <div style="padding: 10px; text-align: center; border: 1px solid #ddd;">Very Low</div>
+                                <div style="padding: 10px; text-align: center; border: 1px solid #ddd;">Low</div>
+                                <div style="padding: 10px; text-align: center; border: 1px solid #ddd;">Medium</div>
+                                <div style="padding: 10px; text-align: center; border: 1px solid #ddd;">High</div>
+                                <div style="padding: 10px; text-align: center; border: 1px solid #ddd;">Very High</div>
+                                
+                                <div style="padding: 10px; text-align: center; border: 1px solid #ddd;">Very High</div>
+                                <div style="padding: 10px; text-align: center; border: 1px solid #ddd; background-color: #f9f9ad;">M</div>
+                                <div style="padding: 10px; text-align: center; border: 1px solid #ddd; background-color: #f9f9ad;">M</div>
+                                <div style="padding: 10px; text-align: center; border: 1px solid #ddd; background-color: #ffb347;">H</div>
+                                <div style="padding: 10px; text-align: center; border: 1px solid #ddd; background-color: #ff6b6b;">C</div>
+                                <div style="padding: 10px; text-align: center; border: 1px solid #ddd; background-color: #ff6b6b;">C</div>
+                                
+                                <div style="padding: 10px; text-align: center; border: 1px solid #ddd;">High</div>
+                                <div style="padding: 10px; text-align: center; border: 1px solid #ddd; background-color: #f9f9ad;">M</div>
+                                <div style="padding: 10px; text-align: center; border: 1px solid #ddd; background-color: #f9f9ad;">M</div>
+                                <div style="padding: 10px; text-align: center; border: 1px solid #ddd; background-color: #ffb347;">H</div>
+                                <div style="padding: 10px; text-align: center; border: 1px solid #ddd; background-color: #ffb347;">H</div>
+                                <div style="padding: 10px; text-align: center; border: 1px solid #ddd; background-color: #ff6b6b;">C</div>
+                            </div>
+                        </div>
+                        
+                        <div style="background-color: #fff; border-radius: 5px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3>Common Software Project Risks</h3>
+                            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                                <tr>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">Risk</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">Mitigation Strategy</th>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Scope Creep</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Change control process</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Resource Turnover</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Cross-training, documentation</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Technology Changes</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Proof of concepts</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </section>
+                
+                    <div style="page-break-after: always; border-top: 1px dashed #ccc; margin: 30px 0;"></div>
+                
+                    <section id="tools" style="margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">6. Project Management Tools</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; margin: 20px 0;">
+                            <div style="background: white; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h4>Traditional PM</h4>
+                                <ul>
+                                    <li>Microsoft Project</li>
+                                    <li>Primavera</li>
+                                    <li>JIRA (Advanced Roadmaps)</li>
+                                </ul>
+                            </div>
+                            <div style="background: white; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h4>Agile Tools</h4>
+                                <ul>
+                                    <li>JIRA Software</li>
+                                    <li>Trello</li>
+                                    <li>Azure DevOps</li>
+                                </ul>
+                            </div>
+                            <div style="background: white; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h4>Collaboration</h4>
+                                <ul>
+                                    <li>Confluence</li>
+                                    <li>Slack</li>
+                                    <li>Microsoft Teams</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <div style="page-break-after: always; border-top: 1px dashed #ccc; margin: 30px 0;"></div>
+                
+                    <section id="quality" style="margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">7. Quality Management</h2>
+                        
+                        <div style="background-color: #fff; border-radius: 5px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3>Quality Metrics</h3>
+                            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                                <tr>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">Metric</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">Formula</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">Target</th>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Defect Density</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Defects/KLOC</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">&lt;5</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Test Coverage</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">(Tested LOC/Total LOC)*100</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">&gt;80%</td>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">MTBF</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Operational Time/Number of Failures</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Project-specific</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div style="background-color: #fff; border-radius: 5px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3>Quality Assurance Process</h3>
+                            <div style="display: flex; align-items: center; margin: 15px 0;">
+                                <div style="background: #3498db; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 15px;">1</div>
+                                <div>Quality Planning</div>
+                            </div>
+                            <div style="display: flex; align-items: center; margin: 15px 0;">
+                                <div style="background: #3498db; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 15px;">2</div>
+                                <div>Quality Assurance</div>
+                            </div>
+                            <div style="display: flex; align-items: center; margin: 15px 0;">
+                                <div style="background: #3498db; color: white; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 15px;">3</div>
+                                <div>Quality Control</div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <div style="page-break-after: always; border-top: 1px dashed #ccc; margin: 30px 0;"></div>
+                
+                    <section id="communication" style="margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">8. Communication Management</h2>
+                        
+                        <div style="background-color: #fff; border-radius: 5px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3>Stakeholder Analysis Matrix</h3>
+                            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                                <tr>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">Stakeholder</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">Interest</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">Influence</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #3498db; color: white;">Communication Plan</th>
+                                </tr>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">End Users</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">High</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Medium</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Monthly demos</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Executives</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Medium</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">High</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">Quarterly reports</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </section>
+                
+                    <div style="page-break-after: always; border-top: 1px dashed #ccc; margin: 30px 0;"></div>
+                
+                    <section id="case-studies" style="margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">9. Case Studies</h2>
+                        
+                        <div style="background-color: #fff; border-radius: 5px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3>Denver Airport Baggage System</h3>
+                            <ul>
+                                <li>Original budget: $186M</li>
+                                <li>Final cost: $560M</li>
+                                <li>16 month delay</li>
+                                <li>Failure reasons: Underestimated complexity, poor risk management</li>
+                            </ul>
+                        </div>
+                    </section>
+                
+                    <div style="page-break-after: always; border-top: 1px dashed #ccc; margin: 30px 0;"></div>
+                
+                    <section id="best-practices" style="margin-bottom: 30px;">
+                        <h2 style="color: #2c3e50; background-color: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; margin-top: 30px;">10. Best Practices</h2>
+                        
+                        <div style="background-color: #fff; border-radius: 5px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <h3>Top 5 Success Factors</h3>
+                            <ol>
+                                <li>Clear business objectives</li>
+                                <li>Executive sponsorship</li>
+                                <li>User involvement</li>
+                                <li>Experienced project manager</li>
+                                <li>Formal methodology</li>
+                            </ol>
+                        </div>
+                    </section>
+                </main>
+
+            
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div>
+        <!-- 🔝 Back to Top Button -->
+        <button id="backToTop" class="btn btn-primary">
+            ⬆ Top
+        </button>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Load Navbar, Sidebar, and Footer -->
+        <script>
+            fetch("/navbar.html").then(response => response.text()).then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+            });
+    
+            
+    
+            fetch("/footer.html").then(response => response.text()).then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+    const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+    const searchBox = document.getElementById("searchBox");
+
+    if (!sidebarList || !sidebarGrid) {
+        console.error("Sidebar elements not found!");
+        return;
+    }
+
+    let allTopics = [];
+
+    // Adjust JSON path based on file location
+    let jsonPath = window.location.pathname.includes("/topics/") ? "../softwarengineering.json" : "softwarengineering.json";
+
+    console.log("Fetching JSON from:", jsonPath); // Debugging
+
+    // Fetch Software Engineering Topics from JSON
+    fetch(jsonPath)
+        .then(response => {
+            console.log("Fetch Response:", response);
+            if (!response.ok) {
+                throw new Error("Failed to load JSON: " + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Fetched Data:", data);
+            if (!data.Software_Engineering) {
+                throw new Error("JSON does not contain 'Software_Engineering' key!");
+            }
+            allTopics = data.Software_Engineering;
+            displayTopics(allTopics);
+        })
+        .catch(error => console.error("Error loading topics:", error));
+
+    // Function to Display Topics in Sidebar
+    function displayTopics(topics) {
+        if (!Array.isArray(topics)) {
+            console.error("Invalid topics data:", topics);
+            return;
+        }
+
+        sidebarList.innerHTML = ""; // Clear list
+        sidebarGrid.innerHTML = ""; // Clear grid
+
+        topics.forEach(topic => {
+            let topicLink = topic.link; // Keep the original link
+
+            // 🖥️ Desktop List View
+            let li = document.createElement("li");
+            li.className = "list-group-item list-group-item-action";
+            li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+            sidebarList.appendChild(li);
+
+            // 📱 Mobile Grid View (3 in a row)
+            let div = document.createElement("div");
+            div.className = "col-4"; // Bootstrap grid (3 in a row)
+            div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+            sidebarGrid.appendChild(div);
+        });
+    }
+
+    // Search Topics
+    if (searchBox) {
+        searchBox.addEventListener("input", function () {
+            const searchText = this.value.toLowerCase();
+            const filteredTopics = allTopics.filter(topic =>
+                topic.name.toLowerCase().includes(searchText)
+            );
+            displayTopics(filteredTopics);
+        });
+    }
+});
+
+    
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTop = document.getElementById("backToTop");
+    
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = "block"; // Show button after scrolling 300px
+                } else {
+                    backToTop.style.display = "none"; // Hide button when at the top
+                }
+            });
+    
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // Smooth scroll effect
+                });
+            });
+        });
+    </script>
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
+    

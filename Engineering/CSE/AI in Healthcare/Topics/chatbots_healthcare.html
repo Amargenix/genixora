@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Robotics</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ✅ FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Engineering/CSE/Agile and Scrum/style.css">
+  
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <!-- Sidebar for DSA Topics -->
+            <nav class="sidebar">
+                <h2>AI in Healthcare</h2>
+                <input type="text" id="searchBox" class="form-control mb-2" placeholder="Search topics...">
+                
+                <!-- Sidebar List (Will Adjust in Mobile View) -->
+                <ul id="topics-list" class="list-group d-none d-md-block"></ul>  
+
+                <!-- Mobile Grid View -->
+                <div id="topics-grid" class="d-md-none row gx-2"></div>  <!-- Visible in mobile -->
+            </nav>
+
+            <main class="col-md-7 content">
+               <h1>Chatbots in Healthcare</h1>
+                
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                        <h2 style="color: #005b96; border-bottom: 2px solid #005b96; padding-bottom: 10px;">Introduction to Healthcare Chatbots</h2>
+                        <p>Healthcare chatbots are AI-powered conversational agents designed to simulate human-like interactions with patients and healthcare providers. They leverage natural language processing (NLP) and machine learning to understand queries and provide appropriate responses.</p>
+                        
+                        <div style="display: flex; margin: 20px 0;">
+                            <div style="flex: 1; padding: 15px; background-color: #e6f2ff; border-radius: 6px; margin-right: 10px;">
+                                <h3 style="margin-top: 0; color: #003366;">Key Capabilities</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>24/7 patient interaction</li>
+                                    <li>Symptom checking and triage</li>
+                                    <li>Medication reminders</li>
+                                    <li>Appointment scheduling</li>
+                                    <li>Health information dissemination</li>
+                                </ul>
+                            </div>
+                            <div style="flex: 1; padding: 15px; background-color: #fff0e6; border-radius: 6px;">
+                                <h3 style="margin-top: 0; color: #662900;">Benefits</h3>
+                                <ul style="padding-left: 20px;">
+                                    <li>Reduced healthcare costs</li>
+                                    <li>Improved patient engagement</li>
+                                    <li>Decreased wait times</li>
+                                    <li>Enhanced accessibility</li>
+                                    <li>Reduced administrative burden</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                        <h2 style="color: #005b96; border-bottom: 2px solid #005b96; padding-bottom: 10px;">Types of Healthcare Chatbots</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
+                            <div style="border: 1px solid #ddd; border-radius: 6px; padding: 15px; transition: transform 0.3s;">
+                                <h3 style="margin-top: 0; color: #006622;">Symptom Checkers</h3>
+                                <p>Use AI algorithms to analyze patient-reported symptoms and suggest possible conditions or next steps. Examples include Ada Health and Buoy Health.</p>
+                            </div>
+                            
+                            <div style="border: 1px solid #ddd; border-radius: 6px; padding: 15px; transition: transform 0.3s;">
+                                <h3 style="margin-top: 0; color: #006622;">Mental Health Bots</h3>
+                                <p>Provide cognitive behavioral therapy techniques and emotional support. Woebot and Wysa are prominent examples in this category.</p>
+                            </div>
+                            
+                            <div style="border: 1px solid #ddd; border-radius: 6px; padding: 15px; transition: transform 0.3s;">
+                                <h3 style="margin-top: 0; color: #006622;">Administrative Assistants</h3>
+                                <p>Handle appointment scheduling, billing inquiries, and insurance questions, reducing staff workload. Many hospital systems now deploy these.</p>
+                            </div>
+                            
+                            <div style="border: 1px solid #ddd; border-radius: 6px; padding: 15px; transition: transform 0.3s;">
+                                <h3 style="margin-top: 0; color: #006622;">Medication Management</h3>
+                                <p>Send reminders for medication adherence and provide information about drugs and potential interactions.</p>
+                            </div>
+                            
+                            <div style="border: 1px solid #ddd; border-radius: 6px; padding: 15px; transition: transform 0.3s;">
+                                <h3 style="margin-top: 0; color: #006622;">Chronic Condition Management</h3>
+                                <p>Help patients manage diabetes, hypertension, and other chronic conditions through regular check-ins and education.</p>
+                            </div>
+                            
+                            <div style="border: 1px solid #ddd; border-radius: 6px; padding: 15px; transition: transform 0.3s;">
+                                <h3 style="margin-top: 0; color: #006622;">Post-Discharge Follow-up</h3>
+                                <p>Monitor patients after hospital discharge to reduce readmission rates and ensure proper recovery.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                        <h2 style="color: #005b96; border-bottom: 2px solid #005b96; padding-bottom: 10px;">Technologies Powering Healthcare Chatbots</h2>
+                        
+                        <div style="background-color: #f5f5f5; padding: 20px; border-radius: 6px; margin-bottom: 20px;">
+                            <h3 style="margin-top: 0; color: #333;">Natural Language Processing (NLP)</h3>
+                            <p>Enables chatbots to understand and interpret human language, including medical terminology and colloquial expressions of symptoms.</p>
+                        </div>
+                        
+                        <div style="background-color: #f5f5f5; padding: 20px; border-radius: 6px; margin-bottom: 20px;">
+                            <h3 style="margin-top: 0; color: #333;">Machine Learning</h3>
+                            <p>Allows chatbots to learn from interactions and improve responses over time, becoming more accurate in symptom assessment and recommendations.</p>
+                        </div>
+                        
+                        <div style="background-color: #f5f5f5; padding: 20px; border-radius: 6px; margin-bottom: 20px;">
+                            <h3 style="margin-top: 0; color: #333;">Electronic Health Record (EHR) Integration</h3>
+                            <p>Advanced chatbots can pull relevant patient data from EHR systems to provide personalized recommendations and reduce redundant questioning.</p>
+                        </div>
+                        
+                        <div style="background-color: #f5f5f5; padding: 20px; border-radius: 6px;">
+                            <h3 style="margin-top: 0; color: #333;">Voice Recognition</h3>
+                            <p>Some healthcare chatbots incorporate voice interfaces for hands-free operation and accessibility.</p>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                        <h2 style="color: #005b96; border-bottom: 2px solid #005b96; padding-bottom: 10px;">Implementation Challenges</h2>
+                        
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="background-color: #005b96; color: white;">
+                                    <th style="padding: 12px; text-align: left;">Challenge</th>
+                                    <th style="padding: 12px; text-align: left;">Description</th>
+                                    <th style="padding: 12px; text-align: left;">Potential Solutions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 12px;">Data Privacy</td>
+                                    <td style="padding: 12px;">Ensuring HIPAA/GDPR compliance with sensitive health data</td>
+                                    <td style="padding: 12px;">End-to-end encryption, strict access controls, regular audits</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 12px;">Accuracy Concerns</td>
+                                    <td style="padding: 12px;">Risk of incorrect diagnoses or recommendations</td>
+                                    <td style="padding: 12px;">Human oversight, clear disclaimers, escalation protocols</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 12px;">User Adoption</td>
+                                    <td style="padding: 12px;">Patients may distrust or underutilize chatbot services</td>
+                                    <td style="padding: 12px;">User education, intuitive interfaces, proven effectiveness</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 12px;">Regulatory Compliance</td>
+                                    <td style="padding: 12px;">Navigating complex healthcare regulations</td>
+                                    <td style="padding: 12px;">Legal expertise, FDA clearance for diagnostic tools</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px;">Integration Issues</td>
+                                    <td style="padding: 12px;">Connecting with existing healthcare IT systems</td>
+                                    <td style="padding: 12px;">API development, interoperability standards</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                
+                    <section style="background-color: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                        <h2 style="color: #005b96; border-bottom: 2px solid #005b96; padding-bottom: 10px;">Future Trends</h2>
+                        
+                        <div style="display: flex; align-items: center; margin-bottom: 20px; background-color: #f0f7ff; padding: 15px; border-radius: 6px;">
+                            <div style="flex: 1;">
+                                <h3 style="margin-top: 0; color: #003366;">Multimodal Interactions</h3>
+                                <p>Future healthcare chatbots will combine text, voice, and visual inputs for more natural and comprehensive interactions.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; margin-bottom: 20px; background-color: #fff0f0; padding: 15px; border-radius: 6px;">
+                            <div style="flex: 1;">
+                                <h3 style="margin-top: 0; color: #660000;">Predictive Healthcare</h3>
+                                <p>Chatbots will increasingly use predictive analytics to identify health risks before symptoms appear.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; margin-bottom: 20px; background-color: #f0fff0; padding: 15px; border-radius: 6px;">
+                            <div style="flex: 1;">
+                                <h3 style="margin-top: 0; color: #006600;">Emotional Intelligence</h3>
+                                <p>Advanced sentiment analysis will enable chatbots to better recognize and respond to patient emotions.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; background-color: #fffaf0; padding: 15px; border-radius: 6px;">
+                            <div style="flex: 1;">
+                                <h3 style="margin-top: 0; color: #663300;">Specialized Medical Domains</h3>
+                                <p>More chatbots will be developed for niche medical specialties with highly tailored knowledge bases.</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section style="background-color: #e6f7ff; padding: 25px; border-radius: 8px; border-left: 5px solid #005b96;">
+                        <h2 style="margin-top: 0; color: #005b96;">Ethical Considerations</h2>
+                        <p>As healthcare chatbots become more prevalent, important ethical questions arise:</p>
+                        <ul style="padding-left: 20px;">
+                            <li><strong>Transparency:</strong> Patients should know when they're interacting with AI versus humans</li>
+                            <li><strong>Accountability:</strong> Clear protocols for when chatbots make errors in diagnosis or advice</li>
+                            <li><strong>Bias Mitigation:</strong> Ensuring training data represents diverse populations</li>
+                            <li><strong>Informed Consent:</strong> Patients should understand chatbot limitations</li>
+                            <li><strong>Digital Divide:</strong> Ensuring equitable access to chatbot services</li>
+                        </ul>
+                    </section>
+                
+                   
+            </main>
+           
+            <!-- Floating button to open chatbot -->
+            <button id="open-chatbot" onclick="toggleChatbot()">💬</button>
+            
+            <!-- Chatbot container -->
+            <div id="chatbot-container">
+                <button id="close-chatbot" onclick="toggleChatbot()">✖</button>
+            </div>
+            
+            <script>
+                // Function to toggle chatbot visibility
+                function toggleChatbot() {
+                    let chatbot = document.getElementById("chatbot-container");
+                    let button = document.getElementById("open-chatbot");
+            
+                    if (!chatbot.classList.contains("active")) {
+                        chatbot.classList.add("active");
+                        button.style.display = "none"; // Hide button when chatbot is open
+                    } else {
+                        chatbot.classList.remove("active");
+                        setTimeout(() => { button.style.display = "block"; }, 300); // Show after closing animation
+                    }
+                }
+            
+                // Load chatbot HTML dynamically
+                fetch("/chatbot.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("chatbot-container").innerHTML += html;
+            
+                    // Execute chatbot script after inserting HTML
+                    let scripts = document.getElementById("chatbot-container").getElementsByTagName("script");
+                    for (let script of scripts) {
+                        let newScript = document.createElement("script");
+                        newScript.text = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error("Error loading chatbot:", error));
+        
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                const sidebarList = document.getElementById("topics-list"); // Normal list for desktop
+                const sidebarGrid = document.getElementById("topics-grid"); // Grid view for mobile
+                const searchBox = document.getElementById("searchBox");
+            
+                if (!sidebarList || !sidebarGrid) {
+                    console.error("Sidebar elements not found!");
+                    return;
+                }
+            
+                let allTopics = [ ];
+            
+                // Adjust JSON path based on file location
+                let jsonPath = window.location.pathname.includes("/topics") ? "../AI in Healthcare.json" : "../AI in Healthcare.json";
+                console.log("Fetching JSON from:", jsonPath); // Debugging
+            
+                // Fetch AI for Robotics Topics from JSON
+                fetch(jsonPath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load JSON");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        allTopics = data.AI_in_Healthcare;
+                        displayTopics(allTopics);
+                    }
+                    )
+                    .catch(error => console.error("Error loading topics:", error));
+            
+                // Function to Display Topics in Sidebar
+                function displayTopics(topics) {
+                    sidebarList.innerHTML = ""; // Clear list
+                    sidebarGrid.innerHTML = ""; // Clear grid
+            
+                    topics.forEach(topic => {
+                        let topicLink = topic.link; // Keep the original link
+                        // 🖥️ Desktop List View
+                        let li = document.createElement("li");
+                        li.className = "list-group-item list-group-item-action";
+                        li.innerHTML = `<a href="${topicLink}" class="topic-link">${topic.name}</a>`;
+                        sidebarList.appendChild(li);
+            
+                        // 📱 Mobile Grid View (3 in a row)
+                        let div = document.createElement("div");
+                        div.className = "col-4"; // Bootstrap grid (3 in a row)
+                        div.innerHTML = `<a href="${topicLink}" class="btn btn-outline-primary w-100 p-2">${topic.name}</a>`;
+                        sidebarGrid.appendChild(div);
+                    });
+                }
+            
+                // Search Topics
+                if (searchBox) {
+                    searchBox.addEventListener("input", function () {
+                        const searchText = this.value.toLowerCase();
+                        const filteredTopics = allTopics.filter(topic => 
+                            topic.name.toLowerCase().includes(searchText)
+                        );
+                        displayTopics(filteredTopics);
+                    });
+                }
+            });
+            
+            
+            </script>
+                
+      
+                       
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+            <div>
+                <!-- 🔝 Back to Top Button -->
+                <button id="backToTop" class="btn btn-primary">
+                    ⬆ Top
+                </button>
+                </div>
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+                <!-- Load Navbar, Sidebar, and Footer -->
+                <script>
+                    fetch("/navbar.html").then(response => response.text()).then(data => {
+                        document.getElementById("navbar-placeholder").innerHTML = data;
+                    });
+            
+                    
+            
+                    fetch("/footer.html").then(response => response.text()).then(data => {
+                        document.getElementById("footer-placeholder").innerHTML = data;
+                    });
+                </script>
+            
+            
+            </body>
+            </html>        

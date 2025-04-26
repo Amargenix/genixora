@@ -1,0 +1,64 @@
+{
+    "DSA": [
+        { "name": "Introduction to DSA", "id": "dsa_intro", "link": "dsa_intro.html" },
+
+        
+        { "name": "Arrays", "id": "arrays", "link": "arrays.html" },
+        { "name": "Strings", "id": "strings", "link": "strings.html" },
+        { "name": "Linked Lists", "id": "linked_lists", "link": "linked_lists.html" },
+        { "name": "Stacks & Queues", "id": "stacks_queues", "link": "stacks_queues.html" },
+        { "name": "Recursion", "id": "recursion", "link": "recursion.html" },
+
+        
+        { "name": "Sorting Algorithms", "id": "sorting", "link": "sorting.html" },
+        { "name": "Searching Algorithms", "id": "searching", "link": "searching.html" },
+        { "name": "Binary Search", "id": "binary_search", "link": "binary_search.html" },
+        { "name": "Hashing", "id": "hashing", "link": "hashing.html" },
+
+        
+        { "name": "Binary Trees", "id": "binary_trees", "link": "binary_trees.html" },
+        { "name": "Binary Search Tree (BST)", "id": "bst", "link": "bst.html" },
+        { "name": "Heap & Priority Queue", "id": "heap", "link": "heap.html" },
+        { "name": "Graph Theory", "id": "graphs", "link": "graphs.html" },
+        { "name": "Graph Traversal (BFS & DFS)", "id": "graph_traversal", "link": "graph_traversal.html" },
+        { "name": "Topological Sorting", "id": "topological_sort", "link": "topological_sort.html" },
+        { "name": "Trie (Prefix Tree)", "id": "trie", "link": "trie.html" },
+        
+        
+        { "name": "Dynamic Programming (DP)", "id": "dp", "link": "dp.html" },
+        { "name": "Fibonacci Series (DP)", "id": "dp_fibonacci", "link": "dp_fibonacci.html" },
+        { "name": "Knapsack Problem", "id": "knapsack", "link": "knapsack.html" },
+        { "name": "Longest Common Subsequence", "id": "lcs", "link": "lcs.html" },
+        { "name": "Longest Increasing Subsequence", "id": "lis", "link": "lis.html" },
+
+        
+        { "name": "Greedy Algorithms", "id": "greedy", "link": "greedy.html" },
+        { "name": "Backtracking", "id": "backtracking", "link": "backtracking.html" },
+        { "name": "N-Queens Problem", "id": "n_queens", "link": "n_queens.html" },
+        { "name": "Sudoku Solver", "id": "sudoku", "link": "sudoku.html" },
+        { "name": "Rat in a Maze", "id": "rat_maze", "link": "rat_maze.html" },
+
+        
+        { "name": "Bit Manipulation", "id": "bit_manipulation", "link": "bit_manipulation.html" },
+        { "name": "Segment Trees", "id": "segment_trees", "link": "segment_trees.html" },
+        { "name": "Fenwick Tree (Binary Indexed Tree)", "id": "fenwick_tree", "link": "fenwick_tree.html" },
+
+        
+        { "name": "Dijkstra’s Algorithm", "id": "dijkstra", "link": "dijkstra.html" },
+        { "name": "Bellman-Ford Algorithm", "id": "bellman_ford", "link": "bellman_ford.html" },
+        { "name": "Floyd-Warshall Algorithm", "id": "floyd_warshall", "link": "floyd_warshall.html" },
+        { "name": "Minimum Spanning Tree (MST)", "id": "mst", "link": "mst.html" },
+        { "name": "Kruskal’s Algorithm", "id": "kruskal", "link": "kruskal.html" },
+        { "name": "Prim’s Algorithm", "id": "prim", "link": "prim.html" },
+
+        
+        { "name": "Computational Geometry", "id": "computational_geometry", "link": "computational_geometry.html" },
+        { "name": "KMP String Matching Algorithm", "id": "kmp", "link": "kmp.html" },
+        { "name": "Rabin-Karp String Matching", "id": "rabin_karp", "link": "rabin_karp.html" },
+
+        
+        { "name": "Ternary Search", "id": "ternary_search", "link": "ternary_search.html" },
+        { "name": "Disjoint Set Union (DSU)", "id": "dsu", "link": "dsu.html" },
+        { "name": "Heavy-Light Decomposition", "id": "hld", "link": "hld.html" }
+    ]
+}
